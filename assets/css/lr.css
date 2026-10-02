@@ -101,3 +101,15 @@
 .lr-keys{ list-style:none; display:grid; gap:10px; margin-top:16px; }
 .lr-keys li{ border:1px solid var(--bd); border-radius:var(--r); background:var(--card); padding:12px 14px; color:var(--tx2); font-size:.95rem; line-height:1.5; }
 .lr-keys li b{ display:block; color:var(--tx); font-family:var(--serif); font-weight:400; font-size:1.2rem; margin-bottom:2px; }
+
+/* weekly takeaway printout */
+@media print{
+  .print-sheet{ width:auto !important; max-width:100% !important; box-sizing:border-box; }
+  .print-sheet *{ box-sizing:border-box; }
+  .print-sheet .ps-write, .print-sheet .ps-table, .print-sheet .ps-checks li, .print-sheet .ps-row{ width:calc(100% - 4px) !important; max-width:calc(100% - 4px) !important; }
+  .ps-table th small{ display:block; color:#777 !important; font-size:8pt; font-weight:400; margin-top:1px; }
+  .ps-table th{ font-weight:600; }
+  .print-sheet section{ break-inside:auto; }
+  .print-sheet h2{ break-after:avoid; }
+  .ps-table tr, .ps-write, .ps-checks li{ break-inside:avoid; }
+}

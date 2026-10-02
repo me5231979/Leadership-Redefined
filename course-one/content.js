@@ -149,6 +149,32 @@ window.LR_COURSE = {
   ],
   QUIZ_POS: [1, 3, 0, 2, 1, 0, 3, 2],
   QUIZ_PASS: 6,
-  PRINT_TITLE: 'Course One, my <em>takeaway</em>.',
+  OVERVIEW: {
+    week: 'Course One · Week of November 2',
+    topics: 'Vision, Strategy and the Future of Vanderbilt · Communication, Storytelling and Brand · Mission and Margin',
+    due: 'Fri, Nov 6', dueLabel: 'finish this course by',
+    goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Tell</b> strategy from activity with the value stick.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
+    lessons: [
+      { title:'Vision and strategy', keys:['route', 'mission', 'problems', 'numbers', 'valuestick'], recap:'recap1', ideas:[
+        ['The vision is an instruction.', 'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'],
+        ['Reputation and resources feed each other.', 'Attention, applications, gifts, and growth rose together. Three flywheels keep the loop turning.'],
+        ['Strategy is a choice.', 'Work is strategic only if it raises willingness to pay or lowers willingness to sell.'] ] },
+      { title:'Communication, storytelling and brand', keys:['brand', 'fighter', 'story'], recap:'recap2', ideas:[
+        ['Close the gap.', 'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'],
+        ['A spike needs a system.', 'Attention climbs from relevance to consideration, trust, and commitment only with a steady drumbeat, carried by leaders.'],
+        ['Tell it as what could be.', 'One real person, the contrast between what is and what could be, and one clear ask.'] ] },
+      { title:'Mission and margin', keys:['margin', 'portfolio', 'statement'], recap:'recap3', ideas:[
+        ['No margin, no mission.', 'Mission is purpose and margin is capacity. A leader stewards both.'],
+        ['See the trade-offs.', 'Stars and Money Trees fund Hearts. Stop Signs free up money for what matters.'],
+        ['Answer both questions.', 'Every proposal names its mission benefit, its cost and source, and its return.'] ] },
+      { title:'Your brief', keys:['focus', 'draft', 'quiz', 'nextstep'], ideas:[
+        ['Choose your focus area on purpose.', 'Your brief is judged only against others in the same area.'],
+        ['Make the case on page one.', 'Focus area, the challenge and why it matters, and the connection to Vanderbilt’s priorities.'],
+        ['Bring it to your pod.', 'Merge drafts into one version, with one editor, this week.'] ] }
+    ],
+    work: ['story', 'statement', 'draft'],
+    footer: 'Your pod’s brief is due Friday, November 20, three pages at most.'
+  },
+  PRINT_TITLE: 'Course One, my weekly <em>takeaway</em>.',
   EXIT_TOAST: 'You can close this tab. See you in Course Two.'
 };

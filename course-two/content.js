@@ -186,6 +186,32 @@ window.LR_COURSE = {
   ],
   QUIZ_POS: [1, 2, 0, 3, 1, 3, 0, 2],
   QUIZ_PASS: 6,
-  PRINT_TITLE: 'Course Two, my <em>takeaway</em>.',
+  OVERVIEW: {
+    week: 'Course Two · Week of November 9',
+    topics: 'Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams',
+    due: 'Fri, Nov 13', dueLabel: 'full first draft by',
+    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the four drivers of trust.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.'],
+    lessons: [
+      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'kind', 'reframe'], recap:'recap1', ideas:[
+        ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
+        ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
+        ['Probe complex problems.', 'When no one knows the answer, run a small pilot, learn, and scale what works.'] ] },
+      { title:'Reputational stewardship', keys:['trust', 'pressure', 'repstatement'], recap:'recap2', ideas:[
+        ['Reputation is infrastructure.', 'It turns visibility into talent, funding, partners, and access, and it is built every day.'],
+        ['Trust has four drivers.', 'Transparency, expertise, commitment, and empathy. A crisis exposes the weakest one.'],
+        ['Every leader is a steward.', 'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'] ] },
+      { title:'High-performing teams', keys:['lee', 'principles', 'teamcalls', 'health'], recap:'recap3', ideas:[
+        ['Control the controllables.', 'Leaders build the conditions; the team brings the effort. Results follow.'],
+        ['Aim for the learning zone.', 'High standards plus psychological safety, built on purpose by how leaders frame work and respond to bad news.'],
+        ['How a team works beats who is on it.', 'Safety, dependability, clarity, meaning, and impact.'] ] },
+      { title:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep'], ideas:[
+        ['Measure outcomes.', 'Every metric has a baseline, a target, and a date.'],
+        ['Write the plan half.', 'An integrated solution, steps with owners and dates, metrics, and a sustainability plan.'],
+        ['Finish together.', 'A full first draft this week; polish in week four.'] ] }
+    ],
+    work: ['reframe', 'repstatement', 'draft'],
+    footer: 'Your pod’s brief is due Friday, November 20, three pages at most. Three winners, one per focus area.'
+  },
+  PRINT_TITLE: 'Course Two, my weekly <em>takeaway</em>.',
   EXIT_TOAST: 'You can close this tab. Finish the brief by Friday, November 20.'
 };

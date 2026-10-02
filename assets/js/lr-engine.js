@@ -342,7 +342,7 @@ var STOPS = D.STOPS || [];
     btns.forEach(function(x){ x.setAttribute('aria-expanded', x === b ? 'true' : 'false'); x.classList.toggle('seen', !!seen[+x.getAttribute('data-stop')]); });
     port.innerHTML = '<span class="v-label">Stop ' + (i + 1) + ' of 6</span><h3>' + s.h + subBtn((D.ROUTE_NARR || 'welcome/g') + (i + 1)) + '</h3><p>' + esc(s.p) + '</p><ul>' + s.tags.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
     narrSub((D.ROUTE_NARR || 'welcome/g') + (i + 1));
-    if(Object.keys(seen).length === STOPS.length) progDone(D.ROUTE_PROG || 'welcome');
+    if(Object.keys(seen).length === STOPS.length){ set('r-' + (D.ROUTE_PROG || 'welcome'), 'All ' + STOPS.length + ' stops visited'); progDone(D.ROUTE_PROG || 'welcome'); }
   });
 })();
 
@@ -382,7 +382,7 @@ function buildCalls(el){
   }).join('');
   $$('.scn[data-scn]', el).forEach(buildScenario);
   function pips(){ return '<span class="pips" aria-hidden="true">' + keys.map(function(k){ return '<i class="' + (found[k] ? 'ok' : '') + '"></i>'; }).join('') + '</span>'; }
-  function paint(){ var n = Object.keys(found).length; if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + keys.length + ' ' + cfg.noun + '.' + (n === keys.length ? ' Activity complete.' : '') + '</span>'; if(n === keys.length) progDone(cfg.prog); }
+  function paint(){ var n = Object.keys(found).length; if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + keys.length + ' ' + cfg.noun + '.' + (n === keys.length ? ' Activity complete.' : '') + '</span>'; if(n === keys.length){ set('r-' + cfg.prog, 'Found the strongest call in all ' + keys.length + ' ' + cfg.noun); progDone(cfg.prog); } }
   function show(i){ $$('.cq', el).forEach(function(q, qi){ q.classList.toggle('cur', qi === i); }); cur = i; var f = $$('.cq', el)[i].querySelector('button:not([hidden])'); if(f) f.focus({ preventScroll:true }); narrSub(cfg.narr + (i + 1)); }
   el.addEventListener('click', function(e){
     if(e.target.closest('button[data-next]')){ show(cur + 1); return; }
@@ -423,7 +423,7 @@ function buildDrill(el){
     done[i] = ok ? 1 : 2; if(ok) right++;
     var n = Object.keys(done).length;
     if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + d.items.length + ' ' + d.verb + '.' + (n === d.items.length ? ' ' + right + ' of ' + d.items.length + ' right. Activity complete.' : '') + '</span>';
-    if(n === d.items.length) progDone(d.prog);
+    if(n === d.items.length){ set('r-' + d.prog, right + ' of ' + d.items.length + ' matched the expert answer'); progDone(d.prog); }
   });
   if(status) status.innerHTML = pips() + '<span>0 of ' + d.items.length + ' ' + d.verb + '.</span>';
 }
@@ -438,7 +438,7 @@ var NUMS = D.NUMS || [];
   grid.innerHTML = NUMS.map(function(n, i){
     return '<div class="v-tile" data-n="' + i + '"><button type="button" class="v-tile-face" aria-expanded="false"><span class="q" aria-hidden="true">?</span><span class="lab">' + esc(n.lab) + '</span></button></div>';
   }).join('');
-  function paint(){ var n = Object.keys(done).length; if(status) status.textContent = n + ' of ' + NUMS.length + ' guessed.' + (n === NUMS.length ? ' ' + right + ' right. Activity complete.' : ''); if(n === NUMS.length) progDone(prog); }
+  function paint(){ var n = Object.keys(done).length; if(status) status.textContent = n + ' of ' + NUMS.length + ' guessed.' + (n === NUMS.length ? ' ' + right + ' right. Activity complete.' : ''); if(n === NUMS.length){ set('r-' + prog, right + ' of ' + NUMS.length + ' guessed right'); progDone(prog); } }
   grid.addEventListener('click', function(e){
     var tile = e.target.closest('.v-tile'); if(!tile) return;
     var i = +tile.getAttribute('data-n'), n = NUMS[i];
@@ -485,7 +485,7 @@ $$('[data-taps]').forEach(function(list){
     if(!o){ if(base && narr.key === base + (i + 1) && narr.playing) narrStop(); return; }
     seen[i] = 1;
     if(base) narrSub(base + (i + 1));
-    if(Object.keys(seen).length === btns.length){ if(SECTIONS.some(function(s){ return s.k === k; })) progDone(k); else turnDone(k); }
+    if(Object.keys(seen).length === btns.length){ set('r-' + k, 'All ' + btns.length + ' opened'); if(SECTIONS.some(function(s){ return s.k === k; })) progDone(k); else turnDone(k); }
   }); });
 });
 
@@ -537,6 +537,7 @@ $$('[data-alloc]').forEach(function(box){
       dot.setAttribute('cx', (40 + nx * 320).toFixed(1)); dot.setAttribute('cy', (340 - ny * 320).toFixed(1)); dot.style.display = '';
       var q = (ny >= .5 ? 'top' : 'bottom') + (nx >= .5 ? 'right' : 'left');
       if(read) read.innerHTML = cfg.quads[q] || '';
+      if(final) set('r-' + key, vals.map(function(v, i){ return cfg.items[i].lab + ': ' + v; }).join('; ') + '. ' + (cfg.quads[q] || '').replace(/<[^>]+>/g, ''));
     } else { dot.style.display = 'none'; if(read) read.textContent = 'Place some points to see where your portfolio lands.'; }
     if(final && left === 0) progDone(key);
   }
@@ -635,30 +636,51 @@ $$('[data-assess]').forEach(function(box){
     read.innerHTML = touched ? '<b>Strongest: ' + esc(hi) + '.</b> ' + (cfg.reads[hi] || {}).high + '<br><b>Work on next: ' + esc(lo) + '.</b> ' + (cfg.reads[lo] || {}).low : 'Move the sliders to see your read.';
   }
   list.addEventListener('input', function(e){ var r = e.target.closest('input[type=range]'); if(!r) return; vals[+r.getAttribute('data-i')] = +r.value; r.setAttribute('aria-valuetext', r.value + ' of 5'); r.parentNode.querySelector('output').textContent = r.value; touched = true; render(); });
-  list.addEventListener('change', function(e){ if(!e.target.closest('input[type=range]')) return; set('s-' + key, JSON.stringify(vals)); progDone(key); });
+  list.addEventListener('change', function(e){ if(!e.target.closest('input[type=range]')) return; set('s-' + key, JSON.stringify(vals)); set('r-' + key, bars.innerText.replace(/\n+/g, ' ').replace(/(of 5)/g, '$1;') + ' ' + read.innerText.replace(/\n+/g, ' ')); progDone(key); });
   render();
 });
 
-/* ══════════ print my takeaway: the drafts, commitments, and score, on white ══════════ */
+/* ══════════ print the week's takeaway: overview, every activity, my work, my moves ══════════
+   Built fresh on each print from this browser's saved progress and answers.
+   Printed before starting, it works as a blank workbook. Nothing leaves the browser. */
 function buildPrint(){
   var sheet = $('#printSheet'); if(!sheet) return;
-  var done = SECTIONS.filter(function(s){ return progIs(s.k); }).length;
+  var O = D.OVERVIEW || {}, done = SECTIONS.filter(function(s){ return progIs(s.k); }).length;
   var score = get('quiz-score'), commits = (function(){ try{ var v = JSON.parse(get('commit') || '[]'); return Array.isArray(v) ? v : []; }catch(e){ return []; } })();
   var today = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
-  var html = '<header class="ps-head"><img src="../assets/img/vu-lockup-black.png" alt="Vanderbilt University" width="166" height="43" /><div><span class="ps-k">Leadership Redefined</span><h1>' + (D.PRINT_TITLE || 'My takeaway') + '</h1><p>' + esc(today) + '</p></div></header>';
-  html += '<section class="ps-row"><div class="ps-stat"><b>' + done + '/' + SECTIONS.length + '</b><span>activities complete</span></div><div class="ps-stat"><b>' + (score === null ? '-' : esc(score) + '/' + QUIZ.length) + '</b><span>quick check score</span></div></section>';
-  Object.keys(D.BUILDS || {}).forEach(function(k){
-    var b = D.BUILDS[k]; var txt = b.tpl(bAll(k), bVal);
-    html += '<section><h2>' + esc(b.title) + '</h2><p class="ps-write" style="white-space:pre-wrap">' + esc(txt) + '</p></section>';
+  function para(t){ return t ? '<p class="ps-write" style="white-space:pre-wrap">' + esc(t) + '</p>' : '<p class="ps-write ps-empty">Not written yet. Use this space.</p>'; }
+  var html = '<header class="ps-head"><img src="../assets/img/vu-lockup-black.png" alt="Vanderbilt University" width="166" height="43" /><div><span class="ps-k">Leadership Redefined &middot; ' + esc(O.week || '') + '</span><h1>' + (D.PRINT_TITLE || 'My takeaway') + '</h1><p>' + esc(O.topics || '') + ' &middot; printed ' + esc(today) + '</p></div></header>';
+  html += '<section class="ps-row"><div class="ps-stat"><b>' + done + '/' + SECTIONS.length + '</b><span>activities complete</span></div><div class="ps-stat"><b>' + (score === null ? '-' : esc(score) + '/' + QUIZ.length) + '</b><span>apply-it check score</span></div><div class="ps-stat"><b>' + esc(O.due || '') + '</b><span>' + esc(O.dueLabel || 'finish by') + '</span></div></section>';
+  /* course overview */
+  html += '<section class="ps-recap"><h2>Course overview</h2>' + (O.goals ? '<h3>By the end you can</h3><ol>' + O.goals.map(function(g, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span>' + g + '</span></li>'; }).join('') + '</ol>' : '') + '</section>';
+  (O.lessons || []).forEach(function(L, li){
+    html += '<section class="ps-recap"><h2>Lesson ' + (li + 1) + ' &middot; ' + esc(L.title) + '</h2><ol>' + L.ideas.map(function(x, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span><b>' + esc(x[0]) + '</b> ' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>';
+    var acts = SECTIONS.filter(function(s){ return (L.keys || []).indexOf(s.k) > -1; });
+    if(acts.length) html += '<table class="ps-table"><tbody>' + acts.map(function(s){ var r = get('r-' + s.k); var bd = D.BUILDS && D.BUILDS[s.k]; if(!r && bd) r = progIs(s.k) ? 'Written; see My work below' : ''; if(!r && s.k === 'quiz' && score !== null) r = score + ' of ' + QUIZ.length + ' correct'; if(!r && s.k === 'nextstep') r = commits.filter(Boolean).length + ' of ' + COMMITS.length + ' committed';
+      return '<tr><th>' + esc(s.name) + '<small>' + esc(s.how) + '</small></th><td>' + (progIs(s.k) ? '<b>Done.</b> ' : '<span class="ps-empty">Not yet.</span> ') + (r ? esc(r) : '') + '</td></tr>'; }).join('') + '</tbody></table>';
+    if(L.recap && D.BUILDS[L.recap]){ html += '<h3>In my own words</h3>' + para(bVal(L.recap, 'txt')); }
+    html += '</section>';
   });
-  html += '<section class="ps-moves"><h2>My commitments</h2><ol class="ps-checks">' + COMMITS.map(function(c, i){ return '<li class="' + (commits[i] ? 'on' : '') + '"><span class="ps-box" aria-hidden="true">' + (commits[i] ? '&#10003;' : '') + '</span><span class="ps-t"><b>' + esc(c[0]) + '.</b> ' + esc(c[1]) + '</span></li>'; }).join('') + '</ol></section>';
-  html += '<p class="ps-foot">Crescere aude. Dare to grow.</p>';
+  /* my work */
+  var work = (O.work || []).filter(function(k){ return D.BUILDS && D.BUILDS[k]; });
+  if(work.length){
+    html += '<section><h2>My work for the brief</h2>';
+    work.forEach(function(k){ var b = D.BUILDS[k], filled = (b.fields || []).some(function(f){ return bVal(k, f); }); html += '<h3>' + esc(b.title) + '</h3>' + para(filled ? b.tpl(bAll(k), bVal) : ''); });
+    html += '</section>';
+  }
+  /* my moves */
+  html += '<section class="ps-moves"><h2>My moves this week</h2><ol class="ps-checks">' + COMMITS.map(function(c, i){ return '<li class="' + (commits[i] ? 'on' : '') + '"><span class="ps-box" aria-hidden="true">' + (commits[i] ? '&#10003;' : '') + '</span><span class="ps-t"><b>' + esc(c[0]) + '.</b> ' + esc(c[1]) + (commits[i] ? ' <i class="ps-cm">Committed in the course.</i>' : '') + '</span><span class="ps-by">Done by <i></i></span></li>'; }).join('') + '</ol></section>';
+  var tell = $('[data-tell] .v-tell-text'); if(tell && tell.textContent) html += '<section><h2>My Teams post, to start</h2><p class="ps-quote">' + esc(tell.textContent) + '</p></section>';
+  var agenda = $$('[data-copytext]').map(function(b){ return b.getAttribute('data-copytext') || ''; }).filter(function(t){ return /^Pod meeting/.test(t); })[0];
+  if(agenda) html += '<section><h2>Pod meeting agenda</h2><p class="ps-write" style="white-space:pre-wrap">' + esc(agenda.replace(/\\n/g, '\n')) + '</p></section>';
+  html += '<section><h2>Notes from my pod</h2><p class="ps-write" style="min-height:120px"></p></section>';
+  html += '<p class="ps-foot">' + esc(O.footer || '') + ' Crescere aude. Dare to grow.</p>';
   sheet.innerHTML = html;
 }
 window.addEventListener('beforeprint', buildPrint);
 document.addEventListener('click', function(e){
   if(!e.target.closest('[data-print]')) return;
-  narrStop(); buildPrint();
+  e.preventDefault(); narrStop(); buildPrint();
   try{ window.print(); }catch(err){ toast('Printing is not available here. Use your browser menu to print.'); }
 });
 
