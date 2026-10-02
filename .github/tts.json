@@ -1,6 +1,6 @@
 {
-  "_note": "ElevenLabs narration, Brian, a strong, professional male narrator (ElevenLabs premade voice). The build workflow reads this file, generates every clip in narration-scripts.js, keeps the raw files in assets/audio/voyage/source, and writes loudness-matched clips to assets/audio/voyage. Only clips whose text or settings changed are regenerated.",
-  "voice_id": "nPczCjzI2devNBz1zQrb",
+  "_note": "ElevenLabs narration for both Leadership Redefined courses, voice bfGb7JTLUnZebZRiFYyq (chosen by the program owner). The Record narration workflow reads this file, generates every clip in course-one/ and course-two/narration-scripts.js, keeps raw files in assets/audio/<course>/source, and writes loudness-matched clips to assets/audio/<course>. Only clips whose text, voice, or settings changed are regenerated.",
+  "voice_id": "bfGb7JTLUnZebZRiFYyq",
   "model_id": "eleven_multilingual_v2",
   "output_format": "mp3_44100_128",
   "voice_settings": {

@@ -95,7 +95,7 @@ While `useBrowserVoice: true` is set in each `config.js`, Listen and Auto read e
 1. Add the `ELEVENLABS_API_KEY` repository secret.
 2. Run **Record narration with ElevenLabs** from the Actions tab.
 
-The workflow records the clips in the same voice and settings as Voyage Online (Brian), writes them to `assets/audio/<course>/`. It then sets `useBrowserVoice: false` so the recordings play, and publishes the site.
+The workflow records the clips in ElevenLabs voice `bfGb7JTLUnZebZRiFYyq` (set in `.github/tts.json`, with the same settings as Voyage Online), writes them to `assets/audio/<course>/`. It then sets `useBrowserVoice: false` so the recordings play, and publishes the site.
 
 ## Before launch
 
