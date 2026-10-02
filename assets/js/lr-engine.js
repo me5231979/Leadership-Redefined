@@ -22,6 +22,9 @@ var KEY = C.storeKey || 'lr-';
 var mem = {};
 var store = (function(){ try{ var t = KEY + 'test'; window.localStorage.setItem(t, '1'); window.localStorage.removeItem(t); return window.localStorage; }catch(e){ return null; } })();
 function get(k){ if(store){ try{ var v = store.getItem(KEY + k); if(v !== null) return v; }catch(e){} } return mem[k] === undefined ? null : mem[k]; }
+/* every choice a learner makes is kept, so the takeaway can print it */
+function picks(k){ try{ var v = JSON.parse(get('pk-' + k) || '{}'); return v && typeof v === 'object' ? v : {}; }catch(e){ return {}; } }
+function savePick(k, i, v){ var o = picks(k); o[i] = v; set('pk-' + k, JSON.stringify(o)); }
 function set(k, v){ mem[k] = v; if(store){ try{ v === null ? store.removeItem(KEY + k) : store.setItem(KEY + k, v); }catch(e){} } }
 
 /* ── contact address from config.js ── */
@@ -382,13 +385,14 @@ function buildCalls(el){
   }).join('');
   $$('.scn[data-scn]', el).forEach(buildScenario);
   function pips(){ return '<span class="pips" aria-hidden="true">' + keys.map(function(k){ return '<i class="' + (found[k] ? 'ok' : '') + '"></i>'; }).join('') + '</span>'; }
-  function paint(){ var n = Object.keys(found).length; if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + keys.length + ' ' + cfg.noun + '.' + (n === keys.length ? ' Activity complete.' : '') + '</span>'; if(n === keys.length){ set('r-' + cfg.prog, 'Found the strongest call in all ' + keys.length + ' ' + cfg.noun); progDone(cfg.prog); } }
+  function paint(){ var n = Object.keys(found).length; if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + keys.length + ' ' + cfg.noun + '.' + (n === keys.length ? ' Activity complete.' : '') + '</span>'; if(n) set('r-' + cfg.prog, 'Found the strongest call in ' + n + ' of ' + keys.length + ' ' + cfg.noun); if(n === keys.length) progDone(cfg.prog); }
   function show(i){ $$('.cq', el).forEach(function(q, qi){ q.classList.toggle('cur', qi === i); }); cur = i; var f = $$('.cq', el)[i].querySelector('button:not([hidden])'); if(f) f.focus({ preventScroll:true }); narrSub(cfg.narr + (i + 1)); }
   el.addEventListener('click', function(e){
     if(e.target.closest('button[data-next]')){ show(cur + 1); return; }
     if(e.target.closest('button[data-prev]')){ show(cur - 1); return; }
     var b = e.target.closest('.scn button[data-o]'); if(!b) return;
-    var q = b.closest('.cq'), k = q.getAttribute('data-k'), o = SCENARIOS[k].opts[parseInt(b.getAttribute('data-o'), 10)];
+    var q = b.closest('.cq'), k = q.getAttribute('data-k'), oi = parseInt(b.getAttribute('data-o'), 10), o = SCENARIOS[k].opts[oi];
+    var pk = picks(cfg.prog)[k] || []; if(pk.indexOf(oi) < 0){ pk.push(oi); savePick(cfg.prog, k, pk); }
     var nx = q.querySelector('button[data-next]'); if(nx) nx.hidden = false;
     if(o.best){ found[k] = 1; paint(); }
   });
@@ -421,9 +425,11 @@ function buildDrill(el){
     q.classList.add(ok ? 'right' : 'wrong');
     q.querySelector('.dq-x').innerHTML = '<b>' + (ok ? 'Right. ' : 'Not quite. The answer is ' + esc(opts[it.a]) + '. ') + '</b>' + esc(it.x);
     done[i] = ok ? 1 : 2; if(ok) right++;
+    savePick(d.prog, i, oi);
     var n = Object.keys(done).length;
+    set('r-' + d.prog, n + ' of ' + d.items.length + ' answered, ' + right + ' matched the expert answer');
     if(status) status.innerHTML = pips() + '<span>' + n + ' of ' + d.items.length + ' ' + d.verb + '.' + (n === d.items.length ? ' ' + right + ' of ' + d.items.length + ' right. Activity complete.' : '') + '</span>';
-    if(n === d.items.length){ set('r-' + d.prog, right + ' of ' + d.items.length + ' matched the expert answer'); progDone(d.prog); }
+    if(n === d.items.length) progDone(d.prog);
   });
   if(status) status.innerHTML = pips() + '<span>0 of ' + d.items.length + ' ' + d.verb + '.</span>';
 }
@@ -438,7 +444,7 @@ var NUMS = D.NUMS || [];
   grid.innerHTML = NUMS.map(function(n, i){
     return '<div class="v-tile" data-n="' + i + '"><button type="button" class="v-tile-face" aria-expanded="false"><span class="q" aria-hidden="true">?</span><span class="lab">' + esc(n.lab) + '</span></button></div>';
   }).join('');
-  function paint(){ var n = Object.keys(done).length; if(status) status.textContent = n + ' of ' + NUMS.length + ' guessed.' + (n === NUMS.length ? ' ' + right + ' right. Activity complete.' : ''); if(n === NUMS.length){ set('r-' + prog, right + ' of ' + NUMS.length + ' guessed right'); progDone(prog); } }
+  function paint(){ var n = Object.keys(done).length; if(status) status.textContent = n + ' of ' + NUMS.length + ' guessed.' + (n === NUMS.length ? ' ' + right + ' right. Activity complete.' : ''); if(n === NUMS.length) progDone(prog); }
   grid.addEventListener('click', function(e){
     var tile = e.target.closest('.v-tile'); if(!tile) return;
     var i = +tile.getAttribute('data-n'), n = NUMS[i];
@@ -450,6 +456,7 @@ var NUMS = D.NUMS || [];
     }
     var b = e.target.closest('button[data-o]'); if(!b || done[i]) return;
     var ok = +b.getAttribute('data-o') === n.a; done[i] = 1; if(ok) right++;
+    savePick(prog, i, +b.getAttribute('data-o')); set('r-' + prog, Object.keys(done).length + ' of ' + NUMS.length + ' guessed, ' + right + ' right');
     tile.classList.remove('open'); tile.classList.add('done');
     tile.innerHTML = '<div class="v-reveal" tabindex="-1"><span class="verdict' + (ok ? ' ok' : '') + '">' + (ok ? 'You got it' : 'You guessed ' + esc(n.opts[+b.getAttribute('data-o')])) + '</span><span class="big">' + esc(n.big) + '</span><span class="lab">' + esc(n.lab) + '</span><p>' + esc(n.x) + '</p></div>';
     tile.querySelector('.v-reveal').focus();
@@ -608,7 +615,7 @@ var QUIZ = D.QUIZ || [];
     $$('button[data-o]', q).forEach(function(x){ x.disabled = true; x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); if(parseInt(x.getAttribute('data-o'), 10) === it.a) x.classList.add('is-answer'); });
     q.classList.add(ok ? 'right' : 'wrong');
     q.querySelector('.kq-x').innerHTML = '<b>' + (ok ? 'Right. ' : 'Not quite. The answer is: ' + esc(it.opts[it.a]) + '. ') + '</b>' + esc(it.x);
-    if(!answered[i]){ answered[i] = 1; if(ok) score++; }
+    if(!answered[i]){ answered[i] = 1; if(ok) score++; savePick('quiz', i, oi); }
     if(status) status.textContent = Object.keys(answered).length + ' of ' + QUIZ.length + ' answered.';
   });
   render();
@@ -648,6 +655,16 @@ function buildPrint(){
   var O = D.OVERVIEW || {}, done = SECTIONS.filter(function(s){ return progIs(s.k); }).length;
   var score = get('quiz-score'), commits = (function(){ try{ var v = JSON.parse(get('commit') || '[]'); return Array.isArray(v) ? v : []; }catch(e){ return []; } })();
   var today = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  function myAnswers(k){
+    var rows = [], pk = picks(k);
+    var dn = Object.keys(DRILLS).filter(function(n){ return DRILLS[n].prog === k; })[0];
+    if(dn){ var d = DRILLS[dn]; d.items.forEach(function(it, i){ if(pk[i] === undefined) return; var o = it.opts || d.opts; rows.push([it.s, o[pk[i]], o[it.a], pk[i] === it.a]); }); }
+    if(k === (D.NUM_PROG || 'numbers')) NUMS.forEach(function(n, i){ if(pk[i] === undefined) return; rows.push([n.q, n.opts[pk[i]], n.big, pk[i] === n.a]); });
+    Object.keys(CALL_PROG).forEach(function(cn){ if(CALL_PROG[cn].prog !== k) return; (CALL_SETS[cn] || []).forEach(function(sk){ var t = pk[sk]; if(!t || !t.length) return; var sc = SCENARIOS[sk], best = sc.opts.filter(function(o){ return o.best; })[0]; rows.push([sc.h + ': ' + sc.s, sc.opts[t[0]].t + (t.length > 1 ? ' (then tried ' + (t.length - 1) + ' more)' : ''), best ? best.t : '', sc.opts[t[0]].best]); }); });
+    if(k === 'quiz') QUIZ.forEach(function(q, i){ if(pk[i] === undefined) return; rows.push([q.q, q.opts[pk[i]], q.opts[q.a], pk[i] === q.a]); });
+    if(!rows.length) return '';
+    return '<tr class="ps-ans"><td colspan="2"><table class="ps-table ps-sub"><thead><tr><th>Item</th><th>My answer</th><th>Expert answer</th></tr></thead><tbody>' + rows.map(function(r){ return '<tr><td>' + esc(r[0]) + '</td><td>' + (r[3] ? '&#10003; ' : '') + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('') + '</tbody></table></td></tr>';
+  }
   function para(t){ return t ? '<p class="ps-write" style="white-space:pre-wrap">' + esc(t) + '</p>' : '<p class="ps-write ps-empty">Not written yet. Use this space.</p>'; }
   var html = '<header class="ps-head"><img src="../assets/img/vu-lockup-black.png" alt="Vanderbilt University" width="166" height="43" /><div><span class="ps-k">Leadership Redefined &middot; ' + esc(O.week || '') + '</span><h1>' + (D.PRINT_TITLE || 'My takeaway') + '</h1><p>' + esc(O.topics || '') + ' &middot; printed ' + esc(today) + '</p></div></header>';
   html += '<section class="ps-row"><div class="ps-stat"><b>' + done + '/' + SECTIONS.length + '</b><span>activities complete</span></div><div class="ps-stat"><b>' + (score === null ? '-' : esc(score) + '/' + QUIZ.length) + '</b><span>apply-it check score</span></div><div class="ps-stat"><b>' + esc(O.due || '') + '</b><span>' + esc(O.dueLabel || 'finish by') + '</span></div></section>';
@@ -657,12 +674,13 @@ function buildPrint(){
     html += '<section class="ps-recap"><h2>Lesson ' + (li + 1) + ' &middot; ' + esc(L.title) + '</h2><ol>' + L.ideas.map(function(x, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span><b>' + esc(x[0]) + '</b> ' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>';
     var acts = SECTIONS.filter(function(s){ return (L.keys || []).indexOf(s.k) > -1; });
     if(acts.length) html += '<table class="ps-table"><tbody>' + acts.map(function(s){ var r = get('r-' + s.k); var bd = D.BUILDS && D.BUILDS[s.k]; if(!r && bd) r = progIs(s.k) ? 'Written; see My work below' : ''; if(!r && s.k === 'quiz' && score !== null) r = score + ' of ' + QUIZ.length + ' correct'; if(!r && s.k === 'nextstep') r = commits.filter(Boolean).length + ' of ' + COMMITS.length + ' committed';
-      return '<tr><th>' + esc(s.name) + '<small>' + esc(s.how) + '</small></th><td>' + (progIs(s.k) ? '<b>Done.</b> ' : '<span class="ps-empty">Not yet.</span> ') + (r ? esc(r) : '') + '</td></tr>'; }).join('') + '</tbody></table>';
+      return '<tr><th>' + esc(s.name) + '<small>' + esc(s.how) + '</small></th><td>' + (progIs(s.k) ? '<b>Done.</b> ' : '<span class="ps-empty">Not yet.</span> ') + (r ? esc(r) : '') + '</td></tr>' + myAnswers(s.k); }).join('') + '</tbody></table>';
     if(L.recap && D.BUILDS[L.recap]){ html += '<h3>In my own words</h3>' + para(bVal(L.recap, 'txt')); }
     html += '</section>';
   });
   /* my work */
-  var work = (O.work || []).filter(function(k){ return D.BUILDS && D.BUILDS[k]; });
+  var inLessons = (O.lessons || []).map(function(L){ return L.recap; });
+  var work = (O.work || []).concat(Object.keys(D.BUILDS || {}).filter(function(k){ return (O.work || []).indexOf(k) < 0 && inLessons.indexOf(k) < 0; })).filter(function(k){ return D.BUILDS && D.BUILDS[k]; });
   if(work.length){
     html += '<section><h2>My work for the brief</h2>';
     work.forEach(function(k){ var b = D.BUILDS[k], filled = (b.fields || []).some(function(f){ return bVal(k, f); }); html += '<h3>' + esc(b.title) + '</h3>' + para(filled ? b.tpl(bAll(k), bVal) : ''); });

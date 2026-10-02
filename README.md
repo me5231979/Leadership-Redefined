@@ -94,6 +94,7 @@ python3 -m http.server 8765
 Then run the two checks:
 
 - `node tools/smoke-v.mjs course-one [shotsDir]` drives every activity, then checks progress, persistence, overflow at 320px, and the console.
+- `node tools/takeaway-check.mjs course-one` enters something in every field and makes a choice in every activity, then checks that each one appears in the printed takeaway, both live and after a reload.
 - `node tools/a11y-audit.mjs path/to/axe.min.js course-one/ course-two/ index.html` runs axe-core with the WCAG 2.x A/AA tags at 1440px and 320px.
 
 **Last run, 2026-10-02:**
