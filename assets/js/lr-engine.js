@@ -123,6 +123,8 @@ function narrPlay(k){
   k = k || narrKey(); var text = NARR[k];
   narrStop(); pauseVideos();
   if(!text){ toast('No narration on this page.'); return; }
+  /* until the recorded voice exists, the browser's own voice reads the script */
+  if(C.useBrowserVoice){ narr.key = k; narrSpeak(text); return; }
   narr.key = k; narr.playing = true; narrUI();
   /* the version carries a hash of the script, so a re-recorded clip is never served from an old cache */
   var a = new Audio((C.audioBase || './audio/') + k.replace(/\//g, '-') + '.mp3?v=' + MEDIA_V + '-' + textHash(text));
@@ -130,12 +132,6 @@ function narrPlay(k){
   a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); } });
   a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrSpeak(text); } });
   narr.audio = a;
-  /* placeholder clips (a chime, then silence) stand in until the voice is recorded: say so, and open the words */
-  if(C.audioPlaceholder) a.addEventListener('playing', function(){
-    if(narr.audio !== a) return;
-    toast('Placeholder audio. The recorded voice is coming; the words are open below.');
-    var pg = document.querySelector('.page.cur'), rd = pg && pg.querySelector('.lr-read'); if(rd) rd.open = true;
-  });
   var backTo = narrPos[k] || 0;
   if(backTo > 0){
     var seek = function(){ try{ if(narr.audio === a && (!a.duration || !isFinite(a.duration) || backTo < a.duration - 1)) a.currentTime = backTo; }catch(e){} };

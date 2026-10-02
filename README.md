@@ -81,23 +81,21 @@ Every page script follows the same adult learning arc:
 - a breadcrumb forward
 
 `node tools/narration-check.mjs course-one` confirms four things:
-- every page has a script and a clip
+- every page has a script
 - every page has a forward breadcrumb
 - every teaching page has an experience prompt
-- Listen plays the clip
+- Listen reads the page aloud
 
-### Placeholder audio
+### Until the voice is recorded
 
-Until the voice is recorded, `assets/audio/` holds placeholder clips, made by `python3 scripts/make-placeholder-audio.py`. Each clip is a soft chime, then silence timed to the script's reading length, so the controls and timing behave as they will with the real voice.
-
-While `audioPlaceholder: true` is set in each `config.js`, playing a clip shows a notice and opens the read-along text.
+While `useBrowserVoice: true` is set in each `config.js`, Listen and Auto read each script aloud in the browser's built-in voice.
 
 ### Recording the real voice
 
 1. Add the `ELEVENLABS_API_KEY` repository secret.
 2. Run **Record narration with ElevenLabs** from the Actions tab.
 
-The workflow records the clips in the same voice and settings as Voyage Online (Brian), replacing every placeholder under the same file name. It then sets `audioPlaceholder: false` and publishes the site.
+The workflow records the clips in the same voice and settings as Voyage Online (Brian), writes them to `assets/audio/<course>/`. It then sets `useBrowserVoice: false` so the recordings play, and publishes the site.
 
 ## Before launch
 

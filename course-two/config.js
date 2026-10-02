@@ -7,8 +7,9 @@ window.LR_CONFIG = {
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-two/',
   mediaVersion: '20261003a',
-  /* true while assets/audio holds placeholder clips (make-placeholder-audio.py); set false after the ElevenLabs recording */
-  audioPlaceholder: true,
+  /* true until the ElevenLabs narration is recorded: Listen reads each script in the browser's own voice.
+     The Record narration workflow sets this to false so the recorded clips play instead. */
+  useBrowserVoice: true,
   /* Chancellor intros. Add a WebVTT captions file beside each video and set captions. */
   videos: {
     venture:    { src: '../assets/video/chancellor-entrepreneurial-mindset.mp4', captions: '', title: 'Chancellor Diermeier on the entrepreneurial mindset' },

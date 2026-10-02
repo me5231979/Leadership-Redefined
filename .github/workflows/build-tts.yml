@@ -27,7 +27,7 @@ jobs:
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ]; then echo "::warning::ELEVENLABS_API_KEY is not set; the course uses the browser voice until it is."; exit 0; fi
           python3 scripts/build-tts.py
-          sed -i 's/audioPlaceholder: true/audioPlaceholder: false/' course-one/config.js course-two/config.js
+          sed -i 's/useBrowserVoice: true/useBrowserVoice: false/' course-one/config.js course-two/config.js
       - name: Commit the clips
         run: |
           git config user.name "github-actions[bot]"
