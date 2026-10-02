@@ -730,3 +730,18 @@ progRender();
 /* for tests */
 window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
 })();
+
+/* ── hero montage pause / play ── */
+(function(){
+  document.querySelectorAll('.lr-mont-btn').forEach(function(b){
+    var m = b.parentNode.querySelector('.lr-montage'); if(!m) return;
+    var pause = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Pause</span>';
+    var play = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Play</span>';
+    b.addEventListener('click', function(){
+      var on = m.classList.toggle('paused');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.setAttribute('aria-label', on ? 'Play the photo montage' : 'Pause the photo montage');
+      b.innerHTML = on ? play : pause;
+    });
+  });
+})();

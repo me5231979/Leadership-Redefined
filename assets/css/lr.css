@@ -123,3 +123,41 @@
   .print-sheet section, html.paged .print-sheet section{ break-inside:auto !important; page-break-inside:auto !important; }
   .ps-recap ol, .ps-row{ break-inside:avoid; }
 }
+
+/* ══════════ hero montage: cohort and campus photos, slow pan and zoom, crossfade ══════════
+   Seven slides, 6s apart; each fades in over the one before. Pausable (WCAG 2.2.2). */
+.lr-montage img{ position:absolute; inset:0; opacity:0; object-position:var(--pos,center 40%);
+  animation:lrMont 42s linear infinite both; animation-delay:calc(var(--i) * 6s - 1.5s); will-change:opacity, transform; }
+.lr-montage img:nth-child(1){ --i:0; --dx:-2%; --dy:-1%; }
+.lr-montage img:nth-child(2){ --i:1; --dx:2%;  --dy:1%; }
+.lr-montage img:nth-child(3){ --i:2; --dx:-1.5%; --dy:1.5%; }
+.lr-montage img:nth-child(4){ --i:3; --dx:2%;  --dy:-1%; }
+.lr-montage img:nth-child(5){ --i:4; --dx:-2%; --dy:1%; }
+.lr-montage img:nth-child(6){ --i:5; --dx:1.5%; --dy:-1.5%; }
+.lr-montage img:nth-child(7){ --i:6; --dx:-1%; --dy:-1%; }
+@keyframes lrMont{
+  0%{ opacity:0; transform:scale(1.03) translate(0,0); }
+  4%{ opacity:1; }
+  16%{ opacity:1; }
+  21%{ opacity:0; transform:scale(1.13) translate(var(--dx),var(--dy)); }
+  100%{ opacity:0; transform:scale(1.13) translate(var(--dx),var(--dy)); }
+}
+.lr-montage.paused img{ animation-play-state:paused; }
+.lr-mont-btn{ position:absolute; right:clamp(12px,3vw,32px); bottom:clamp(12px,3vh,28px); z-index:3;
+  display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 14px; border-radius:22px;
+  border:1px solid rgba(255,255,255,.35); background:rgba(28,28,28,.6); color:#fff; cursor:pointer;
+  font-family:var(--cond); font-weight:700; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+.lr-mont-btn:hover{ border-color:var(--vu-gold); }
+.lr-mont-btn:focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+.lr-mont-btn svg{ width:14px; height:14px; }
+@media (prefers-reduced-motion:reduce){
+  .lr-montage img{ animation:none; }
+  .lr-montage img:first-child{ opacity:1; }
+  .lr-mont-btn{ display:none; }
+}
+@media print{ .lr-montage, .lr-mont-btn{ display:none !important; } }
+/* keep the headline legible over bright frames (windows, sky) */
+.lr-montage::after{ z-index:1; background:
+  linear-gradient(90deg, rgba(28,28,28,.72) 0%, rgba(28,28,28,.45) 45%, rgba(28,28,28,.15) 75%, rgba(28,28,28,0) 100%),
+  linear-gradient(180deg, rgba(28,28,28,.35) 0%, rgba(28,28,28,.55) 45%, #1C1C1C 100%); }
+@media (max-width:760px){ .lr-montage::after{ background:linear-gradient(180deg, rgba(28,28,28,.5) 0%, rgba(28,28,28,.62) 45%, #1C1C1C 100%); } }
