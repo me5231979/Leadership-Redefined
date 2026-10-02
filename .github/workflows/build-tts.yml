@@ -27,11 +27,12 @@ jobs:
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ]; then echo "::warning::ELEVENLABS_API_KEY is not set; the course uses the browser voice until it is."; exit 0; fi
           python3 scripts/build-tts.py
+          sed -i 's/audioPlaceholder: true/audioPlaceholder: false/' course-one/config.js course-two/config.js
       - name: Commit the clips
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/audio .github/tts-cache.json 2>/dev/null || true
+          git add assets/audio .github/tts-cache.json course-one/config.js course-two/config.js 2>/dev/null || true
           if git diff --cached --quiet; then echo "No changes"; else git commit -m "Record narration with ElevenLabs"; git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"; git push origin HEAD:"${GITHUB_REF_NAME}"; fi
       - name: Publish to the live site
         run: |

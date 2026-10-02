@@ -130,6 +130,12 @@ function narrPlay(k){
   a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); } });
   a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrSpeak(text); } });
   narr.audio = a;
+  /* placeholder clips (a chime, then silence) stand in until the voice is recorded: say so, and open the words */
+  if(C.audioPlaceholder) a.addEventListener('playing', function(){
+    if(narr.audio !== a) return;
+    toast('Placeholder audio. The recorded voice is coming; the words are open below.');
+    var pg = document.querySelector('.page.cur'), rd = pg && pg.querySelector('.lr-read'); if(rd) rd.open = true;
+  });
   var backTo = narrPos[k] || 0;
   if(backTo > 0){
     var seek = function(){ try{ if(narr.audio === a && (!a.duration || !isFinite(a.duration) || backTo < a.duration - 1)) a.currentTime = backTo; }catch(e){} };
@@ -469,7 +475,7 @@ var NUMS = D.NUMS || [];
    For anyone not listening, and for accessibility. Phonetic spellings in the
    scripts are swapped back to the real names. */
 (function(){
-  var FIX = [[/Deer-myer/g, 'Diermeier'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
   $$('.page').forEach(function(pg){
     var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
     FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });

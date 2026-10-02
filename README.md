@@ -70,12 +70,34 @@ Answers typed into the builders save in the learner's browser only. They fold in
 
 ## Narration
 
-Narration uses ElevenLabs voice Brian, the same voice and settings as Voyage Online (`.github/tts.json`).
+The scripts are in `course-*/narration-scripts.js`. There is one script per page (about 50 minutes across both courses), plus short clips for each stop, card, principle, and situation.
+
+Every page script follows the same adult learning arc:
+- a breadcrumb back to the last page
+- why it matters to the learner this month
+- the idea taught plainly, with an example
+- a prompt to connect it to the learner's own work
+- what to do on the page
+- a breadcrumb forward
+
+`node tools/narration-check.mjs course-one` confirms four things:
+- every page has a script and a clip
+- every page has a forward breadcrumb
+- every teaching page has an experience prompt
+- Listen plays the clip
+
+### Placeholder audio
+
+Until the voice is recorded, `assets/audio/` holds placeholder clips, made by `python3 scripts/make-placeholder-audio.py`. Each clip is a soft chime, then silence timed to the script's reading length, so the controls and timing behave as they will with the real voice.
+
+While `audioPlaceholder: true` is set in each `config.js`, playing a clip shows a notice and opens the read-along text.
+
+### Recording the real voice
 
 1. Add the `ELEVENLABS_API_KEY` repository secret.
-2. Run **Record narration with ElevenLabs** from the Actions tab. It also runs whenever a narration script changes.
+2. Run **Record narration with ElevenLabs** from the Actions tab.
 
-Clips land in `assets/audio/course-one/` and `assets/audio/course-two/`. Until they exist, the Listen button reads the same words with the browser's voice.
+The workflow records the clips in the same voice and settings as Voyage Online (Brian), replacing every placeholder under the same file name. It then sets `audioPlaceholder: false` and publishes the site.
 
 ## Before launch
 

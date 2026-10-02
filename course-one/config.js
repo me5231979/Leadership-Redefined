@@ -6,7 +6,9 @@ window.LR_CONFIG = {
   /* narration clips: ../assets/audio/course-one/<key>.mp3 (home/1 -> home-1.mp3).
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-one/',
-  mediaVersion: '20261002a',
+  mediaVersion: '20261003a',
+  /* true while assets/audio holds placeholder clips (make-placeholder-audio.py); set false after the ElevenLabs recording */
+  audioPlaceholder: true,
   /* Chancellor intros. Add a WebVTT captions file beside each video and set
      captions, for example '../assets/video/chancellor-communication.vtt'. */
   videos: {
