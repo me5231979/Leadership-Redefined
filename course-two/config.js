@@ -9,7 +9,7 @@ window.LR_CONFIG = {
   mediaVersion: '20261003a',
   /* true until the ElevenLabs narration is recorded: Listen reads each script in the browser's own voice.
      The Record narration workflow sets this to false so the recorded clips play instead. */
-  useBrowserVoice: true,
+  useBrowserVoice: false,
   /* Chancellor intros. Add a WebVTT captions file beside each video and set captions. */
   videos: {
     venture:    { src: '../assets/video/chancellor-entrepreneurial-mindset.mp4', captions: '', title: 'Chancellor Diermeier on the entrepreneurial mindset' },
