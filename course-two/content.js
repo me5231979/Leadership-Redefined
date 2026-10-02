@@ -162,7 +162,7 @@ window.LR_COURSE = {
   },
   COMMITS: [
     ['Meet your pod', 'About 60 minutes. Merge drafts, compare health checks, set owners for week four.'],
-    ['Finish a full draft', 'All seven sections in one document, about three pages, by Sunday, November 15.'],
+    ['Finish a full draft', 'All seven sections in one document, about three pages, by Friday, November 13.'],
     ['Post in Teams', 'Answer this week’s topic in your cohort channel.'],
     ['Reply to a colleague', 'Share an example, encouragement, or an idea that builds on theirs.']
   ],
