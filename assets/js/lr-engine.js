@@ -599,6 +599,29 @@ var QUIZ = D.QUIZ || [];
 SECTIONS.forEach(function(s){ if(progIs(s.k)) turnDone(s.k); });
 
 
+/* ══════════ self-check: sliders roll up into one bar per dimension, with a read ══════════
+   <div class="lr-assess" data-assess="health">; D.ASSESS[key] = { items:[{d, t}], lo, hi, reads:{dim:{high, low}} } */
+$$('[data-assess]').forEach(function(box){
+  var key = box.getAttribute('data-assess'), cfg = (D.ASSESS || {})[key]; if(!cfg) return;
+  var saved = (function(){ try{ var v = JSON.parse(get('s-' + key) || 'null'); return Array.isArray(v) ? v : null; }catch(e){ return null; } })();
+  var vals = saved || cfg.items.map(function(){ return 3; }), touched = !!saved;
+  var list = box.querySelector('.lr-sliders'), bars = box.querySelector('.lr-bars'), read = box.querySelector('.mx-read');
+  list.innerHTML = cfg.items.map(function(it, i){
+    return '<div class="lr-slide"><label for="as-' + key + i + '"><small>' + esc(it.d) + '</small><b>' + esc(it.t) + '</b></label><div class="lr-row"><input type="range" id="as-' + key + i + '" min="1" max="5" step="1" value="' + vals[i] + '" data-i="' + i + '" aria-valuetext="' + vals[i] + ' of 5" /><output for="as-' + key + i + '">' + vals[i] + '</output></div><div class="lr-ends" aria-hidden="true"><span>' + esc(cfg.lo || 'Rarely') + '</span><span>' + esc(cfg.hi || 'Almost always') + '</span></div></div>';
+  }).join('');
+  function render(){
+    var dims = {}, order = [];
+    vals.forEach(function(v, i){ var d = cfg.items[i].d; if(!(d in dims)){ dims[d] = { s:0, n:0 }; order.push(d); } dims[d].s += v; dims[d].n++; });
+    var hi = null, lo = null;
+    bars.innerHTML = order.map(function(d){ var a = dims[d].s / dims[d].n; if(hi === null || a > dims[hi].s / dims[hi].n) hi = d; if(lo === null || a < dims[lo].s / dims[lo].n) lo = d;
+      return '<div class="lr-bar"><span class="l"><b>' + esc(d) + '</b><span>' + a.toFixed(1) + ' of 5</span></span><span class="t" aria-hidden="true"><span class="f" style="width:' + ((a - 1) / 4 * 100) + '%"></span></span></div>'; }).join('');
+    read.innerHTML = touched ? '<b>Strongest: ' + esc(hi) + '.</b> ' + (cfg.reads[hi] || {}).high + '<br><b>Work on next: ' + esc(lo) + '.</b> ' + (cfg.reads[lo] || {}).low : 'Move the sliders to see your read.';
+  }
+  list.addEventListener('input', function(e){ var r = e.target.closest('input[type=range]'); if(!r) return; vals[+r.getAttribute('data-i')] = +r.value; r.setAttribute('aria-valuetext', r.value + ' of 5'); r.parentNode.querySelector('output').textContent = r.value; touched = true; render(); });
+  list.addEventListener('change', function(e){ if(!e.target.closest('input[type=range]')) return; set('s-' + key, JSON.stringify(vals)); progDone(key); });
+  render();
+});
+
 /* ══════════ print my takeaway: the drafts, commitments, and score, on white ══════════ */
 function buildPrint(){
   var sheet = $('#printSheet'); if(!sheet) return;

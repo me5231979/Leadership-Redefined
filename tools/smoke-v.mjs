@@ -20,7 +20,7 @@ for(const d of await p.$$('[data-drill]')){ await go(d); await p.waitForTimeout(
 // calls: try every option in each situation
 for(const c of await p.$$('[data-calls]')){ await go(c); await p.waitForTimeout(400); const cqs = await c.$$('.cq'); for(let i=0;i<cqs.length;i++){ const q = (await c.$$('.cq'))[i]; for(const o of await q.$$('button[data-o]')) await o.click(); const nx = await q.$('button[data-next]'); if(nx) await nx.click(); } }
 // allocator
-for(const a of await p.$$('[data-alloc]')){ await go(a); await p.waitForTimeout(300); await p.evaluate(box => { const rs = box.querySelectorAll('input[type=range]'); const v=[30,40,10,10,10]; rs.forEach((r,i)=>{ r.value = v[i] ?? 20; r.dispatchEvent(new Event('input',{bubbles:true})); r.dispatchEvent(new Event('change',{bubbles:true})); }); }, a); }
+for(const a of await p.$$('[data-alloc], [data-assess]')){ await go(a); await p.waitForTimeout(300); await p.evaluate(box => { const rs = box.querySelectorAll('input[type=range]'); const v=[30,40,10,10,10]; rs.forEach((r,i)=>{ r.value = v[i] ?? 20; r.dispatchEvent(new Event('input',{bubbles:true})); r.dispatchEvent(new Event('change',{bubbles:true})); }); }, a); }
 console.log('alloc', await p.$$eval('.mx-read', a => a.map(x => x.textContent.slice(0,50))));
 // builders
 for(const f of await p.$$('[data-build] textarea')){ await go(f); await p.waitForTimeout(300); await f.fill('Test entry for the brief'); }
@@ -37,7 +37,7 @@ console.log('progress', await p.textContent('#progCount'));
 console.log('tell', await p.$$eval('[data-tell] .v-tell-text', a => a.map(x => x.textContent.slice(0,90))));
 console.log('videos', await p.$$eval('.v-video video', a => a.map(v => v.getAttribute('src'))));
 // reload keeps answers
-await p.reload({ waitUntil:'load' }); console.log('after reload', await p.textContent('#progCount'), await p.$eval('#stIs', e => e.value));
+await p.reload({ waitUntil:'load' }); console.log('after reload', await p.textContent('#progCount'), await p.$eval('[data-build] textarea', e => e.value));
 // 320 overflow + shots
 const m = await b.newPage({ viewport:{ width:320, height:700 } }); m.on('pageerror', e => errs.push('PAGEERROR320 ' + e.message));
 await m.goto(`http://localhost:8765/${course}/`, { waitUntil:'load' });

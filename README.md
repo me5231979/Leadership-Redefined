@@ -1,77 +1,77 @@
 # Leadership Redefined: the weeks after the Symposium
 
-Two self-paced courses for the Vanderbilt Leadership Redefined cohort, plus a program home page.
+Two self-paced, narrated courses for the Vanderbilt Leadership Redefined cohort, plus a program home page.
 
-| Page | Week | Topics | Capstone work |
-|---|---|---|---|
-| `index.html` | All | Program home: four-week timeline, capstone requirements, Teams channel | None |
-| `course-one/` | Week of Nov 2 | Vision, Strategy & the Future of Vanderbilt · Communication, Storytelling & Brand · Mission and Margin | Brief sections 1 to 3 |
-| `course-two/` | Week of Nov 9 | Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams | Brief sections 4 to 7 |
+Both courses are built on the **Vanderbilt Voyage Online** engine (`me5231979/Voyage_Online`) and match its look and copy density:
 
-The capstone brief is due Friday, November 20.
+- one idea per page
+- each page has a headline, one line of why, and one activity
+- narration carries the depth
+- details sit one tap away
 
-Both courses follow the Working Smarter reference pattern (`me5231979/Course_Library`, `learn/index.html`). That covers the book-mode pager, theme scopes, brand palette and type, progress engine, and the Chancellor's charge section. Each course has this section spine:
+## Live site
 
-- welcome
-- belief
-- the Chancellor's charge
-- how it works
-- three teaching sections of four pages each
-- capstone studio
-- knowledge check (with an L1 feedback email)
-- summary
-- this week's checklist
-- sources and glossary
-- wrap-up
+GitHub Pages serves the site from the `gh-pages` branch, which mirrors the course branch.
 
-## What is in each teaching section
+| Page | Link |
+|---|---|
+| Program home | https://me5231979.github.io/Leadership-Redefined/ |
+| Course One | https://me5231979.github.io/Leadership-Redefined/course-one/ |
+| Course Two | https://me5231979.github.io/Leadership-Redefined/course-two/ |
 
-Each section has:
+To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
-- a "you are here" line
-- an eyebrow
-- a headline with one italic word
-- "The idea"
-- interactive modules
-- a **capstone ask** (an individual step, then a pod step)
-- a **Teams post prompt**, adapted from the program's "Charting the Course" prompts
+## The courses
 
-## Interactions
+**Course One** runs the week of November 2, takes about 45 minutes, and has 15 tracked activities.
 
-All are built in `src/app.js`. Each one is keyboard operable and announces its result to screen readers.
+| Lesson | What it covers |
+|---|---|
+| 1. Vision and strategy | The vision and its areas of focus, four problems the vision answers, a guess-the-number momentum page, and the value stick |
+| 2. Story and brand | Opens with the Chancellor's Communication video. Brand or reputation, spikes and systems, and a storyline builder |
+| 3. Mission and margin | Opens with the Chancellor's Mission and Margin video. Two calls, a portfolio allocator on the mission and margin matrix, and a statement builder |
+| 4. Your brief | Focus area practice, a draft of brief sections 1 to 3, a quick check, and the week's commitments |
 
-- **Flip cards and myth/fact toggles**
-- **Sorters:** classify each statement, then read the expert explanation.
-- **Explorable diagrams:** an SVG plus buttons that fill a live detail panel.
-- **Dilemmas:** choose a response, then read our take.
-- **Self-assessments:** sliders that roll up into bar charts and a written read.
-- **Portfolio allocator:** points plotted live on the mission and margin matrix.
-- **Builders:** fields that assemble into a draft the learner can copy or download as text. These produce the capstone artifacts.
-- **Checklists**
-- **Copyable pod meeting agendas**
+**Course Two** runs the week of November 9, takes about 50 minutes, and has 17 tracked activities.
 
-## Sources
+| Lesson | What it covers |
+|---|---|
+| 1. Entrepreneurial mindset | Opens with the Chancellor's video. Vice Chancellor Lutz's fundraising turnaround: the diagnosis, the numbers, the change moves, the four kinds of problem, and a reframe and pilot builder |
+| 2. Reputational stewardship | Opens with the Chancellor's video. The four drivers of trust, three calls under pressure, and a reputational statement builder |
+| 3. High-performing teams | Opens with the Chancellor's video. Candice Storey Lee fact or fiction, her six principles, three learning-zone calls, and a pod health check |
+| 4. Your brief | Strong metrics, a draft of brief sections 4 to 7, a quick check, and the week's commitments |
 
-- Program content comes from the Leadership Redefined module decks and the LMS export (Modules 1 to 6).
-- **Module 5 (Reputational Stewardship):** this deck has no speaker content. The section draws on Modules 1 and 2 and on the Chancellor's book *Reputation Rules*.
-- **Module 6 (High-Performing Teams):** this deck has no Candice Storey Lee content. The section is built from her public interviews and statements, which are linked in the section and in Resources.
-- **Verify the Lee quotations before launch.** They were gathered from search results; the linked pages themselves were not fetched to confirm exact wording.
+Answers typed into the builders save in the learner's browser only. They fold into:
 
-## Build
+- the brief drafts
+- a Teams post starter
+- a printable takeaway
 
-Edit the files in `course-*/parts/*.html` and `course-*/course.json`, or the shared `src/` files. Then run:
+## Files
 
-```
-python3 tools/build.py
-```
+- `course-*/index.html`: the pages.
+- `course-*/content.js`: everything that drives the activities (drills, situations, tiles, builders, quiz, commitments).
+- `course-*/narration-scripts.js`: the words for every narration clip.
+- `course-*/config.js`: the contact address, video files and caption slots, and the narration folder.
+- `assets/js/lr-engine.js`: the shared engine. It is the Voyage `app.js` made generic, plus three additions: builders, the allocator, and the self-check.
+- `assets/js/pager.js`: book mode.
+- `assets/css/`: the Voyage styles (`course.css`, `foundation.css`, `voyage.css`, `nav.css`) plus `lr.css`.
+- `assets/video/`: the Chancellor's five intros: Communication, Mission and Margin, Entrepreneurial Mindset, Reputational Stewardship, High-Performing Teams.
 
-The build writes `index.html`, `course-one/index.html` and `course-two/index.html`. Each is a single self-contained file that loads fonts and images from `assets/`. The build also fails loudly on em or en dashes (it prints `dashes=N`).
+## Narration
 
-### Privacy contract
+Narration uses ElevenLabs voice Brian, the same voice and settings as Voyage Online (`.github/tts.json`).
 
-- Progress is per-section booleans plus the last-open page, stored in `localStorage` under `lr-c1-` / `lr-c2-`.
-- Typed text is never stored, and nothing is sent anywhere.
-- Copy and download happen on the learner's own device.
+1. Add the `ELEVENLABS_API_KEY` repository secret.
+2. Run **Record narration with ElevenLabs** from the Actions tab. It also runs whenever a narration script changes.
+
+Clips land in `assets/audio/course-one/` and `assets/audio/course-two/`. Until they exist, the Listen button reads the same words with the browser's voice.
+
+## Before launch
+
+- **Captions.** Add a WebVTT captions file for each video in `assets/video/`, and set `captions` in each `config.js`. Captions are required for WCAG 2.2 AA.
+- **Video for Vision and Strategy.** That section has no Chancellor intro video yet.
+- **Candice Storey Lee quotes.** Verify them against their linked sources. They were gathered from search results; the source pages themselves were not opened.
 
 ## Testing
 
@@ -81,37 +81,12 @@ Serve the repo root first:
 python3 -m http.server 8765
 ```
 
-### Smoke test
+Then run the two checks:
 
-```
-node tools/smoke.mjs course-one [shotsDir]
-```
+- `node tools/smoke-v.mjs course-one [shotsDir]` drives every activity, then checks progress, persistence, overflow at 320px, and the console.
+- `node tools/a11y-audit.mjs path/to/axe.min.js course-one/ course-two/ index.html` runs axe-core with the WCAG 2.x A/AA tags at 1440px and 320px.
 
-It checks that:
+**Last run, 2026-10-02:**
 
-- every page and every interaction round-trips
-- downloads fire
-- the quiz scores correctly
-- a cold deep link to `#p/capstone/2` routes to the right page
-- nothing overflows at 320px
-- the console is clean
-
-### Accessibility audit
-
-```
-node tools/a11y-audit.mjs path/to/axe.min.js course-one/ course-two/ index.html
-```
-
-The audit runs axe-core with the WCAG 2.0, 2.1 and 2.2 A/AA tags. It checks every book page at 1440 and 320 wide, with flip cards, sorters, dilemmas, explore panels and checklists in their answered states.
-
-## Accessibility run record
-
-**2026-10-02:** passed.
-
-- axe: zero serious or critical violations on every page of both courses and the home page, at 1440px and 320px.
-- Smoke: both courses passed with no console errors and no horizontal overflow at 320px.
-- Contrast fixes made in this build:
-  - Oak `#946E24` falls to 4.19:1 on the cream card fill, so small labels on cards in light sections are black.
-  - Cream sections use black accents.
-  - The off-brand `#8C6822`, `#7A5C1E` and `#A94438` from the reference source are mapped to the approved palette.
-- Book pages are `tabindex="0"` so scrollable pages are keyboard reachable.
+- Smoke test: every activity completes in both courses (15/15 and 17/17), answers persist after reload, nothing overflows at 320px, and the console is clean.
+- axe: zero serious or critical violations on both courses and the home page.
