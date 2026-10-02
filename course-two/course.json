@@ -1,0 +1,156 @@
+{
+ "title": "Course Two: Venture, Reputation & Teams",
+ "prefix": "lr-c2-",
+ "contact": "matthew.estes@vanderbilt.edu",
+ "description": "Leadership Redefined, Course Two (week of November 9): Entrepreneurial Mindset; Reputational Stewardship; High-Performing Teams. Self-paced, with capstone work for your pod.",
+ "crosslink": "Last week: <a href=\"../course-one/\">Course One</a>. Program home: <a href=\"../\">Leadership Redefined</a>.",
+ "nav": [
+  [
+   "venture",
+   "Mindset"
+  ],
+  [
+   "reputation",
+   "Reputation"
+  ],
+  [
+   "teams",
+   "Teams"
+  ],
+  [
+   "quiz",
+   "Check"
+  ],
+  [
+   "resources",
+   "Resources"
+  ]
+ ],
+ "sections": [
+  {
+   "k": "venture",
+   "no": "01",
+   "name": "Entrepreneurial mindset",
+   "how": "Finish the sorter, or mark it done"
+  },
+  {
+   "k": "reputation",
+   "no": "02",
+   "name": "Reputational stewardship",
+   "how": "Plot every scenario, or mark it done"
+  },
+  {
+   "k": "teams",
+   "no": "03",
+   "name": "High-performing teams",
+   "how": "Run the team check, or mark it done"
+  },
+  {
+   "k": "capstone",
+   "no": "04",
+   "name": "Capstone studio",
+   "how": "Download your draft, or mark it done"
+  },
+  {
+   "k": "quiz",
+   "no": "05",
+   "name": "Knowledge check",
+   "how": "Check your answers, or mark it done"
+  },
+  {
+   "k": "nextstep",
+   "no": "06",
+   "name": "This week",
+   "how": "Check off your week, or mark it done"
+  },
+  {
+   "k": "resources",
+   "no": "07",
+   "name": "Sources and glossary",
+   "how": "Mark it done once browsed"
+  }
+ ],
+ "plan": [
+  {
+   "sel": "section.hero",
+   "key": "home",
+   "label": "Welcome",
+   "mode": "whole"
+  },
+  {
+   "sel": "#start",
+   "key": "belief",
+   "label": "The belief",
+   "mode": "whole"
+  },
+  {
+   "sel": "#mission",
+   "key": "mission",
+   "label": "The Chancellor’s charge",
+   "mode": "whole"
+  },
+  {
+   "sel": "section.howworks",
+   "key": "how",
+   "label": "How this week works",
+   "mode": "whole"
+  },
+  {
+   "sel": "#venture",
+   "key": "venture",
+   "label": "Entrepreneurial mindset",
+   "mode": "split"
+  },
+  {
+   "sel": "#reputation",
+   "key": "reputation",
+   "label": "Reputation",
+   "mode": "split"
+  },
+  {
+   "sel": "#teams",
+   "key": "teams",
+   "label": "High-performing teams",
+   "mode": "split"
+  },
+  {
+   "sel": "#capstone",
+   "key": "capstone",
+   "label": "Capstone studio",
+   "mode": "split"
+  },
+  {
+   "sel": "#quiz",
+   "key": "quiz",
+   "label": "Knowledge check",
+   "mode": "split"
+  },
+  {
+   "sel": "#summary",
+   "key": "summary",
+   "label": "Summary",
+   "mode": "whole"
+  },
+  {
+   "sel": "#nextstep",
+   "key": "nextstep",
+   "label": "This week",
+   "mode": "whole"
+  },
+  {
+   "sel": "#resources",
+   "key": "resources",
+   "label": "Resources",
+   "mode": "whole"
+  },
+  {
+   "sel": "section.cta",
+   "key": "end",
+   "label": "Wrap-up",
+   "mode": "whole",
+   "extras": [
+    "footer"
+   ]
+  }
+ ]
+}
