@@ -10,12 +10,15 @@ window.LR_COURSE = {
     { sel:'#problems',    key:'problems',   label:'Lesson 1: Four problems',       mode:'whole' },
     { sel:'#momentum',    key:'numbers',    label:'Lesson 1: Momentum',            mode:'whole' },
     { sel:'#valuestick',  key:'valuestick', label:'Lesson 1: The value stick',     mode:'whole' },
+    { sel:'#recap1',      key:'recap1',     label:'Lesson 1: Wrap-up',             mode:'whole' },
     { sel:'#brand',       key:'brand',      label:'Lesson 2: Brand and reputation', mode:'whole' },
     { sel:'#fighter',     key:'fighter',    label:'Lesson 2: Spikes and systems',  mode:'whole' },
     { sel:'#story',       key:'story',      label:'Lesson 2: Your storyline',      mode:'whole' },
+    { sel:'#recap2',      key:'recap2',     label:'Lesson 2: Wrap-up',             mode:'whole' },
     { sel:'#margin',      key:'margin',     label:'Lesson 3: Mission and margin',  mode:'whole' },
     { sel:'#portfolio',   key:'portfolio',  label:'Lesson 3: The portfolio',       mode:'whole' },
     { sel:'#statement',   key:'statement',  label:'Lesson 3: Your statement',      mode:'whole' },
+    { sel:'#recap3',      key:'recap3',     label:'Lesson 3: Wrap-up',             mode:'whole' },
     { sel:'#focus',       key:'focus',      label:'Lesson 4: Your focus area',     mode:'whole' },
     { sel:'#draft',       key:'draft',      label:'Lesson 4: Draft the brief',     mode:'whole' },
     { sel:'#quiz',        key:'quiz',       label:'Lesson 4: Quick check',         mode:'whole' },
@@ -36,7 +39,7 @@ window.LR_COURSE = {
     { k:'statement',  no:'11', name:'Your statement',        how:'Fill in three of four lines' },
     { k:'focus',      no:'12', name:'Your focus area',       how:'Sort five challenges' },
     { k:'draft',      no:'13', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz',       no:'14', name:'Quick check',           how:'Score 4 of 5' },
+    { k:'quiz',       no:'14', name:'Apply it',              how:'Score 6 of 8' },
     { k:'nextstep',   no:'15', name:'This week',             how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
@@ -109,6 +112,9 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     story: { title:'My storyline', fields:['person', 'is', 'could', 'ask', 'aud'], need:4, tpl:function(v){
       return 'OPENING: ' + (v.person || '[a real person and a real moment]') + '\nWHAT IS: ' + (v.is || '[the frustrating present]') + '\nWHAT COULD BE: ' + (v.could || '[the better future your idea creates]') + '\nTHE ASK: ' + (v.ask || '[what you need your audience to say yes to]') + '\nAUDIENCES: ' + (v.aud || '[who must hear it, and what each one cares about]'); } },
     statement: { title:'My mission and margin statement', fields:['mission', 'cost', 'ret', 'quad'], need:3, tpl:function(v){
@@ -132,13 +138,17 @@ window.LR_COURSE = {
     return '';
   },
   QUIZ: [
-    { seg:'Vision', q:'What is Vanderbilt’s institutional vision?', opts:['Be the top-ranked university in the South', 'Define the great university of the 21st century, and be it', 'Grow enrollment while holding costs flat', 'Lead every peer in research funding'], a:1, x:'Define it, and be it, at uncommon speed, agility, and scale.' },
-    { seg:'Strategy', q:'Using the value stick, which work counts as strategic?', opts:['Work that keeps the most people busy', 'Work that raises willingness to pay or lowers willingness to sell', 'Work senior leaders mention most', 'Work with the biggest budget'], a:1, x:'If no stakeholder’s choice changes, it is activity, not strategy.' },
-    { seg:'Brand', q:'What is the difference between brand and reputation?', opts:['Brand is what you say; reputation is what others say', 'There is none', 'Brand is the logo; reputation is the ranking', 'Reputation belongs to the communications office'], a:0, x:'Separate but related. The goal is to close the gap.' },
-    { seg:'Mission and margin', q:'Mission is purpose. What is margin?', opts:['Profit for investors', 'Whatever is left at year end', 'Capacity: the financial strength to pursue the mission', 'The finance office’s job alone'], a:2, x:'And building financial capacity is everybody’s job.' },
-    { seg:'Mission and margin', q:'High mission impact, but it costs more than it brings in. On the matrix it is a…', opts:['Stop Sign', 'Money Tree', 'Star', 'Heart'], a:3, x:'Keep it, contain its cost, and name what pays for it.' }
+    { seg:'Strategy', q:'Your team has one month. Option A cuts student wait times for advising in half. Option B launches a quarterly newsletter no one has asked for. Which is strategic?', opts:['A: it changes students\u2019 choices, so it raises willingness to pay', 'B: more communication is always strategic', 'Both equally', 'Neither; strategy is set by senior leaders'], a:0, x:'Ask whose choice changes. Faster help makes Vanderbilt the better choice. The newsletter moves no one.' },
+    { seg:'Strategy', q:'Your pod proposes a shared practice for hosting respectful debate events. Which focus area fits best?', opts:['Exceptional Core Operations', 'Bold Strategic Initiatives', 'Values Leadership', 'It does not fit any'], a:2, x:'It models what an essential research university stands for: open inquiry and civil discourse.' },
+    { seg:'Strategy', q:'After a burst of national attention, applications and gifts both rose. Which idea explains why?', opts:['The value stick', 'The reputation feedback loop', 'The mission and margin matrix', 'Duarte\u2019s story structure'], a:1, x:'Reputation attracts resources, like students and funding, and the results build more reputation.' },
+    { seg:'Brand', q:'A new campaign ad praises fast, personal service, but students say offices are slow to respond. What is the real problem?', opts:['The ad needs a bigger budget', 'A gap between brand and reputation; fix the experience, then tell true stories', 'Students are not the audience', 'Reputation cannot be changed'], a:1, x:'Brand is what you say; reputation is what others say. When the experience misses the claim, the gap grows.' },
+    { seg:'Brand', q:'Your unit just had a big win in the news. How do you make the attention last?', opts:['Wait for the next big win', 'Run one large ad', 'Keep a drumbeat of stories and carry them to priority people yourself', 'Let Communications handle it'], a:2, x:'A spike without a system is noise. The ground game turns attention into trust.' },
+    { seg:'Story', q:'Which opening is strongest for your pod\u2019s capstone pitch?', opts:['A table of statistics', 'One real person in one real moment, then what could be', 'The history of the department', 'A list of everyone on the pod'], a:1, x:'Open with what is, through one person, then contrast it with what could be, and end with one ask.' },
+    { seg:'Margin', q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. What is the strongest move?', opts:['Close it', 'Protect it and change nothing', 'Keep the outcome, redesign the delivery, and name what pays for it', 'Move it to another unit'], a:2, x:'It is a Heart. Keep it on purpose, contain its cost, and name the Star or Money Tree that funds it.' },
+    { seg:'Margin', q:'Which mission and margin statement would a judge find strongest?', opts:['It will be great for everyone.', 'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and sits in the Star quadrant.', 'It needs new funding, details to come.', 'It is important to the mission.'], a:1, x:'Specific mission benefit, cost and source, return, and a place on the matrix.' }
   ],
-  QUIZ_POS: [1, 3, 0, 2, 0],
+  QUIZ_POS: [1, 3, 0, 2, 1, 0, 3, 2],
+  QUIZ_PASS: 6,
   PRINT_TITLE: 'Course One, my <em>takeaway</em>.',
   EXIT_TOAST: 'You can close this tab. See you in Course Two.'
 };

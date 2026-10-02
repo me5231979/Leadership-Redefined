@@ -12,13 +12,16 @@ window.LR_COURSE = {
     { sel:'#moves',        key:'moves',      label:'Lesson 1: The change moves',     mode:'whole' },
     { sel:'#kind',         key:'kind',       label:'Lesson 1: Know your problem',    mode:'whole' },
     { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
+    { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
     { sel:'#reputation',   key:'trust',      label:'Lesson 2: Reputational stewardship', mode:'whole' },
     { sel:'#pressure',     key:'pressure',   label:'Lesson 2: Calls under pressure', mode:'whole' },
     { sel:'#repstatement', key:'repstatement', label:'Lesson 2: Your statement',     mode:'whole' },
+    { sel:'#recap2',       key:'recap2',     label:'Lesson 2: Wrap-up',              mode:'whole' },
     { sel:'#teams',        key:'lee',        label:'Lesson 3: High-performing teams', mode:'whole' },
     { sel:'#principles',   key:'principles', label:'Lesson 3: Six principles',       mode:'whole' },
     { sel:'#zone',         key:'teamcalls',  label:'Lesson 3: The learning zone',    mode:'whole' },
     { sel:'#health',       key:'health',     label:'Lesson 3: Your pod',             mode:'whole' },
+    { sel:'#recap3',       key:'recap3',     label:'Lesson 3: Wrap-up',              mode:'whole' },
     { sel:'#metrics',      key:'metrics',    label:'Lesson 4: Strong metrics',       mode:'whole' },
     { sel:'#draft',        key:'draft',      label:'Lesson 4: Draft the brief',      mode:'whole' },
     { sel:'#quiz',         key:'quiz',       label:'Lesson 4: Quick check',          mode:'whole' },
@@ -41,7 +44,7 @@ window.LR_COURSE = {
     { k:'health',       no:'13', name:'Your pod',             how:'Rate your pod' },
     { k:'metrics',      no:'14', name:'Strong metrics',       how:'Sort six metrics' },
     { k:'draft',        no:'15', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz',         no:'16', name:'Quick check',          how:'Score 4 of 5' },
+    { k:'quiz',         no:'16', name:'Apply it',             how:'Score 6 of 8' },
     { k:'nextstep',     no:'17', name:'This week',            how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
@@ -143,6 +146,9 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     reframe: { title:'My reframe and pilot', fields:['assume', 'whatif', 'borrow', 'pilot', 'proof'], need:4, tpl:function(v){
       return 'THE USUAL ASSUMPTION: ' + (v.assume || '[what everyone believes about this problem]') + '\nTHE REFRAME: What if ' + (v.whatif || '[...]') + '\nBORROWED FROM OUTSIDE HIGHER ED: ' + (v.borrow || '[an idea from another industry]') + '\nTHE PILOT: ' + (v.pilot || '[who, where, how long, roughly what it costs]') + '\nWE SCALE IF: ' + (v.proof || '[the result that proves it]'); } },
     repstatement: { title:'My reputational statement', fields:['stmt', 'up', 'risk', 'mit'], need:3, tpl:function(v){
@@ -169,13 +175,17 @@ window.LR_COURSE = {
     return '';
   },
   QUIZ: [
-    { seg:'Mindset', q:'Your pod’s challenge has many causes and no known answer. What is the right move?', opts:['Apply the best practice', 'Hire an expert to find the answer', 'Run a small pilot, learn, and scale what works', 'Act immediately to restore order'], a:2, x:'Complex problems call for probe, sense, respond. Pilot, learn, scale.' },
-    { seg:'Mindset', q:'What did Lutz mean by driving three agendas at once?', opts:['Budget, staff, and events', 'People, process, and technology together', 'Donors, alumni, and parents', 'Speed, agility, and scale'], a:1, x:'A new tool alone fixes nothing. Your brief asks for the same.' },
-    { seg:'Reputation', q:'A mistake from your office is spreading online. What protects trust best?', opts:['Fix it quietly', 'Explain it was a system error', 'Say nothing until every fact is final', 'Correct it fast, apologize, involve Communications, confirm the fix'], a:3, x:'Transparency, expertise, commitment, and empathy together.' },
-    { seg:'Teams', q:'High standards with low psychological safety put a team in which zone?', opts:['Anxiety', 'Learning', 'Comfort', 'Apathy'], a:0, x:'People work hard and hide problems. Add safety to reach the learning zone.' },
-    { seg:'Your brief', q:'Which is a strong success metric?', opts:['Launch the new website', 'Increase awareness', 'Median days to system access drops from 21 to 5 by spring', 'Emails sent'], a:2, x:'Baseline, target, date, and an outcome people feel.' }
+    { seg:'Mindset', q:'Your pod wants staff to adopt a new shared service. Behavior is involved, there are many causes, and no one knows the answer. What is the best first step?', opts:['Commission a full analysis before acting', 'Run a small pilot, measure, and scale what works', 'Copy what the largest peer does', 'Roll it out everywhere at once'], a:1, x:'That is a complex problem. Probe, sense, respond: a pilot teaches what analysis cannot.' },
+    { seg:'Mindset', q:'You inherit an underperforming team. Based on Lutz\u2019s turnaround, what comes first?', opts:['A new logo for the team', 'Replacing every system', 'Listen to key people and benchmark honestly against the best', 'Wait a year to see what happens'], a:2, x:'Diagnosis before solutions: listen carefully and make a clear-eyed assessment.' },
+    { seg:'Mindset', q:'A plan buys new software and changes nothing else. What is missing?', opts:['Nothing; tools fix problems', 'Changes to people and process, driven at the same time', 'A bigger software budget', 'A press release'], a:1, x:'Drive people, process, and technology agendas together. A tool alone fixes nothing.' },
+    { seg:'Reputation', q:'A data error from your office reached students this morning. Which response protects trust best?', opts:['Wait until every fact is confirmed', 'Correct it fast, say what you know and do not, name the owner of the fix, and bring in Communications', 'Explain that it was a vendor\u2019s fault', 'Fix it quietly'], a:1, x:'Transparency, expertise, commitment, and empathy, with one university voice.' },
+    { seg:'Reputation', q:'Which statement best describes reputation as infrastructure?', opts:['A campaign the communications office runs each year', 'Something only rankings measure', 'A system built every day by operations and decisions, which turns visibility into resources', 'A crisis plan'], a:2, x:'A system, a source of options, a platform for momentum, and a converter of visibility into resources.' },
+    { seg:'Teams', q:'Your team works hard, but problems surface only when it is too late. What zone is it in, and what do you do?', opts:['Comfort zone; raise the standards', 'Apathy zone; replace people', 'Learning zone; change nothing', 'Anxiety zone; build safety by framing work as learning and thanking people who raise problems'], a:3, x:'High standards with low safety. Leaders build safety on purpose, especially in how they react to bad news.' },
+    { seg:'Teams', q:'A top performer publicly disrespects a partner office. What would Candice Storey Lee\u2019s approach look like?', opts:['Let it go; results matter most', 'Name it unacceptable, expect a repair, and keep supporting the person', 'Remove them from every project', 'Say nothing in public'], a:1, x:'Growth and accountability: a clear standard and continued support.' },
+    { seg:'Your brief', q:'Which success metric is strongest?', opts:['Launch the new process', 'Increase awareness', 'Median days to full system access drops from 21 to 2 in the pilot by March', 'Send weekly updates'], a:2, x:'A baseline, a target, a date, and an outcome people feel.' }
   ],
-  QUIZ_POS: [2, 1, 3, 0, 2],
+  QUIZ_POS: [1, 2, 0, 3, 1, 3, 0, 2],
+  QUIZ_PASS: 6,
   PRINT_TITLE: 'Course Two, my <em>takeaway</em>.',
   EXIT_TOAST: 'You can close this tab. Finish the brief by Friday, November 20.'
 };

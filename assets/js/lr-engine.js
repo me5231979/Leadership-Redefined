@@ -458,6 +458,23 @@ var NUMS = D.NUMS || [];
   paint();
 })();
 
+/* ══════════ read along: every page's narration, as text, one tap away ══════════
+   For anyone not listening, and for accessibility. Phonetic spellings in the
+   scripts are swapped back to the real names. */
+(function(){
+  var FIX = [[/Deer-myer/g, 'Diermeier'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  $$('.page').forEach(function(pg){
+    var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
+    FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });
+    var host = pg.querySelector('.v-copy') || pg.querySelector('.v-numhead') || pg.querySelector('.v-cities-head') || pg.querySelector('.wrap');
+    if(!host || pg.querySelector('.v-hero')) return;
+    var d = document.createElement('details'); d.className = 'lr-read';
+    d.innerHTML = '<summary>Read along: the full explanation</summary><p></p>';
+    d.querySelector('p').textContent = t;
+    host.appendChild(d);
+  });
+})();
+
 /* ══════════ tap cards: each card opens in place; done when every card is open ══════════
    <div class="v-focus" data-taps="key" data-narr-base="vision/f"> buttons with <b> and <span> */
 $$('[data-taps]').forEach(function(list){
@@ -489,7 +506,7 @@ $$('[data-build]').forEach(function(box){
     if(copy) copy.setAttribute('data-copytext', txt);
     var n = filled(), need = cfg.need || fields.length;
     if(status) status.textContent = n + ' of ' + fields.length + ' filled. Saved in this browser only.' + (n >= need ? ' Activity complete.' : '');
-    if(n >= need) progDone(key);
+    if(n >= need){ progDone(key); turnDone(key); }
     tellPaint();
   }
   fields.forEach(function(el){

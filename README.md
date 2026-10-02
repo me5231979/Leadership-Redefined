@@ -23,7 +23,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 ## The courses
 
-**Course One** runs the week of November 2, takes about 45 minutes, and has 15 tracked activities.
+**Course One** runs the week of November 2, takes about 60 minutes, and has 15 tracked activities.
 
 | Lesson | What it covers |
 |---|---|
@@ -32,7 +32,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 | 3. Mission and margin | Opens with the Chancellor's Mission and Margin video. Two calls, a portfolio allocator on the mission and margin matrix, and a statement builder |
 | 4. Your brief | Focus area practice, a draft of brief sections 1 to 3, a quick check, and the week's commitments |
 
-**Course Two** runs the week of November 9, takes about 50 minutes, and has 17 tracked activities.
+**Course Two** runs the week of November 9, takes about 65 minutes, and has 17 tracked activities.
 
 | Lesson | What it covers |
 |---|---|
@@ -40,6 +40,16 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 | 2. Reputational stewardship | Opens with the Chancellor's video. The four drivers of trust, three calls under pressure, and a reputational statement builder |
 | 3. High-performing teams | Opens with the Chancellor's video. Candice Storey Lee fact or fiction, her six principles, three learning-zone calls, and a pod health check |
 | 4. Your brief | Strong metrics, a draft of brief sections 4 to 7, a quick check, and the week's commitments |
+
+### The teaching layer
+
+Added after an instructional audit, which found that concepts were named on screen but taught only in the narration.
+
+- **"The idea" cards on every concept page.** Each card gives a definition, how the concept works, and an example. Learners see them before they practice.
+- **Worked examples for every builder** ("See a strong example").
+- **A "Read along" transcript of the narration on every page,** so the depth is on screen for anyone not listening.
+- **A wrap-up page after Lessons 1, 2, and 3.** Each shows three key ideas, then asks learners to explain one back in their own words.
+- **An eight-situation knowledge check.** It tests whether learners can apply each idea, not whether they remember a definition. Passing is six of eight.
 
 Answers typed into the builders save in the learner's browser only. They fold into:
 
