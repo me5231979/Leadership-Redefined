@@ -15,7 +15,7 @@ for (const path of process.argv.slice(3)) for (const w of [1440, 320]) {
     await p.evaluate(i => window.chartPager && window.chartPager.go(i), i);
     await p.waitForTimeout(450);
     // open every flip / panel on this page so hidden states get checked too
-    await p.evaluate(() => document.querySelectorAll('.page.cur .flip-btn, .page.cur .myth > button, .page.cur .sq-opts button:first-child, .page.cur .ex-btns button:last-child, .page.cur .d-choices button:first-child, .page.cur .checklist input').forEach(x => x.click()));
+    await p.evaluate(() => document.querySelectorAll('.page.cur .flip-btn, .page.cur .myth > button, .page.cur .sq-opts button:first-child, .page.cur .ex-btns button:last-child, .page.cur .d-choices button:first-child, .page.cur .checklist input, .page.cur [data-taps] button, .page.cur .dq.cur button[data-o]').forEach(x => x.click()));
     const r = await p.evaluate(async () => {
       const ctx = document.querySelector('.page.cur') || document;
       const res = await axe.run(ctx, { runOnly:{ type:'tag', values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'] } });

@@ -9,7 +9,7 @@ import json, re, pathlib, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / 'src'
-COURSES = ['course-one', 'course-two']
+COURSES = ['course-two']  # course-one now uses the Voyage engine (course-one/index.html is hand-authored)
 
 
 def brand_css():

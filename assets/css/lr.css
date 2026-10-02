@@ -1,0 +1,69 @@
+/* ══════════ LEADERSHIP REDEFINED · components added to the Voyage system ══════════
+   Reads the same theme variables (--tx, --bd, --eyebrow, --card2) as voyage.css. */
+
+/* four lessons per course, so the rail fills in quarters */
+.lr4 .v-rail::before{ background:linear-gradient(90deg, var(--eyebrow) calc(var(--l,0) * 25%), rgba(255,255,255,.14) 0); }
+
+/* builders: fields on the left of the act column, the live draft under them */
+.lr-build{ display:grid; gap:12px; }
+.lr-build .field{ margin-bottom:0; }
+.lr-build textarea{ min-height:76px; }
+.lr-draft{ border:1px solid var(--bdg); border-radius:var(--r); background:var(--card2); padding:16px 18px; }
+.lr-draft .v-label{ display:block; margin-bottom:8px; }
+.lr-out{ white-space:pre-wrap; color:var(--tx); font-size:.95rem; line-height:1.6; max-width:none; }
+.lr-draft .btn{ margin-top:12px; }
+.lr-bstat{ font-size:.85rem; color:var(--tx3); margin-top:4px; }
+
+/* allocator */
+.lr-alloc{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(18px,3vw,40px); align-items:start; }
+.lr-sliders{ display:grid; gap:8px; }
+.lr-slide{ border:1px solid var(--bd); border-radius:var(--r); background:var(--card); padding:10px 14px; }
+.lr-slide label{ display:flex; flex-direction:column; gap:2px; color:var(--tx); }
+.lr-slide label b{ font-weight:600; font-size:.95rem; }
+.lr-slide label small{ font-family:var(--cond); font-weight:700; font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:var(--eyebrow); }
+.lr-row{ display:flex; align-items:center; gap:12px; }
+.lr-row input[type=range]{ flex:1; accent-color:var(--vu-gold); min-height:32px; }
+.lr-row output{ font-family:var(--cond); font-weight:700; min-width:2.2em; text-align:right; color:var(--tx); }
+.lr-total{ font-family:var(--cond); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.8rem; color:var(--tx); margin:0 0 10px; }
+.lr-mx svg{ width:100%; height:auto; display:block; max-width:420px; }
+.lr-mx .q{ fill:var(--card); stroke:var(--bd); }
+.lr-mx .t{ fill:var(--tx); font-family:var(--cond); font-weight:700; letter-spacing:.04em; }
+.lr-mx .s{ fill:var(--tx2); font-family:var(--sans); }
+.lr-mx .mx-dot{ fill:var(--vu-gold); stroke:var(--vu-black); stroke-width:3; transition:cx .3s ease, cy .3s ease; }
+.mx-read{ margin-top:12px; color:var(--tx2); font-size:.95rem; line-height:1.5; }
+.mx-read b{ color:var(--tx); }
+
+/* small inline figure on the idea side of a stage */
+.lr-fig{ margin-top:18px; max-width:440px; }
+.lr-fig svg{ width:100%; height:auto; display:block; }
+.lr-fig .t{ fill:var(--tx); font-family:var(--cond); font-weight:700; letter-spacing:.04em; }
+.lr-fig .s{ fill:var(--tx2); font-family:var(--sans); }
+.lr-fig .g{ stroke:var(--vu-gold); fill:none; }
+.lr-fig .gf{ fill:var(--vu-gold); }
+.lr-fig .d{ stroke:rgba(255,255,255,.4); fill:none; }
+.lr-fig .k{ fill:var(--vu-black); font-family:var(--cond); font-weight:700; }
+
+/* the brief at a glance */
+.lr-brief{ list-style:none; display:grid; gap:6px; counter-reset:b; margin-top:14px; }
+.lr-brief li{ counter-increment:b; display:grid; grid-template-columns:34px 1fr auto; gap:10px; align-items:center; border:1px solid var(--bd); border-radius:var(--r); background:var(--card); padding:9px 12px; color:var(--tx); }
+.lr-brief li::before{ content:counter(b); font-family:var(--serif); font-size:1.4rem; color:var(--eyebrow); text-align:center; }
+.lr-brief li small{ font-family:var(--cond); font-weight:700; font-size:.66rem; letter-spacing:.07em; text-transform:uppercase; color:var(--tx3); }
+.lr-brief li.now{ border-color:var(--eyebrow); background:var(--card2); }
+.lr-brief li.now small{ color:var(--eyebrow); }
+
+/* week timeline on the welcome page */
+.lr-weeks{ list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:16px; }
+.lr-weeks li{ border-top:3px solid rgba(255,255,255,.18); padding-top:10px; color:var(--tx2); font-size:.88rem; }
+.lr-weeks li b{ display:block; font-family:var(--cond); font-weight:700; letter-spacing:.07em; text-transform:uppercase; font-size:.72rem; color:var(--tx); margin-bottom:2px; }
+.lr-weeks li.now{ border-top-color:var(--vu-gold); }
+.lr-weeks li.now b{ color:var(--eyebrow); }
+
+@media (max-width:1000px){ .lr-alloc{ grid-template-columns:minmax(0,1fr); } }
+@media (max-width:640px){ .lr-weeks{ grid-template-columns:1fr 1fr; } }
+@media (prefers-reduced-motion:reduce){ .lr-mx .mx-dot{ transition:none; } }
+
+/* a short quote on the idea side */
+.v-quote{ margin-top:22px; border-left:3px solid var(--vu-gold); padding:4px 0 4px 18px; max-width:40ch; }
+.v-quote p{ font-family:var(--serif-i); font-style:italic; font-size:clamp(1.1rem,.6vw + 1rem,1.35rem); line-height:1.4; color:var(--tx); }
+.v-quote figcaption{ margin-top:8px; font-size:.82rem; color:var(--tx3); }
+.v-act .v-print{ margin-top:12px; margin-right:8px; }
