@@ -3,6 +3,7 @@ name: Build SCORM package
 # scripts/build-scorm.mjs and attaches it to the run as a download. The download
 # is the package itself: upload it to the LMS as is. Runs after narration is
 # re-recorded, on pushes that change the courses, or by hand from the Actions tab.
+# It also replaces the "scorm-latest" release, whose single zip is the package.
 on:
   push:
     branches: ['claude/eloquent-mendel-0qq5xp', 'main']
@@ -12,7 +13,7 @@ on:
     types: [completed]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: scorm-${{ github.ref }}
   cancel-in-progress: true
@@ -32,3 +33,12 @@ jobs:
           name: leadership-redefined-oracle-scorm2004
           path: dist/scorm2004/
           retention-days: 90
+      - name: Publish the package as one download (release scorm-latest)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          zip="dist/leadership-redefined-oracle-scorm2004.zip"
+          gh release delete scorm-latest --yes --cleanup-tag || true
+          gh release create scorm-latest "$zip" --target "$(git rev-parse HEAD)" \
+            --title "Leadership Redefined SCORM package (Oracle Learning)" \
+            --notes "One SCORM 2004 3rd Edition package with the landing page, Course One, and Course Two, full-quality media. Download the zip and upload it to Oracle Learning as is; do not unzip it. Built from $(git rev-parse --short HEAD)."
