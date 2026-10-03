@@ -759,6 +759,8 @@ function buildPrint(){
     if(acts.length) html += '<table class="ps-table"><tbody>' + acts.map(function(s){ var r = get('r-' + s.k); var bd = D.BUILDS && D.BUILDS[s.k]; if(!r && bd) r = progIs(s.k) ? 'Written; see My work below' : ''; if(!r && s.k === 'quiz' && score !== null) r = score + ' of ' + QUIZ.length + ' correct'; if(!r && s.k === 'nextstep') r = commits.filter(Boolean).length + ' of ' + COMMITS.length + ' committed';
       return '<tr><th>' + esc(s.name) + '<small>' + esc(s.how) + '</small></th><td>' + (progIs(s.k) ? '<b>Done.</b> ' : '<span class="ps-empty">Not yet.</span> ') + (r ? esc(r) : '') + '</td></tr>' + myAnswers(s.k); }).join('') + '</tbody></table>';
     if(L.recap && D.BUILDS[L.recap]){ html += '<h3>In my own words</h3>' + para(bVal(L.recap, 'txt')); }
+    var deep = (L.deep || []).map(function(k){ var r = get('r-' + k), a = myAnswers(k), pl = (D.PLAN || []).filter(function(x){ return x.key === k; })[0]; if(!r && !a) return ''; return '<tr><th>' + esc(pl ? pl.label.replace(/^Lesson \d: Go deeper, /, '') : k) + '</th><td>' + (r ? esc(r) : '') + '</td></tr>' + a; }).join('');
+    if(deep) html += '<h3>Go deeper practice</h3><table class="ps-table"><tbody>' + deep + '</tbody></table>';
     html += '</section>';
   });
   /* my work */

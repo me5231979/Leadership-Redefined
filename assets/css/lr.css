@@ -271,3 +271,15 @@
 /* What this means for me: two applied cards */
 .lr-me{ max-width:none; }
 .v-act > .lr-me{ margin-top:0; margin-bottom:16px; }
+
+/* ══════════ Go deeper: optional, cited outside material at the end of each lesson ══════════ */
+.lr-deeper{ max-width:none; border-left-color:var(--vu-sky, #B3C9CD); background:var(--card2); margin-bottom:16px; }
+.lr-deeper > .v-label{ color:var(--vu-sky, #B3C9CD); }
+.lr-res{ list-style:none; display:grid; gap:8px; margin-top:10px; padding:0; }
+.lr-res li{ display:flex; flex-direction:column; gap:2px; border-top:1px solid var(--bd); padding-top:8px; }
+.lr-res a{ color:var(--link); font-weight:600; font-size:.95rem; }
+.lr-res span{ color:var(--tx3); font-size:.82rem; }
+.lr-gd .v-rail span{ color:var(--vu-sky, #B3C9CD); }
+.lr-gd .lr-gdfig{ max-width:640px; margin:12px auto 0; }
+.lr-gd > .wrap > .lr-deeper{ margin-top:clamp(14px,2vh,22px); }
+.lr-learn a{ color:var(--link); text-decoration:underline; text-underline-offset:2px; }

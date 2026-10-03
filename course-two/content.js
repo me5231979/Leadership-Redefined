@@ -11,10 +11,10 @@ window.LR_COURSE = {
     { sel:'#turnaround',   key:'numbers',    label:'Lesson 1: The turnaround',       mode:'whole' },
     { sel:'#moves',        key:'moves',      label:'Lesson 1: The change moves',     mode:'whole' },
     { sel:'#collab',       key:'collab',     label:'Lesson 1: Radical collaboration', mode:'whole' },
-    { sel:'#kind',         key:'kind',       label:'Lesson 1: Know your problem',    mode:'whole' },
     { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
     { sel:'#me1',          key:'me1',        label:'Lesson 1: What this means for me', mode:'whole' },
     { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
+    { sel:'#kind',         key:'kind',       label:'Lesson 1: Go deeper, kinds of problems',    mode:'whole' },
     { sel:'#reputation',   key:'trust',      label:'Lesson 2: Reputational stewardship', mode:'whole' },
     { sel:'#terrain',      key:'terrain',    label:'Lesson 2: Where reputation is made', mode:'whole' },
     { sel:'#timing',       key:'timing',     label:'Lesson 2: Act while you have control', mode:'whole' },
@@ -22,12 +22,13 @@ window.LR_COURSE = {
     { sel:'#repstatement', key:'repstatement', label:'Lesson 2: Your statement',     mode:'whole' },
     { sel:'#me2',          key:'me2',        label:'Lesson 2: What this means for me', mode:'whole' },
     { sel:'#recap2',       key:'recap2',     label:'Lesson 2: Wrap-up',              mode:'whole' },
+    { sel:'#gdrep', key:'gdrep', label:'Lesson 2: Go deeper, Reputation Rules', mode:'whole' },
     { sel:'#teams',        key:'lee',        label:'Lesson 3: High-performing teams', mode:'whole' },
     { sel:'#principles',   key:'principles', label:'Lesson 3: Six principles',       mode:'whole' },
-    { sel:'#zone',         key:'teamcalls',  label:'Lesson 3: The learning zone',    mode:'whole' },
-    { sel:'#health',       key:'health',     label:'Lesson 3: Your pod',             mode:'whole' },
     { sel:'#me3',          key:'me3',        label:'Lesson 3: What this means for me', mode:'whole' },
     { sel:'#recap3',       key:'recap3',     label:'Lesson 3: Wrap-up',              mode:'whole' },
+    { sel:'#zone',         key:'teamcalls',  label:'Lesson 3: Go deeper, the learning zone',    mode:'whole' },
+    { sel:'#health',       key:'health',     label:'Lesson 3: Go deeper, team health',             mode:'whole' },
     { sel:'#metrics',      key:'metrics',    label:'Lesson 4: Strong metrics',       mode:'whole' },
     { sel:'#draft',        key:'draft',      label:'Lesson 4: Draft the brief',      mode:'whole' },
     { sel:'#quiz',         key:'quiz',       label:'Lesson 4: Quick check',          mode:'whole' },
@@ -41,28 +42,25 @@ window.LR_COURSE = {
     { k:'numbers',      no:'03', name:'The turnaround',       how:'Guess all four numbers' },
     { k:'moves',        no:'04', name:'The change moves',     how:'Sort six tactics' },
     { k:'collab',       no:'05', name:'Radical collaboration', how:'Fill in three of four lines' },
-    { k:'kind',         no:'06', name:'Know your problem',    how:'Sort four situations' },
-    { k:'reframe',      no:'07', name:'Your pilot',           how:'Fill in four of five lines' },
-    { k:'trust',        no:'08', name:'The trust radar',      how:'Open all four drivers' },
-    { k:'terrain',      no:'09', name:'The reputation terrain', how:'Place six stories' },
-    { k:'timing',       no:'10', name:'Act while you have control', how:'Sort six actions' },
-    { k:'pressure',     no:'11', name:'Calls under pressure', how:'Find the strongest call in three situations' },
-    { k:'repstatement', no:'12', name:'Your reputational statement', how:'Fill in three of four lines' },
-    { k:'lee',          no:'13', name:'Meet the leader',      how:'Fact or fiction, four statements' },
-    { k:'principles',   no:'14', name:'Six principles',       how:'Open all six' },
-    { k:'teamcalls',    no:'15', name:'The learning zone',    how:'Find the strongest call in three situations' },
-    { k:'health',       no:'16', name:'Your pod',             how:'Rate your pod' },
-    { k:'metrics',      no:'17', name:'Strong metrics',       how:'Sort six metrics' },
-    { k:'draft',        no:'18', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz',         no:'19', name:'Apply it',             how:'Score 6 of 8' },
-    { k:'nextstep',     no:'20', name:'This week',            how:'Commit to all four moves' },
-    { k:'carry',        no:'21', name:'Carry it forward',     how:'Fill in three of four lines' }
+    { k:'reframe',      no:'06', name:'Your pilot',           how:'Fill in four of five lines' },
+    { k:'trust',        no:'07', name:'The trust radar',      how:'Open all four drivers' },
+    { k:'terrain',      no:'08', name:'The reputation terrain', how:'Place six stories' },
+    { k:'timing',       no:'09', name:'Act while you have control', how:'Sort six actions' },
+    { k:'pressure',     no:'10', name:'Calls under pressure', how:'Find the strongest call in three situations' },
+    { k:'repstatement', no:'11', name:'Your reputational statement', how:'Fill in three of four lines' },
+    { k:'lee',          no:'12', name:'Meet the leader',      how:'Fact or fiction, four statements' },
+    { k:'principles',   no:'13', name:'Six principles',       how:'Open all six' },
+    { k:'metrics',      no:'14', name:'Strong metrics',       how:'Sort six metrics' },
+    { k:'draft',        no:'15', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
+    { k:'quiz',         no:'16', name:'Apply it',             how:'Score 6 of 8' },
+    { k:'nextstep',     no:'17', name:'This week',            how:'Commit to all four moves' },
+    { k:'carry',        no:'18', name:'Carry it forward',     how:'Fill in three of four lines' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
     { h:'Entrepreneurial <em>mindset</em>', p:'A real Vanderbilt turnaround, radical collaboration, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Radical collaboration', 'Your pilot'] },
     { h:'Reputational <em>stewardship</em>', p:'The trust radar, where reputation is made, when to act, and three calls under pressure.', tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement'] },
-    { h:'High-performing <em>teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Your pod'] },
+    { h:'High-performing <em>teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Go deeper: the learning zone'] },
     { h:'Your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
   ],
   BEST_LABEL: 'The strongest call: ',
@@ -138,17 +136,17 @@ window.LR_COURSE = {
     ]},
     t1: { h:'Situation 1 · The Monday after', s:'Your team’s project is being praised all the way to the Chancellor’s office. It is Monday morning and everyone is still celebrating.', opts:[
       { t:'Let the glow carry the team for a few weeks.', b:'Momentum fades', best:false, out:'Without a next target, energy drifts.' },
-      { t:'Celebrate people by name, capture what made it work, and point at the next goal.', b:'Proud but not satisfied', best:true, out:'After beating No. 1 Alabama, Lee called it just the beginning.' },
+      { t:'Celebrate people by name, capture what made it work, and point at the next goal.', b:'Proud but not satisfied', best:true, out:'Lee says winning is a result; the joy is in the commitment to the process. Name what worked, then set the next goal.' },
       { t:'Skip the celebration and go to the next deadline.', b:'Earned joy, skipped', best:false, out:'You lose the lesson and the energy that came with the win.' }
     ]},
     t2: { h:'Situation 2 · The star’s bad moment', s:'Your best performer posts something unprofessional about a partner office. Colleagues across campus saw it.', opts:[
       { t:'Let it go. They deliver more than anyone.', b:'A double standard', best:false, out:'The team learns the rules depend on who you are.' },
-      { t:'Name it as unacceptable, expect a repair, and keep supporting them.', b:'Growth and accountability', best:true, out:'Lee did this publicly when a star player posted a profane message in 2025. Work with HR on anything that rises to a conduct issue.' },
+      { t:'Name it as unacceptable, expect a repair, and keep supporting them.', b:'Own the response', best:true, out:'Lee’s standard: it is okay to feel how you feel, but you are accountable for how you act and respond. Work with HR on anything that rises to a conduct issue.' },
       { t:'Pull them off every project right away.', b:'Accountable, and harsh', best:false, out:'Everyone learns one mistake ends you, and people stop taking risks.' }
     ]},
     t3: { h:'Situation 3 · The slow start', s:'A manager you hired has the right values and a strong plan. A year in, results are below target and people are questioning the hire.', opts:[
       { t:'Replace them before it gets worse.', b:'Too fast', best:false, out:'You may cut off a build just before it pays off.' },
-      { t:'Look at the leading signs, adjust support, and set clear milestones for year two.', b:'Patient, with eyes open', best:true, out:'Lee backed Clark Lea through a 2-10 first season. The culture came first, and the results caught up.' },
+      { t:'Look at the leading signs, adjust support, and set clear milestones for year two.', b:'Patient, with eyes open', best:true, out:'Lee backed Clark Lea through a 2-10 first season in 2021; in 2024 his team upset No. 1 Alabama.' },
       { t:'Defend them and change nothing.', b:'Loyal, and unclear', best:false, out:'The team is left without a standard.' }
     ]}
   },
@@ -204,7 +202,7 @@ window.LR_COURSE = {
     var b = function(k, f){ return (get('b-' + k + '-' + f) || '').trim(); };
     if(which === 'teams'){
       var w = b('reframe', 'whatif');
-      return 'One principle I am taking back to my team from Candice Storey Lee: [control the controllables, growth with accountability, or another]. ' + (w ? 'Our pod’s reframe this week: what if ' + w.replace(/[.!?]$/, '') + '?' : 'Our pod’s reframe this week: [your what if].') + ' How do you keep a team in the learning zone?';
+      return 'One principle I am taking back to my team from Candice Storey Lee: [values first, control the controllables, own your response, or another]. ' + (w ? 'Our pod’s reframe this week: what if ' + w.replace(/[.!?]$/, '') + '?' : 'Our pod’s reframe this week: [your what if].') + ' Which of her principles does your team live best?';
     }
     return '';
   },
@@ -214,8 +212,8 @@ window.LR_COURSE = {
     { seg:'Mindset', q:'A plan buys new software and changes nothing else. What is missing?', opts:['Nothing; tools fix problems', 'Changes to people and process, driven at the same time', 'A bigger software budget', 'A press release'], a:1, x:'Drive people, process, and technology agendas together. A tool alone fixes nothing.' },
     { seg:'Reputation', q:'A data error from your office reached students this morning. Which response protects trust best?', opts:['Wait until every fact is confirmed', 'Correct it fast, say what you know and do not, name the owner of the fix, and bring in Communications', 'Explain that it was a vendor\u2019s fault', 'Fix it quietly'], a:1, x:'Transparency, expertise, commitment, and empathy, with one university voice.' },
     { seg:'Reputation', q:'Which statement best describes reputation as infrastructure?', opts:['A campaign the communications office runs each year', 'Something only rankings measure', 'A system built every day by operations and decisions, which turns visibility into resources', 'A crisis plan'], a:2, x:'A system, a source of options, a platform for momentum, and a converter of visibility into resources.' },
-    { seg:'Teams', q:'Your team works hard, but problems surface only when it is too late. What zone is it in, and what do you do?', opts:['Comfort zone; raise the standards', 'Apathy zone; replace people', 'Learning zone; change nothing', 'Anxiety zone; build safety by framing work as learning and thanking people who raise problems'], a:3, x:'High standards with low safety. Leaders build safety on purpose, especially in how they react to bad news.' },
-    { seg:'Teams', q:'A top performer publicly disrespects a partner office. What would Candice Storey Lee\u2019s approach look like?', opts:['Let it go; results matter most', 'Name it unacceptable, expect a repair, and keep supporting the person', 'Remove them from every project', 'Say nothing in public'], a:1, x:'Growth and accountability: a clear standard and continued support.' },
+    { seg:'Teams', q:'A vendor delay outside your control puts a key project behind. Which response matches Candice Storey Lee\u2019s approach?', opts:['Spend the team meeting on what went wrong with the vendor', 'Skip the lament and focus the team on what it controls: preparation, effort, and response', 'Wait for the vendor before doing anything', 'Lower the goal so no one is disappointed'], a:1, x:'In her words: it is easy to lament things you cannot control, and we never want to do that. Leaders create the conditions; each person brings maximum effort.' },
+    { seg:'Teams', q:'Your team is upset about a hard decision you made. What does Lee\u2019s view of accountability suggest?', opts:['Tell them not to feel that way', 'Reverse the decision to restore morale', 'Acknowledge the feeling, then hold everyone, including you, to how you act and respond', 'Avoid the topic until it blows over'], a:2, x:'It is okay to feel how you feel, but what really matters is what you do: how you act and how you respond.' },
     { seg:'Your brief', q:'Which success metric is strongest?', opts:['Launch the new process', 'Increase awareness', 'Median days to full system access drops from 21 to 2 in the pilot by March', 'Send weekly updates'], a:2, x:'A baseline, a target, a date, and an outcome people feel.' }
   ],
   QUIZ_POS: [1, 2, 0, 3, 1, 3, 0, 2],
@@ -224,20 +222,20 @@ window.LR_COURSE = {
     week: 'Course Two · Week of November 9',
     topics: 'Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams',
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
-    goals: ['<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
+    goals: ['<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and apply her principles to your pod and your team.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
     lessons: [
-      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'kind', 'reframe'], recap:'recap1', ideas:[
+      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'reframe'], deep:['kind'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
         ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
-        ['Probe complex problems.', 'When no one knows the answer, run a small pilot, learn, and scale what works.'] ] },
+        ['Win together.', 'Radical collaboration: start from the people you serve, treat it as a team sport, and share the credit as One Vanderbilt.'] ] },
       { title:'Reputational stewardship', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
         ['Reputation is infrastructure.', 'It turns visibility into talent, funding, partners, and access, and it is built every day.'],
         ['Trust has four drivers, and timing matters.', 'Transparency, expertise, commitment, and empathy; a crisis finds the dent in the radar. Act early, while you still have control, because stories migrate toward the loud corner of the terrain.'],
         ['Every leader is a steward.', 'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'] ] },
-      { title:'High-performing teams', keys:['lee', 'principles', 'teamcalls', 'health'], recap:'recap3', ideas:[
-        ['Control the controllables.', 'Leaders build the conditions; the team brings the effort. Results follow.'],
-        ['Aim for the learning zone.', 'High standards plus psychological safety, built on purpose by how leaders frame work and respond to bad news.'],
-        ['How a team works beats who is on it.', 'Safety, dependability, clarity, meaning, and impact.'] ] },
+      { title:'High-performing teams', keys:['lee', 'principles'], deep:['teamcalls', 'health'], recap:'recap3', ideas:[
+        ['Values first, every time.', 'Name the values, then let them decide the hard calls: integrity, leadership, resilience, passion, and competitiveness.'],
+        ['Control the controllables.', 'Leaders create the conditions; each person brings maximum effort.'],
+        ['Own your response.', 'It is okay to feel how you feel; what matters is how you act and respond.'] ] },
       { title:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep', 'carry'], ideas:[
         ['Measure outcomes.', 'Every metric has a baseline, a target, and a date.'],
         ['Write the plan half.', 'An integrated solution, steps with owners and dates, metrics, and a sustainability plan.'],

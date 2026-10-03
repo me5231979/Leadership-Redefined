@@ -23,7 +23,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 ## The courses
 
-**Course One** runs the week of November 2, takes about 80 minutes, and has 18 tracked activities.
+**Course One** runs the week of November 2, takes about 80 minutes, and has 17 tracked activities, plus optional Go deeper pages.
 
 | Lesson | What it covers |
 |---|---|
@@ -32,7 +32,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 | 3. Mission and margin | Opens with the Chancellor's Mission and Margin video. Two calls, the whole cost (six decisions sorted by hidden cost, from the chapters of Diermeier and Sweet's *Mission and Margin*), and a statement builder |
 | 4. Your brief | Focus area practice, a draft of brief sections 1 to 3, a quick check, and the week's commitments |
 
-**Course Two** runs the week of November 9, takes about 90 minutes, and has 21 tracked activities.
+**Course Two** runs the week of November 9, takes about 90 minutes, and has 18 tracked activities, plus optional Go deeper pages.
 
 | Lesson | What it covers |
 |---|---|
@@ -44,6 +44,12 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 ### Presenter cards
 
 Each module's presenter appears with portrait, name, and title: Chancellor Daniel Diermeier (Modules 1, 3, and 5), Steven K. Ertel (Module 2), John M. Lutz (Module 4), and Candice S. Lee (Module 6). Portraits live in `assets/img/people/`; a card shows initials if its photo is missing.
+
+### Core content and Go deeper
+
+Each lesson's core pages teach only what the module decks and presenters taught: the Chancellor's University Strategy, Mission and Margin, and Reputation Stewardship presentations; Vice Chancellor Ertel on brand; Vice Chancellor Lutz on the fundraising turnaround; and Candice Storey Lee's own words on teams, cited to Vanderbilt News, the Nashville Scene, Sports Illustrated, and 247Sports.
+
+Outside, proven material sits on optional Go deeper pages after each lesson's wrap-up: why it is worth knowing, how it complements the lesson, and cited links. Course One: the value stick (Oberholzer-Gee), the shape of a great talk (Duarte), and the Mission and Margin book. Course Two: kinds of problems (Snowden and Boone; O'Reilly and Tushman), Reputation Rules (Diermeier; Eccles, Newquist, and Schatz), the learning zone (Edmondson; Hackman), and team health (Project Aristotle). Go deeper practice is untracked, and anything entered still prints in the takeaway.
 
 ### What this means for me
 

@@ -14,13 +14,13 @@ Welcome to Course One of Leadership Redefined. At the Symposium, you heard the b
 
 ### Lesson 1: This week
 
-*About 65 seconds*
+*About 70 seconds*
 
-This first page is your map. Before you start any learning, it helps to know where you are going and why, so here is the shape of the week. Lesson one is vision and strategy: what the Chancellor’s vision asks of you, and a test for telling strategic work from busy work. Lesson two is story and brand: how Vanderbilt thinks about its reputation, and how to tell your pod’s story so people want to act. Lesson three is mission and margin: how leaders weigh purpose and money in the same decision. Lesson four is your brief: you choose a focus area and draft the first three sections. Each lesson ends with a short wrap-up where you put the ideas in your own words. That step matters. Explaining something back is one of the most reliable ways adults remember what they learn. Tap each stop to preview it. Then turn the page, and we will start with the vision itself.
+This first page is your map. Before you start any learning, it helps to know where you are going and why, so here is the shape of the week. Lesson one is vision and strategy: what the Chancellor’s vision asks of you, and how reputation becomes resources. Lesson two is story and brand: how Vanderbilt thinks about its reputation, and how to tell your pod’s story so people want to act. Lesson three is mission and margin: how leaders weigh purpose and money in the same decision. Lesson four is your brief: you choose a focus area and draft the first three sections. Each lesson ends with what it means for you, a short wrap-up where you put the ideas in your own words, and an optional go deeper with proven outside reading. That step matters. Explaining something back is one of the most reliable ways adults remember what they learn. Tap each stop to preview it. Then turn the page, and we will start with the vision itself.
 
 **Tap clips**
 
-- *route/g1:* Stop one, vision and strategy. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess four numbers that show whether the strategy is working, tour four growth sites, and sort six real-sounding initiatives with a tool called the value stick.
+- *route/g1:* Stop one, vision and strategy. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess four numbers that show whether the strategy is working, and tour four growth sites on the Chancellor’s map. An optional go deeper adds a strategy tool called the value stick.
 - *route/g2:* Stop two, story and brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, your part in the ground game, and then you draft your pod’s storyline.
 - *route/g3:* Stop three, mission and margin. The Chancellor again, two hard calls about money and purpose, and how to count the whole cost of a decision, from his book Mission and Margin.
 - *route/g4:* Stop four, your brief. Practice choosing a focus area, draft sections one to three, and check what you can now apply.
@@ -66,7 +66,7 @@ You just learned the reputation engine. Now, is it running? Before you see the n
 
 *About 75 seconds*
 
-The last tile said four growth sites. Here they are on the map the Chancellor showed, because a strategy becomes real when it has an address. Each one is a Bold Strategic Initiative, the second area of focus. Three things make an initiative bold. It extends reach: new learners, new partners, and new places, in fields like technology, business, and research. It is a bet: it accepts risk for a bigger return to the mission, and it is judged by results, not announcements. And it runs on core operations: a campus opens only if hiring, IT, finance, facilities, and student services work at speed in a new city. That last point is where most of this cohort comes in. Every new site needs the back office Nashville already has. Think about your own unit. If a colleague started work at a new campus tomorrow, what would they need from your team on day one, and how long would it take? Tap each growth site on the map to see what it is, and where you meet it. Next, a tool for deciding which work is truly strategic.
+The last tile said four growth sites. Here they are on the map the Chancellor showed, because a strategy becomes real when it has an address. Each one is a Bold Strategic Initiative, the second area of focus. Three things make an initiative bold. It extends reach: new learners, new partners, and new places, in fields like technology, business, and research. It is a bet: it accepts risk for a bigger return to the mission, and it is judged by results, not announcements. And it runs on core operations: a campus opens only if hiring, IT, finance, facilities, and student services work at speed in a new city. That last point is where most of this cohort comes in. Every new site needs the back office Nashville already has. Think about your own unit. If a colleague started work at a new campus tomorrow, what would they need from your team on day one, and how long would it take? Tap each growth site on the map to see what it is, and where you meet it. Next, what lesson one means for you: for your capstone, and as a manager.
 
 **Tap clips**
 
@@ -75,23 +75,23 @@ The last tile said four growth sites. Here they are on the map the Chancellor sh
 - *growth/f3:* Vanderbilt San Francisco. It opens for the twenty twenty seven to twenty twenty eight school year on the California College of the Arts campus, home to a college that blends art and design with engineering and A I: about one thousand students. You meet it in partnerships with the technology and creative sectors.
 - *growth/f4:* Quantum Innovation in Chattanooga. The Institute for Quantum Innovation, launched with E P B in July twenty twenty six: about two hundred fifty researchers, faculty, and staff, working with the first site in the country with commercial access to both a trapped-ion quantum computer and a quantum network. You meet it in research administration and in partnerships across Tennessee.
 
-### Lesson 1: The value stick
-
-*About 80 seconds*
-
-The growth sites showed where the big bets are. Now a practical question every leader faces: of all the work on your plate, which of it is actually strategic? The program’s pre-work, Felix Oberholzer-Gee’s book Better, Simpler Strategy, offers a simple test called the value stick. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space, by raising the top or lowering the bottom. Work that moves neither is activity, however busy it feels. Here is the one question to carry with you: whose choice changes, and which way? Think of the last project you finished. Whose choice did it change? Now sort six initiatives, and read the explanation after each one. Next, what lesson one means for you: for your capstone, and as a manager.
-
 ### Lesson 1: What this means for me
 
 *About 60 seconds*
 
-Lesson one gave you the vision, the reputation engine, and the value stick. Here is what they mean for you, in two places. For your capstone: name one focus area and tie your challenge to one of the four problems; that is your why it matters. Run the value stick on your idea and say whose choice it changes. And show which resource it grows: talent, funding, partnerships, or access. As a manager, the same tools work on Monday morning. Translate the vision for your team in one sentence. Run the value stick on your project list, and stop one thing that is only activity. And make speed visible: pick one process that takes weeks and set a target in days. Think about your own team. Which of these would change the most? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson one.
+Lesson one gave you the vision, the reputation engine, and the growth sites. Here is what they mean for you, in two places. For your capstone: name one focus area and tie your challenge to one of the four problems; that is your why it matters. Quote the vision line your challenge serves, and name its area of focus. And show which resource it grows: talent, funding, partnerships, or access. As a manager, the same tools work on Monday morning. Translate the vision for your team in one sentence. Sort your team’s projects by area of focus, and stop one that serves none. And make speed visible: pick one process that takes weeks and set a target in days. Think about your own team. Which of these would change the most? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson one.
 
 ### Lesson 1: Wrap-up
 
-*About 70 seconds*
+*About 75 seconds*
 
-That is lesson one. Before moving on, let us lock it in. Three ideas. First, the vision is an instruction: define the great university of the twenty-first century, and be it, through uncommon speed, agility, and scale, in three areas of focus. Second, reputation is an engine: reputation brings resources, resources produce results, and results build reputation, with three flywheels speeding it up. Attention, applications, gifts, and four growth sites show it running. Third, strategy is a choice: work is strategic only when it raises what people will give or lowers what it costs them to stay. Now the most important step on this page. Pick one thing your team actually does, and write two sentences. Whose choice does it change, and which area of focus does it serve? Do not skip this. Putting an idea in your own words, about your own work, is how it moves from something you read to something you use. Your answer saves here and prints in your takeaway. Next, lesson two: how Vanderbilt tells its story, and how your pod will tell yours.
+That is lesson one. Before moving on, let us lock it in. Three ideas. First, the vision is an instruction: define the great university of the twenty-first century, and be it, through uncommon speed, agility, and scale, in three areas of focus. Second, reputation is an engine: reputation brings resources, resources produce results, and results build reputation, with three flywheels speeding it up. Attention, applications, gifts, and four growth sites show it running. Third, bold has an address: four growth sites carry the vision beyond Nashville, and each one runs on core operations. Now the most important step on this page. Pick one thing your team actually does, and write two sentences. Which area of focus does it serve, and which resource in the reputation engine does it grow? Do not skip this. Putting an idea in your own words, about your own work, is how it moves from something you read to something you use. Your answer saves here and prints in your takeaway. Next, an optional go deeper on a strategy tool called the value stick, or go straight on to lesson two: how Vanderbilt tells its story.
+
+### Lesson 1: Go deeper, the value stick
+
+*About 80 seconds*
+
+This page is an optional go deeper. Lesson one gave you the vision and the reputation engine. Here is a tool that complements them: of all the work on your plate, which of it is actually strategic? The program’s pre-work, Felix Oberholzer-Gee’s Better, Simpler Strategy, offers a simple test called the value stick. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space. Work that moves neither is activity, however busy it feels. Why it matters here: the reputation engine runs on results, and the value stick helps you choose the few projects that move a stakeholder’s choice. Think of the last project you finished. Whose choice did it change? Sort six initiatives if you want the practice, and use the links to read more. Next, lesson two: how Vanderbilt tells its story.
 
 ### Lesson 2: Brand and reputation
 
@@ -120,21 +120,27 @@ You just saw that a spike needs a system. Here is who runs that system: you. Vic
 
 ### Lesson 2: Your storyline
 
-*About 85 seconds*
+*About 75 seconds*
 
-You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. The pre-work for this topic is Nancy Duarte’s talk on the structure of great talks. Her finding: great communicators keep moving between two places. What is, the frustrating present. And what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then the speaker ends with one clear call to action and a picture of life after people act. Three moves, then. Open with what is, through one real person and one real moment. Contrast it with what could be, and go back and forth. End with one ask, and name what each audience gets: a dean wants research time, a finance leader wants the cost, a student wants the experience. The strongest pods in past cohorts opened with one person, not a statistic. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. If you are unsure what good looks like, open the strong example before you write. Then draft your storyline. It saves here and folds into your brief later. Next, what lesson two means for you: for your capstone, and as a manager.
+You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. Vice Chancellor Ertel gave this program a clear capstone ask: use effective communication and storytelling to connect your audience to the why behind your project, strengthening the narrative and reinforcing the Vanderbilt brand through purpose-driven impact. Three moves follow from his slides. Start with the why, through one real person and one real moment, because relevance comes before consideration. Show the difference: say what your idea changes and why it is distinctly Vanderbilt, because differentiation is a design principle. And make it travel: end with one ask, name what each audience cares about, and plan who carries the story next, because trust travels through proximity. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. Open the strong example if you want to see one, then draft your storyline. It saves here and folds into your brief later. Next, what lesson two means for you: for your capstone, and as a manager.
 
 ### Lesson 2: What this means for me
 
-*About 60 seconds*
+*About 55 seconds*
 
-Lesson two was about brand, reputation, and story. Here is what it means for you. For your capstone: open your brief with one real person and one real moment, then move between what is and what could be. Name your audiences and what each one cares about. And plan the ground game: who carries your story after the judging. As a manager: close your unit’s gap between what you claim and what people actually experience, and fix the experience first. Build a drumbeat, one short, true story about your team’s work every month. And equip your team to tell Vanderbilt’s story, including when the topic is hard. Think about the last story someone told about your team. Was it the one you would have chosen? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson two.
+Lesson two was about brand, reputation, and story. Here is what it means for you. For your capstone: open your brief with one real person and one real moment, and connect your audience to the why. Name your audiences and what each one cares about. And plan the ground game: who carries your story after the judging. As a manager: close your unit’s gap between what you claim and what people actually experience, and fix the experience first. Build a drumbeat, one short, true story about your team’s work every month. And equip your team to tell Vanderbilt’s story, including when the topic is hard. Think about the last story someone told about your team. Was it the one you would have chosen? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson two.
 
 ### Lesson 2: Wrap-up
 
-*About 55 seconds*
+*About 60 seconds*
 
-That is lesson two. Three ideas to keep. Close the gap: brand is what we say about ourselves, reputation is what others say about us, and the gap closes when we deliver the claim and then tell true stories. A spike needs a system: attention climbs from relevance to consideration to trust to commitment only with a steady drumbeat, carried by leaders on the ground. And tell it as what could be: one real person, the contrast between the present and a better future, and one clear ask. Now apply it to your pod. Write down which audience matters most for your idea, and the one sentence of what could be that they need to hear. That sentence may end up opening your brief. Next, lesson three: the hard trade-offs between purpose and money.
+That is lesson two. Three ideas to keep. Close the gap: brand is what we say about ourselves, reputation is what others say about us, and the gap closes when we deliver the claim and then tell true stories. A spike needs a system: attention climbs from relevance to consideration to trust to commitment only with a steady drumbeat, carried by leaders on the ground. And connect people to the why: one real person, the difference your idea makes, and one clear ask, carried by the people who hear it. Now apply it to your pod. Write down which audience matters most for your idea, and the one sentence of why that they need to hear. That sentence may end up opening your brief. Next, an optional go deeper on the shape of a great talk, or go straight on to lesson three: the hard trade-offs between purpose and money.
+
+### Lesson 2: Go deeper, the shape of a great talk
+
+*About 60 seconds*
+
+This page is an optional go deeper. Lesson two asked you to connect your audience to the why. Here is a proven structure for doing it. Nancy Duarte, whose talk is part of the program’s pre-work, studied hundreds of great speeches and found a shared shape. Great communicators move back and forth between what is, the frustrating present, and what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then they end with one clear call to action and a picture of life after people act. Why it matters here: it is one reliable way to do what Vice Chancellor Ertel asked, so your pod’s story pulls people toward the why. Think of a speech that moved you. Did it go back and forth like this? Use the links to watch the talk or read her free multimedia book. Next, lesson three: mission and margin.
 
 ### Lesson 3: Mission and margin
 
@@ -167,9 +173,15 @@ Lesson three was about mission and margin. Here is what it means for you. For yo
 
 ### Lesson 3: Wrap-up
 
-*About 40 seconds*
+*About 50 seconds*
 
-That is lesson three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. Count the whole cost: follow the cash, and count buildings, space, research costs, and debt past year one. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now apply it to your own pod’s idea. What will it cost after year one, and what would pay for it? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, lesson four: your brief.
+That is lesson three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. Count the whole cost: follow the cash, and count buildings, space, research costs, and debt past year one. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now apply it to your own pod’s idea. What will it cost after year one, and what would pay for it? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, an optional go deeper on the Mission and Margin book, or go straight on to lesson four: your brief.
+
+### Lesson 3: Go deeper, Mission and Margin
+
+*About 55 seconds*
+
+This page is an optional go deeper. Lesson three drew on Mission and Margin, the practical guide to university finances that Chancellor Diermeier wrote with Brett Sweet, Vanderbilt’s chief financial officer. Why it is worth reading: it is an insider’s guide for non-insiders, built on their work together at Vanderbilt, and it walks step by step through the topics you used to count the whole cost, from scholarships and fundraising to depreciation, space, research, and debt. It complements this lesson by giving you the language finance partners use, so the case for your pod’s idea lands with them. Think about a finance conversation you found hard to follow. Which part would you want explained? The links go to the book and to a Freakonomics Radio conversation with the Chancellor. Next, lesson four: your brief.
 
 ### Lesson 4: Your focus area
 
@@ -201,7 +213,7 @@ You are nearly done with Course One. Learning sticks when it turns into action i
 
 That is Course One. Look at what you have now: a clear view of the strategy, a story your pod can tell, a case in both mission and money, and a first draft of page one of your brief. Take it to your pod. Course Two opens the week of November ninth, with entrepreneurial mindset, reputational stewardship, and high-performing teams, and it helps you draft the rest of the brief. Crescere aude. Dare to grow.
 
-*Page narration: about 29 minutes.*
+*Page narration: about 31 minutes.*
 
 ## Course Two: Venture, Reputation and Teams (week of November 9)
 
@@ -221,7 +233,7 @@ Here is your map for the week. Lesson one is the entrepreneurial mindset, taught
 
 - *route/g1:* Stop one, entrepreneurial mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, how radical collaboration made it work, and you turn your pod’s challenge into a pilot.
 - *route/g2:* Stop two, reputational stewardship. The Chancellor again, the trust radar, where reputation is made, when to act, three calls under pressure, and your project’s reputational statement.
-- *route/g3:* Stop three, high-performing teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles, three leadership calls, and a health check on your pod.
+- *route/g3:* Stop three, high-performing teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles in her own words, and an optional go deeper on the research behind great teams.
 - *route/g4:* Stop four, your brief. Sort strong and weak metrics, draft sections four to seven, and check what you can now apply.
 
 ### Lesson 1: Entrepreneurial mindset
@@ -251,21 +263,15 @@ You have seen the before and after. Now the how, which is the part you can reuse
 
 ### Lesson 1: Radical collaboration
 
-*About 90 seconds*
+*About 85 seconds*
 
-You just sorted the change moves. Underneath all of them was one principle. Lutz said the Chancellor’s call for Radical Collaboration underpinned every change initiative. It has three parts. First, start from the people you serve. Gift proposals reflected donor interests, aligned with the mission, and the team worked with donors rather than trying to steer them. Second, it is a team sport. Many roles are needed to execute a strategy, and every Vanderbilt leader is a fundraiser. Third, operate as One Vanderbilt. Donors who support several areas give the most, so every key prospect had a cross-Vanderbilt strategy, backed by shared credit, so two schools could win the same gift instead of competing for it. Lutz also led the people around the change, not only the work. He bought time with potential critics by listening. He sent serious signals that he meant business. He worked to reverse an image as a poor partner. He built trust and loyalty with top producers. And he used early wins to build momentum. Think about your pod’s idea. Which office could block it, and which could make it twice as strong if it shared the credit? Now map the people around your idea. It saves here and prints in your takeaway. Next, how to tell what kind of problem you are facing.
-
-### Lesson 1: Know your problem
-
-*About 70 seconds*
-
-You have seen how one leader drove change, and who he brought along. But the right approach depends on the kind of problem in front of you, and choosing wrong is one of the most common leadership mistakes. The program’s pre-work, A Leader’s Framework for Decision Making, names four kinds. Simple problems have a known best practice: sense, categorize, respond. Complicated problems have a right answer that experts can find: sense, analyze, respond. Complex problems have no right answer up front; cause and effect show up only in hindsight. There you probe with small, safe experiments, sense what happens, and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Most capstone challenges are complex, because they involve people’s behavior. Think of a recent problem at work. Which kind was it, and did you treat it that way? Sort four situations. Next, you turn your pod’s challenge into a pilot.
+You just sorted the change moves. Underneath all of them was one principle. Lutz said the Chancellor’s call for Radical Collaboration underpinned every change initiative. It has three parts. First, start from the people you serve. Gift proposals reflected donor interests, aligned with the mission, and the team worked with donors rather than trying to steer them. Second, it is a team sport. Many roles are needed to execute a strategy, and every Vanderbilt leader is a fundraiser. Third, operate as One Vanderbilt. Donors who support several areas give the most, so every key prospect had a cross-Vanderbilt strategy, backed by shared credit, so two schools could win the same gift instead of competing for it. Lutz also led the people around the change, not only the work. He bought time with potential critics by listening. He sent serious signals that he meant business. He worked to reverse an image as a poor partner. He built trust and loyalty with top producers. And he used early wins to build momentum. Think about your pod’s idea. Which office could block it, and which could make it twice as strong if it shared the credit? Now map the people around your idea. It saves here and prints in your takeaway. Next, you turn your pod’s challenge into a pilot.
 
 ### Lesson 1: Your pilot
 
-*About 75 seconds*
+*About 85 seconds*
 
-You know your pod’s challenge is probably complex. So the next step is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, what lesson one means for you: for your capstone, and as a manager.
+Lutz’s turnaround moved back and forth between assessment and action, and the Chancellor’s own levers end with pilot, learn, and scale. So the next step for your pod is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, what lesson one means for you: for your capstone, and as a manager.
 
 ### Lesson 1: What this means for me
 
@@ -275,9 +281,15 @@ Lesson one was the entrepreneurial mindset. Here is what it means for you. For y
 
 ### Lesson 1: Wrap-up
 
-*About 45 seconds*
+*About 55 seconds*
 
-That is lesson one. Three ideas. Diagnose before you build: the turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people. Change three things at once: people, process, and technology together, with every tactic owned and dated. And probe complex problems: when no one knows the answer, run a small pilot, learn, and scale what works. Now apply it. Write which kind of problem your pod’s challenge is, and the smallest pilot that would teach you the most. Explaining it in your own words, about your own project, is what makes it stick. Next, lesson two: protecting the trust your idea depends on.
+That is lesson one. Three ideas. Diagnose before you build: the turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people. Change three things at once: people, process, and technology together, with every tactic owned and dated. And win together: radical collaboration means starting from the people you serve, treating the work as a team sport, and sharing the credit as One Vanderbilt. Now apply it. Write the smallest pilot that would prove your pod’s idea, and who must share the credit for it. Explaining it in your own words, about your own project, is what makes it stick. Next, an optional go deeper on the kinds of problems leaders face, or go straight on to lesson two: protecting the trust your idea depends on.
+
+### Lesson 1: Go deeper, kinds of problems
+
+*About 65 seconds*
+
+This page is an optional go deeper. Lesson one followed Vice Chancellor Lutz from assessment to action, and the Chancellor’s levers end with pilot, learn, and scale. Here is a framework that explains when piloting beats planning. The program’s pre-work, A Leader’s Framework for Decision Making by Snowden and Boone, names four kinds of problems. Simple problems have a known best practice. Complicated problems have a right answer that experts can find. Complex problems have no right answer up front; cause and effect show up only in hindsight, so you probe with small, safe experiments and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Think of a recent problem at work. Which kind was it? Sort four situations if you want the practice, and use the links to read the article and research on ambidextrous organizations. Next, lesson two: reputational stewardship.
 
 ### Lesson 2: Reputational stewardship
 
@@ -330,36 +342,54 @@ Lesson two was reputational stewardship. Here is what it means for you. For your
 
 ### Lesson 2: Wrap-up
 
-*About 45 seconds*
+*About 55 seconds*
 
-That is lesson two. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis finds the dent in the radar. And timing matters: act early, while you still have control, because stories migrate toward the loud corner of the terrain. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, lesson three: the teams that deliver.
+That is lesson two. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis finds the dent in the radar. And timing matters: act early, while you still have control, because stories migrate toward the loud corner of the terrain. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, an optional go deeper on the Chancellor’s book Reputation Rules, or go straight on to lesson three: the teams that deliver.
 
-### Lesson 3: High-performing teams
-
-*About 75 seconds*
-
-Welcome to lesson three. Your pilot and your reputational plan only work if a team delivers them, starting with your own pod. Begin with the Chancellor’s introduction. Then meet Candice Storey Lee, Vice Chancellor for Athletics and University Affairs and Athletic Director. She came to Vanderbilt as a student-athlete, captained the women’s basketball team, and earned three Vanderbilt degrees. She rose from an internship to lead the department in twenty twenty, in the middle of a pandemic, the first Black woman to lead an athletics department in the SEC. Under her leadership, Vanderbilt beat the number one team in the country in twenty twenty four, won its first ten-game football season in twenty twenty five, and earned the top seed in college baseball. Think about the best team you have ever been part of. What made it work? Hold that answer; you will see much of it in her approach. Her core idea fits any team on campus: you can’t always control for winning, but you can always control your ability to compete. Try four fact or fiction statements. Next, the six principles behind her teams.
-
-### Lesson 3: Six principles
+### Lesson 2: Go deeper, Reputation Rules
 
 *About 55 seconds*
 
-You have met the leader. Now the ideas she returns to, which you can use with any team. These six principles are a summary of her public interviews and statements, each paired with research on teams. Control the controllables: leaders build the conditions, and the team brings the effort. Lead with values, and keep the joy: winning is a result, not the reason. Hire for character, then back people through a hard start. Hold high standards with real support: growth and accountability together. Celebrate, then stay hungry. And prepare early, and build together. As you tap each one, ask yourself a direct question: which of these does my own team already do well, and which is missing? You will choose one to try in the wrap-up. Next, a closer look at standards and safety.
+This page is an optional go deeper. Lesson two gave you Chancellor Diermeier’s frameworks from his presentation: the trust radar, the terrain, and when to act. His book Reputation Rules, the program’s pre-work, shows those ideas at work in real crises, from Mercedes and Toyota to Shell and Walmart, and explains credibility transfer and room to maneuver step by step. A Harvard Business Review article, Reputation and Its Risks, adds a manager’s view: reputation risk deserves the same discipline as financial risk. Why it matters here: the more you see these frameworks in real cases, the faster you will spot the next issue while you still have control. Think about an organization whose crisis you followed in the news. Which axis of the trust radar did it dent? The links go to the book and the article. Next, lesson three: high-performing teams.
+
+### Lesson 3: High-performing teams
+
+*About 80 seconds*
+
+Welcome to lesson three. Your pilot and your reputational plan only work if a team delivers them, starting with your own pod. Begin with the Chancellor’s introduction. Then meet Candice Storey Lee, Vice Chancellor for Athletics and University Affairs and Athletic Director. She came to Vanderbilt as a student-athlete, captained the women’s basketball team, and earned three Vanderbilt degrees. She rose from an internship to lead the department in twenty twenty, in the middle of a pandemic, the first Black woman to lead an athletics department in the SEC. Under her leadership, Vanderbilt beat the number one team in the country in twenty twenty four, won its first ten-game football season in twenty twenty five, and earned the top seed in college baseball. Think about the best team you have ever been part of. What made it work? Hold that answer; you will see much of it in her approach. Her mindset fits any team on campus. As she told Sports Illustrated, some people may call it a chip on the shoulder, but if you are prepared, you feel pretty confident that you can compete. Try four fact or fiction statements. Next, the six principles behind her teams.
+
+### Lesson 3: Six principles
+
+*About 60 seconds*
+
+You have met the leader. Now six ideas she returns to, in her own words, from interviews and profiles you can read through the links on this page. First, every decision is values-based, every single time, and her department’s values are integrity, leadership, resilience, passion, and competitiveness. Second, control the controllables: leaders create the conditions, and each person brings maximum effort. Third, own your response: it is okay to feel how you feel, but what matters is how you act and respond. Fourth, find the joy in the process: winning is a result, but the joy is in the commitment. Fifth, hire the leader, then back them. And sixth, your comfort comes last. As you tap each one, ask yourself a direct question: which of these does my own team already do well, and which is missing? Next, what lesson three means for you: for your capstone, and as a manager.
 
 **Tap clips**
 
-- *principles/f1:* Control the controllables. In her words, it is easy to lament things you can’t control, and we never want to do that. Researcher J. Richard Hackman found the same: leaders shape performance most through the conditions they create.
-- *principles/f2:* Lead with values, and keep the joy. Winning is a result, but it is not the thing that brings you joy. Google’s research on teams found people do better work when it has meaning and impact.
-- *principles/f3:* Hire for character, then back people. She hired football coach Clark Lea for his integrity and strategic thinking, and kept backing him through a two and ten first season. Three seasons later came the upset of number one Alabama.
-- *principles/f4:* High standards, real support. When a star player crossed a line in public, she called it unacceptable, and in the same statement promised continued support as he learned. Growth and accountability.
-- *principles/f5:* Celebrate, then stay hungry. After beating number one Alabama, she called it just the beginning, for all seventeen sports and for the university. Proud, but not satisfied.
-- *principles/f6:* Prepare early, and build together. Her department prepared for revenue sharing in college sports about a year and a half before it arrived. As she said when she took the job, anything is possible if we all work together.
+- *principles/f1:* Every decision, values-based. Lee says every decision she makes is values-based, every single time. Name your core values, then act on them consistently, whatever the situation.
+- *principles/f2:* Control the controllables. In her words: it’s easy to lament things you can’t control, and we never want to do that. Leaders create the conditions for success; then it is up to each individual to give their maximum effort.
+- *principles/f3:* Own your response. In her words: it’s okay to feel how you feel, but what really matters is what you do. You are accountable for what you do, how you act, and how you respond.
+- *principles/f4:* Find the joy in the process. Winning is a result, she says, but the joy comes from commitment to the process, pushing yourself, and reaching your potential. A healthy culture has joy in it.
+- *principles/f5:* Hire the leader, then back them. When she hired football coach Clark Lea in twenty twenty, she said it was about finding the right leader. She backed him through a two and ten first season, and in twenty twenty four his team upset number one Alabama.
+- *principles/f6:* Your comfort comes last. In her words, part of being a leader is that your comfort comes last. She believes in showing up: for student-athletes, for coaches, and for alumni.
 
-### Lesson 3: The learning zone
+### Lesson 3: What this means for me
 
-*About 70 seconds*
+*About 60 seconds*
 
-You just saw growth and accountability as one of Lee’s principles. Research gives it a name. Amy Edmondson of Harvard shows that teams work in one of four zones, depending on two things: the standards they hold, and their psychological safety, meaning the shared belief that it is safe to speak up, ask, and admit mistakes. Low on both is apathy. Safety without standards is comfort. Standards without safety is anxiety, where people work hard and hide problems until it is too late. High on both is the learning zone, where high-performing teams live. Leaders build safety on purpose. Frame the work as learning. Admit your own limits. Ask real questions, and invite the quietest person first. And respond well to bad news, because how you react the first time decides whether you hear the second. Think about your own team. Which zone is it in on a hard week? Now three moments drawn from Vanderbilt athletics. Make your call, then try the others. Next, a check on your own pod.
+Lesson three was high-performing teams. Here is what it means for you. For your capstone: make your pod a team, with clear roles and an owner and a date for every step. Keep your pod meetings safe to speak up in, and invite the quietest person first. And control the controllables: your effort, your preparation, and your draft, not the judges. As a manager: decide by your values, out loud, so your team learns them. Own the response; feelings are fine, but hold yourself and your team accountable for how you act and respond. And remember that your comfort comes last; show up for your people, especially when it is inconvenient. Think about the last hard call you made. Did your team know which value decided it? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson three.
+
+### Lesson 3: Wrap-up
+
+*About 40 seconds*
+
+That is lesson three. Three ideas from Candice Storey Lee. Values first, every time: name the values, then let them decide the hard calls. Control the controllables: leaders create the conditions, and each person brings maximum effort. And own your response: it is okay to feel how you feel, but what matters is how you act and respond. Now commit to something specific. Choose one of her principles to try with your own team next week, and write what you will actually do. Next, an optional go deeper on the research behind great teams, or go straight on to lesson four: finishing the brief.
+
+### Lesson 3: Go deeper, the learning zone
+
+*About 65 seconds*
+
+This page is an optional go deeper. Lesson three gave you Candice Storey Lee’s principles in her own words. Research on teams complements them. Amy Edmondson of Harvard shows that teams work in one of four zones, depending on two things: the standards they hold, and their psychological safety, meaning the shared belief that it is safe to speak up, ask, and admit mistakes. Low on both is apathy. Safety without standards is comfort. Standards without safety is anxiety, where people work hard and hide problems until it is too late. High on both is the learning zone, where high-performing teams live. Leaders build safety on purpose: frame the work as learning, admit your own limits, ask real questions, and respond well to bad news. Think about your own team. Which zone is it in on a hard week? Try three situations if you want the practice, and use the links for Edmondson’s talk and Hackman’s research. Next, a check on your own pod.
 
 **Tap clips**
 
@@ -367,23 +397,11 @@ You just saw growth and accountability as one of Lee’s principles. Research gi
 - *teamcalls/s2:* Situation two. Your best performer crossed a line in public. What do you do?
 - *teamcalls/s3:* Situation three. A leader you hired has had a rough first year. What do you do?
 
-### Lesson 3: Your pod
+### Lesson 3: Go deeper, team health
 
 *About 70 seconds*
 
-You have the principles and the learning zone. Now turn them on a real team: your pod. It is a team with a deadline, which makes it a good place to practice. Google studied more than one hundred eighty of its own teams in a project called Aristotle, and found that how a team works matters more than who is on it. Five dynamics stood out. Psychological safety: it is safe to take risks with each other. Dependability: people deliver quality work on time. Structure and clarity: clear goals, roles, and plans. Meaning: the work matters to each person. And impact: people believe the work makes a difference. Safety mattered most. Think about your pod’s last meeting. Did everyone speak? Rate your pod honestly on each one. The read shows your strongest dynamic and the one to work on next, with a specific action. Then ask each pod member to take it and compare in your next meeting. Next, what lesson three means for you: for your capstone, and as a manager.
-
-### Lesson 3: What this means for me
-
-*About 50 seconds*
-
-Lesson three was high-performing teams. Here is what it means for you. For your capstone: make your pod a team, with clear roles and an owner and a date for every step. Keep your pod meetings safe to speak up in, and invite the quietest person first. And control the controllables: your effort, your preparation, and your draft, not the judges. As a manager: frame the work as learning and admit your own limits, so others will too. Pair high standards with real support; say what great looks like, then help people get there. And celebrate, then stay hungry. Think about your own team’s last meeting. Who did not speak? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson three.
-
-### Lesson 3: Wrap-up
-
-*About 40 seconds*
-
-That is lesson three. Three ideas. Control the controllables: leaders build the conditions, and the team brings the effort. Aim for the learning zone: high standards plus psychological safety, which leaders build on purpose through how they frame work and respond to bad news. And how a team works matters more than who is on it: safety, dependability, clarity, meaning, and impact. Now commit to something specific. Choose one of Candice Storey Lee’s principles to try with your own team next week, and write what you will actually do. Next, lesson four: finishing the brief.
+This page is also optional. You have Lee’s principles and the learning zone. Now turn them on a real team: your pod. It is a team with a deadline, which makes it a good place to practice. Google studied more than one hundred eighty of its own teams in a project called Aristotle, and found that how a team works matters more than who is on it. Five dynamics stood out. Psychological safety: it is safe to take risks with each other. Dependability: people deliver quality work on time. Structure and clarity: clear goals, roles, and plans. Meaning: the work matters to each person. And impact: people believe the work makes a difference. Safety mattered most. Think about your pod’s last meeting. Did everyone speak? Rate your pod honestly on each one. The read shows your strongest dynamic and the one to work on next, with a specific action. Then ask each pod member to take it and compare in your next meeting. Next, lesson four: finishing the brief.
 
 ### Lesson 4: Strong metrics
 
@@ -411,9 +429,9 @@ You are nearly done with Course Two. This page turns the course into four moves 
 
 ### Lesson 4: Carry it forward
 
-*About 90 seconds*
+*About 95 seconds*
 
-You have reached the last step of the courses, and maybe the most important one. The program ends in November. What you learned has to outlast it, and that depends on two habits. The first is to embody it. Use the tools in the open, so the people around you learn them by watching. Ask whose choice changes in a planning meeting. Check the trust radar before you send a hard message. Say this is complex, so let us pilot it. The second habit is to share it. Teach one idea to your team within the next two weeks. Here is why that matters for you, not just for them: explaining an idea to others is one of the most reliable ways to keep it yourself. Researchers call it the protégé effect. And then multiply it. The vision needs more leaders who think this way, so name the next person who should be in this room. The card on this page puts the whole program on one page: the vision, strategy, brand, mission and margin, the entrepreneurial mindset, reputation, and teams. Think about your own team. Which one idea would change the most about how you work together? Now write your plan: the idea, how you will live it, how you will teach it, and who comes next. It saves here and prints in your takeaway. Next, a short close.
+You have reached the last step of the courses, and maybe the most important one. The program ends in November. What you learned has to outlast it, and that depends on two habits. The first is to embody it. Use the tools in the open, so the people around you learn them by watching. Ask which area of focus a project serves in a planning meeting. Check the trust radar before you send a hard message. Say this is complex, so let us pilot it. The second habit is to share it. Teach one idea to your team within the next two weeks. Here is why that matters for you, not just for them: explaining an idea to others is one of the most reliable ways to keep it yourself. Researchers call it the protégé effect. And then multiply it. The vision needs more leaders who think this way, so name the next person who should be in this room. The card on this page puts the whole program on one page: the vision, strategy, brand, mission and margin, the entrepreneurial mindset, reputation, and teams. Think about your own team. Which one idea would change the most about how you work together? Now write your plan: the idea, how you will live it, how you will teach it, and who comes next. It saves here and prints in your takeaway. Next, a short close.
 
 ### Keep going
 
@@ -421,4 +439,4 @@ You have reached the last step of the courses, and maybe the most important one.
 
 That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a pilot, a reputational strategy, strong metrics, and a team ready to deliver. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
 
-*Page narration: about 30 minutes.*
+*Page narration: about 32 minutes.*
