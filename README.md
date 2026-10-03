@@ -111,6 +111,15 @@ While `useBrowserVoice: true` is set in each `config.js`, Listen and Auto read e
 
 The workflow records the clips in ElevenLabs voice `v3p1kjzUvro6S76qmYmH` (set in `.github/tts.json`, with the same settings as Voyage Online), writes them to `assets/audio/<course>/`. It then sets `useBrowserVoice: false` so the recordings play, and publishes the site.
 
+## SCORM package
+
+One SCORM 1.2 package holds the landing page and both courses. Upload it to the LMS as a single activity.
+
+- **Get it:** open the repository's Actions tab, choose the latest **Build SCORM package** run, and download **leadership-redefined-scorm** under Artifacts. That download is the package; upload it as is. Or build it yourself: `node scripts/build-scorm.mjs` writes `dist/leadership-redefined-scorm.zip`.
+- **Launch:** the LMS opens `lms.html`, which shows the landing page first. Learners open Course One and Course Two from there, all in one session.
+- **Tracking:** progress and answers are saved to the LMS (`cmi.suspend_data`), so learners can resume on another device. Status is *incomplete* until every activity in both courses is done, then *completed*. No score is reported.
+- **Size:** about 145 MB, mostly the five Chancellor videos. Raw narration takes are left out.
+
 ## Before launch
 
 - **Captions.** Add a WebVTT captions file for each video in `assets/video/`, and set `captions` in each `config.js`. Captions are required for WCAG 2.2 AA.

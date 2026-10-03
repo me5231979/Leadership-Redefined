@@ -1,0 +1,34 @@
+name: Build SCORM package
+# Builds one SCORM 1.2 package (landing page plus Course One and Course Two) with
+# scripts/build-scorm.mjs and attaches it to the run as a download. The download
+# is the package itself: upload it to the LMS as is. Runs after narration is
+# re-recorded, on pushes that change the courses, or by hand from the Actions tab.
+on:
+  push:
+    branches: ['claude/eloquent-mendel-0qq5xp', 'main']
+    paths: ['index.html', 'course-one/**', 'course-two/**', 'assets/**', 'scripts/build-scorm.mjs', '.github/workflows/build-scorm.yml']
+  workflow_run:
+    workflows: ['Record narration with ElevenLabs']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: scorm-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/build-scorm.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leadership-redefined-scorm
+          path: dist/scorm/
+          retention-days: 90
