@@ -41,6 +41,10 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 | 3. High-performing teams | Opens with the Chancellor's video. Candice Storey Lee fact or fiction, her six principles, three learning-zone calls, and a pod health check |
 | 4. Your brief | Strong metrics, a draft of brief sections 4 to 7, a quick check, the week's commitments, and Carry it forward: the program on one card and a plan to embody and teach it |
 
+### Presenter cards
+
+Each module's presenter appears with portrait, name, and title: Chancellor Daniel Diermeier (Modules 1, 3, and 5), Steven K. Ertel (Module 2), John M. Lutz (Module 4), and Candice S. Lee (Module 6). Portraits live in `assets/img/people/`; a card shows initials if its photo is missing.
+
 ### What this means for me
 
 Every lesson ends with a page that applies its ideas twice: to the pod's capstone, and to the learner's own team as a manager. Each asks for one move the learner will try with their team in the next two weeks, which prints in the takeaway.
@@ -105,7 +109,6 @@ The workflow records the clips in ElevenLabs voice `v3p1kjzUvro6S76qmYmH` (set i
 
 - **Captions.** Add a WebVTT captions file for each video in `assets/video/`, and set `captions` in each `config.js`. Captions are required for WCAG 2.2 AA.
 - **Video for Vision and Strategy.** That section has no Chancellor intro video yet.
-- **Presenter portraits.** Presenter cards show each speaker's name and title, with initials until a portrait exists. Add square-ish photos at `assets/img/people/ertel.jpg`, `lutz.jpg`, and `lee.jpg` and they appear automatically.
 - **Alumni series.** Set `alumni.text` (and optionally `alumni.link`) in `course-two/config.js` to show the alumni series card on the Carry it forward page. It stays hidden while empty.
 - **Candice Storey Lee quotes.** Verify them against their linked sources. They were gathered from search results; the source pages themselves were not opened.
 
