@@ -196,7 +196,7 @@ Here is your map for the week. Lesson one is the entrepreneurial mindset, taught
 **Tap clips**
 
 - *route/g1:* Stop one, entrepreneurial mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, and you turn your pod’s challenge into a pilot.
-- *route/g2:* Stop two, reputational stewardship. The Chancellor again, the four drivers of trust, three calls under pressure, and your project’s reputational statement.
+- *route/g2:* Stop two, reputational stewardship. The Chancellor again, the trust radar, where reputation is made, when to act, three calls under pressure, and your project’s reputational statement.
 - *route/g3:* Stop three, high-performing teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles, three leadership calls, and a health check on your pod.
 - *route/g4:* Stop four, your brief. Sort strong and weak metrics, draft sections four to seven, and check what you can now apply.
 
@@ -245,9 +245,9 @@ That is lesson one. Three ideas. Diagnose before you build: the turnaround began
 
 ### Lesson 2: Reputational stewardship
 
-*About 65 seconds*
+*About 85 seconds*
 
-Welcome to lesson two. In lesson one you designed a bold pilot. Every bold idea borrows against something fragile: Vanderbilt’s reputation. Start with the Chancellor’s video. Then remember the loop from Course One: reputation attracts talent, funding, partnerships, and access, and those resources build more reputation. The loop can also run in reverse. That is why leaders treat reputation as infrastructure. It is a system built every day by service, operations, and decisions, not a campaign. It gives an institution options and the benefit of the doubt. And it turns visibility into resources, but only when someone carries the story. In his book Reputation Rules, the program’s pre-work, Chancellor Diermeier argues that when something goes wrong, people judge an institution less on the facts than on whether they trust it. He describes four drivers of that trust: transparency, expertise, commitment, and empathy. Think of an organization you stopped trusting. Which of the four did it miss? Tap each driver. Next, three calls under pressure.
+Welcome to lesson two. In lesson one you designed a bold pilot. Every bold idea borrows against something fragile: Vanderbilt’s reputation. Start with the Chancellor’s video. Then remember the loop from Course One: reputation brings talent and funding, and those build more reputation. The loop can also run in reverse. That is why leaders treat reputation as infrastructure: a system built every day by service, operations, and decisions, not a campaign. In his book Reputation Rules, the program’s pre-work, Chancellor Diermeier argues that when something goes wrong, people judge an institution less on the facts than on whether they trust it. He draws trust as a radar with four axes: transparency, expertise, commitment, and empathy. Strong on all four, the shape is a full diamond. A crisis finds the dent. Two more of his tools are worth knowing by name. Credibility transfer means a trusted third party, such as an outside expert or a partner, lends you their credibility. Room to maneuver means trust built before a crisis buys time and options during it. His team has used these tools in real Vanderbilt moments, from campus protests to public scrutiny of clinical care. Think of an organization you stopped trusting. Which axis of the radar did it dent? Tap each driver. Next, where reputation is actually made.
 
 **Tap clips**
 
@@ -256,11 +256,23 @@ Welcome to lesson two. In lesson one you designed a bold pilot. Every bold idea 
 - *trust/f3:* Commitment. Show the issue matters to you. Name an owner and a date, and report back when you said you would.
 - *trust/f4:* Empathy. Show you understand how the people affected feel. Start with them before you start with the process.
 
+### Lesson 2: Where reputation is made
+
+*About 90 seconds*
+
+You have the trust radar. Now, where is reputation made? Not mainly in what Vanderbilt says. The university speaks to its audiences directly, but most of what they hear arrives through the media. And around the media sits a second circle: activists and advocates who shape what the media and your constituents pay attention to. The Chancellor maps coverage on two axes. Up is how important an issue is to society. Across is how interested a mass audience is. Low on both is simple reporting, the wire brief. Important but niche is in-depth coverage, which runs on experts and data. Popular but light is extensive reporting, cable infotainment. High on both is mass-market coverage, which runs on testimony and drama. Here is the key lesson: stories migrate. The Chancellor gave two examples. A routine sports story became a story about the rise of antisemitism after a post about Kanye West. And clinical care guidelines became a harming children story through a social media campaign and political controversy about transgender issues. When a story moves up and to the right, data stops being enough, and a human voice and empathy matter most. Think of a story about your area. Where on the map does it sit today, and what could move it? Now place six stories, and read what each corner asks of you. Next, timing: when to act.
+
+### Lesson 2: Act while you have control
+
+*About 85 seconds*
+
+You know where a story sits. Now the hardest question in reputation: when do you act? The Chancellor draws two lines over time. Control starts high and falls. Stakes start low and then rise sharply. The optimal time to act is at the start, when control is high and the stakes are low. The typical time to act is later, when the lines cross and the stakes spike. By then, the story is no longer yours. So he frames reputation work as a cycle in three parts. Before: prevention, fixing what could go wrong, and preparation, deciding who speaks, what you would say, and who you would call. During: identification, spotting it early; containment, stopping the spread and telling the people affected; and solution, fixing the cause with an owner and a date. After: learning, which feeds the next round of prevention and preparation. Always learning. Here is a small example. A complaint about a confusing form gets ten replies online on Monday. Fixing the form that afternoon is the optimal time. Waiting for a reporter to call on Thursday is the typical time. Think of the last small problem in your area that grew. When did someone first notice it? Now sort six actions into before, during, or after. Next, three calls under pressure.
+
 ### Lesson 2: Calls under pressure
 
 *About 65 seconds*
 
-You know the four drivers of trust. Now use them under pressure, where they matter most. Reputation is not only the press office’s job; staff leaders make most of the calls that build or drain it. When something goes wrong, five moves help. Move fast, because the first account of a story tends to stick. Tell the truth, including what you do not know yet. Show the plan and the owner, then report back. Start with the people affected, before the process. And bring in the offices that own the issue, such as Communications or General Counsel, so Vanderbilt speaks with one voice. Think of a moment when something went wrong in your area and word got out. What did people remember about how it was handled? Here are three situations. Choose what you would do, then try the other answers to see what they would cost. That comparison is where most of the learning happens. Next, you write your project’s reputational statement.
+You have the radar, the terrain, and the timing. Now use them under pressure, where they matter most. Reputation is not only the press office’s job; staff leaders make most of the calls that build or drain it. When something goes wrong, five moves help. Move fast, because the first account of a story tends to stick. Tell the truth, including what you do not know yet. Show the plan and the owner, then report back. Start with the people affected, before the process. And bring in the offices that own the issue, such as Communications or General Counsel, so Vanderbilt speaks with one voice. Think of a moment when something went wrong in your area and word got out. What did people remember about how it was handled? Here are three situations. Choose what you would do, then try the other answers to see what they would cost. That comparison is where most of the learning happens. Next, you write your project’s reputational statement.
 
 **Tap clips**
 
@@ -276,9 +288,9 @@ You have practiced protecting trust. Now apply it to your pod’s idea, because 
 
 ### Lesson 2: Wrap-up
 
-*About 40 seconds*
+*About 45 seconds*
 
-That is lesson two. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis exposes the weakest one. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, lesson three: the teams that deliver.
+That is lesson two. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis finds the dent in the radar. And timing matters: act early, while you still have control, because stories migrate toward the loud corner of the terrain. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, lesson three: the teams that deliver.
 
 ### Lesson 3: High-performing teams
 
@@ -355,4 +367,4 @@ You are nearly done with Course Two. This page turns the course into four moves 
 
 That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a pilot, a reputational strategy, strong metrics, and a team ready to deliver. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
 
-*Page narration: about 21 minutes.*
+*Page narration: about 24 minutes.*

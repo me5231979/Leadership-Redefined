@@ -14,6 +14,8 @@ window.LR_COURSE = {
     { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
     { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
     { sel:'#reputation',   key:'trust',      label:'Lesson 2: Reputational stewardship', mode:'whole' },
+    { sel:'#terrain',      key:'terrain',    label:'Lesson 2: Where reputation is made', mode:'whole' },
+    { sel:'#timing',       key:'timing',     label:'Lesson 2: Act while you have control', mode:'whole' },
     { sel:'#pressure',     key:'pressure',   label:'Lesson 2: Calls under pressure', mode:'whole' },
     { sel:'#repstatement', key:'repstatement', label:'Lesson 2: Your statement',     mode:'whole' },
     { sel:'#recap2',       key:'recap2',     label:'Lesson 2: Wrap-up',              mode:'whole' },
@@ -35,22 +37,24 @@ window.LR_COURSE = {
     { k:'moves',        no:'04', name:'The change moves',     how:'Sort six tactics' },
     { k:'kind',         no:'05', name:'Know your problem',    how:'Sort four situations' },
     { k:'reframe',      no:'06', name:'Your pilot',           how:'Fill in four of five lines' },
-    { k:'trust',        no:'07', name:'How trust is earned',  how:'Open all four drivers' },
-    { k:'pressure',     no:'08', name:'Calls under pressure', how:'Find the strongest call in three situations' },
-    { k:'repstatement', no:'09', name:'Your reputational statement', how:'Fill in three of four lines' },
-    { k:'lee',          no:'10', name:'Meet the leader',      how:'Fact or fiction, four statements' },
-    { k:'principles',   no:'11', name:'Six principles',       how:'Open all six' },
-    { k:'teamcalls',    no:'12', name:'The learning zone',    how:'Find the strongest call in three situations' },
-    { k:'health',       no:'13', name:'Your pod',             how:'Rate your pod' },
-    { k:'metrics',      no:'14', name:'Strong metrics',       how:'Sort six metrics' },
-    { k:'draft',        no:'15', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz',         no:'16', name:'Apply it',             how:'Score 6 of 8' },
-    { k:'nextstep',     no:'17', name:'This week',            how:'Commit to all four moves' }
+    { k:'trust',        no:'07', name:'The trust radar',      how:'Open all four drivers' },
+    { k:'terrain',      no:'08', name:'The reputation terrain', how:'Place six stories' },
+    { k:'timing',       no:'09', name:'Act while you have control', how:'Sort six actions' },
+    { k:'pressure',     no:'10', name:'Calls under pressure', how:'Find the strongest call in three situations' },
+    { k:'repstatement', no:'11', name:'Your reputational statement', how:'Fill in three of four lines' },
+    { k:'lee',          no:'12', name:'Meet the leader',      how:'Fact or fiction, four statements' },
+    { k:'principles',   no:'13', name:'Six principles',       how:'Open all six' },
+    { k:'teamcalls',    no:'14', name:'The learning zone',    how:'Find the strongest call in three situations' },
+    { k:'health',       no:'15', name:'Your pod',             how:'Rate your pod' },
+    { k:'metrics',      no:'16', name:'Strong metrics',       how:'Sort six metrics' },
+    { k:'draft',        no:'17', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
+    { k:'quiz',         no:'18', name:'Apply it',             how:'Score 6 of 8' },
+    { k:'nextstep',     no:'19', name:'This week',            how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
     { h:'Entrepreneurial <em>mindset</em>', p:'A real Vanderbilt turnaround, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Your pilot'] },
-    { h:'Reputational <em>stewardship</em>', p:'How trust is earned, and three calls under pressure.', tags:['The Chancellor', 'Four drivers of trust', 'Your statement'] },
+    { h:'Reputational <em>stewardship</em>', p:'The trust radar, where reputation is made, when to act, and three calls under pressure.', tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement'] },
     { h:'High-performing <em>teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Your pod'] },
     { h:'Your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
   ],
@@ -64,6 +68,22 @@ window.LR_COURSE = {
   ],
   NUM_PROG: 'numbers',
   DRILLS: {
+    terrain: { opts:['Simple reporting', 'In-depth coverage', 'Extensive reporting', 'Mass-market coverage'], prog:'terrain', verb:'placed', items:[
+      { s:'A wire service runs three paragraphs on a new dean’s appointment.', a:0, x:'Low importance, low interest. Get the facts right and fast; that is the whole job.' },
+      { s:'A national magazine analyzes research funding with data and interviews with experts.', a:1, x:'Important, but a niche audience. Bring experts and data, and credibility transfers from them to you.' },
+      { s:'Cable panels replay a viral clip from a campus event for two days.', a:2, x:'High interest, little substance. Keep one clear, consistent line, and do not feed the cycle.' },
+      { s:'A TV newsmagazine tells one family’s emotional story about a university decision.', a:3, x:'Important and popular. Data alone will lose to testimony; lead with empathy and a human voice of your own.' },
+      { s:'A trade newsletter reports that your office switched software vendors.', a:0, x:'Routine and quiet. Accurate facts, quickly. Watch only for signs it is starting to migrate.' },
+      { s:'A long-form report weighs the evidence on whether a college degree is worth the cost.', a:1, x:'A serious question for society with a thoughtful audience. Your outcomes data and your experts matter most here.' }
+    ]},
+    timing: { opts:['Before', 'During', 'After'], prog:'timing', verb:'sorted', items:[
+      { s:'Before admissions season, your team fixes a deadline that families often misread.', a:0, x:'Prevention: remove the problem before anyone feels it. The cheapest crisis is the one that never starts.' },
+      { s:'Ahead of a high-profile campus event, you agree who speaks for the unit and draft a holding statement.', a:0, x:'Preparation: decide roles and words while control is high, not when the phone rings.' },
+      { s:'A staff member sees a post about your office gaining traction and alerts Communications that morning.', a:1, x:'Identification: spotting it early is the optimal time to act. The earlier you see it, the more control you keep.' },
+      { s:'You pause the affected process and tell the people affected what happened and what comes next.', a:1, x:'Containment: stop the spread and start with the people affected. Empathy and transparency, in that order.' },
+      { s:'You fix the root cause and announce the fix, with an owner and a date.', a:1, x:'Solution: expertise and commitment on the radar. Then report back when you said you would.' },
+      { s:'Two weeks later, your team reviews what happened and updates its checklist.', a:2, x:'Learning: it feeds the next round of prevention and preparation. Always learning.' }
+    ]},
     moves: { opts:['People and Culture', 'Collaboration', 'Motivation and Incentives', 'Process and Systems'], prog:'moves', verb:'sorted', items:[
       { s:'Establish an internal academy to develop fundraisers.', a:0, x:'Growing and keeping top talent is where the transformation started.' },
       { s:'Implement a new donor relationship system (CRM).', a:3, x:'The technology agenda, paired with better data and analytics.' },
@@ -190,15 +210,15 @@ window.LR_COURSE = {
     week: 'Course Two · Week of November 9',
     topics: 'Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams',
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
-    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the four drivers of trust.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.'],
+    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.'],
     lessons: [
       { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'kind', 'reframe'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
         ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
         ['Probe complex problems.', 'When no one knows the answer, run a small pilot, learn, and scale what works.'] ] },
-      { title:'Reputational stewardship', keys:['trust', 'pressure', 'repstatement'], recap:'recap2', ideas:[
+      { title:'Reputational stewardship', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
         ['Reputation is infrastructure.', 'It turns visibility into talent, funding, partners, and access, and it is built every day.'],
-        ['Trust has four drivers.', 'Transparency, expertise, commitment, and empathy. A crisis exposes the weakest one.'],
+        ['Trust has four drivers, and timing matters.', 'Transparency, expertise, commitment, and empathy; a crisis finds the dent in the radar. Act early, while you still have control, because stories migrate toward the loud corner of the terrain.'],
         ['Every leader is a steward.', 'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'] ] },
       { title:'High-performing teams', keys:['lee', 'principles', 'teamcalls', 'health'], recap:'recap3', ideas:[
         ['Control the controllables.', 'Leaders build the conditions; the team brings the effort. Results follow.'],
