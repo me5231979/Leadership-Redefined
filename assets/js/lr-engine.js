@@ -11,6 +11,13 @@
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var C = window.LR_CONFIG || {};
 var D = window.LR_COURSE || {};
+/* answer positions: move the strongest call and the right number to the spots set in
+   D.SCEN_POS and D.NUMS_POS, so the correct answer is not always in the same place */
+(function(){
+  var SP = D.SCEN_POS || {}, NP = D.NUMS_POS || [];
+  Object.keys(SP).forEach(function(k){ var sc = (D.SCENARIOS || {})[k]; if(!sc) return; var b = -1; sc.opts.forEach(function(o, i){ if(o.best) b = i; }); var t = SP[k]; if(b < 0 || t === b || t >= sc.opts.length) return; var o = sc.opts.splice(b, 1)[0]; sc.opts.splice(t, 0, o); });
+  (D.NUMS || []).forEach(function(n, i){ var t = NP[i]; if(t === undefined || t === n.a || t >= n.opts.length) return; var o = n.opts.splice(n.a, 1)[0]; n.opts.splice(t, 0, o); n.a = t; });
+})();
 var yr = document.getElementById('yr'); if(yr) yr.textContent = new Date().getFullYear();
 function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]; }); }
 function $(s, c){ return (c || document).querySelector(s); }
@@ -345,7 +352,7 @@ var STOPS = D.STOPS || [];
     var b = e.target.closest('button[data-stop]'); if(!b) return;
     var i = +b.getAttribute('data-stop'), s = STOPS[i]; seen[i] = 1;
     btns.forEach(function(x){ x.setAttribute('aria-expanded', x === b ? 'true' : 'false'); x.classList.toggle('seen', !!seen[+x.getAttribute('data-stop')]); });
-    port.innerHTML = '<span class="v-label">Stop ' + (i + 1) + ' of 6</span><h3>' + s.h + subBtn((D.ROUTE_NARR || 'welcome/g') + (i + 1)) + '</h3><p>' + esc(s.p) + '</p><ul>' + s.tags.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+    port.innerHTML = '<span class="v-label">Stop ' + (i + 1) + ' of ' + STOPS.length + '</span><h3>' + s.h + subBtn((D.ROUTE_NARR || 'welcome/g') + (i + 1)) + '</h3><p>' + esc(s.p) + '</p><ul>' + s.tags.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
     narrSub((D.ROUTE_NARR || 'welcome/g') + (i + 1));
     if(Object.keys(seen).length === STOPS.length){ set('r-' + (D.ROUTE_PROG || 'welcome'), 'All ' + STOPS.length + ' stops visited'); progDone(D.ROUTE_PROG || 'welcome'); }
   });
@@ -793,12 +800,12 @@ function buildPrint(){
   /* course overview */
   html += '<section class="ps-recap"><h2>Course overview</h2>' + (O.goals ? '<h3>By the end you can</h3><ol>' + O.goals.map(function(g, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span>' + g + '</span></li>'; }).join('') + '</ol>' : '') + '</section>';
   (O.lessons || []).forEach(function(L, li){
-    html += '<section class="ps-recap"><h2>Lesson ' + (li + 1) + ' &middot; ' + esc(L.title) + '</h2><ol>' + L.ideas.map(function(x, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span><b>' + esc(x[0]) + '</b> ' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>';
+    html += '<section class="ps-recap"><h2>' + esc(L.no || ('Lesson ' + (li + 1))) + (L.no && L.no === L.title ? '' : ' &middot; ' + esc(L.title)) + '</h2><ol>' + L.ideas.map(function(x, i){ return '<li><span class="ps-n">' + (i + 1) + '</span><span><b>' + esc(x[0]) + '</b> ' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>';
     var acts = SECTIONS.filter(function(s){ return (L.keys || []).indexOf(s.k) > -1; });
     if(acts.length) html += '<table class="ps-table"><tbody>' + acts.map(function(s){ var r = get('r-' + s.k); var bd = D.BUILDS && D.BUILDS[s.k]; if(!r && bd) r = progIs(s.k) ? 'Written; see My work below' : ''; if(!r && s.k === 'quiz' && score !== null) r = score + ' of ' + QUIZ.length + ' correct'; if(!r && s.k === 'nextstep') r = commits.filter(Boolean).length + ' of ' + COMMITS.length + ' committed';
       return '<tr><th>' + esc(s.name) + '<small>' + esc(s.how) + '</small></th><td>' + (progIs(s.k) ? '<b>Done.</b> ' : '<span class="ps-empty">Not yet.</span> ') + (r ? esc(r) : '') + '</td></tr>' + myAnswers(s.k); }).join('') + '</tbody></table>';
     if(L.recap && D.BUILDS[L.recap]){ html += '<h3>In my own words</h3>' + para(bVal(L.recap, 'txt')); }
-    var deep = (L.deep || []).map(function(k){ var r = get('r-' + k), a = myAnswers(k), pl = (D.PLAN || []).filter(function(x){ return x.key === k; })[0]; if(!r && !a) return ''; return '<tr><th>' + esc(pl ? pl.label.replace(/^Lesson \d: Go deeper, /, '') : k) + '</th><td>' + (r ? esc(r) : '') + '</td></tr>' + a; }).join('');
+    var deep = (L.deep || []).map(function(k){ var r = get('r-' + k), a = myAnswers(k), pl = (D.PLAN || []).filter(function(x){ return x.key === k; })[0]; if(!r && !a) return ''; return '<tr><th>' + esc(pl ? pl.label.replace(/^(Lesson|Module) \d: Go deeper, /, '') : k) + '</th><td>' + (r ? esc(r) : '') + '</td></tr>' + a; }).join('');
     if(deep) html += '<h3>Go deeper practice</h3><table class="ps-table"><tbody>' + deep + '</tbody></table>';
     html += '</section>';
   });

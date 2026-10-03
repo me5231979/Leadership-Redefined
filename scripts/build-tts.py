@@ -10,7 +10,7 @@ key's slash becomes a dash (home/1 -> home-1.mp3). A hash per clip in
 .github/tts-cache.json means a re-run only pays for clips whose words or
 voice changed. Runs in .github/workflows/build-tts.yml, or locally with the
 key exported and ffmpeg on PATH."""
-import hashlib, json, os, subprocess, sys, time, urllib.request, urllib.error
+import hashlib, json, os, re, subprocess, sys, time, urllib.request, urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = json.load(open(os.path.join(ROOT, '.github', 'tts.json')))
@@ -22,6 +22,11 @@ LOUD = 'I=-16:TP=-1.5:LRA=11'
 def scripts(course):
     js = "const vm=require('vm'),fs=require('fs');const w={};vm.runInNewContext(fs.readFileSync(%r,'utf8'),{window:w});console.log(JSON.stringify(w.LR_NARR||{}))" % os.path.join(ROOT, course, 'narration-scripts.js')
     return json.loads(subprocess.run(['node', '-e', js], check=True, stdout=subprocess.PIPE, text=True).stdout)
+
+def say(text):
+    for w, sound in (CFG.get('pronounce') or {}).items():
+        text = re.sub(r'\b%s\b' % re.escape(w), sound, text)
+    return text
 
 def sig(text):
     return hashlib.sha256(json.dumps([CFG['voice_id'], CFG['model_id'], CFG.get('output_format'), CFG.get('voice_settings'), CFG.get('audio_filter'), text], sort_keys=True).encode()).hexdigest()
@@ -66,9 +71,9 @@ if __name__ == '__main__':
         print('%s: voice %s, model %s, %d clips' % (course, CFG['voice_id'], CFG['model_id'], len(narr)))
         for k, text in narr.items():
             name = k.replace('/', '-') + '.mp3'
-            raw, dest, h, ck = os.path.join(SRC, name), os.path.join(OUT, name), sig(text), course + '/' + name
+            raw, dest, h, ck = os.path.join(SRC, name), os.path.join(OUT, name), sig(say(text)), course + '/' + name
             if cache.get(ck) == h and os.path.isfile(raw) and os.path.isfile(dest): kept += 1; continue
-            speak(text, raw); level(raw, dest)
+            speak(say(text), raw); level(raw, dest)
             cache[ck] = h; made += 1
             json.dump(cache, open(CACHE_P, 'w'), indent=1, sort_keys=True)
             print('recorded', ck); time.sleep(0.5)

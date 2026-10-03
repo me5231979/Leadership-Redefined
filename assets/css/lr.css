@@ -291,3 +291,10 @@
 .lr-fb.ok .fb-mark{ color:#8BA18E; }
 .lr-fb b{ color:var(--tx); font-weight:600; }
 @media print{ .lr-fb{ display:none !important; } }
+
+/* Per-principle source line inside tap cards */
+.lr-cite{display:block;margin-top:.5rem;font-size:.8125rem;font-style:italic;opacity:.85}
+
+/* Bottom bar section name: two short lines instead of a clipped sliver; hidden when the dots need the room */
+.bb-sec{ flex:0 0 auto; width:8.5rem; white-space:normal; line-height:1.2; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+@media (max-width:1759px){ .bb-sec{ display:none; } }

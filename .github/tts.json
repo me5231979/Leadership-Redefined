@@ -1,5 +1,5 @@
 {
-  "_note": "ElevenLabs narration for both Leadership Redefined courses, voice v3p1kjzUvro6S76qmYmH (chosen by the program owner). The Record narration workflow reads this file, generates every clip in course-one/ and course-two/narration-scripts.js, keeps raw files in assets/audio/<course>/source, and writes loudness-matched clips to assets/audio/<course>. Only clips whose text, voice, or settings changed are regenerated. Key needs the Text to Speech permission.",
+  "_note": "ElevenLabs narration for both Leadership Redefined courses, voice v3p1kjzUvro6S76qmYmH (chosen by the program owner). The Record narration workflow reads this file, generates every clip in course-one/ and course-two/narration-scripts.js, keeps raw files in assets/audio/<course>/source, and writes loudness-matched clips to assets/audio/<course>. Only clips whose text, voice, or settings changed are regenerated. Key needs the Text to Speech permission. The pronounce map swaps whole words in the audio only (the read-along text keeps the real spelling): Lutz is said Loots.",
   "voice_id": "v3p1kjzUvro6S76qmYmH",
   "model_id": "eleven_multilingual_v2",
   "output_format": "mp3_44100_128",
@@ -9,5 +9,8 @@
     "style": 0.0,
     "use_speaker_boost": true
   },
-  "audio_filter": "highpass=f=70"
+  "audio_filter": "highpass=f=70",
+  "pronounce": {
+    "Lutz": "Loots"
+  }
 }

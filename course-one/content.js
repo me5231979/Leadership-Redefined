@@ -5,32 +5,32 @@
 window.LR_COURSE = {
   PLAN: [
     { sel:'section.hero', key:'home',       label:'Welcome',                       mode:'whole' },
-    { sel:'#week',        key:'route',      label:'Lesson 1: This week',           mode:'whole' },
-    { sel:'#mission',     key:'mission',    label:'Lesson 1: The vision',          mode:'whole' },
-    { sel:'#problems',    key:'problems',   label:'Lesson 1: Four problems',       mode:'whole' },
-    { sel:'#engine',      key:'engine',     label:'Lesson 1: The reputation engine', mode:'whole' },
-    { sel:'#momentum',    key:'numbers',    label:'Lesson 1: Momentum',            mode:'whole' },
-    { sel:'#growth',      key:'growth',     label:'Lesson 1: Four growth sites',   mode:'whole' },
-    { sel:'#me1',          key:'me1',        label:'Lesson 1: What this means for me', mode:'whole' },
-    { sel:'#recap1',      key:'recap1',     label:'Lesson 1: Wrap-up',             mode:'whole' },
-    { sel:'#valuestick',  key:'valuestick', label:'Lesson 1: Go deeper, the value stick',     mode:'whole' },
-    { sel:'#brand',       key:'brand',      label:'Lesson 2: Brand and reputation', mode:'whole' },
-    { sel:'#fighter',     key:'fighter',    label:'Lesson 2: Spikes and systems',  mode:'whole' },
-    { sel:'#ground',      key:'ground',     label:'Lesson 2: The ground game',     mode:'whole' },
-    { sel:'#story',       key:'story',      label:'Lesson 2: Your storyline',      mode:'whole' },
-    { sel:'#me2',          key:'me2',        label:'Lesson 2: What this means for me', mode:'whole' },
-    { sel:'#recap2',      key:'recap2',     label:'Lesson 2: Wrap-up',             mode:'whole' },
-    { sel:'#gdstory', key:'gdstory', label:'Lesson 2: Go deeper, the shape of a great talk', mode:'whole' },
-    { sel:'#margin',      key:'margin',     label:'Lesson 3: Mission and margin',  mode:'whole' },
-    { sel:'#portfolio',   key:'portfolio',  label:'Lesson 3: The whole cost',       mode:'whole' },
-    { sel:'#statement',   key:'statement',  label:'Lesson 3: Your statement',      mode:'whole' },
-    { sel:'#me3',          key:'me3',        label:'Lesson 3: What this means for me', mode:'whole' },
-    { sel:'#recap3',      key:'recap3',     label:'Lesson 3: Wrap-up',             mode:'whole' },
-    { sel:'#gdmargin', key:'gdmargin', label:'Lesson 3: Go deeper, Mission and Margin', mode:'whole' },
-    { sel:'#focus',       key:'focus',      label:'Lesson 4: Your focus area',     mode:'whole' },
-    { sel:'#draft',       key:'draft',      label:'Lesson 4: Draft the brief',     mode:'whole' },
-    { sel:'#quiz',        key:'quiz',       label:'Lesson 4: Quick check',         mode:'whole' },
-    { sel:'#nextstep',    key:'nextstep',   label:'Lesson 4: This week',           mode:'whole' },
+    { sel:'#week',        key:'route',      label:'This week',           mode:'whole' },
+    { sel:'#mission',     key:'mission',    label:'Module 1: The vision',          mode:'whole' },
+    { sel:'#problems',    key:'problems',   label:'Module 1: Four problems',       mode:'whole' },
+    { sel:'#engine',      key:'engine',     label:'Module 1: The reputation engine', mode:'whole' },
+    { sel:'#momentum',    key:'numbers',    label:'Module 1: Momentum',            mode:'whole' },
+    { sel:'#growth',      key:'growth',     label:'Module 1: Four growth sites',   mode:'whole' },
+    { sel:'#me1',          key:'me1',        label:'Module 1: What this means for me', mode:'whole' },
+    { sel:'#recap1',      key:'recap1',     label:'Module 1: Wrap-up',             mode:'whole' },
+    { sel:'#valuestick',  key:'valuestick', label:'Module 1: Go deeper, the value stick',     mode:'whole' },
+    { sel:'#brand',       key:'brand',      label:'Module 2: Brand and reputation', mode:'whole' },
+    { sel:'#fighter',     key:'fighter',    label:'Module 2: Spikes and systems',  mode:'whole' },
+    { sel:'#ground',      key:'ground',     label:'Module 2: The ground game',     mode:'whole' },
+    { sel:'#story',       key:'story',      label:'Module 2: Your storyline',      mode:'whole' },
+    { sel:'#me2',          key:'me2',        label:'Module 2: What this means for me', mode:'whole' },
+    { sel:'#recap2',      key:'recap2',     label:'Module 2: Wrap-up',             mode:'whole' },
+    { sel:'#gdstory', key:'gdstory', label:'Module 2: Go deeper, the shape of a great talk', mode:'whole' },
+    { sel:'#margin',      key:'margin',     label:'Module 3: Mission and margin',  mode:'whole' },
+    { sel:'#portfolio',   key:'portfolio',  label:'Module 3: The whole cost',       mode:'whole' },
+    { sel:'#statement',   key:'statement',  label:'Module 3: Your statement',      mode:'whole' },
+    { sel:'#me3',          key:'me3',        label:'Module 3: What this means for me', mode:'whole' },
+    { sel:'#recap3',      key:'recap3',     label:'Module 3: Wrap-up',             mode:'whole' },
+    { sel:'#gdmargin', key:'gdmargin', label:'Module 3: Go deeper, Mission and Margin', mode:'whole' },
+    { sel:'#focus',       key:'focus',      label:'Your brief: Your focus area',     mode:'whole' },
+    { sel:'#draft',       key:'draft',      label:'Your brief: Draft the brief',     mode:'whole' },
+    { sel:'#quiz',        key:'quiz',       label:'Your brief: Quick check',         mode:'whole' },
+    { sel:'#nextstep',    key:'nextstep',   label:'Your brief: This week',           mode:'whole' },
     { sel:'#learn',       key:'learn',      label:'Keep going',                    mode:'whole', extras:['footer'] }
   ],
   SECTIONS: [
@@ -155,14 +155,14 @@ window.LR_COURSE = {
     me1:{ txt:['own', 'when'] }, me2:{ txt:['own', 'when'] }, me3:{ txt:['own', 'when'] }
   },
   BUILDS: {
-    me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me1: { title:'As a manager, after lesson 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me3: { title:'As a manager, after module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2: { title:'As a manager, after module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1: { title:'As a manager, after module 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     ground: { title:'My ground game play', fields:['asset', 'who', 'how', 'pass'], need:3, tpl:function(v){
       return 'THE ASSET: ' + (v.asset || '[a story, a number, or a result]') + '\nWHO SHOULD HEAR IT: ' + (v.who || '[a priority person or group]') + '\nHOW I WILL SHARE IT: ' + (v.how || '[directly, and when]') + '\nHOW THEY PASS IT ON: ' + (v.pass || '[peer to peer]'); } },
-    recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap1: { title:'Module 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2: { title:'Module 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap3: { title:'Module 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     story: { title:'My storyline', fields:['person', 'is', 'could', 'ask', 'aud'], need:4, tpl:function(v){
       return 'OPENING: ' + (v.person || '[a real person and a real moment]') + '\nWHAT IS: ' + (v.is || '[the frustrating present]') + '\nWHAT COULD BE: ' + (v.could || '[the better future your idea creates]') + '\nTHE ASK: ' + (v.ask || '[what you need your audience to say yes to]') + '\nAUDIENCES: ' + (v.aud || '[who must hear it, and what each one cares about]'); } },
     statement: { title:'My mission and margin statement', fields:['mission', 'cost', 'ret', 'quad'], need:3, tpl:function(v){
@@ -195,6 +195,8 @@ window.LR_COURSE = {
     { seg:'Margin', q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. What is the strongest move?', opts:['Close it', 'Protect it and change nothing', 'Keep the outcome, redesign the delivery, and name what pays for it', 'Move it to another unit'], a:2, x:'Mission and margin together: keep what students get, change how it is delivered, and name the money that pays for it.' },
     { seg:'Margin', q:'Which mission and margin statement would a judge find strongest?', opts:['It will be great for everyone.', 'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and names who pays after the pilot year.', 'It needs new funding, details to come.', 'It is important to the mission.'], a:1, x:'Specific mission benefit, cost and source, return, and the whole cost after year one.' }
   ],
+  SCEN_POS: { m1:0, m2:2 },
+  NUMS_POS: [1, 0, 2, 1],
   QUIZ_POS: [1, 3, 0, 2, 1, 0, 3, 2],
   QUIZ_PASS: 6,
   OVERVIEW: {
@@ -203,19 +205,19 @@ window.LR_COURSE = {
     due: 'Fri, Nov 6', dueLabel: 'finish this course by',
     goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be, and plan how you will carry it as the ground game.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
     lessons: [
-      { title:'Vision and strategy', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth'], deep:['valuestick'], recap:'recap1', ideas:[
+      { title:'Vision and strategy', no:'Module 1', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth'], deep:['valuestick'], recap:'recap1', ideas:[
         ['The vision is an instruction.', 'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'],
         ['Reputation is an engine.', 'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up. Four growth sites show the bold bets it funds.'],
         ['Bold has an address.', 'Four growth sites carry the vision beyond Nashville, and each one runs on core operations.'] ] },
-      { title:'Communication, storytelling and brand', keys:['brand', 'fighter', 'ground', 'story'], recap:'recap2', ideas:[
+      { title:'Communication, storytelling and brand', no:'Module 2', keys:['brand', 'fighter', 'ground', 'story'], recap:'recap2', ideas:[
         ['Close the gap.', 'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'],
         ['A spike needs a system.', 'Attention climbs from relevance to consideration, trust, and commitment only with a steady drumbeat, carried by leaders.'],
         ['Connect people to the why.', 'One real person, the difference your idea makes, and one clear ask, carried by the people who hear it.'] ] },
-      { title:'Mission and margin', keys:['margin', 'portfolio', 'statement'], recap:'recap3', ideas:[
+      { title:'Mission and margin', no:'Module 3', keys:['margin', 'portfolio', 'statement'], recap:'recap3', ideas:[
         ['No margin, no mission.', 'Mission is purpose and margin is capacity. A leader stewards both.'],
         ['Count the whole cost.', 'Follow the cash, and count buildings, space, research costs, and debt past year one.'],
         ['Answer both questions.', 'Every proposal names its mission benefit, its cost and source, and its return.'] ] },
-      { title:'Your brief', keys:['focus', 'draft', 'quiz', 'nextstep'], ideas:[
+      { title:'Your brief', no:'Your brief', keys:['focus', 'draft', 'quiz', 'nextstep'], ideas:[
         ['Choose your focus area on purpose.', 'Your brief is judged only against others in the same area.'],
         ['Make the case on page one.', 'Focus area, the challenge and why it matters, and the connection to Vanderbilt’s priorities.'],
         ['Bring it to your pod.', 'Merge drafts into one version, with one editor, this week.'] ] }

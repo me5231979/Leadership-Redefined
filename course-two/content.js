@@ -6,34 +6,34 @@
 window.LR_COURSE = {
   PLAN: [
     { sel:'section.hero',  key:'home',       label:'Welcome',                        mode:'whole' },
-    { sel:'#week',         key:'route',      label:'Lesson 1: This week',            mode:'whole' },
-    { sel:'#venture',      key:'swot',       label:'Lesson 1: Entrepreneurial mindset', mode:'whole' },
-    { sel:'#turnaround',   key:'numbers',    label:'Lesson 1: The turnaround',       mode:'whole' },
-    { sel:'#moves',        key:'moves',      label:'Lesson 1: The change moves',     mode:'whole' },
-    { sel:'#collab',       key:'collab',     label:'Lesson 1: Radical collaboration', mode:'whole' },
-    { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
-    { sel:'#me1',          key:'me1',        label:'Lesson 1: What this means for me', mode:'whole' },
-    { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
-    { sel:'#kind',         key:'kind',       label:'Lesson 1: Go deeper, kinds of problems',    mode:'whole' },
-    { sel:'#reputation',   key:'trust',      label:'Lesson 2: Reputational stewardship', mode:'whole' },
-    { sel:'#terrain',      key:'terrain',    label:'Lesson 2: Where reputation is made', mode:'whole' },
-    { sel:'#timing',       key:'timing',     label:'Lesson 2: Act while you have control', mode:'whole' },
-    { sel:'#pressure',     key:'pressure',   label:'Lesson 2: Calls under pressure', mode:'whole' },
-    { sel:'#repstatement', key:'repstatement', label:'Lesson 2: Your statement',     mode:'whole' },
-    { sel:'#me2',          key:'me2',        label:'Lesson 2: What this means for me', mode:'whole' },
-    { sel:'#recap2',       key:'recap2',     label:'Lesson 2: Wrap-up',              mode:'whole' },
-    { sel:'#gdrep', key:'gdrep', label:'Lesson 2: Go deeper, Reputation Rules', mode:'whole' },
-    { sel:'#teams',        key:'lee',        label:'Lesson 3: High-performing teams', mode:'whole' },
-    { sel:'#principles',   key:'principles', label:'Lesson 3: Six principles',       mode:'whole' },
-    { sel:'#me3',          key:'me3',        label:'Lesson 3: What this means for me', mode:'whole' },
-    { sel:'#recap3',       key:'recap3',     label:'Lesson 3: Wrap-up',              mode:'whole' },
-    { sel:'#zone',         key:'teamcalls',  label:'Lesson 3: Go deeper, the learning zone',    mode:'whole' },
-    { sel:'#health',       key:'health',     label:'Lesson 3: Go deeper, team health',             mode:'whole' },
-    { sel:'#metrics',      key:'metrics',    label:'Lesson 4: Strong metrics',       mode:'whole' },
-    { sel:'#draft',        key:'draft',      label:'Lesson 4: Draft the brief',      mode:'whole' },
-    { sel:'#quiz',         key:'quiz',       label:'Lesson 4: Quick check',          mode:'whole' },
-    { sel:'#nextstep',     key:'nextstep',   label:'Lesson 4: This week',            mode:'whole' },
-    { sel:'#carry',        key:'carry',      label:'Lesson 4: Carry it forward',     mode:'whole' },
+    { sel:'#week',         key:'route',      label:'This week',            mode:'whole' },
+    { sel:'#venture',      key:'swot',       label:'Module 4: Entrepreneurial mindset', mode:'whole' },
+    { sel:'#turnaround',   key:'numbers',    label:'Module 4: The turnaround',       mode:'whole' },
+    { sel:'#moves',        key:'moves',      label:'Module 4: The change moves',     mode:'whole' },
+    { sel:'#collab',       key:'collab',     label:'Module 4: Radical collaboration', mode:'whole' },
+    { sel:'#reframe',      key:'reframe',    label:'Module 4: Your pilot',           mode:'whole' },
+    { sel:'#me1',          key:'me1',        label:'Module 4: What this means for me', mode:'whole' },
+    { sel:'#recap1',       key:'recap1',     label:'Module 4: Wrap-up',              mode:'whole' },
+    { sel:'#kind',         key:'kind',       label:'Module 4: Go deeper, kinds of problems',    mode:'whole' },
+    { sel:'#reputation',   key:'trust',      label:'Module 5: Reputational stewardship', mode:'whole' },
+    { sel:'#terrain',      key:'terrain',    label:'Module 5: Where reputation is made', mode:'whole' },
+    { sel:'#timing',       key:'timing',     label:'Module 5: Act while you have control', mode:'whole' },
+    { sel:'#pressure',     key:'pressure',   label:'Module 5: Calls under pressure', mode:'whole' },
+    { sel:'#repstatement', key:'repstatement', label:'Module 5: Your statement',     mode:'whole' },
+    { sel:'#me2',          key:'me2',        label:'Module 5: What this means for me', mode:'whole' },
+    { sel:'#recap2',       key:'recap2',     label:'Module 5: Wrap-up',              mode:'whole' },
+    { sel:'#gdrep', key:'gdrep', label:'Module 5: Go deeper, Reputation Rules', mode:'whole' },
+    { sel:'#teams',        key:'lee',        label:'Module 6: High-performing teams', mode:'whole' },
+    { sel:'#principles',   key:'principles', label:'Module 6: Six principles',       mode:'whole' },
+    { sel:'#me3',          key:'me3',        label:'Module 6: What this means for me', mode:'whole' },
+    { sel:'#recap3',       key:'recap3',     label:'Module 6: Wrap-up',              mode:'whole' },
+    { sel:'#zone',         key:'teamcalls',  label:'Module 6: Go deeper, the learning zone',    mode:'whole' },
+    { sel:'#health',       key:'health',     label:'Module 6: Go deeper, team health',             mode:'whole' },
+    { sel:'#metrics',      key:'metrics',    label:'Your brief: Strong metrics',       mode:'whole' },
+    { sel:'#draft',        key:'draft',      label:'Your brief: Draft the brief',      mode:'whole' },
+    { sel:'#quiz',         key:'quiz',       label:'Your brief: Quick check',          mode:'whole' },
+    { sel:'#nextstep',     key:'nextstep',   label:'Your brief: This week',            mode:'whole' },
+    { sel:'#carry',        key:'carry',      label:'Your brief: Carry it forward',     mode:'whole' },
     { sel:'#learn',        key:'learn',      label:'Keep going',                     mode:'whole', extras:['footer'] }
   ],
   SECTIONS: [
@@ -181,16 +181,16 @@ window.LR_COURSE = {
     me1:{ txt:['own', 'when'] }, me2:{ txt:['own', 'when'] }, me3:{ txt:['own', 'when'] }
   },
   BUILDS: {
-    me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me1: { title:'As a manager, after lesson 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me3: { title:'As a manager, after module 6', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2: { title:'As a manager, after module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1: { title:'As a manager, after module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     collab: { title:'My collaboration map', fields:['share', 'critic', 'top', 'win'], need:3, tpl:function(v){
       return 'SHARE THE CREDIT: ' + (v.share || '[partners who must share the credit]') + '\nA LIKELY CRITIC: ' + (v.critic || '[who, and how we listen first]') + '\nTOP PRODUCERS: ' + (v.top || '[who already does this well, and how we back them]') + '\nTHE EARLY WIN: ' + (v.win || '[the first result that shows we mean business]'); } },
     carry: { title:'My plan to carry it forward', fields:['idea', 'live', 'teach', 'next'], need:3, tpl:function(v){
       return 'THE IDEA MY TEAM NEEDS MOST: ' + (v.idea || '[one idea from the program]') + '\nHOW I WILL LIVE IT: ' + (v.live || '[a decision, habit, or question people will see me use]') + '\nHOW I WILL TEACH IT: ' + (v.teach || '[to whom, and by when]') + '\nTHE NEXT LEADER: ' + (v.next || '[someone I will encourage toward a future cohort, and why]'); } },
-    recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap1: { title:'Module 4, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2: { title:'Module 5, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap3: { title:'Module 6, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     reframe: { title:'My reframe and pilot', fields:['assume', 'whatif', 'borrow', 'pilot', 'proof'], need:4, tpl:function(v){
       return 'THE USUAL ASSUMPTION: ' + (v.assume || '[what everyone believes about this problem]') + '\nTHE REFRAME: What if ' + (v.whatif || '[...]') + '\nBORROWED FROM OUTSIDE HIGHER ED: ' + (v.borrow || '[an idea from another industry]') + '\nTHE PILOT: ' + (v.pilot || '[who, where, how long, roughly what it costs]') + '\nWE SCALE IF: ' + (v.proof || '[the result that proves it]'); } },
     repstatement: { title:'My reputational statement', fields:['stmt', 'up', 'risk', 'mit'], need:3, tpl:function(v){
@@ -226,6 +226,8 @@ window.LR_COURSE = {
     { seg:'Teams', q:'Your team is upset about a hard decision you made. What does Lee\u2019s view of accountability suggest?', opts:['Tell them not to feel that way', 'Reverse the decision to restore morale', 'Acknowledge the feeling, then hold everyone, including you, to how you act and respond', 'Avoid the topic until it blows over'], a:2, x:'It is okay to feel how you feel, but what really matters is what you do: how you act and how you respond.' },
     { seg:'Your brief', q:'Which success metric is strongest?', opts:['Launch the new process', 'Increase awareness', 'Median days to full system access drops from 21 to 2 in the pilot by March', 'Send weekly updates'], a:2, x:'A baseline, a target, a date, and an outcome people feel.' }
   ],
+  SCEN_POS: { r1:2, r2:0, r3:1, t1:0, t2:2, t3:1 },
+  NUMS_POS: [0, 2, 1, 1],
   QUIZ_POS: [1, 2, 0, 3, 1, 3, 0, 2],
   QUIZ_PASS: 6,
   OVERVIEW: {
@@ -234,19 +236,19 @@ window.LR_COURSE = {
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
     goals: ['<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and apply her principles to your pod and your team.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
     lessons: [
-      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'reframe'], deep:['kind'], recap:'recap1', ideas:[
+      { title:'Entrepreneurial mindset', no:'Module 4', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'reframe'], deep:['kind'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
         ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
         ['Win together.', 'Radical collaboration: start from the people you serve, treat it as a team sport, and share the credit as One Vanderbilt.'] ] },
-      { title:'Reputational stewardship', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
+      { title:'Reputational stewardship', no:'Module 5', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
         ['Reputation is infrastructure.', 'It turns visibility into talent, funding, partners, and access, and it is built every day.'],
         ['Trust has four drivers, and timing matters.', 'Transparency, expertise, commitment, and empathy; a crisis finds the dent in the radar. Act early, while you still have control, because stories migrate toward the loud corner of the terrain.'],
         ['Every leader is a steward.', 'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'] ] },
-      { title:'High-performing teams', keys:['lee', 'principles'], deep:['teamcalls', 'health'], recap:'recap3', ideas:[
+      { title:'High-performing teams', no:'Module 6', keys:['lee', 'principles'], deep:['teamcalls', 'health'], recap:'recap3', ideas:[
         ['Values first, every time.', 'Name the values, then let them decide the hard calls: integrity, leadership, resilience, passion, and competitiveness.'],
         ['Control the controllables.', 'Leaders create the conditions; each person brings maximum effort.'],
         ['Own your response.', 'It is okay to feel how you feel; what matters is how you act and respond.'] ] },
-      { title:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep', 'carry'], ideas:[
+      { title:'Your brief', no:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep', 'carry'], ideas:[
         ['Measure outcomes.', 'Every metric has a baseline, a target, and a date.'],
         ['Write the plan half.', 'An integrated solution, steps with owners and dates, metrics, and a sustainability plan.'],
         ['Finish together.', 'A full first draft this week; polish in week four.'] ] }
