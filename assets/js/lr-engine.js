@@ -467,6 +467,54 @@ var NUMS = D.NUMS || [];
   paint();
 })();
 
+/* ══════════ balance: keep the two columns even ══════════
+   The headline and its why line span both columns as a lead. Below it the copy
+   column teaches and the act column does. Floating blocks (the intro video,
+   figures, quotes, the brief map) go to whichever side leaves the two columns
+   closest in height, measured when the page is shown and on resize. On builder
+   pages the live draft sits beside the fields. */
+(function(){
+  var stages = [];
+  $$('.v-stage').forEach(function(st){
+    var copy = st.querySelector(':scope > .v-copy'), act = st.querySelector(':scope > .v-act'); if(!copy || !act) return;
+    var lead = document.createElement('div'); lead.className = 'v-lead';
+    $$(':scope > .v-stephead, :scope > h2.v-h, :scope > .v-why', copy).forEach(function(x){ lead.appendChild(x); });
+    if(lead.children.length) st.insertBefore(lead, copy);
+    var build = act.querySelector('.lr-build[data-build]');
+    if(build){ var key = build.getAttribute('data-build');
+      $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > .lr-brief', copy);
+    fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
+    st.classList.add('lr-bal');
+    // nothing left to teach beside the activity: one column under the lead
+    if(!fl.length && !copy.querySelector('.lr-learn, .lr-keys, .v-commits, .v-three, .lr-draft')) st.classList.add('lr-solo');
+    stages.push({ st:st, copy:copy, act:act, fl:fl });
+  });
+  // put one floater in a column: videos lead the column, the rest follow the content
+  function place(x, col, s){
+    if(col === s.copy){ s.copy.insertBefore(x, x._home && x._home.parentNode === s.copy ? x._home : s.copy.querySelector(':scope > .lr-read')); }
+    else if(x.classList.contains('v-video')) s.act.insertBefore(x, s.act.firstChild);
+    else s.act.appendChild(x);
+  }
+  function fit(s){
+    if(!s.fl.length || !s.st.offsetParent) return;
+    if(window.matchMedia('(max-width:1000px)').matches){ s.fl.forEach(function(x){ place(x, s.copy, s); }); return; }
+    var n = s.fl.length, best = 0, bestD = Infinity;
+    for(var m = 0; m < (1 << n); m++){
+      s.fl.forEach(function(x, i){ place(x, (m >> i) & 1 ? s.act : s.copy, s); });
+      var d = Math.abs(s.copy.offsetHeight - s.act.offsetHeight);
+      if(d < bestD - 4){ bestD = d; best = m; }
+    }
+    s.fl.forEach(function(x, i){ place(x, (best >> i) & 1 ? s.act : s.copy, s); });
+  }
+  function fitAll(){ stages.forEach(fit); }
+  window.LR_fit = fitAll;
+  document.addEventListener('chart:page', function(){ requestAnimationFrame(fitAll); });
+  var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(fitAll, 150); });
+  window.addEventListener('load', fitAll);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+})();
+
 /* ══════════ read along: every page's narration, as text, one tap away ══════════
    For anyone not listening, and for accessibility. Phonetic spellings in the
    scripts are swapped back to the real names. */
@@ -505,7 +553,8 @@ function bAll(key){ var o = {}; ((D.BUILDS[key] || {}).fields || []).forEach(fun
 window.LR_bVal = bVal;
 $$('[data-build]').forEach(function(box){
   var key = box.getAttribute('data-build'), cfg = (D.BUILDS || {})[key]; if(!cfg) return;
-  var out = box.querySelector('.lr-out'), copy = box.querySelector('.lr-copy'), status = box.querySelector('.lr-bstat');
+  var dr = box.querySelector('.lr-draft') || document.querySelector('.lr-draft[data-for="' + key + '"]');
+  var out = dr && dr.querySelector('.lr-out'), copy = dr && dr.querySelector('.lr-copy'), status = box.querySelector('.lr-bstat');
   var fields = $$('[data-f]', box);
   fields.forEach(function(el){ var v = get('b-' + key + '-' + el.getAttribute('data-f')); if(v !== null) el.value = v; });
   function filled(){ return fields.filter(function(el){ return (el.value || '').trim(); }).length; }

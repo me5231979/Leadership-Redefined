@@ -161,3 +161,26 @@
   linear-gradient(90deg, rgba(28,28,28,.72) 0%, rgba(28,28,28,.45) 45%, rgba(28,28,28,.15) 75%, rgba(28,28,28,0) 100%),
   linear-gradient(180deg, rgba(28,28,28,.35) 0%, rgba(28,28,28,.55) 45%, #1C1C1C 100%); }
 @media (max-width:760px){ .lr-montage::after{ background:linear-gradient(180deg, rgba(28,28,28,.5) 0%, rgba(28,28,28,.62) 45%, #1C1C1C 100%); } }
+
+/* ══════════ balanced stage: full-width lead, then teach (left) and do (right) ══════════ */
+.v-stage.lr-bal{ align-items:start; row-gap:clamp(18px,2.4vh,30px); }
+.v-stage.lr-bal > .v-lead{ grid-column:1 / -1; }
+.v-lead .v-h{ max-width:24ch; }
+.v-lead .v-why{ max-width:60ch; }
+.v-stage.lr-bal > .v-copy > :first-child{ margin-top:0; }
+.v-stage.lr-bal > .v-act > figure.lr-fig, .v-stage.lr-bal > .v-act > figure.v-quote, .v-stage.lr-bal > .v-act > .lr-brief{ margin-top:22px; }
+.v-stage.lr-bal > .v-act > .v-video + *{ margin-top:18px; }
+.v-stage.lr-bal > .v-copy > .lr-draft{ margin-top:16px; }
+.v-stage.lr-bal > .v-copy > .lr-learn{ max-width:none; }
+@media (max-width:1000px){ .v-stage.lr-bal > .v-lead{ grid-column:auto; } }
+/* copy column empty after the lead: the activity takes the full width */
+.v-stage.lr-bal.lr-solo{ grid-template-columns:minmax(0,1fr); }
+.v-stage.lr-solo > .v-copy{ order:3; }
+.v-stage.lr-solo > .v-act{ max-width:980px; }
+/* the brief map, compact: two columns of steps */
+.v-stage.lr-bal .lr-brief{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.v-stage.lr-bal .lr-brief li{ padding:7px 10px; font-size:.92rem; grid-template-columns:26px 1fr; }
+.v-stage.lr-bal .lr-brief li small{ grid-column:2; }
+@media (max-width:640px){ .v-stage.lr-bal .lr-brief{ grid-template-columns:minmax(0,1fr); } }
+/* wrap-up: a roomier answer box beside the three ideas */
+.v-stage.lr-bal .v-act textarea[rows="4"], [id^="recap"] .v-act textarea{ min-height:170px; }
