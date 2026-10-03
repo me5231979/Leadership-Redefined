@@ -2,7 +2,7 @@
    The one place to change links without touching the course. */
 window.LR_CONFIG = {
   storeKey: 'lr2-',
-  contact: 'matthew.estes@vanderbilt.edu',
+  contact: 'pcb@vanderbilt.edu',
   /* narration clips: ../assets/audio/course-two/<key>.mp3 (home/1 -> home-1.mp3).
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-two/',

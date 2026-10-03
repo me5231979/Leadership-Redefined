@@ -71,6 +71,13 @@ if (STREAM) for (const [dir] of COURSES) {
   fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(/'\.\.\/assets\/(audio|video)\//g, "'" + LIVE + "assets/$1/"));
 }
 
+// 1d. In the package, narration never falls back to the browser's robot voice, and
+// clips load by plain file name (no ?v= cache tag, which some LMS servers reject).
+for (const [dir] of COURSES) {
+  const f = path.join(OUT, dir, 'config.js');
+  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace('useBrowserVoice: false,', 'useBrowserVoice: false,\n  speechFallback: false,\n  audioQuery: false,'));
+}
+
 // 2. Point folder links at index.html; LMS content servers do not serve a folder's index.
 for (const rel of ['index.html', ...COURSES.map((c) => c[0] + '/index.html')]) {
   const f = path.join(OUT, rel);

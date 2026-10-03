@@ -134,10 +134,10 @@ function narrPlay(k){
   if(C.useBrowserVoice){ narr.key = k; narrSpeak(text); return; }
   narr.key = k; narr.playing = true; narrUI();
   /* the version carries a hash of the script, so a re-recorded clip is never served from an old cache */
-  var a = new Audio((C.audioBase || './audio/') + k.replace(/\//g, '-') + '.mp3?v=' + MEDIA_V + '-' + textHash(text));
+  var a = new Audio((C.audioBase || './audio/') + k.replace(/\//g, '-') + '.mp3' + (C.audioQuery === false ? '' : '?v=' + MEDIA_V + '-' + textHash(text)));
   a.preload = 'auto';
   a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); } });
-  a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrSpeak(text); } });
+  a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrFail(text); } });
   narr.audio = a;
   var backTo = narrPos[k] || 0;
   if(backTo > 0){
@@ -154,8 +154,13 @@ function narrPlay(k){
       if(narr.auto && !narr.armed){ narr.armed = true; var arm = function(){ narr.armed = false; document.removeEventListener('pointerdown', arm, true); document.removeEventListener('keydown', arm, true); window.setTimeout(function(){ if(narr.auto && !narr.playing) narrPlay(); }, 350); }; document.addEventListener('pointerdown', arm, true); document.addEventListener('keydown', arm, true); }
       else if(!narr.auto) toast('Tap Listen to hear this page.');
     }
-    else narrSpeak(text);
+    else narrFail(text);
   });
+}
+/* a recording that will not load: the browser voice reads it, unless the config turns that off (the SCORM package does) */
+function narrFail(text){
+  if(C.speechFallback === false){ narr.playing = false; narrUI(); toast('The narration for this page could not load. The text on the page has everything it says.'); return; }
+  narrSpeak(text);
 }
 if(bbListen) bbListen.addEventListener('click', function(){ if(narr.playing){ narr.on = false; narrStop(); } else { narr.on = true; narrPlay(); } });
 /* a tab, card, or situation with its own clip plays when opened (if the learner is listening), or when its speaker is tapped */
