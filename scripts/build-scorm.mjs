@@ -109,6 +109,18 @@ const lms = `<!doctype html>
 <script>
 /* SCORM ${V === '2004' ? '2004 3rd Edition' : '1.2'} session for Leadership Redefined. */
 (function(){
+  /* When the LMS opens the course in its own pop-up window, open it larger:
+     about 92% of the screen, centered. Never shrinks a bigger window; does
+     nothing when the LMS shows the course inside its own page. */
+  try{
+    if(window.top === window && window.opener){
+      var SW = screen.availWidth, SH = screen.availHeight, w = Math.round(SW * 0.92), h = Math.round(SH * 0.92);
+      if(window.outerWidth < w || window.outerHeight < h){
+        window.resizeTo(Math.max(w, window.outerWidth), Math.max(h, window.outerHeight));
+        window.moveTo((screen.availLeft || 0) + Math.round((SW - Math.max(w, window.outerWidth)) / 2), (screen.availTop || 0) + Math.round((SH - Math.max(h, window.outerHeight)) / 2));
+      }
+    }
+  }catch(e){}
   var V2004 = ${V === '2004'}, RT = ${JSON.stringify(RT)};
   var TRACKED = ${JSON.stringify(tracked)};
   function scan(w){ for(var n = 0; w && n < 12; n++){ try{ if(w[RT.name]) return w[RT.name]; }catch(e){} if(w.parent === w) break; w = w.parent; } return null; }
