@@ -1,5 +1,5 @@
 name: Build SCORM package
-# Builds one SCORM 1.2 package (landing page plus Course One and Course Two) with
+# Builds one SCORM 2004 3rd Edition package (set up for Oracle Learning) (landing page plus Course One and Course Two) with
 # scripts/build-scorm.mjs and attaches it to the run as a download. The download
 # is the package itself: upload it to the LMS as is. Runs after narration is
 # re-recorded, on pushes that change the courses, or by hand from the Actions tab.
@@ -29,6 +29,6 @@ jobs:
       - run: node scripts/build-scorm.mjs
       - uses: actions/upload-artifact@v4
         with:
-          name: leadership-redefined-scorm
-          path: dist/scorm/
+          name: leadership-redefined-oracle-scorm2004
+          path: dist/scorm2004/
           retention-days: 90

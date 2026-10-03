@@ -113,12 +113,12 @@ The workflow records the clips in ElevenLabs voice `v3p1kjzUvro6S76qmYmH` (set i
 
 ## SCORM package
 
-One SCORM 1.2 package holds the landing page and both courses. Upload it to the LMS as a single activity.
+One SCORM package holds the landing page and both courses. Upload it to the LMS as a single activity.
 
-- **Get it:** open the repository's Actions tab, choose the latest **Build SCORM package** run, and download **leadership-redefined-scorm** under Artifacts. That download is the package; upload it as is. Or build it yourself: `node scripts/build-scorm.mjs` writes `dist/leadership-redefined-scorm.zip`.
+- **Build:** `node scripts/build-scorm.mjs` writes `dist/leadership-redefined-oracle-scorm2004.zip`: SCORM 2004 3rd Edition, set up for Oracle Learning, full-quality media. Add `1.2` for a SCORM 1.2 build, or `--light` for 720p video and 96 kbps narration (about half the size). The **Build SCORM package** workflow also attaches the Oracle package to each run under Artifacts.
+- **Oracle Learning:** the manifest sits at the zip root, no path has a space, and the package (about 145 MB) is far under Oracle's 1 GB limit. SCORM 2004 is used because it reports completion and success separately, which Oracle reads reliably, and it saves up to 64,000 characters of work so learners resume with their answers.
 - **Launch:** the LMS opens `lms.html`, which shows the landing page first. Learners open Course One and Course Two from there, all in one session.
-- **Tracking:** progress and answers are saved to the LMS (`cmi.suspend_data`), so learners can resume on another device. Status is *incomplete* until every activity in both courses is done, then *completed*. No score is reported.
-- **Size:** about 145 MB, mostly the five Chancellor videos. Raw narration takes are left out.
+- **Tracking:** progress and answers are saved to the LMS (`cmi.suspend_data`), and progress is reported as a share of all activities (`cmi.progress_measure`). Status is *incomplete* until every activity in both courses is done, then *completed* and *passed*. No score is reported.
 
 ## Before launch
 
