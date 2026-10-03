@@ -63,7 +63,29 @@ window.LR_COURSE = {
     { lab:'New commitments', q:'2025 set a record at $345 million in new gifts and pledges. The FY26 forecast?', opts:['About $350M', 'About $450M', '$600M or more'], a:2, big:'$600M+', x:'A forecast for the current fiscal year. Resources follow reputation.' },
     { lab:'New campuses', q:'How many growth sites beyond Nashville did the Chancellor name?', opts:['One', 'Two', 'Four'], a:2, big:'4', x:'New York City, San Francisco, West Palm Beach, and Quantum Innovation in Chattanooga.' }
   ],
+  /* growth map: the four growth sites plus home. narr = the tap clip; meet = where staff meet it */
+  CITIES: {
+    nyc:         { name:'Vanderbilt NYC', focus:'New York City, NY', narr:'growth/f1', line:'Vanderbilt’s first campus beyond Nashville, open since August 2026: 13 buildings on 2.7 acres in Chelsea, with an undergraduate semester program and a Master of Science in Business and Technology.', meet:'Any service a student or colleague in New York needs from Nashville.', url:'https://www.vanderbilt.edu/nyc/' },
+    wpb:         { name:'Vanderbilt WPB', focus:'West Palm Beach, FL', narr:'growth/f2', line:'A graduate campus for business, engineering, data science, and AI, with programs planned in finance and in space and defense technology: about 1,000 graduate students and 100 faculty.', meet:'The programs, hiring, and systems built for a second home.', url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/west-palm-beach/' },
+    sf:          { name:'Vanderbilt SF', focus:'San Francisco, CA', narr:'growth/f3', line:'Opens for the 2027 to 2028 school year on the California College of the Arts campus, home to the Huang College of Art, Architecture and Design, which blends art and design with engineering and AI: about 1,000 students.', meet:'Partnerships with the technology and creative sectors.', url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/san-francisco/' },
+    chattanooga: { name:'Quantum Innovation', focus:'Chattanooga, TN', narr:'growth/f4', line:'The Institute for Quantum Innovation, launched with EPB in July 2026: about 250 researchers, faculty, and staff, working with the first U.S. site with commercial access to both a trapped-ion quantum computer and a quantum network.', meet:'Research administration and partnerships across Tennessee.', url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/quantum-innovation/' },
+    nashville:   { name:'Nashville', focus:'Home', line:'Home since 1873: the residential campus and the heart of the university. Every growth site runs on the systems built here.', meet:'Every day. The back office Nashville already has is what each new site needs on day one.', url:'https://www.vanderbilt.edu/' }
+  },
   NUM_PROG: 'numbers',
+  /* trend charts on the momentum page, one per guess tile (num = the tile index), unlocked after the guess.
+     Labeled values (the last point) are from the Chancellor's slides; the rest are read from his charts and are approximate. */
+  CHARTS: [
+    { num:0, title:'High-priority media mentions', sub:'Fiscal years 2015 to 2026 (2026 is year to date, as of January 2026)', fmt:'n',
+      x:['FY15','FY16','FY17','FY18','FY19','FY20','FY21','FY22','FY23','FY24','FY25','FY26'],
+      y:[56000,70000,72000,64000,65000,69000,111000,121000,138000,134000,137000,322296], proj:-1, max:350000, step:50000, end:'322,296', endNote:'as of Jan. 2026' },
+    { num:1, title:'Early Decision applications', sub:'2007 to 2026 (2026 is a projection)', fmt:'n',
+      x:['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+      y:[1200,1460,1650,2150,2550,2820,3180,3170,3580,3700,3580,4140,4320,4220,5020,5100,5600,5830,6650,7810], proj:18, max:8000, step:1000, end:'7,810', endNote:'projected',
+      foot:'Starting in 2022, some Early Decision applicants were deferred to Regular Decision for space; they are still counted here.' },
+    { num:2, title:'New commitments', sub:'Gifts and pledges, fiscal 2007 to 2026, nominal dollars (2026 is a forecast)', fmt:'m',
+      x:['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+      y:[120,121,137,119,109,111,109,125,118,122,177,160,193,126,171,187,320,265,345,600], proj:18, max:600, step:100, end:'$600M+', endNote:'forecast' }
+  ],
   DRILLS: {
     engine: { opts:['Execution with ambition', 'Values-driven leadership', 'Athletics momentum'], prog:'engine', verb:'sorted', items:[
       { s:'A new residential college opens on schedule, and students move in the week it was promised.', a:0, x:'Big things, done well. Delivery on a promise is the result that builds reputation.' },

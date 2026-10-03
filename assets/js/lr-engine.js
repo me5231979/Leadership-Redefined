@@ -463,7 +463,30 @@ var NUMS = D.NUMS || [];
     tile.innerHTML = '<div class="v-reveal" tabindex="-1"><span class="verdict' + (ok ? ' ok' : '') + '">' + (ok ? 'You got it' : 'You guessed ' + esc(n.opts[+b.getAttribute('data-o')])) + '</span><span class="big">' + esc(n.big) + '</span><span class="lab">' + esc(n.lab) + '</span><p>' + esc(n.x) + '</p></div>';
     tile.querySelector('.v-reveal').focus();
     paint();
+    try{ document.dispatchEvent(new CustomEvent('lr:num', { detail:{ i:i } })); }catch(err){}
   });
+  paint();
+})();
+
+/* ══════════ growth map: the dotted map from Voyage, with the four growth sites ══════════
+   Tap a pin, a label, or a chip; done when all four growth sites (not home) are seen. */
+(function(){
+  var CT = D.CITIES, sec = $('#growth'); if(!CT || !sec) return;
+  var map = $('.us-map', sec), chips = $('.v-cities', sec), card = $('#cityCard'), task = $('.v-task', sec), st = $('#growthStatus'), seen = {}, sites = ['nyc', 'wpb', 'sf', 'chattanooga'];
+  function paint(){ var n = sites.filter(function(k){ return seen[k]; }).length; if(st) st.textContent = n + ' of 4 growth sites seen.' + (n === 4 ? ' Activity complete.' : ''); if(n === 4){ if(task) task.classList.add('done'); set('r-growth', 'All 4 growth sites seen'); progDone('growth'); } }
+  function show(k, quiet){
+    var c = CT[k]; if(!c) return;
+    seen[k] = 1; savePick('growth', k, 1);
+    $$('.pin, .lbl', map).forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-city') === k); });
+    $$('button[data-city]', chips).forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-city') === k ? 'true' : 'false'); });
+    var ic = map.querySelector('.pin[data-city="' + k + '"] .ic');
+    card.innerHTML = '<span class="v-label">' + (ic ? '<svg viewBox="0 0 24 24" aria-hidden="true">' + ic.innerHTML + '</svg>' : '') + esc(c.focus) + '</span><b>' + esc(c.name) + '</b><p>' + esc(c.line) + '</p><p><b class="lr-meet">Where you meet it.</b> ' + esc(c.meet) + '</p><a href="' + esc(c.url) + '" target="_blank" rel="noopener">Read more about ' + esc(c.name) + '</a>';
+    if(!quiet && c.narr) narrSub(c.narr);
+    paint();
+  }
+  chips.addEventListener('click', function(e){ var b = e.target.closest('button[data-city]'); if(b) show(b.getAttribute('data-city')); });
+  map.addEventListener('click', function(e){ var p = e.target.closest('.pin, .lbl'); if(p) show(p.getAttribute('data-city')); });
+  Object.keys(picks('growth')).forEach(function(k){ if(CT[k]) seen[k] = 1; });
   paint();
 })();
 
@@ -483,7 +506,7 @@ var NUMS = D.NUMS || [];
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
-    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter', copy);
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > figure.lr-vision, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
     st.classList.add('lr-bal');
     // nothing left to teach beside the activity: one column under the lead
@@ -528,11 +551,11 @@ var NUMS = D.NUMS || [];
    For anyone not listening, and for accessibility. Phonetic spellings in the
    scripts are swapped back to the real names. */
 (function(){
-  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty eight/g, '2028'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
   $$('.page').forEach(function(pg){
     var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
     FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });
-    var host = pg.querySelector('.v-copy') || pg.querySelector('.v-numhead') || pg.querySelector('.v-cities-head') || pg.querySelector('.wrap');
+    var host = pg.querySelector('.lr-read-host') || pg.querySelector('.v-copy') || pg.querySelector('.v-numhead') || pg.querySelector('.v-cities-head') || pg.querySelector('.wrap');
     if(!host || pg.querySelector('.v-hero')) return;
     var d = document.createElement('details'); d.className = 'lr-read';
     d.innerHTML = '<summary>Read along: the full explanation</summary><p></p>';
@@ -819,4 +842,50 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
     img.onload = function(){ slot.textContent = ''; img.alt = ''; slot.appendChild(img); };
     img.src = f.getAttribute('data-photo');
   });
+})();
+
+/* ── trend charts: one per guess tile, drawn after the guess (keeps the pretesting effect) ── */
+(function(){
+  var D2 = window.LR_COURSE || {}, CH = D2.CHARTS || [], box = document.querySelector('[data-charts]'); if(!box || !CH.length) return;
+  var key = (window.LR_CONFIG || {}).storeKey || 'lr-', prog = D2.NUM_PROG || 'numbers';
+  function picked(i){ try{ var v = JSON.parse(localStorage.getItem(key + 'pk-' + prog) || '{}'); return v && v[i] !== undefined; }catch(e){ return false; } }
+  function f(c, v){ return c.fmt === 'm' ? '$' + Math.round(v) + 'M' : Math.round(v).toLocaleString('en-US'); }
+  function esc2(t){ return String(t).replace(/[&<>"]/g, function(ch){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]; }); }
+  var W = 640, H = 300, L = 58, R = 92, T = 24, B = 34, pw = W - L - R, ph = H - T - B;
+  function draw(c, i){
+    var n = c.y.length, X = function(k){ return L + k * pw / (n - 1); }, Y = function(v){ return T + ph - v / c.max * ph; };
+    var grid = '', lab = '', g;
+    for(g = 0; g <= c.max; g += c.step){ grid += '<line x1="' + L + '" x2="' + (L + pw) + '" y1="' + Y(g) + '" y2="' + Y(g) + '" class="cg"/>'; lab += '<text x="' + (L - 8) + '" y="' + (Y(g) + 4) + '" text-anchor="end" class="ct">' + f(c, g) + '</text>'; }
+    var every = n > 12 ? 2 : 1, xl = c.x.map(function(t, k){ return ((k % every === 0 && !(every > 1 && k === n - 2)) || k === n - 1) ? '<text x="' + X(k) + '" y="' + (H - 10) + '" text-anchor="middle" class="ct">' + esc2(t) + '</text>' : ''; }).join('');
+    var solidEnd = c.proj >= 0 ? c.proj : n - 1;
+    var pts = function(a, b){ var o = []; for(var k = a; k <= b; k++) o.push(X(k).toFixed(1) + ' ' + Y(c.y[k]).toFixed(1)); return o.join(' L'); };
+    var area = 'M' + pts(0, n - 1) + ' L' + X(n - 1) + ' ' + (T + ph) + ' L' + L + ' ' + (T + ph) + ' Z';
+    var gid = 'lrg' + i;
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc2(c.title + ': line chart, ' + c.x[0] + ' to ' + c.x[n - 1] + ', rising to ' + c.end) + '">' +
+      '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFAE70" stop-opacity=".45"/><stop offset="1" stop-color="#CFAE70" stop-opacity="0"/></linearGradient></defs>' +
+      grid + lab + xl + '<path d="' + area + '" fill="url(#' + gid + ')"/>' +
+      '<path d="M' + pts(0, solidEnd) + '" class="cl"/>' + (c.proj >= 0 ? '<path d="M' + pts(c.proj, n - 1) + '" class="cl cp"/>' : '') +
+      '<circle cx="' + X(n - 1) + '" cy="' + Y(c.y[n - 1]) + '" r="5" class="cd"/>' +
+      '<text x="' + (X(n - 1) + 10) + '" y="' + (Y(c.y[n - 1]) + 6) + '" class="ce">' + esc2(c.end) + '</text>' +
+      '<text x="' + (X(n - 1) + 10) + '" y="' + (Y(c.y[n - 1]) + 22) + '" class="cn">' + esc2(c.endNote) + '</text>' +
+      '<line class="cx" y1="' + T + '" y2="' + (T + ph) + '" x1="-10" x2="-10"/><circle class="ch" r="5" cx="-10" cy="-10"/>' +
+      '<rect class="chit" x="' + L + '" y="' + T + '" width="' + pw + '" height="' + ph + '" fill="transparent"/></svg>';
+    var rows = c.x.map(function(t, k){ return '<tr><th scope="row">' + esc2(t) + '</th><td>' + (k === n - 1 ? esc2(c.end) : f(c, c.y[k]) + ' (approx.)') + (k > c.proj && c.proj >= 0 ? ' ' + esc2(c.endNote) : '') + '</td></tr>'; }).join('');
+    var el = box.querySelector('[data-chart="' + i + '"]');
+    el.classList.add('on');
+    el.innerHTML = '<figcaption><b>' + esc2(c.title) + '</b><span>' + esc2(c.sub) + '</span></figcaption><div class="lr-cw">' + svg + '<div class="lr-tip" hidden></div></div>' +
+      (c.foot ? '<p class="lr-cfoot">' + esc2(c.foot) + '</p>' : '') +
+      '<details class="lr-ctable"><summary>See the numbers</summary><table><thead><tr><th scope="col">Year</th><th scope="col">Value</th></tr></thead><tbody>' + rows + '</tbody></table></details>';
+    var s = el.querySelector('svg'), tip = el.querySelector('.lr-tip'), cx = s.querySelector('.cx'), chd = s.querySelector('.ch');
+    function at(evt){
+      var r = s.getBoundingClientRect(), px = (evt.clientX - r.left) / r.width * W, k = Math.max(0, Math.min(n - 1, Math.round((px - L) / (pw / (n - 1)))));
+      cx.setAttribute('x1', X(k)); cx.setAttribute('x2', X(k)); chd.setAttribute('cx', X(k)); chd.setAttribute('cy', Y(c.y[k]));
+      s.classList.add('hov'); tip.hidden = false; tip.textContent = c.x[k] + ': ' + (k === n - 1 ? c.end : f(c, c.y[k]) + ' (approx.)');
+      tip.style.left = (X(k) / W * 100) + '%'; tip.style.top = (Y(c.y[k]) / H * 100) + '%';
+    }
+    s.addEventListener('pointermove', at); s.addEventListener('pointerleave', function(){ s.classList.remove('hov'); tip.hidden = true; cx.setAttribute('x1', -10); cx.setAttribute('x2', -10); chd.setAttribute('cx', -10); });
+  }
+  box.innerHTML = CH.map(function(c, i){ return '<figure class="lr-chart" data-chart="' + i + '"><p class="lr-clock">Make your guess on the <b>' + esc2((D2.NUMS[c.num] || {}).lab || '') + '</b> tile to unlock this chart.</p></figure>'; }).join('');
+  CH.forEach(function(c, i){ if(picked(c.num)) draw(c, i); });
+  document.addEventListener('lr:num', function(e){ CH.forEach(function(c, i){ if(c.num === e.detail.i) draw(c, i); }); });
 })();

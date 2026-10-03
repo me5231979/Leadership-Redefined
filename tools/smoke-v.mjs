@@ -13,6 +13,7 @@ async function clickEach(sel){ let c = 0; for(const e of await p.$$(sel)){ if(!(
 // route + taps
 console.log('stops', await clickEach('#route button[data-stop]'));
 console.log('taps', await clickEach('[data-taps] button'));
+console.log('map', await clickEach('.v-cities button[data-city]'));
 // number tiles
 for(const t of await p.$$('#nums .v-tile')){ await go(t); await p.waitForTimeout(400); await (await t.$('.v-tile-face')).click(); await (await t.$('button[data-o]')).click(); }
 // drills: answer each, then next
