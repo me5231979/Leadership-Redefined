@@ -35,7 +35,7 @@ You just saw the map. Now the starting point for everything else: the vision. Va
 
 - *mission/f1:* Exceptional Core Operations. Running Vanderbilt so well, with speed, agility, and scale, that the university has the talent, resources, and reputation to deliver on the vision. Think of core operations as the fuel. If your pod’s idea makes existing work faster, cheaper, or better, this is your area.
 - *mission/f2:* Bold Strategic Initiatives. With excellent core operations as the fuel, Vanderbilt pursues bigger bets that extend the reach of its education and research. If your idea creates something new, this is your area.
-- *mission/f3:* Values Leadership. Modeling what an essential research university stands for, and advocating for it, to change the wider sector and protect the mission. If your idea is about what Vanderbilt stands for, this is your area.
+- *mission/f3:* Values Leadership. A commitment to shared values that guide everything Vanderbilt does, especially open forums, institutional neutrality, and civil discourse. By modeling what an essential research university stands for, Vanderbilt protects its mission. If your idea is about what Vanderbilt stands for, this is your area.
 
 ### Lesson 1: Four problems
 
