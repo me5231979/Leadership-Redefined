@@ -15,6 +15,7 @@ window.LR_COURSE = {
     { sel:'#recap1',      key:'recap1',     label:'Lesson 1: Wrap-up',             mode:'whole' },
     { sel:'#brand',       key:'brand',      label:'Lesson 2: Brand and reputation', mode:'whole' },
     { sel:'#fighter',     key:'fighter',    label:'Lesson 2: Spikes and systems',  mode:'whole' },
+    { sel:'#ground',      key:'ground',     label:'Lesson 2: The ground game',     mode:'whole' },
     { sel:'#story',       key:'story',      label:'Lesson 2: Your storyline',      mode:'whole' },
     { sel:'#recap2',      key:'recap2',     label:'Lesson 2: Wrap-up',             mode:'whole' },
     { sel:'#margin',      key:'margin',     label:'Lesson 3: Mission and margin',  mode:'whole' },
@@ -37,19 +38,20 @@ window.LR_COURSE = {
     { k:'valuestick', no:'07', name:'The value stick',       how:'Sort six initiatives' },
     { k:'brand',      no:'08', name:'Brand or reputation',   how:'Decide six statements' },
     { k:'fighter',    no:'09', name:'Spikes and systems',    how:'Open all four moves' },
-    { k:'story',      no:'10', name:'Your storyline',        how:'Fill in four of five lines' },
-    { k:'margin',     no:'11', name:'Mission and margin',    how:'Find the strongest call in two situations' },
-    { k:'portfolio',  no:'12', name:'The portfolio',         how:'Place all 100 points' },
-    { k:'statement',  no:'13', name:'Your statement',        how:'Fill in three of four lines' },
-    { k:'focus',      no:'14', name:'Your focus area',       how:'Sort five challenges' },
-    { k:'draft',      no:'15', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz',       no:'16', name:'Apply it',              how:'Score 6 of 8' },
-    { k:'nextstep',   no:'17', name:'This week',             how:'Commit to all four moves' }
+    { k:'ground',     no:'10', name:'The ground game',       how:'Fill in three of four lines' },
+    { k:'story',      no:'11', name:'Your storyline',        how:'Fill in four of five lines' },
+    { k:'margin',     no:'12', name:'Mission and margin',    how:'Find the strongest call in two situations' },
+    { k:'portfolio',  no:'13', name:'The portfolio',         how:'Place all 100 points' },
+    { k:'statement',  no:'14', name:'Your statement',        how:'Fill in three of four lines' },
+    { k:'focus',      no:'15', name:'Your focus area',       how:'Sort five challenges' },
+    { k:'draft',      no:'16', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
+    { k:'quiz',       no:'17', name:'Apply it',              how:'Score 6 of 8' },
+    { k:'nextstep',   no:'18', name:'This week',             how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
     { h:'Vision and <em>strategy</em>', p:'What the vision asks of you, and how to tell strategy from activity.', tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'The value stick'] },
-    { h:'Story and <em>brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'Your storyline'] },
+    { h:'Story and <em>brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'The ground game', 'Your storyline'] },
     { h:'Mission and <em>margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The portfolio'] },
     { h:'Your <em>brief</em>', p:'Pick your focus area and draft sections 1 to 3 for your pod.', tags:['Focus area', 'Draft', 'Quick check'] }
   ],
@@ -124,6 +126,8 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    ground: { title:'My ground game play', fields:['asset', 'who', 'how', 'pass'], need:3, tpl:function(v){
+      return 'THE ASSET: ' + (v.asset || '[a story, a number, or a result]') + '\nWHO SHOULD HEAR IT: ' + (v.who || '[a priority person or group]') + '\nHOW I WILL SHARE IT: ' + (v.how || '[directly, and when]') + '\nHOW THEY PASS IT ON: ' + (v.pass || '[peer to peer]'); } },
     recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
@@ -165,13 +169,13 @@ window.LR_COURSE = {
     week: 'Course One · Week of November 2',
     topics: 'Vision, Strategy and the Future of Vanderbilt · Communication, Storytelling and Brand · Mission and Margin',
     due: 'Fri, Nov 6', dueLabel: 'finish this course by',
-    goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.', '<b>Tell</b> strategy from activity with the value stick.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
+    goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.', '<b>Tell</b> strategy from activity with the value stick.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be, and plan how you will carry it as the ground game.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
     lessons: [
       { title:'Vision and strategy', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth', 'valuestick'], recap:'recap1', ideas:[
         ['The vision is an instruction.', 'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'],
         ['Reputation is an engine.', 'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up. Four growth sites show the bold bets it funds.'],
         ['Strategy is a choice.', 'Work is strategic only if it raises willingness to pay or lowers willingness to sell.'] ] },
-      { title:'Communication, storytelling and brand', keys:['brand', 'fighter', 'story'], recap:'recap2', ideas:[
+      { title:'Communication, storytelling and brand', keys:['brand', 'fighter', 'ground', 'story'], recap:'recap2', ideas:[
         ['Close the gap.', 'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'],
         ['A spike needs a system.', 'Attention climbs from relevance to consideration, trust, and commitment only with a steady drumbeat, carried by leaders.'],
         ['Tell it as what could be.', 'One real person, the contrast between what is and what could be, and one clear ask.'] ] },
@@ -184,7 +188,7 @@ window.LR_COURSE = {
         ['Make the case on page one.', 'Focus area, the challenge and why it matters, and the connection to Vanderbilt’s priorities.'],
         ['Bring it to your pod.', 'Merge drafts into one version, with one editor, this week.'] ] }
     ],
-    work: ['story', 'statement', 'draft'],
+    work: ['ground', 'story', 'statement', 'draft'],
     footer: 'Your pod’s brief is due Friday, November 20, three pages at most.'
   },
   PRINT_TITLE: 'Course One, my weekly <em>takeaway</em>.',

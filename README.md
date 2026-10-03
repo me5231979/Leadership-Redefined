@@ -23,20 +23,20 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 ## The courses
 
-**Course One** runs the week of November 2, takes about 70 minutes, and has 17 tracked activities.
+**Course One** runs the week of November 2, takes about 75 minutes, and has 18 tracked activities.
 
 | Lesson | What it covers |
 |---|---|
 | 1. Vision and strategy | The vision and its areas of focus, four problems the vision answers, the reputation engine (feedback loop and three flywheels), a guess-the-number momentum page, the four growth sites, and the value stick |
-| 2. Story and brand | Opens with the Chancellor's Communication video. Brand or reputation, spikes and systems, and a storyline builder |
+| 2. Story and brand | Opens with the Chancellor's Communication video. Brand or reputation, spikes and systems, the ground game (a plan to carry one reputation asset), and a storyline builder |
 | 3. Mission and margin | Opens with the Chancellor's Mission and Margin video. Two calls, a portfolio allocator on the mission and margin matrix, and a statement builder |
 | 4. Your brief | Focus area practice, a draft of brief sections 1 to 3, a quick check, and the week's commitments |
 
-**Course Two** runs the week of November 9, takes about 80 minutes, and has 20 tracked activities.
+**Course Two** runs the week of November 9, takes about 85 minutes, and has 21 tracked activities.
 
 | Lesson | What it covers |
 |---|---|
-| 1. Entrepreneurial mindset | Opens with the Chancellor's video. Vice Chancellor Lutz's fundraising turnaround: the diagnosis, the numbers, the change moves, the four kinds of problem, and a reframe and pilot builder |
+| 1. Entrepreneurial mindset | Opens with the Chancellor's video. Vice Chancellor Lutz's fundraising turnaround: the diagnosis, the numbers, the change moves, radical collaboration (a stakeholder map), the four kinds of problem, and a reframe and pilot builder |
 | 2. Reputational stewardship | Opens with the Chancellor's video. The trust radar, where reputation is made (the second circle and the coverage terrain), when to act (control, stakes, and the before, during, after cycle), three calls under pressure, and a reputational statement builder |
 | 3. High-performing teams | Opens with the Chancellor's video. Candice Storey Lee fact or fiction, her six principles, three learning-zone calls, and a pod health check |
 | 4. Your brief | Strong metrics, a draft of brief sections 4 to 7, a quick check, the week's commitments, and Carry it forward: the program on one card and a plan to embody and teach it |

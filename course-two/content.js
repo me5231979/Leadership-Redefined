@@ -10,6 +10,7 @@ window.LR_COURSE = {
     { sel:'#venture',      key:'swot',       label:'Lesson 1: Entrepreneurial mindset', mode:'whole' },
     { sel:'#turnaround',   key:'numbers',    label:'Lesson 1: The turnaround',       mode:'whole' },
     { sel:'#moves',        key:'moves',      label:'Lesson 1: The change moves',     mode:'whole' },
+    { sel:'#collab',       key:'collab',     label:'Lesson 1: Radical collaboration', mode:'whole' },
     { sel:'#kind',         key:'kind',       label:'Lesson 1: Know your problem',    mode:'whole' },
     { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
     { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
@@ -36,26 +37,27 @@ window.LR_COURSE = {
     { k:'swot',         no:'02', name:'The diagnosis',        how:'Open all four quadrants' },
     { k:'numbers',      no:'03', name:'The turnaround',       how:'Guess all four numbers' },
     { k:'moves',        no:'04', name:'The change moves',     how:'Sort six tactics' },
-    { k:'kind',         no:'05', name:'Know your problem',    how:'Sort four situations' },
-    { k:'reframe',      no:'06', name:'Your pilot',           how:'Fill in four of five lines' },
-    { k:'trust',        no:'07', name:'The trust radar',      how:'Open all four drivers' },
-    { k:'terrain',      no:'08', name:'The reputation terrain', how:'Place six stories' },
-    { k:'timing',       no:'09', name:'Act while you have control', how:'Sort six actions' },
-    { k:'pressure',     no:'10', name:'Calls under pressure', how:'Find the strongest call in three situations' },
-    { k:'repstatement', no:'11', name:'Your reputational statement', how:'Fill in three of four lines' },
-    { k:'lee',          no:'12', name:'Meet the leader',      how:'Fact or fiction, four statements' },
-    { k:'principles',   no:'13', name:'Six principles',       how:'Open all six' },
-    { k:'teamcalls',    no:'14', name:'The learning zone',    how:'Find the strongest call in three situations' },
-    { k:'health',       no:'15', name:'Your pod',             how:'Rate your pod' },
-    { k:'metrics',      no:'16', name:'Strong metrics',       how:'Sort six metrics' },
-    { k:'draft',        no:'17', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz',         no:'18', name:'Apply it',             how:'Score 6 of 8' },
-    { k:'nextstep',     no:'19', name:'This week',            how:'Commit to all four moves' },
-    { k:'carry',        no:'20', name:'Carry it forward',     how:'Fill in three of four lines' }
+    { k:'collab',       no:'05', name:'Radical collaboration', how:'Fill in three of four lines' },
+    { k:'kind',         no:'06', name:'Know your problem',    how:'Sort four situations' },
+    { k:'reframe',      no:'07', name:'Your pilot',           how:'Fill in four of five lines' },
+    { k:'trust',        no:'08', name:'The trust radar',      how:'Open all four drivers' },
+    { k:'terrain',      no:'09', name:'The reputation terrain', how:'Place six stories' },
+    { k:'timing',       no:'10', name:'Act while you have control', how:'Sort six actions' },
+    { k:'pressure',     no:'11', name:'Calls under pressure', how:'Find the strongest call in three situations' },
+    { k:'repstatement', no:'12', name:'Your reputational statement', how:'Fill in three of four lines' },
+    { k:'lee',          no:'13', name:'Meet the leader',      how:'Fact or fiction, four statements' },
+    { k:'principles',   no:'14', name:'Six principles',       how:'Open all six' },
+    { k:'teamcalls',    no:'15', name:'The learning zone',    how:'Find the strongest call in three situations' },
+    { k:'health',       no:'16', name:'Your pod',             how:'Rate your pod' },
+    { k:'metrics',      no:'17', name:'Strong metrics',       how:'Sort six metrics' },
+    { k:'draft',        no:'18', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
+    { k:'quiz',         no:'19', name:'Apply it',             how:'Score 6 of 8' },
+    { k:'nextstep',     no:'20', name:'This week',            how:'Commit to all four moves' },
+    { k:'carry',        no:'21', name:'Carry it forward',     how:'Fill in three of four lines' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
-    { h:'Entrepreneurial <em>mindset</em>', p:'A real Vanderbilt turnaround, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Your pilot'] },
+    { h:'Entrepreneurial <em>mindset</em>', p:'A real Vanderbilt turnaround, radical collaboration, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Radical collaboration', 'Your pilot'] },
     { h:'Reputational <em>stewardship</em>', p:'The trust radar, where reputation is made, when to act, and three calls under pressure.', tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement'] },
     { h:'High-performing <em>teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Your pod'] },
     { h:'Your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
@@ -168,6 +170,8 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    collab: { title:'My collaboration map', fields:['share', 'critic', 'top', 'win'], need:3, tpl:function(v){
+      return 'SHARE THE CREDIT: ' + (v.share || '[partners who must share the credit]') + '\nA LIKELY CRITIC: ' + (v.critic || '[who, and how we listen first]') + '\nTOP PRODUCERS: ' + (v.top || '[who already does this well, and how we back them]') + '\nTHE EARLY WIN: ' + (v.win || '[the first result that shows we mean business]'); } },
     carry: { title:'My plan to carry it forward', fields:['idea', 'live', 'teach', 'next'], need:3, tpl:function(v){
       return 'THE IDEA MY TEAM NEEDS MOST: ' + (v.idea || '[one idea from the program]') + '\nHOW I WILL LIVE IT: ' + (v.live || '[a decision, habit, or question people will see me use]') + '\nHOW I WILL TEACH IT: ' + (v.teach || '[to whom, and by when]') + '\nTHE NEXT LEADER: ' + (v.next || '[someone I will encourage toward a future cohort, and why]'); } },
     recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
@@ -214,9 +218,9 @@ window.LR_COURSE = {
     week: 'Course Two · Week of November 9',
     topics: 'Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams',
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
-    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
+    goals: ['<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
     lessons: [
-      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'kind', 'reframe'], recap:'recap1', ideas:[
+      { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'kind', 'reframe'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
         ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
         ['Probe complex problems.', 'When no one knows the answer, run a small pilot, learn, and scale what works.'] ] },
@@ -233,7 +237,7 @@ window.LR_COURSE = {
         ['Write the plan half.', 'An integrated solution, steps with owners and dates, metrics, and a sustainability plan.'],
         ['Finish together.', 'A full first draft this week; polish in week four.'] ] }
     ],
-    work: ['reframe', 'repstatement', 'draft', 'carry'],
+    work: ['reframe', 'collab', 'repstatement', 'draft', 'carry'],
     footer: 'Your pod’s brief is due Friday, November 20, three pages at most. Three winners, one per focus area.'
   },
   PRINT_TITLE: 'Course Two, my weekly <em>takeaway</em>.',

@@ -21,7 +21,7 @@ This first page is your map. Before you start any learning, it helps to know whe
 **Tap clips**
 
 - *route/g1:* Stop one, vision and strategy. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess four numbers that show whether the strategy is working, tour four growth sites, and sort six real-sounding initiatives with a tool called the value stick.
-- *route/g2:* Stop two, story and brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, and then you draft your pod’s storyline.
+- *route/g2:* Stop two, story and brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, your part in the ground game, and then you draft your pod’s storyline.
 - *route/g3:* Stop three, mission and margin. The Chancellor again, two hard calls about money and purpose, and a portfolio you balance on a simple matrix.
 - *route/g4:* Stop four, your brief. Practice choosing a focus area, draft sections one to three, and check what you can now apply.
 
@@ -97,7 +97,7 @@ Welcome to lesson two. In lesson one you saw that reputation brings resources. T
 
 *About 70 seconds*
 
-You just separated brand from reputation. Now the question is how reputation grows. Vice Chancellor Ertel calls Vanderbilt a fighter brand: not the loudest, deeply valued once discovered. People who know Vanderbilt love it; not enough people know it yet. That changes how you earn attention. People move up a ladder: first relevance, then consideration, then trust, then commitment. A spike moment, like an upset win or a major gift, puts Vanderbilt on the first rung. But a spike without a system is noise. Attention fades unless a steady drumbeat of stories keeps people climbing. Big campaigns and national media are the air cover; they create stories, speeches, and coverage. The ground game is leaders carrying those stories directly to the people who matter: government, donors, business, prospective parents. And those people pass them on, because trust travels through proximity. That makes you part of the ground game. Think of one person outside Vanderbilt who trusts your work. How did that trust start? Tap the four moves a fighter brand makes. Next, you will tell your own pod’s story.
+You just separated brand from reputation. Now the question is how reputation grows. Vice Chancellor Ertel calls Vanderbilt a fighter brand: not the loudest, deeply valued once discovered. People who know Vanderbilt love it; not enough people know it yet. That changes how you earn attention. People move up a ladder: first relevance, then consideration, then trust, then commitment. A spike moment, like an upset win or a major gift, puts Vanderbilt on the first rung. But a spike without a system is noise. Attention fades unless a steady drumbeat of stories keeps people climbing. Big campaigns and national media are the air cover; they create stories, speeches, and coverage. The ground game is leaders carrying those stories directly to the people who matter: government, donors, business, prospective parents. And those people pass them on, because trust travels through proximity. That makes you part of the ground game. Think of one person outside Vanderbilt who trusts your work. How did that trust start? Tap the four moves a fighter brand makes. Next, your part in it: the ground game.
 
 **Tap clips**
 
@@ -106,11 +106,17 @@ You just separated brand from reputation. Now the question is how reputation gro
 - *fighter/f3:* Design bold moments. Spike moments give people a reason to look closer. In the Chancellor’s words, a little controversy is good for us. Treat a difficult topic as a chance to engage, not a thing to avoid.
 - *fighter/f4:* Sustain meaning over time. Reputation works as infrastructure, a system rather than a campaign. Keep telling the same true story long after the launch.
 
+### Lesson 2: The ground game
+
+*About 90 seconds*
+
+You just saw that a spike needs a system. Here is who runs that system: you. Vice Chancellor Ertel put it this way. Reputation creates resources when air cover is carried through ground game. Air cover is campaigns, advertising, and media. The ground game is leaders carrying the story person to person. He also said brands come to exist in one of two ways: by default, when we let the world tell our story, or by design, when we tell our own. The ground game works in three steps. First, reputation assets are created: stories, speeches, earned media, paid media, and social media. Second, those assets are shared directly with priority stakeholders and influencers: government, donors, business, and prospective parents. Third, the impact is multiplied peer to peer, because trust travels through proximity. The people you reach tell people you never will. So what can you do? Understand what sets Vanderbilt apart. Share reputation assets with the people you work with. Equip others to tell the story. And treat difficult or controversial topics as a chance to engage, not a reason to go quiet. Think of one result your team delivered this year that someone outside your office should hear about. Who is that person? Now plan one play of your ground game. It saves here and prints in your takeaway. Next, you will tell your pod’s story.
+
 ### Lesson 2: Your storyline
 
 *About 85 seconds*
 
-You know how reputation is built. Now you will build the story your pod will tell the judges, and later a sponsor. The pre-work for this topic is Nancy Duarte’s talk on the structure of great talks. Her finding: great communicators keep moving between two places. What is, the frustrating present. And what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then the speaker ends with one clear call to action and a picture of life after people act. Three moves, then. Open with what is, through one real person and one real moment. Contrast it with what could be, and go back and forth. End with one ask, and name what each audience gets: a dean wants research time, a finance leader wants the cost, a student wants the experience. The strongest pods in past cohorts opened with one person, not a statistic. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. If you are unsure what good looks like, open the strong example before you write. Then draft your storyline. It saves here and folds into your brief later. Next, a wrap-up for lesson two.
+You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. The pre-work for this topic is Nancy Duarte’s talk on the structure of great talks. Her finding: great communicators keep moving between two places. What is, the frustrating present. And what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then the speaker ends with one clear call to action and a picture of life after people act. Three moves, then. Open with what is, through one real person and one real moment. Contrast it with what could be, and go back and forth. End with one ask, and name what each audience gets: a dean wants research time, a finance leader wants the cost, a student wants the experience. The strongest pods in past cohorts opened with one person, not a statistic. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. If you are unsure what good looks like, open the strong example before you write. Then draft your storyline. It saves here and folds into your brief later. Next, a wrap-up for lesson two.
 
 ### Lesson 2: Wrap-up
 
@@ -177,7 +183,7 @@ You are nearly done with Course One. Learning sticks when it turns into action i
 
 That is Course One. Look at what you have now: a clear view of the strategy, a story your pod can tell, a case in both mission and money, and a first draft of page one of your brief. Take it to your pod. Course Two opens the week of November ninth, with entrepreneurial mindset, reputational stewardship, and high-performing teams, and it helps you draft the rest of the brief. Crescere aude. Dare to grow.
 
-*Page narration: about 24 minutes.*
+*Page narration: about 26 minutes.*
 
 ## Course Two: Venture, Reputation and Teams (week of November 9)
 
@@ -195,7 +201,7 @@ Here is your map for the week. Lesson one is the entrepreneurial mindset, taught
 
 **Tap clips**
 
-- *route/g1:* Stop one, entrepreneurial mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, and you turn your pod’s challenge into a pilot.
+- *route/g1:* Stop one, entrepreneurial mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, how radical collaboration made it work, and you turn your pod’s challenge into a pilot.
 - *route/g2:* Stop two, reputational stewardship. The Chancellor again, the trust radar, where reputation is made, when to act, three calls under pressure, and your project’s reputational statement.
 - *route/g3:* Stop three, high-performing teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles, three leadership calls, and a health check on your pod.
 - *route/g4:* Stop four, your brief. Sort strong and weak metrics, draft sections four to seven, and check what you can now apply.
@@ -223,13 +229,19 @@ You saw the diagnosis. Now the result. Lutz opened his story with the ending, an
 
 *About 70 seconds*
 
-You have seen the before and after. Now the how, which is the part you can reuse. Lutz says successful change leadership needs ambidexterity: alternating between assessment and action, rather than doing only one. He named five moves. Listen carefully to the key people, which also buys time with critics. Make clear-eyed assessments, against the best, not the average. Deal with resistance and underperformance, while giving hope to the leaders coming up. Drive people, process, and technology agendas at the same time. And look beyond best practices, even outside higher education. Then every tactic got a home in one of four categories: people and culture, collaboration and engagement, motivation and incentives, and process and systems. Each had an owner and a date. Notice that your brief asks for the same thing: a solution across people, process, and technology, with owners and a timeline. Think about the last change you led. Did it touch all three, or only one? Sort six real tactics, and read why after each. Next, how to tell what kind of problem you are facing.
+You have seen the before and after. Now the how, which is the part you can reuse. Lutz says successful change leadership needs ambidexterity: alternating between assessment and action, rather than doing only one. He named five moves. Listen carefully to the key people, which also buys time with critics. Make clear-eyed assessments, against the best, not the average. Deal with resistance and underperformance, while giving hope to the leaders coming up. Drive people, process, and technology agendas at the same time. And look beyond best practices, even outside higher education. Then every tactic got a home in one of four categories: people and culture, collaboration and engagement, motivation and incentives, and process and systems. Each had an owner and a date. Notice that your brief asks for the same thing: a solution across people, process, and technology, with owners and a timeline. Think about the last change you led. Did it touch all three, or only one? Sort six real tactics, and read why after each. Next, the principle underneath all of them: radical collaboration.
+
+### Lesson 1: Radical collaboration
+
+*About 90 seconds*
+
+You just sorted the change moves. Underneath all of them was one principle. Lutz said the Chancellor’s call for Radical Collaboration underpinned every change initiative. It has three parts. First, start from the people you serve. Gift proposals reflected donor interests, aligned with the mission, and the team worked with donors rather than trying to steer them. Second, it is a team sport. Many roles are needed to execute a strategy, and every Vanderbilt leader is a fundraiser. Third, operate as One Vanderbilt. Donors who support several areas give the most, so every key prospect had a cross-Vanderbilt strategy, backed by shared credit, so two schools could win the same gift instead of competing for it. Lutz also led the people around the change, not only the work. He bought time with potential critics by listening. He sent serious signals that he meant business. He worked to reverse an image as a poor partner. He built trust and loyalty with top producers. And he used early wins to build momentum. Think about your pod’s idea. Which office could block it, and which could make it twice as strong if it shared the credit? Now map the people around your idea. It saves here and prints in your takeaway. Next, how to tell what kind of problem you are facing.
 
 ### Lesson 1: Know your problem
 
-*About 65 seconds*
+*About 70 seconds*
 
-You have seen how one leader drove change. But the right approach depends on the kind of problem in front of you, and choosing wrong is one of the most common leadership mistakes. The program’s pre-work, A Leader’s Framework for Decision Making, names four kinds. Simple problems have a known best practice: sense, categorize, respond. Complicated problems have a right answer that experts can find: sense, analyze, respond. Complex problems have no right answer up front; cause and effect show up only in hindsight. There you probe with small, safe experiments, sense what happens, and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Most capstone challenges are complex, because they involve people’s behavior. Think of a recent problem at work. Which kind was it, and did you treat it that way? Sort four situations. Next, you turn your pod’s challenge into a pilot.
+You have seen how one leader drove change, and who he brought along. But the right approach depends on the kind of problem in front of you, and choosing wrong is one of the most common leadership mistakes. The program’s pre-work, A Leader’s Framework for Decision Making, names four kinds. Simple problems have a known best practice: sense, categorize, respond. Complicated problems have a right answer that experts can find: sense, analyze, respond. Complex problems have no right answer up front; cause and effect show up only in hindsight. There you probe with small, safe experiments, sense what happens, and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Most capstone challenges are complex, because they involve people’s behavior. Think of a recent problem at work. Which kind was it, and did you treat it that way? Sort four situations. Next, you turn your pod’s challenge into a pilot.
 
 ### Lesson 1: Your pilot
 
@@ -373,4 +385,4 @@ You have reached the last step of the courses, and maybe the most important one.
 
 That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a pilot, a reputational strategy, strong metrics, and a team ready to deliver. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
 
-*Page narration: about 26 minutes.*
+*Page narration: about 27 minutes.*
