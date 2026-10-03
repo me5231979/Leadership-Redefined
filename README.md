@@ -36,7 +36,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 | Lesson | What it covers |
 |---|---|
-| 1. Entrepreneurial mindset | Opens with the Chancellor's video. Vice Chancellor Lutz's fundraising turnaround: the diagnosis, the numbers, the change moves, radical collaboration (a stakeholder map), the four kinds of problem, and a reframe and pilot builder |
+| 1. Entrepreneurial mindset | Opens with the Chancellor's video. John M. Lutz's fundraising turnaround (presenter card with name and title): the diagnosis, the numbers, the change moves, radical collaboration (a stakeholder map), the four kinds of problem, and a reframe and pilot builder |
 | 2. Reputational stewardship | Opens with the Chancellor's video. The trust radar, where reputation is made (the second circle and the coverage terrain), when to act (control, stakes, and the before, during, after cycle), three calls under pressure, and a reputational statement builder |
 | 3. High-performing teams | Opens with the Chancellor's video. Candice Storey Lee fact or fiction, her six principles, three learning-zone calls, and a pod health check |
 | 4. Your brief | Strong metrics, a draft of brief sections 4 to 7, a quick check, the week's commitments, and Carry it forward: the program on one card and a plan to embody and teach it |
@@ -101,6 +101,7 @@ The workflow records the clips in ElevenLabs voice `bfGb7JTLUnZebZRiFYyq` (set i
 
 - **Captions.** Add a WebVTT captions file for each video in `assets/video/`, and set `captions` in each `config.js`. Captions are required for WCAG 2.2 AA.
 - **Video for Vision and Strategy.** That section has no Chancellor intro video yet.
+- **Presenter portraits.** Presenter cards show each speaker's name and title, with initials until a portrait exists. Add square-ish photos at `assets/img/people/ertel.jpg`, `lutz.jpg`, and `lee.jpg` and they appear automatically.
 - **Alumni series.** Set `alumni.text` (and optionally `alumni.link`) in `course-two/config.js` to show the alumni series card on the Carry it forward page. It stays hidden while empty.
 - **Candice Storey Lee quotes.** Verify them against their linked sources. They were gathered from search results; the source pages themselves were not opened.
 

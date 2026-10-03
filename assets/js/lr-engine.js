@@ -483,7 +483,7 @@ var NUMS = D.NUMS || [];
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
-    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief, :scope > .lr-kit', copy);
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
     st.classList.add('lr-bal');
     // nothing left to teach beside the activity: one column under the lead
@@ -801,4 +801,13 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
   var body = card.querySelector('.lr-alumni-body'); body.textContent = a.text;
   if(a.link){ var l = document.createElement('a'); l.href = a.link; l.target = '_blank'; l.rel = 'noopener'; l.textContent = ' ' + (a.linkText || 'Learn more'); body.appendChild(l); }
   card.hidden = false;
+})();
+
+/* ── presenter cards: swap the initials for the portrait once the photo file exists ── */
+(function(){
+  document.querySelectorAll('.lr-presenter[data-photo]').forEach(function(f){
+    var slot = f.querySelector('.lr-pp'), img = new Image();
+    img.onload = function(){ slot.textContent = ''; img.alt = ''; slot.appendChild(img); };
+    img.src = f.getAttribute('data-photo');
+  });
 })();
