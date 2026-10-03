@@ -483,7 +483,7 @@ var NUMS = D.NUMS || [];
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
-    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief', copy);
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief, :scope > .lr-kit', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
     st.classList.add('lr-bal');
     // nothing left to teach beside the activity: one column under the lead
@@ -793,4 +793,12 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
       b.innerHTML = on ? play : pause;
     });
   });
+})();
+
+/* ── alumni series card: shown only when LR_CONFIG.alumni.text is set ── */
+(function(){
+  var a = (window.LR_CONFIG || {}).alumni || {}, card = document.querySelector('[data-alumni]'); if(!card || !a.text) return;
+  var body = card.querySelector('.lr-alumni-body'); body.textContent = a.text;
+  if(a.link){ var l = document.createElement('a'); l.href = a.link; l.target = '_blank'; l.rel = 'noopener'; l.textContent = ' ' + (a.linkText || 'Learn more'); body.appendChild(l); }
+  card.hidden = false;
 })();

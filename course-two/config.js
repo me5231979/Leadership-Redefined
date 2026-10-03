@@ -16,5 +16,8 @@ window.LR_CONFIG = {
     reputation: { src: '../assets/video/chancellor-reputational-stewardship.mp4', captions: '', title: 'Chancellor Diermeier on reputational stewardship' },
     teams:      { src: '../assets/video/chancellor-high-performing-teams.mp4', captions: '', title: 'Chancellor Diermeier on high-performing teams' }
   },
+  /* The alumni series card on the Carry it forward page. Leave text empty to hide the card.
+     link is optional: a sign-up or details page. */
+  alumni: { text: '', link: '', linkText: 'Learn about the alumni series' },
   exitUrl: ''
 };

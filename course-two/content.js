@@ -28,6 +28,7 @@ window.LR_COURSE = {
     { sel:'#draft',        key:'draft',      label:'Lesson 4: Draft the brief',      mode:'whole' },
     { sel:'#quiz',         key:'quiz',       label:'Lesson 4: Quick check',          mode:'whole' },
     { sel:'#nextstep',     key:'nextstep',   label:'Lesson 4: This week',            mode:'whole' },
+    { sel:'#carry',        key:'carry',      label:'Lesson 4: Carry it forward',     mode:'whole' },
     { sel:'#learn',        key:'learn',      label:'Keep going',                     mode:'whole', extras:['footer'] }
   ],
   SECTIONS: [
@@ -49,7 +50,8 @@ window.LR_COURSE = {
     { k:'metrics',      no:'16', name:'Strong metrics',       how:'Sort six metrics' },
     { k:'draft',        no:'17', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
     { k:'quiz',         no:'18', name:'Apply it',             how:'Score 6 of 8' },
-    { k:'nextstep',     no:'19', name:'This week',            how:'Commit to all four moves' }
+    { k:'nextstep',     no:'19', name:'This week',            how:'Commit to all four moves' },
+    { k:'carry',        no:'20', name:'Carry it forward',     how:'Fill in three of four lines' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
@@ -166,6 +168,8 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    carry: { title:'My plan to carry it forward', fields:['idea', 'live', 'teach', 'next'], need:3, tpl:function(v){
+      return 'THE IDEA MY TEAM NEEDS MOST: ' + (v.idea || '[one idea from the program]') + '\nHOW I WILL LIVE IT: ' + (v.live || '[a decision, habit, or question people will see me use]') + '\nHOW I WILL TEACH IT: ' + (v.teach || '[to whom, and by when]') + '\nTHE NEXT LEADER: ' + (v.next || '[someone I will encourage toward a future cohort, and why]'); } },
     recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap2: { title:'Lesson 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap3: { title:'Lesson 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
@@ -210,7 +214,7 @@ window.LR_COURSE = {
     week: 'Course Two · Week of November 9',
     topics: 'Entrepreneurial Mindset · Reputational Stewardship · High-Performing Teams',
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
-    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.'],
+    goals: ['<b>Apply</b> the change moves behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and check your pod against it.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
     lessons: [
       { title:'Entrepreneurial mindset', keys:['route', 'swot', 'numbers', 'moves', 'kind', 'reframe'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
@@ -224,12 +228,12 @@ window.LR_COURSE = {
         ['Control the controllables.', 'Leaders build the conditions; the team brings the effort. Results follow.'],
         ['Aim for the learning zone.', 'High standards plus psychological safety, built on purpose by how leaders frame work and respond to bad news.'],
         ['How a team works beats who is on it.', 'Safety, dependability, clarity, meaning, and impact.'] ] },
-      { title:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep'], ideas:[
+      { title:'Your brief', keys:['metrics', 'draft', 'quiz', 'nextstep', 'carry'], ideas:[
         ['Measure outcomes.', 'Every metric has a baseline, a target, and a date.'],
         ['Write the plan half.', 'An integrated solution, steps with owners and dates, metrics, and a sustainability plan.'],
         ['Finish together.', 'A full first draft this week; polish in week four.'] ] }
     ],
-    work: ['reframe', 'repstatement', 'draft'],
+    work: ['reframe', 'repstatement', 'draft', 'carry'],
     footer: 'Your pod’s brief is due Friday, November 20, three pages at most. Three winners, one per focus area.'
   },
   PRINT_TITLE: 'Course Two, my weekly <em>takeaway</em>.',

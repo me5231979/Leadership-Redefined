@@ -193,3 +193,4 @@
 .lr-photo img{ display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; object-position:center 40%; border-radius:var(--r); border:1px solid var(--bd); }
 .lr-photo figcaption{ margin-top:8px; font-size:.82rem; line-height:1.45; color:var(--tx3); }
 .v-stage.lr-bal > .v-act > figure.lr-photo{ margin-top:22px; }
+.v-stage.lr-bal > .v-act > .lr-kit{ margin-top:22px; max-width:none; }
