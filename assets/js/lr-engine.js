@@ -483,7 +483,7 @@ var NUMS = D.NUMS || [];
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
-    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > .lr-brief', copy);
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > .lr-brief', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
     st.classList.add('lr-bal');
     // nothing left to teach beside the activity: one column under the lead
@@ -519,7 +519,7 @@ var NUMS = D.NUMS || [];
    For anyone not listening, and for accessibility. Phonetic spellings in the
    scripts are swapped back to the real names. */
 (function(){
-  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
   $$('.page').forEach(function(pg){
     var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
     FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });

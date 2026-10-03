@@ -23,11 +23,11 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 ## The courses
 
-**Course One** runs the week of November 2, takes about 60 minutes, and has 15 tracked activities.
+**Course One** runs the week of November 2, takes about 70 minutes, and has 17 tracked activities.
 
 | Lesson | What it covers |
 |---|---|
-| 1. Vision and strategy | The vision and its areas of focus, four problems the vision answers, a guess-the-number momentum page, and the value stick |
+| 1. Vision and strategy | The vision and its areas of focus, four problems the vision answers, the reputation engine (feedback loop and three flywheels), a guess-the-number momentum page, the four growth sites, and the value stick |
 | 2. Story and brand | Opens with the Chancellor's Communication video. Brand or reputation, spikes and systems, and a storyline builder |
 | 3. Mission and margin | Opens with the Chancellor's Mission and Margin video. Two calls, a portfolio allocator on the mission and margin matrix, and a statement builder |
 | 4. Your brief | Focus area practice, a draft of brief sections 1 to 3, a quick check, and the week's commitments |

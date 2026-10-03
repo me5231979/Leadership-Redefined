@@ -8,7 +8,9 @@ window.LR_COURSE = {
     { sel:'#week',        key:'route',      label:'Lesson 1: This week',           mode:'whole' },
     { sel:'#mission',     key:'mission',    label:'Lesson 1: The vision',          mode:'whole' },
     { sel:'#problems',    key:'problems',   label:'Lesson 1: Four problems',       mode:'whole' },
+    { sel:'#engine',      key:'engine',     label:'Lesson 1: The reputation engine', mode:'whole' },
     { sel:'#momentum',    key:'numbers',    label:'Lesson 1: Momentum',            mode:'whole' },
+    { sel:'#growth',      key:'growth',     label:'Lesson 1: Four growth sites',   mode:'whole' },
     { sel:'#valuestick',  key:'valuestick', label:'Lesson 1: The value stick',     mode:'whole' },
     { sel:'#recap1',      key:'recap1',     label:'Lesson 1: Wrap-up',             mode:'whole' },
     { sel:'#brand',       key:'brand',      label:'Lesson 2: Brand and reputation', mode:'whole' },
@@ -29,22 +31,24 @@ window.LR_COURSE = {
     { k:'route',      no:'01', name:'This week',             how:'Visit all four stops' },
     { k:'mission',    no:'02', name:'The vision',            how:'Open all three areas of focus' },
     { k:'problems',   no:'03', name:'Four problems',         how:'Open all four problems' },
-    { k:'numbers',    no:'04', name:'Momentum',              how:'Guess all four numbers' },
-    { k:'valuestick', no:'05', name:'The value stick',       how:'Sort six initiatives' },
-    { k:'brand',      no:'06', name:'Brand or reputation',   how:'Decide six statements' },
-    { k:'fighter',    no:'07', name:'Spikes and systems',    how:'Open all four moves' },
-    { k:'story',      no:'08', name:'Your storyline',        how:'Fill in four of five lines' },
-    { k:'margin',     no:'09', name:'Mission and margin',    how:'Find the strongest call in two situations' },
-    { k:'portfolio',  no:'10', name:'The portfolio',         how:'Place all 100 points' },
-    { k:'statement',  no:'11', name:'Your statement',        how:'Fill in three of four lines' },
-    { k:'focus',      no:'12', name:'Your focus area',       how:'Sort five challenges' },
-    { k:'draft',      no:'13', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz',       no:'14', name:'Apply it',              how:'Score 6 of 8' },
-    { k:'nextstep',   no:'15', name:'This week',             how:'Commit to all four moves' }
+    { k:'engine',     no:'04', name:'The reputation engine', how:'Sort six moments' },
+    { k:'numbers',    no:'05', name:'Momentum',              how:'Guess all four numbers' },
+    { k:'growth',     no:'06', name:'Four growth sites',     how:'Open all four sites' },
+    { k:'valuestick', no:'07', name:'The value stick',       how:'Sort six initiatives' },
+    { k:'brand',      no:'08', name:'Brand or reputation',   how:'Decide six statements' },
+    { k:'fighter',    no:'09', name:'Spikes and systems',    how:'Open all four moves' },
+    { k:'story',      no:'10', name:'Your storyline',        how:'Fill in four of five lines' },
+    { k:'margin',     no:'11', name:'Mission and margin',    how:'Find the strongest call in two situations' },
+    { k:'portfolio',  no:'12', name:'The portfolio',         how:'Place all 100 points' },
+    { k:'statement',  no:'13', name:'Your statement',        how:'Fill in three of four lines' },
+    { k:'focus',      no:'14', name:'Your focus area',       how:'Sort five challenges' },
+    { k:'draft',      no:'15', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
+    { k:'quiz',       no:'16', name:'Apply it',              how:'Score 6 of 8' },
+    { k:'nextstep',   no:'17', name:'This week',             how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
-    { h:'Vision and <em>strategy</em>', p:'What the vision asks of you, and how to tell strategy from activity.', tags:['Three areas of focus', 'Guess the momentum', 'The value stick'] },
+    { h:'Vision and <em>strategy</em>', p:'What the vision asks of you, and how to tell strategy from activity.', tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'The value stick'] },
     { h:'Story and <em>brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'Your storyline'] },
     { h:'Mission and <em>margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The portfolio'] },
     { h:'Your <em>brief</em>', p:'Pick your focus area and draft sections 1 to 3 for your pod.', tags:['Focus area', 'Draft', 'Quick check'] }
@@ -59,6 +63,14 @@ window.LR_COURSE = {
   ],
   NUM_PROG: 'numbers',
   DRILLS: {
+    engine: { opts:['Execution with ambition', 'Values-driven leadership', 'Athletics momentum'], prog:'engine', verb:'sorted', items:[
+      { s:'A new residential college opens on schedule, and students move in the week it was promised.', a:0, x:'Big things, done well. Delivery on a promise is the result that builds reputation.' },
+      { s:'A campus forum where speakers who disagree sharply are each heard in full.', a:1, x:'Open forums and civil discourse. Trust is earned when every view gets a fair hearing.' },
+      { s:'The university declines to take an official position on a political controversy, so every voice on campus stays free to speak.', a:1, x:'Institutional neutrality. It protects open inquiry, which is the point of a university.' },
+      { s:'A national TV audience watches a big win, and alumni giving and applications rise the next month.', a:2, x:'Attention that turns into affinity. Athletics puts the name in front of people who never read a research paper.' },
+      { s:'A growth campus enrolls its first students with programs, systems, and services ready on day one.', a:0, x:'Ambition, executed. The announcement is the promise; working systems on day one are the proof.' },
+      { s:'A sold-out home game becomes the first campus visit for hundreds of prospective families.', a:2, x:'Momentum on the field becomes a first impression of the university. Then operations have to match it.' }
+    ]},
     valuestick: { opts:['Raises willingness to pay', 'Lowers willingness to sell', 'Activity, not strategy'], prog:'valuestick', verb:'sorted', items:[
       { s:'Admitted students get a financial aid answer in three days instead of three weeks.', a:0, x:'Families weighing two offers value speed and clarity. Same aid, faster, and Vanderbilt is the easier yes.' },
       { s:'Staff finish a purchase request in one system instead of three.', a:1, x:'No one outside campus sees it. Colleagues do. Less friction makes Vanderbilt a better place to stay and do good work.' },
@@ -153,11 +165,11 @@ window.LR_COURSE = {
     week: 'Course One · Week of November 2',
     topics: 'Vision, Strategy and the Future of Vanderbilt · Communication, Storytelling and Brand · Mission and Margin',
     due: 'Fri, Nov 6', dueLabel: 'finish this course by',
-    goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Tell</b> strategy from activity with the value stick.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
+    goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.', '<b>Tell</b> strategy from activity with the value stick.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
     lessons: [
-      { title:'Vision and strategy', keys:['route', 'mission', 'problems', 'numbers', 'valuestick'], recap:'recap1', ideas:[
+      { title:'Vision and strategy', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth', 'valuestick'], recap:'recap1', ideas:[
         ['The vision is an instruction.', 'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'],
-        ['Reputation and resources feed each other.', 'Attention, applications, gifts, and growth rose together. Three flywheels keep the loop turning.'],
+        ['Reputation is an engine.', 'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up. Four growth sites show the bold bets it funds.'],
         ['Strategy is a choice.', 'Work is strategic only if it raises willingness to pay or lowers willingness to sell.'] ] },
       { title:'Communication, storytelling and brand', keys:['brand', 'fighter', 'story'], recap:'recap2', ideas:[
         ['Close the gap.', 'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'],

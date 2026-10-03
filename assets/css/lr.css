@@ -184,3 +184,12 @@
 @media (max-width:640px){ .v-stage.lr-bal .lr-brief{ grid-template-columns:minmax(0,1fr); } }
 /* wrap-up: a roomier answer box beside the three ideas */
 .v-stage.lr-bal .v-act textarea[rows="4"], [id^="recap"] .v-act textarea{ min-height:170px; }
+
+/* six-slide montage (Course One): same 6s rhythm, shorter loop */
+.lr-montage[data-n="6"] img{ animation-duration:36s; }
+
+/* presenter photo: the speaker in the room, beside what they taught */
+.lr-photo{ margin-top:20px; max-width:460px; }
+.lr-photo img{ display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; object-position:center 40%; border-radius:var(--r); border:1px solid var(--bd); }
+.lr-photo figcaption{ margin-top:8px; font-size:.82rem; line-height:1.45; color:var(--tx3); }
+.v-stage.lr-bal > .v-act > figure.lr-photo{ margin-top:22px; }
