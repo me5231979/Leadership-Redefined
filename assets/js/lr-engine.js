@@ -578,6 +578,44 @@ $$('[data-taps]').forEach(function(list){
   }); });
 });
 
+/* ══════════ feedback under each text box ══════════
+   When a learner pauses or leaves a field, a short note says what the entry
+   already does well and one thing to sharpen. Checks per field: D.FEEDBACK. */
+var FB_CHECK = {
+  who:    { re:/\b(staff|students?|faculty|deans?|chairs?|managers?|teams?|offices?|departments?|donors?|famil(y|ies)|parents?|hires?|partners?|colleagues?|directors?|HR|IT|finance|alumni|leaders?|employees?|advisors?|coaches?|researchers?|sponsors?|judges?|pod|provost|chancellor|vendors?|schools?|units?|people|admins?|administrators?|nurses?|patients?)\b/i, ok:'names who', tip:'Name the person or group it affects, by role.' },
+  number: { re:/\d|%|\b(one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|half|double|triple|hundred|thousand|million)\b/i, ok:'has a number', tip:'Add a number: how many, how much, or how long.' },
+  when:   { re:/\b(day|days|week|weeks|month|months|semester|year|years|quarter|spring|summer|fall|winter|by\s|before|after|within|january|february|march|april|may|june|july|august|september|october|november|december|monday|tuesday|wednesday|thursday|friday|today|tomorrow|next)\b|\d{1,2}\/\d{1,2}/i, ok:'has a timeframe', tip:'Add when: a date, a week, or a semester.' },
+  money:  { re:/\$|\b(budget|budgets|fund|funds|funded|funding|cost|costs|dollars?|grant|grants|pay|pays|paid|revenue|savings?|save|saves|reallocat\w*|gift|gifts)\b/i, ok:'says where the money comes from', tip:'Say what it costs and where the money comes from.' },
+  ask:    { re:/\b(approve|approval|fund|pilot|support|join|sponsor|adopt|commit|decide|agree|launch|endorse|invest|allow|assign|give us)\b/i, ok:'makes a clear ask', tip:'End with one clear ask: approve, fund, pilot, or join.' },
+  area:   { re:/core operations|bold|strategic initiatives|values leadership/i, ok:'names a focus area', tip:'Name one area of focus: Exceptional Core Operations, Bold Strategic Initiatives, or Values Leadership.' },
+  vision: { re:/vision|core operations|bold|values leadership|great university|speed|agility|scale|reputation|prosperity/i, ok:'ties to the vision', tip:'Quote the vision line or the area of focus it serves.' },
+  stakes: { re:/\b(mission|money|cost|costs|time|weeks|reputation|trust|talent|students?|risk|lose|losing|lost|wait|delay)\b/i, ok:'says what is at stake', tip:'Say what it costs to wait: mission, money, people, or reputation.' },
+  own:    { re:/\b(my|our|we|i|me|team)\b/i, ok:'connects to your own work', tip:'Connect it to your own team or work.' },
+  whatif: { re:/what if/i, ok:'is framed as a what if', tip:'Start with &ldquo;what if&rdquo; to flip the assumption.' },
+  outside:{ re:/\b(hotel|hospital|retail\w*|bank|airline|company|companies|industry|employer|business|startup|restaurant|store|brand|app|amazon|disney|apple|other universit\w*|peer)\b/i, ok:'borrows from outside higher education', tip:'Name where the idea comes from outside higher education.' },
+  action: { re:/\b(ask|say|use|start|stop|hold|run|share|meet|write|send|show|model|name|check)\b/i, ok:'names a visible action', tip:'Name something people will see you do.' }
+};
+var FB_VAGUE = /\b(improve|improved|improving|better|enhance|enhanced|optimi[sz]e|streamline|leverage|synergy|awareness|various|stuff|things|etc|robust|holistic|best-in-class)\b/i;
+function fbJudge(key, f, v){
+  var t = (v || '').trim(); if(!t) return null;
+  var words = t.split(/\s+/).length, cfg = ((D.FEEDBACK || {})[key] || {})[f] || [], good = [], next = [];
+  cfg.forEach(function(c){ var k = FB_CHECK[c]; if(!k) return; (k.re.test(t) ? good : next).push(k); });
+  if(words < 6) next.unshift({ tip:'Add a little more: one full sentence your pod could act on.' });
+  var vg = t.match(FB_VAGUE); if(vg) next.push({ tip:'Swap the vague word &ldquo;' + vg[0] + '&rdquo; for what will actually change.' });
+  var strong = !next.length;
+  return '<span class="fb-mark" aria-hidden="true">' + (strong ? '&#10003;' : '&#8594;') + '</span><span>' + (strong ? '<b>Strong.</b> ' + (good.length ? 'It ' + good.map(function(g){ return g.ok; }).join(', ') + '.' : 'Specific and clear.') : (good.length ? '<b>Good start:</b> it ' + good.map(function(g){ return g.ok; }).join(', ') + '. ' : '') + '<b>To sharpen:</b> ' + next[0].tip) + '</span>';
+}
+function fbWire(el, key){
+  var f = el.getAttribute('data-f'), box = document.createElement('p'), t;
+  box.className = 'lr-fb'; box.setAttribute('aria-live', 'polite'); box.id = el.id ? el.id + 'Fb' : '';
+  el.parentNode.appendChild(box);
+  if(box.id){ var d = el.getAttribute('aria-describedby'); el.setAttribute('aria-describedby', (d ? d + ' ' : '') + box.id); }
+  function show(){ var h = fbJudge(key, f, el.value); box.innerHTML = h || ''; box.classList.toggle('on', !!h); box.classList.toggle('ok', !!h && h.indexOf('&#10003;') > -1); }
+  el.addEventListener('input', function(){ clearTimeout(t); t = setTimeout(show, 900); });
+  el.addEventListener('blur', show); el.addEventListener('change', show);
+  if((el.value || '').trim()) show();
+}
+
 /* ══════════ builders: a few fields that assemble into a draft, saved in this browser ══════════
    <div class="lr-build" data-build="story"> fields [data-f]; preview .lr-out; D.BUILDS[key] = { tpl(v), need:n } */
 function bVal(key, f){ return (get('b-' + key + '-' + f) || '').trim(); }
@@ -599,6 +637,7 @@ $$('[data-build]').forEach(function(box){
     if(n >= need){ progDone(key); turnDone(key); }
     tellPaint();
   }
+  fields.forEach(function(el){ fbWire(el, key); });
   fields.forEach(function(el){
     var h = function(){ set('b-' + key + '-' + el.getAttribute('data-f'), el.value); paint(); };
     el.addEventListener('input', h); el.addEventListener('change', h);

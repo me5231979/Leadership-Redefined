@@ -170,6 +170,16 @@ window.LR_COURSE = {
       Impact:{ high:'Name who will notice the difference first.', low:'Shrink the pilot until everyone can see the difference it would make.' }
     }}
   },
+  /* coaching under each text box: which checks a strong answer passes (see lr-engine.js, feedback) */
+  FEEDBACK: {
+    reframe: { assume:[], whatif:['whatif'], borrow:['outside'], pilot:['number', 'when'], proof:['number'] },
+    collab: { share:['who'], critic:['who'], top:['who'], win:['number', 'when'] },
+    repstatement: { stmt:['who'], up:['who'], risk:[], mit:['who'] },
+    draft: { people:['who'], process:[], tech:[], steps:['who', 'when'], metrics:['number', 'when'], sustain:['who', 'money'] },
+    carry: { idea:[], live:['action'], teach:['who', 'when'], next:['who'] },
+    recap1:{ txt:['own'] }, recap2:{ txt:['own'] }, recap3:{ txt:['own'] },
+    me1:{ txt:['own', 'when'] }, me2:{ txt:['own', 'when'] }, me3:{ txt:['own', 'when'] }
+  },
   BUILDS: {
     me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },

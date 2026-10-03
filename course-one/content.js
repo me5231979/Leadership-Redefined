@@ -145,6 +145,15 @@ window.LR_COURSE = {
   },
   CALL_SETS: { margin:['m1', 'm2'] },
   CALL_PROG: { margin:{ prog:'margin', noun:'situations', status:'#marginStatus', narr:'margin/s' } },
+  /* coaching under each text box: which checks a strong answer passes (see lr-engine.js, feedback) */
+  FEEDBACK: {
+    story: { person:['who'], is:['who', 'number'], could:['who'], ask:['ask'], aud:['who'] },
+    ground: { asset:['number'], who:['who'], how:['when'], pass:['who'] },
+    statement: { mission:['who'], cost:['money'], ret:['number'], quad:['money', 'when'] },
+    draft: { area:['area'], challenge:['who', 'number'], why:['stakes'], priorities:['vision'] },
+    recap1:{ txt:['own'] }, recap2:{ txt:['own'] }, recap3:{ txt:['own'] },
+    me1:{ txt:['own', 'when'] }, me2:{ txt:['own', 'when'] }, me3:{ txt:['own', 'when'] }
+  },
   BUILDS: {
     me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
