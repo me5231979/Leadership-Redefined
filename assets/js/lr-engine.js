@@ -490,22 +490,31 @@ var NUMS = D.NUMS || [];
     if(!fl.length && !copy.querySelector('.lr-learn, .lr-keys, .v-commits, .v-three, .lr-draft')) st.classList.add('lr-solo');
     stages.push({ st:st, copy:copy, act:act, fl:fl });
   });
-  // put one floater in a column: videos lead the column, the rest follow the content
-  function place(x, col, s){
-    if(col === s.copy){ s.copy.insertBefore(x, x._home && x._home.parentNode === s.copy ? x._home : s.copy.querySelector(':scope > .lr-read')); }
+  // put one floater: 0 copy column, 1 act column, 2 a full-width row under both (figures and photos only)
+  function below(s){ if(!s.below){ s.below = document.createElement('div'); s.below.className = 'lr-below'; s.st.appendChild(s.below); } return s.below; }
+  function place(x, where, s){
+    if(where === 0){ s.copy.insertBefore(x, x._home && x._home.parentNode === s.copy ? x._home : s.copy.querySelector(':scope > .lr-read')); }
+    else if(where === 2) below(s).appendChild(x);
     else if(x.classList.contains('v-video')) s.act.insertBefore(x, s.act.firstChild);
     else s.act.appendChild(x);
   }
+  function wide(x){ return x.matches('figure.lr-fig, figure.lr-photo'); }
   function fit(s){
     if(!s.fl.length || !s.st.offsetParent) return;
-    if(window.matchMedia('(max-width:1000px)').matches){ s.fl.forEach(function(x){ place(x, s.copy, s); }); return; }
-    var n = s.fl.length, best = 0, bestD = Infinity;
-    for(var m = 0; m < (1 << n); m++){
-      s.fl.forEach(function(x, i){ place(x, (m >> i) & 1 ? s.act : s.copy, s); });
-      var d = Math.abs(s.copy.offsetHeight - s.act.offsetHeight);
-      if(d < bestD - 4){ bestD = d; best = m; }
+    if(window.matchMedia('(max-width:1000px)').matches){ s.fl.forEach(function(x){ place(x, 0, s); }); if(s.below) s.below.hidden = true; return; }
+    var n = s.fl.length, total = Math.pow(3, n), best = null, bestD = Infinity;
+    for(var m = 0; m < total; m++){
+      var code = [], k = m, ok = true;
+      for(var i = 0; i < n; i++){ code.push(k % 3); k = Math.floor(k / 3); if(code[i] === 2 && !wide(s.fl[i])) ok = false; }
+      if(!ok) continue;
+      code.forEach(function(w, i){ place(s.fl[i], w, s); });
+      if(s.below) s.below.hidden = !s.below.children.length;
+      // a full-width row costs a little, so a balanced side placement wins when one exists
+      var d = Math.abs(s.copy.offsetHeight - s.act.offsetHeight) + code.filter(function(w){ return w === 2; }).length * 140;
+      if(d < bestD - 4){ bestD = d; best = code; }
     }
-    s.fl.forEach(function(x, i){ place(x, (best >> i) & 1 ? s.act : s.copy, s); });
+    best.forEach(function(w, i){ place(s.fl[i], w, s); });
+    if(s.below) s.below.hidden = !s.below.children.length;
   }
   function fitAll(){ stages.forEach(fit); }
   window.LR_fit = fitAll;

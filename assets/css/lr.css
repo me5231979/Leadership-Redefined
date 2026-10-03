@@ -25,7 +25,7 @@
 .lr-row input[type=range]{ flex:1; accent-color:var(--vu-gold); min-height:32px; }
 .lr-row output{ font-family:var(--cond); font-weight:700; min-width:2.2em; text-align:right; color:var(--tx); }
 .lr-total{ font-family:var(--cond); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.8rem; color:var(--tx); margin:0 0 10px; }
-.lr-mx svg{ width:100%; height:auto; display:block; max-width:420px; }
+.lr-mx svg{ width:100%; height:auto; display:block; max-width:600px; }
 .lr-mx .q{ fill:var(--card); stroke:var(--bd); }
 .lr-mx .t{ fill:var(--tx); font-family:var(--cond); font-weight:700; letter-spacing:.04em; }
 .lr-mx .s{ fill:var(--tx2); font-family:var(--sans); }
@@ -34,7 +34,7 @@
 .mx-read b{ color:var(--tx); }
 
 /* small inline figure on the idea side of a stage */
-.lr-fig{ margin-top:18px; max-width:440px; }
+.lr-fig{ margin-top:18px; max-width:640px; }
 .lr-fig svg{ width:100%; height:auto; display:block; }
 .lr-fig .t{ fill:var(--tx); font-family:var(--cond); font-weight:700; letter-spacing:.04em; }
 .lr-fig .s{ fill:var(--tx2); font-family:var(--sans); }
@@ -189,7 +189,7 @@
 .lr-montage[data-n="6"] img{ animation-duration:36s; }
 
 /* presenter photo: the speaker in the room, beside what they taught */
-.lr-photo{ margin-top:20px; max-width:460px; }
+.lr-photo{ margin-top:20px; max-width:640px; }
 .lr-photo img{ display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:cover; object-position:center 40%; border-radius:var(--r); border:1px solid var(--bd); }
 .lr-photo figcaption{ margin-top:8px; font-size:.82rem; line-height:1.45; color:var(--tx3); }
 .v-stage.lr-bal > .v-act > figure.lr-photo{ margin-top:22px; }
@@ -204,3 +204,10 @@
 .lr-presenter span:not(.lr-pp){ color:var(--tx2); font-size:.9rem; line-height:1.4; }
 .lr-presenter small{ font-family:var(--cond); font-weight:700; font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:var(--eyebrow); margin-top:2px; }
 .v-stage.lr-bal > .v-act > figure.lr-presenter{ margin-top:22px; }
+/* figures fill their column; captions stay readable */
+.v-stage .lr-fig, .v-stage .lr-photo{ width:100%; }
+.lr-fig figcaption{ margin-top:8px; }
+/* full-width figure row under both columns: big diagrams, side by side when there are two */
+.v-stage.lr-bal > .lr-below{ grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:clamp(18px,3vw,40px); justify-content:center; align-items:flex-start; }
+.v-stage.lr-bal > .lr-below > figure{ margin-top:0; flex:1 1 420px; max-width:820px; }
+.v-stage.lr-bal > .lr-below > figure.lr-fig svg{ max-height:420px; }
