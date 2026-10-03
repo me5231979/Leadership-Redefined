@@ -12,15 +12,18 @@ window.LR_COURSE = {
     { sel:'#momentum',    key:'numbers',    label:'Lesson 1: Momentum',            mode:'whole' },
     { sel:'#growth',      key:'growth',     label:'Lesson 1: Four growth sites',   mode:'whole' },
     { sel:'#valuestick',  key:'valuestick', label:'Lesson 1: The value stick',     mode:'whole' },
+    { sel:'#me1',          key:'me1',        label:'Lesson 1: What this means for me', mode:'whole' },
     { sel:'#recap1',      key:'recap1',     label:'Lesson 1: Wrap-up',             mode:'whole' },
     { sel:'#brand',       key:'brand',      label:'Lesson 2: Brand and reputation', mode:'whole' },
     { sel:'#fighter',     key:'fighter',    label:'Lesson 2: Spikes and systems',  mode:'whole' },
     { sel:'#ground',      key:'ground',     label:'Lesson 2: The ground game',     mode:'whole' },
     { sel:'#story',       key:'story',      label:'Lesson 2: Your storyline',      mode:'whole' },
+    { sel:'#me2',          key:'me2',        label:'Lesson 2: What this means for me', mode:'whole' },
     { sel:'#recap2',      key:'recap2',     label:'Lesson 2: Wrap-up',             mode:'whole' },
     { sel:'#margin',      key:'margin',     label:'Lesson 3: Mission and margin',  mode:'whole' },
-    { sel:'#portfolio',   key:'portfolio',  label:'Lesson 3: The portfolio',       mode:'whole' },
+    { sel:'#portfolio',   key:'portfolio',  label:'Lesson 3: The whole cost',       mode:'whole' },
     { sel:'#statement',   key:'statement',  label:'Lesson 3: Your statement',      mode:'whole' },
+    { sel:'#me3',          key:'me3',        label:'Lesson 3: What this means for me', mode:'whole' },
     { sel:'#recap3',      key:'recap3',     label:'Lesson 3: Wrap-up',             mode:'whole' },
     { sel:'#focus',       key:'focus',      label:'Lesson 4: Your focus area',     mode:'whole' },
     { sel:'#draft',       key:'draft',      label:'Lesson 4: Draft the brief',     mode:'whole' },
@@ -41,7 +44,7 @@ window.LR_COURSE = {
     { k:'ground',     no:'10', name:'The ground game',       how:'Fill in three of four lines' },
     { k:'story',      no:'11', name:'Your storyline',        how:'Fill in four of five lines' },
     { k:'margin',     no:'12', name:'Mission and margin',    how:'Find the strongest call in two situations' },
-    { k:'portfolio',  no:'13', name:'The portfolio',         how:'Place all 100 points' },
+    { k:'portfolio',  no:'13', name:'The whole cost',        how:'Find six hidden costs' },
     { k:'statement',  no:'14', name:'Your statement',        how:'Fill in three of four lines' },
     { k:'focus',      no:'15', name:'Your focus area',       how:'Sort five challenges' },
     { k:'draft',      no:'16', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
@@ -52,7 +55,7 @@ window.LR_COURSE = {
   STOPS: [
     { h:'Vision and <em>strategy</em>', p:'What the vision asks of you, and how to tell strategy from activity.', tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'The value stick'] },
     { h:'Story and <em>brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'The ground game', 'Your storyline'] },
-    { h:'Mission and <em>margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The portfolio'] },
+    { h:'Mission and <em>margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The whole cost'] },
     { h:'Your <em>brief</em>', p:'Pick your focus area and draft sections 1 to 3 for your pod.', tags:['Focus area', 'Draft', 'Quick check'] }
   ],
   BEST_LABEL: 'The strongest call: ',
@@ -87,6 +90,14 @@ window.LR_COURSE = {
       y:[120,121,137,119,109,111,109,125,118,122,177,160,193,126,171,187,320,265,345,600], proj:18, max:600, step:100, end:'$600M+', endNote:'forecast' }
   ],
   DRILLS: {
+    fullcost: { opts:['Follow the cash', 'Upkeep and depreciation', 'Space'], prog:'portfolio', verb:'found', items:[
+      { s:'A donor gives $20 million to build a new lab building.', opts:['Follow the cash', 'Upkeep and depreciation', 'Debt and ratings'], a:1, x:'The gift covers construction. The building costs money every year it stands: upkeep, renewal, and depreciation.' },
+      { s:'A five-year pledge funds a new program that starts hiring this fall.', opts:['Follow the cash', 'Space', 'Research costs'], a:0, x:'The budget says funded; the cash arrives over five years. Someone covers the gap until it does.' },
+      { s:'A department asks for two more offices for a growing team.', opts:['Research costs', 'Space', 'Debt and ratings'], a:1, x:'Space is a resource with a cost: upkeep, utilities, and the next request it displaces.' },
+      { s:'A new federal grant pays for researchers and equipment.', opts:['Research costs', 'Follow the cash', 'Upkeep and depreciation'], a:0, x:'Research costs more than its direct dollars. Facilities and administrative costs, from labs to compliance, are real.' },
+      { s:'A new named scholarship will fund ten students a year.', opts:['Space', 'Scholarships need analysis', 'Debt and ratings'], a:1, x:'Scholarships and fundraising deserve the same financial analysis as any commitment: what it covers, for how long, and what happens when the fund falls short.' },
+      { s:'The university borrows to build a new residence hall.', opts:['Debt and ratings', 'Follow the cash', 'Space'], a:0, x:'Borrowing carries interest and limits for years, and it shapes the credit rating that sets the price of the next loan.' }
+    ]},
     engine: { opts:['Execution with ambition', 'Values-driven leadership', 'Athletics momentum'], prog:'engine', verb:'sorted', items:[
       { s:'A new residential college opens on schedule, and students move in the week it was promised.', a:0, x:'Big things, done well. Delivery on a promise is the result that builds reputation.' },
       { s:'A campus forum where speakers who disagree sharply are each heard in full.', a:1, x:'Open forums and civil discourse. Trust is earned when every view gets a fair hearing.' },
@@ -127,27 +138,16 @@ window.LR_COURSE = {
     ]},
     m2: { h:'Situation 2 · The revenue offer', s:'An outside partner offers to pay well to use your unit’s space and staff time. It would fund two positions, but it has nothing to do with your mission.', opts:[
       { t:'Take it. Money is money.', b:'Drift', best:false, out:'Margin with no mission tie can pull a team off its purpose a few hours at a time.' },
-      { t:'Take it with limits, and name the mission work the margin will fund.', b:'A disciplined Money Tree', best:true, out:'Cap the staff time, decide in advance where the money goes, and write it down before you sign.' },
+      { t:'Take it with limits, and name the mission work the margin will fund.', b:'Margin, on purpose', best:true, out:'Cap the staff time, decide in advance where the money goes, and write it down before you sign.' },
       { t:'Decline. It is off-mission.', b:'Principled, and costly', best:false, out:'You may be turning down the very capacity that would fund mission work you care about.' }
     ]}
   },
   CALL_SETS: { margin:['m1', 'm2'] },
   CALL_PROG: { margin:{ prog:'margin', noun:'situations', status:'#marginStatus', narr:'margin/s' } },
-  ALLOC: {
-    portfolio: { total:100, max:50, items:[
-      { lab:'First-generation student mentoring', tag:'High mission, low margin', x:.12, y:.9 },
-      { lab:'Research partnership with an industry sponsor', tag:'High mission, good margin', x:.72, y:.85 },
-      { lab:'Executive education certificate', tag:'Some mission, high margin', x:.9, y:.5 },
-      { lab:'Summer rental of event space', tag:'Low mission, good margin', x:.8, y:.15 },
-      { lab:'A print newsletter few people read', tag:'Low mission, low margin', x:.15, y:.12 }
-    ], quads:{
-      topright:'<b>Your portfolio leans Star.</b> High mission, and it earns margin. Keep investing, and name the Hearts it funds.',
-      topleft:'<b>Your portfolio leans Heart.</b> Deeply mission-driven, and it costs money. Healthy only if you can name what pays the bill.',
-      bottomright:'<b>Your portfolio leans Money Tree.</b> It funds the place but drifts from purpose. Harvest on purpose and send the margin to mission.',
-      bottomleft:'<b>Your portfolio leans Stop Sign.</b> Low on both. What would you stop doing to fund what matters?'
-    }}
-  },
   BUILDS: {
+    me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1: { title:'As a manager, after lesson 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     ground: { title:'My ground game play', fields:['asset', 'who', 'how', 'pass'], need:3, tpl:function(v){
       return 'THE ASSET: ' + (v.asset || '[a story, a number, or a result]') + '\nWHO SHOULD HEAR IT: ' + (v.who || '[a priority person or group]') + '\nHOW I WILL SHARE IT: ' + (v.how || '[directly, and when]') + '\nHOW THEY PASS IT ON: ' + (v.pass || '[peer to peer]'); } },
     recap1: { title:'Lesson 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
@@ -156,7 +156,7 @@ window.LR_COURSE = {
     story: { title:'My storyline', fields:['person', 'is', 'could', 'ask', 'aud'], need:4, tpl:function(v){
       return 'OPENING: ' + (v.person || '[a real person and a real moment]') + '\nWHAT IS: ' + (v.is || '[the frustrating present]') + '\nWHAT COULD BE: ' + (v.could || '[the better future your idea creates]') + '\nTHE ASK: ' + (v.ask || '[what you need your audience to say yes to]') + '\nAUDIENCES: ' + (v.aud || '[who must hear it, and what each one cares about]'); } },
     statement: { title:'My mission and margin statement', fields:['mission', 'cost', 'ret', 'quad'], need:3, tpl:function(v){
-      return 'Our project strengthens Vanderbilt’s mission by ' + (v.mission || '[what it preserves or strengthens]') + '\nIt is sustainable because ' + (v.cost || '[what it costs, and where the money comes from]') + '\nIn return: ' + (v.ret || '[what it saves, earns, or protects]') + '\nOn the matrix: ' + (v.quad || '[Star, Heart, or Money Tree]'); } },
+      return 'Our project strengthens Vanderbilt’s mission by ' + (v.mission || '[what it preserves or strengthens]') + '\nIt is sustainable because ' + (v.cost || '[what it costs, and where the money comes from]') + '\nIn return: ' + (v.ret || '[what it saves, earns, or protects]') + '\nAfter year one: ' + (v.quad || '[what it costs later, and who pays]'); } },
     draft: { title:'My draft of brief sections 1 to 3', fields:['area', 'challenge', 'why', 'priorities'], need:4, tpl:function(v, b){
       return '1. FOCUS AREA: ' + (v.area || '[choose one]') + '\n\n2. THE CHALLENGE: ' + (v.challenge || '[who is affected, and what happens today]') + '\n\nWHY IT MATTERS STRATEGICALLY: ' + (v.why || '[what it costs to wait, in mission, money, people, or reputation]') + '\n\n3. CONNECTION TO VANDERBILT’S PRIORITIES: ' + (v.priorities || '[the vision line and focus area it serves]') +
         (b('story', 'person') ? '\n\nOPENING STORY: ' + b('story', 'person') : '') + (b('statement', 'mission') ? '\n\nMISSION AND MARGIN: strengthens the mission by ' + b('statement', 'mission') : ''); } }
@@ -182,8 +182,8 @@ window.LR_COURSE = {
     { seg:'Brand', q:'A new campaign ad praises fast, personal service, but students say offices are slow to respond. What is the real problem?', opts:['The ad needs a bigger budget', 'A gap between brand and reputation; fix the experience, then tell true stories', 'Students are not the audience', 'Reputation cannot be changed'], a:1, x:'Brand is what you say; reputation is what others say. When the experience misses the claim, the gap grows.' },
     { seg:'Brand', q:'Your unit just had a big win in the news. How do you make the attention last?', opts:['Wait for the next big win', 'Run one large ad', 'Keep a drumbeat of stories and carry them to priority people yourself', 'Let Communications handle it'], a:2, x:'A spike without a system is noise. The ground game turns attention into trust.' },
     { seg:'Story', q:'Which opening is strongest for your pod\u2019s capstone pitch?', opts:['A table of statistics', 'One real person in one real moment, then what could be', 'The history of the department', 'A list of everyone on the pod'], a:1, x:'Open with what is, through one person, then contrast it with what could be, and end with one ask.' },
-    { seg:'Margin', q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. What is the strongest move?', opts:['Close it', 'Protect it and change nothing', 'Keep the outcome, redesign the delivery, and name what pays for it', 'Move it to another unit'], a:2, x:'It is a Heart. Keep it on purpose, contain its cost, and name the Star or Money Tree that funds it.' },
-    { seg:'Margin', q:'Which mission and margin statement would a judge find strongest?', opts:['It will be great for everyone.', 'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and sits in the Star quadrant.', 'It needs new funding, details to come.', 'It is important to the mission.'], a:1, x:'Specific mission benefit, cost and source, return, and a place on the matrix.' }
+    { seg:'Margin', q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. What is the strongest move?', opts:['Close it', 'Protect it and change nothing', 'Keep the outcome, redesign the delivery, and name what pays for it', 'Move it to another unit'], a:2, x:'Mission and margin together: keep what students get, change how it is delivered, and name the money that pays for it.' },
+    { seg:'Margin', q:'Which mission and margin statement would a judge find strongest?', opts:['It will be great for everyone.', 'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and names who pays after the pilot year.', 'It needs new funding, details to come.', 'It is important to the mission.'], a:1, x:'Specific mission benefit, cost and source, return, and the whole cost after year one.' }
   ],
   QUIZ_POS: [1, 3, 0, 2, 1, 0, 3, 2],
   QUIZ_PASS: 6,
@@ -203,7 +203,7 @@ window.LR_COURSE = {
         ['Tell it as what could be.', 'One real person, the contrast between what is and what could be, and one clear ask.'] ] },
       { title:'Mission and margin', keys:['margin', 'portfolio', 'statement'], recap:'recap3', ideas:[
         ['No margin, no mission.', 'Mission is purpose and margin is capacity. A leader stewards both.'],
-        ['See the trade-offs.', 'Stars and Money Trees fund Hearts. Stop Signs free up money for what matters.'],
+        ['Count the whole cost.', 'Follow the cash, and count buildings, space, research costs, and debt past year one.'],
         ['Answer both questions.', 'Every proposal names its mission benefit, its cost and source, and its return.'] ] },
       { title:'Your brief', keys:['focus', 'draft', 'quiz', 'nextstep'], ideas:[
         ['Choose your focus area on purpose.', 'Your brief is judged only against others in the same area.'],

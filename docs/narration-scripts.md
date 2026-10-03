@@ -22,7 +22,7 @@ This first page is your map. Before you start any learning, it helps to know whe
 
 - *route/g1:* Stop one, vision and strategy. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess four numbers that show whether the strategy is working, tour four growth sites, and sort six real-sounding initiatives with a tool called the value stick.
 - *route/g2:* Stop two, story and brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, your part in the ground game, and then you draft your pod’s storyline.
-- *route/g3:* Stop three, mission and margin. The Chancellor again, two hard calls about money and purpose, and a portfolio you balance on a simple matrix.
+- *route/g3:* Stop three, mission and margin. The Chancellor again, two hard calls about money and purpose, and how to count the whole cost of a decision, from his book Mission and Margin.
 - *route/g4:* Stop four, your brief. Practice choosing a focus area, draft sections one to three, and check what you can now apply.
 
 ### Lesson 1: The vision
@@ -77,9 +77,15 @@ The last tile said four growth sites. Here they are on the map the Chancellor sh
 
 ### Lesson 1: The value stick
 
-*About 75 seconds*
+*About 80 seconds*
 
-The growth sites showed where the big bets are. Now a practical question every leader faces: of all the work on your plate, which of it is actually strategic? The program’s pre-work, Felix Oberholzer-Gee’s book Better, Simpler Strategy, offers a simple test called the value stick. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space, by raising the top or lowering the bottom. Work that moves neither is activity, however busy it feels. Here is the one question to carry with you: whose choice changes, and which way? Think of the last project you finished. Whose choice did it change? Now sort six initiatives, and read the explanation after each one. Next, you will wrap up lesson one in your own words.
+The growth sites showed where the big bets are. Now a practical question every leader faces: of all the work on your plate, which of it is actually strategic? The program’s pre-work, Felix Oberholzer-Gee’s book Better, Simpler Strategy, offers a simple test called the value stick. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space, by raising the top or lowering the bottom. Work that moves neither is activity, however busy it feels. Here is the one question to carry with you: whose choice changes, and which way? Think of the last project you finished. Whose choice did it change? Now sort six initiatives, and read the explanation after each one. Next, what lesson one means for you: for your capstone, and as a manager.
+
+### Lesson 1: What this means for me
+
+*About 60 seconds*
+
+Lesson one gave you the vision, the reputation engine, and the value stick. Here is what they mean for you, in two places. For your capstone: name one focus area and tie your challenge to one of the four problems; that is your why it matters. Run the value stick on your idea and say whose choice it changes. And show which resource it grows: talent, funding, partnerships, or access. As a manager, the same tools work on Monday morning. Translate the vision for your team in one sentence. Run the value stick on your project list, and stop one thing that is only activity. And make speed visible: pick one process that takes weeks and set a target in days. Think about your own team. Which of these would change the most? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson one.
 
 ### Lesson 1: Wrap-up
 
@@ -116,7 +122,13 @@ You just saw that a spike needs a system. Here is who runs that system: you. Vic
 
 *About 85 seconds*
 
-You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. The pre-work for this topic is Nancy Duarte’s talk on the structure of great talks. Her finding: great communicators keep moving between two places. What is, the frustrating present. And what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then the speaker ends with one clear call to action and a picture of life after people act. Three moves, then. Open with what is, through one real person and one real moment. Contrast it with what could be, and go back and forth. End with one ask, and name what each audience gets: a dean wants research time, a finance leader wants the cost, a student wants the experience. The strongest pods in past cohorts opened with one person, not a statistic. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. If you are unsure what good looks like, open the strong example before you write. Then draft your storyline. It saves here and folds into your brief later. Next, a wrap-up for lesson two.
+You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. The pre-work for this topic is Nancy Duarte’s talk on the structure of great talks. Her finding: great communicators keep moving between two places. What is, the frustrating present. And what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then the speaker ends with one clear call to action and a picture of life after people act. Three moves, then. Open with what is, through one real person and one real moment. Contrast it with what could be, and go back and forth. End with one ask, and name what each audience gets: a dean wants research time, a finance leader wants the cost, a student wants the experience. The strongest pods in past cohorts opened with one person, not a statistic. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. If you are unsure what good looks like, open the strong example before you write. Then draft your storyline. It saves here and folds into your brief later. Next, what lesson two means for you: for your capstone, and as a manager.
+
+### Lesson 2: What this means for me
+
+*About 60 seconds*
+
+Lesson two was about brand, reputation, and story. Here is what it means for you. For your capstone: open your brief with one real person and one real moment, then move between what is and what could be. Name your audiences and what each one cares about. And plan the ground game: who carries your story after the judging. As a manager: close your unit’s gap between what you claim and what people actually experience, and fix the experience first. Build a drumbeat, one short, true story about your team’s work every month. And equip your team to tell Vanderbilt’s story, including when the topic is hard. Think about the last story someone told about your team. Was it the one you would have chosen? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson two.
 
 ### Lesson 2: Wrap-up
 
@@ -128,30 +140,36 @@ That is lesson two. Three ideas to keep. Close the gap: brand is what we say abo
 
 *About 80 seconds*
 
-Welcome to lesson three. Your story says why your idea matters. This lesson answers the question every judge and sponsor will ask next: can Vanderbilt afford it, and is it worth it? Start with the Chancellor’s video. Then hold on to three ideas. Mission is purpose: research, teaching, and discovery. Margin is capacity: the financial strength to pursue the mission. They feed each other, which is why a leader owns both. The Chancellor describes a leadership mindset: steward purpose and performance together, use mission to set priorities, build trust by being transparent and consistent, and think long term while naming the trade-offs. And four practical levers: know where money comes from and where it goes, use data and discipline, partner academic and finance leaders, and pilot, learn, and scale. Here is why it matters now. In twenty twenty five, many peer universities announced layoffs and hiring freezes. On the Chancellor’s comparison chart, Vanderbilt had none of those actions marked. Discipline in good years bought choices in hard ones. Think of a hard budget call you have made. Now try two situations, and test the other answers too, to see what they would cost. Next, you will balance a whole portfolio.
+Welcome to lesson three. Your story says why your idea matters. This lesson answers the question every judge and sponsor will ask next: can Vanderbilt afford it, and is it worth it? Start with the Chancellor’s video. Then hold on to three ideas. Mission is purpose: research, teaching, and discovery. Margin is capacity: the financial strength to pursue the mission. They feed each other, which is why a leader owns both. The Chancellor describes a leadership mindset: steward purpose and performance together, use mission to set priorities, build trust by being transparent and consistent, and think long term while naming the trade-offs. And four practical levers: know where money comes from and where it goes, use data and discipline, partner academic and finance leaders, and pilot, learn, and scale. Here is why it matters now. In twenty twenty five, many peer universities announced layoffs and hiring freezes. On the Chancellor’s comparison chart, Vanderbilt had none of those actions marked. Discipline in good years bought choices in hard ones. Think of a hard budget call you have made. Now try two situations, and test the other answers too, to see what they would cost. Next, how to count the whole cost of a decision.
 
 **Tap clips**
 
 - *margin/s1:* Situation one. A small program does real good for forty students a year, at three times the usual cost per student, and your budget is flat. What would you do? Choose first, then read the consequence.
 - *margin/s2:* Situation two. An outside partner offers good money to use your space and staff time for something unrelated to your mission. It would fund two positions. What would you do?
 
-### Lesson 3: The portfolio
+### Lesson 3: The whole cost
 
-*About 85 seconds*
+*About 95 seconds*
 
-You just made two calls, one program at a time. Leaders rarely get to decide one thing at a time, so now you will see a whole portfolio at once. The tool is the mission and margin matrix, from the book Nonprofit Sustainability. Up is mission impact. Right is financial contribution. Each quadrant has an action. Stars are high on both, so you invest in them. Hearts are high in mission but cost money, so you keep them, contain their cost, and name what pays for them. Money Trees earn money with little mission tie, so you harvest them on purpose and send the margin to mission. Stop Signs are low on both, so you stop them or give them away. A healthy portfolio uses its Stars and Money Trees to fund its Hearts. Imagine you lead a unit with five activities and one hundred points to invest. Move the sliders. The gold dot shows where your portfolio lands, and the read below tells you what your choice implies. There is no single right answer. Try a version that protects the Hearts, and one that maximizes margin, and compare. Then think about your own unit: which of your activities is a Heart, and what quietly pays for it today? Next, your pod’s own mission and margin statement.
+You just made two hard calls. Now a habit that makes every call better: counting the whole cost. This lesson draws on Mission and Margin, the practical guide to university finances that Chancellor Diermeier wrote with Brett Sweet, Vanderbilt’s chief financial officer. Its first idea is its first chapter: no margin, no mission. Margin is the capacity that makes the mission possible, so every decision has a financial side, even when it starts as an academic one. The book then walks through where that side hides. Follow the cash: when money actually arrives and leaves, not only what the budget line says. Buildings: a building costs money every year it stands, through upkeep and depreciation. Space: it is a resource with a cost, not a free extra. Research: it costs more than its direct grant dollars. Scholarships and fundraising: they deserve the same financial analysis as any other commitment. And debt: borrowing for a big project carries costs and limits for years. Here is an example. A donor funds a new lab. The gift covers construction. The whole cost also includes decades of maintenance, the space it occupies, and the research it is meant to house. Think of something your unit said yes to in the last few years. What did it cost in year three? Now find the hidden cost in six decisions, and read why after each. Next, you will write your pod’s mission and margin statement.
 
 ### Lesson 3: Your statement
 
+*About 70 seconds*
+
+You have counted the whole cost. Now make your pod’s case before anyone asks. Every judge will ask two questions of your brief: does it serve the mission, and can Vanderbilt afford to keep it going? A strong statement answers both in about four sentences. It names a specific mission benefit, not a general one. It names the cost and where the money comes from, and reallocating an existing budget counts. It names the return, whether that is time saved, revenue, or a risk avoided. And it counts the whole cost: what the idea costs after year one, and who pays. Think about the last budget request you saw approved quickly. It probably answered all four. If you are unsure, open the strong example first, then write your own. One more tip from past cohorts: the pods that impressed judges named their funding source plainly. One funded its idea from event budgets departments already had. Next, what lesson three means for you: for your capstone, and as a manager.
+
+### Lesson 3: What this means for me
+
 *About 60 seconds*
 
-You have practiced the trade-offs. Now make your pod’s case before anyone asks. Every judge will ask two questions of your brief: does it serve the mission, and can Vanderbilt afford to keep it going? A strong statement answers both in about four sentences. It names a specific mission benefit, not a general one. It names the cost and where the money comes from, and reallocating an existing budget counts. It names the return, whether that is time saved, revenue, or a risk avoided. And it places the project on the matrix you just used. Think about the last budget request you saw approved quickly. It probably answered all four. If you are unsure, open the strong example first, then write your own. One more tip from past cohorts: the pods that impressed judges named their funding source plainly. One funded its idea from event budgets departments already had. Next, a short wrap-up for lesson three.
+Lesson three was about mission and margin. Here is what it means for you. For your capstone: state the mission benefit in specifics, then the cost and where the money comes from. Count the whole cost, what your idea costs after year one, including when the cash moves, the space, and the upkeep. And bring a finance partner in early. As a manager: know your unit’s money, where it comes from and where it goes. Talk about trade-offs openly with your team; transparency and consistency build trust, even when the answer is no. And before any yes, ask two questions: what will it cost in year three, and what will we stop? Think about your team’s last new commitment. Did anyone ask about year three? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson three.
 
 ### Lesson 3: Wrap-up
 
-*About 45 seconds*
+*About 40 seconds*
 
-That is lesson three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. See the trade-offs: Stars and Money Trees fund Hearts, and Stop Signs free up money for what matters. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now place your own pod’s idea. Where does it sit on the matrix, and what would pay for it in its second year? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, lesson four: your brief.
+That is lesson three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. Count the whole cost: follow the cash, and count buildings, space, research costs, and debt past year one. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now apply it to your own pod’s idea. What will it cost after year one, and what would pay for it? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, lesson four: your brief.
 
 ### Lesson 4: Your focus area
 
@@ -183,7 +201,7 @@ You are nearly done with Course One. Learning sticks when it turns into action i
 
 That is Course One. Look at what you have now: a clear view of the strategy, a story your pod can tell, a case in both mission and money, and a first draft of page one of your brief. Take it to your pod. Course Two opens the week of November ninth, with entrepreneurial mindset, reputational stewardship, and high-performing teams, and it helps you draft the rest of the brief. Crescere aude. Dare to grow.
 
-*Page narration: about 26 minutes.*
+*Page narration: about 29 minutes.*
 
 ## Course Two: Venture, Reputation and Teams (week of November 9)
 
@@ -247,7 +265,13 @@ You have seen how one leader drove change, and who he brought along. But the rig
 
 *About 75 seconds*
 
-You know your pod’s challenge is probably complex. So the next step is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, a wrap-up for lesson one.
+You know your pod’s challenge is probably complex. So the next step is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, what lesson one means for you: for your capstone, and as a manager.
+
+### Lesson 1: What this means for me
+
+*About 55 seconds*
+
+Lesson one was the entrepreneurial mindset. Here is what it means for you. For your capstone: diagnose before you solve, and notice how many root causes are about people. Design the smallest pilot that would prove your idea, with a scale rule set before you start. And map the people: partners who share the credit, a likely critic, your top producers, and the early win. As a manager: alternate assessment and action, listening and benchmarking, then moving, then looking again. Change people, process, and technology together, because fixing one alone rarely sticks. And run small experiments on complex problems, then celebrate the early wins out loud. Think about a problem your team keeps analyzing. Could a small test answer it faster? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson one.
 
 ### Lesson 1: Wrap-up
 
@@ -294,9 +318,15 @@ You have the radar, the terrain, and the timing. Now use them under pressure, wh
 
 ### Lesson 2: Your statement
 
-*About 65 seconds*
+*About 70 seconds*
 
-You have practiced protecting trust. Now apply it to your pod’s idea, because judges will ask how it affects Vanderbilt’s name. A reputational statement says, in one or two sentences, why the project makes Vanderbilt more credible, meaning we do what we say, and more visible, meaning the right people notice. Just as important is the risk scan. Name the upside: who will notice, and what will they say? Name the top two risks: what could go wrong in public? And say how you would protect trust if one happened, using the four drivers. Judges trust a pod that names its own risks. Ask yourself: what is the headline nobody on your pod wants to read about this idea? One past pod built its whole idea around this: a secure internal assistant that gives staff approved talking points when a reputational issue comes up. Open the strong example if it helps, then draft your pod’s version. Next, a wrap-up for lesson two.
+You have practiced protecting trust. Now apply it to your pod’s idea, because judges will ask how it affects Vanderbilt’s name. A reputational statement says, in one or two sentences, why the project makes Vanderbilt more credible, meaning we do what we say, and more visible, meaning the right people notice. Just as important is the risk scan. Name the upside: who will notice, and what will they say? Name the top two risks: what could go wrong in public? And say how you would protect trust if one happened, using the four drivers. Judges trust a pod that names its own risks. Ask yourself: what is the headline nobody on your pod wants to read about this idea? One past pod built its whole idea around this: a secure internal assistant that gives staff approved talking points when a reputational issue comes up. Open the strong example if it helps, then draft your pod’s version. Next, what lesson two means for you: for your capstone, and as a manager.
+
+### Lesson 2: What this means for me
+
+*About 55 seconds*
+
+Lesson two was reputational stewardship. Here is what it means for you. For your capstone: write your reputational statement, the upside, who notices, and your top two risks. Check your idea on the trust radar. And plan prevention and preparation: who speaks, and which offices you would call. As a manager: build an early-warning habit, and reward the person who raises a small problem early, while you still have control. When something goes wrong, start with the people affected, tell the truth, show the plan, and report back. And know your partners in Communications and General Counsel before you need them. Think about the last small problem on your team that grew. Who saw it first? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson two.
 
 ### Lesson 2: Wrap-up
 
@@ -339,9 +369,15 @@ You just saw growth and accountability as one of Lee’s principles. Research gi
 
 ### Lesson 3: Your pod
 
-*About 65 seconds*
+*About 70 seconds*
 
-You have the principles and the learning zone. Now turn them on a real team: your pod. It is a team with a deadline, which makes it a good place to practice. Google studied more than one hundred eighty of its own teams in a project called Aristotle, and found that how a team works matters more than who is on it. Five dynamics stood out. Psychological safety: it is safe to take risks with each other. Dependability: people deliver quality work on time. Structure and clarity: clear goals, roles, and plans. Meaning: the work matters to each person. And impact: people believe the work makes a difference. Safety mattered most. Think about your pod’s last meeting. Did everyone speak? Rate your pod honestly on each one. The read shows your strongest dynamic and the one to work on next, with a specific action. Then ask each pod member to take it and compare in your next meeting. Next, a wrap-up for lesson three.
+You have the principles and the learning zone. Now turn them on a real team: your pod. It is a team with a deadline, which makes it a good place to practice. Google studied more than one hundred eighty of its own teams in a project called Aristotle, and found that how a team works matters more than who is on it. Five dynamics stood out. Psychological safety: it is safe to take risks with each other. Dependability: people deliver quality work on time. Structure and clarity: clear goals, roles, and plans. Meaning: the work matters to each person. And impact: people believe the work makes a difference. Safety mattered most. Think about your pod’s last meeting. Did everyone speak? Rate your pod honestly on each one. The read shows your strongest dynamic and the one to work on next, with a specific action. Then ask each pod member to take it and compare in your next meeting. Next, what lesson three means for you: for your capstone, and as a manager.
+
+### Lesson 3: What this means for me
+
+*About 50 seconds*
+
+Lesson three was high-performing teams. Here is what it means for you. For your capstone: make your pod a team, with clear roles and an owner and a date for every step. Keep your pod meetings safe to speak up in, and invite the quietest person first. And control the controllables: your effort, your preparation, and your draft, not the judges. As a manager: frame the work as learning and admit your own limits, so others will too. Pair high standards with real support; say what great looks like, then help people get there. And celebrate, then stay hungry. Think about your own team’s last meeting. Who did not speak? Write the one thing you will try in the next two weeks. Next, a short wrap-up for lesson three.
 
 ### Lesson 3: Wrap-up
 
@@ -385,4 +421,4 @@ You have reached the last step of the courses, and maybe the most important one.
 
 That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a pilot, a reputational strategy, strong metrics, and a team ready to deliver. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
 
-*Page narration: about 27 minutes.*
+*Page narration: about 30 minutes.*

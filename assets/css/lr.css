@@ -268,3 +268,6 @@
 .lr-vision .lv-main em{ font-weight:400; }
 .lr-cw .cx, .lr-cw .ch{ visibility:hidden; }
 .lr-cw svg.hov .cx, .lr-cw svg.hov .ch{ visibility:visible; }
+/* What this means for me: two applied cards */
+.lr-me{ max-width:none; }
+.v-act > .lr-me{ margin-top:0; margin-bottom:16px; }

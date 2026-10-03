@@ -13,17 +13,20 @@ window.LR_COURSE = {
     { sel:'#collab',       key:'collab',     label:'Lesson 1: Radical collaboration', mode:'whole' },
     { sel:'#kind',         key:'kind',       label:'Lesson 1: Know your problem',    mode:'whole' },
     { sel:'#reframe',      key:'reframe',    label:'Lesson 1: Your pilot',           mode:'whole' },
+    { sel:'#me1',          key:'me1',        label:'Lesson 1: What this means for me', mode:'whole' },
     { sel:'#recap1',       key:'recap1',     label:'Lesson 1: Wrap-up',              mode:'whole' },
     { sel:'#reputation',   key:'trust',      label:'Lesson 2: Reputational stewardship', mode:'whole' },
     { sel:'#terrain',      key:'terrain',    label:'Lesson 2: Where reputation is made', mode:'whole' },
     { sel:'#timing',       key:'timing',     label:'Lesson 2: Act while you have control', mode:'whole' },
     { sel:'#pressure',     key:'pressure',   label:'Lesson 2: Calls under pressure', mode:'whole' },
     { sel:'#repstatement', key:'repstatement', label:'Lesson 2: Your statement',     mode:'whole' },
+    { sel:'#me2',          key:'me2',        label:'Lesson 2: What this means for me', mode:'whole' },
     { sel:'#recap2',       key:'recap2',     label:'Lesson 2: Wrap-up',              mode:'whole' },
     { sel:'#teams',        key:'lee',        label:'Lesson 3: High-performing teams', mode:'whole' },
     { sel:'#principles',   key:'principles', label:'Lesson 3: Six principles',       mode:'whole' },
     { sel:'#zone',         key:'teamcalls',  label:'Lesson 3: The learning zone',    mode:'whole' },
     { sel:'#health',       key:'health',     label:'Lesson 3: Your pod',             mode:'whole' },
+    { sel:'#me3',          key:'me3',        label:'Lesson 3: What this means for me', mode:'whole' },
     { sel:'#recap3',       key:'recap3',     label:'Lesson 3: Wrap-up',              mode:'whole' },
     { sel:'#metrics',      key:'metrics',    label:'Lesson 4: Strong metrics',       mode:'whole' },
     { sel:'#draft',        key:'draft',      label:'Lesson 4: Draft the brief',      mode:'whole' },
@@ -170,6 +173,9 @@ window.LR_COURSE = {
     }}
   },
   BUILDS: {
+    me3: { title:'As a manager, after lesson 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2: { title:'As a manager, after lesson 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1: { title:'As a manager, after lesson 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     collab: { title:'My collaboration map', fields:['share', 'critic', 'top', 'win'], need:3, tpl:function(v){
       return 'SHARE THE CREDIT: ' + (v.share || '[partners who must share the credit]') + '\nA LIKELY CRITIC: ' + (v.critic || '[who, and how we listen first]') + '\nTOP PRODUCERS: ' + (v.top || '[who already does this well, and how we back them]') + '\nTHE EARLY WIN: ' + (v.win || '[the first result that shows we mean business]'); } },
     carry: { title:'My plan to carry it forward', fields:['idea', 'live', 'teach', 'next'], need:3, tpl:function(v){
