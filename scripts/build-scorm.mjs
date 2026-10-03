@@ -1,5 +1,7 @@
 // Builds one SCORM package holding the landing page and both courses.
 // Usage: node scripts/build-scorm.mjs [2004|1.2] [--light | --stream]
+//   --one:    one zip under 30 MB: narration inside (48 kbps mono), videos played
+//             from the live site.
 //   --stream: leaves the videos and narration out and plays them from the live site
 //             (GitHub Pages), for a package under 30 MB. The LMS must allow that site.
 //   2004 (default): SCORM 2004 3rd Edition, set up for Oracle Learning
@@ -25,11 +27,11 @@ import path from 'path';
 import vm from 'vm';
 import { execFileSync } from 'child_process';
 
-const ARGS = process.argv.slice(2), V = ARGS.includes('1.2') ? '1.2' : '2004', LIGHT = ARGS.includes('--light'), STREAM = ARGS.includes('--stream');
+const ARGS = process.argv.slice(2), V = ARGS.includes('1.2') ? '1.2' : '2004', LIGHT = ARGS.includes('--light'), STREAM = ARGS.includes('--stream'), ONE = ARGS.includes('--one');
 const LIVE = 'https://me5231979.github.io/Leadership-Redefined/';
 const ROOT = path.dirname(path.dirname(new URL(import.meta.url).pathname));
 const OUT = path.join(ROOT, 'dist', V === '2004' ? 'scorm2004' : 'scorm12');
-const ZIP = path.join(ROOT, 'dist', (V === '2004' ? 'leadership-redefined-oracle-scorm2004' : 'leadership-redefined-scorm12') + (LIGHT ? '-light' : STREAM ? '-streamed' : '') + '.zip');
+const ZIP = path.join(ROOT, 'dist', (V === '2004' ? 'leadership-redefined-oracle-scorm2004' : 'leadership-redefined-scorm12') + (LIGHT ? '-light' : STREAM ? '-streamed' : ONE ? '-with-audio' : '') + '.zip');
 const COURSES = [['course-one', 'lr1-'], ['course-two', 'lr2-']];
 
 fs.rmSync(OUT, { recursive: true, force: true });
@@ -37,7 +39,7 @@ fs.rmSync(ZIP, { force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 // 1. Copy the site.
-const skip = (rel) => /^assets\/audio\/[^/]+\/source(\/|$)/.test(rel) || (STREAM && /^assets\/(audio|video)(\/|$)/.test(rel));
+const skip = (rel) => /^assets\/audio\/[^/]+\/source(\/|$)/.test(rel) || (STREAM && /^assets\/(audio|video)(\/|$)/.test(rel)) || (ONE && /^assets\/video(\/|$)/.test(rel));
 function copy(rel) {
   const src = path.join(ROOT, rel), dst = path.join(OUT, rel);
   if (skip(rel)) return;
@@ -65,10 +67,19 @@ if (LIGHT && sh('ffmpeg', ['-version'])) {
   }
 }
 
-// 1c. Streamed build: media paths in each course's config.js point at the live site.
-if (STREAM) for (const [dir] of COURSES) {
+// 1c. Streamed builds: media paths in each course's config.js point at the live site.
+if (STREAM || ONE) for (const [dir] of COURSES) {
   const f = path.join(OUT, dir, 'config.js');
-  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(/'\.\.\/assets\/(audio|video)\//g, "'" + LIVE + "assets/$1/"));
+  const re = STREAM ? /'\.\.\/assets\/(audio|video)\//g : /'\.\.\/assets\/(video)\//g;
+  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(re, "'" + LIVE + "assets/$1/"));
+}
+if (ONE) for (const [dir] of COURSES) {
+  const adir = path.join(OUT, 'assets', 'audio', dir);
+  for (const f of fs.readdirSync(adir).filter((n) => n.endsWith('.mp3'))) {
+    const src = path.join(adir, f), tmp = src + '.tmp.mp3';
+    if (sh('ffmpeg', ['-y', '-i', src, '-c:a', 'libmp3lame', '-b:a', '48k', '-ar', '24000', '-ac', '1', tmp])) fs.renameSync(tmp, src);
+    else throw new Error('ffmpeg could not encode ' + f);
+  }
 }
 
 // 1d. In the package, narration never falls back to the browser's robot voice, and
