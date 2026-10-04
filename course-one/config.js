@@ -13,8 +13,8 @@ window.LR_CONFIG = {
   /* Chancellor intros. Add a WebVTT captions file beside each video and set
      captions, for example '../assets/video/chancellor-communication.vtt'. */
   videos: {
-    communication: { src: '../assets/video/chancellor-communication.mp4', captions: '', title: 'Chancellor Daniel Diermeier on effective communication' },
-    margin:        { src: '../assets/video/chancellor-mission-and-margin.mp4', captions: '', title: 'Chancellor Daniel Diermeier on mission and margin' }
+    communication: { src: '../assets/video/chancellor-communication.mp4', captions: '../assets/video/chancellor-communication.vtt', title: 'Chancellor Daniel Diermeier on effective communication' },
+    margin:        { src: '../assets/video/chancellor-mission-and-margin.mp4', captions: '../assets/video/chancellor-mission-and-margin.vtt', title: 'Chancellor Daniel Diermeier on mission and margin' }
   },
   exitUrl: ''
 };

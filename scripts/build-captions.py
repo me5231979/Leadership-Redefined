@@ -5,7 +5,8 @@ to ElevenLabs Scribe, writes the word-timed transcript to
 assets/video/<name>.transcript.json, and builds WebVTT captions in
 assets/video/<name>.vtt: at most two lines of 42 characters, at most 6 seconds
 per caption, breaking at sentence ends where it can. Words in FIX are corrected
-(names the recognizer may mishear). Delete a .vtt to caption that video again.
+(names the recognizer may mishear). Delete a .vtt to caption that video again;
+--rebuild remakes every .vtt from its saved transcript with no API call.
 Runs in .github/workflows/build-captions.yml with the ELEVENLABS_API_KEY secret
 (the key needs the Speech to Text permission).
 """
@@ -58,7 +59,12 @@ def lines(text):
             d = abs(len(a) - len(b))
             if best is None or d < best[0]:
                 best = (d, a + '\n' + b)
-    return best[1] if best else text
+    if best:
+        return best[1]
+    # no split keeps both lines short: break at the space nearest the middle
+    mid = len(text) // 2
+    cut = min((i for i, ch in enumerate(text) if ch == ' '), key=lambda i: abs(i - mid), default=None)
+    return text if cut is None else text[:cut] + '\n' + text[cut + 1:]
 
 
 def vtt(words):
@@ -73,7 +79,7 @@ def vtt(words):
     for w in words:
         if cur:
             text = ' '.join(x['text'].strip() for x in cur + [w])
-            if len(text) > 2 * MAXC or w['end'] - cur[0]['start'] > MAXT:
+            if len(text) > 2 * MAXC - 8 or w['end'] - cur[0]['start'] > MAXT:
                 flush()
         cur.append(w)
         if re.search(r'[.!?]["”]?$', w['text'].strip()) and w['end'] - cur[0]['start'] > 1.2:
@@ -87,6 +93,14 @@ def vtt(words):
 
 
 if __name__ == '__main__':
+    if '--rebuild' in sys.argv:
+        # rebuild every .vtt from its saved transcript, without calling ElevenLabs
+        for f in sorted(os.listdir(VID)):
+            if f.endswith('.transcript.json'):
+                base = os.path.join(VID, f[:-len('.transcript.json')])
+                open(base + '.vtt', 'w').write(vtt(json.load(open(os.path.join(VID, f))).get('words', [])))
+                print('rebuilt', os.path.basename(base) + '.vtt')
+        sys.exit(0)
     if not KEY:
         sys.exit('ELEVENLABS_API_KEY is not set')
     made = 0

@@ -39,7 +39,7 @@ fs.rmSync(ZIP, { force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 // 1. Copy the site.
-const skip = (rel) => /^assets\/audio\/[^/]+\/source(\/|$)/.test(rel) || (STREAM && /^assets\/(audio|video)(\/|$)/.test(rel)) || (ONE && /^assets\/video(\/|$)/.test(rel));
+const skip = (rel) => /^assets\/audio\/[^/]+\/source(\/|$)/.test(rel) || (STREAM && (/^assets\/audio(\/|$)/.test(rel) || /^assets\/video\/.+\.mp4$/.test(rel))) || (ONE && /^assets\/video\/.+\.mp4$/.test(rel)) || /\.transcript\.json$/.test(rel);
 function copy(rel) {
   const src = path.join(ROOT, rel), dst = path.join(OUT, rel);
   if (skip(rel)) return;
@@ -70,8 +70,10 @@ if (LIGHT && sh('ffmpeg', ['-version'])) {
 // 1c. Streamed builds: media paths in each course's config.js point at the live site.
 if (STREAM || ONE) for (const [dir] of COURSES) {
   const f = path.join(OUT, dir, 'config.js');
-  const re = STREAM ? /'\.\.\/assets\/(audio|video)\//g : /'\.\.\/assets\/(video)\//g;
-  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(re, "'" + LIVE + "assets/$1/"));
+  /* videos (and, for --stream, narration) play from the live site; captions stay in the package */
+  let cfg = fs.readFileSync(f, 'utf8').replace(/'\.\.\/assets\/video\/([^']+\.mp4)'/g, "'" + LIVE + "assets/video/$1'");
+  if (STREAM) cfg = cfg.replace(/'\.\.\/assets\/audio\//g, "'" + LIVE + "assets/audio/");
+  fs.writeFileSync(f, cfg);
 }
 if (ONE) for (const [dir] of COURSES) {
   const adir = path.join(OUT, 'assets', 'audio', dir);
