@@ -1,0 +1,30 @@
+name: Caption the videos with ElevenLabs
+# Transcribes each Chancellor video in assets/video with ElevenLabs speech to text
+# and commits <name>.vtt captions and <name>.transcript.json beside it. Videos that
+# already have a .vtt are skipped; delete one to caption it again. Needs the
+# ELEVENLABS_API_KEY repository secret with the Speech to Text permission.
+on:
+  push:
+    branches: ['claude/eloquent-mendel-0qq5xp', 'main']
+    paths: ['scripts/build-captions.py', '.github/workflows/build-captions.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: captions-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  caption:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transcribe
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 scripts/build-captions.py
+      - name: Commit the captions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/video/*.vtt assets/video/*.transcript.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No changes"; else git commit -m "Caption the Chancellor videos with ElevenLabs"; git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"; git push origin HEAD:"${GITHUB_REF_NAME}"; fi

@@ -12,9 +12,9 @@ window.LR_CONFIG = {
   useBrowserVoice: false,
   /* Chancellor intros. Add a WebVTT captions file beside each video and set captions. */
   videos: {
-    venture:    { src: '../assets/video/chancellor-entrepreneurial-mindset.mp4', captions: '', title: 'Chancellor Diermeier on the entrepreneurial mindset' },
-    reputation: { src: '../assets/video/chancellor-reputational-stewardship.mp4', captions: '', title: 'Chancellor Diermeier on reputational stewardship' },
-    teams:      { src: '../assets/video/chancellor-high-performing-teams.mp4', captions: '', title: 'Chancellor Diermeier on high-performing teams' }
+    venture:    { src: '../assets/video/chancellor-entrepreneurial-mindset.mp4', captions: '', title: 'Chancellor Daniel Diermeier on the entrepreneurial mindset' },
+    reputation: { src: '../assets/video/chancellor-reputational-stewardship.mp4', captions: '', title: 'Chancellor Daniel Diermeier on reputational stewardship' },
+    teams:      { src: '../assets/video/chancellor-high-performing-teams.mp4', captions: '', title: 'Chancellor Daniel Diermeier on high-performing teams' }
   },
   /* The alumni series card on the Carry it forward page. Leave text empty to hide the card.
      link is optional: a sign-up or details page. */
