@@ -1,0 +1,1563 @@
+{
+ "language_code": "eng",
+ "language_probability": 1.0,
+ "text": "Hello, everyone. Welcome to a discussion of the entrepreneurial mindset, where bold thinking meets innovative action. Here, you'll be challenged to think beyond traditional constraints and identify opportunities for transformative change. Think of this as your chance to reimagine how we operate and harness creativity and agility in service of our strategic vision. It's your chance to embrace the spirit of innovation, to question the status quo, take calculated risks, and implement solutions that propel us into the future. Every breakthrough starts with a daring idea, and here we give you the tools to turn those ideas into reality. Let's all think more like entrepreneurs as together we shape Vanderbilt's future. ",
+ "words": [
+  {
+   "text": "Hello,",
+   "start": 0.38,
+   "end": 0.58,
+   "type": "word",
+   "logprob": -0.20983791599671045
+  },
+  {
+   "text": " ",
+   "start": 0.58,
+   "end": 0.64,
+   "type": "spacing",
+   "logprob": -1.490105023549404e-05
+  },
+  {
+   "text": "everyone.",
+   "start": 0.64,
+   "end": 1.02,
+   "type": "word",
+   "logprob": -1.372221413475927e-05
+  },
+  {
+   "text": " ",
+   "start": 1.02,
+   "end": 1.02,
+   "type": "spacing",
+   "logprob": -1.966933996300213e-05
+  },
+  {
+   "text": "Welcome",
+   "start": 1.98,
+   "end": 2.44,
+   "type": "word",
+   "logprob": -1.966933996300213e-05
+  },
+  {
+   "text": " ",
+   "start": 2.44,
+   "end": 2.92,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 2.92,
+   "end": 2.96,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 2.96,
+   "end": 3.0,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "a",
+   "start": 3.0,
+   "end": 3.02,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 3.02,
+   "end": 3.06,
+   "type": "spacing",
+   "logprob": -3.2066785934148356e-05
+  },
+  {
+   "text": "discussion",
+   "start": 3.06,
+   "end": 3.62,
+   "type": "word",
+   "logprob": -3.2066785934148356e-05
+  },
+  {
+   "text": " ",
+   "start": 3.62,
+   "end": 4.019,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "of",
+   "start": 4.019,
+   "end": 4.1,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 4.1,
+   "end": 4.14,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "the",
+   "start": 4.14,
+   "end": 4.24,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 4.24,
+   "end": 4.32,
+   "type": "spacing",
+   "logprob": -0.001784400548785925
+  },
+  {
+   "text": "entrepreneurial",
+   "start": 4.32,
+   "end": 5.0,
+   "type": "word",
+   "logprob": -0.001784400548785925
+  },
+  {
+   "text": " ",
+   "start": 5.0,
+   "end": 5.08,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "mindset,",
+   "start": 5.08,
+   "end": 5.56,
+   "type": "word",
+   "logprob": -4.187156264379155e-06
+  },
+  {
+   "text": " ",
+   "start": 5.56,
+   "end": 5.56,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "where",
+   "start": 6.26,
+   "end": 6.42,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 6.42,
+   "end": 6.46,
+   "type": "spacing",
+   "logprob": -4.887569048150908e-06
+  },
+  {
+   "text": "bold",
+   "start": 6.46,
+   "end": 6.72,
+   "type": "word",
+   "logprob": -4.887569048150908e-06
+  },
+  {
+   "text": " ",
+   "start": 6.72,
+   "end": 6.78,
+   "type": "spacing",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": "thinking",
+   "start": 6.78,
+   "end": 7.2,
+   "type": "word",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": " ",
+   "start": 7.2,
+   "end": 7.26,
+   "type": "spacing",
+   "logprob": -4.589452510117553e-05
+  },
+  {
+   "text": "meets",
+   "start": 7.26,
+   "end": 7.56,
+   "type": "word",
+   "logprob": -4.589452510117553e-05
+  },
+  {
+   "text": " ",
+   "start": 7.56,
+   "end": 7.86,
+   "type": "spacing",
+   "logprob": -6.997340824455023e-05
+  },
+  {
+   "text": "innovative",
+   "start": 7.86,
+   "end": 8.26,
+   "type": "word",
+   "logprob": -6.997340824455023e-05
+  },
+  {
+   "text": " ",
+   "start": 8.26,
+   "end": 8.4,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "action.",
+   "start": 8.4,
+   "end": 8.78,
+   "type": "word",
+   "logprob": -4.0871746672824625e-07
+  },
+  {
+   "text": " ",
+   "start": 8.78,
+   "end": 8.78,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "Here,",
+   "start": 9.3,
+   "end": 9.56,
+   "type": "word",
+   "logprob": -8.659892469040643e-05
+  },
+  {
+   "text": " ",
+   "start": 9.56,
+   "end": 10.1,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "you'll",
+   "start": 10.1,
+   "end": 10.2,
+   "type": "word",
+   "logprob": -7.947276117192814e-07
+  },
+  {
+   "text": " ",
+   "start": 10.2,
+   "end": 10.24,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "be",
+   "start": 10.24,
+   "end": 10.36,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 10.36,
+   "end": 10.42,
+   "type": "spacing",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": "challenged",
+   "start": 10.42,
+   "end": 11.0,
+   "type": "word",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": " ",
+   "start": 11.0,
+   "end": 11.06,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 11.06,
+   "end": 11.14,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 11.14,
+   "end": 11.2,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "think",
+   "start": 11.2,
+   "end": 11.4,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 11.4,
+   "end": 11.44,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "beyond",
+   "start": 11.44,
+   "end": 11.96,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 11.96,
+   "end": 12.04,
+   "type": "spacing",
+   "logprob": -4.172316494077677e-06
+  },
+  {
+   "text": "traditional",
+   "start": 12.04,
+   "end": 12.48,
+   "type": "word",
+   "logprob": -4.172316494077677e-06
+  },
+  {
+   "text": " ",
+   "start": 12.48,
+   "end": 12.54,
+   "type": "spacing",
+   "logprob": -3.0040289857424796e-05
+  },
+  {
+   "text": "constraints",
+   "start": 12.54,
+   "end": 13.2,
+   "type": "word",
+   "logprob": -3.0040289857424796e-05
+  },
+  {
+   "text": " ",
+   "start": 13.2,
+   "end": 14.0,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "and",
+   "start": 14.0,
+   "end": 14.1,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 14.1,
+   "end": 14.2,
+   "type": "spacing",
+   "logprob": -3.2782016205601394e-05
+  },
+  {
+   "text": "identify",
+   "start": 14.2,
+   "end": 14.94,
+   "type": "word",
+   "logprob": -3.2782016205601394e-05
+  },
+  {
+   "text": " ",
+   "start": 14.94,
+   "end": 15.02,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "opportunities",
+   "start": 15.02,
+   "end": 15.86,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 15.86,
+   "end": 16.2,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "for",
+   "start": 16.2,
+   "end": 16.32,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 16.32,
+   "end": 16.379,
+   "type": "spacing",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": "transformative",
+   "start": 16.379,
+   "end": 17.04,
+   "type": "word",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": " ",
+   "start": 17.04,
+   "end": 17.12,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "change.",
+   "start": 17.12,
+   "end": 17.56,
+   "type": "word",
+   "logprob": -3.065381244076499e-07
+  },
+  {
+   "text": " ",
+   "start": 17.56,
+   "end": 17.56,
+   "type": "spacing",
+   "logprob": -4.768360213347478e-06
+  },
+  {
+   "text": "Think",
+   "start": 18.38,
+   "end": 18.54,
+   "type": "word",
+   "logprob": -4.768360213347478e-06
+  },
+  {
+   "text": " ",
+   "start": 18.54,
+   "end": 18.6,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "of",
+   "start": 18.6,
+   "end": 18.66,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 18.66,
+   "end": 18.72,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "this",
+   "start": 18.72,
+   "end": 19.02,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.02,
+   "end": 19.12,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "as",
+   "start": 19.12,
+   "end": 19.22,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.22,
+   "end": 19.26,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "your",
+   "start": 19.26,
+   "end": 19.34,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.34,
+   "end": 19.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "chance",
+   "start": 19.44,
+   "end": 19.8,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.8,
+   "end": 19.86,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 19.86,
+   "end": 19.92,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.92,
+   "end": 19.98,
+   "type": "spacing",
+   "logprob": -0.00016199229867197573
+  },
+  {
+   "text": "reimagine",
+   "start": 19.98,
+   "end": 20.92,
+   "type": "word",
+   "logprob": -7.351980485105337e-05
+  },
+  {
+   "text": " ",
+   "start": 20.92,
+   "end": 20.98,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "how",
+   "start": 20.98,
+   "end": 21.08,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 21.08,
+   "end": 21.12,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "we",
+   "start": 21.12,
+   "end": 21.22,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 21.22,
+   "end": 21.32,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "operate",
+   "start": 21.32,
+   "end": 21.72,
+   "type": "word",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": " ",
+   "start": 21.72,
+   "end": 21.76,
+   "type": "spacing",
+   "logprob": -6.97350042173639e-05
+  },
+  {
+   "text": "and",
+   "start": 21.76,
+   "end": 21.86,
+   "type": "word",
+   "logprob": -6.97350042173639e-05
+  },
+  {
+   "text": " ",
+   "start": 21.86,
+   "end": 21.94,
+   "type": "spacing",
+   "logprob": -1.537788011773955e-05
+  },
+  {
+   "text": "harness",
+   "start": 21.94,
+   "end": 22.24,
+   "type": "word",
+   "logprob": -1.537788011773955e-05
+  },
+  {
+   "text": " ",
+   "start": 22.24,
+   "end": 22.3,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "creativity",
+   "start": 22.3,
+   "end": 22.96,
+   "type": "word",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": " ",
+   "start": 22.96,
+   "end": 23.52,
+   "type": "spacing",
+   "logprob": -1.3708974620385561e-05
+  },
+  {
+   "text": "and",
+   "start": 23.52,
+   "end": 23.66,
+   "type": "word",
+   "logprob": -1.3708974620385561e-05
+  },
+  {
+   "text": " ",
+   "start": 23.66,
+   "end": 23.72,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "agility",
+   "start": 23.72,
+   "end": 24.48,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 24.48,
+   "end": 24.54,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "in",
+   "start": 24.54,
+   "end": 24.66,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 24.66,
+   "end": 24.74,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "service",
+   "start": 24.74,
+   "end": 25.28,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 25.28,
+   "end": 25.34,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "of",
+   "start": 25.34,
+   "end": 25.44,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 25.44,
+   "end": 25.52,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "our",
+   "start": 25.52,
+   "end": 25.68,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 25.68,
+   "end": 25.74,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "strategic",
+   "start": 25.74,
+   "end": 26.22,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 26.22,
+   "end": 26.26,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "vision.",
+   "start": 26.26,
+   "end": 26.62,
+   "type": "word",
+   "logprob": -1.1239725219119073e-06
+  },
+  {
+   "text": " ",
+   "start": 26.62,
+   "end": 26.62,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "It's",
+   "start": 27.42,
+   "end": 27.52,
+   "type": "word",
+   "logprob": -1.7583309936952674e-06
+  },
+  {
+   "text": " ",
+   "start": 27.52,
+   "end": 27.6,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "your",
+   "start": 27.6,
+   "end": 27.68,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 27.68,
+   "end": 27.78,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "chance",
+   "start": 27.78,
+   "end": 28.38,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 28.38,
+   "end": 28.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 28.44,
+   "end": 28.5,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 28.5,
+   "end": 28.54,
+   "type": "spacing",
+   "logprob": -0.0001308832288486883
+  },
+  {
+   "text": "embrace",
+   "start": 28.54,
+   "end": 29.28,
+   "type": "word",
+   "logprob": -0.0001308832288486883
+  },
+  {
+   "text": " ",
+   "start": 29.28,
+   "end": 29.34,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "the",
+   "start": 29.34,
+   "end": 29.42,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 29.42,
+   "end": 29.54,
+   "type": "spacing",
+   "logprob": -2.264974000354414e-06
+  },
+  {
+   "text": "spirit",
+   "start": 29.54,
+   "end": 29.78,
+   "type": "word",
+   "logprob": -2.264974000354414e-06
+  },
+  {
+   "text": " ",
+   "start": 29.78,
+   "end": 29.82,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "of",
+   "start": 29.82,
+   "end": 29.9,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 29.9,
+   "end": 29.94,
+   "type": "spacing",
+   "logprob": -4.172316494077677e-06
+  },
+  {
+   "text": "innovation,",
+   "start": 29.94,
+   "end": 30.5,
+   "type": "word",
+   "logprob": -1.0696054645946292e-05
+  },
+  {
+   "text": " ",
+   "start": 30.5,
+   "end": 31.06,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "to",
+   "start": 31.06,
+   "end": 31.14,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 31.14,
+   "end": 31.2,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "question",
+   "start": 31.2,
+   "end": 31.54,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 31.54,
+   "end": 31.58,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "the",
+   "start": 31.58,
+   "end": 31.66,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 31.66,
+   "end": 31.74,
+   "type": "spacing",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": "status",
+   "start": 31.74,
+   "end": 32.119,
+   "type": "word",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": " ",
+   "start": 32.119,
+   "end": 32.18,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "quo,",
+   "start": 32.18,
+   "end": 32.439,
+   "type": "word",
+   "logprob": -2.8908104710012594e-06
+  },
+  {
+   "text": " ",
+   "start": 32.439,
+   "end": 33.1,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "take",
+   "start": 33.1,
+   "end": 33.24,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 33.24,
+   "end": 33.3,
+   "type": "spacing",
+   "logprob": -2.3841830625315197e-06
+  },
+  {
+   "text": "calculated",
+   "start": 33.3,
+   "end": 33.84,
+   "type": "word",
+   "logprob": -2.3841830625315197e-06
+  },
+  {
+   "text": " ",
+   "start": 33.84,
+   "end": 33.9,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "risks,",
+   "start": 33.9,
+   "end": 34.28,
+   "type": "word",
+   "logprob": -5.821301944782438e-06
+  },
+  {
+   "text": " ",
+   "start": 34.28,
+   "end": 34.28,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "and",
+   "start": 34.98,
+   "end": 35.1,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 35.1,
+   "end": 35.18,
+   "type": "spacing",
+   "logprob": -5.94836674281396e-05
+  },
+  {
+   "text": "implement",
+   "start": 35.18,
+   "end": 35.56,
+   "type": "word",
+   "logprob": -5.94836674281396e-05
+  },
+  {
+   "text": " ",
+   "start": 35.56,
+   "end": 35.62,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "solutions",
+   "start": 35.62,
+   "end": 36.22,
+   "type": "word",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": " ",
+   "start": 36.22,
+   "end": 36.74,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "that",
+   "start": 36.74,
+   "end": 36.86,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 36.86,
+   "end": 36.9,
+   "type": "spacing",
+   "logprob": -7.390948667307384e-06
+  },
+  {
+   "text": "propel",
+   "start": 36.9,
+   "end": 37.26,
+   "type": "word",
+   "logprob": -7.390948667307384e-06
+  },
+  {
+   "text": " ",
+   "start": 37.26,
+   "end": 37.34,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "us",
+   "start": 37.34,
+   "end": 37.56,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 37.56,
+   "end": 37.64,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "into",
+   "start": 37.64,
+   "end": 37.84,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 37.84,
+   "end": 37.88,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "the",
+   "start": 37.88,
+   "end": 37.96,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 37.96,
+   "end": 38.02,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "future.",
+   "start": 38.02,
+   "end": 38.46,
+   "type": "word",
+   "logprob": -6.471359443237037e-07
+  },
+  {
+   "text": " ",
+   "start": 38.46,
+   "end": 38.46,
+   "type": "spacing",
+   "logprob": -2.264974000354414e-06
+  },
+  {
+   "text": "Every",
+   "start": 39.6,
+   "end": 40.08,
+   "type": "word",
+   "logprob": -2.264974000354414e-06
+  },
+  {
+   "text": " ",
+   "start": 40.08,
+   "end": 40.12,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "breakthrough",
+   "start": 40.12,
+   "end": 40.8,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 40.8,
+   "end": 40.92,
+   "type": "spacing",
+   "logprob": -3.4570634852570947e-06
+  },
+  {
+   "text": "starts",
+   "start": 40.92,
+   "end": 41.4,
+   "type": "word",
+   "logprob": -3.4570634852570947e-06
+  },
+  {
+   "text": " ",
+   "start": 41.4,
+   "end": 41.46,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "with",
+   "start": 41.46,
+   "end": 41.56,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 41.56,
+   "end": 41.62,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "a",
+   "start": 41.62,
+   "end": 41.68,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 41.68,
+   "end": 41.74,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "daring",
+   "start": 41.74,
+   "end": 42.06,
+   "type": "word",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": " ",
+   "start": 42.06,
+   "end": 42.14,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "idea,",
+   "start": 42.14,
+   "end": 42.52,
+   "type": "word",
+   "logprob": -2.884847845052718e-06
+  },
+  {
+   "text": " ",
+   "start": 42.52,
+   "end": 43.22,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "and",
+   "start": 43.22,
+   "end": 43.32,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 43.32,
+   "end": 43.38,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "here",
+   "start": 43.38,
+   "end": 44.0,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 44.0,
+   "end": 44.04,
+   "type": "spacing",
+   "logprob": -0.0011703077470883727
+  },
+  {
+   "text": "we",
+   "start": 44.04,
+   "end": 44.12,
+   "type": "word",
+   "logprob": -0.0011703077470883727
+  },
+  {
+   "text": " ",
+   "start": 44.12,
+   "end": 44.16,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "give",
+   "start": 44.16,
+   "end": 44.28,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 44.28,
+   "end": 44.3,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "you",
+   "start": 44.3,
+   "end": 44.34,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 44.34,
+   "end": 44.38,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "the",
+   "start": 44.38,
+   "end": 44.48,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 44.48,
+   "end": 44.56,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "tools",
+   "start": 44.56,
+   "end": 44.88,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 44.88,
+   "end": 44.94,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 44.94,
+   "end": 45.04,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 45.04,
+   "end": 45.12,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "turn",
+   "start": 45.12,
+   "end": 45.48,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 45.48,
+   "end": 45.54,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "those",
+   "start": 45.54,
+   "end": 45.76,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 45.76,
+   "end": 45.84,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "ideas",
+   "start": 45.84,
+   "end": 46.18,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 46.18,
+   "end": 46.24,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "into",
+   "start": 46.24,
+   "end": 46.4,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 46.4,
+   "end": 46.42,
+   "type": "spacing",
+   "logprob": -3.814689989667386e-06
+  },
+  {
+   "text": "reality.",
+   "start": 46.42,
+   "end": 47.08,
+   "type": "word",
+   "logprob": -3.3378537409589626e-06
+  },
+  {
+   "text": " ",
+   "start": 47.08,
+   "end": 47.08,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "Let's",
+   "start": 47.74,
+   "end": 47.94,
+   "type": "word",
+   "logprob": -1.0251986964249226e-06
+  },
+  {
+   "text": " ",
+   "start": 47.94,
+   "end": 48.02,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "all",
+   "start": 48.02,
+   "end": 48.14,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 48.14,
+   "end": 48.2,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "think",
+   "start": 48.2,
+   "end": 48.38,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 48.38,
+   "end": 48.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "more",
+   "start": 48.44,
+   "end": 48.58,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 48.58,
+   "end": 48.62,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "like",
+   "start": 48.62,
+   "end": 48.76,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 48.76,
+   "end": 48.82,
+   "type": "spacing",
+   "logprob": -1.728519782773219e-05
+  },
+  {
+   "text": "entrepreneurs",
+   "start": 48.82,
+   "end": 49.8,
+   "type": "word",
+   "logprob": -1.728519782773219e-05
+  },
+  {
+   "text": " ",
+   "start": 49.8,
+   "end": 49.96,
+   "type": "spacing",
+   "logprob": -8.49926145747304e-05
+  },
+  {
+   "text": "as",
+   "start": 49.96,
+   "end": 50.54,
+   "type": "word",
+   "logprob": -8.49926145747304e-05
+  },
+  {
+   "text": " ",
+   "start": 50.54,
+   "end": 50.6,
+   "type": "spacing",
+   "logprob": -0.020555097609758377
+  },
+  {
+   "text": "together",
+   "start": 50.6,
+   "end": 51.46,
+   "type": "word",
+   "logprob": -0.020555097609758377
+  },
+  {
+   "text": " ",
+   "start": 51.46,
+   "end": 51.54,
+   "type": "spacing",
+   "logprob": -3.123234637314454e-05
+  },
+  {
+   "text": "we",
+   "start": 51.54,
+   "end": 51.7,
+   "type": "word",
+   "logprob": -3.123234637314454e-05
+  },
+  {
+   "text": " ",
+   "start": 51.7,
+   "end": 51.78,
+   "type": "spacing",
+   "logprob": -3.0397906812140718e-05
+  },
+  {
+   "text": "shape",
+   "start": 51.78,
+   "end": 52.18,
+   "type": "word",
+   "logprob": -3.0397906812140718e-05
+  },
+  {
+   "text": " ",
+   "start": 52.18,
+   "end": 52.24,
+   "type": "spacing",
+   "logprob": -1.6331539882230572e-05
+  },
+  {
+   "text": "Vanderbilt's",
+   "start": 52.24,
+   "end": 52.74,
+   "type": "word",
+   "logprob": -1.3629484781082132e-05
+  },
+  {
+   "text": " ",
+   "start": 52.74,
+   "end": 52.8,
+   "type": "spacing",
+   "logprob": -5.245195097813848e-06
+  },
+  {
+   "text": "future.",
+   "start": 52.8,
+   "end": 53.22,
+   "type": "word",
+   "logprob": -0.000667139743070168
+  },
+  {
+   "text": " ",
+   "start": 53.22,
+   "end": 53.22,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  }
+ ],
+ "transcription_id": "JUbaiQR7GXVGxFf6p4iO",
+ "audio_duration_secs": 59.7783125
+}

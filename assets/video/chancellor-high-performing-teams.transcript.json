@@ -1,0 +1,1633 @@
+{
+ "language_code": "eng",
+ "language_probability": 1.0,
+ "text": "Hello, everyone. Welcome to our discussion of building and sustaining high-performing teams. You'll learn about creating a culture of collaboration, resilience, and trust where every team member is empowered to contribute their best. You'll explore strategies to inspire, align, and drive performance that transforms challenges into opportunities. Picture Vanderbilt where teams work seamlessly, innovate together, and elevate our collective success. Your leadership here is the catalyst that turns potential into performance. As we conclude this journey, let's commit to nurturing teams that not only achieve greatness, but also embody the spirit of unity and progress that we want to define our future. Together, we can create an environment where every effort contributes to our shared legacy. ",
+ "words": [
+  {
+   "text": "Hello,",
+   "start": 0.14,
+   "end": 0.3,
+   "type": "word",
+   "logprob": -0.08690088738997777
+  },
+  {
+   "text": " ",
+   "start": 0.3,
+   "end": 0.36,
+   "type": "spacing",
+   "logprob": -1.1324817933200393e-05
+  },
+  {
+   "text": "everyone.",
+   "start": 0.36,
+   "end": 0.78,
+   "type": "word",
+   "logprob": -1.0689040462036954e-05
+  },
+  {
+   "text": " ",
+   "start": 0.78,
+   "end": 0.78,
+   "type": "spacing",
+   "logprob": -0.00014685506175737828
+  },
+  {
+   "text": "Welcome",
+   "start": 1.54,
+   "end": 1.9,
+   "type": "word",
+   "logprob": -0.00014685506175737828
+  },
+  {
+   "text": " ",
+   "start": 1.9,
+   "end": 1.96,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "to",
+   "start": 1.96,
+   "end": 2.04,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 2.04,
+   "end": 2.06,
+   "type": "spacing",
+   "logprob": -0.31326165795326233
+  },
+  {
+   "text": "our",
+   "start": 2.06,
+   "end": 2.14,
+   "type": "word",
+   "logprob": -0.31326165795326233
+  },
+  {
+   "text": " ",
+   "start": 2.14,
+   "end": 2.16,
+   "type": "spacing",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": "discussion",
+   "start": 2.16,
+   "end": 2.7,
+   "type": "word",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": " ",
+   "start": 2.7,
+   "end": 3.22,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "of",
+   "start": 3.22,
+   "end": 3.34,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 3.34,
+   "end": 3.38,
+   "type": "spacing",
+   "logprob": -1.6927575416048057e-05
+  },
+  {
+   "text": "building",
+   "start": 3.38,
+   "end": 3.74,
+   "type": "word",
+   "logprob": -1.6927575416048057e-05
+  },
+  {
+   "text": " ",
+   "start": 3.74,
+   "end": 3.92,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "and",
+   "start": 3.92,
+   "end": 4.019,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 4.019,
+   "end": 4.1,
+   "type": "spacing",
+   "logprob": -0.00015496007108595222
+  },
+  {
+   "text": "sustaining",
+   "start": 4.1,
+   "end": 4.7,
+   "type": "word",
+   "logprob": -0.00015496007108595222
+  },
+  {
+   "text": " ",
+   "start": 4.7,
+   "end": 5.0,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "high-performing",
+   "start": 5.0,
+   "end": 5.66,
+   "type": "word",
+   "logprob": -7.488314925012674e-05
+  },
+  {
+   "text": " ",
+   "start": 5.66,
+   "end": 5.76,
+   "type": "spacing",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": "teams.",
+   "start": 5.76,
+   "end": 6.12,
+   "type": "word",
+   "logprob": -2.1855007995933797e-06
+  },
+  {
+   "text": " ",
+   "start": 6.12,
+   "end": 6.12,
+   "type": "spacing",
+   "logprob": -7.510157047363464e-06
+  },
+  {
+   "text": "You'll",
+   "start": 7.0,
+   "end": 7.14,
+   "type": "word",
+   "logprob": -6.71541975331517e-06
+  },
+  {
+   "text": " ",
+   "start": 7.14,
+   "end": 7.2,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "learn",
+   "start": 7.2,
+   "end": 7.38,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 7.38,
+   "end": 7.46,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "about",
+   "start": 7.46,
+   "end": 7.66,
+   "type": "word",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": " ",
+   "start": 7.66,
+   "end": 7.7,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "creating",
+   "start": 7.7,
+   "end": 7.98,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 7.98,
+   "end": 8.039,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "a",
+   "start": 8.039,
+   "end": 8.1,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 8.1,
+   "end": 8.16,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "culture",
+   "start": 8.16,
+   "end": 8.4,
+   "type": "word",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": " ",
+   "start": 8.4,
+   "end": 8.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "of",
+   "start": 8.44,
+   "end": 8.52,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 8.52,
+   "end": 8.56,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "collaboration,",
+   "start": 8.56,
+   "end": 9.26,
+   "type": "word",
+   "logprob": -1.234666795215032e-06
+  },
+  {
+   "text": " ",
+   "start": 9.26,
+   "end": 9.66,
+   "type": "spacing",
+   "logprob": -4.768360213347478e-06
+  },
+  {
+   "text": "resilience,",
+   "start": 9.66,
+   "end": 10.18,
+   "type": "word",
+   "logprob": -0.00011107287479138573
+  },
+  {
+   "text": " ",
+   "start": 10.18,
+   "end": 10.22,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "and",
+   "start": 10.22,
+   "end": 10.3,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 10.3,
+   "end": 10.38,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "trust",
+   "start": 10.38,
+   "end": 10.74,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 10.74,
+   "end": 11.08,
+   "type": "spacing",
+   "logprob": -0.004082797560840845
+  },
+  {
+   "text": "where",
+   "start": 11.08,
+   "end": 11.24,
+   "type": "word",
+   "logprob": -0.004082797560840845
+  },
+  {
+   "text": " ",
+   "start": 11.24,
+   "end": 11.32,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "every",
+   "start": 11.32,
+   "end": 11.5,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 11.5,
+   "end": 11.64,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "team",
+   "start": 11.64,
+   "end": 11.84,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 11.84,
+   "end": 11.9,
+   "type": "spacing",
+   "logprob": -5.829164365422912e-05
+  },
+  {
+   "text": "member",
+   "start": 11.9,
+   "end": 12.14,
+   "type": "word",
+   "logprob": -5.829164365422912e-05
+  },
+  {
+   "text": " ",
+   "start": 12.14,
+   "end": 12.18,
+   "type": "spacing",
+   "logprob": -0.00020346954988781363
+  },
+  {
+   "text": "is",
+   "start": 12.18,
+   "end": 12.58,
+   "type": "word",
+   "logprob": -0.00020346954988781363
+  },
+  {
+   "text": " ",
+   "start": 12.58,
+   "end": 12.66,
+   "type": "spacing",
+   "logprob": -5.602820692729438e-06
+  },
+  {
+   "text": "empowered",
+   "start": 12.66,
+   "end": 13.38,
+   "type": "word",
+   "logprob": -5.602820692729438e-06
+  },
+  {
+   "text": " ",
+   "start": 13.38,
+   "end": 13.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 13.44,
+   "end": 13.54,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 13.54,
+   "end": 13.58,
+   "type": "spacing",
+   "logprob": -3.814689989667386e-06
+  },
+  {
+   "text": "contribute",
+   "start": 13.58,
+   "end": 14.34,
+   "type": "word",
+   "logprob": -3.814689989667386e-06
+  },
+  {
+   "text": " ",
+   "start": 14.34,
+   "end": 14.4,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "their",
+   "start": 14.4,
+   "end": 14.58,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 14.58,
+   "end": 14.64,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "best.",
+   "start": 14.64,
+   "end": 14.96,
+   "type": "word",
+   "logprob": -9.536742595628311e-08
+  },
+  {
+   "text": " ",
+   "start": 14.96,
+   "end": 14.96,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "You'll",
+   "start": 15.64,
+   "end": 15.76,
+   "type": "word",
+   "logprob": -4.947120553803567e-06
+  },
+  {
+   "text": " ",
+   "start": 15.76,
+   "end": 15.82,
+   "type": "spacing",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": "explore",
+   "start": 15.82,
+   "end": 16.14,
+   "type": "word",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": " ",
+   "start": 16.14,
+   "end": 16.2,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "strategies",
+   "start": 16.2,
+   "end": 16.76,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 16.76,
+   "end": 16.8,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 16.8,
+   "end": 16.84,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 16.84,
+   "end": 16.88,
+   "type": "spacing",
+   "logprob": -4.0531076592742465e-06
+  },
+  {
+   "text": "inspire,",
+   "start": 16.88,
+   "end": 17.44,
+   "type": "word",
+   "logprob": -3.5464692018649657e-06
+  },
+  {
+   "text": " ",
+   "start": 17.44,
+   "end": 17.88,
+   "type": "spacing",
+   "logprob": -2.50339189733495e-06
+  },
+  {
+   "text": "align,",
+   "start": 17.88,
+   "end": 18.32,
+   "type": "word",
+   "logprob": -3.854421644670462e-06
+  },
+  {
+   "text": " ",
+   "start": 18.32,
+   "end": 18.72,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "and",
+   "start": 18.72,
+   "end": 18.8,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 18.8,
+   "end": 18.84,
+   "type": "spacing",
+   "logprob": -3.099436753473128e-06
+  },
+  {
+   "text": "drive",
+   "start": 18.84,
+   "end": 19.1,
+   "type": "word",
+   "logprob": -3.099436753473128e-06
+  },
+  {
+   "text": " ",
+   "start": 19.1,
+   "end": 19.16,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "performance",
+   "start": 19.16,
+   "end": 19.74,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 19.74,
+   "end": 19.8,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "that",
+   "start": 19.8,
+   "end": 19.88,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 19.88,
+   "end": 19.94,
+   "type": "spacing",
+   "logprob": -1.1205610462639015e-05
+  },
+  {
+   "text": "transforms",
+   "start": 19.94,
+   "end": 20.58,
+   "type": "word",
+   "logprob": -1.1205610462639015e-05
+  },
+  {
+   "text": " ",
+   "start": 20.58,
+   "end": 20.66,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "challenges",
+   "start": 20.66,
+   "end": 21.18,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 21.18,
+   "end": 21.26,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "into",
+   "start": 21.26,
+   "end": 21.4,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 21.4,
+   "end": 21.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "opportunities.",
+   "start": 21.44,
+   "end": 22.18,
+   "type": "word",
+   "logprob": -8.514948746096707e-09
+  },
+  {
+   "text": " ",
+   "start": 22.18,
+   "end": 23.18,
+   "type": "spacing",
+   "logprob": -8.904537389753386e-05
+  },
+  {
+   "text": "Picture",
+   "start": 23.18,
+   "end": 23.48,
+   "type": "word",
+   "logprob": -8.904537389753386e-05
+  },
+  {
+   "text": " ",
+   "start": 23.48,
+   "end": 23.54,
+   "type": "spacing",
+   "logprob": -0.0008326877141371369
+  },
+  {
+   "text": "Vanderbilt",
+   "start": 23.54,
+   "end": 24.26,
+   "type": "word",
+   "logprob": -0.0008326877141371369
+  },
+  {
+   "text": " ",
+   "start": 24.26,
+   "end": 24.3,
+   "type": "spacing",
+   "logprob": -0.026302652433514595
+  },
+  {
+   "text": "where",
+   "start": 24.3,
+   "end": 24.46,
+   "type": "word",
+   "logprob": -0.026302652433514595
+  },
+  {
+   "text": " ",
+   "start": 24.46,
+   "end": 24.54,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "teams",
+   "start": 24.54,
+   "end": 24.9,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 24.9,
+   "end": 24.96,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "work",
+   "start": 24.96,
+   "end": 25.16,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 25.16,
+   "end": 25.24,
+   "type": "spacing",
+   "logprob": -4.0531076592742465e-06
+  },
+  {
+   "text": "seamlessly,",
+   "start": 25.24,
+   "end": 25.76,
+   "type": "word",
+   "logprob": -3.6954805341079835e-06
+  },
+  {
+   "text": " ",
+   "start": 25.76,
+   "end": 26.36,
+   "type": "spacing",
+   "logprob": -4.815939246327616e-05
+  },
+  {
+   "text": "innovate",
+   "start": 26.36,
+   "end": 26.7,
+   "type": "word",
+   "logprob": -4.815939246327616e-05
+  },
+  {
+   "text": " ",
+   "start": 26.7,
+   "end": 26.76,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "together,",
+   "start": 26.76,
+   "end": 27.2,
+   "type": "word",
+   "logprob": -5.262580028405258e-05
+  },
+  {
+   "text": " ",
+   "start": 27.2,
+   "end": 27.48,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "and",
+   "start": 27.48,
+   "end": 27.64,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 27.64,
+   "end": 27.72,
+   "type": "spacing",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": "elevate",
+   "start": 27.72,
+   "end": 28.46,
+   "type": "word",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": " ",
+   "start": 28.46,
+   "end": 28.54,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "our",
+   "start": 28.54,
+   "end": 28.64,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 28.64,
+   "end": 28.7,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "collective",
+   "start": 28.7,
+   "end": 29.12,
+   "type": "word",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": " ",
+   "start": 29.12,
+   "end": 29.18,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "success.",
+   "start": 29.18,
+   "end": 29.64,
+   "type": "word",
+   "logprob": -2.0861623184487144e-07
+  },
+  {
+   "text": " ",
+   "start": 29.64,
+   "end": 30.5,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "Your",
+   "start": 30.5,
+   "end": 30.64,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 30.64,
+   "end": 30.68,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "leadership",
+   "start": 30.68,
+   "end": 31.24,
+   "type": "word",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": " ",
+   "start": 31.24,
+   "end": 31.28,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "here",
+   "start": 31.28,
+   "end": 31.6,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 31.6,
+   "end": 31.68,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "is",
+   "start": 31.68,
+   "end": 31.78,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 31.78,
+   "end": 31.82,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "the",
+   "start": 31.82,
+   "end": 31.92,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 31.92,
+   "end": 32.0,
+   "type": "spacing",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": "catalyst",
+   "start": 32.0,
+   "end": 33.02,
+   "type": "word",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": " ",
+   "start": 33.02,
+   "end": 33.08,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "that",
+   "start": 33.08,
+   "end": 33.2,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 33.2,
+   "end": 33.28,
+   "type": "spacing",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": "turns",
+   "start": 33.28,
+   "end": 33.86,
+   "type": "word",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": " ",
+   "start": 33.86,
+   "end": 33.92,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "potential",
+   "start": 33.92,
+   "end": 34.8,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 34.8,
+   "end": 34.88,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "into",
+   "start": 34.88,
+   "end": 35.06,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 35.06,
+   "end": 35.12,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "performance.",
+   "start": 35.12,
+   "end": 35.8,
+   "type": "word",
+   "logprob": -5.463757541216788e-07
+  },
+  {
+   "text": " ",
+   "start": 35.8,
+   "end": 36.54,
+   "type": "spacing",
+   "logprob": -2.407998726994265e-05
+  },
+  {
+   "text": "As",
+   "start": 36.54,
+   "end": 36.66,
+   "type": "word",
+   "logprob": -2.407998726994265e-05
+  },
+  {
+   "text": " ",
+   "start": 36.66,
+   "end": 36.7,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "we",
+   "start": 36.7,
+   "end": 36.76,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 36.76,
+   "end": 36.82,
+   "type": "spacing",
+   "logprob": -4.887569048150908e-06
+  },
+  {
+   "text": "conclude",
+   "start": 36.82,
+   "end": 37.2,
+   "type": "word",
+   "logprob": -4.887569048150908e-06
+  },
+  {
+   "text": " ",
+   "start": 37.2,
+   "end": 37.24,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "this",
+   "start": 37.24,
+   "end": 37.38,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 37.38,
+   "end": 37.5,
+   "type": "spacing",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": "journey,",
+   "start": 37.5,
+   "end": 37.84,
+   "type": "word",
+   "logprob": -2.056358127333624e-06
+  },
+  {
+   "text": " ",
+   "start": 37.84,
+   "end": 38.58,
+   "type": "spacing",
+   "logprob": -4.410734163684538e-06
+  },
+  {
+   "text": "let's",
+   "start": 38.58,
+   "end": 38.8,
+   "type": "word",
+   "logprob": -4.9590876173510875e-06
+  },
+  {
+   "text": " ",
+   "start": 38.8,
+   "end": 38.86,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "commit",
+   "start": 38.86,
+   "end": 39.32,
+   "type": "word",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": " ",
+   "start": 39.32,
+   "end": 39.38,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 39.38,
+   "end": 39.48,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 39.48,
+   "end": 39.54,
+   "type": "spacing",
+   "logprob": -2.3245540432981215e-05
+  },
+  {
+   "text": "nurturing",
+   "start": 39.54,
+   "end": 40.0,
+   "type": "word",
+   "logprob": -2.3245540432981215e-05
+  },
+  {
+   "text": " ",
+   "start": 40.0,
+   "end": 40.08,
+   "type": "spacing",
+   "logprob": -3.576272320060525e-06
+  },
+  {
+   "text": "teams",
+   "start": 40.08,
+   "end": 40.64,
+   "type": "word",
+   "logprob": -3.576272320060525e-06
+  },
+  {
+   "text": " ",
+   "start": 40.64,
+   "end": 40.7,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "that",
+   "start": 40.7,
+   "end": 40.86,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 40.86,
+   "end": 40.9,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "not",
+   "start": 40.9,
+   "end": 41.08,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 41.08,
+   "end": 41.18,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "only",
+   "start": 41.18,
+   "end": 41.38,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 41.38,
+   "end": 41.46,
+   "type": "spacing",
+   "logprob": -2.0265558760002023e-06
+  },
+  {
+   "text": "achieve",
+   "start": 41.46,
+   "end": 41.92,
+   "type": "word",
+   "logprob": -2.0265558760002023e-06
+  },
+  {
+   "text": " ",
+   "start": 41.92,
+   "end": 41.98,
+   "type": "spacing",
+   "logprob": -7.510157047363464e-06
+  },
+  {
+   "text": "greatness,",
+   "start": 41.98,
+   "end": 42.46,
+   "type": "word",
+   "logprob": -0.057600724671738136
+  },
+  {
+   "text": " ",
+   "start": 42.46,
+   "end": 43.06,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "but",
+   "start": 43.06,
+   "end": 43.22,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 43.22,
+   "end": 43.32,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "also",
+   "start": 43.32,
+   "end": 43.72,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 43.72,
+   "end": 43.8,
+   "type": "spacing",
+   "logprob": -4.7205765440594405e-05
+  },
+  {
+   "text": "embody",
+   "start": 43.8,
+   "end": 44.44,
+   "type": "word",
+   "logprob": -4.7205765440594405e-05
+  },
+  {
+   "text": " ",
+   "start": 44.44,
+   "end": 44.52,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "the",
+   "start": 44.52,
+   "end": 44.62,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 44.62,
+   "end": 44.76,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "spirit",
+   "start": 44.76,
+   "end": 45.0,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 45.0,
+   "end": 45.04,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "of",
+   "start": 45.04,
+   "end": 45.12,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 45.12,
+   "end": 45.22,
+   "type": "spacing",
+   "logprob": -1.9073468138230965e-06
+  },
+  {
+   "text": "unity",
+   "start": 45.22,
+   "end": 45.52,
+   "type": "word",
+   "logprob": -1.9073468138230965e-06
+  },
+  {
+   "text": " ",
+   "start": 45.52,
+   "end": 45.58,
+   "type": "spacing",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": "and",
+   "start": 45.58,
+   "end": 45.66,
+   "type": "word",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": " ",
+   "start": 45.66,
+   "end": 45.72,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "progress",
+   "start": 45.72,
+   "end": 46.2,
+   "type": "word",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": " ",
+   "start": 46.2,
+   "end": 46.86,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "that",
+   "start": 46.86,
+   "end": 47.0,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 47.0,
+   "end": 47.06,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "we",
+   "start": 47.06,
+   "end": 47.22,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 47.22,
+   "end": 47.3,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "want",
+   "start": 47.3,
+   "end": 47.78,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 47.78,
+   "end": 47.84,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 47.84,
+   "end": 47.92,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 47.92,
+   "end": 47.96,
+   "type": "spacing",
+   "logprob": -1.0013530300057027e-05
+  },
+  {
+   "text": "define",
+   "start": 47.96,
+   "end": 48.72,
+   "type": "word",
+   "logprob": -1.0013530300057027e-05
+  },
+  {
+   "text": " ",
+   "start": 48.72,
+   "end": 48.8,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "our",
+   "start": 48.8,
+   "end": 48.96,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 48.96,
+   "end": 49.02,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "future.",
+   "start": 49.04,
+   "end": 49.94,
+   "type": "word",
+   "logprob": -6.811957291574799e-07
+  },
+  {
+   "text": " ",
+   "start": 49.94,
+   "end": 50.0,
+   "type": "spacing",
+   "logprob": -1.4424220353248529e-05
+  },
+  {
+   "text": "Together,",
+   "start": 50.0,
+   "end": 50.36,
+   "type": "word",
+   "logprob": -1.381493550272555e-05
+  },
+  {
+   "text": " ",
+   "start": 50.36,
+   "end": 50.86,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "we",
+   "start": 50.86,
+   "end": 50.92,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 50.92,
+   "end": 50.96,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "can",
+   "start": 50.96,
+   "end": 51.08,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 51.08,
+   "end": 51.14,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "create",
+   "start": 51.14,
+   "end": 51.4,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 51.4,
+   "end": 51.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "an",
+   "start": 51.44,
+   "end": 51.52,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 51.52,
+   "end": 51.56,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "environment",
+   "start": 51.56,
+   "end": 52.4,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 52.4,
+   "end": 52.46,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "where",
+   "start": 52.46,
+   "end": 52.64,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 52.64,
+   "end": 52.74,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "every",
+   "start": 52.74,
+   "end": 52.98,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 52.98,
+   "end": 53.06,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "effort",
+   "start": 53.06,
+   "end": 53.44,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 53.44,
+   "end": 53.5,
+   "type": "spacing",
+   "logprob": -3.4570634852570947e-06
+  },
+  {
+   "text": "contributes",
+   "start": 53.5,
+   "end": 54.26,
+   "type": "word",
+   "logprob": -3.4570634852570947e-06
+  },
+  {
+   "text": " ",
+   "start": 54.26,
+   "end": 54.3,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "to",
+   "start": 54.3,
+   "end": 54.38,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 54.38,
+   "end": 54.42,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "our",
+   "start": 54.42,
+   "end": 54.62,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 54.62,
+   "end": 54.68,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "shared",
+   "start": 54.68,
+   "end": 54.94,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 54.94,
+   "end": 54.98,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "legacy.",
+   "start": 54.98,
+   "end": 55.5,
+   "type": "word",
+   "logprob": -0.00018179907185965152
+  },
+  {
+   "text": " ",
+   "start": 55.5,
+   "end": 55.5,
+   "type": "spacing",
+   "logprob": -4.291525328881107e-06
+  }
+ ],
+ "transcription_id": "wSiVhsbGHxzYjzLGpe4F",
+ "audio_duration_secs": 61.9145625
+}
