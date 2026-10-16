@@ -608,8 +608,8 @@ html.paged .lr-slide-book img{ max-height:30vh; width:auto; }
 /* Teams post starter: regular text */
 html.paged .v-tell-text{ font-size:1.02rem !important; line-height:1.5; }
 /* seven brief sections: four across, compact */
-@media (min-width:1001px){ html.paged ol.lr-brief{ grid-template-columns:repeat(4,minmax(0,1fr)) !important; gap:6px; } }
-html.paged ol.lr-brief li{ padding:8px 10px; min-height:0; }
+
+
 html.paged .v-stage.lr-bal{ row-gap:10px; }
 html.paged .lr-teach > .v-act > * + figure.lr-slide svg{ max-height:20vh; }
 html.paged .lr-teach > .v-act > * + figure.lr-slide{ padding:12px 18px; }
@@ -635,3 +635,10 @@ html.paged .v-commits{ gap:6px; }
 .lr-dsrc{ margin-top:8px; font-size:.82rem; color:var(--tx3); font-style:italic; max-width:none; }
 .v-stage.lr-deckscreen{ max-width:1100px; }
 @media (max-width:760px){ .lr-deckgrid{ grid-template-columns:1fr; } }
+
+/* the seven brief sections: one tidy row each (number, title, course) */
+html .v-stage.lr-bal ol.lr-brief, html ol.lr-brief{ grid-template-columns:1fr !important; gap:4px; margin-top:12px; }
+html .v-stage.lr-bal ol.lr-brief li, html ol.lr-brief li{ grid-template-columns:24px minmax(0,1fr) auto !important; gap:10px; padding:6px 12px; min-height:0; font-size:.95rem; line-height:1.3; }
+html .v-stage.lr-bal ol.lr-brief li::before, html ol.lr-brief li::before{ font-size:1.15rem; }
+html .v-stage.lr-bal ol.lr-brief li small, html ol.lr-brief li small{ grid-column:auto !important; white-space:nowrap; text-align:right; }
+html.paged .v-copy > p.v-label{ margin-top:14px; }
