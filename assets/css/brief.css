@@ -39,3 +39,14 @@
   .bf-print p{ margin:0 0 6pt; orphans:3; widows:3; }
   .bf-print .bf-empty{ color:#777 !important; font-style:italic; }
 }
+
+/* Embedded in a course page: only the requested sections, no page chrome */
+html.bf-embed body{ background:transparent; }
+html.bf-embed .gnav, html.bf-embed .skip, html.bf-embed footer, html.bf-embed .bf-top, html.bf-embed .bf-meta, html.bf-embed .bf-count{ display:none !important; }
+html.bf-embed .bf-doc{ padding:0; }
+html.bf-embed .bf-doc .wrap{ max-width:none; padding:0; margin:0; }
+html.bf-embed .bf-sheet{ border:0; padding:0; background:transparent; }
+html.bf-embed .bf-sec{ padding:14px 0; }
+html.bf-embed .bf-sec:first-child{ padding-top:0; }
+html.bf-embed main{ padding:0 !important; margin:0 !important; }
+html.bf-embed .bf-tag{ display:none; }

@@ -40,8 +40,11 @@ var SECTIONS = [
     from:function(){ return b(2, 'draft', 'sustain'); } }
 ];
 
+var q = new URLSearchParams(location.search), EMBED = q.get('embed') === '1', RANGE = (q.get('s') || '1-7').split('-').map(Number);
+function inRange(s){ return s.n >= RANGE[0] && s.n <= (RANGE[1] || RANGE[0]); }
+if(EMBED) document.documentElement.classList.add('bf-embed');
 var box = document.getElementById('bfSections'), status = document.getElementById('bfStatus'), count = document.getElementById('bfCount');
-box.innerHTML = SECTIONS.map(function(s){
+box.innerHTML = SECTIONS.filter(function(s){ return !EMBED || inRange(s); }).map(function(s){
   var id = 'bfS' + s.n;
   var input = s.select ? '<select id="' + id + '" data-s="' + s.n + '"><option value="">Choose one</option>' + FOCUS.map(function(f){ return '<option>' + f + '</option>'; }).join('') + '</select>'
     : '<textarea id="' + id + '" data-s="' + s.n + '" rows="5"></textarea>';
@@ -52,18 +55,23 @@ box.innerHTML = SECTIONS.map(function(s){
 
 function val(s){ var o = get('lrb-s' + s.n); return o !== null ? o : s.from(); }
 function paintOne(s){
+  if(!document.getElementById('bfS' + s.n)) return;
   var el = document.getElementById('bfS' + s.n), src = document.getElementById('bfS' + s.n + 'src'), rs = box.querySelector('[data-reset="' + s.n + '"]');
   var edited = get('lrb-s' + s.n) !== null, fromCourse = s.from();
   if(document.activeElement !== el) el.value = val(s);
   if(el.tagName === 'TEXTAREA'){ el.style.height = 'auto'; el.style.height = Math.max(120, el.scrollHeight + 4) + 'px'; }
   rs.hidden = !edited || !fromCourse;
-  src.innerHTML = edited ? 'Edited here. Your edits are kept.' : fromCourse ? 'Filled in from ' + esc(s.where) + '.' : 'Not written yet. Draft it in <a href="' + s.link + '">' + esc(s.where) + '</a>, or type it here.';
+  src.innerHTML = EMBED ? (edited ? 'Saved to your brief.' : fromCourse ? 'Started from your work in ' + esc(s.where) + '. Edit it here.' : 'Saves to your brief as you type.')
+    : edited ? 'Edited here. Your edits are kept.' : fromCourse ? 'Filled in from ' + esc(s.where) + '.' : 'Not written yet. Draft it in <a href="' + s.link + '">' + esc(s.where) + '</a>, or type it here.';
 }
 function words(){ var t = SECTIONS.map(val).join(' ') + ' ' + ['title', 'pod', 'members'].map(function(k){ return get('lrb-' + k) || ''; }).join(' '); var n = (t.match(/\S+/g) || []).length; return n; }
-function paint(){ SECTIONS.forEach(paintOne); var n = words(), filled = SECTIONS.filter(function(s){ return val(s).trim(); }).length;
+function report(){ if(!EMBED || window.parent === window) return;
+  var mine = SECTIONS.filter(inRange), filled = mine.filter(function(s){ return val(s).trim().length > 0; }).length;
+  try{ window.parent.postMessage({ lrBrief:true, h:document.documentElement.scrollHeight, filled:filled, of:mine.length, range:RANGE.join('-') }, location.origin); }catch(e){} }
+function paint(){ SECTIONS.forEach(paintOne); report(); var n = words(), filled = SECTIONS.filter(function(s){ return val(s).trim(); }).length;
   count.textContent = filled + ' of 7 sections have text · about ' + n.toLocaleString('en-US') + ' words' + (n > 1500 ? ', likely more than three pages: tighten before you submit.' : '. Three pages is about 1,500 words.'); }
 
-box.addEventListener('input', function(e){ var el = e.target.closest('[data-s]'); if(!el) return; set('lrb-s' + el.getAttribute('data-s'), el.value); var s = SECTIONS[+el.getAttribute('data-s') - 1]; paintOne(s); var n = words(); count.textContent = count.textContent.replace(/about [\d,]+ words/, 'about ' + n.toLocaleString('en-US') + ' words'); });
+box.addEventListener('input', function(e){ var el = e.target.closest('[data-s]'); if(!el) return; set('lrb-s' + el.getAttribute('data-s'), el.value); var s = SECTIONS[+el.getAttribute('data-s') - 1]; paintOne(s); report(); var n = words(); count.textContent = count.textContent.replace(/about [\d,]+ words/, 'about ' + n.toLocaleString('en-US') + ' words'); });
 box.addEventListener('change', function(e){ var el = e.target.closest('select[data-s]'); if(el){ set('lrb-s' + el.getAttribute('data-s'), el.value); paint(); } });
 box.addEventListener('click', function(e){ var r = e.target.closest('[data-reset]'); if(!r) return; set('lrb-s' + r.getAttribute('data-reset'), null); paint(); var el = document.getElementById('bfS' + r.getAttribute('data-reset')); el.focus(); say('Section ' + r.getAttribute('data-reset') + ' now shows your course draft again.'); });
 Array.prototype.forEach.call(document.querySelectorAll('[data-meta]'), function(el){ var k = 'lrb-' + el.getAttribute('data-meta'); el.value = get(k) || ''; el.addEventListener('input', function(){ set(k, el.value); }); });
@@ -107,4 +115,5 @@ document.querySelector('[data-bf="word"]').addEventListener('click', function(){
   say('Downloaded capstone-brief.doc. It opens in Word.');
 });
 paint();
+if(EMBED && window.ResizeObserver){ new ResizeObserver(report).observe(document.body); }
 })();

@@ -890,6 +890,22 @@ window.LR_PROG = { done: progDone, is: progIs, set: set, get: get, turn: turnDon
 window.LR_NARRSUB = narrSub;
 window.LR_NARRPLAY = function(k, done, stopped){ narr.on = true; narrPlay(k, done, stopped); };
 window.LR_NARRSTOP = narrStop;
+/* the live brief, embedded: <iframe class="lr-brief-embed" data-prog="draft" src="../brief/?embed=1&s=1-3">.
+   What the learner writes there saves straight into the full brief; the frame grows to fit,
+   and the page's activity is done when every section in it has text. */
+(function(){
+  var frames = $$('iframe.lr-brief-embed'); if(!frames.length) return;
+  window.addEventListener('message', function(e){
+    if(e.origin !== location.origin || !e.data || !e.data.lrBrief) return;
+    frames.forEach(function(f){
+      if(f.contentWindow !== e.source) return;
+      f.style.height = Math.max(200, e.data.h + 8) + 'px';
+      var k = f.getAttribute('data-prog'), st = f.getAttribute('data-status') && document.getElementById(f.getAttribute('data-status'));
+      if(st) st.textContent = e.data.filled + ' of ' + e.data.of + ' sections written. Saved to your brief.';
+      if(k && e.data.filled === e.data.of && !progIs(k)){ set('r-' + k, 'Sections ' + e.data.range + ' written'); progDone(k); }
+    });
+  });
+})();
 })();
 
 /* ── hero montage pause / play ── */
@@ -980,7 +996,7 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
   var all = function(q, c){ return Array.prototype.slice.call((c || document).querySelectorAll(q)); };
   var NAR = window.LR_NARR || {}, FIXT = window.LR_FIXTXT || function(t){ return t; };
   all('figure.lr-story[data-story]').forEach(function(fig){
-    var base = fig.getAttribute('data-story'), n = +fig.getAttribute('data-scenes'), svg = fig.querySelector('svg');
+    var base = fig.getAttribute('data-story'), n = +fig.getAttribute('data-scenes'), svg = fig.querySelector('.lr-st-stage') || fig.querySelector('svg');
     var cur = 0, playing = false;
     var bar = document.createElement('div'); bar.className = 'lr-st-bar';
     bar.innerHTML = '<button type="button" class="lr-st-play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="pl" d="M7 4.5v15l12-7.5z"/><path class="pa" d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg><span>Play the story</span></button>' +
@@ -999,7 +1015,7 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
       all('.lr-st-dot', bar).forEach(function(d, j){ d.classList.toggle('seen', j < k); if(j + 1 === k) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
       cnt.textContent = k ? k + ' / ' + n : '';
       var t = NAR[base + k]; if(t) cap.textContent = FIXT(t);
-      svg.setAttribute('aria-label', (fig.getAttribute('data-label') || 'Animated story') + (k ? ', scene ' + k + ' of ' + n + ': ' + FIXT(NAR[base + k] || '') : ''));
+      if(svg.tagName.toLowerCase() === 'svg') svg.setAttribute('aria-label', (fig.getAttribute('data-label') || 'Animated story') + (k ? ', scene ' + k + ' of ' + n + ': ' + FIXT(NAR[base + k] || '') : ''));
     }
     function ui(){ btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); fig.classList.toggle('st-playing', playing); lab.textContent = playing ? 'Pause' : (cur >= n ? 'Play again' : cur ? 'Resume' : 'Play the story'); }
     function run(k){
