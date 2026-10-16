@@ -522,7 +522,7 @@ var NUMS = D.NUMS || [];
   $$('.v-stage').forEach(function(st){
     var copy = st.querySelector(':scope > .v-copy'), act = st.querySelector(':scope > .v-act'); if(!copy || !act) return;
     var lead = document.createElement('div'); lead.className = 'v-lead';
-    $$(':scope > .v-stephead, :scope > h2.v-h, :scope > .v-why', copy).forEach(function(x){ lead.appendChild(x); });
+    $$(':scope > .v-stephead, :scope > h2.v-h, :scope > .v-why, :scope > figure.lr-vision-hero', copy).forEach(function(x){ lead.appendChild(x); });
     if(lead.children.length) st.insertBefore(lead, copy);
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
