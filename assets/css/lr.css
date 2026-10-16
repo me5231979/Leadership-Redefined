@@ -496,3 +496,8 @@ html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45;
 @media (prefers-reduced-motion: reduce){ .lr-st-stage .st-scene, .lr-st-stage .st-b, .lr-st-stage .st-late{ animation:none !important; } }
 .lr-hub-teams{ margin-top:14px; color:var(--tx2); max-width:70ch; list-style:none; padding:0; display:grid; gap:4px; }
 .lr-hub-teams b{ color:var(--tx); font-weight:600; }
+/* the live brief sections, embedded on the draft pages */
+.lr-brief-embed{ display:block; width:100%; min-height:200px; border:0; background:transparent; color-scheme:dark; }
+/* Mission and Margin: the slides play as a story */
+.lr-story.lr-story-slides{ background:transparent; border:0; padding:0; }
+.lr-story-slides .lr-st-cap, .lr-story-slides .lr-st-bar{ padding:0 4px; }

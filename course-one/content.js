@@ -1,34 +1,26 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE ONE · content ══════════
    Module 1: Vision, Strategy & the Future of Vanderbilt; Module 2: Mission and Margin;
    Module 3: Reputational Stewardship. The Chancellor’s modules. Week of November 2.
+   Every teaching claim traces to the Chancellor’s FINAL Symposium deck, his earlier
+   Module 1, 3, and 5 decks, or his two intro videos. Practice items are hypothetical.
    Read by ../assets/js/pager.js and ../assets/js/lr-engine.js. No em or en dashes. */
 window.LR_COURSE = {
   PLAN:[
     { sel:'section.hero', key:'home', label:'Welcome', mode:'whole' },
     { sel:'#week', key:'route', label:'This week', mode:'whole' },
     { sel:'#mission', key:'mission', label:'Module 1: The vision', mode:'whole' },
-    { sel:'#problems', key:'problems', label:'Module 1: Four problems', mode:'whole' },
     { sel:'#engine', key:'engine', label:'Module 1: The reputation engine', mode:'whole' },
     { sel:'#momentum', key:'numbers', label:'Module 1: Momentum', mode:'whole' },
-    { sel:'#growth', key:'growth', label:'Module 1: Four growth sites', mode:'whole' },
-    { sel:'#me1', key:'me1', label:'Module 1: What this means for me', mode:'whole' },
     { sel:'#recap1', key:'recap1', label:'Module 1: Wrap-up', mode:'whole' },
-    { sel:'#valuestick', key:'valuestick', label:'Module 1: Go deeper, the value stick', mode:'whole' },
     { sel:'#margin', key:'margin', label:'Module 2: Mission and margin', mode:'whole' },
-    { sel:'#peers', key:'peers', label:'Module 2: Why it matters now', mode:'whole' },
-    { sel:'#portfolio', key:'portfolio', label:'Module 2: The whole cost', mode:'whole' },
+    { sel:'#peers', key:'peers', label:'Module 2: The Chancellor’s slides', mode:'whole' },
     { sel:'#statement', key:'statement', label:'Module 2: Your statement', mode:'whole' },
-    { sel:'#me2', key:'me2', label:'Module 2: What this means for me', mode:'whole' },
     { sel:'#recap2', key:'recap2', label:'Module 2: Wrap-up', mode:'whole' },
-    { sel:'#gdmargin', key:'gdmargin', label:'Module 2: Go deeper, Mission and Margin', mode:'whole' },
-    { sel:'#reputation', key:'trust', label:'Module 3: Reputational stewardship', mode:'whole' },
+    { sel:'#reputation', key:'trust', label:'Module 3: The trust radar', mode:'whole' },
     { sel:'#terrain', key:'terrain', label:'Module 3: Where reputation is made', mode:'whole' },
     { sel:'#timing', key:'timing', label:'Module 3: Act while you have control', mode:'whole' },
-    { sel:'#pressure', key:'pressure', label:'Module 3: Calls under pressure', mode:'whole' },
     { sel:'#repstatement', key:'repstatement', label:'Module 3: Your statement', mode:'whole' },
-    { sel:'#me3', key:'me3', label:'Module 3: What this means for me', mode:'whole' },
     { sel:'#recap3', key:'recap3', label:'Module 3: Wrap-up', mode:'whole' },
-    { sel:'#gdrep', key:'gdrep', label:'Module 3: Go deeper, Reputation Rules', mode:'whole' },
     { sel:'#focus', key:'focus', label:'Your brief: Your focus area', mode:'whole' },
     { sel:'#draft', key:'draft', label:'Your brief: Draft the brief', mode:'whole' },
     { sel:'#quiz', key:'quiz', label:'Your brief: Quick check', mode:'whole' },
@@ -36,48 +28,45 @@ window.LR_COURSE = {
     { sel:'#learn', key:'learn', label:'Keep going', mode:'whole', extras:['footer'] }
   ],
   SECTIONS:[
-    { k:'route', no:'01', name:'This week', how:'Preview the three modules and your brief' },
-    { k:'mission', no:'02', name:'The vision', how:'Open all three areas of focus' },
-    { k:'problems', no:'03', name:'Four problems', how:'Open all four problems' },
-    { k:'engine', no:'04', name:'The reputation engine', how:'Sort six moments' },
-    { k:'numbers', no:'05', name:'Momentum', how:'Guess all five numbers' },
-    { k:'growth', no:'06', name:'Four growth sites', how:'Open all four sites' },
-    { k:'margin', no:'07', name:'Mission and margin', how:'Find the strongest call in two situations' },
-    { k:'peers', no:'08', name:'Why it matters now', how:'See all eight slides' },
-    { k:'portfolio', no:'09', name:'The whole cost', how:'Find six hidden costs' },
-    { k:'statement', no:'10', name:'Your statement', how:'Fill in three of four lines' },
-    { k:'trust', no:'11', name:'The trust radar', how:'Open all four drivers' },
-    { k:'terrain', no:'12', name:'The reputation terrain', how:'Place six stories' },
-    { k:'timing', no:'13', name:'Act while you have control', how:'Sort six actions' },
-    { k:'pressure', no:'14', name:'Calls under pressure', how:'Find the strongest call in three situations' },
-    { k:'repstatement', no:'15', name:'Your reputational statement', how:'Fill in three of four lines' },
-    { k:'focus', no:'16', name:'Your focus area', how:'Sort five challenges' },
-    { k:'draft', no:'17', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz', no:'18', name:'Quick check', how:'Score 6 of 8' },
-    { k:'nextstep', no:'19', name:'This week', how:'Commit to all four moves' }
+    { k:'mission', no:'01', name:'The vision', how:'Match four moments to the problem they speak to' },
+    { k:'engine', no:'02', name:'The reputation engine', how:'Sort four moments by flywheel' },
+    { k:'numbers', no:'03', name:'Momentum', how:'Guess all five numbers' },
+    { k:'recap1', no:'04', name:'Module 1 for my team', how:'Write one rule and one move' },
+    { k:'margin', no:'05', name:'Mission and margin', how:'Find the strongest call in two situations' },
+    { k:'statement', no:'06', name:'Your mission and margin statement', how:'Fill in three of four lines' },
+    { k:'recap2', no:'07', name:'Module 2 for my team', how:'Write one rule and one move' },
+    { k:'trust', no:'08', name:'The trust radar', how:'Find the strongest call in two situations' },
+    { k:'terrain', no:'09', name:'The reputation terrain', how:'Place four stories' },
+    { k:'timing', no:'10', name:'Act while you have control', how:'Sort six actions' },
+    { k:'repstatement', no:'11', name:'Your reputational statement', how:'Fill in three of four lines' },
+    { k:'recap3', no:'12', name:'Module 3 for my team', how:'Write one rule and one move' },
+    { k:'focus', no:'13', name:'Your focus area', how:'Sort five challenges' },
+    { k:'draft', no:'14', name:'Draft sections 1 to 3', how:'Write all three sections in your brief' },
+    { k:'quiz', no:'15', name:'Quick check', how:'Score 6 of 8' },
+    { k:'nextstep', no:'16', name:'This week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
   STOPS:[
     {
       h:'Module 1: Vision, Strategy &amp; the Future of <em>Vanderbilt</em>',
-      p:'What the vision asks of you, and how reputation becomes resources.',
-      tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'Go deeper: the value stick']
+      p:'The vision, the four problems it answers, and how reputation becomes resources.',
+      tags:['The vision and four problems', 'The reputation engine', 'Momentum', 'Rule and move for your team']
     },
     {
       h:'Module 2: Mission and <em>Margin</em>',
-      p:'The Chancellor on mission and margin, then the trade-offs.',
-      tags:['A video', 'Two situations', 'The Chancellor’s slides', 'The whole cost', 'Your statement']
+      p:'The Chancellor on mission and margin, his slides, and your pod’s statement.',
+      tags:['A video and two situations', 'The Chancellor’s slides', 'Your statement', 'Rule and move for your team']
     },
     {
       h:'Module 3: Reputational <em>Stewardship</em>',
-      p:'The trust radar, where reputation is made, when to act, and three calls under pressure.',
-      tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement']
+      p:'The trust radar, where reputation is made, when to act, and your pod’s statement.',
+      tags:['A video and two situations', 'The terrain', 'When to act', 'Your statement', 'Rule and move for your team']
     },
     {
       h:'Start your <em>brief</em>',
       p:'Pick your focus area and draft sections 1 to 3 for your pod. Course Two covers sections 4 to 7.',
-      tags:['Focus area', 'Draft', 'Quick check']
+      tags:['Focus area', 'Draft', 'Quick check', 'This week']
     }
   ],
   BEST_LABEL:'The strongest call: ',
@@ -124,47 +113,6 @@ window.LR_COURSE = {
       x:'The 2025 team had the first 10-win regular season in program history. Men’s basketball went 27-9 in 2025-26, and women’s basketball finished 29-5 and reached the Sweet 16.'
     }
   ],
-  CITIES:{
-    nyc:{
-      name:'Vanderbilt NYC',
-      focus:'New York City, NY',
-      narr:'growth/f1',
-      line:'Vanderbilt’s first campus beyond Nashville, open since August 2026: 13 buildings on 2.7 acres in Chelsea, with an undergraduate semester program and a Master of Science in Business and Technology.',
-      meet:'Any service a student or colleague in New York needs from Nashville.',
-      url:'https://www.vanderbilt.edu/nyc/'
-    },
-    wpb:{
-      name:'Vanderbilt WPB',
-      focus:'West Palm Beach, FL',
-      narr:'growth/f2',
-      line:'A graduate campus for business, engineering, data science, and AI, with programs planned in finance and in space and defense technology: about 1,000 graduate students and 100 faculty.',
-      meet:'The programs, hiring, and systems built for a second home.',
-      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/west-palm-beach/'
-    },
-    sf:{
-      name:'Vanderbilt SF',
-      focus:'San Francisco, CA',
-      narr:'growth/f3',
-      line:'Opens for the 2027 to 2028 school year on the California College of the Arts campus, home to the Huang College of Art, Architecture and Design, which blends art and design with engineering and AI: about 1,000 students.',
-      meet:'Partnerships with the technology and creative sectors.',
-      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/san-francisco/'
-    },
-    chattanooga:{
-      name:'Quantum Innovation',
-      focus:'Chattanooga, TN',
-      narr:'growth/f4',
-      line:'The Institute for Quantum Innovation, launched with EPB in July 2026: about 250 researchers, faculty, and staff, working with the first U.S. site with commercial access to both a trapped-ion quantum computer and a quantum network.',
-      meet:'Research administration and partnerships across Tennessee.',
-      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/quantum-innovation/'
-    },
-    nashville:{
-      name:'Nashville',
-      focus:'Home',
-      line:'Home since 1873: the residential campus and the heart of the university. Every growth site runs on the systems built here.',
-      meet:'Every day. The back office Nashville already has is what each new site needs on day one.',
-      url:'https://www.vanderbilt.edu/'
-    }
-  },
   NUM_PROG:'numbers',
   CHARTS:[
     {
@@ -281,6 +229,33 @@ window.LR_COURSE = {
     }
   ],
   DRILLS:{
+    problems:{
+      opts:['Speed and scale', 'Relevance', 'Trust', 'Value of a degree'],
+      prog:'mission',
+      verb:'sorted',
+      items:[
+        {
+          s:'A research partner walks away after a contract sits in approvals for four months.',
+          a:0,
+          x:'Speed and scale. The first problem: research universities lack the capabilities to deliver innovation at the speed the modern world needs.'
+        },
+        {
+          s:'A family asks an admissions counselor whether a degree is still worth the cost.',
+          a:3,
+          x:'Value of a degree. The fourth problem: a university education is no longer viewed as essential for achieving the American dream.'
+        },
+        {
+          s:'A campus event is reported as proof that the university welcomes only one side of a debate.',
+          a:2,
+          x:'Trust. The third problem: elite universities are viewed as politicized bastions of ideology.'
+        },
+        {
+          s:'A state legislator has never heard how a campus research result helped people in her district.',
+          a:1,
+          x:'Relevance. The second problem: research universities are no longer viewed as primary drivers of solutions to the problems people face.'
+        }
+      ]
+    },
     engine:{
       opts:['Execution with ambition', 'Values-driven leadership', 'Athletics momentum'],
       prog:'engine',
@@ -289,112 +264,22 @@ window.LR_COURSE = {
         {
           s:'A new residential college opens on schedule, and students move in the week it was promised.',
           a:0,
-          x:'Big things, done well. Delivery on a promise is the result that builds reputation.'
+          x:'An ambitious goal, delivered as promised. That result feeds the reputation loop.'
         },
         {
           s:'A campus forum where speakers who disagree sharply are each heard in full.',
           a:1,
-          x:'Open forums and civil discourse. Trust is earned when every view gets a fair hearing.'
-        },
-        {
-          s:'The university declines to take an official position on a political controversy, so every voice on campus stays free to speak.',
-          a:1,
-          x:'Institutional neutrality. It protects open inquiry, which is the point of a university.'
-        },
-        {
-          s:'A national TV audience watches a big win, and alumni giving and applications rise the next month.',
-          a:2,
-          x:'Attention that turns into affinity. Athletics puts the name in front of people who never read a research paper.'
-        },
-        {
-          s:'A growth campus enrolls its first students with programs, systems, and services ready on day one.',
-          a:0,
-          x:'Ambition, executed. The announcement is the promise; working systems on day one are the proof.'
+          x:'Open forums and civil discourse: two of the values the Chancellor names.'
         },
         {
           s:'A sold-out home game becomes the first campus visit for hundreds of prospective families.',
           a:2,
-          x:'Momentum on the field becomes a first impression of the university. Then operations have to match it.'
-        }
-      ]
-    },
-    valuestick:{
-      opts:['Raises willingness to pay', 'Lowers willingness to sell', 'Activity, not strategy'],
-      prog:'valuestick',
-      verb:'sorted',
-      items:[
-        {
-          s:'Admitted students get a financial aid answer in three days instead of three weeks.',
-          a:0,
-          x:'Families weighing two offers value speed and clarity. Same aid, faster, and Vanderbilt is the easier yes.'
+          x:'Momentum on the field becomes a first impression of the university.'
         },
         {
-          s:'Staff finish a purchase request in one system instead of three.',
+          s:'The university declines to take an official position on a political controversy.',
           a:1,
-          x:'No one outside campus sees it. Colleagues do. Less friction makes Vanderbilt a better place to stay and do good work.'
-        },
-        {
-          s:'A new monthly report no one asked for and no decision depends on.',
-          a:2,
-          x:'It costs time and moves no one’s choice. If no stakeholder decides differently, it is activity.'
-        },
-        {
-          s:'Major donors get one coordinated Vanderbilt relationship instead of five separate asks.',
-          a:0,
-          x:'Donors who support several areas give the most. A better donor experience raises what they are willing to give.'
-        },
-        {
-          s:'A clear career path for early-career staff in your division.',
-          a:1,
-          x:'Growth and a future make good people choose Vanderbilt and stay. That widens the value from the bottom.'
-        },
-        {
-          s:'Renaming a committee, with the same members and the same charge.',
-          a:2,
-          x:'A new name changes nothing anyone experiences. Brand matters only when a real difference stands behind it.'
-        }
-      ]
-    },
-    fullcost:{
-      opts:['Follow the cash', 'Upkeep and depreciation', 'Space'],
-      prog:'portfolio',
-      verb:'found',
-      items:[
-        {
-          s:'A donor gives $20 million to build a new lab building.',
-          opts:['Follow the cash', 'Upkeep and depreciation', 'Debt and ratings'],
-          a:1,
-          x:'The gift covers construction. The building costs money every year it stands: upkeep, renewal, and depreciation.'
-        },
-        {
-          s:'A five-year pledge funds a new program that starts hiring this fall.',
-          opts:['Follow the cash', 'Space', 'Research costs'],
-          a:0,
-          x:'The budget says funded; the cash arrives over five years. Someone covers the gap until it does.'
-        },
-        {
-          s:'A department asks for two more offices for a growing team.',
-          opts:['Research costs', 'Space', 'Debt and ratings'],
-          a:1,
-          x:'Space is a resource with a cost: upkeep, utilities, and the next request it displaces.'
-        },
-        {
-          s:'A new federal grant pays for researchers and equipment.',
-          opts:['Research costs', 'Follow the cash', 'Upkeep and depreciation'],
-          a:0,
-          x:'Research costs more than its direct dollars. Facilities and administrative costs, from labs to compliance, are real.'
-        },
-        {
-          s:'A new named scholarship will fund ten students a year.',
-          opts:['Space', 'Scholarships need analysis', 'Debt and ratings'],
-          a:1,
-          x:'Scholarships and fundraising deserve the same financial analysis as any commitment: what it covers, for how long, and what happens when the fund falls short.'
-        },
-        {
-          s:'The university borrows to build a new residence hall.',
-          opts:['Debt and ratings', 'Follow the cash', 'Space'],
-          a:0,
-          x:'Borrowing carries interest and limits for years, and it shapes the credit rating that sets the price of the next loan.'
+          x:'Institutional neutrality, another of the values the Chancellor names. It keeps every voice on campus free to speak.'
         }
       ]
     },
@@ -438,32 +323,22 @@ window.LR_COURSE = {
         {
           s:'A wire service runs three paragraphs on a new dean’s appointment.',
           a:0,
-          x:'Low importance, low interest. Get the facts right and fast; that is the whole job.'
+          x:'Low importance, low interest: simple reporting. Get the facts right and fast.'
         },
         {
           s:'A national magazine analyzes research funding with data and interviews with experts.',
           a:1,
-          x:'Important, but a niche audience. Bring experts and data, and credibility transfers from them to you.'
+          x:'Important, with a niche audience: in-depth coverage, which runs on experts and data.'
         },
         {
           s:'Cable panels replay a viral clip from a campus event for two days.',
           a:2,
-          x:'High interest, little substance. Keep one clear, consistent line, and do not feed the cycle.'
+          x:'High interest, light substance: extensive reporting, the cable news infotainment corner.'
         },
         {
           s:'A TV newsmagazine tells one family’s emotional story about a university decision.',
           a:3,
-          x:'Important and popular. Data alone will lose to testimony; lead with empathy and a human voice of your own.'
-        },
-        {
-          s:'A trade newsletter reports that your office switched software vendors.',
-          a:0,
-          x:'Routine and quiet. Accurate facts, quickly. Watch only for signs it is starting to migrate.'
-        },
-        {
-          s:'A long-form report weighs the evidence on whether a college degree is worth the cost.',
-          a:1,
-          x:'A serious question for society with a thoughtful audience. Your outcomes data and your experts matter most here.'
+          x:'High on both: mass-market coverage, which runs on testimony and drama. Data alone will not carry your side.'
         }
       ]
     },
@@ -475,27 +350,27 @@ window.LR_COURSE = {
         {
           s:'Before admissions season, your team fixes a deadline that families often misread.',
           a:0,
-          x:'Prevention: remove the problem before anyone feels it. The cheapest crisis is the one that never starts.'
+          x:'Prevention: remove the problem before anyone feels it.'
         },
         {
           s:'Ahead of a high-profile campus event, you agree who speaks for the unit and draft a holding statement.',
           a:0,
-          x:'Preparation: decide roles and words while control is high, not when the phone rings.'
+          x:'Preparation: decide roles and words while control is high.'
         },
         {
           s:'A staff member sees a post about your office gaining traction and alerts Communications that morning.',
           a:1,
-          x:'Identification: spotting it early is the optimal time to act. The earlier you see it, the more control you keep.'
+          x:'Identification: spotting it early keeps you near the optimal time to act.'
         },
         {
           s:'You pause the affected process and tell the people affected what happened and what comes next.',
           a:1,
-          x:'Containment: stop the spread and start with the people affected. Empathy and transparency, in that order.'
+          x:'Containment: stop the spread, starting with the people affected.'
         },
         {
           s:'You fix the root cause and announce the fix, with an owner and a date.',
           a:1,
-          x:'Solution: expertise and commitment on the radar. Then report back when you said you would.'
+          x:'Solution: expertise and commitment from the trust radar.'
         },
         {
           s:'Two weeks later, your team reviews what happened and updates its checklist.',
@@ -596,50 +471,24 @@ window.LR_COURSE = {
           out:'People needed to hear from someone. Neutral is not the same as silent.'
         }
       ]
-    },
-    r3:{
-      h:'Situation 3 · The tempting sponsor',
-      s:'A company offers generous sponsorship if the Vanderbilt name appears prominently in its consumer ads.',
-      opts:[
-        {
-          t:'Accept. The program needs the money.',
-          b:'Lending the name',
-          best:false,
-          out:'The money is real. So is attaching Vanderbilt to claims you do not control.'
-        },
-        {
-          t:'Bring in the offices that govern the name and sponsorships, and negotiate terms that protect it.',
-          b:'Stewardship',
-          best:true,
-          out:'The name is an asset you borrow. Protect it, and keep the partnership if fair terms are possible.'
-        },
-        { t:'Decline any use of the name.', b:'Safe, and maybe too safe', best:false, out:'You may turn away a partner who would have accepted fair terms.' }
-      ]
     }
   },
-  CALL_SETS:{ margin:['m1', 'm2'], pressure:['r1', 'r2', 'r3'] },
+  CALL_SETS:{ margin:['m1', 'm2'], pressure:['r1', 'r2'] },
   CALL_PROG:{
     margin:{ prog:'margin', noun:'situations', status:'#marginStatus', narr:'margin/s' },
-    pressure:{ prog:'pressure', noun:'situations', status:'#pressureStatus', narr:'pressure/s' }
+    pressure:{ prog:'trust', noun:'situations', status:'#trustStatus', narr:'trust/s' }
   },
   FEEDBACK:{
     statement:{ mission:['who'], cost:['money'], ret:['number'], quad:['money', 'when'] },
-    draft:{ area:['area'], challenge:['who', 'number'], why:['stakes'], priorities:['vision'] },
     repstatement:{ stmt:['who'], up:['who'], risk:[], mit:['who'] },
-    recap1:{ txt:['own'] },
-    me1:{ txt:['own', 'when'] },
-    recap2:{ txt:['own'] },
-    me2:{ txt:['own', 'when'] },
-    recap3:{ txt:['own'] },
-    me3:{ txt:['own', 'when'] }
+    recap1:{ txt:['own'], apply:['when', 'action'] },
+    recap2:{ txt:['own'], apply:['when', 'action'] },
+    recap3:{ txt:['own'], apply:['when', 'action'] }
   },
   BUILDS:{
-    me1:{ title:'As a manager, after Module 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap1:{ title:'Module 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after Module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2:{ title:'Module 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me3:{ title:'As a manager, after Module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap3:{ title:'Module 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap1:{ title:'Module 1, for my team', fields:['txt', 'apply'], need:2, tpl:function(v){ return 'OUR RULE: ' + (v.txt || '[not written yet]') + '\nTHIS WEEK WITH MY TEAM: ' + (v.apply || '[not written yet]'); } },
+    recap2:{ title:'Module 2, for my team', fields:['txt', 'apply'], need:2, tpl:function(v){ return 'OUR RULE: ' + (v.txt || '[not written yet]') + '\nTHIS WEEK WITH MY TEAM: ' + (v.apply || '[not written yet]'); } },
+    recap3:{ title:'Module 3, for my team', fields:['txt', 'apply'], need:2, tpl:function(v){ return 'OUR RULE: ' + (v.txt || '[not written yet]') + '\nTHIS WEEK WITH MY TEAM: ' + (v.apply || '[not written yet]'); } },
     statement:{
       title:'My mission and margin statement',
       fields:['mission', 'cost', 'ret', 'quad'],
@@ -654,25 +503,21 @@ window.LR_COURSE = {
       tpl:function(v){
       return 'STATEMENT: ' + (v.stmt || '[why this project matters for Vanderbilt’s credibility and visibility]') + '\nUPSIDE: ' + (v.up || '[who will notice, and what they will say]') + '\nTOP RISKS: ' + (v.risk || '[what could go wrong in public]') + '\nHOW WE PROTECT TRUST: ' + (v.mit || '[transparency, expertise, commitment, empathy]'); }
     },
-    draft:{
-      title:'My draft of brief sections 1 to 3',
-      fields:['area', 'challenge', 'why', 'priorities'],
-      need:4,
-      tpl:function(v, b){
-      return '1. FOCUS AREA: ' + (v.area || '[choose one]') + '\n\n2. THE CHALLENGE: ' + (v.challenge || '[who is affected, and what happens today]') + '\n\nWHY IT MATTERS STRATEGICALLY: ' + (v.why || '[what it costs to wait, in mission, money, people, or reputation]') + '\n\n3. CONNECTION TO VANDERBILT\u2019S PRIORITIES: ' + (v.priorities || '[the vision line and focus area it serves]') +
-        (b('statement', 'mission') ? '\n\nMISSION AND MARGIN: strengthens the mission by ' + b('statement', 'mission') : '') + (b('repstatement', 'stmt') ? '\n\nREPUTATION: ' + b('repstatement', 'stmt') : ''); }
-    }
   },
   COMMITS:[
     ['Meet your pod', 'About 45 minutes. Agree on one challenge and one focus area.'],
-    ['Share your draft', 'Put your sections 1 to 3 in the pod’s shared document.'],
+    ['Share sections 1 to 3', 'Open your brief, then copy or download your sections for the pod’s shared document.'],
     ['Respond to Teams prompt 1', 'Post your response under Discussions in the Teams channel by Friday, November 6.'],
     ['Reply to a colleague', 'Highlight a connection or perspective that strengthens a colleague’s idea.']
   ],
   tell:function(which, get){
     var b = function(k, f){ return (get('b-' + k + '-' + f) || '').trim(); };
     if(which === 'teams'){
-      var ch = b('draft', 'challenge'), area = b('draft', 'area');
+      /* the challenge and focus area now live in the brief itself (lrb-s2, lrb-s1); older course drafts still count */
+      var raw = function(k){ try{ return (localStorage.getItem(k) || '').trim(); }catch(e){ return ''; } };
+      var line = raw('lrb-s2').split('\n').filter(function(x){ return /^The challenge:/.test(x); })[0] || raw('lrb-s2').split('\n')[0] || '';
+      line = line.replace(/^(Opening|The challenge|What could be|Why it matters strategically):\s*/, '');
+      var ch = ((line.match(/^[^.!?]*/) || [''])[0]).trim() || b('draft', 'challenge'), area = raw('lrb-s1') || b('draft', 'area');
       return 'This week’s vision work landed for me here: ' + (ch ? 'our pod is looking at ' + ch.replace(/[.!?]$/, '') + (area ? ', under ' + area : '') + '.' : '[one challenge you care about, and why].') + ' One way I can connect my own team’s work to the vision is [one change you will make]. What would you add?';
     }
     return '';
@@ -680,15 +525,15 @@ window.LR_COURSE = {
   QUIZ:[
     {
       seg:'Strategy',
-      q:'A new growth campus needs hiring, IT, and student services working on day one. Which area of focus does that work serve?',
+      q:'Your pod’s challenge: a research partner walked away after a contract sat in approvals for four months. Which of the Chancellor’s four problems does it speak to most directly?',
       opts:[
-        'Exceptional Core Operations',
-        'Industry Leadership',
-        'Neither; campuses are a facilities project',
-        'Only the campus leadership team'
+        'Universities lack the capabilities to deliver innovation at speed and scale',
+        'Elite universities are viewed as politicized',
+        'A degree is no longer seen as essential to the American dream',
+        'None; it is only an internal process issue'
       ],
       a:0,
-      x:'Core operations are the fuel for bold initiatives. The campus is bold; making it run at speed is Exceptional Core Operations.'
+      x:'The first problem: the capability gap in speed and scale. Naming the problem gives your brief its why it matters.'
     },
     {
       seg:'Strategy',
@@ -700,9 +545,9 @@ window.LR_COURSE = {
     {
       seg:'Strategy',
       q:'After a burst of national attention, applications and gifts both rose. Which idea explains why?',
-      opts:['The three areas of focus', 'The reputation feedback loop', 'Counting the whole cost', 'The trust radar'],
+      opts:['The three areas of focus', 'The reputation feedback loop', 'Mission and margin', 'The trust radar'],
       a:1,
-      x:'Reputation attracts resources, like students and funding, and the results build more reputation.'
+      x:'Reputation attracts resources, like talent and funding, and what they achieve builds more reputation.'
     },
     {
       seg:'Margin',
@@ -726,7 +571,7 @@ window.LR_COURSE = {
         'It is important to the mission.'
       ],
       a:1,
-      x:'Specific mission benefit, cost and source, return, and the whole cost after year one.'
+      x:'Specific mission benefit, cost and source, return, and the long-term trade-off after year one.'
     },
     {
       seg:'Reputation',
@@ -738,19 +583,19 @@ window.LR_COURSE = {
         'Fix it quietly'
       ],
       a:1,
-      x:'Transparency, expertise, commitment, and empathy, with one university voice.'
+      x:'It reaches all four drivers on the trust radar: transparency, expertise, commitment, and empathy.'
     },
     {
       seg:'Reputation',
-      q:'Which statement best describes reputation as infrastructure?',
+      q:'A story about a campus decision moves from a short wire item to a national TV segment built around one family’s experience. What should your response lead with?',
       opts:[
-        'A campaign the communications office runs each year',
-        'Something only rankings measure',
-        'A system built every day by operations and decisions, which turns visibility into resources',
-        'A crisis plan'
+        'More data tables',
+        'No comment until it fades',
+        'A longer press release',
+        'Testimony from the people affected, backed by the facts'
       ],
-      a:2,
-      x:'A system, a source of options, a platform for momentum, and a converter of visibility into resources.'
+      a:3,
+      x:'The story has migrated to mass-market coverage, which runs on testimony and drama. Data alone will not carry it.'
     },
     {
       seg:'Reputation',
@@ -765,7 +610,7 @@ window.LR_COURSE = {
       x:'Reputation dynamics: as an issue grows, control falls and the stakes rise. The optimal time to act is early, before it feels urgent.'
     }
   ],
-  SCEN_POS:{ m1:0, m2:2, r1:2, r2:0, r3:1 },
+  SCEN_POS:{ m1:0, m2:2, r1:2, r2:0 },
   NUMS_POS:[1, 0, 2, 0, 1],
   QUIZ_POS:[1, 3, 0, 2, 1, 0, 3, 2],
   QUIZ_PASS:6,
@@ -775,68 +620,48 @@ window.LR_COURSE = {
     due:'Fri, Nov 6',
     dueLabel:'finish this course by',
     goals:[
-      '<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.',
-      '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.',
-      '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.',
-      '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.',
-      '<b>Time</b> your response: act before, during, and after an issue while you still have control.',
-      '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.',
+      '<b>Explain</b> Vanderbilt’s vision, its three areas of focus, and the four problems it answers.',
+      '<b>Trace</b> how reputation turns into resources, and read the momentum numbers as that loop.',
+      '<b>Weigh</b> a decision on mission and margin, and state your pod’s case in both.',
+      '<b>Judge</b> a response with the trust radar, place a story on the terrain, and time your response.',
+      '<b>Turn</b> each module into one rule and one move for your team.',
       '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'
     ],
     lessons:[
       {
         title:'Vision, Strategy & the Future of Vanderbilt',
         no:'Module 1',
-        keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth'],
-        deep:['valuestick'],
-        recap:'recap1',
+        keys:['mission', 'engine', 'numbers', 'recap1'],
         ideas:[
           [
             'The vision is an instruction.',
             'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'
           ],
+          ['A strategy answers problems.', 'Speed and scale, relevance, trust, and the value of a degree.'],
           [
             'Reputation is an engine.',
-            'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up.'
-          ],
-          [
-            'Bold has an address.',
-            'Four growth sites carry the vision beyond Nashville, and each one runs on core operations.'
+            'Reputation attracts talent, funding, partnerships, and access and influence; three flywheels speed it up.'
           ]
         ]
       },
       {
         title:'Mission and Margin',
         no:'Module 2',
-        keys:['margin', 'peers', 'portfolio', 'statement'],
-        recap:'recap2',
+        keys:['margin', 'statement', 'recap2'],
         ideas:[
-          ['No margin, no mission.', 'Mission is purpose and margin is capacity. A leader stewards both.'],
-          [
-            'Count the whole cost.',
-            'Follow the cash, and count buildings, space, research costs, and debt past year one.'
-          ],
-          ['Answer both questions.', 'Every proposal names its mission benefit, its cost and source, and its return.']
+          ['Mission is purpose; margin is capacity.', 'Mission without margin is unsustainable, and margin without mission is meaningless.'],
+          ['Financial discipline enables strategic investments.', 'Building financial capacity is everybody’s job.'],
+          ['Answer both questions.', 'Name the mission benefit, the cost and its source, the return, and the trade-off after year one.']
         ]
       },
       {
         title:'Reputational Stewardship',
         no:'Module 3',
-        keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'],
-        recap:'recap3',
+        keys:['trust', 'terrain', 'timing', 'repstatement', 'recap3'],
         ideas:[
-          [
-            'Reputation is infrastructure.',
-            'It turns visibility into talent, funding, partners, and access, and it is built every day.'
-          ],
-          [
-            'Trust has four drivers, and timing matters.',
-            'Transparency, expertise, commitment, and empathy; a crisis finds the dent in the radar. Act early, while you still have control, because stories migrate toward the loud corner of the terrain.'
-          ],
-          [
-            'Every leader is a steward.',
-            'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'
-          ]
+          ['Trust has four drivers.', 'Transparency, expertise, commitment, and empathy. A strong response reaches all four.'],
+          ['Stories migrate.', 'Coverage sits on societal importance and audience interest; up and to the right, testimony and drama beat data.'],
+          ['Act early.', 'The optimal time to act is while control is high: prevent and prepare before, identify, contain, and solve during, and learn after.']
         ]
       },
       {
@@ -853,7 +678,7 @@ window.LR_COURSE = {
         ]
       }
     ],
-    work:['statement', 'repstatement', 'draft'],
+    work:['recap1', 'statement', 'recap2', 'repstatement', 'recap3'],
     footer:'Your pod’s brief is due Friday, November 20, three pages at most.'
   },
   PRINT_TITLE:'Course One, my weekly <em>takeaway</em>.',

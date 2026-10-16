@@ -1,32 +1,26 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE TWO · content ══════════
    Module 4: Communication, Storytelling & Brand; Module 5: Entrepreneurial Mindset;
    Module 6: High-Performing Teams. Week of November 9.
+   Teaching content traces to the presenters' decks, the Chancellor's intro videos, and
+   (Module 6) Candice Storey Lee's cited interviews. Practice items are hypothetical.
    Read by ../assets/js/pager.js and ../assets/js/lr-engine.js. No em or en dashes. */
 window.LR_COURSE = {
   PLAN:[
     { sel:'section.hero', key:'home', label:'Welcome', mode:'whole' },
     { sel:'#week', key:'route', label:'This week', mode:'whole' },
     { sel:'#brand', key:'brand', label:'Module 4: Brand and reputation', mode:'whole' },
-    { sel:'#fighter', key:'fighter', label:'Module 4: Spikes and systems', mode:'whole' },
     { sel:'#ground', key:'ground', label:'Module 4: The ground game', mode:'whole' },
     { sel:'#story', key:'story', label:'Module 4: Your storyline', mode:'whole' },
-    { sel:'#me1', key:'me1', label:'Module 4: What this means for me', mode:'whole' },
-    { sel:'#recap1', key:'recap1', label:'Module 4: Wrap-up', mode:'whole' },
-    { sel:'#gdstory', key:'gdstory', label:'Module 4: Go deeper, the shape of a great talk', mode:'whole' },
+    { sel:'#wrap4', key:'wrap4', label:'Module 4: Wrap-up', mode:'whole' },
     { sel:'#venture', key:'swot', label:'Module 5: Entrepreneurial mindset', mode:'whole' },
     { sel:'#turnaround', key:'numbers', label:'Module 5: The turnaround', mode:'whole' },
     { sel:'#moves', key:'moves', label:'Module 5: The change moves', mode:'whole' },
     { sel:'#collab', key:'collab', label:'Module 5: Radical collaboration', mode:'whole' },
     { sel:'#reframe', key:'reframe', label:'Module 5: Your pilot', mode:'whole' },
-    { sel:'#me2', key:'me2', label:'Module 5: What this means for me', mode:'whole' },
-    { sel:'#recap2', key:'recap2', label:'Module 5: Wrap-up', mode:'whole' },
-    { sel:'#kind', key:'kind', label:'Module 5: Go deeper, kinds of problems', mode:'whole' },
-    { sel:'#teams', key:'lee', label:'Module 6: High-performing teams', mode:'whole' },
-    { sel:'#principles', key:'principles', label:'Module 6: Six principles', mode:'whole' },
-    { sel:'#me3', key:'me3', label:'Module 6: What this means for me', mode:'whole' },
-    { sel:'#recap3', key:'recap3', label:'Module 6: Wrap-up', mode:'whole' },
-    { sel:'#zone', key:'teamcalls', label:'Module 6: Go deeper, the learning zone', mode:'whole' },
-    { sel:'#health', key:'health', label:'Module 6: Go deeper, team health', mode:'whole' },
+    { sel:'#wrap5', key:'wrap5', label:'Module 5: Wrap-up', mode:'whole' },
+    { sel:'#teams', key:'principles', label:'Module 6: High-performing teams', mode:'whole' },
+    { sel:'#teamcalls', key:'teamcalls', label:'Module 6: Your call', mode:'whole' },
+    { sel:'#wrap6', key:'wrap6', label:'Module 6: Wrap-up', mode:'whole' },
     { sel:'#metrics', key:'metrics', label:'Your brief: Strong metrics', mode:'whole' },
     { sel:'#draft', key:'draft', label:'Your brief: Draft the brief', mode:'whole' },
     { sel:'#quiz', key:'quiz', label:'Your brief: Quick check', mode:'whole' },
@@ -36,29 +30,31 @@ window.LR_COURSE = {
   ],
   SECTIONS:[
     { k:'route', no:'01', name:'This week', how:'Preview the three modules and your brief' },
-    { k:'brand', no:'02', name:'Brand or reputation', how:'Decide six statements' },
-    { k:'fighter', no:'03', name:'Spikes and systems', how:'Open all four moves' },
-    { k:'ground', no:'04', name:'The ground game', how:'Fill in three of four lines' },
-    { k:'story', no:'05', name:'Your storyline', how:'Fill in four of five lines' },
-    { k:'swot', no:'06', name:'The diagnosis', how:'Open all four quadrants' },
+    { k:'brand', no:'02', name:'Brand or reputation', how:'Decide four statements' },
+    { k:'ground', no:'03', name:'The ground game', how:'Find the strongest call in three moments' },
+    { k:'story', no:'04', name:'Your storyline', how:'Fill in three of four lines' },
+    { k:'wrap4', no:'05', name:'Module 4 wrap-up', how:'Synthesize, codify, apply' },
+    { k:'swot', no:'06', name:'The diagnosis', how:'Sort four weaknesses' },
     { k:'numbers', no:'07', name:'The turnaround', how:'Guess all four numbers' },
-    { k:'moves', no:'08', name:'The change moves', how:'Sort six tactics' },
+    { k:'moves', no:'08', name:'The change moves', how:'Sort four initiatives' },
     { k:'collab', no:'09', name:'Radical collaboration', how:'Fill in three of four lines' },
-    { k:'reframe', no:'10', name:'Your pilot', how:'Fill in four of five lines' },
-    { k:'lee', no:'11', name:'Meet the leader', how:'Fact or fiction, four statements' },
+    { k:'reframe', no:'10', name:'Your pilot', how:'Fill in three of four lines' },
+    { k:'wrap5', no:'11', name:'Module 5 wrap-up', how:'Synthesize, codify, apply' },
     { k:'principles', no:'12', name:'Six principles', how:'Open all six' },
-    { k:'metrics', no:'13', name:'Strong metrics', how:'Sort six metrics' },
-    { k:'draft', no:'14', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz', no:'15', name:'Quick check', how:'Score 6 of 8' },
-    { k:'nextstep', no:'16', name:'This week', how:'Commit to all four moves' },
-    { k:'carry', no:'17', name:'Carry it forward', how:'Fill in three of four lines' }
+    { k:'teamcalls', no:'13', name:'Your call', how:'Find the strongest call in three moments' },
+    { k:'wrap6', no:'14', name:'Module 6 wrap-up', how:'Synthesize, codify, apply' },
+    { k:'metrics', no:'15', name:'Strong metrics', how:'Sort four metrics' },
+    { k:'draft', no:'16', name:'Draft sections 4 to 7', how:'Write all four sections in your brief' },
+    { k:'quiz', no:'17', name:'Quick check', how:'Score 6 of 8' },
+    { k:'nextstep', no:'18', name:'This week', how:'Commit to all four moves' },
+    { k:'carry', no:'19', name:'Carry it forward', how:'Fill in two of three lines' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
   STOPS:[
     {
       h:'Module 4: Communication, Storytelling &amp; <em>Brand</em>',
-      p:'The Chancellor on communication, then your pod’s storyline.',
+      p:'The Chancellor on communication, brand and reputation, the ground game, then your pod’s storyline.',
       tags:['The Chancellor', 'Brand or reputation', 'The ground game', 'Your storyline']
     },
     {
@@ -68,8 +64,8 @@ window.LR_COURSE = {
     },
     {
       h:'Module 6: High-Performing <em>Teams</em>',
-      p:'How Candice Storey Lee builds teams that win, and a check on your pod.',
-      tags:['The Chancellor', 'Six principles', 'Go deeper: the learning zone']
+      p:'The Chancellor, then Candice Storey Lee’s principles, applied to three team moments.',
+      tags:['The Chancellor', 'Six principles', 'Your call']
     },
     { h:'Finish your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
   ],
@@ -78,11 +74,11 @@ window.LR_COURSE = {
   NUMS:[
     {
       lab:'New commitments, 2025',
-      q:'In 1998, new commitments were $63 million. In 2025?',
+      q:'2025 was a banner year for fundraising. New commitments reached about how much?',
       opts:['About $150M', 'About $250M', '$345M, a record'],
       a:2,
       big:'$345M',
-      x:'Another record-breaking year, and the FY26 forecast is $600M or more.'
+      x:'Another record-breaking year.'
     },
     {
       lab:'Cash, 2025',
@@ -101,12 +97,12 @@ window.LR_COURSE = {
       x:'Compound annual growth. Cash grew about 10% a year.'
     },
     {
-      lab:'The starting gap',
-      q:'Before the turnaround, Vanderbilt raised about how much per living alumnus? Leaders raised $1,200 to $3,000.',
-      opts:['$240', '$900', '$1,500'],
-      a:0,
-      big:'$240',
-      x:'Fiscal 2017 to 2021 average. A clear-eyed benchmark against the best, not the average.'
+      lab:'Return on investment',
+      q:'In 2020, each $1 invested in fundraising brought in about $4.26 in new commitments. By 2025?',
+      opts:['About $3', 'About $4.50', 'About $6'],
+      a:2,
+      big:'$6.13',
+      x:'Three-year rolling averages. Results grew faster than spending.'
     }
   ],
   NUM_PROG:'numbers',
@@ -116,99 +112,44 @@ window.LR_COURSE = {
       prog:'brand',
       verb:'decided',
       items:[
-        { s:'The university’s statement of its core values.', a:0, x:'What Vanderbilt says about itself. Necessary, and only half of the picture.' },
+        { s:'Your office’s published statement of its core values.', a:0, x:'What you say about yourself. Necessary, and only half of the picture.' },
         {
-          s:'A parent in Ohio telling a neighbor that Vanderbilt really takes care of its students.',
+          s:'A parent telling a neighbor that Vanderbilt really looks after its students.',
           a:1,
-          x:'Someone else talking about Vanderbilt. Peer to peer, this is where trust multiplies.'
+          x:'What others say about you. Peer to peer is where reputation impact multiplies.'
         },
-        { s:'A national news story written by an outside reporter.', a:1, x:'Earned, not owned. You shape it by what you do, not by what you say.' },
         {
           s:'A campaign ad on what makes a Vanderbilt education different.',
           a:0,
-          x:'Paid and owned communication is brand. It works when the experience matches the claim.'
+          x:'Paid media is something you say about yourself. It becomes reputation only when others repeat it.'
         },
+        { s:'A national news story written by an outside reporter.', a:1, x:'Earned media: others telling the story. You shape it by what you do and share.' }
+      ]
+    },
+    swot:{
+      opts:['People and culture', 'Process and systems'],
+      prog:'swot',
+      verb:'sorted',
+      items:[
+        { s:'Silo mentality.', a:0, x:'About how people work together, not about tools.' },
+        { s:'Out-of-date processes and systems.', a:1, x:'The only one of the four weaknesses about tools.' },
+        { s:'A rigid culture.', a:0, x:'Culture is people. That makes two of four so far.' },
         {
-          s:'A vendor telling another university that Vanderbilt pays on time and is easy to work with.',
-          a:1,
-          x:'Reputation is built in operations too. Staff leaders shape it every day.'
-        },
-        {
-          s:'The talking points your office writes for a program launch.',
+          s:'A hostile environment.',
           a:0,
-          x:'What you plan to say. It becomes reputation only when others repeat it, and believe it.'
+          x:'Three of four weaknesses were about people and culture, so the transformation started with people and culture.'
         }
       ]
     },
     moves:{
-      opts:['People and Culture', 'Collaboration', 'Motivation and Incentives', 'Process and Systems'],
+      opts:['People and Culture', 'Collaboration and Engagement', 'Motivation and Incentives', 'Process and Systems'],
       prog:'moves',
       verb:'sorted',
       items:[
-        { s:'Establish an internal academy to develop fundraisers.', a:0, x:'Growing and keeping top talent is where the transformation started.' },
-        { s:'Implement a new donor relationship system (CRM).', a:3, x:'The technology agenda, paired with better data and analytics.' },
-        { s:'Balanced performance goals for every gift officer.', a:2, x:'Ambitious goals and aligned motivation were key change drivers.' },
-        {
-          s:'Rebuild relationships with deans and campus partners.',
-          a:1,
-          x:'It reversed the team’s image as a poor partner, under the Chancellor’s call for radical collaboration.'
-        },
-        {
-          s:'Shared credit, so schools work together on gifts that cross Vanderbilt.',
-          a:1,
-          x:'We operate as One Vanderbilt. Donors who support several areas give the most.'
-        },
-        { s:'A kaizen culture of small, continuous improvements.', a:3, x:'Borrowed from manufacturing: look beyond best practices for new ideas.' }
-      ]
-    },
-    kind:{
-      opts:['Simple', 'Complicated', 'Complex', 'Chaotic'],
-      prog:'kind',
-      verb:'sorted',
-      items:[
-        { s:'Processing a routine form with a clear, documented procedure.', a:0, x:'Follow the best practice. Sense, categorize, respond.' },
-        {
-          s:'Choosing between three vendor systems with full specifications and references.',
-          a:1,
-          x:'There is a right answer and experts can find it. Sense, analyze, respond.'
-        },
-        {
-          s:'Getting more students to attend career programs they say they value.',
-          a:2,
-          x:'Behavior, many causes, no known answer. Probe with a small pilot, then scale what works.'
-        },
-        {
-          s:'A building loses power during a major event and no one knows the plan.',
-          a:3,
-          x:'Act first to make people safe. Then sense and respond, and write the plan afterward.'
-        }
-      ]
-    },
-    lee:{
-      opts:['Fact', 'Fiction'],
-      prog:'lee',
-      verb:'decided',
-      items:[
-        {
-          s:'Candice Storey Lee was the first Black woman to lead an athletics department in the SEC.',
-          a:0,
-          x:'Fact. She was named Vanderbilt’s athletic director in 2020, and also its first woman in the role.'
-        },
-        {
-          s:'She came to Vanderbilt from another university’s athletics department.',
-          a:1,
-          x:'Fiction. She arrived as a student-athlete, captained the women’s basketball team, and rose through Vanderbilt for more than two decades.'
-        },
-        {
-          s:'She holds three Vanderbilt degrees.',
-          a:0,
-          x:'Fact. A BS in human and organizational development, an MEd, and an EdD in higher education leadership and policy.'
-        },
-        {
-          s:'Vanderbilt football’s first ten-win season came in 2025.',
-          a:0,
-          x:'Fact. It followed the October 2024 upset of No. 1 Alabama. Coach Clark Lea, her 2020 hire, signed a six-year extension.'
-        }
+        { s:'Retain and develop top talent.', a:0, x:'People and culture: where the transformation started.' },
+        { s:'Implement a new CRM and introduce data analytics.', a:3, x:'Process and systems: the technology agenda.' },
+        { s:'Develop balanced performance indicators for gift officers.', a:2, x:'Motivation and incentives: ambitious goals, properly aligned.' },
+        { s:'Rebuild relationships with deans and other campus partners.', a:1, x:'Collaboration and engagement: partnerships inside and outside the university.' }
       ]
     },
     metrics:{
@@ -216,44 +157,99 @@ window.LR_COURSE = {
       prog:'metrics',
       verb:'sorted',
       items:[
-        { s:'Increase awareness of the new process.', a:1, x:'No number, no date. Try: 80% of administrators can find it in under a minute by March.' },
         {
           s:'Median days from hire to full system access drops from 21 to 2 in the pilot by March.',
           a:0,
           x:'A baseline, a target, a date, and an outcome people feel.'
         },
-        { s:'Launch the new website.', a:1, x:'A milestone, not a result. Put it in the timeline and measure what it changes.' },
-        { s:'At least 70% of staff use the tool in year one.', a:0, x:'A past pod’s metric. Clear and countable.' },
-        { s:'Number of emails sent promoting the program.', a:1, x:'Activity, not impact.' },
-        { s:'Pilot attendance rises 25% over last spring, and 60% of attendees come back.', a:0, x:'One number for reach and one for value.' }
+        { s:'Increase awareness of the new process.', a:1, x:'No number, no date. Try: 80% of administrators can find it in under a minute by March.' },
+        { s:'Number of emails sent promoting the program.', a:1, x:'Activity, not impact. Put it in the timeline and measure what it changes.' },
+        { s:'At least 70% of staff use the tool in year one.', a:0, x:'A past pod’s metric. Clear and countable.' }
       ]
     }
   },
   SCENARIOS:{
+    g1:{
+      h:'Moment 1 · The spike',
+      s:'Your unit’s program is featured in a national news story. Everyone in the office is thrilled.',
+      opts:[
+        { t:'Enjoy it. The story speaks for itself.', b:'A spike, alone', best:false, out:'A spike without a system is noise. The attention fades.' },
+        {
+          t:'Send the story with a short note to the partners who matter most, and plan next month’s story.',
+          b:'Spike plus drumbeat',
+          best:true,
+          out:'You carry the asset directly to priority people and keep a drumbeat going. That is the ground game.'
+        },
+        {
+          t:'Ask Communications to buy ads around it.',
+          b:'More air cover',
+          best:false,
+          out:'Air cover helps, but reputation creates resources when air cover is carried through the ground game.'
+        }
+      ]
+    },
+    g2:{
+      h:'Moment 2 · The quiet win',
+      s:'Your team cut a process from weeks to days. No one outside the office knows yet.',
+      opts:[
+        { t:'Wait until it is big enough for the news.', b:'Waiting for a spike', best:false, out:'Relevance comes first. Small true stories, shared steadily, are the drumbeat.' },
+        {
+          t:'Share the result with the people it helps most, and give your team a two-line version to tell.',
+          b:'Share and equip',
+          best:true,
+          out:'Ertel’s ask: share reputation assets to engage stakeholders, and equip others to share the story.'
+        },
+        {
+          t:'Mention it in the annual report.',
+          b:'Too far away',
+          best:false,
+          out:'Trust travels through proximity. Carry it person to person first.'
+        }
+      ]
+    },
+    g3:{
+      h:'Moment 3 · The hard question',
+      s:'At a partner event, a guest asks you a pointed question about a controversial topic in higher education.',
+      opts:[
+        { t:'Change the subject quickly.', b:'A missed chance', best:false, out:'Ertel: think of difficult or controversial topics as an opportunity to engage.' },
+        {
+          t:'Listen, engage respectfully, and connect your answer to what Vanderbilt stands for.',
+          b:'Engage',
+          best:true,
+          out:'“A little controversy is good for us,” in the Chancellor’s words. A hard topic is a chance to engage.'
+        },
+        {
+          t:'Say you cannot comment on anything like that.',
+          b:'Silence',
+          best:false,
+          out:'Going quiet lets the world tell the story. A brand exists by default or by design.'
+        }
+      ]
+    },
     t1:{
-      h:'Situation 1 · The Monday after',
+      h:'Moment 1 · The Monday after',
       s:'Your team’s project is being praised all the way to the Chancellor’s office. It is Monday morning and everyone is still celebrating.',
       opts:[
-        { t:'Let the glow carry the team for a few weeks.', b:'Momentum fades', best:false, out:'Without a next target, energy drifts.' },
+        { t:'Let the glow carry the team for a few weeks.', b:'Momentum fades', best:false, out:'Without a next goal, energy drifts.' },
         {
           t:'Celebrate people by name, capture what made it work, and point at the next goal.',
-          b:'Proud but not satisfied',
+          b:'Joy in the process',
           best:true,
-          out:'Lee says winning is a result; the joy is in the commitment to the process. Name what worked, then set the next goal.'
+          out:'Lee says winning is a result; the joy comes from commitment to the process. Name what worked, then set the next goal.'
         },
         {
           t:'Skip the celebration and go to the next deadline.',
-          b:'Earned joy, skipped',
+          b:'Joy skipped',
           best:false,
           out:'You lose the lesson and the energy that came with the win.'
         }
       ]
     },
     t2:{
-      h:'Situation 2 · The star’s bad moment',
+      h:'Moment 2 · The star’s bad moment',
       s:'Your best performer posts something unprofessional about a partner office. Colleagues across campus saw it.',
       opts:[
-        { t:'Let it go. They deliver more than anyone.', b:'A double standard', best:false, out:'The team learns the rules depend on who you are.' },
+        { t:'Let it go. They deliver more than anyone.', b:'A double standard', best:false, out:'The team learns the rules depend on who you are. Values decide every time.' },
         {
           t:'Name it as unacceptable, expect a repair, and keep supporting them.',
           b:'Own the response',
@@ -269,85 +265,44 @@ window.LR_COURSE = {
       ]
     },
     t3:{
-      h:'Situation 3 · The slow start',
-      s:'A manager you hired has the right values and a strong plan. A year in, results are below target and people are questioning the hire.',
+      h:'Moment 3 · The delay you cannot control',
+      s:'A vendor delay outside your control puts your team’s key project two weeks behind. The team is frustrated.',
       opts:[
-        { t:'Replace them before it gets worse.', b:'Too fast', best:false, out:'You may cut off a build just before it pays off.' },
+        { t:'Spend the team meeting on what the vendor got wrong.', b:'Lamenting', best:false, out:'Lee: it is easy to lament things you cannot control, and we never want to do that.' },
         {
-          t:'Look at the leading signs, adjust support, and set clear milestones for year two.',
-          b:'Patient, with eyes open',
+          t:'Acknowledge the frustration, then focus the team on what it controls this week.',
+          b:'Control the controllables',
           best:true,
-          out:'Lee backed Clark Lea through a 2-10 first season in 2021; in 2024 his team upset No. 1 Alabama.'
+          out:'Leaders create the conditions for success; then each person gives maximum effort on what they control.'
         },
-        { t:'Defend them and change nothing.', b:'Loyal, and unclear', best:false, out:'The team is left without a standard.' }
+        { t:'Lower the goal so no one is disappointed.', b:'Standards slip', best:false, out:'The team learns the standard bends when things get hard.' }
       ]
     }
   },
-  CALL_SETS:{ teamcalls:['t1', 't2', 't3'] },
-  CALL_PROG:{ teamcalls:{ prog:'teamcalls', noun:'situations', status:'#teamcallsStatus', narr:'teamcalls/s' } },
-  ASSESS:{
-    health:{
-      lo:'Not true',
-      hi:'Very true',
-      items:[
-        { d:'Safety', t:'It is safe to disagree or say an idea will not work.' },
-        { d:'Dependability', t:'When we commit to a task, we deliver it on time.' },
-        { d:'Clarity', t:'We know who owns each part of the brief, and when it is due.' },
-        { d:'Meaning', t:'The challenge we chose matters to me.' },
-        { d:'Impact', t:'If Vanderbilt adopted our idea, it would make a real difference.' }
-      ],
-      reads:{
-        Safety:{
-          high:'People speak up. Ask the quietest member to poke holes in the brief.',
-          low:'Open the next meeting by asking each person for one concern, and thank them for it.'
-        },
-        Dependability:{
-          high:'Work arrives when promised. Keep owners and dates visible through week four.',
-          low:'Give every open task one owner and one date, written where everyone can see it.'
-        },
-        Clarity:{ high:'Roles are clear. Make the brief just as clear.', low:'Agree today on who edits, who checks the seven requirements, and when.' },
-        Meaning:{
-          high:'Let that conviction show in the story the brief tells.',
-          low:'Ask each member why this challenge matters to them. Use the best answer in the opening.'
-        },
-        Impact:{ high:'Name who will notice the difference first.', low:'Shrink the pilot until everyone can see the difference it would make.' }
-      }
-    }
+  CALL_SETS:{ spikecalls:['g1', 'g2', 'g3'], teamcalls:['t1', 't2', 't3'] },
+  CALL_PROG:{
+    spikecalls:{ prog:'ground', noun:'moments', status:'#groundStatus', narr:'ground/s' },
+    teamcalls:{ prog:'teamcalls', noun:'moments', status:'#teamcallsStatus', narr:'teamcalls/s' }
   },
   FEEDBACK:{
-    story:{ person:['who'], is:['who', 'number'], could:['who'], ask:['ask'], aud:['who'] },
-    ground:{ asset:['number'], who:['who'], how:['when'], pass:['who'] },
-    reframe:{ assume:[], whatif:['whatif'], borrow:['outside'], pilot:['number', 'when'], proof:['number'] },
+    story:{ person:['who'], could:['who'], ask:['ask'], aud:['who'] },
+    reframe:{ whatif:['whatif'], borrow:['outside'], pilot:['number', 'when'], proof:['number'] },
     collab:{ share:['who'], critic:['who'], top:['who'], win:['number', 'when'] },
-    draft:{ people:['who'], process:[], tech:[], steps:['who', 'when'], metrics:['number', 'when'], sustain:['who', 'money'] },
-    carry:{ idea:[], live:['action'], teach:['who', 'when'], next:['who'] },
-    recap1:{ txt:['own'] },
-    me1:{ txt:['own', 'when'] },
-    recap2:{ txt:['own'] },
-    me2:{ txt:['own', 'when'] },
-    recap3:{ txt:['own'] },
-    me3:{ txt:['own', 'when'] }
+    carry:{ idea:[], live:['action'], teach:['who', 'when'] },
+    wrap4:{ syn:['own'], cod:['action'], app:['who', 'when'] },
+    wrap5:{ syn:['own'], cod:['action'], app:['who', 'when'] },
+    wrap6:{ syn:['own'], cod:['action'], app:['who', 'when'] }
   },
   BUILDS:{
-    me1:{ title:'As a manager, after Module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap1:{ title:'Module 4, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after Module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2:{ title:'Module 5, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me3:{ title:'As a manager, after Module 6', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap3:{ title:'Module 6, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    ground:{
-      title:'My ground game play',
-      fields:['asset', 'who', 'how', 'pass'],
-      need:3,
-      tpl:function(v){
-      return 'THE ASSET: ' + (v.asset || '[a story, a number, or a result]') + '\nWHO SHOULD HEAR IT: ' + (v.who || '[a priority person or group]') + '\nHOW I WILL SHARE IT: ' + (v.how || '[directly, and when]') + '\nHOW THEY PASS IT ON: ' + (v.pass || '[peer to peer]'); }
-    },
+    wrap4:{ title:'Module 4: synthesize, codify, apply', fields:['syn', 'cod', 'app'], need:3, tpl:function(v){ return 'SYNTHESIZE: ' + (v.syn || '[the idea, in my words]') + '\nCODIFY: ' + (v.cod || '[a habit, question, or rule my team will use]') + '\nAPPLY: ' + (v.app || '[what I will do with my team, and when]'); } },
+    wrap5:{ title:'Module 5: synthesize, codify, apply', fields:['syn', 'cod', 'app'], need:3, tpl:function(v){ return 'SYNTHESIZE: ' + (v.syn || '[the idea, in my words]') + '\nCODIFY: ' + (v.cod || '[a habit, question, or rule my team will use]') + '\nAPPLY: ' + (v.app || '[what I will do with my team, and when]'); } },
+    wrap6:{ title:'Module 6: synthesize, codify, apply', fields:['syn', 'cod', 'app'], need:3, tpl:function(v){ return 'SYNTHESIZE: ' + (v.syn || '[the idea, in my words]') + '\nCODIFY: ' + (v.cod || '[a habit, question, or rule my team will use]') + '\nAPPLY: ' + (v.app || '[what I will do with my team, and when]'); } },
     story:{
       title:'My storyline',
-      fields:['person', 'is', 'could', 'ask', 'aud'],
-      need:4,
+      fields:['person', 'could', 'ask', 'aud'],
+      need:3,
       tpl:function(v){
-      return 'OPENING: ' + (v.person || '[a real person and a real moment]') + '\nWHAT IS: ' + (v.is || '[the frustrating present]') + '\nWHAT COULD BE: ' + (v.could || '[the better future your idea creates]') + '\nTHE ASK: ' + (v.ask || '[what you need your audience to say yes to]') + '\nAUDIENCES: ' + (v.aud || '[who must hear it, and what each one cares about]'); }
+      return 'OPENING: ' + (v.person || '[a real person and a moment that shows the problem]') + '\nWHAT COULD BE: ' + (v.could || '[what changes for them if your idea works]') + '\nTHE ASK: ' + (v.ask || '[what you need your audience to say yes to]') + '\nAUDIENCES: ' + (v.aud || '[who must hear it, and what each one cares about]'); }
     },
     collab:{
       title:'My collaboration map',
@@ -358,32 +313,21 @@ window.LR_COURSE = {
     },
     reframe:{
       title:'My reframe and pilot',
-      fields:['assume', 'whatif', 'borrow', 'pilot', 'proof'],
-      need:4,
+      fields:['whatif', 'borrow', 'pilot', 'proof'],
+      need:3,
       tpl:function(v){
-      return 'THE USUAL ASSUMPTION: ' + (v.assume || '[what everyone believes about this problem]') + '\nTHE REFRAME: What if ' + (v.whatif || '[...]') + '\nBORROWED FROM OUTSIDE HIGHER ED: ' + (v.borrow || '[an idea from another industry]') + '\nTHE PILOT: ' + (v.pilot || '[who, where, how long, roughly what it costs]') + '\nWE SCALE IF: ' + (v.proof || '[the result that proves it]'); }
+      return 'THE REFRAME: ' + (v.whatif || '[what if...]') + '\nBORROWED: ' + (v.borrow || '[an idea from outside higher education, or a peer]') + '\nTHE PILOT: ' + (v.pilot || '[who, where, how long, roughly what it costs]') + '\nWE SCALE IF: ' + (v.proof || '[the result that proves it]'); }
     },
     carry:{
       title:'My plan to carry it forward',
-      fields:['idea', 'live', 'teach', 'next'],
-      need:3,
+      fields:['idea', 'live', 'teach'],
+      need:2,
       tpl:function(v){
-      return 'THE IDEA MY TEAM NEEDS MOST: ' + (v.idea || '[one idea from the program]') + '\nHOW I WILL LIVE IT: ' + (v.live || '[a decision, habit, or question people will see me use]') + '\nHOW I WILL TEACH IT: ' + (v.teach || '[to whom, and by when]') + '\nTHE NEXT LEADER: ' + (v.next || '[someone I will encourage toward a future cohort, and why]'); }
+      return 'THE IDEA MY TEAM NEEDS MOST: ' + (v.idea || '[one idea from the program]') + '\nHOW I WILL LIVE IT: ' + (v.live || '[a decision, habit, or question people will see me use]') + '\nHOW I WILL TEACH IT: ' + (v.teach || '[to whom, and by when]'); }
     },
-    draft:{
-      title:'My draft of brief sections 4 to 7',
-      fields:['people', 'process', 'tech', 'steps', 'metrics', 'sustain'],
-      need:5,
-      tpl:function(v, b){
-      return '4. INTEGRATED SOLUTION\nPeople: ' + (v.people || '[roles, skills, culture]') + '\nProcess: ' + (v.process || '[steps removed, handoffs fixed]') + '\nTechnology: ' + (v.tech || '[tools added, retired, or connected]') +
-        '\n\n5. STEPS, OWNERS, TIMELINE\n' + (v.steps || (b('reframe', 'pilot') ? 'Start with the pilot: ' + b('reframe', 'pilot') : '[one line per step: what, owner role, by when]')) +
-        '\n\n6. SUCCESS METRICS\n' + (v.metrics || (b('reframe', 'proof') ? b('reframe', 'proof') : '[baseline, target, date]')) +
-        '\n\n7. SUSTAINABILITY PLAN\n' + (v.sustain || '[who owns it after the pod, and how year two is funded]') +
-        (b('collab', 'share') ? '\n\nPARTNERS WHO SHARE THE CREDIT: ' + b('collab', 'share') : ''); }
-    }
   },
   COMMITS:[
-    ['Meet your pod', 'About 60 minutes. Merge drafts, compare health checks, set owners for week four.'],
+    ['Meet your pod', 'About 60 minutes. Merge drafts and set owners and dates for the final week.'],
     ['Finish a full draft', 'All seven sections in one document, about three pages, by Friday, November 13.'],
     ['Respond to Teams prompt 2', 'Post your response under Discussions in the Teams channel by Friday, November 13.'],
     ['Reply to a colleague', 'Build on a colleague’s idea, or offer a practical way it could be applied.']
@@ -391,23 +335,23 @@ window.LR_COURSE = {
   tell:function(which, get){
     var b = function(k, f){ return (get('b-' + k + '-' + f) || '').trim(); };
     if(which === 'teams'){
-      var w = b('reframe', 'whatif');
-      return 'One way I will apply entrepreneurial thinking in my role: [reframe a challenge, run a small pilot, or borrow an idea from outside higher ed]. ' + (w ? 'Our pod’s reframe this week: what if ' + w.replace(/[.!?]$/, '') + '?' : 'Our pod’s reframe this week: [your what if].') + ' A bold idea that could advance Vanderbilt’s vision: [your idea, and why it matters]. What would you pilot first in your area?';
+      var w = b('reframe', 'whatif').replace(/^what if\s*/i, '').replace(/[.!?]$/, '');
+      return 'One way I will apply entrepreneurial thinking in my role: [reframe a challenge, run a small pilot, or borrow an idea from outside higher ed]. ' + (w ? 'Our pod’s reframe this week: what if ' + w + '?' : 'Our pod’s reframe this week: [your what if].') + ' A bold idea that could advance Vanderbilt’s vision: [your idea, and why it matters]. What would you pilot first in your area?';
     }
     return '';
   },
   QUIZ:[
     {
       seg:'Brand',
-      q:'A new campaign ad praises fast, personal service, but students say offices are slow to respond. What is the real problem?',
+      q:'A new campaign says your office offers fast, personal service, but the people you serve describe it as slow. What is the real problem?',
       opts:[
-        'The ad needs a bigger budget',
-        'A gap between brand and reputation; fix the experience, then tell true stories',
-        'Students are not the audience',
+        'The campaign needs a bigger budget',
+        'A gap between brand and reputation: what you say and what others say',
+        'The people you serve are not the audience',
         'Reputation cannot be changed'
       ],
       a:1,
-      x:'Brand is what you say; reputation is what others say. When the experience misses the claim, the gap grows.'
+      x:'Brand is what you say about yourself; reputation is what others say about you. The goal is to close the gap.'
     },
     {
       seg:'Brand',
@@ -416,34 +360,10 @@ window.LR_COURSE = {
         'Wait for the next big win',
         'Run one large ad',
         'Keep a drumbeat of stories and carry them to priority people yourself',
-        'Let Communications handle it'
+        'Leave it to Communications'
       ],
       a:2,
       x:'A spike without a system is noise. The ground game turns attention into trust.'
-    },
-    {
-      seg:'Story',
-      q:'Which opening is strongest for your pod’s capstone pitch?',
-      opts:[
-        'A table of statistics',
-        'One real person in one real moment, then why it matters',
-        'The history of the department',
-        'A list of everyone on the pod'
-      ],
-      a:1,
-      x:'Ertel’s ask: connect your audience to the why. Start with one person, show the difference, and end with one ask.'
-    },
-    {
-      seg:'Mindset',
-      q:'Your pod wants staff to adopt a new shared service. Behavior is involved, there are many causes, and no one knows the answer. What is the best first step?',
-      opts:[
-        'Commission a full analysis before acting',
-        'Run a small pilot, measure, and scale what works',
-        'Copy what the largest peer does',
-        'Roll it out everywhere at once'
-      ],
-      a:1,
-      x:'That is a complex problem. Probe, sense, respond: a pilot teaches what analysis cannot.'
     },
     {
       seg:'Mindset',
@@ -451,11 +371,35 @@ window.LR_COURSE = {
       opts:[
         'A new logo for the team',
         'Replacing every system',
-        'Listen to key people and benchmark honestly against the best',
+        'Listen to key constituents and make a clear-eyed assessment of root causes',
         'Wait a year to see what happens'
       ],
       a:2,
-      x:'Diagnosis before solutions: listen carefully and make a clear-eyed assessment.'
+      x:'Diagnosis before solutions. In the turnaround, three of four weaknesses were about people and culture.'
+    },
+    {
+      seg:'Mindset',
+      q:'Two schools both want to approach the same donor, who cares about both. What does Radical Collaboration suggest?',
+      opts:[
+        'Let the first school to call win the donor',
+        'One cross-Vanderbilt strategy, built around the donor’s interests, with shared credit',
+        'Steer the donor toward the larger school’s priority',
+        'Ask the donor to choose one school'
+      ],
+      a:1,
+      x:'Donors who support multiple areas give the most. Be donor-centric and operate as One Vanderbilt, with shared credit.'
+    },
+    {
+      seg:'Mindset',
+      q:'Your pod’s idea is promising but untested, and a full rollout needs approvals you do not have yet. What is the best first step?',
+      opts:[
+        'Wait until every approval is in place',
+        'Roll it out everywhere at once',
+        'Run a small pilot, validate it, then scale what works',
+        'Copy what the largest peer does'
+      ],
+      a:2,
+      x:'Take a calculated risk. Past pods piloted, validated, then scaled, and early wins build momentum.'
     },
     {
       seg:'Teams',
@@ -494,9 +438,9 @@ window.LR_COURSE = {
       x:'A baseline, a target, a date, and an outcome people feel.'
     }
   ],
-  SCEN_POS:{ t1:0, t2:2, t3:1 },
+  SCEN_POS:{ g1:2, g2:0, g3:1, t1:0, t2:2, t3:1 },
   NUMS_POS:[0, 2, 1, 1],
-  QUIZ_POS:[2, 0, 3, 1, 2, 0, 3, 1],
+  QUIZ_POS:[1, 3, 0, 2, 3, 0, 2, 1],
   QUIZ_PASS:6,
   OVERVIEW:{
     week:'Course Two · Week of November 9',
@@ -505,66 +449,40 @@ window.LR_COURSE = {
     dueLabel:'full first draft by',
     goals:[
       '<b>Distinguish</b> brand from reputation, and a spike from a system.',
-      '<b>Build</b> a storyline that moves a named audience from what is to what could be, and plan how you will carry it as the ground game.',
+      '<b>Build</b> a storyline that connects a named audience to the why behind your pod’s idea.',
       '<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.',
       '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.',
-      '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and apply her principles to your pod and your team.',
+      '<b>Apply</b> Candice Storey Lee’s principles to real team moments.',
       '<b>Draft</b> sections 4 to 7 of your pod’s brief.',
-      '<b>Plan</b> how you will embody the program and teach it to your team.'
+      '<b>Synthesize, codify, and apply</b> each module with the team you lead.'
     ],
     lessons:[
       {
         title:'Communication, Storytelling & Brand',
         no:'Module 4',
-        keys:['route', 'brand', 'fighter', 'ground', 'story'],
-        recap:'recap1',
+        keys:['route', 'brand', 'ground', 'story', 'wrap4'],
         ideas:[
-          [
-            'Close the gap.',
-            'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'
-          ],
-          [
-            'A spike needs a system.',
-            'Attention climbs from relevance to consideration, trust, and commitment only with a steady drumbeat, carried by leaders.'
-          ],
-          [
-            'Connect people to the why.',
-            'One real person, the difference your idea makes, and one clear ask, carried by the people who hear it.'
-          ]
+          ['Close the gap.', 'Brand is what you say about yourself; reputation is what others say about you.'],
+          ['A spike needs a system.', 'Relevance, consideration, trust, commitment: climbed with a steady drumbeat.'],
+          ['You are the ground game.', 'Share stories directly, and equip others to tell them. Trust travels through proximity.']
         ]
       },
       {
         title:'Entrepreneurial Mindset',
         no:'Module 5',
-        keys:['swot', 'numbers', 'moves', 'collab', 'reframe'],
-        deep:['kind'],
-        recap:'recap2',
+        keys:['swot', 'numbers', 'moves', 'collab', 'reframe', 'wrap5'],
         ideas:[
-          [
-            'Diagnose before you build.',
-            'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'
-          ],
-          [
-            'Change three things at once.',
-            'People, process, and technology together, with every tactic owned and dated.'
-          ],
-          [
-            'Win together.',
-            'Radical collaboration: start from the people you serve, treat it as a team sport, and share the credit as One Vanderbilt.'
-          ]
+          ['Diagnose before you build.', 'Root causes first. Three of four weaknesses were about people and culture.'],
+          ['Change it together.', 'People, process, and technology at once, alternating assessment and action.'],
+          ['Win together.', 'Radical Collaboration: serve people, play as a team, and share credit as One Vanderbilt.']
         ]
       },
       {
         title:'High-Performing Teams',
         no:'Module 6',
-        keys:['lee', 'principles'],
-        deep:['teamcalls', 'health'],
-        recap:'recap3',
+        keys:['principles', 'teamcalls', 'wrap6'],
         ideas:[
-          [
-            'Values first, every time.',
-            'Name the values, then let them decide the hard calls: integrity, leadership, resilience, passion, and competitiveness.'
-          ],
+          ['Values first, every time.', 'Name the values, then let them decide the hard calls.'],
           ['Control the controllables.', 'Leaders create the conditions; each person brings maximum effort.'],
           ['Own your response.', 'It is okay to feel how you feel; what matters is how you act and respond.']
         ]
@@ -583,7 +501,7 @@ window.LR_COURSE = {
         ]
       }
     ],
-    work:['ground', 'story', 'reframe', 'collab', 'draft', 'carry'],
+    work:['story', 'collab', 'reframe', 'wrap4', 'wrap5', 'wrap6', 'carry'],
     footer:'Your pod’s brief is due Friday, November 20, three pages at most. Three winners, one per focus area.'
   },
   PRINT_TITLE:'Course Two, my weekly <em>takeaway</em>.',

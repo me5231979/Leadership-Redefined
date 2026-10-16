@@ -2,7 +2,7 @@
    The one place to change links without touching the course. */
 window.LR_CONFIG = {
   storeKey: 'lr1-',
-  contact: 'pcb@vanderbilt.edu',
+  contact: 'https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad',
   /* narration clips: ../assets/audio/course-one/<key>.mp3 (home/1 -> home-1.mp3).
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-one/',

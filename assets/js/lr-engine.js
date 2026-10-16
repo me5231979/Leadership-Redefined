@@ -35,7 +35,8 @@ function savePick(k, i, v){ var o = picks(k); o[i] = v; set('pk-' + k, JSON.stri
 function set(k, v){ mem[k] = v; if(store){ try{ v === null ? store.removeItem(KEY + k) : store.setItem(KEY + k, v); }catch(e){} } }
 
 /* ── contact address from config.js ── */
-if(C.contact){ $$('[data-contact]').forEach(function(a){ a.href = 'mailto:' + C.contact; if(a.hasAttribute('data-contact-text')) a.textContent = C.contact; }); }
+/* contact goes to the cohort's Teams channel (a link); an email address still works */
+if(C.contact){ var web = /^https?:/.test(C.contact); $$('[data-contact]').forEach(function(a){ a.href = web ? C.contact : 'mailto:' + C.contact; if(web){ a.target = '_blank'; a.rel = 'noopener'; } if(a.hasAttribute('data-contact-text')) a.textContent = web ? 'your cohort\u2019s Teams channel' : C.contact; }); }
 
 /* ── hero video: plays only while the welcome page is open ── */
 var vid = document.getElementById('heroVideo');
@@ -997,13 +998,13 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
   var NAR = window.LR_NARR || {}, FIXT = window.LR_FIXTXT || function(t){ return t; };
   all('figure.lr-story[data-story]').forEach(function(fig){
     var base = fig.getAttribute('data-story'), n = +fig.getAttribute('data-scenes'), svg = fig.querySelector('.lr-st-stage') || fig.querySelector('svg');
-    var cur = 0, playing = false;
+    var cur = 0, playing = false, started = false, hello = 'Press play: ' + n + ' short scenes, narrated. Or step through them with the dots.';
     var bar = document.createElement('div'); bar.className = 'lr-st-bar';
     bar.innerHTML = '<button type="button" class="lr-st-play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="pl" d="M7 4.5v15l12-7.5z"/><path class="pa" d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg><span>Play the story</span></button>' +
       '<div class="lr-st-dots" role="group" aria-label="Scenes">' + Array.apply(null, { length:n }).map(function(_, k){ return '<button type="button" class="lr-st-dot" data-k="' + (k + 1) + '" aria-label="Scene ' + (k + 1) + ' of ' + n + '"></button>'; }).join('') + '</div>' +
       '<span class="lr-st-count" aria-hidden="true"></span>';
     var cap = document.createElement('p'); cap.className = 'lr-st-cap'; cap.setAttribute('aria-live', 'polite');
-    cap.textContent = 'Press play: ' + n + ' short scenes, narrated. Or step through them with the dots.';
+    cap.textContent = hello;
     fig.insertBefore(bar, svg.nextSibling); fig.insertBefore(cap, bar);
     var btn = bar.querySelector('.lr-st-play'), lab = btn.querySelector('span'), cnt = bar.querySelector('.lr-st-count');
     function nums(v){ return String(v || '').split(/\s+/).filter(Boolean).map(Number); }
@@ -1014,20 +1015,20 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
       all('[data-at]', svg).forEach(function(e){ var ps = e.getAttribute('data-at').split(';'), at = ps[0].split(':')[1]; ps.forEach(function(p){ var b = p.split(':'); if(+b[0] <= k) at = b[1]; }); if(at) e.style.transform = 'translate(' + at.split(',').map(function(v){ return v + 'px'; }).join(',') + ')'; });
       all('.lr-st-dot', bar).forEach(function(d, j){ d.classList.toggle('seen', j < k); if(j + 1 === k) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
       cnt.textContent = k ? k + ' / ' + n : '';
-      var t = NAR[base + k]; if(t) cap.textContent = FIXT(t);
+      var t = NAR[base + k]; cap.textContent = started && t ? FIXT(t) : hello;
       if(svg.tagName.toLowerCase() === 'svg') svg.setAttribute('aria-label', (fig.getAttribute('data-label') || 'Animated story') + (k ? ', scene ' + k + ' of ' + n + ': ' + FIXT(NAR[base + k] || '') : ''));
     }
-    function ui(){ btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); fig.classList.toggle('st-playing', playing); lab.textContent = playing ? 'Pause' : (cur >= n ? 'Play again' : cur ? 'Resume' : 'Play the story'); }
+    function ui(){ btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); fig.classList.toggle('st-playing', playing); lab.textContent = playing ? 'Pause' : !started ? 'Play the story' : cur >= n ? 'Play again' : 'Resume'; }
     function run(k){
-      show(k); playing = true; ui();
+      started = true; show(k); playing = true; ui();
       if(!window.LR_NARRPLAY){ playing = false; ui(); return; }
       window.LR_NARRPLAY(base + k, function(){ if(!playing) return; if(k < n) setTimeout(function(){ if(playing) run(k + 1); }, 450); else { playing = false; ui(); fig.dispatchEvent(new CustomEvent('lr:story-end')); } }, function(){ playing = false; ui(); });
     }
-    btn.addEventListener('click', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); return; } run(cur >= n || cur < 1 ? 1 : cur); });
-    bar.addEventListener('click', function(e){ var d = e.target.closest('.lr-st-dot'); if(!d) return; var k = +d.getAttribute('data-k'); if(playing) run(k); else { show(k); ui(); } });
+    btn.addEventListener('click', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); return; } run(!started || cur >= n || cur < 1 ? 1 : cur); });
+    bar.addEventListener('click', function(e){ var d = e.target.closest('.lr-st-dot'); if(!d) return; var k = +d.getAttribute('data-k'); started = true; if(playing) run(k); else { show(k); ui(); } });
     /* leaving the page stops the story where it is */
     document.addEventListener('chart:page', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); } });
-    show(n); fig.classList.add('st-ready'); show(0); ui();
+    show(n); fig.classList.add('st-ready'); show(1); ui();
   });
 })();
 

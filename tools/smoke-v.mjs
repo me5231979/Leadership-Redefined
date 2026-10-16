@@ -26,6 +26,8 @@ console.log('alloc', await p.$$eval('.mx-read', a => a.map(x => x.textContent.sl
 // builders
 for(const f of await p.$$('[data-build] textarea')){ await go(f); await p.waitForTimeout(300); await f.fill('Test entry for the brief'); }
 for(const s of await p.$$('[data-build] select')){ await go(s); await p.waitForTimeout(300); await s.selectOption({ index:1 }); }
+// the live brief, embedded on the draft page: write every section in the frame
+for(const fr of await p.$$('iframe.lr-brief-embed')){ await go(fr); await p.waitForTimeout(800); const f = await fr.contentFrame(); for(const t of await f.$$('textarea')) await t.fill('Test entry for the brief'); for(const s of await f.$$('select')) await s.selectOption({ index:1 }); await p.waitForTimeout(600); }
 console.log('drafts', await p.$$eval('.lr-out', a => a.map(x => x.textContent.slice(0,70).replace(/\n/g,' | '))));
 // quiz
 const QZ = await p.evaluate(() => window.LR_ENGINE.QUIZ.map(q => q.a));
