@@ -32,16 +32,10 @@
 .bf-count{ margin-top:14px; font-family:var(--cond); font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--tx3); max-width:none; }
 @media (max-width:760px){ .bf-how, .bf-meta{ grid-template-columns:1fr; } .bf-head{ grid-template-columns:auto 1fr; } .bf-tag{ grid-column:2; } }
 
-/* print: the brief only, black on white */
+/* print and PDF: brief.js builds #printSheet from the saved text; the shared print rules show only that sheet */
 @media print{
-  .gnav, .skip, footer, .bf-how, .bf-actions, .bf-status, .bf-guide, .bf-row, .bf-count, .bf-top .v-why, .bf-top .v-kicker{ display:none !important; }
-  body, .th-dark, .bf-sheet{ background:#fff !important; color:#000 !important; }
-  .bf-top{ padding:0 0 8pt; } .bf-top .v-h{ color:#000; font-size:20pt; }
-  .bf-sheet{ border:0; padding:0; }
-  .bf-meta{ grid-template-columns:1fr 1fr 1fr; border-color:#999; }
-  .bf-meta label, .bf-no, .bf-tag{ color:#000 !important; }
-  .bf-meta input{ border:0; padding:0; color:#000; background:none; }
-  .bf-sec{ padding:8pt 0; border-color:#bbb; break-inside:avoid; }
-  .bf-head h2{ color:#000; font-size:13pt; }
-  .bf-sec textarea, .bf-sec select{ border:0; padding:0; background:none; color:#000; height:auto !important; min-height:0; resize:none; overflow:visible; field-sizing:content; }
+  .bf-print section{ break-inside:auto !important; }
+  .bf-print h2{ break-after:avoid; }
+  .bf-print p{ margin:0 0 6pt; orphans:3; widows:3; }
+  .bf-print .bf-empty{ color:#777 !important; font-style:italic; }
 }

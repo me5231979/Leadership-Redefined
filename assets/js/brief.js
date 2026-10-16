@@ -79,7 +79,17 @@ function plain(){
   SECTIONS.forEach(function(s){ out.push('', s.n + '. ' + s.h.toUpperCase(), val(s).trim() || '[not written yet]'); });
   return out.join('\n');
 }
-document.querySelector('[data-bf="print"]').addEventListener('click', function(){ window.print(); });
+/* print and PDF: the shared course stylesheet prints only #printSheet, so the brief builds its own sheet from the saved text each time it prints */
+var sheet = document.createElement('div'); sheet.id = 'printSheet'; sheet.className = 'print-sheet bf-print'; sheet.setAttribute('aria-hidden', 'true'); document.body.appendChild(sheet);
+function paras(t){ return t.split(/\n{2,}/).map(function(p){ return '<p>' + esc(p).replace(/\n/g, '<br>') + '</p>'; }).join(''); }
+function buildSheet(){
+  var today = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+  var who = [meta('pod') ? 'Pod: ' + esc(meta('pod')) : '', meta('members') ? 'Members: ' + esc(meta('members')) : ''].filter(Boolean).join(' &middot; ');
+  sheet.innerHTML = '<header class="ps-head"><img src="../assets/img/vu-lockup-black.png" alt="Vanderbilt University" width="166" height="43" /><div><span class="ps-k">Leadership Redefined &middot; Capstone Innovation Project</span><h1>' + (meta('title') ? esc(meta('title')) : 'Capstone <em>brief</em>') + '</h1><p>' + (who ? who + ' &middot; ' : '') + 'printed ' + esc(today) + '</p></div></header>' +
+    SECTIONS.map(function(s){ var t = val(s).trim(); return '<section><h2>' + s.n + '. ' + esc(s.h) + '</h2>' + (t ? paras(t) : '<p class="bf-empty">Not written yet.</p>') + '</section>'; }).join('');
+}
+window.addEventListener('beforeprint', buildSheet);
+document.querySelector('[data-bf="print"]').addEventListener('click', function(){ buildSheet(); window.print(); });
 document.querySelector('[data-bf="copy"]').addEventListener('click', function(){
   var t = plain();
   (navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){ say('Copied. Paste it into your pod’s shared document.'); }, function(){
