@@ -1138,9 +1138,10 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
     s.addEventListener('pointermove', at); s.addEventListener('pointerleave', function(){ s.classList.remove('hov'); tip.hidden = true; cx.setAttribute('x1', -10); cx.setAttribute('x2', -10); chd.setAttribute('cx', -10); });
   }
   box.innerHTML = CH.map(function(c, i){ return '<figure class="lr-chart" data-chart="' + i + '" data-title="' + esc2(c.title) + '"><p class="lr-clock">Make your guess on the <b>' + esc2((D2.NUMS[c.num] || {}).lab || '') + '</b> tile to unlock the ' + esc2(c.title) + ' chart.</p></figure>'; }).join('');
-  CH.forEach(function(c, i){ if(picked(c.num)) draw(c, i); });
+  /* every chart shows from the start; a guess turns the carousel to that tile's chart */
+  CH.forEach(function(c, i){ draw(c, i); });
   /* all the charts share one carousel; each guess turns it to that tile's first chart */
   if(box.hasAttribute('data-car')) box.setAttribute('data-car', box.getAttribute('data-car') || 'Charts');
   var car = box.hasAttribute('data-car') ? lrCarousel(box) : null;
-  document.addEventListener('lr:num', function(e){ var first = -1; CH.forEach(function(c, i){ if(c.num === e.detail.i){ draw(c, i); if(first < 0) first = i; } }); if(car && first >= 0){ car.refresh(); car.go(first); } });
+  document.addEventListener('lr:num', function(e){ var first = -1; CH.forEach(function(c, i){ if(c.num === e.detail.i && first < 0) first = i; }); if(car && first >= 0){ car.refresh(); car.go(first); } });
 })();

@@ -678,7 +678,7 @@ html.paged .v-copy p, html.paged .v-copy li, html.paged .v-why, html.paged .lr-l
 .v-task::before{ margin-top:2px; width:20px; height:20px; flex-basis:20px; }
 .sub-listen{ flex:0 0 26px; min-width:26px; }
 /* Your turn screens: one centered column, the rail lined up with it, the activity sized to be the focal point */
-html.paged .lr-pg2 > .v-rail, html.paged .lr-pg2 > .v-stage.lr-practice{ max-width:1000px; margin-left:auto; margin-right:auto; width:100%; }
+html.paged .lr-pg2:has(> .v-stage.lr-practice) > .v-rail, html.paged .lr-pg2 > .v-stage.lr-practice{ max-width:1000px; margin-left:auto; margin-right:auto; width:100%; }
 html.paged .v-stage.lr-practice{ display:block; }
 html.paged .v-stage.lr-practice > .v-copy{ margin-bottom:6px; }
 html.paged .lr-practice .v-task{ font-size:1.2rem; margin:8px 0 18px; }
@@ -772,4 +772,34 @@ html.paged .v-lead .v-h{ max-width:34ch; }
   html.paged .lr-teach > .v-act .lr-story > svg{ max-height:min(30vh, 320px); }
   html.paged .lr-build textarea{ min-height:80px; }
   .hinttxt, html.paged .hinttxt, .lr-frame{ font-size:.9rem !important; }
+}
+/* the highlight is placed in percentages of the slide image, so the box must hug the image */
+html.paged .lr-peerimg{ display:block; width:fit-content; max-width:100%; margin:0 auto; }
+html.paged .lr-peerimg > a{ display:block; }
+/* side-by-side writing boxes line up: labels take the slack so both boxes start and end together */
+@media (min-width:1001px){
+  html.paged .lr-build{ align-items:stretch; }
+  html.paged .lr-build > .field{ display:flex; flex-direction:column; }
+  html.paged .lr-build > .field > label{ flex:1 0 auto; display:flex; align-items:flex-end; }
+  html.paged .lr-build > .field > textarea{ flex:0 0 auto; }
+  /* vision screen: both cards start on the same line */
+  html.paged #mission .v-stage.lr-bal{ align-items:start; }
+  html.paged #mission .v-stage.lr-bal > .v-copy, html.paged #mission .v-stage.lr-bal > .v-act{ align-self:start; margin-top:0; }
+  /* trust radar screen: the radar is the focal point */
+  html.paged .lr-radarscreen > .v-act figure.lr-slide svg{ max-height:58vh; width:100%; }
+}
+.lr-slide .dtick{ font-size:13px; fill:#fff; }
+
+html.paged #mission .v-stage.lr-bal > .v-act > .lr-learn, html.paged #mission .v-stage.lr-bal > .v-copy > .lr-learn{ margin-top:0; max-width:none; width:100%; box-sizing:border-box; }
+.lr-slide .dtick{ font-size:17px; font-weight:700; }
+@media (min-width:1001px){
+  html.paged .lr-mom2 .lr-cw svg{ height:30vh; width:100%; max-height:none; }
+  html.paged .lr-mom2 .lr-chart{ padding:12px 16px; }
+  html.paged .lr-mom2 .lr-chart figcaption{ margin-bottom:4px; }
+}
+@media (min-width:1001px){
+  html.paged .lr-mom2 .lr-cw svg{ height:23vh; }
+  html.paged .lr-mom2 .lr-car-count{ margin:0; }
+  html.paged .lr-mom2 .lr-car-nav{ margin-bottom:8px; }
+  html.paged .lr-mom2 .lr-ctable summary{ min-height:36px; }
 }
