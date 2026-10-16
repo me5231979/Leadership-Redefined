@@ -1,26 +1,26 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE TWO · content ══════════
-   Module 2: Communication, Storytelling & Brand; Module 4: Entrepreneurial Mindset;
+   Module 4: Communication, Storytelling & Brand; Module 5: Entrepreneurial Mindset;
    Module 6: High-Performing Teams. Week of November 9.
    Read by ../assets/js/pager.js and ../assets/js/lr-engine.js. No em or en dashes. */
 window.LR_COURSE = {
   PLAN:[
     { sel:'section.hero', key:'home', label:'Welcome', mode:'whole' },
     { sel:'#week', key:'route', label:'This week', mode:'whole' },
-    { sel:'#brand', key:'brand', label:'Module 2: Brand and reputation', mode:'whole' },
-    { sel:'#fighter', key:'fighter', label:'Module 2: Spikes and systems', mode:'whole' },
-    { sel:'#ground', key:'ground', label:'Module 2: The ground game', mode:'whole' },
-    { sel:'#story', key:'story', label:'Module 2: Your storyline', mode:'whole' },
-    { sel:'#me1', key:'me1', label:'Module 2: What this means for me', mode:'whole' },
-    { sel:'#recap1', key:'recap1', label:'Module 2: Wrap-up', mode:'whole' },
-    { sel:'#gdstory', key:'gdstory', label:'Module 2: Go deeper, the shape of a great talk', mode:'whole' },
-    { sel:'#venture', key:'swot', label:'Module 4: Entrepreneurial mindset', mode:'whole' },
-    { sel:'#turnaround', key:'numbers', label:'Module 4: The turnaround', mode:'whole' },
-    { sel:'#moves', key:'moves', label:'Module 4: The change moves', mode:'whole' },
-    { sel:'#collab', key:'collab', label:'Module 4: Radical collaboration', mode:'whole' },
-    { sel:'#reframe', key:'reframe', label:'Module 4: Your pilot', mode:'whole' },
-    { sel:'#me2', key:'me2', label:'Module 4: What this means for me', mode:'whole' },
-    { sel:'#recap2', key:'recap2', label:'Module 4: Wrap-up', mode:'whole' },
-    { sel:'#kind', key:'kind', label:'Module 4: Go deeper, kinds of problems', mode:'whole' },
+    { sel:'#brand', key:'brand', label:'Module 4: Brand and reputation', mode:'whole' },
+    { sel:'#fighter', key:'fighter', label:'Module 4: Spikes and systems', mode:'whole' },
+    { sel:'#ground', key:'ground', label:'Module 4: The ground game', mode:'whole' },
+    { sel:'#story', key:'story', label:'Module 4: Your storyline', mode:'whole' },
+    { sel:'#me1', key:'me1', label:'Module 4: What this means for me', mode:'whole' },
+    { sel:'#recap1', key:'recap1', label:'Module 4: Wrap-up', mode:'whole' },
+    { sel:'#gdstory', key:'gdstory', label:'Module 4: Go deeper, the shape of a great talk', mode:'whole' },
+    { sel:'#venture', key:'swot', label:'Module 5: Entrepreneurial mindset', mode:'whole' },
+    { sel:'#turnaround', key:'numbers', label:'Module 5: The turnaround', mode:'whole' },
+    { sel:'#moves', key:'moves', label:'Module 5: The change moves', mode:'whole' },
+    { sel:'#collab', key:'collab', label:'Module 5: Radical collaboration', mode:'whole' },
+    { sel:'#reframe', key:'reframe', label:'Module 5: Your pilot', mode:'whole' },
+    { sel:'#me2', key:'me2', label:'Module 5: What this means for me', mode:'whole' },
+    { sel:'#recap2', key:'recap2', label:'Module 5: Wrap-up', mode:'whole' },
+    { sel:'#kind', key:'kind', label:'Module 5: Go deeper, kinds of problems', mode:'whole' },
     { sel:'#teams', key:'lee', label:'Module 6: High-performing teams', mode:'whole' },
     { sel:'#principles', key:'principles', label:'Module 6: Six principles', mode:'whole' },
     { sel:'#me3', key:'me3', label:'Module 6: What this means for me', mode:'whole' },
@@ -57,12 +57,12 @@ window.LR_COURSE = {
   ROUTE_NARR:'route/g',
   STOPS:[
     {
-      h:'Module 2: Communication, Storytelling &amp; <em>Brand</em>',
+      h:'Module 4: Communication, Storytelling &amp; <em>Brand</em>',
       p:'The Chancellor on communication, then your pod’s storyline.',
       tags:['The Chancellor', 'Brand or reputation', 'The ground game', 'Your storyline']
     },
     {
-      h:'Module 4: Entrepreneurial <em>Mindset</em>',
+      h:'Module 5: Entrepreneurial <em>Mindset</em>',
       p:'A real Vanderbilt turnaround, radical collaboration, and your pod’s first pilot.',
       tags:['The Chancellor', 'The turnaround', 'Radical collaboration', 'Your pilot']
     },
@@ -329,10 +329,10 @@ window.LR_COURSE = {
     me3:{ txt:['own', 'when'] }
   },
   BUILDS:{
-    me1:{ title:'As a manager, after Module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap1:{ title:'Module 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after Module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2:{ title:'Module 4, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1:{ title:'As a manager, after Module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap1:{ title:'Module 4, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2:{ title:'As a manager, after Module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2:{ title:'Module 5, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     me3:{ title:'As a manager, after Module 6', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap3:{ title:'Module 6, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     ground:{
@@ -515,7 +515,7 @@ window.LR_COURSE = {
     lessons:[
       {
         title:'Communication, Storytelling & Brand',
-        no:'Module 2',
+        no:'Module 4',
         keys:['route', 'brand', 'fighter', 'ground', 'story'],
         recap:'recap1',
         ideas:[
@@ -535,7 +535,7 @@ window.LR_COURSE = {
       },
       {
         title:'Entrepreneurial Mindset',
-        no:'Module 4',
+        no:'Module 5',
         keys:['swot', 'numbers', 'moves', 'collab', 'reframe'],
         deep:['kind'],
         recap:'recap2',

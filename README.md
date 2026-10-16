@@ -43,7 +43,7 @@ To publish, run `git push -f origin claude/eloquent-mendel-0qq5xp:gh-pages`.
 
 ### Presenter cards
 
-Each module's presenter appears with portrait, name, and title: Chancellor Daniel Diermeier (Modules 1, 3, and 5), Steven K. Ertel (Module 2), John M. Lutz (Module 4), and Candice S. Lee (Module 6). Portraits live in `assets/img/people/`; a card shows initials if its photo is missing.
+Each module's presenter appears with portrait, name, and title: Chancellor Daniel Diermeier (Modules 1, 2, and 3), Steven K. Ertel (Module 4), John M. Lutz (Module 5), and Candice S. Lee (Module 6). Portraits live in `assets/img/people/`; a card shows initials if its photo is missing.
 
 ### Core content and Go deeper
 

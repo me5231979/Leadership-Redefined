@@ -1,6 +1,6 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE ONE · content ══════════
-   Module 1: Vision, Strategy & the Future of Vanderbilt; Module 3: Mission and Margin;
-   Module 5: Reputational Stewardship. The Chancellor’s modules. Week of November 2.
+   Module 1: Vision, Strategy & the Future of Vanderbilt; Module 2: Mission and Margin;
+   Module 3: Reputational Stewardship. The Chancellor’s modules. Week of November 2.
    Read by ../assets/js/pager.js and ../assets/js/lr-engine.js. No em or en dashes. */
 window.LR_COURSE = {
   PLAN:[
@@ -14,21 +14,21 @@ window.LR_COURSE = {
     { sel:'#me1', key:'me1', label:'Module 1: What this means for me', mode:'whole' },
     { sel:'#recap1', key:'recap1', label:'Module 1: Wrap-up', mode:'whole' },
     { sel:'#valuestick', key:'valuestick', label:'Module 1: Go deeper, the value stick', mode:'whole' },
-    { sel:'#margin', key:'margin', label:'Module 3: Mission and margin', mode:'whole' },
-    { sel:'#peers', key:'peers', label:'Module 3: Why it matters now', mode:'whole' },
-    { sel:'#portfolio', key:'portfolio', label:'Module 3: The whole cost', mode:'whole' },
-    { sel:'#statement', key:'statement', label:'Module 3: Your statement', mode:'whole' },
-    { sel:'#me2', key:'me2', label:'Module 3: What this means for me', mode:'whole' },
-    { sel:'#recap2', key:'recap2', label:'Module 3: Wrap-up', mode:'whole' },
-    { sel:'#gdmargin', key:'gdmargin', label:'Module 3: Go deeper, Mission and Margin', mode:'whole' },
-    { sel:'#reputation', key:'trust', label:'Module 5: Reputational stewardship', mode:'whole' },
-    { sel:'#terrain', key:'terrain', label:'Module 5: Where reputation is made', mode:'whole' },
-    { sel:'#timing', key:'timing', label:'Module 5: Act while you have control', mode:'whole' },
-    { sel:'#pressure', key:'pressure', label:'Module 5: Calls under pressure', mode:'whole' },
-    { sel:'#repstatement', key:'repstatement', label:'Module 5: Your statement', mode:'whole' },
-    { sel:'#me3', key:'me3', label:'Module 5: What this means for me', mode:'whole' },
-    { sel:'#recap3', key:'recap3', label:'Module 5: Wrap-up', mode:'whole' },
-    { sel:'#gdrep', key:'gdrep', label:'Module 5: Go deeper, Reputation Rules', mode:'whole' },
+    { sel:'#margin', key:'margin', label:'Module 2: Mission and margin', mode:'whole' },
+    { sel:'#peers', key:'peers', label:'Module 2: Why it matters now', mode:'whole' },
+    { sel:'#portfolio', key:'portfolio', label:'Module 2: The whole cost', mode:'whole' },
+    { sel:'#statement', key:'statement', label:'Module 2: Your statement', mode:'whole' },
+    { sel:'#me2', key:'me2', label:'Module 2: What this means for me', mode:'whole' },
+    { sel:'#recap2', key:'recap2', label:'Module 2: Wrap-up', mode:'whole' },
+    { sel:'#gdmargin', key:'gdmargin', label:'Module 2: Go deeper, Mission and Margin', mode:'whole' },
+    { sel:'#reputation', key:'trust', label:'Module 3: Reputational stewardship', mode:'whole' },
+    { sel:'#terrain', key:'terrain', label:'Module 3: Where reputation is made', mode:'whole' },
+    { sel:'#timing', key:'timing', label:'Module 3: Act while you have control', mode:'whole' },
+    { sel:'#pressure', key:'pressure', label:'Module 3: Calls under pressure', mode:'whole' },
+    { sel:'#repstatement', key:'repstatement', label:'Module 3: Your statement', mode:'whole' },
+    { sel:'#me3', key:'me3', label:'Module 3: What this means for me', mode:'whole' },
+    { sel:'#recap3', key:'recap3', label:'Module 3: Wrap-up', mode:'whole' },
+    { sel:'#gdrep', key:'gdrep', label:'Module 3: Go deeper, Reputation Rules', mode:'whole' },
     { sel:'#focus', key:'focus', label:'Your brief: Your focus area', mode:'whole' },
     { sel:'#draft', key:'draft', label:'Your brief: Draft the brief', mode:'whole' },
     { sel:'#quiz', key:'quiz', label:'Your brief: Quick check', mode:'whole' },
@@ -65,12 +65,12 @@ window.LR_COURSE = {
       tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'Go deeper: the value stick']
     },
     {
-      h:'Module 3: Mission and <em>Margin</em>',
+      h:'Module 2: Mission and <em>Margin</em>',
       p:'The Chancellor on mission and margin, then the trade-offs.',
       tags:['A video', 'Two situations', 'The Chancellor’s slides', 'The whole cost', 'Your statement']
     },
     {
-      h:'Module 5: Reputational <em>Stewardship</em>',
+      h:'Module 3: Reputational <em>Stewardship</em>',
       p:'The trust radar, where reputation is made, when to act, and three calls under pressure.',
       tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement']
     },
@@ -636,10 +636,10 @@ window.LR_COURSE = {
   BUILDS:{
     me1:{ title:'As a manager, after Module 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap1:{ title:'Module 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after Module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap2:{ title:'Module 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me3:{ title:'As a manager, after Module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    recap3:{ title:'Module 5, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2:{ title:'As a manager, after Module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap2:{ title:'Module 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me3:{ title:'As a manager, after Module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    recap3:{ title:'Module 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     statement:{
       title:'My mission and margin statement',
       fields:['mission', 'cost', 'ret', 'quad'],
@@ -807,7 +807,7 @@ window.LR_COURSE = {
       },
       {
         title:'Mission and Margin',
-        no:'Module 3',
+        no:'Module 2',
         keys:['margin', 'peers', 'portfolio', 'statement'],
         recap:'recap2',
         ideas:[
@@ -821,7 +821,7 @@ window.LR_COURSE = {
       },
       {
         title:'Reputational Stewardship',
-        no:'Module 5',
+        no:'Module 3',
         keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'],
         recap:'recap3',
         ideas:[

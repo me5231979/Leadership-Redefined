@@ -91,10 +91,14 @@ function narrUI(){
   $$('[data-narr]').forEach(function(b){ var on = narr.playing && narr.key === b.getAttribute('data-narr'); b.classList.toggle('playing', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.setAttribute('aria-label', on ? 'Stop' : 'Listen to this one'); });
   $$('[data-nk]').forEach(function(c){ c.classList.toggle('playing', narr.playing && narr.key === c.getAttribute('data-nk')); });
 }
+/* a story (scene player) chains clips: narr.done runs when a clip finishes, narr.stopped when it is cut short */
+function narrFinish(){ var d = narr.done; narr.done = narr.stopped = null; if(d) d(); }
 function narrStop(){
+  var cut = narr.stopped; narr.done = narr.stopped = null; if(narr.timer){ clearTimeout(narr.timer); narr.timer = null; }
   if(narr.audio){ try{ narrRemember(); narr.audio.pause(); narr.audio.src = ''; }catch(e){} narr.audio = null; }
   if(window.speechSynthesis){ try{ window.speechSynthesis.cancel(); }catch(e){} }
   narr.utter = null; narr.playing = false; narrUI();
+  if(cut) cut();
 }
 function narrSpeak(text){
   if(!window.speechSynthesis || !window.SpeechSynthesisUtterance){ narr.playing = false; narrUI(); toast('Narration is not available in this browser.'); return; }
@@ -104,7 +108,7 @@ function narrSpeak(text){
     var voices = window.speechSynthesis.getVoices ? window.speechSynthesis.getVoices() : [];
     var pick = voices.filter(function(v){ return /^en(-|_)?(US|GB)?/i.test(v.lang) && /Google|Samantha|Karen|Daniel|Serena|Zira|Aria|Natural/i.test(v.name); })[0] || voices.filter(function(v){ return /^en/i.test(v.lang); })[0];
     if(pick) u.voice = pick;
-    u.onend = function(){ if(narr.utter === u){ narr.utter = null; narr.playing = false; narrUI(); } };
+    u.onend = function(){ if(narr.utter === u){ narr.utter = null; narr.playing = false; narrUI(); narrFinish(); } };
     u.onerror = function(){ if(narr.utter === u){ narr.utter = null; narr.playing = false; narrUI(); } };
     narr.utter = u; narr.playing = true; narrUI();
     window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
@@ -126,9 +130,10 @@ window.addEventListener('message', function(e){
   if(d.event === 'ready'){ ['play', 'playing'].forEach(function(ev){ try{ e.source.postMessage(JSON.stringify({ method:'addEventListener', value:ev }), e.origin); }catch(err){} }); }
   else if(d.event === 'play' || d.event === 'playing'){ if(narr.playing) narrStop(); }
 });
-function narrPlay(k){
+function narrPlay(k, done, stopped){
   k = k || narrKey(); var text = NARR[k];
   narrStop(); pauseVideos();
+  narr.done = done || null; narr.stopped = stopped || null;
   if(!text){ toast('No narration on this page.'); return; }
   /* until the recorded voice exists, the browser's own voice reads the script */
   if(C.useBrowserVoice){ narr.key = k; narrSpeak(text); return; }
@@ -136,7 +141,7 @@ function narrPlay(k){
   /* the version carries a hash of the script, so a re-recorded clip is never served from an old cache */
   var a = new Audio((C.audioBase || './audio/') + k.replace(/\//g, '-') + '.mp3' + (C.audioQuery === false ? '' : '?v=' + MEDIA_V + '-' + textHash(text)));
   a.preload = 'auto';
-  a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); } });
+  a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); narrFinish(); } });
   a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrFail(text); } });
   narr.audio = a;
   var backTo = narrPos[k] || 0;
@@ -159,7 +164,10 @@ function narrPlay(k){
 }
 /* a recording that will not load: the browser voice reads it, unless the config turns that off (the SCORM package does) */
 function narrFail(text){
-  if(C.speechFallback === false){ narr.playing = false; narrUI(); toast('The narration for this page could not load. The text on the page has everything it says.'); return; }
+  if(C.speechFallback === false){ narr.playing = false; narrUI();
+    /* a story keeps moving on a reading-time timer, with its captions on screen */
+    if(narr.done){ var d = narr.done, w = (String(text).match(/\S+/g) || []).length; narr.timer = setTimeout(function(){ if(narr.done === d) narrFinish(); }, Math.max(3000, w * 400)); return; }
+    toast('The narration for this page could not load. The text on the page has everything it says.'); return; }
   narrSpeak(text);
 }
 if(bbListen) bbListen.addEventListener('click', function(){ if(narr.playing){ narr.on = false; narrStop(); } else { narr.on = true; narrPlay(); } });
@@ -550,6 +558,14 @@ var NUMS = D.NUMS || [];
     }
     best.forEach(function(w, i){ place(s.fl[i], w, s); });
     if(s.below) s.below.hidden = !s.below.children.length;
+    // a photo in the row under both columns becomes a wide crop sized to the room left on screen, so the page fits
+    if(s.below && !s.below.hidden){
+      var ph = $$(':scope > figure.lr-photo img', s.below); if(!ph.length) return;
+      ph.forEach(function(im){ im.style.maxHeight = ''; });
+      var bar = document.getElementById('bookBar'), pg = s.st.closest('.page'), limit = bar ? bar.getBoundingClientRect().top : window.innerHeight;
+      var over = s.st.getBoundingClientRect().bottom + (pg ? pg.scrollTop : 0) + 16 - limit;
+      if(over > 0) ph.forEach(function(im){ im.style.maxHeight = Math.max(240, im.offsetHeight - over / ph.length) + 'px'; });
+    }
   }
   function fitAll(){ stages.forEach(fit); }
   window.LR_fit = fitAll;
@@ -564,8 +580,12 @@ var NUMS = D.NUMS || [];
    scripts are swapped back to the real names. */
 (function(){
   var FIX = [[/Deer-myer/g, 'Diermeier'], [/V-U-M-C/g, 'VUMC'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty eight/g, '2028'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  window.LR_FIXTXT = function(t){ FIX.forEach(function(f){ t = t.replace(f[0], f[1]); }); return t; };
   $$('.page').forEach(function(pg){
     var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
+    /* slide carousels: the page clip covers slide one, then each slide's own clip */
+    var cb = pg.querySelector('[data-car][data-narr-base]');
+    if(cb){ var nb = cb.getAttribute('data-narr-base'); for(var j = 2; NARR[nb + j]; j++) t += '\n\n' + NARR[nb + j]; }
     FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });
     var host = pg.querySelector('.lr-read-host') || pg.querySelector('.v-copy') || pg.querySelector('.v-numhead') || pg.querySelector('.v-cities-head') || pg.querySelector('.wrap');
     if(!host || pg.querySelector('.v-hero')) return;
@@ -865,6 +885,9 @@ progRender();
 window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
 /* for the carousels below: an activity done when every slide has been seen */
 window.LR_PROG = { done: progDone, is: progIs, set: set, get: get, turn: turnDone };
+window.LR_NARRSUB = narrSub;
+window.LR_NARRPLAY = function(k, done, stopped){ narr.on = true; narrPlay(k, done, stopped); };
+window.LR_NARRSTOP = narrStop;
 })();
 
 /* ── hero montage pause / play ── */
@@ -922,7 +945,9 @@ var lrCarousel = function(el){
     slides.forEach(function(s, j){ s.hidden = j !== cur; s.setAttribute('aria-label', (j + 1) + ' of ' + n + ': ' + title(s)); });
     all('.lr-car-dot', nav).forEach(function(d, j){ if(j === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
     count.textContent = (cur + 1) + ' of ' + n + ' · ' + title(slides[cur]);
-    if(!quiet) el.dispatchEvent(new CustomEvent('lr:car', { detail:{ k:cur } }));
+    if(!quiet){ el.dispatchEvent(new CustomEvent('lr:car', { detail:{ k:cur } }));
+      /* data-narr-base="peers/s": each slide has its own clip, played when the learner turns to it */
+      var nb = el.getAttribute('data-narr-base'); if(nb && window.LR_NARRSUB) window.LR_NARRSUB(nb + (cur + 1)); }
   }
   nav.addEventListener('click', function(e){ var b = e.target.closest('button'); if(!b) return; if(b.hasAttribute('data-k')) go(+b.getAttribute('data-k')); else go(cur + +b.getAttribute('data-d')); });
   el.addEventListener('keydown', function(e){ if(e.target.closest('input, textarea, select')) return; if(e.key === 'ArrowRight'){ go(cur + 1); e.preventDefault(); } else if(e.key === 'ArrowLeft'){ go(cur - 1); e.preventDefault(); } });
@@ -943,6 +968,50 @@ var lrCarousel = function(el){
   return { go:go, refresh:function(){ go(cur, true); all('.lr-car-dot', nav).forEach(function(d, j){ d.setAttribute('aria-label', (j + 1) + ': ' + title(slides[j])); }); } };
 };
 Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(function(el){ lrCarousel(el); });
+
+/* ══════════ story: a narrated, animated walk through one of the Chancellor's graphics ══════════
+   <figure class="lr-story" data-story="terrain/v" data-scenes="14"> holds one SVG. Elements carry
+   data-in="3" (shown from scene 3), data-out="9" (hidden from scene 9), data-hi="5 6" (lit in those
+   scenes) and data-at="9:540,330;10:540,110" (moved there in that scene). Scene N plays clip
+   <story>N; when it ends the next scene starts. Captions show the words. Never starts by itself. */
+(function(){
+  var all = function(q, c){ return Array.prototype.slice.call((c || document).querySelectorAll(q)); };
+  var NAR = window.LR_NARR || {}, FIXT = window.LR_FIXTXT || function(t){ return t; };
+  all('figure.lr-story[data-story]').forEach(function(fig){
+    var base = fig.getAttribute('data-story'), n = +fig.getAttribute('data-scenes'), svg = fig.querySelector('svg');
+    var cur = 0, playing = false;
+    var bar = document.createElement('div'); bar.className = 'lr-st-bar';
+    bar.innerHTML = '<button type="button" class="lr-st-play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="pl" d="M7 4.5v15l12-7.5z"/><path class="pa" d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg><span>Play the story</span></button>' +
+      '<div class="lr-st-dots" role="group" aria-label="Scenes">' + Array.apply(null, { length:n }).map(function(_, k){ return '<button type="button" class="lr-st-dot" data-k="' + (k + 1) + '" aria-label="Scene ' + (k + 1) + ' of ' + n + '"></button>'; }).join('') + '</div>' +
+      '<span class="lr-st-count" aria-hidden="true"></span>';
+    var cap = document.createElement('p'); cap.className = 'lr-st-cap'; cap.setAttribute('aria-live', 'polite');
+    cap.textContent = 'Press play: ' + n + ' short scenes, narrated. Or step through them with the dots.';
+    fig.insertBefore(bar, svg.nextSibling); fig.insertBefore(cap, bar);
+    var btn = bar.querySelector('.lr-st-play'), lab = btn.querySelector('span'), cnt = bar.querySelector('.lr-st-count');
+    function nums(v){ return String(v || '').split(/\s+/).filter(Boolean).map(Number); }
+    function show(k){
+      cur = k; fig.setAttribute('data-scene', k);
+      all('[data-in],[data-out]', svg).forEach(function(e){ var i = +(e.getAttribute('data-in') || 1), o = +(e.getAttribute('data-out') || 99); e.classList.toggle('st-on', k >= i && k < o); });
+      all('[data-hi]', svg).forEach(function(e){ e.classList.toggle('st-hi', nums(e.getAttribute('data-hi')).indexOf(k) > -1); });
+      all('[data-at]', svg).forEach(function(e){ var at = null; e.getAttribute('data-at').split(';').forEach(function(p){ var b = p.split(':'); if(+b[0] <= k) at = b[1]; }); if(at) e.style.transform = 'translate(' + at.split(',').map(function(v){ return v + 'px'; }).join(',') + ')'; });
+      all('.lr-st-dot', bar).forEach(function(d, j){ d.classList.toggle('seen', j < k); if(j + 1 === k) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
+      cnt.textContent = k ? k + ' / ' + n : '';
+      var t = NAR[base + k]; if(t) cap.textContent = FIXT(t);
+      svg.setAttribute('aria-label', (fig.getAttribute('data-label') || 'Animated story') + (k ? ', scene ' + k + ' of ' + n + ': ' + FIXT(NAR[base + k] || '') : ''));
+    }
+    function ui(){ btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); fig.classList.toggle('st-playing', playing); lab.textContent = playing ? 'Pause' : (cur >= n ? 'Play again' : cur ? 'Resume' : 'Play the story'); }
+    function run(k){
+      show(k); playing = true; ui();
+      if(!window.LR_NARRPLAY){ playing = false; ui(); return; }
+      window.LR_NARRPLAY(base + k, function(){ if(!playing) return; if(k < n) setTimeout(function(){ if(playing) run(k + 1); }, 450); else { playing = false; ui(); fig.dispatchEvent(new CustomEvent('lr:story-end')); } }, function(){ playing = false; ui(); });
+    }
+    btn.addEventListener('click', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); return; } run(cur >= n || cur < 1 ? 1 : cur); });
+    bar.addEventListener('click', function(e){ var d = e.target.closest('.lr-st-dot'); if(!d) return; var k = +d.getAttribute('data-k'); if(playing) run(k); else { show(k); ui(); } });
+    /* leaving the page stops the story where it is */
+    document.addEventListener('chart:page', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); } });
+    show(n); fig.classList.add('st-ready'); show(0); ui();
+  });
+})();
 
 /* ── charts: one per guess tile, drawn after the guess (keeps the pretesting effect) ── */
 (function(){
