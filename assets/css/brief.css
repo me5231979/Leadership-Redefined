@@ -23,6 +23,9 @@
 .bf-sec textarea, .bf-sec select{ width:100%; font:inherit; font-size:1rem; line-height:1.5; color:var(--tx); background:var(--field, #141414); border:1px solid var(--field-bd, #4a4a4a); border-radius:var(--r); padding:12px 14px; }
 .bf-sec select{ min-height:48px; }
 .bf-sec textarea{ resize:vertical; min-height:120px; }
+html.bf-embed .bf-sec textarea{ min-height:72px; }
+html.bf-embed .bf-guide{ font-size:.9rem; margin:4px 0 6px; }
+html.bf-embed .bf-sec{ padding:10px 0; }
 .bf-sec textarea:focus-visible, .bf-sec select:focus-visible, .bf-meta input:focus-visible{ outline:2px solid #ECB748; outline-offset:1px; }
 .bf-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px; margin-top:8px; }
 .bf-src{ font-size:.86rem; color:var(--tx3); margin:0; max-width:none; }
@@ -41,7 +44,7 @@
 }
 
 /* Embedded in a course page: only the requested sections, no page chrome */
-html.bf-embed body{ background:transparent; }
+html.bf-embed, html.bf-embed body{ background:transparent !important; min-height:0 !important; height:auto !important; }
 html.bf-embed .gnav, html.bf-embed .skip, html.bf-embed footer, html.bf-embed .bf-top, html.bf-embed .bf-meta, html.bf-embed .bf-count{ display:none !important; }
 html.bf-embed .bf-doc{ padding:0; }
 html.bf-embed .bf-doc .wrap{ max-width:none; padding:0; margin:0; }
@@ -50,3 +53,11 @@ html.bf-embed .bf-sec{ padding:14px 0; }
 html.bf-embed .bf-sec:first-child{ padding-top:0; }
 html.bf-embed main{ padding:0 !important; margin:0 !important; }
 html.bf-embed .bf-tag{ display:none; }
+/* inside a course: sections two across when there is room */
+@media (min-width:860px){ html.bf-embed #bfSections{ display:grid; grid-template-columns:1fr 1fr; gap:0 24px; align-items:start; } html.bf-embed .bf-sec{ border-bottom:0; } }
+html.bf-embed .bf-head h2{ font-size:1.1rem; }
+html.bf-embed .bf-no{ font-size:1.25rem; }
+html.bf-embed .bf-row{ margin-top:2px; }
+html.bf-embed .bf-src{ font-size:.78rem; }
+html.bf-embed .bf-guide{ font-size:.86rem; line-height:1.4; }
+@media (min-width:860px){ html.bf-embed.bf-n3 #bfSections{ grid-template-columns:repeat(3,minmax(0,1fr)); } }

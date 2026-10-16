@@ -518,6 +518,10 @@ var NUMS = D.NUMS || [];
    closest in height, measured when the page is shown and on resize. On builder
    pages the live draft sits beside the fields. */
 (function(){
+  /* screens (the default): each page fits one screen. Heavy lessons are split in the HTML
+     into a concept screen (idea left, the video or deck graphic right) and a Your turn
+     screen (the activity alone). LR_CONFIG.layout = 'flow' gives one long column instead. */
+  var FLOW = C.layout === 'flow', ACTIVE = '.v-task, .lr-feeds, .lr-build, [data-drill], [data-calls], [data-taps], .v-msg, .lr-prompt, .v-deck, .lr-tools, iframe.lr-brief-embed, .drill-status, .v-commits';
   var stages = [];
   $$('.v-stage').forEach(function(st){
     var copy = st.querySelector(':scope > .v-copy'), act = st.querySelector(':scope > .v-act'); if(!copy || !act) return;
@@ -525,7 +529,30 @@ var NUMS = D.NUMS || [];
     $$(':scope > .v-stephead, :scope > h2.v-h, :scope > .v-why, :scope > figure.lr-vision-hero', copy).forEach(function(x){ lead.appendChild(x); });
     if(lead.children.length) st.insertBefore(lead, copy);
     var build = act.querySelector('.lr-build[data-build]');
-    if(build){ var key = build.getAttribute('data-build');
+    if(FLOW){
+      /* teaching blocks that open the activity column move to the end of the lesson */
+      var kids = [].slice.call(act.children), first = -1;
+      kids.some(function(x, i){ if(x.matches(ACTIVE) || x.querySelector(ACTIVE)){ first = i; return true; } return false; });
+      kids.slice(0, first < 0 ? 0 : first).forEach(function(x){ copy.appendChild(x); });
+      /* one anatomy on every page: 1 Watch, 2 The idea, 3 Your turn; extras in one small row at the end */
+      var step = 0, label = function(t){ var p = document.createElement('p'); p.className = 'lr-turn'; p.innerHTML = '<span aria-hidden="true">' + (++step) + '</span>' + t; return p; };
+      if(!copy.querySelector(ACTIVE) && !st.querySelector('.v-stephead')){
+        var MEDIA = '.v-video, figure.lr-story, figure.lr-slide, .lr-deckcar, figure.lr-fig, figure.v-quote';
+        var kidsC = [].slice.call(copy.children), media = kidsC.filter(function(x){ return x.matches(MEDIA); });
+        var extras = kidsC.filter(function(x){ return x.matches('figure.lr-presenter, details.v-more') || (media.length && x.matches('figure.lr-photo')); });
+        var rest = kidsC.filter(function(x){ return media.indexOf(x) < 0 && extras.indexOf(x) < 0; });
+        if(media.length){ copy.appendChild(label(media.some(function(x){ return x.matches('.v-video, figure.lr-story'); }) ? 'Watch' : 'See it')); media.forEach(function(x){ copy.appendChild(x); }); }
+        if(rest.length){ if(media.length) copy.appendChild(label('The idea')); rest.forEach(function(x){ copy.appendChild(x); }); }
+        var more = document.createElement('div'); more.className = 'lr-extras lr-read-host';
+        extras.forEach(function(x){ more.appendChild(x); });
+        st.appendChild(more);
+      } else {
+        var more2 = document.createElement('div'); more2.className = 'lr-extras lr-read-host'; st.appendChild(more2);
+      }
+      if(act.children.length && (copy.children.length || step) && !st.querySelector('.v-stephead')) act.insertBefore(label('Your turn'), act.firstChild);
+      st.classList.add('lr-flow');
+    }
+    if(build && !FLOW){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
     var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > figure.lr-vision, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter, :scope > figure.lr-slide, :scope > .lr-deckcar, :scope > figure.lr-story', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
@@ -544,7 +571,7 @@ var NUMS = D.NUMS || [];
   }
   function wide(x){ return x.matches('figure.lr-fig, figure.lr-photo, figure.lr-story'); }
   function fit(s){
-    if(!s.fl.length || !s.st.offsetParent) return;
+    if(FLOW || !s.fl.length || !s.st.offsetParent) return;
     if(window.matchMedia('(max-width:1000px)').matches){ s.fl.forEach(function(x){ place(x, 0, s); }); if(s.below) s.below.hidden = true; return; }
     var n = s.fl.length, total = Math.pow(3, n), best = null, bestD = Infinity;
     for(var m = 0; m < total; m++){
@@ -900,7 +927,7 @@ window.LR_NARRSTOP = narrStop;
     if(e.origin !== location.origin || !e.data || !e.data.lrBrief) return;
     frames.forEach(function(f){
       if(f.contentWindow !== e.source) return;
-      f.style.height = Math.max(200, e.data.h + 8) + 'px';
+      f.style.height = Math.max(200, e.data.h + 2) + 'px';
       var k = f.getAttribute('data-prog'), st = f.getAttribute('data-status') && document.getElementById(f.getAttribute('data-status'));
       if(st) st.textContent = e.data.filled + ' of ' + e.data.of + ' sections written. Saved to your brief.';
       if(k && e.data.filled === e.data.of && !progIs(k)){ set('r-' + k, 'Sections ' + e.data.range + ' written'); progDone(k); }
@@ -1013,6 +1040,8 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
       all('[data-in],[data-out]', svg).forEach(function(e){ var i = +(e.getAttribute('data-in') || 1), o = +(e.getAttribute('data-out') || 99); e.classList.toggle('st-on', k >= i && k < o); });
       all('[data-hi]', svg).forEach(function(e){ e.classList.toggle('st-hi', nums(e.getAttribute('data-hi')).indexOf(k) > -1); });
       all('[data-at]', svg).forEach(function(e){ var ps = e.getAttribute('data-at').split(';'), at = ps[0].split(':')[1]; ps.forEach(function(p){ var b = p.split(':'); if(+b[0] <= k) at = b[1]; }); if(at) e.style.transform = 'translate(' + at.split(',').map(function(v){ return v + 'px'; }).join(',') + ')'; });
+      /* data-z="1:1.7;2:1.3;3:1" zooms a group per scene, around data-zo="x y" */
+      all('[data-z]', svg).forEach(function(e){ var ps = e.getAttribute('data-z').split(';'), z = ps[0].split(':')[1]; ps.forEach(function(p){ var q = p.split(':'); if(+q[0] <= k) z = q[1]; }); e.style.transformBox = 'view-box'; e.style.transformOrigin = (e.getAttribute('data-zo') || '50% 50%'); e.style.transform = 'scale(' + z + ')'; });
       all('.lr-st-dot', bar).forEach(function(d, j){ d.classList.toggle('seen', j < k); if(j + 1 === k) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
       cnt.textContent = k ? k + ' / ' + n : '';
       var t = NAR[base + k]; cap.textContent = started && t ? FIXT(t) : hello;
@@ -1028,7 +1057,8 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
     bar.addEventListener('click', function(e){ var d = e.target.closest('.lr-st-dot'); if(!d) return; var k = +d.getAttribute('data-k'); started = true; if(playing) run(k); else { show(k); ui(); } });
     /* leaving the page stops the story where it is */
     document.addEventListener('chart:page', function(){ if(playing){ playing = false; if(window.LR_NARRSTOP) window.LR_NARRSTOP(); ui(); } });
-    show(n); fig.classList.add('st-ready'); show(1); ui();
+    /* at rest a diagram story shows the finished graphic; a slide story shows its first slide */
+    show(n); fig.classList.add('st-ready'); show(svg.tagName.toLowerCase() === 'svg' ? n : 1); ui();
   });
 })();
 

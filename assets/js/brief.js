@@ -42,12 +42,12 @@ var SECTIONS = [
 
 var q = new URLSearchParams(location.search), EMBED = q.get('embed') === '1', RANGE = (q.get('s') || '1-7').split('-').map(Number);
 function inRange(s){ return s.n >= RANGE[0] && s.n <= (RANGE[1] || RANGE[0]); }
-if(EMBED) document.documentElement.classList.add('bf-embed');
+if(EMBED){ document.documentElement.classList.add('bf-embed'); document.documentElement.classList.add('bf-n' + ((RANGE[1] || RANGE[0]) - RANGE[0] + 1)); }
 var box = document.getElementById('bfSections'), status = document.getElementById('bfStatus'), count = document.getElementById('bfCount');
 box.innerHTML = SECTIONS.filter(function(s){ return !EMBED || inRange(s); }).map(function(s){
   var id = 'bfS' + s.n;
   var input = s.select ? '<select id="' + id + '" data-s="' + s.n + '"><option value="">Choose one</option>' + FOCUS.map(function(f){ return '<option>' + f + '</option>'; }).join('') + '</select>'
-    : '<textarea id="' + id + '" data-s="' + s.n + '" rows="5"></textarea>';
+    : '<textarea id="' + id + '" data-s="' + s.n + '" rows="' + (EMBED ? 3 : 5) + '"></textarea>';
   return '<section class="bf-sec" aria-labelledby="' + id + 'h"><div class="bf-head"><span class="bf-no" aria-hidden="true">' + s.n + '</span><h2 id="' + id + 'h"><label for="' + id + '"><span class="sr">' + s.n + '. </span>' + esc(s.h) + '</label></h2><span class="bf-tag">Course ' + (s.course === 1 ? 'One' : 'Two') + '</span></div>' +
     '<p class="bf-guide">' + esc(s.guide) + '</p>' + input +
     '<div class="bf-row"><p class="bf-src" id="' + id + 'src"></p><button type="button" class="bf-reset" data-reset="' + s.n + '" hidden>Use my course draft again</button></div></section>';
@@ -59,15 +59,15 @@ function paintOne(s){
   var el = document.getElementById('bfS' + s.n), src = document.getElementById('bfS' + s.n + 'src'), rs = box.querySelector('[data-reset="' + s.n + '"]');
   var edited = get('lrb-s' + s.n) !== null, fromCourse = s.from();
   if(document.activeElement !== el) el.value = val(s);
-  if(el.tagName === 'TEXTAREA'){ el.style.height = 'auto'; el.style.height = Math.max(120, el.scrollHeight + 4) + 'px'; }
+  if(el.tagName === 'TEXTAREA'){ el.style.height = 'auto'; el.style.height = Math.max(EMBED ? 76 : 120, el.scrollHeight + 4) + 'px'; }
   rs.hidden = !edited || !fromCourse;
-  src.innerHTML = EMBED ? (edited ? 'Saved to your brief.' : fromCourse ? 'Started from your work in ' + esc(s.where) + '. Edit it here.' : 'Saves to your brief as you type.')
+  src.innerHTML = EMBED ? (edited ? 'Saved.' : fromCourse ? 'Started from your work in ' + esc(s.where) + '.' : '')
     : edited ? 'Edited here. Your edits are kept.' : fromCourse ? 'Filled in from ' + esc(s.where) + '.' : 'Not written yet. Draft it in <a href="' + s.link + '">' + esc(s.where) + '</a>, or type it here.';
 }
 function words(){ var t = SECTIONS.map(val).join(' ') + ' ' + ['title', 'pod', 'members'].map(function(k){ return get('lrb-' + k) || ''; }).join(' '); var n = (t.match(/\S+/g) || []).length; return n; }
 function report(){ if(!EMBED || window.parent === window) return;
   var mine = SECTIONS.filter(inRange), filled = mine.filter(function(s){ return val(s).trim().length > 0; }).length;
-  try{ window.parent.postMessage({ lrBrief:true, h:document.documentElement.scrollHeight, filled:filled, of:mine.length, range:RANGE.join('-') }, location.origin); }catch(e){} }
+  try{ window.parent.postMessage({ lrBrief:true, h:Math.ceil(box.getBoundingClientRect().bottom + window.scrollY), filled:filled, of:mine.length, range:RANGE.join('-') }, location.origin); }catch(e){} }
 function paint(){ SECTIONS.forEach(paintOne); report(); var n = words(), filled = SECTIONS.filter(function(s){ return val(s).trim(); }).length;
   count.textContent = filled + ' of 7 sections have text · about ' + n.toLocaleString('en-US') + ' words' + (n > 1500 ? ', likely more than three pages: tighten before you submit.' : '. Three pages is about 1,500 words.'); }
 

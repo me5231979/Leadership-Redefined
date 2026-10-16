@@ -45,6 +45,10 @@ Each course takes about 45 minutes: about 17 minutes of narration, short Chancel
 
 Every writing box opens with one line on its purpose: synthesize the idea in your own words, codify it as something your team can use, then apply it with your team.
 
+### Screens, not scrolling
+
+Every page is designed to fit one 1440 by 900 screen. A lesson with a video, story, or deck graphic is split into a concept screen (the idea on the left, the media on the right) and a separate Your turn screen for the activity (`data-pg` markers inside the section; PLAN mode `pages`). Ertel's and Lutz's key slides each get a deck screen of four cards. The two draft pages still scroll a little, because they hold writing.
+
 ### The live brief inside the courses
 
 The draft pages embed the brief page itself (`brief/?embed=1&s=1-3` and `s=4-7`), so what a learner writes there is saved straight into the full brief: one copy, no drift. The frame reports its height and progress to the course page, which marks the page done when every section has text.
