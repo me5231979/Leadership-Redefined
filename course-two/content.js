@@ -49,7 +49,7 @@ window.LR_COURSE = {
     { k:'principles', no:'12', name:'Six principles', how:'Open all six' },
     { k:'metrics', no:'13', name:'Strong metrics', how:'Sort six metrics' },
     { k:'draft', no:'14', name:'Draft sections 4 to 7', how:'Fill in five of six parts' },
-    { k:'quiz', no:'15', name:'Apply it', how:'Score 6 of 8' },
+    { k:'quiz', no:'15', name:'Quick check', how:'Score 6 of 8' },
     { k:'nextstep', no:'16', name:'This week', how:'Commit to all four moves' },
     { k:'carry', no:'17', name:'Carry it forward', how:'Fill in three of four lines' }
   ],
@@ -59,7 +59,7 @@ window.LR_COURSE = {
     {
       h:'Module 2: Communication, Storytelling &amp; <em>Brand</em>',
       p:'The Chancellor on communication, then your pod’s storyline.',
-      tags:['A video', 'Brand or reputation', 'The ground game', 'Your storyline']
+      tags:['The Chancellor', 'Brand or reputation', 'The ground game', 'Your storyline']
     },
     {
       h:'Module 4: Entrepreneurial <em>Mindset</em>',
@@ -218,7 +218,7 @@ window.LR_COURSE = {
       items:[
         { s:'Increase awareness of the new process.', a:1, x:'No number, no date. Try: 80% of administrators can find it in under a minute by March.' },
         {
-          s:'Median days from hire to full system access drops from 21 to 5 by the end of spring.',
+          s:'Median days from hire to full system access drops from 21 to 2 in the pilot by March.',
           a:0,
           x:'A baseline, a target, a date, and an outcome people feel.'
         },
@@ -329,11 +329,11 @@ window.LR_COURSE = {
     me3:{ txt:['own', 'when'] }
   },
   BUILDS:{
-    me1:{ title:'As a manager, after module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1:{ title:'As a manager, after Module 2', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap1:{ title:'Module 2, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2:{ title:'As a manager, after Module 4', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap2:{ title:'Module 4, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me3:{ title:'As a manager, after module 6', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me3:{ title:'As a manager, after Module 6', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap3:{ title:'Module 6, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     ground:{
       title:'My ground game play',
@@ -392,7 +392,7 @@ window.LR_COURSE = {
     var b = function(k, f){ return (get('b-' + k + '-' + f) || '').trim(); };
     if(which === 'teams'){
       var w = b('reframe', 'whatif');
-      return 'One principle I am taking back to my team from Candice Storey Lee: [values first, control the controllables, own your response, or another]. ' + (w ? 'Our pod’s reframe this week: what if ' + w.replace(/[.!?]$/, '') + '?' : 'Our pod’s reframe this week: [your what if].') + ' Which of her principles does your team live best?';
+      return 'One way I will apply entrepreneurial thinking in my role: [reframe a challenge, run a small pilot, or borrow an idea from outside higher ed]. ' + (w ? 'Our pod’s reframe this week: what if ' + w.replace(/[.!?]$/, '') + '?' : 'Our pod’s reframe this week: [your what if].') + ' A bold idea that could advance Vanderbilt’s vision: [your idea, and why it matters]. What would you pilot first in your area?';
     }
     return '';
   },

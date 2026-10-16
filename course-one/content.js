@@ -53,7 +53,7 @@ window.LR_COURSE = {
     { k:'repstatement', no:'15', name:'Your reputational statement', how:'Fill in three of four lines' },
     { k:'focus', no:'16', name:'Your focus area', how:'Sort five challenges' },
     { k:'draft', no:'17', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz', no:'18', name:'Apply it', how:'Score 6 of 8' },
+    { k:'quiz', no:'18', name:'Quick check', how:'Score 6 of 8' },
     { k:'nextstep', no:'19', name:'This week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
@@ -67,7 +67,7 @@ window.LR_COURSE = {
     {
       h:'Module 3: Mission and <em>Margin</em>',
       p:'The Chancellor on mission and margin, then the trade-offs.',
-      tags:['A video', 'Two situations', 'The Chancellor’s slides', 'The whole cost']
+      tags:['A video', 'Two situations', 'The Chancellor’s slides', 'The whole cost', 'Your statement']
     },
     {
       h:'Module 5: Reputational <em>Stewardship</em>',
@@ -89,7 +89,7 @@ window.LR_COURSE = {
       opts:['About 9%', 'About 7%', '4.6%'],
       a:2,
       big:'4.6%',
-      x:'Selectivity fell from 11.6% in 2020-21 to 4.6% in 2026-27, and yield, the share of admitted students who enroll, rose from 39.9% to 65.4%. More of the best students choose Vanderbilt first.'
+      x:'The admission rate fell from 11.6% in 2020-21 to 4.6% in 2026-27, so Vanderbilt grew far more selective, and yield, the share of admitted students who enroll, rose from 39.9% to 65.4%. More of the best students choose Vanderbilt first.'
     },
     {
       lab:'Net new commitments',
@@ -634,11 +634,11 @@ window.LR_COURSE = {
     me3:{ txt:['own', 'when'] }
   },
   BUILDS:{
-    me1:{ title:'As a manager, after module 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me1:{ title:'As a manager, after Module 1', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap1:{ title:'Module 1, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me2:{ title:'As a manager, after module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me2:{ title:'As a manager, after Module 3', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap2:{ title:'Module 3, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
-    me3:{ title:'As a manager, after module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
+    me3:{ title:'As a manager, after Module 5', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     recap3:{ title:'Module 5, in my words', fields:['txt'], need:1, tpl:function(v){ return v.txt || '[not written yet]'; } },
     statement:{
       title:'My mission and margin statement',
@@ -700,7 +700,7 @@ window.LR_COURSE = {
     {
       seg:'Strategy',
       q:'After a burst of national attention, applications and gifts both rose. Which idea explains why?',
-      opts:['The three areas of focus', 'The reputation feedback loop', 'Counting the whole cost', 'The ground game'],
+      opts:['The three areas of focus', 'The reputation feedback loop', 'Counting the whole cost', 'The trust radar'],
       a:1,
       x:'Reputation attracts resources, like students and funding, and the results build more reputation.'
     },
@@ -797,7 +797,7 @@ window.LR_COURSE = {
           ],
           [
             'Reputation is an engine.',
-            'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up. Four growth sites show the bold bets it funds.'
+            'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up.'
           ],
           [
             'Bold has an address.',
