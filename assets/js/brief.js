@@ -1,7 +1,6 @@
 /* ══════════ LEADERSHIP REDEFINED · your capstone brief ══════════
-   One page for the whole brief. Sections 1 to 3 fill from Course One's
-   builders (localStorage lr1-b-...), sections 4 to 7 from Course Two's
-   (lr2-b-...). Both courses run from the same site, so the brief carries from
+   One page for the whole brief. Each section pulls from whichever course
+   holds the builder (localStorage lr1-b-... or lr2-b-...). Both courses run from the same site, so the brief carries from
    course to course. Edits made here are kept under lrb- and win over the
    course drafts until the learner chooses "Use my course draft again".
    Nothing is sent anywhere. No em or en dashes. */
@@ -21,15 +20,15 @@ var SECTIONS = [
   { n:1, h:'Focus area', course:1, where:'Course One, Your brief: Draft the brief', link:'../course-one/#p/draft/1', select:true,
     guide:'State one area of focus at the top of page one. Your brief is judged only within this area.',
     from:function(){ return b(1, 'draft', 'area'); } },
-  { n:2, h:'The challenge and why it matters', course:1, where:'Course One: Draft the brief and Your storyline', link:'../course-one/#p/draft/1',
+  { n:2, h:'The challenge and why it matters', course:1, where:'Course One: Draft the brief, and Course Two: Your storyline', link:'../course-one/#p/draft/1',
     guide:'Open with a real person and a moment. Then the challenge in one sentence: who is affected, and what happens today. Then why it matters strategically: what it costs to wait.',
-    from:function(){ return join([['Opening:', sentence(b(1, 'story', 'person'))], ['The challenge:', sentence(b(1, 'draft', 'challenge'))], ['Why it matters strategically:', sentence(b(1, 'draft', 'why'))]]); } },
+    from:function(){ return join([['Opening:', sentence(b(2, 'story', 'person'))], ['The challenge:', sentence(b(1, 'draft', 'challenge'))], ['Why it matters strategically:', sentence(b(1, 'draft', 'why'))]]); } },
   { n:3, h:'Connection to Vanderbilt’s priorities', course:1, where:'Course One: Draft the brief and Your statement', link:'../course-one/#p/draft/1',
     guide:'Name the line from the vision and the area of focus your idea serves. Then mission and margin: what it strengthens, what it costs, and who pays after year one.',
     from:function(){ return join([['', sentence(b(1, 'draft', 'priorities'))], ['Mission:', sentence(b(1, 'statement', 'mission'))], ['Cost and funding:', sentence(b(1, 'statement', 'cost'))], ['What it saves, earns, or protects:', sentence(b(1, 'statement', 'ret'))], ['After year one:', sentence(b(1, 'statement', 'quad'))]]); } },
-  { n:4, h:'Integrated solution: people, process, technology', course:2, where:'Course Two: Draft the brief, Radical collaboration, and Your statement', link:'../course-two/#p/draft/1',
+  { n:4, h:'Integrated solution: people, process, technology', course:2, where:'Course Two: Draft the brief and Radical collaboration, and Course One: Your reputational statement', link:'../course-two/#p/draft/1',
     guide:'What changes for people, in process, and in technology, together. Name the partners who share the credit, and how you protect Vanderbilt’s reputation.',
-    from:function(){ return join([['People:', sentence(b(2, 'draft', 'people'))], ['Process:', sentence(b(2, 'draft', 'process'))], ['Technology:', sentence(b(2, 'draft', 'tech'))], ['Partners who share the credit:', sentence(b(2, 'collab', 'share'))], ['Reputation:', sentence(b(2, 'repstatement', 'stmt'))], ['Risks, and how we protect trust:', [sentence(b(2, 'repstatement', 'risk')), sentence(b(2, 'repstatement', 'mit'))].filter(Boolean).join(' ')]]); } },
+    from:function(){ return join([['People:', sentence(b(2, 'draft', 'people'))], ['Process:', sentence(b(2, 'draft', 'process'))], ['Technology:', sentence(b(2, 'draft', 'tech'))], ['Partners who share the credit:', sentence(b(2, 'collab', 'share'))], ['Reputation:', sentence(b(1, 'repstatement', 'stmt'))], ['Risks, and how we protect trust:', [sentence(b(1, 'repstatement', 'risk')), sentence(b(1, 'repstatement', 'mit'))].filter(Boolean).join(' ')]]); } },
   { n:5, h:'Implementation steps, owners, timeline', course:2, where:'Course Two: Draft the brief and Your pilot', link:'../course-two/#p/draft/1',
     guide:'One line per step: what, the owner role, and by when. Start with the pilot.',
     from:function(){ var s = b(2, 'draft', 'steps'); return join([['', s], ['Start with the pilot:', s ? '' : sentence(b(2, 'reframe', 'pilot'))], ['The early win:', sentence(b(2, 'collab', 'win'))]]); } },

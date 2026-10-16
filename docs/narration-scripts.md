@@ -8,21 +8,21 @@ Diermeier is spelled phonetically (Deer-myer) in the source so the voice says it
 
 ### Welcome
 
-*About 80 seconds*
+*About 85 seconds*
 
-Welcome to Course One of Leadership Redefined. At the Symposium, you heard the big ideas. Over the next seventy minutes or so, you will put three of them to work on a real problem: your pod’s capstone. Here is why that matters. By November twentieth, your pod will hand a panel of judges a three-page brief that names a challenge for Vanderbilt and solves it. Everything in this course is built to help you write the first page of that brief, the page that makes the case. You bring years of experience leading people and work at Vanderbilt. This course will not lecture you about leadership in general. It gives you a few sharp tools, asks you to try each one, and then asks you to use it on your own pod’s idea. There are four lessons: vision and strategy, story and brand, mission and margin, and then your brief. Each page has one idea and one thing to do. You can listen, read along, or both, and you can go in any order. Your answers save in this browser and print as a weekly takeaway. Plan to finish by Friday, November sixth. When you are ready, tap Start Course One.
+Welcome to Course One of Leadership Redefined. At the Symposium, you heard the big ideas. Over the next ninety minutes or so, you will put three of the Chancellor’s big ideas to work on a real problem: your pod’s capstone. Here is why that matters. By November twentieth, your pod will hand a panel of judges a three-page brief that names a challenge for Vanderbilt and solves it. Everything in this course is built to help you write the first page of that brief, the page that makes the case. You bring years of experience leading people and work at Vanderbilt. This course will not lecture you about leadership in general. It gives you a few sharp tools, asks you to try each one, and then asks you to use it on your own pod’s idea. There are three modules, all from the Chancellor’s presentation: vision and strategy, mission and margin, and reputational stewardship. Then you start your brief. Each page has one idea and one thing to do. You can listen, read along, or both, and you can go in any order. Your answers save in this browser and print as a weekly takeaway. Plan to finish by Friday, November sixth. When you are ready, tap Start Course One.
 
 ### This week
 
 *About 75 seconds*
 
-This first page is your map. Before you start any learning, it helps to know where you are going and why, so here is the shape of the week. Module one is vision and strategy: what the Chancellor’s vision asks of you, and how reputation becomes resources. Module two is story and brand: how Vanderbilt thinks about its reputation, and how to tell your pod’s story so people want to act. Module three is mission and margin: how leaders weigh purpose and money in the same decision. The last part starts your brief: you choose a focus area and draft the first three sections. Course Two covers the other four, and your pod pulls the whole brief together. Each lesson ends with what it means for you, a short wrap-up where you put the ideas in your own words, and an optional go deeper with proven outside reading. That step matters. Explaining something back is one of the most reliable ways adults remember what they learn. Tap each stop to preview it. Then turn the page, and we will start with the vision itself.
+This first page is your map. Before you start any learning, it helps to know where you are going and why, so here is the shape of the week. All three modules this week come from the Chancellor’s presentation at the Symposium. Module one is vision and strategy: what the Chancellor’s vision asks of you, and how reputation becomes resources. Module three is mission and margin: how leaders weigh purpose and money in the same decision. Module five is reputational stewardship: how trust is earned and kept, and what your project means for Vanderbilt’s name. The last part starts your brief: you choose a focus area and draft the first three sections. Course Two covers the other four, and your pod pulls the whole brief together. Each lesson ends with what it means for you, a short wrap-up where you put the ideas in your own words, and an optional go deeper with proven outside reading. That step matters. Explaining something back is one of the most reliable ways adults remember what they learn. Tap each stop to preview it. Then turn the page, and we will start with the vision itself.
 
 **Tap clips**
 
-- *route/g1:* Stop one, module one: Vision, Strategy and the Future of Vanderbilt. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess four numbers that show whether the strategy is working, and tour four growth sites on the Chancellor’s map. An optional go deeper adds a strategy tool called the value stick.
-- *route/g2:* Stop two, module two: Communication, Storytelling and Brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, your part in the ground game, and then you draft your pod’s storyline.
-- *route/g3:* Stop three, module three: Mission and Margin. The Chancellor again, two hard calls about money and purpose, and how to count the whole cost of a decision, from his book Mission and Margin.
+- *route/g1:* Stop one, module one: Vision, Strategy and the Future of Vanderbilt. You will see the vision and its three areas of focus, learn how reputation and resources feed each other, guess five numbers that show whether the strategy is working, and tour four growth sites on the Chancellor’s map. An optional go deeper adds a strategy tool called the value stick.
+- *route/g2:* Stop two, module three: Mission and Margin. The Chancellor again, two hard calls about money and purpose, and how to count the whole cost of a decision, from his book Mission and Margin.
+- *route/g3:* Stop three, module five: Reputational Stewardship. The Chancellor again, the trust radar, where reputation is made, when to act, three calls under pressure, and your project’s reputational statement.
 - *route/g4:* Stop four, your brief. Practice choosing a focus area, draft sections one to three, and check what you can now apply.
 
 ### Module 1: The vision
@@ -85,68 +85,19 @@ Module one gave you the vision, the reputation engine, and the growth sites. Her
 
 *About 75 seconds*
 
-That is module one. Before moving on, let us lock it in. Three ideas. First, the vision is an instruction: define the great university of the twenty-first century, and be it, through uncommon speed, agility, and scale, in three areas of focus. Second, reputation is an engine: reputation brings resources, resources produce results, and results build reputation, with three flywheels speeding it up. Attention, applications, gifts, and four growth sites show it running. Third, bold has an address: four growth sites carry the vision beyond Nashville, and each one runs on core operations. Now the most important step on this page. Pick one thing your team actually does, and write two sentences. Which area of focus does it serve, and which resource in the reputation engine does it grow? Do not skip this. Putting an idea in your own words, about your own work, is how it moves from something you read to something you use. Your answer saves here and prints in your takeaway. Next, an optional go deeper on a strategy tool called the value stick, or go straight on to module two: how Vanderbilt tells its story.
+That is module one. Before moving on, let us lock it in. Three ideas. First, the vision is an instruction: define the great university of the twenty-first century, and be it, through uncommon speed, agility, and scale, in three areas of focus. Second, reputation is an engine: reputation brings resources, resources produce results, and results build reputation, with three flywheels speeding it up. Attention, applications, gifts, and four growth sites show it running. Third, bold has an address: four growth sites carry the vision beyond Nashville, and each one runs on core operations. Now the most important step on this page. Pick one thing your team actually does, and write two sentences. Which area of focus does it serve, and which resource in the reputation engine does it grow? Do not skip this. Putting an idea in your own words, about your own work, is how it moves from something you read to something you use. Your answer saves here and prints in your takeaway. Next, an optional go deeper on a strategy tool called the value stick, or go straight on to module three: mission and margin.
 
 ### Module 1: Go deeper, the value stick
 
 *About 85 seconds*
 
-This page is an optional go deeper. Module one gave you the vision and the reputation engine. Here is a tool that complements them: of all the work on your plate, which of it is actually strategic? This idea is new to the program: Harvard Business School professor Felix Oberholzer-Gee offers a simple test called the value stick, from his book Better, Simpler Strategy. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space. Work that moves neither is activity, however busy it feels. Why it matters here: the reputation engine runs on results, and the value stick helps you choose the few projects that move a stakeholder’s choice. Think of the last project you finished. Whose choice did it change? Sort six initiatives if you want the practice, and use the links to read more. Next, module two: how Vanderbilt tells its story.
-
-### Module 2: Brand and reputation
-
-*About 75 seconds*
-
-Welcome to module two, Communication, Storytelling and Brand. In module one you saw that reputation brings resources. This lesson is about how reputation is built, and the part you play. Start with the short video from Chancellor Daniel Diermeier on effective communication. Then one distinction from Vice Chancellor Steve Ertel, who leads communications and marketing. Brand is what you say about yourself. It is owned: values, campaigns, messages. Reputation is what others say about you. It is earned: news stories, rankings, word of mouth. They are separate but related, and the goal is to close the gap between them. The gap grows when the experience does not match the claim. You close it by delivering the claim, then telling true stories about it. Vanderbilt’s own read of its brand is candid: strong in the South, less known nationally, often seen as similar to peers, and facing a wider doubt about higher education. Think about what a student or a vendor would say about your office. Is it the same as what your website says? Now decide six statements: brand, or reputation? Next, how a single big moment becomes lasting trust.
-
-### Module 2: Spikes and systems
-
-*About 70 seconds*
-
-You just separated brand from reputation. Now the question is how reputation grows. Vice Chancellor Ertel calls Vanderbilt a fighter brand: not the loudest, deeply valued once discovered. People who know Vanderbilt love it; not enough people know it yet. That changes how you earn attention. People move up a ladder: first relevance, then consideration, then trust, then commitment. A spike moment, like an upset win or a major gift, puts Vanderbilt on the first rung. But a spike without a system is noise. Attention fades unless a steady drumbeat of stories keeps people climbing. Big campaigns and national media are the air cover; they create stories, speeches, and coverage. The ground game is leaders carrying those stories directly to the people who matter: government, donors, business, prospective parents. And those people pass them on, because trust travels through proximity. That makes you part of the ground game. Think of one person outside Vanderbilt who trusts your work. How did that trust start? Tap the four moves a fighter brand makes. Next, your part in it: the ground game.
-
-**Tap clips**
-
-- *fighter/f1:* Earn attention thoughtfully. A fighter brand cannot outshout bigger names, so it chooses where to show up. From your seat, reach the two or three audiences your work matters to most, and reach them well.
-- *fighter/f2:* Interrupt expectation. People expect a university to be slow and cautious. Surprise them. The three-day answer when they expected three weeks becomes a story they repeat.
-- *fighter/f3:* Design bold moments. Spike moments give people a reason to look closer. In the Chancellor’s words, a little controversy is good for us. Treat a difficult topic as a chance to engage, not a thing to avoid.
-- *fighter/f4:* Sustain meaning over time. Reputation works as infrastructure, a system rather than a campaign. Keep telling the same true story long after the launch.
-
-### Module 2: The ground game
-
-*About 90 seconds*
-
-You just saw that a spike needs a system. Here is who runs that system: you. Vice Chancellor Ertel put it this way. Reputation creates resources when air cover is carried through ground game. Air cover is campaigns, advertising, and media. The ground game is leaders carrying the story person to person. He also said brands come to exist in one of two ways: by default, when we let the world tell our story, or by design, when we tell our own. The ground game works in three steps. First, reputation assets are created: stories, speeches, earned media, paid media, and social media. Second, those assets are shared directly with priority stakeholders and influencers: government, donors, business, and prospective parents. Third, the impact is multiplied peer to peer, because trust travels through proximity. The people you reach tell people you never will. So what can you do? Understand what sets Vanderbilt apart. Share reputation assets with the people you work with. Equip others to tell the story. And treat difficult or controversial topics as a chance to engage, not a reason to go quiet. Think of one result your team delivered this year that someone outside your office should hear about. Who is that person? Now plan one play of your ground game. It saves here and prints in your takeaway. Next, you will tell your pod’s story.
-
-### Module 2: Your storyline
-
-*About 75 seconds*
-
-You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. At the Symposium, Vice Chancellor Ertel gave a clear capstone ask: use effective communication and storytelling to connect your audience to the why behind your project, strengthening the narrative and reinforcing the Vanderbilt brand through purpose-driven impact. Three moves follow from his slides. Start with the why, through one real person and one real moment, because relevance comes before consideration. Show the difference: say what your idea changes and why it is distinctly Vanderbilt, because differentiation is a design principle. And make it travel: end with one ask, name what each audience cares about, and plan who carries the story next, because trust travels through proximity. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. Open the strong example if you want to see one, then draft your storyline. It saves here and folds into your brief later. Next, what module two means for you: for your capstone, and as a manager.
-
-### Module 2: What this means for me
-
-*About 55 seconds*
-
-Module two was about brand, reputation, and story. Here is what it means for you. For your capstone: open your brief with one real person and one real moment, and connect your audience to the why. Name your audiences and what each one cares about. And plan the ground game: who carries your story after the judging. As a manager: close your unit’s gap between what you claim and what people actually experience, and fix the experience first. Build a drumbeat, one short, true story about your team’s work every month. And equip your team to tell Vanderbilt’s story, including when the topic is hard. Think about the last story someone told about your team. Was it the one you would have chosen? Write the one thing you will try in the next two weeks. Next, a short wrap-up for module two.
-
-### Module 2: Wrap-up
-
-*About 60 seconds*
-
-That is module two. Three ideas to keep. Close the gap: brand is what we say about ourselves, reputation is what others say about us, and the gap closes when we deliver the claim and then tell true stories. A spike needs a system: attention climbs from relevance to consideration to trust to commitment only with a steady drumbeat, carried by leaders on the ground. And connect people to the why: one real person, the difference your idea makes, and one clear ask, carried by the people who hear it. Now apply it to your pod. Write down which audience matters most for your idea, and the one sentence of why that they need to hear. That sentence may end up opening your brief. Next, an optional go deeper on the shape of a great talk, or go straight on to module three: the hard trade-offs between purpose and money.
-
-### Module 2: Go deeper, the shape of a great talk
-
-*About 60 seconds*
-
-This page is an optional go deeper. Module two asked you to connect your audience to the why. Here is a proven structure for doing it. This idea is new to the program. Nancy Duarte, a communication expert, studied hundreds of great speeches and found a shared shape. Great communicators move back and forth between what is, the frustrating present, and what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then they end with one clear call to action and a picture of life after people act. Why it matters here: it is one reliable way to do what Vice Chancellor Ertel asked, so your pod’s story pulls people toward the why. Think of a speech that moved you. Did it go back and forth like this? Use the links to watch the talk or read her free multimedia book. Next, module three: mission and margin.
+This page is an optional go deeper. Module one gave you the vision and the reputation engine. Here is a tool that complements them: of all the work on your plate, which of it is actually strategic? This idea is new to the program: Harvard Business School professor Felix Oberholzer-Gee offers a simple test called the value stick, from his book Better, Simpler Strategy. Picture a vertical stick. At the top is willingness to pay: the most someone would give for what you offer. In a university, paying usually means choosing Vanderbilt, giving more, bringing a grant, or partnering with us. At the bottom is willingness to sell: the least a colleague or supplier would accept to work with us. Meaningful work, good tools, and growth lower it. The space between the two is the value Vanderbilt creates. Strategy widens that space. Work that moves neither is activity, however busy it feels. Why it matters here: the reputation engine runs on results, and the value stick helps you choose the few projects that move a stakeholder’s choice. Think of the last project you finished. Whose choice did it change? Sort six initiatives if you want the practice, and use the links to read more. Next, module three: mission and margin.
 
 ### Module 3: Mission and margin
 
 *About 80 seconds*
 
-Welcome to module three, Mission and Margin. Your story says why your idea matters. This lesson answers the question every judge and sponsor will ask next: can Vanderbilt afford it, and is it worth it? Start with the Chancellor’s video. Then hold on to three ideas. Mission is purpose: research, teaching, and discovery. Margin is capacity: the financial strength to pursue the mission. They feed each other, which is why a leader owns both. The Chancellor describes a leadership mindset: steward purpose and performance together, use mission to set priorities, build trust by being transparent and consistent, and think long term while naming the trade-offs. And four practical levers: know where money comes from and where it goes, use data and discipline, partner academic and finance leaders, and pilot, learn, and scale. Here is why it matters now. In twenty twenty five, many peer universities announced layoffs and hiring freezes. On the Chancellor’s comparison chart, Vanderbilt had none of those actions marked. Discipline in good years bought choices in hard ones. Think of a hard budget call you have made. Now try two situations, and test the other answers too, to see what they would cost. Next, how to count the whole cost of a decision.
+Welcome to module three, Mission and Margin. The vision says where Vanderbilt is going. This lesson answers the question every judge and sponsor will ask next: can Vanderbilt afford it, and is it worth it? Start with the Chancellor’s video. Then hold on to three ideas. Mission is purpose: research, teaching, and discovery. Margin is capacity: the financial strength to pursue the mission. They feed each other, which is why a leader owns both. The Chancellor describes a leadership mindset: steward purpose and performance together, use mission to set priorities, build trust by being transparent and consistent, and think long term while naming the trade-offs. And four practical levers: know where money comes from and where it goes, use data and discipline, partner academic and finance leaders, and pilot, learn, and scale. Here is why it matters now. In twenty twenty five, many peer universities announced layoffs and hiring freezes. On the Chancellor’s comparison chart, Vanderbilt had none of those actions marked. Discipline in good years bought choices in hard ones. Think of a hard budget call you have made. Now try two situations, and test the other answers too, to see what they would cost. Next, how to count the whole cost of a decision.
 
 **Tap clips**
 
@@ -181,127 +132,19 @@ Module three was about mission and margin. Here is what it means for you. For yo
 
 *About 50 seconds*
 
-That is module three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. Count the whole cost: follow the cash, and count buildings, space, research costs, and debt past year one. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now apply it to your own pod’s idea. What will it cost after year one, and what would pay for it? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, an optional go deeper on the Mission and Margin book, or go straight on to the last part, your brief: your brief.
+That is module three. Three ideas. No margin, no mission: mission is purpose, margin is capacity, and a leader stewards both. Count the whole cost: follow the cash, and count buildings, space, research costs, and debt past year one. Answer both questions: every proposal names its mission benefit, its cost and where the money comes from, and its return. Now apply it to your own pod’s idea. What will it cost after year one, and what would pay for it? If you cannot answer that yet, write down the question. It is a good one to bring to your pod. Next, an optional go deeper on the Mission and Margin book, or go straight on to module five: reputational stewardship.
 
 ### Module 3: Go deeper, Mission and Margin
 
 *About 55 seconds*
 
-This page is an optional go deeper. Module three drew on Mission and Margin, the practical guide to university finances that Chancellor Daniel Diermeier wrote with Brett Sweet, Vanderbilt’s chief financial officer. Why it is worth reading: it is an insider’s guide for non-insiders, built on their work together at Vanderbilt, and it walks step by step through the topics you used to count the whole cost, from scholarships and fundraising to depreciation, space, research, and debt. It complements this lesson by giving you the language finance partners use, so the case for your pod’s idea lands with them. Think about a finance conversation you found hard to follow. Which part would you want explained? The links go to the book and to a Freakonomics Radio conversation with the Chancellor. Next, the last part, your brief: your brief.
-
-### Your brief: Your focus area
-
-*About 80 seconds*
-
-Welcome to the last part, your brief. Everything so far has been preparation for this. Your pod submits one brief, no longer than three pages, due Friday, November twentieth. It has seven parts. This week you draft the first three: your focus area, the challenge and why it matters strategically, and the connection to Vanderbilt’s priorities. Next week, Course Two covers the rest. Start with the focus area, because it decides who you compete against. Three winners will be named, one per area. Here is a quick way to choose. If your solution makes existing work faster, cheaper, or better, it is Core Operations. If it creates something new that extends education or research, it is a Bold Initiative. If it changes how universities everywhere work, or makes the public case for what an essential research university does, it is Industry Leadership. Many ideas touch two. Choose the area where your solution does most of its work, and choose it on purpose. Think about your pod’s idea right now: if a judge asked which area it belongs in, could you answer in one sentence? Practice with five challenges, then read why after each. Next, you draft.
-
-### Your brief: Draft the brief
-
-*About 80 seconds*
-
-You have chosen a focus area. Now write the page that makes your case. Notice what you already have: your storyline from module two and your mission and margin statement from module three fold into this draft automatically. As you type, your draft builds in the Your draft box, ready to copy for your pod. That is by design. You have been building this page all along. Four parts. Your focus area, at the very top. The challenge, in one sentence: who is affected, and what happens today. Why it matters strategically: what it costs to wait, in mission, money, people, or reputation. Tie it to one of the four problems from module one if you can. And the connection to Vanderbilt’s priorities, by name: the line from the vision and the area of focus it serves. Open the example to see what strong looks like, and read what a judge will ask. Then ask yourself: could a colleague outside your office read your challenge sentence and explain the problem back to you? Then write your version. Copy it into your pod’s shared document before you meet. Next, eight short situations to check what you can apply.
-
-### Your brief: Quick check
-
-*About 40 seconds*
-
-You have learned the ideas and used them on your own work. Now check whether you can apply them to situations you have not seen yet. That is the real test of learning, and it is why these are scenarios, not definitions. Eight short situations. Choose what you would do, then read the explanation, which names the idea behind the best answer. Six of eight completes the check. If you miss one, the explanation will point you back to the page to revisit, and you can retake it anytime. Next, your moves for the week.
-
-### Your brief: This week
-
-*About 50 seconds*
-
-You are nearly done with Course One. Learning sticks when it turns into action in the next few days, so this page turns the course into four moves. Meet your pod for about forty five minutes and agree on one challenge and one focus area. Put your draft and your storyline in the pod’s shared document. Post in your cohort’s Teams channel on this week’s topic, and reply to at least one colleague; a starter post is ready to copy, built from what you wrote. Tap each move to commit. There is also a pod meeting agenda you can copy, and you can print this week’s takeaway: your overview, every activity, your answers, and your drafts in one place. Aim to finish by Friday, November sixth. Next, a short close.
-
-### Keep going
-
-*About 30 seconds*
-
-That is Course One. Look at what you have now: a clear view of the strategy, a story your pod can tell, a case in both mission and money, and a first draft of page one of your brief. Take it to your pod. Course Two opens the week of November ninth, with entrepreneurial mindset, reputational stewardship, and high-performing teams, and it helps you draft the rest of the brief. Crescere aude. Dare to grow.
-
-*Page narration: about 33 minutes.*
-
-## Course Two: Venture, Reputation and Teams (week of November 9)
-
-### Welcome
-
-*About 70 seconds*
-
-Welcome to Course Two of Leadership Redefined. Last week, in Course One, your pod made the case: a focus area, a challenge, and why it matters to Vanderbilt. This week you design what you will actually do about it, and the team that will do it. That is the second half of your brief: the solution, the plan, the metrics, and how it lasts. Three topics carry you there. Entrepreneurial mindset, so your solution starts small and learns fast. Reputational stewardship, so it protects the trust it depends on. And high-performing teams, so the people delivering it, starting with your own pod, do their best work. As before, each page has one idea and one thing to do, and you bring the experience. Every activity asks you to apply the idea to your own work or your pod’s idea. It takes about an hour. Plan to finish by Friday, November thirteenth, so your pod has a complete first draft before the final week. Tap Start Course Two when you are ready.
-
-### This week
-
-*About 45 seconds*
-
-Here is your map for the week. Module four is the entrepreneurial mindset, taught through a real Vanderbilt turnaround, and it ends with your pod’s first pilot. Module five is reputational stewardship: how trust is earned and kept, and what your project means for Vanderbilt’s name. Module six is high-performing teams, with Vice Chancellor Candice Storey Lee, and a health check on your own pod. The last part is your brief: strong metrics and a draft of sections four to seven. Each lesson closes with a short wrap-up where you explain the ideas back in your own words. Tap each stop to preview it, then turn the page to start with the Chancellor.
-
-**Tap clips**
-
-- *route/g1:* Stop one, module four: Entrepreneurial Mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, how radical collaboration made it work, and you turn your pod’s challenge into a pilot.
-- *route/g2:* Stop two, module five: Reputational Stewardship. The Chancellor again, the trust radar, where reputation is made, when to act, three calls under pressure, and your project’s reputational statement.
-- *route/g3:* Stop three, module six: High-Performing Teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles in her own words, and an optional go deeper on the research behind great teams.
-- *route/g4:* Stop four, your brief. Sort strong and weak metrics, draft sections four to seven, and check what you can now apply.
-
-### Module 4: Entrepreneurial mindset
-
-*About 70 seconds*
-
-Welcome to module four, Entrepreneurial Mindset. Start with the Chancellor’s short video on the entrepreneurial mindset. Then let us define it, because the phrase gets used loosely. An entrepreneurial mindset means acting like a founder inside an institution. You spot a problem or an opening, diagnose it honestly, act before everything is certain, test small, learn fast, and scale what works, using the resources you can actually reach. It is how a large university moves at the uncommon speed, agility, and scale you met in Course One. Vice Chancellor John Lutz taught this topic to the program through a case: the transformation of Vanderbilt’s fundraising. And the first lesson of that case is where it began. Not with a solution. With a diagnosis. His team laid out strengths, weaknesses, opportunities, and threats with real candor. Look closely at the weaknesses: three of the four were about people and culture, not tools. Think about a problem in your own area. Have you diagnosed it, or jumped to a fix? Tap each quadrant. Next, the numbers that came out of it.
-
-**Tap clips**
-
-- *swot/f1:* Strengths. A strong brand, pockets of talented people, and support from the Chancellor and the Board of Trust. The raw material was there; it needed connecting.
-- *swot/f2:* Weaknesses. Silos, a rigid culture, a hostile environment, and out-of-date processes and systems. Three of the four are about people, which told the team where the fix had to start.
-- *swot/f3:* Opportunities. New leadership, an investment mentality, and willing fellow travelers. Change needs allies, so find the people who already want it.
-- *swot/f4:* Threats. Time was short, the pressure was real, and the environment was fragile. Move fast enough to show results, and carefully enough not to break what works.
-
-### Module 4: The turnaround
-
-*About 55 seconds*
-
-You saw the diagnosis. Now the result. Lutz opened his story with the ending, and so will we, but you guess first. Making a guess before the reveal, even a wrong one, makes the answer far easier to remember. From nineteen ninety eight to twenty nineteen, new commitments stayed roughly flat. Then the team acted on its diagnosis. After you guess all four tiles, read the card below them. It holds the entrepreneurial point. Over twenty twenty to twenty twenty five, on three-year averages, money raised more than doubled, while the investment in fundraising rose by about half. In other words, they invested where the diagnosis pointed, and measured the return. Ask yourself: where in your own area would a modest, targeted investment produce an outsized result? Next, exactly what they changed.
-
-### Module 4: The change moves
-
-*About 70 seconds*
-
-You have seen the before and after. Now the how, which is the part you can reuse. Lutz says successful change leadership needs ambidexterity: alternating between assessment and action, rather than doing only one. He named five moves. Listen carefully to the key people, which also buys time with critics. Make clear-eyed assessments, against the best, not the average. Deal with resistance and underperformance, while giving hope to the leaders coming up. Drive people, process, and technology agendas at the same time. And look beyond best practices, even outside higher education. Then every tactic got a home in one of four categories: people and culture, collaboration and engagement, motivation and incentives, and process and systems. Each had an owner and a date. Notice that your brief asks for the same thing: a solution across people, process, and technology, with owners and a timeline. Think about the last change you led. Did it touch all three, or only one? Sort six real tactics, and read why after each. Next, the principle underneath all of them: radical collaboration.
-
-### Module 4: Radical collaboration
-
-*About 85 seconds*
-
-You just sorted the change moves. Underneath all of them was one principle. Lutz said the Chancellor’s call for Radical Collaboration underpinned every change initiative. It has three parts. First, start from the people you serve. Gift proposals reflected donor interests, aligned with the mission, and the team worked with donors rather than trying to steer them. Second, it is a team sport. Many roles are needed to execute a strategy, and every Vanderbilt leader is a fundraiser. Third, operate as One Vanderbilt. Donors who support several areas give the most, so every key prospect had a cross-Vanderbilt strategy, backed by shared credit, so two schools could win the same gift instead of competing for it. Lutz also led the people around the change, not only the work. He bought time with potential critics by listening. He sent serious signals that he meant business. He worked to reverse an image as a poor partner. He built trust and loyalty with top producers. And he used early wins to build momentum. Think about your pod’s idea. Which office could block it, and which could make it twice as strong if it shared the credit? Now map the people around your idea. It saves here and prints in your takeaway. Next, you turn your pod’s challenge into a pilot.
-
-### Module 4: Your pilot
-
-*About 85 seconds*
-
-Lutz’s turnaround moved back and forth between assessment and action, and the Chancellor’s own levers end with pilot, learn, and scale. So the next step for your pod is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, what module four means for you: for your capstone, and as a manager.
-
-### Module 4: What this means for me
-
-*About 55 seconds*
-
-Module four was the entrepreneurial mindset. Here is what it means for you. For your capstone: diagnose before you solve, and notice how many root causes are about people. Design the smallest pilot that would prove your idea, with a scale rule set before you start. And map the people: partners who share the credit, a likely critic, your top producers, and the early win. As a manager: alternate assessment and action, listening and benchmarking, then moving, then looking again. Change people, process, and technology together, because fixing one alone rarely sticks. And run small experiments on complex problems, then celebrate the early wins out loud. Think about a problem your team keeps analyzing. Could a small test answer it faster? Write the one thing you will try in the next two weeks. Next, a short wrap-up for module four.
-
-### Module 4: Wrap-up
-
-*About 55 seconds*
-
-That is module four. Three ideas. Diagnose before you build: the turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people. Change three things at once: people, process, and technology together, with every tactic owned and dated. And win together: radical collaboration means starting from the people you serve, treating the work as a team sport, and sharing the credit as One Vanderbilt. Now apply it. Write the smallest pilot that would prove your pod’s idea, and who must share the credit for it. Explaining it in your own words, about your own project, is what makes it stick. Next, an optional go deeper on the kinds of problems leaders face, or go straight on to module five: protecting the trust your idea depends on.
-
-### Module 4: Go deeper, kinds of problems
-
-*About 70 seconds*
-
-This page is an optional go deeper. Module four followed Vice Chancellor Lutz from assessment to action, and the Chancellor’s levers end with pilot, learn, and scale. Here is a framework that explains when piloting beats planning. This idea is new to the program. A Harvard Business Review article by David Snowden and Mary Boone, A Leader’s Framework for Decision Making, names four kinds of problems. Simple problems have a known best practice. Complicated problems have a right answer that experts can find. Complex problems have no right answer up front; cause and effect show up only in hindsight, so you probe with small, safe experiments and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Think of a recent problem at work. Which kind was it? Sort four situations if you want the practice, and use the links to read the article and research on ambidextrous organizations. Next, module five: reputational stewardship.
+This page is an optional go deeper. Module three drew on Mission and Margin, the practical guide to university finances that Chancellor Daniel Diermeier wrote with Brett Sweet, Vanderbilt’s chief financial officer. Why it is worth reading: it is an insider’s guide for non-insiders, built on their work together at Vanderbilt, and it walks step by step through the topics you used to count the whole cost, from scholarships and fundraising to depreciation, space, research, and debt. It complements this lesson by giving you the language finance partners use, so the case for your pod’s idea lands with them. Think about a finance conversation you found hard to follow. Which part would you want explained? The links go to the book and to a Freakonomics Radio conversation with the Chancellor. Next, module five: reputational stewardship.
 
 ### Module 5: Reputational stewardship
 
-*About 85 seconds*
+*About 90 seconds*
 
-Welcome to module five, Reputational Stewardship. In module four you designed a bold pilot. Every bold idea borrows against something fragile: Vanderbilt’s reputation. Start with the Chancellor’s video. Then remember the loop from Course One: reputation brings talent and funding, and those build more reputation. The loop can also run in reverse. That is why leaders treat reputation as infrastructure: a system built every day by service, operations, and decisions, not a campaign. In his book Reputation Rules, Chancellor Daniel Diermeier argues that when something goes wrong, people judge an institution less on the facts than on whether they trust it. He draws trust as a radar with four axes: transparency, expertise, commitment, and empathy. Strong on all four, the shape is a full diamond. A crisis finds the dent. Two more of his tools are worth knowing by name. Credibility transfer means a trusted third party, such as an outside expert or a partner, lends you their credibility. Room to maneuver means trust built before a crisis buys time and options during it. His team has used these tools in real Vanderbilt moments, from campus protests to public scrutiny of clinical care. Think of an organization you stopped trusting. Which axis of the radar did it dent? Tap each driver. Next, where reputation is actually made.
+Welcome to module five, Reputational Stewardship. In module three you weighed what your idea costs and what it is worth. Every bold idea borrows against something fragile: Vanderbilt’s reputation. Start with the Chancellor’s video. Then remember the loop from module one: reputation brings talent and funding, and those build more reputation. The loop can also run in reverse. That is why leaders treat reputation as infrastructure: a system built every day by service, operations, and decisions, not a campaign. In his book Reputation Rules, Chancellor Daniel Diermeier argues that when something goes wrong, people judge an institution less on the facts than on whether they trust it. He draws trust as a radar with four axes: transparency, expertise, commitment, and empathy. Strong on all four, the shape is a full diamond. A crisis finds the dent. Two more of his tools are worth knowing by name. Credibility transfer means a trusted third party, such as an outside expert or a partner, lends you their credibility. Room to maneuver means trust built before a crisis buys time and options during it. His team has used these tools in real Vanderbilt moments, from campus protests to public scrutiny of clinical care. Think of an organization you stopped trusting. Which axis of the radar did it dent? Tap each driver. Next, where reputation is actually made.
 
 **Tap clips**
 
@@ -350,19 +193,176 @@ Module five was reputational stewardship. Here is what it means for you. For you
 
 *About 55 seconds*
 
-That is module five. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis finds the dent in the radar. And timing matters: act early, while you still have control, because stories migrate toward the loud corner of the terrain. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, an optional go deeper on the Chancellor’s book Reputation Rules, or go straight on to module six: the teams that deliver.
+That is module five. Three ideas. Reputation is infrastructure: it turns visibility into talent, funding, partners, and access, and it is built every day. Trust has four drivers: transparency, expertise, commitment, and empathy, and a crisis finds the dent in the radar. And timing matters: act early, while you still have control, because stories migrate toward the loud corner of the terrain. And every leader is a steward: move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices. Now apply it. Name one reputational risk in your pod’s idea, and which driver of trust you would lean on if it happened. Next, an optional go deeper on the Chancellor’s book Reputation Rules, or go straight on to the last part: starting your brief.
 
 ### Module 5: Go deeper, Reputation Rules
 
 *About 60 seconds*
 
-This page is an optional go deeper. Module five gave you the frameworks Chancellor Daniel Diermeier shared at the Symposium: the trust radar, the terrain, and when to act. His book Reputation Rules, new to this program, shows those ideas at work in real crises, from Mercedes and Toyota to Shell and Walmart, and explains credibility transfer and room to maneuver step by step. A Harvard Business Review article, Reputation and Its Risks, adds a manager’s view: reputation risk deserves the same discipline as financial risk. Why it matters here: the more you see these frameworks in real cases, the faster you will spot the next issue while you still have control. Think about an organization whose crisis you followed in the news. Which axis of the trust radar did it dent? The links go to the book and the article. Next, module six: high-performing teams.
+This page is an optional go deeper. Module five gave you the frameworks Chancellor Daniel Diermeier shared at the Symposium: the trust radar, the terrain, and when to act. His book Reputation Rules, new to this program, shows those ideas at work in real crises, from Mercedes and Toyota to Shell and Walmart, and explains credibility transfer and room to maneuver step by step. A Harvard Business Review article, Reputation and Its Risks, adds a manager’s view: reputation risk deserves the same discipline as financial risk. Why it matters here: the more you see these frameworks in real cases, the faster you will spot the next issue while you still have control. Think about an organization whose crisis you followed in the news. Which axis of the trust radar did it dent? The links go to the book and the article. Next, the last part: starting your brief.
+
+### Your brief: Your focus area
+
+*About 80 seconds*
+
+Welcome to the last part, your brief. Everything so far has been preparation for this. Your pod submits one brief, no longer than three pages, due Friday, November twentieth. It has seven parts. This week you draft the first three: your focus area, the challenge and why it matters strategically, and the connection to Vanderbilt’s priorities. Next week, Course Two covers the rest, and your pod finishes the brief together in week four. Start with the focus area, because it decides who you compete against. Three winners will be named, one per area. Here is a quick way to choose. If your solution makes existing work faster, cheaper, or better, it is Core Operations. If it creates something new that extends education or research, it is a Bold Initiative. If it changes how universities everywhere work, or makes the public case for what an essential research university does, it is Industry Leadership. Many ideas touch two. Choose the area where your solution does most of its work, and choose it on purpose. Think about your pod’s idea right now: if a judge asked which area it belongs in, could you answer in one sentence? Practice with five challenges, then read why after each. Next, you draft.
+
+### Your brief: Draft the brief
+
+*About 80 seconds*
+
+You have chosen a focus area. Now write the page that makes your case. Notice what you already have: your mission and margin statement from module three and your reputational statement from module five fold into this draft automatically. As you type, your draft builds in the Your draft box, ready to copy for your pod. That is by design. You have been building this page all along. Four parts. Your focus area, at the very top. The challenge, in one sentence: who is affected, and what happens today. Why it matters strategically: what it costs to wait, in mission, money, people, or reputation. Tie it to one of the four problems from module one if you can. And the connection to Vanderbilt’s priorities, by name: the line from the vision and the area of focus it serves. Open the example to see what strong looks like, and read what a judge will ask. Then ask yourself: could a colleague outside your office read your challenge sentence and explain the problem back to you? Then write your version. Copy it into your pod’s shared document before you meet. Next, eight short situations to check what you can apply.
+
+### Your brief: Quick check
+
+*About 40 seconds*
+
+You have learned the ideas and used them on your own work. Now check whether you can apply them to situations you have not seen yet. That is the real test of learning, and it is why these are scenarios, not definitions. Eight short situations. Choose what you would do, then read the explanation, which names the idea behind the best answer. Six of eight completes the check. If you miss one, the explanation will point you back to the page to revisit, and you can retake it anytime. Next, your moves for the week.
+
+### Your brief: This week
+
+*About 55 seconds*
+
+You are nearly done with Course One. Learning sticks when it turns into action in the next few days, so this page turns the course into four moves. Meet your pod for about forty five minutes and agree on one challenge and one focus area. Put your draft in the pod’s shared document. Respond to this week’s discussion prompt in your cohort’s Teams channel by Friday, November sixth, and reply to at least one colleague; the prompt and a link to the channel are on this page. Tap each move to commit. There is also a pod meeting agenda you can copy, and you can print this week’s takeaway: your overview, every activity, your answers, and your drafts in one place. Aim to finish by Friday, November sixth. Next, a short close.
+
+### Keep going
+
+*About 30 seconds*
+
+That is Course One. Look at what you have now: a clear view of the strategy, a story your pod can tell, a case in both mission and money, and a first draft of page one of your brief. Take it to your pod. Course Two opens the week of November ninth, with communication, storytelling and brand, the entrepreneurial mindset, and high-performing teams, and it helps you draft the rest of the brief. Crescere aude. Dare to grow.
+
+*Page narration: about 35 minutes.*
+
+## Course Two: Venture, Reputation and Teams (week of November 9)
+
+### Welcome
+
+*About 70 seconds*
+
+Welcome to Course Two of Leadership Redefined. Last week, in Course One, your pod made the case: a focus area, a challenge, and why it matters to Vanderbilt. This week you design what you will actually do about it, and the team that will do it. That is the second half of your brief: the solution, the plan, the metrics, and how it lasts. Three modules carry you there. Communication, storytelling and brand, so people understand why your idea matters and want to act. Entrepreneurial mindset, so your solution starts small and learns fast. And high-performing teams, so the people delivering it, starting with your own pod, do their best work. As before, each page has one idea and one thing to do, and you bring the experience. Every activity asks you to apply the idea to your own work or your pod’s idea. It takes about an hour. Plan to finish by Friday, November thirteenth, so your pod has a complete first draft before the final week. Tap Start Course Two when you are ready.
+
+### This week
+
+*About 50 seconds*
+
+Here is your map for the week. Module two is communication, storytelling and brand, with Vice Chancellor Steve Ertel: how Vanderbilt thinks about its reputation, and how to tell your pod’s story so people want to act. Module four is the entrepreneurial mindset, taught through a real Vanderbilt turnaround with Vice Chancellor John Lutz, and it ends with your pod’s first pilot. Module six is high-performing teams, with Vice Chancellor Candice Storey Lee, and a health check on your own pod. The last part is your brief: strong metrics and a draft of sections four to seven. Each lesson closes with a short wrap-up where you explain the ideas back in your own words. Tap each stop to preview it, then turn the page to start with the Chancellor.
+
+**Tap clips**
+
+- *route/g1:* Stop one, module two: Communication, Storytelling and Brand. A short video from the Chancellor on effective communication, the difference between brand and reputation, your part in the ground game, and then you draft your pod’s storyline.
+- *route/g2:* Stop two, module four: Entrepreneurial Mindset. The Chancellor introduces it, then you study how Vanderbilt’s fundraising team went from flat to record-breaking, how radical collaboration made it work, and you turn your pod’s challenge into a pilot.
+- *route/g3:* Stop three, module six: High-Performing Teams. The Chancellor introduces the topic, then Candice Storey Lee’s six principles in her own words, and an optional go deeper on the research behind great teams.
+- *route/g4:* Stop four, your brief. Sort strong and weak metrics, draft sections four to seven, and check what you can now apply.
+
+### Module 2: Brand and reputation
+
+*About 75 seconds*
+
+Welcome to module two, Communication, Storytelling and Brand. In Course One you saw that reputation brings resources. This lesson is about how reputation is built, and the part you play. Start with the short video from Chancellor Daniel Diermeier on effective communication. Then one distinction from Vice Chancellor Steve Ertel, who leads communications and marketing. Brand is what you say about yourself. It is owned: values, campaigns, messages. Reputation is what others say about you. It is earned: news stories, rankings, word of mouth. They are separate but related, and the goal is to close the gap between them. The gap grows when the experience does not match the claim. You close it by delivering the claim, then telling true stories about it. Vanderbilt’s own read of its brand is candid: strong in the South, less known nationally, often seen as similar to peers, and facing a wider doubt about higher education. Think about what a student or a vendor would say about your office. Is it the same as what your website says? Now decide six statements: brand, or reputation? Next, how a single big moment becomes lasting trust.
+
+### Module 2: Spikes and systems
+
+*About 70 seconds*
+
+You just separated brand from reputation. Now the question is how reputation grows. Vice Chancellor Ertel calls Vanderbilt a fighter brand: not the loudest, deeply valued once discovered. People who know Vanderbilt love it; not enough people know it yet. That changes how you earn attention. People move up a ladder: first relevance, then consideration, then trust, then commitment. A spike moment, like an upset win or a major gift, puts Vanderbilt on the first rung. But a spike without a system is noise. Attention fades unless a steady drumbeat of stories keeps people climbing. Big campaigns and national media are the air cover; they create stories, speeches, and coverage. The ground game is leaders carrying those stories directly to the people who matter: government, donors, business, prospective parents. And those people pass them on, because trust travels through proximity. That makes you part of the ground game. Think of one person outside Vanderbilt who trusts your work. How did that trust start? Tap the four moves a fighter brand makes. Next, your part in it: the ground game.
+
+**Tap clips**
+
+- *fighter/f1:* Earn attention thoughtfully. A fighter brand cannot outshout bigger names, so it chooses where to show up. From your seat, reach the two or three audiences your work matters to most, and reach them well.
+- *fighter/f2:* Interrupt expectation. People expect a university to be slow and cautious. Surprise them. The three-day answer when they expected three weeks becomes a story they repeat.
+- *fighter/f3:* Design bold moments. Spike moments give people a reason to look closer. In the Chancellor’s words, a little controversy is good for us. Treat a difficult topic as a chance to engage, not a thing to avoid.
+- *fighter/f4:* Sustain meaning over time. Reputation works as infrastructure, a system rather than a campaign. Keep telling the same true story long after the launch.
+
+### Module 2: The ground game
+
+*About 90 seconds*
+
+You just saw that a spike needs a system. Here is who runs that system: you. Vice Chancellor Ertel put it this way. Reputation creates resources when air cover is carried through ground game. Air cover is campaigns, advertising, and media. The ground game is leaders carrying the story person to person. He also said brands come to exist in one of two ways: by default, when we let the world tell our story, or by design, when we tell our own. The ground game works in three steps. First, reputation assets are created: stories, speeches, earned media, paid media, and social media. Second, those assets are shared directly with priority stakeholders and influencers: government, donors, business, and prospective parents. Third, the impact is multiplied peer to peer, because trust travels through proximity. The people you reach tell people you never will. So what can you do? Understand what sets Vanderbilt apart. Share reputation assets with the people you work with. Equip others to tell the story. And treat difficult or controversial topics as a chance to engage, not a reason to go quiet. Think of one result your team delivered this year that someone outside your office should hear about. Who is that person? Now plan one play of your ground game. It saves here and prints in your takeaway. Next, you will tell your pod’s story.
+
+### Module 2: Your storyline
+
+*About 75 seconds*
+
+You have planned how to carry a story. Now you will build the story your pod will tell the judges, and later a sponsor. At the Symposium, Vice Chancellor Ertel gave a clear capstone ask: use effective communication and storytelling to connect your audience to the why behind your project, strengthening the narrative and reinforcing the Vanderbilt brand through purpose-driven impact. Three moves follow from his slides. Start with the why, through one real person and one real moment, because relevance comes before consideration. Show the difference: say what your idea changes and why it is distinctly Vanderbilt, because differentiation is a design principle. And make it travel: end with one ask, name what each audience cares about, and plan who carries the story next, because trust travels through proximity. Think of the last presentation that actually changed your mind. Chances are it started with a person, not a chart. Open the strong example if you want to see one, then draft your storyline. It saves here and folds into your brief later. Next, what module two means for you: for your capstone, and as a manager.
+
+### Module 2: What this means for me
+
+*About 55 seconds*
+
+Module two was about brand, reputation, and story. Here is what it means for you. For your capstone: open your brief with one real person and one real moment, and connect your audience to the why. Name your audiences and what each one cares about. And plan the ground game: who carries your story after the judging. As a manager: close your unit’s gap between what you claim and what people actually experience, and fix the experience first. Build a drumbeat, one short, true story about your team’s work every month. And equip your team to tell Vanderbilt’s story, including when the topic is hard. Think about the last story someone told about your team. Was it the one you would have chosen? Write the one thing you will try in the next two weeks. Next, a short wrap-up for module two.
+
+### Module 2: Wrap-up
+
+*About 60 seconds*
+
+That is module two. Three ideas to keep. Close the gap: brand is what we say about ourselves, reputation is what others say about us, and the gap closes when we deliver the claim and then tell true stories. A spike needs a system: attention climbs from relevance to consideration to trust to commitment only with a steady drumbeat, carried by leaders on the ground. And connect people to the why: one real person, the difference your idea makes, and one clear ask, carried by the people who hear it. Now apply it to your pod. Write down which audience matters most for your idea, and the one sentence of why that they need to hear. That sentence may end up opening your brief. Next, an optional go deeper on the shape of a great talk, or go straight on to module four: the entrepreneurial mindset.
+
+### Module 2: Go deeper, the shape of a great talk
+
+*About 60 seconds*
+
+This page is an optional go deeper. Module two asked you to connect your audience to the why. Here is a proven structure for doing it. This idea is new to the program. Nancy Duarte, a communication expert, studied hundreds of great speeches and found a shared shape. Great communicators move back and forth between what is, the frustrating present, and what could be, a better future. The gap between them creates tension, and tension makes people lean in. Then they end with one clear call to action and a picture of life after people act. Why it matters here: it is one reliable way to do what Vice Chancellor Ertel asked, so your pod’s story pulls people toward the why. Think of a speech that moved you. Did it go back and forth like this? Use the links to watch the talk or read her free multimedia book. Next, module four: the entrepreneurial mindset.
+
+### Module 4: Entrepreneurial mindset
+
+*About 70 seconds*
+
+Welcome to module four, Entrepreneurial Mindset. Start with the Chancellor’s short video on the entrepreneurial mindset. Then let us define it, because the phrase gets used loosely. An entrepreneurial mindset means acting like a founder inside an institution. You spot a problem or an opening, diagnose it honestly, act before everything is certain, test small, learn fast, and scale what works, using the resources you can actually reach. It is how a large university moves at the uncommon speed, agility, and scale you met in Course One. Vice Chancellor John Lutz taught this topic to the program through a case: the transformation of Vanderbilt’s fundraising. And the first lesson of that case is where it began. Not with a solution. With a diagnosis. His team laid out strengths, weaknesses, opportunities, and threats with real candor. Look closely at the weaknesses: three of the four were about people and culture, not tools. Think about a problem in your own area. Have you diagnosed it, or jumped to a fix? Tap each quadrant. Next, the numbers that came out of it.
+
+**Tap clips**
+
+- *swot/f1:* Strengths. A strong brand, pockets of talented people, and support from the Chancellor and the Board of Trust. The raw material was there; it needed connecting.
+- *swot/f2:* Weaknesses. Silos, a rigid culture, a hostile environment, and out-of-date processes and systems. Three of the four are about people, which told the team where the fix had to start.
+- *swot/f3:* Opportunities. New leadership, an investment mentality, and willing fellow travelers. Change needs allies, so find the people who already want it.
+- *swot/f4:* Threats. Time was short, the pressure was real, and the environment was fragile. Move fast enough to show results, and carefully enough not to break what works.
+
+### Module 4: The turnaround
+
+*About 55 seconds*
+
+You saw the diagnosis. Now the result. Lutz opened his story with the ending, and so will we, but you guess first. Making a guess before the reveal, even a wrong one, makes the answer far easier to remember. From nineteen ninety eight to twenty nineteen, new commitments stayed roughly flat. Then the team acted on its diagnosis. After you guess all four tiles, read the card below them. It holds the entrepreneurial point. Over twenty twenty to twenty twenty five, on three-year averages, money raised more than doubled, while the investment in fundraising rose by about half. In other words, they invested where the diagnosis pointed, and measured the return. Ask yourself: where in your own area would a modest, targeted investment produce an outsized result? Next, exactly what they changed.
+
+### Module 4: The change moves
+
+*About 70 seconds*
+
+You have seen the before and after. Now the how, which is the part you can reuse. Lutz says successful change leadership needs ambidexterity: alternating between assessment and action, rather than doing only one. He named five moves. Listen carefully to the key people, which also buys time with critics. Make clear-eyed assessments, against the best, not the average. Deal with resistance and underperformance, while giving hope to the leaders coming up. Drive people, process, and technology agendas at the same time. And look beyond best practices, even outside higher education. Then every tactic got a home in one of four categories: people and culture, collaboration and engagement, motivation and incentives, and process and systems. Each had an owner and a date. Notice that your brief asks for the same thing: a solution across people, process, and technology, with owners and a timeline. Think about the last change you led. Did it touch all three, or only one? Sort six real tactics, and read why after each. Next, the principle underneath all of them: radical collaboration.
+
+### Module 4: Radical collaboration
+
+*About 85 seconds*
+
+You just sorted the change moves. Underneath all of them was one principle. Lutz said the Chancellor’s call for Radical Collaboration underpinned every change initiative. It has three parts. First, start from the people you serve. Gift proposals reflected donor interests, aligned with the mission, and the team worked with donors rather than trying to steer them. Second, it is a team sport. Many roles are needed to execute a strategy, and every Vanderbilt leader is a fundraiser. Third, operate as One Vanderbilt. Donors who support several areas give the most, so every key prospect had a cross-Vanderbilt strategy, backed by shared credit, so two schools could win the same gift instead of competing for it. Lutz also led the people around the change, not only the work. He bought time with potential critics by listening. He sent serious signals that he meant business. He worked to reverse an image as a poor partner. He built trust and loyalty with top producers. And he used early wins to build momentum. Think about your pod’s idea. Which office could block it, and which could make it twice as strong if it shared the credit? Now map the people around your idea. It saves here and prints in your takeaway. Next, you turn your pod’s challenge into a pilot.
+
+### Module 4: Your pilot
+
+*About 85 seconds*
+
+Lutz’s turnaround moved back and forth between assessment and action, and the Chancellor’s own levers end with pilot, learn, and scale. So the next step for your pod is not a big rollout. It is a reframe and a pilot. Here is a five-step method. Name the assumption everyone makes about the problem. Flip it with a what if; many new ideas start as a reversed assumption. Borrow an idea from outside higher education, from a hotel, a hospital, a retailer, or a bank. Shrink it to a pilot small enough to start without new approvals. And set a scale rule before you start, so the results decide, not opinions. One past pod did exactly this. The assumption was that students attend career programs if the programs are good. The reframe: what if attending put real money into a student’s own investment account? Think about an assumption in your own area that nobody questions anymore. That is often where the best reframe hides. Open the full example if you want to see it worked through. Then capture your pod’s reframe and pilot. It is this week’s team artifact, and it folds into your brief draft. Next, what module four means for you: for your capstone, and as a manager.
+
+### Module 4: What this means for me
+
+*About 55 seconds*
+
+Module four was the entrepreneurial mindset. Here is what it means for you. For your capstone: diagnose before you solve, and notice how many root causes are about people. Design the smallest pilot that would prove your idea, with a scale rule set before you start. And map the people: partners who share the credit, a likely critic, your top producers, and the early win. As a manager: alternate assessment and action, listening and benchmarking, then moving, then looking again. Change people, process, and technology together, because fixing one alone rarely sticks. And run small experiments on complex problems, then celebrate the early wins out loud. Think about a problem your team keeps analyzing. Could a small test answer it faster? Write the one thing you will try in the next two weeks. Next, a short wrap-up for module four.
+
+### Module 4: Wrap-up
+
+*About 50 seconds*
+
+That is module four. Three ideas. Diagnose before you build: the turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people. Change three things at once: people, process, and technology together, with every tactic owned and dated. And win together: radical collaboration means starting from the people you serve, treating the work as a team sport, and sharing the credit as One Vanderbilt. Now apply it. Write the smallest pilot that would prove your pod’s idea, and who must share the credit for it. Explaining it in your own words, about your own project, is what makes it stick. Next, an optional go deeper on the kinds of problems leaders face, or go straight on to module six: the teams that deliver.
+
+### Module 4: Go deeper, kinds of problems
+
+*About 70 seconds*
+
+This page is an optional go deeper. Module four followed Vice Chancellor Lutz from assessment to action, and the Chancellor’s levers end with pilot, learn, and scale. Here is a framework that explains when piloting beats planning. This idea is new to the program. A Harvard Business Review article by David Snowden and Mary Boone, A Leader’s Framework for Decision Making, names four kinds of problems. Simple problems have a known best practice. Complicated problems have a right answer that experts can find. Complex problems have no right answer up front; cause and effect show up only in hindsight, so you probe with small, safe experiments and grow what works. And chaotic situations need action first, to restore order. The classic mistake is treating a complex problem as merely complicated, and spending months analyzing what only a pilot can reveal. Think of a recent problem at work. Which kind was it? Sort four situations if you want the practice, and use the links to read the article and research on ambidextrous organizations. Next, module six: high-performing teams.
 
 ### Module 6: High-performing teams
 
 *About 80 seconds*
 
-Welcome to module six, High-Performing Teams. Your pilot and your reputational plan only work if a team delivers them, starting with your own pod. Begin with the Chancellor’s introduction. Then meet Candice Storey Lee, Vice Chancellor for Athletics and University Affairs and Athletic Director. She came to Vanderbilt as a student-athlete, captained the women’s basketball team, and earned three Vanderbilt degrees. She rose from an internship to lead the department in twenty twenty, in the middle of a pandemic, the first Black woman to lead an athletics department in the SEC. Under her leadership, Vanderbilt beat the number one team in the country in twenty twenty four, won its first ten-game football season in twenty twenty five, and earned the top seed in college baseball. Think about the best team you have ever been part of. What made it work? Hold that answer; you will see much of it in her approach. Her mindset fits any team on campus. As she told Sports Illustrated, some people may call it a chip on the shoulder, but if you are prepared, you feel pretty confident that you can compete. Try four fact or fiction statements. Next, the six principles behind her teams.
+Welcome to module six, High-Performing Teams. Your story and your pilot only work if a team delivers them, starting with your own pod. Begin with the Chancellor’s introduction. Then meet Candice Storey Lee, Vice Chancellor for Athletics and University Affairs and Athletic Director. She came to Vanderbilt as a student-athlete, captained the women’s basketball team, and earned three Vanderbilt degrees. She rose from an internship to lead the department in twenty twenty, in the middle of a pandemic, the first Black woman to lead an athletics department in the SEC. Under her leadership, Vanderbilt beat the number one team in the country in twenty twenty four, won its first ten-game football season in twenty twenty five, and earned the top seed in college baseball. Think about the best team you have ever been part of. What made it work? Hold that answer; you will see much of it in her approach. Her mindset fits any team on campus. As she told Sports Illustrated, some people may call it a chip on the shoulder, but if you are prepared, you feel pretty confident that you can compete. Try four fact or fiction statements. Next, the six principles behind her teams.
 
 ### Module 6: Six principles
 
@@ -419,7 +419,7 @@ Welcome to the last part, your brief. You have a pilot, a reputational plan, and
 
 *About 70 seconds*
 
-You know what a strong metric looks like. Now draft sections four to seven, and notice how much you already have. Your pilot and your reputation scan fold into this draft automatically. As you type, your draft builds in the Your draft box, ready to copy for your pod. Section four is the integrated solution: what changes for people, for process, and for technology, together, just as in Lutz’s turnaround. Section five is implementation: each step with an owner role and a date, starting with your pilot. Section six is two or three strong metrics. Section seven is sustainability: who owns it after your pod disbands, how the second year is funded, and how it becomes normal work. Ask yourself the question every sponsor asks: if your pod disappeared tomorrow, who would keep this running? Open the strong example to see all four sections worked through, and read the checklist before you submit. Copy your draft into your pod’s shared document before you meet. Next, eight situations to check what you can apply.
+You know what a strong metric looks like. Now draft sections four to seven, and notice how much you already have. Your pilot and your collaboration map fold into this draft automatically. As you type, your draft builds in the Your draft box, ready to copy for your pod. Section four is the integrated solution: what changes for people, for process, and for technology, together, just as in Lutz’s turnaround. Section five is implementation: each step with an owner role and a date, starting with your pilot. Section six is two or three strong metrics. Section seven is sustainability: who owns it after your pod disbands, how the second year is funded, and how it becomes normal work. Ask yourself the question every sponsor asks: if your pod disappeared tomorrow, who would keep this running? Open the strong example to see all four sections worked through, and read the checklist before you submit. Copy your draft into your pod’s shared document before you meet. Next, eight situations to check what you can apply.
 
 ### Your brief: Quick check
 
@@ -429,9 +429,9 @@ You have learned the ideas and used them on your own project. Now check whether 
 
 ### Your brief: This week
 
-*About 50 seconds*
+*About 55 seconds*
 
-You are nearly done with Course Two. This page turns the course into four moves for the week. Meet your pod for about an hour: merge your drafts, compare health checks, and set owners and dates for the final week. Finish a full first draft, all seven sections in about three pages, by Friday, November thirteenth. Post in your Teams channel and reply to a colleague; a starter post is ready to copy, built from what you wrote. Tap each move to commit. Copy the pod meeting agenda if it helps, and print this week’s takeaway, which collects your overview, your answers, and your drafts in one place. Next, the last step: how you carry all of this forward.
+You are nearly done with Course Two. This page turns the course into four moves for the week. Meet your pod for about an hour: merge your drafts, compare health checks, and set owners and dates for the final week. Finish a full first draft, all seven sections in about three pages, by Friday, November thirteenth. Respond to discussion prompt two in your cohort’s Teams channel by Friday, November thirteenth, and reply to at least one colleague; the prompt and a link to the channel are on this page, with a starter response built from what you wrote. Tap each move to commit. Copy the pod meeting agenda if it helps, and print this week’s takeaway, which collects your overview, your answers, and your drafts in one place. Next, the last step: how you carry all of this forward.
 
 ### Your brief: Carry it forward
 
@@ -441,8 +441,8 @@ You have reached the last step of the courses, and maybe the most important one.
 
 ### Keep going
 
-*About 30 seconds*
+*About 35 seconds*
 
-That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a pilot, a reputational strategy, strong metrics, and a team ready to deliver. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
+That is Course Two. Your pod now has both halves of its brief: the case from Course One, and the plan from this week, with a story, a pilot, strong metrics, and a team ready to deliver. Week four is for your pod to finish it together and turn it in by Friday, November twentieth. Week four, the week of November sixteenth, is for polishing. Your brief is due Friday, November twentieth, and three winners will be named, one in each focus area. Crescere aude. Dare to grow.
 
-*Page narration: about 32 minutes.*
+*Page narration: about 31 minutes.*
