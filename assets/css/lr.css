@@ -665,3 +665,111 @@ html.paged .lr-learn p.lr-prompt-q{ font-size:1.05rem; }
 html.paged .v-stage.lr-teach{ align-items:center; }
 html.paged .lr-teach > .v-act > figure.lr-fig:only-child svg, html.paged .lr-teach > .v-act > figure.lr-slide:only-child svg{ max-height:54vh; width:100%; }
 html.paged .lr-teach > .v-act > .v-video:only-child{ max-width:none; }
+
+/* ══════════ Readability pass: nothing a learner must read sits under 13px; body 17px ══════════ */
+html.paged{ --fs-body:1.0625rem; --fs-small:.95rem; --fs-lab:.82rem; --fs-card-h:1.2rem; }
+html.paged .v-copy p, html.paged .v-copy li, html.paged .v-why, html.paged .lr-learn li, html.paged .lr-keys li{ font-size:var(--fs-body); }
+.v-label, .v-meta li, .v-kicker, .lr-read summary, .lr-ctable summary, .v-goals summary, .calls .cq-h, .idea .try .cq-h, .field label, .lr-build label, .route-q .qn, .qz legend .qn, .tm-q legend .qn, .kq .kq-q .qn, .v-deck .dq-s b, .scn-opts button .k, .v-soon, .bf-meta label, .bf-tag, .bf-count{ font-size:.82rem !important; }
+.hinttxt, html.paged .hinttxt, .lr-frame, html.paged .lr-teach .lr-story > figcaption.hinttxt, .lr-bstat, .drill-status{ font-size:.95rem !important; }
+.lr-dsrc, .lr-gsrc, .v-copy small, .v-hero small, .lr-st-count, .lr-car-count, .focus-list li small{ font-size:.875rem !important; }
+.lr-mont-btn{ font-size:.82rem; }
+/* the task line is an instruction, so it reads as a sentence, not a caps label */
+.v-task{ font-family:var(--sans); font-weight:600; font-size:1.0625rem; letter-spacing:0; text-transform:none; line-height:1.4; align-items:flex-start; }
+.v-task::before{ margin-top:2px; width:20px; height:20px; flex-basis:20px; }
+.sub-listen{ flex:0 0 26px; min-width:26px; }
+/* Your turn screens: one centered column, the rail lined up with it, the activity sized to be the focal point */
+html.paged .lr-pg2 > .v-rail, html.paged .lr-pg2 > .v-stage.lr-practice{ max-width:1000px; margin-left:auto; margin-right:auto; width:100%; }
+html.paged .v-stage.lr-practice{ display:block; }
+html.paged .v-stage.lr-practice > .v-copy{ margin-bottom:6px; }
+html.paged .lr-practice .v-task{ font-size:1.2rem; margin:8px 0 18px; }
+html.paged .lr-practice .v-deck .dq-s{ font-size:1.3rem !important; }
+html.paged .lr-practice .v-deck .dq-opts button{ min-height:60px; font-size:1.0625rem; }
+html.paged .lr-practice .scn-opts button{ font-size:1.0625rem !important; min-height:56px; }
+html.paged .lr-practice .drill-status{ font-size:1rem !important; }
+/* writing boxes tall enough to show the whole example */
+.lr-build textarea{ min-height:112px; font-size:1rem; line-height:1.5; }
+html.paged .v-stage.lr-practice{ display:flex; flex-direction:column; }
+html.paged .v-stage.lr-practice > .v-copy{ display:contents; }
+html.paged .v-stage.lr-practice .lr-read{ order:9; margin-top:18px; }
+/* story controls never wrap the play label */
+.lr-st-play, .lr-st-count{ white-space:nowrap; flex:0 0 auto; }
+/* Momentum: tiles across the top, then the loop note beside the chart */
+.lr-mom2{ margin-top:16px; }
+.lr-mom2 .lr-momL > * + *{ margin-top:12px; }
+.lr-mom2 .lr-charts{ margin-top:0; }
+@media (min-width:1001px){
+  .lr-mom2{ display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:28px; align-items:start; }
+  html.paged #momentum .v-tile{ min-height:96px; }
+  html.paged #momentum .v-tile-face .q{ font-size:2.2rem; }
+  html.paged .lr-mom2 .lr-charts img, html.paged .lr-mom2 .lr-charts svg{ max-height:42vh; width:auto; max-width:100%; }
+}
+.v-tile-face .lab, .v-tile .v-reveal .lab, .v-tile .v-reveal .verdict{ font-size:.82rem; }
+.v-tile .v-reveal p, .v-tile .v-guess p{ font-size:.95rem; }
+/* Draft screens: the brief is the focal point, help sits in one quiet row underneath */
+.lr-draftfoot{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 18px; margin-top:10px; }
+.lr-draftfoot .drill-status{ margin:0; }
+.lr-draftmore{ display:flex; flex-wrap:wrap; gap:0 28px; margin-top:6px; border-top:1px solid var(--bd); }
+.lr-draftmore > details{ flex:1 1 280px; margin:0; }
+html.paged .lr-draftscreen > .v-copy .v-why{ margin-bottom:0; }
+.lr-out.lr-out-empty{ color:var(--tx3); font-style:italic; }
+/* "Builds your brief" reads as one quiet line, not a second box */
+.lr-feeds{ padding:0 0 0 12px; border:0; border-left:2px solid var(--vu-gold); border-radius:0; margin:0 0 10px; }
+html.paged .lr-build textarea{ min-height:92px; }
+/* draft screens: help links share one style */
+.lr-draftmore > details > summary{ font-family:var(--sans) !important; font-weight:500; font-size:1rem !important; letter-spacing:0 !important; text-transform:none !important; color:var(--eyebrow) !important; }
+html.bf-embed .bf-guide{ font-size:.95rem; }
+html.bf-embed .bf-head h2{ font-size:1.2rem; }
+@media (min-width:860px){ html.bf-embed .bf-sec select{ min-height:56px; } }
+/* a figure under a video stays compact so the page fits */
+html.paged .lr-teach > .v-act > .v-video ~ figure svg{ max-height:17vh; }
+html.paged .lr-teach > .v-act > .v-video ~ figure{ padding-top:10px; padding-bottom:10px; }
+/* commitments: tighter cards */
+html.paged .v-commits button{ padding:9px 14px; }
+html.paged .v-commits button p, html.paged .v-commits button small, html.paged .v-commits button span + span{ line-height:1.35; }
+/* vision screen: tighter hero and lists */
+html.paged #vision .lr-vision-hero{ padding-top:16px; padding-bottom:16px; }
+html.paged #vision .lr-learn li{ margin-bottom:4px; line-height:1.45; }
+/* a slide under a video sits sideways: title and source on the left, the graphic on the right */
+@media (min-width:1001px){
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-slide{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); grid-template-rows:auto 1fr; column-gap:16px; align-items:start; }
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-slide > .lr-slide-h{ grid-column:1; grid-row:1; }
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-slide > figcaption{ grid-column:1; grid-row:2; margin-top:4px; }
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-slide > svg{ grid-column:2; grid-row:1 / 3; max-height:24vh; }
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-slide .lr-slide-h::after{ display:none; }
+}
+html.paged .lr-teach > .v-act .lr-story > svg{ max-height:min(34vh, 360px); }
+html.paged #mission .lr-learn li{ margin-bottom:2px; line-height:1.42; }
+html.paged #mission .v-lead .lr-vision-hero{ margin-top:8px; padding:12px 22px; }
+/* terrain story: labels large enough to read at the size the stage renders */
+.lr-story .st-qh{ font-size:18px; }
+.lr-story .st-qb, .lr-story .st-qi{ font-size:17px; }
+.lr-story .st-ax{ font-size:16px; }
+.lr-story .st-note{ font-size:15px; }
+.lr-story .st-tag{ font-size:15px; } .lr-story .st-lab{ font-size:14px; }
+/* Teams prompt: the channel button sits on the same line as step 1 */
+.lr-prompt .lr-steps li:first-child > span{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; }
+.lr-prompt .lr-steps li:first-child > span > br{ display:none; }
+.lr-prompt .lr-steps li:first-child .btn{ margin:0; }
+html.paged .v-msg .v-tell-text{ font-size:1rem; line-height:1.5; }
+html.paged .lr-draftscreen > .v-act{ max-width:none; width:100%; }
+html.paged .lr-draftscreen .lr-frame{ max-width:none; }
+.lr-draftmore > details > summary{ min-height:44px; display:flex !important; align-items:center; margin:0; padding:0; }
+/* wayfinding and controls: the rail, the bottom bar and small labels read at 13px or more */
+.v-rail span, .prog-btn .pw, .prog-btn b, .bb-aud-t, .bb-count, .bb-done-t, .lr-feeds b, .lr-example summary, .lr-everest cite, .fprogram, .fcenter .preset, .lr-car-dot, figcaption small, .lr-presenter small, .v-week b, .v-week li b, .v-stops button span{ font-size:.82rem !important; }
+.v-rail span{ letter-spacing:.07em; }
+.lr-weeks b, .v-route button span{ font-size:.82rem !important; } .lr-weeks li{ font-size:.95rem; }
+.lr-welcome-t, main li > small{ font-size:.82rem !important; }
+/* headlines run on one line where there is room */
+html.paged .v-lead .v-h{ max-width:34ch; }
+/* shorter laptop screens: same hierarchy, tighter spacing, body stays at 16px */
+@media (min-width:1001px) and (max-height:860px){
+  html.paged{ --fs-body:1rem; --fs-small:.9rem; }
+  html.paged section{ padding-top:12px; padding-bottom:12px; }
+  html.paged .v-h{ font-size:clamp(1.6rem,1.2vw + 1rem,2.2rem); }
+  html.paged .v-stage.lr-bal{ row-gap:6px; }
+  html.paged .v-stage{ gap:24px; }
+  html.paged .lr-learn{ padding-top:12px; padding-bottom:12px; }
+  html.paged .lr-teach > .v-act .lr-story > svg{ max-height:min(30vh, 320px); }
+  html.paged .lr-build textarea{ min-height:80px; }
+  .hinttxt, html.paged .hinttxt, .lr-frame{ font-size:.9rem !important; }
+}

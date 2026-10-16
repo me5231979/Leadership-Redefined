@@ -691,8 +691,9 @@ $$('[data-build]').forEach(function(box){
   fields.forEach(function(el){ var v = get('b-' + key + '-' + el.getAttribute('data-f')); if(v !== null) el.value = v; });
   function filled(){ return fields.filter(function(el){ return (el.value || '').trim(); }).length; }
   function paint(){
-    var txt = cfg.tpl(bAll(key), bVal);
-    if(out) out.textContent = txt;
+    var txt = cfg.tpl(bAll(key), bVal), n0 = filled();
+    /* until the learner types, a one-line prompt instead of a bracketed template that repeats the form */
+    if(out){ out.textContent = n0 ? txt : 'Your lines appear here as you type, ready to copy for your pod.'; out.classList.toggle('lr-out-empty', !n0); }
     if(copy) copy.setAttribute('data-copytext', txt);
     var n = filled(), need = cfg.need || fields.length;
     if(status) status.textContent = n + ' of ' + fields.length + ' filled. Saved in this browser only.' + (n >= need ? ' Activity complete.' : '');
@@ -878,7 +879,7 @@ function buildPrint(){
   var agenda = $$('[data-copytext]').map(function(b){ return b.getAttribute('data-copytext') || ''; }).filter(function(t){ return /^Pod meeting/.test(t); })[0];
   if(agenda) html += '<section><h2>Pod meeting agenda</h2><p class="ps-write" style="white-space:pre-wrap">' + esc(agenda.replace(/\\n/g, '\n')) + '</p></section>';
   html += '<section><h2>Notes from my pod</h2><p class="ps-write" style="min-height:120px"></p></section>';
-  html += '<p class="ps-foot">' + esc(O.footer || '') + ' Crescere aude. Dare to grow.</p>';
+  html += '<p class="ps-foot">' + esc(O.footer || '') + '</p>';
   sheet.innerHTML = html;
 }
 window.addEventListener('beforeprint', buildPrint);

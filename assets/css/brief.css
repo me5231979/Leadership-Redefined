@@ -68,3 +68,4 @@ html.bf-embed .bf-guide{ font-size:.86rem; line-height:1.4; }
   html.bf-embed .bf-sec .bf-guide{ flex:1 0 auto; }
   html.bf-embed .bf-sec select{ min-height:76px; }
 }
+@media (min-width:860px){ html.bf-embed .bf-sec textarea{ min-height:84px; } }
