@@ -26,6 +26,7 @@ window.LR_COURSE = {
     { sel:'#quiz', key:'quiz', label:'Your brief: Quick check', mode:'whole' },
     { sel:'#nextstep', key:'nextstep', label:'Your brief: This week', mode:'whole' },
     { sel:'#carry', key:'carry', label:'Your brief: Carry it forward', mode:'whole' },
+    { sel:'#deeper', key:'deeper', label:'Go deeper', mode:'whole' },
     { sel:'#learn', key:'learn', label:'Keep going', mode:'whole', extras:['footer'] }
   ],
   SECTIONS:[

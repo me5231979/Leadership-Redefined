@@ -61,3 +61,10 @@ html.bf-embed .bf-row{ margin-top:2px; }
 html.bf-embed .bf-src{ font-size:.78rem; }
 html.bf-embed .bf-guide{ font-size:.86rem; line-height:1.4; }
 @media (min-width:860px){ html.bf-embed.bf-n3 #bfSections{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+/* inside a course: sections line up across the row (same top, inputs aligned at the bottom) */
+@media (min-width:860px){
+  html.bf-embed #bfSections{ align-items:stretch; }
+  html.bf-embed .bf-sec, html.bf-embed .bf-sec:first-child{ padding-top:0; display:flex; flex-direction:column; }
+  html.bf-embed .bf-sec .bf-guide{ flex:1 0 auto; }
+  html.bf-embed .bf-sec select{ min-height:76px; }
+}

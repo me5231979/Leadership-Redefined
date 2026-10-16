@@ -642,3 +642,26 @@ html .v-stage.lr-bal ol.lr-brief li, html ol.lr-brief li{ grid-template-columns:
 html .v-stage.lr-bal ol.lr-brief li::before, html ol.lr-brief li::before{ font-size:1.15rem; }
 html .v-stage.lr-bal ol.lr-brief li small, html ol.lr-brief li small{ grid-column:auto !important; white-space:nowrap; text-align:right; }
 html.paged .v-copy > p.v-label{ margin-top:14px; }
+/* Go deeper page: one card per module */
+.lr-deckgrid.lr-deeper3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.lr-glist{ list-style:none; margin:8px 0 0; padding:0; display:grid; gap:12px; }
+.lr-glist li{ padding:0 !important; }
+.lr-glist li::before{ display:none; }
+.lr-glist a{ font-weight:600; color:var(--tx); text-decoration:underline; text-decoration-color:var(--eyebrow); text-underline-offset:3px; }
+.lr-glist a:hover{ color:var(--eyebrow); }
+.lr-gsrc{ display:block; margin-top:2px; font-size:.8rem; color:var(--tx3); }
+.lr-gwhy{ display:block; margin-top:4px; font-size:.9rem; line-height:1.45; color:var(--tx2); }
+@media (max-width:1000px){ .lr-deckgrid.lr-deeper3{ grid-template-columns:1fr; } }
+/* Teams prompt page: the question reads first, the starter is plain text, both cards one width */
+html.paged .lr-learn p.lr-prompt-q, .lr-learn p.lr-prompt-q{ font-family:var(--sans); font-size:1.12rem; font-weight:600; line-height:1.45; color:var(--tx); margin:10px 0 6px; }
+html .v-msg p.v-tell-text{ font-family:var(--sans); font-style:normal; font-size:1rem !important; line-height:1.55; color:var(--tx2); margin:8px 0 12px; }
+html .v-act > .lr-prompt, html .v-act > .v-msg{ width:100%; max-width:none; box-sizing:border-box; margin-left:0; margin-right:0; }
+html.paged .v-act > .v-msg{ margin-top:12px; padding:16px 20px; }
+html.paged .lr-prompt .lr-steps li{ font-size:.95rem; }
+/* each screen's content sits in the middle of the available space; tall screens still start at the top */
+html.paged .page > section.v-sec > .wrap{ margin-top:auto; margin-bottom:auto; width:100%; }
+html.paged .lr-learn.lr-prompt{ padding:14px 18px; }
+html.paged .lr-learn p.lr-prompt-q{ font-size:1.05rem; }
+html.paged .v-stage.lr-teach{ align-items:center; }
+html.paged .lr-teach > .v-act > figure.lr-fig:only-child svg, html.paged .lr-teach > .v-act > figure.lr-slide:only-child svg{ max-height:54vh; width:100%; }
+html.paged .lr-teach > .v-act > .v-video:only-child{ max-width:none; }
