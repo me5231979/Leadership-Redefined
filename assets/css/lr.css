@@ -441,7 +441,7 @@ html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45;
 .lr-story > svg{ display:block; width:100%; height:auto; max-height:min(52vh, 460px); margin:0 auto; overflow:visible; }
 .lr-story.st-ready [data-in], .lr-story.st-ready [data-out]{ opacity:0; transition:opacity .7s ease; }
 .lr-story.st-ready .st-on{ opacity:1; }
-.lr-story [data-at]{ transition:transform 1.8s cubic-bezier(.45,0,.2,1), opacity .7s ease; }
+.lr-story [data-at], .lr-story.st-ready [data-at]{ transition:transform 1.8s cubic-bezier(.45,0,.2,1), opacity .7s ease; }
 .lr-story .st-draw{ stroke-dasharray:1; stroke-dashoffset:1; }
 .lr-story .st-draw.st-on, .lr-story:not(.st-ready) .st-draw{ stroke-dashoffset:0; transition:stroke-dashoffset 2.4s ease, opacity .3s; }
 .lr-story .st-q{ fill:rgba(255,255,255,.03); stroke:rgba(255,255,255,.12); transition:fill .6s, stroke .6s; }
@@ -464,3 +464,6 @@ html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45;
 .lr-st-count{ font-family:var(--cond); font-weight:700; font-size:.8rem; letter-spacing:.08em; color:rgba(255,255,255,.7); }
 @media (prefers-reduced-motion: reduce){ .lr-story [data-in], .lr-story [data-out], .lr-story [data-at], .lr-story .st-draw{ transition:none !important; } }
 @media print{ .lr-st-bar{ display:none; } .lr-story [data-in], .lr-story [data-out]{ opacity:1 !important; } }
+
+.v-stage.lr-bal > .lr-below > figure.lr-story{ flex-basis:100%; max-width:900px; }
+.lr-story > svg.lr-dsvg{ max-width:none; }
