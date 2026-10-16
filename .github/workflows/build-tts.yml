@@ -6,7 +6,7 @@ name: Record narration with ElevenLabs
 on:
   push:
     branches: ['claude/eloquent-mendel-0qq5xp', 'main']
-    paths: ['.github/tts.json', 'course-one/narration-scripts.js', 'course-two/narration-scripts.js', 'scripts/build-tts.py', '.github/workflows/build-tts.yml']
+    paths: ['.github/tts.json', 'course-one/narration-scripts.js', 'course-two/narration-scripts.js', 'home/narration-scripts.js', 'scripts/build-tts.py', '.github/workflows/build-tts.yml']
   workflow_dispatch:
 permissions:
   contents: write

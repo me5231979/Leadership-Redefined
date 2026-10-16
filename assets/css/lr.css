@@ -474,3 +474,11 @@ html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45;
 .lr-prompt .lr-steps .btn{ margin:8px 0 2px; display:inline-flex; }
 .lr-learn a.btn-gold, .lr-learn a.btn-gold:visited{ color:#1C1C1C; text-decoration:none; }
 .lr-tools{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+/* Program home: start and listen */
+.lr-hub-cta{ display:flex; flex-wrap:wrap; align-items:center; gap:12px 14px; margin-top:22px; }
+.lr-welcome{ display:inline-flex; align-items:center; gap:8px; }
+.lr-welcome svg{ width:18px; height:18px; }
+.lr-welcome[aria-pressed="true"]{ border-color:#CFAE70; color:#CFAE70; }
+.lr-welcome-t{ font-family:var(--cond); font-weight:700; font-size:.8rem; letter-spacing:.08em; color:var(--tx3); text-transform:uppercase; }
+.lr-welcome-text{ margin-top:12px; max-width:70ch; }
+.lr-welcome-text p{ color:var(--tx2); line-height:1.6; }

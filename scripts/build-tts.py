@@ -15,7 +15,7 @@ import hashlib, json, os, re, subprocess, sys, time, urllib.request, urllib.erro
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = json.load(open(os.path.join(ROOT, '.github', 'tts.json')))
 CACHE_P = os.path.join(ROOT, '.github', 'tts-cache.json')
-COURSES = ['course-one', 'course-two']
+COURSES = ['course-one', 'course-two', 'home']
 KEY = os.environ.get('ELEVENLABS_API_KEY', '').strip()
 LOUD = 'I=-16:TP=-1.5:LRA=11'
 
