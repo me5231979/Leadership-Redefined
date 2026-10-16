@@ -467,3 +467,10 @@ html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45;
 
 .v-stage.lr-bal > .lr-below > figure.lr-story{ flex-basis:100%; max-width:900px; }
 .lr-story > svg.lr-dsvg{ max-width:none; }
+/* Teams prompt card: the question first, three steps, the full prompt one tap away */
+.lr-prompt-h{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.lr-learn p.lr-prompt-q, .lr-prompt-q{ font-family:var(--serif); font-size:clamp(1.15rem,.6vw + 1rem,1.35rem); line-height:1.4; color:var(--tx); margin:8px 0 6px; }
+.lr-prompt .lr-steps{ margin-top:12px; }
+.lr-prompt .lr-steps .btn{ margin:8px 0 2px; display:inline-flex; }
+.lr-learn a.btn-gold, .lr-learn a.btn-gold:visited{ color:#1C1C1C; text-decoration:none; }
+.lr-tools{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
