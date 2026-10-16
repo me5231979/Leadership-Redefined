@@ -37,7 +37,7 @@ window.LR_COURSE = {
     { sel:'#learn',        key:'learn',      label:'Keep going',                     mode:'whole', extras:['footer'] }
   ],
   SECTIONS: [
-    { k:'route',        no:'01', name:'This week',            how:'Visit all four stops' },
+    { k:'route',        no:'01', name:'This week',            how:'Preview the three modules and your brief' },
     { k:'swot',         no:'02', name:'The diagnosis',        how:'Open all four quadrants' },
     { k:'numbers',      no:'03', name:'The turnaround',       how:'Guess all four numbers' },
     { k:'moves',        no:'04', name:'The change moves',     how:'Sort six tactics' },
@@ -58,10 +58,10 @@ window.LR_COURSE = {
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
-    { h:'Entrepreneurial <em>mindset</em>', p:'A real Vanderbilt turnaround, radical collaboration, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Radical collaboration', 'Your pilot'] },
-    { h:'Reputational <em>stewardship</em>', p:'The trust radar, where reputation is made, when to act, and three calls under pressure.', tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement'] },
-    { h:'High-performing <em>teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Go deeper: the learning zone'] },
-    { h:'Your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
+    { h:'Module 4: Entrepreneurial <em>Mindset</em>', p:'A real Vanderbilt turnaround, radical collaboration, and your pod’s first pilot.', tags:['The Chancellor', 'The turnaround', 'Radical collaboration', 'Your pilot'] },
+    { h:'Module 5: Reputational <em>Stewardship</em>', p:'The trust radar, where reputation is made, when to act, and three calls under pressure.', tags:['The Chancellor', 'The trust radar', 'The terrain', 'When to act', 'Your statement'] },
+    { h:'Module 6: High-Performing <em>Teams</em>', p:'How Candice Storey Lee builds teams that win, and a check on your pod.', tags:['The Chancellor', 'Six principles', 'Go deeper: the learning zone'] },
+    { h:'Finish your <em>brief</em>', p:'Draft sections 4 to 7, so your pod has a full first draft.', tags:['Strong metrics', 'Draft', 'Quick check'] }
   ],
   BEST_LABEL: 'The strongest call: ',
   TRY_AGAIN: 'Now find the strongest call. ',
@@ -236,15 +236,15 @@ window.LR_COURSE = {
     due: 'Fri, Nov 13', dueLabel: 'full first draft by',
     goals: ['<b>Apply</b> the change moves and Radical Collaboration behind Vanderbilt’s fundraising turnaround to your challenge.', '<b>Reframe</b> a challenge and design the smallest pilot that would prove it.', '<b>Judge</b> a decision through the trust radar, and place a story on the reputation terrain.', '<b>Time</b> your response: act before, during, and after an issue while you still have control.', '<b>Write</b> your capstone’s reputational statement, with risks and mitigations.', '<b>Describe</b> how Candice Storey Lee builds high-performing teams, and apply her principles to your pod and your team.', '<b>Draft</b> sections 4 to 7 of your pod’s brief.', '<b>Plan</b> how you will embody the program and teach it to your team.'],
     lessons: [
-      { title:'Entrepreneurial mindset', no:'Module 4', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'reframe'], deep:['kind'], recap:'recap1', ideas:[
+      { title:'Entrepreneurial Mindset', no:'Module 4', keys:['route', 'swot', 'numbers', 'moves', 'collab', 'reframe'], deep:['kind'], recap:'recap1', ideas:[
         ['Diagnose before you build.', 'The turnaround began with an honest benchmark and root causes, and three of four weaknesses were about people.'],
         ['Change three things at once.', 'People, process, and technology together, with every tactic owned and dated.'],
         ['Win together.', 'Radical collaboration: start from the people you serve, treat it as a team sport, and share the credit as One Vanderbilt.'] ] },
-      { title:'Reputational stewardship', no:'Module 5', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
+      { title:'Reputational Stewardship', no:'Module 5', keys:['trust', 'terrain', 'timing', 'pressure', 'repstatement'], recap:'recap2', ideas:[
         ['Reputation is infrastructure.', 'It turns visibility into talent, funding, partners, and access, and it is built every day.'],
         ['Trust has four drivers, and timing matters.', 'Transparency, expertise, commitment, and empathy; a crisis finds the dent in the radar. Act early, while you still have control, because stories migrate toward the loud corner of the terrain.'],
         ['Every leader is a steward.', 'Move fast, tell the truth, show the plan, start with the people affected, and bring in the right offices.'] ] },
-      { title:'High-performing teams', no:'Module 6', keys:['lee', 'principles'], deep:['teamcalls', 'health'], recap:'recap3', ideas:[
+      { title:'High-Performing Teams', no:'Module 6', keys:['lee', 'principles'], deep:['teamcalls', 'health'], recap:'recap3', ideas:[
         ['Values first, every time.', 'Name the values, then let them decide the hard calls: integrity, leadership, resilience, passion, and competitiveness.'],
         ['Control the controllables.', 'Leaders create the conditions; each person brings maximum effort.'],
         ['Own your response.', 'It is okay to feel how you feel; what matters is how you act and respond.'] ] },

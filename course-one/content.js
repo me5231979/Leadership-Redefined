@@ -22,6 +22,7 @@ window.LR_COURSE = {
     { sel:'#recap2',      key:'recap2',     label:'Module 2: Wrap-up',             mode:'whole' },
     { sel:'#gdstory', key:'gdstory', label:'Module 2: Go deeper, the shape of a great talk', mode:'whole' },
     { sel:'#margin',      key:'margin',     label:'Module 3: Mission and margin',  mode:'whole' },
+    { sel:'#peers',       key:'peers',      label:'Module 3: Why it matters now',  mode:'whole' },
     { sel:'#portfolio',   key:'portfolio',  label:'Module 3: The whole cost',       mode:'whole' },
     { sel:'#statement',   key:'statement',  label:'Module 3: Your statement',      mode:'whole' },
     { sel:'#me3',          key:'me3',        label:'Module 3: What this means for me', mode:'whole' },
@@ -34,38 +35,40 @@ window.LR_COURSE = {
     { sel:'#learn',       key:'learn',      label:'Keep going',                    mode:'whole', extras:['footer'] }
   ],
   SECTIONS: [
-    { k:'route',      no:'01', name:'This week',             how:'Visit all four stops' },
+    { k:'route',      no:'01', name:'This week',             how:'Preview the three modules and your brief' },
     { k:'mission',    no:'02', name:'The vision',            how:'Open all three areas of focus' },
     { k:'problems',   no:'03', name:'Four problems',         how:'Open all four problems' },
     { k:'engine',     no:'04', name:'The reputation engine', how:'Sort six moments' },
-    { k:'numbers',    no:'05', name:'Momentum',              how:'Guess all four numbers' },
+    { k:'numbers',    no:'05', name:'Momentum',              how:'Guess all five numbers' },
     { k:'growth',     no:'06', name:'Four growth sites',     how:'Open all four sites' },
     { k:'brand',      no:'07', name:'Brand or reputation',   how:'Decide six statements' },
     { k:'fighter',    no:'08', name:'Spikes and systems',    how:'Open all four moves' },
     { k:'ground',     no:'09', name:'The ground game',       how:'Fill in three of four lines' },
     { k:'story',      no:'10', name:'Your storyline',        how:'Fill in four of five lines' },
     { k:'margin',     no:'11', name:'Mission and margin',    how:'Find the strongest call in two situations' },
-    { k:'portfolio',  no:'12', name:'The whole cost',        how:'Find six hidden costs' },
-    { k:'statement',  no:'13', name:'Your statement',        how:'Fill in three of four lines' },
-    { k:'focus',      no:'14', name:'Your focus area',       how:'Sort five challenges' },
-    { k:'draft',      no:'15', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
-    { k:'quiz',       no:'16', name:'Apply it',              how:'Score 6 of 8' },
-    { k:'nextstep',   no:'17', name:'This week',             how:'Commit to all four moves' }
+    { k:'peers',      no:'12', name:'Why it matters now',    how:'See all eight slides' },
+    { k:'portfolio',  no:'13', name:'The whole cost',        how:'Find six hidden costs' },
+    { k:'statement',  no:'14', name:'Your statement',        how:'Fill in three of four lines' },
+    { k:'focus',      no:'15', name:'Your focus area',       how:'Sort five challenges' },
+    { k:'draft',      no:'16', name:'Draft sections 1 to 3', how:'Fill in all four parts' },
+    { k:'quiz',       no:'17', name:'Apply it',              how:'Score 6 of 8' },
+    { k:'nextstep',   no:'18', name:'This week',             how:'Commit to all four moves' }
   ],
   ROUTE_PROG: 'route', ROUTE_NARR: 'route/g',
   STOPS: [
-    { h:'Vision and <em>strategy</em>', p:'What the vision asks of you, and how reputation becomes resources.', tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'Go deeper: the value stick'] },
-    { h:'Story and <em>brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'The ground game', 'Your storyline'] },
-    { h:'Mission and <em>margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The whole cost'] },
-    { h:'Your <em>brief</em>', p:'Pick your focus area and draft sections 1 to 3 for your pod.', tags:['Focus area', 'Draft', 'Quick check'] }
+    { h:'Module 1: Vision, Strategy &amp; the Future of <em>Vanderbilt</em>', p:'What the vision asks of you, and how reputation becomes resources.', tags:['Three areas of focus', 'The reputation engine', 'Four growth sites', 'Go deeper: the value stick'] },
+    { h:'Module 2: Communication, Storytelling &amp; <em>Brand</em>', p:'The Chancellor on communication, then your pod’s storyline.', tags:['A video', 'Brand or reputation', 'The ground game', 'Your storyline'] },
+    { h:'Module 3: Mission and <em>Margin</em>', p:'The Chancellor on mission and margin, then the trade-offs.', tags:['A video', 'Two situations', 'The Chancellor\u2019s slides', 'The whole cost'] },
+    { h:'Start your <em>brief</em>', p:'Pick your focus area and draft sections 1 to 3 for your pod. Course Two covers sections 4 to 7.', tags:['Focus area', 'Draft', 'Quick check'] }
   ],
   BEST_LABEL: 'The strongest call: ',
   TRY_AGAIN: 'Now find the call that serves both mission and margin. ',
   NUMS: [
-    { lab:'Media mentions', q:'High-priority media mentions, fiscal 2026 to date. Before 2020 it was 50,000 to 70,000 a year. Now?', opts:['About 90,000', 'About 140,000', 'More than 320,000'], a:2, big:'322,296', x:'As of January 2026. Attention is the first step in the reputation loop.' },
-    { lab:'Early Decision', q:'Early Decision applications were about 1,200 in 2007. The 2026 projection?', opts:['About 2,500', 'About 4,800', 'About 7,800'], a:2, big:'7,810', x:'Projected for 2026. More students choosing Vanderbilt first.' },
-    { lab:'New commitments', q:'2025 set a record at $345 million in new gifts and pledges. The FY26 forecast?', opts:['About $350M', 'About $450M', '$600M or more'], a:2, big:'$600M+', x:'A forecast for the current fiscal year. Resources follow reputation.' },
-    { lab:'New campuses', q:'How many growth sites beyond Nashville did the Chancellor name?', opts:['One', 'Two', 'Four'], a:2, big:'4', x:'New York City, San Francisco, West Palm Beach, and Quantum Innovation in Chattanooga.' }
+    { lab:'Selectivity', q:'In 2020-21, Vanderbilt admitted 11.6% of undergraduate applicants. In 2026-27?', opts:['About 9%', 'About 7%', '4.6%'], a:2, big:'4.6%', x:'Selectivity fell from 11.6% in 2020-21 to 4.6% in 2026-27, and yield, the share of admitted students who enroll, rose from 39.9% to 65.4%. More of the best students choose Vanderbilt first.' },
+    { lab:'Net new commitments', q:'Net new commitments were $127 million in FY20. In FY26?', opts:['About $300M', 'About $500M', '$757M'], a:2, big:'$757M', x:'Net new commitments rose from $127 million in FY20 to $757 million in FY26, about six times as much.' },
+    { lab:'Research funding', q:'Research funding at VU and VUMC together was about $825 million in FY20. In FY25?', opts:['About $1.0B', 'About $1.2B', 'More than $1.4B'], a:2, big:'$1.4B+', x:'Total research funding passed $1.4 billion in FY25: $520 million at VU and $883 million at VUMC.' },
+    { lab:'Endowment', q:'The endowment was $6.95 billion on June 30, 2020. On June 30, 2026?', opts:['About $8.5B', 'About $10B', '$12.09B'], a:2, big:'$12.09B', x:'The endowment grew from $6.95 billion to $12.09 billion, and net assets nearly doubled, from $6.6 billion to $13.1 billion.' },
+    { lab:'Football wins', q:'The 2020 football team went 0-9. How many regular-season games did the 2025 team win?', opts:['7', '8', '10'], a:2, big:'10', x:'The 2025 team had the first 10-win regular season in program history. Men\u2019s basketball went 27-9 in 2025-26, and women\u2019s basketball finished 29-5 and reached the Sweet 16.' }
   ],
   /* growth map: the four growth sites plus home. narr = the tap clip; meet = where staff meet it */
   CITIES: {
@@ -79,17 +82,26 @@ window.LR_COURSE = {
   /* trend charts on the momentum page, one per guess tile (num = the tile index), unlocked after the guess.
      Labeled values (the last point) are from the Chancellor's slides; the rest are read from his charts and are approximate. */
   CHARTS: [
-    { num:0, title:'High-priority media mentions', sub:'Fiscal years 2015 to 2026 (2026 is year to date, as of January 2026)', fmt:'n',
-      x:['FY15','FY16','FY17','FY18','FY19','FY20','FY21','FY22','FY23','FY24','FY25','FY26'],
-      y:[56000,70000,72000,64000,65000,69000,111000,121000,138000,134000,137000,322296], proj:-1, max:350000, step:50000, end:'322,296', endNote:'as of Jan. 2026' },
-    { num:1, title:'Early Decision applications', sub:'2007 to 2026 (2026 is a projection)', fmt:'n',
-      x:['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
-      y:[1200,1460,1650,2150,2550,2820,3180,3170,3580,3700,3580,4140,4320,4220,5020,5100,5600,5830,6650,7810], proj:18, max:8000, step:1000, end:'7,810', endNote:'projected',
-      foot:'Starting in 2022, some Early Decision applicants were deferred to Regular Decision for space; they are still counted here.' },
-    { num:2, title:'New commitments', sub:'Gifts and pledges, fiscal 2007 to 2026, nominal dollars (2026 is a forecast)', fmt:'m',
-      x:['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
-      y:[120,121,137,119,109,111,109,125,118,122,177,160,193,126,171,187,320,265,345,600], proj:18, max:600, step:100, end:'$600M+', endNote:'forecast' }
+    { num:0, type:'bars', title:'Undergraduate Selectivity', sub:'Selectivity fell from 11.6% in 2020-21 to 4.6% in 2026-27.', fmt:'pct', max:15, step:5, axis:'Admissions Rate (%)',
+      bars:[{ x:'2020-21', v:11.6, lab:'11.6%' }, { x:'2026-27', v:4.6, lab:'4.6%' }] },
+    { num:0, type:'bars', title:'Undergraduate Yield', sub:'Yield increased from 39.9% in 2020-21 to 65.4% in 2026-27.', fmt:'pct', max:80, step:20, axis:'Yield (%)',
+      bars:[{ x:'2020-21', v:39.9, lab:'39.9%' }, { x:'2026-27', v:65.4, lab:'65.4%' }] },
+    { num:1, type:'bars', title:'Net New Commitments', sub:'Net new commitments rose to $757M in FY26.', fmt:'usd', max:800, step:200, axis:'Net New Commitments ($M)', col:'Fiscal year',
+      bars:[{ x:'FY20', v:127, lab:'$127' }, { x:'FY26', v:757, lab:'$757' }] },
+    { num:2, type:'bars', title:'Research Funding at VU and VUMC', sub:'Total research funding surpassed $1.4B in FY25.', fmt:'usd', max:1500, step:500, axis:'Research Funding ($ in M)', col:'Fiscal year', legend:['VU', 'VUMC'],
+      bars:[{ x:'FY20', seg:[360.21, 464.60], labs:['$360.21', '$464.60'], lab:'$824.81' }, { x:'FY25', seg:[520.45, 883.23], labs:['$520.45', '$883.23'], lab:'$1,403.68' }] },
+    { num:3, type:'bars', title:'Endowment Value', sub:'The endowment grew from $6.95B in FY20 to $12.09B in FY26.', fmt:'usd', max:15000, step:5000, axis:'$ in Millions', col:'Date',
+      bars:[{ x:'6/30/20', v:6951, lab:'$6,951' }, { x:'6/30/26', v:12088, lab:'$12,088' }] },
+    { num:3, type:'bars', title:'Net Assets', sub:'Vanderbilt\u2019s net assets have nearly doubled since FY20.', fmt:'usd', max:15, step:5, axis:'Net Asset Value ($B)', col:'Fiscal year',
+      bars:[{ x:'FY20', v:6.6, lab:'$6.6' }, { x:'FY26', v:13.1, lab:'$13.1' }] },
+    { num:4, type:'bars', title:'Football Wins', sub:'The 2025 football team had its first-ever 10-win regular season.', fmt:'n', max:10, step:5, axis:'Regular Season Wins', col:'Season',
+      bars:[{ x:'2020', v:0, lab:'', note:'1' }, { x:'2025', v:10, lab:'10', inside:true }], foot:'(1) The 2020 season was shortened by the COVID-19 pandemic. The team\u2019s final record was 0-9 that year.' },
+    { num:4, type:'bars', title:'Vanderbilt Men\u2019s Basketball Wins', sub:'The 2025-26 team compiled a 27-9 regular season record.', fmt:'n', max:30, step:10, axis:'Regular Season Wins', col:'Season',
+      bars:[{ x:'2020-21', v:9, lab:'9' }, { x:'2025-26', v:27, lab:'27' }], foot:'(1) The 2020-21 season was shortened by the COVID-19 pandemic. The team\u2019s final record was 9-16 that year.' },
+    { num:4, type:'bars', title:'Vanderbilt Women\u2019s Basketball Wins', sub:'The 2025-26 team finished 29-5 and secured a trip to the Sweet 16.', fmt:'n', max:30, step:10, axis:'Regular Season Wins', col:'Season',
+      bars:[{ x:'2021-22', v:16, lab:'16' }, { x:'2025-26', v:27, lab:'27' }] }
   ],
+
   DRILLS: {
     fullcost: { opts:['Follow the cash', 'Upkeep and depreciation', 'Space'], prog:'portfolio', verb:'found', items:[
       { s:'A donor gives $20 million to build a new lab building.', opts:['Follow the cash', 'Upkeep and depreciation', 'Debt and ratings'], a:1, x:'The gift covers construction. The building costs money every year it stands: upkeep, renewal, and depreciation.' },
@@ -123,10 +135,10 @@ window.LR_COURSE = {
       { s:'A vendor telling another university that Vanderbilt pays on time and is easy to work with.', a:1, x:'Reputation is built in operations too. Staff leaders shape it every day.' },
       { s:'The talking points your office writes for a program launch.', a:0, x:'What you plan to say. It becomes reputation only when others repeat it, and believe it.' }
     ]},
-    focus: { opts:['Core Operations', 'Bold Initiatives', 'Values Leadership'], prog:'focus', verb:'sorted', items:[
+    focus: { opts:['Core Operations', 'Bold Initiatives', 'Industry Leadership'], prog:'focus', verb:'sorted', items:[
       { s:'New staff wait three to five weeks for system access.', a:0, x:'Running the place well. Fix it and you free time and talent for everything else.' },
       { s:'A cross-school program pairing Nashville employers with student researchers on regional health problems.', a:1, x:'A new bet that extends the reach of education and research.' },
-      { s:'A shared practice for events where people who disagree sharply still hear each other out.', a:2, x:'Modeling what an essential research university stands for: open inquiry and civil discourse.' },
+      { s:'A public report on how Vanderbilt research improved health across Tennessee, shared with lawmakers and peer universities.', a:2, x:'Advocacy, and modeling the role of an essential research university: it changes how others see, and support, research universities.' },
       { s:'Three offices collect the same vendor data in three different forms.', a:0, x:'Duplicated process. Solve it and you return money and hours to the mission.' },
       { s:'Scaling one school’s successful pilot into a university-wide offering for working adults.', a:1, x:'A strategic bet on new learners. A pod could argue Core Operations if the brief were about delivery; make the call on purpose.' }
     ]}
@@ -186,8 +198,8 @@ window.LR_COURSE = {
     return '';
   },
   QUIZ: [
-    { seg:'Strategy', q:'A new growth campus needs hiring, IT, and student services working on day one. Which area of focus does that work serve?', opts:['Exceptional Core Operations', 'Values Leadership', 'Neither; campuses are a facilities project', 'Only the campus leadership team'], a:0, x:'Core operations are the fuel for bold initiatives. The campus is bold; making it run at speed is Exceptional Core Operations.' },
-    { seg:'Strategy', q:'Your pod proposes a shared practice for hosting respectful debate events. Which focus area fits best?', opts:['Exceptional Core Operations', 'Bold Strategic Initiatives', 'Values Leadership', 'It does not fit any'], a:2, x:'It models what an essential research university stands for: open inquiry and civil discourse.' },
+    { seg:'Strategy', q:'A new growth campus needs hiring, IT, and student services working on day one. Which area of focus does that work serve?', opts:['Exceptional Core Operations', 'Industry Leadership', 'Neither; campuses are a facilities project', 'Only the campus leadership team'], a:0, x:'Core operations are the fuel for bold initiatives. The campus is bold; making it run at speed is Exceptional Core Operations.' },
+    { seg:'Strategy', q:'Your pod proposes a toolkit that lets other universities adopt a faster research-contracting process Vanderbilt built, presented at a national meeting. Which focus area fits best?', opts:['Exceptional Core Operations', 'Bold Strategic Initiatives', 'Industry Leadership', 'It does not fit any'], a:2, x:'It models the role of an essential research university and stimulates industry change. That is Industry Leadership.' },
     { seg:'Strategy', q:'After a burst of national attention, applications and gifts both rose. Which idea explains why?', opts:['The three areas of focus', 'The reputation feedback loop', 'Counting the whole cost', 'The ground game'], a:1, x:'Reputation attracts resources, like students and funding, and the results build more reputation.' },
     { seg:'Brand', q:'A new campaign ad praises fast, personal service, but students say offices are slow to respond. What is the real problem?', opts:['The ad needs a bigger budget', 'A gap between brand and reputation; fix the experience, then tell true stories', 'Students are not the audience', 'Reputation cannot be changed'], a:1, x:'Brand is what you say; reputation is what others say. When the experience misses the claim, the gap grows.' },
     { seg:'Brand', q:'Your unit just had a big win in the news. How do you make the attention last?', opts:['Wait for the next big win', 'Run one large ad', 'Keep a drumbeat of stories and carry them to priority people yourself', 'Let Communications handle it'], a:2, x:'A spike without a system is noise. The ground game turns attention into trust.' },
@@ -196,7 +208,7 @@ window.LR_COURSE = {
     { seg:'Margin', q:'Which mission and margin statement would a judge find strongest?', opts:['It will be great for everyone.', 'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and names who pays after the pilot year.', 'It needs new funding, details to come.', 'It is important to the mission.'], a:1, x:'Specific mission benefit, cost and source, return, and the whole cost after year one.' }
   ],
   SCEN_POS: { m1:0, m2:2 },
-  NUMS_POS: [1, 0, 2, 1],
+  NUMS_POS: [1, 0, 2, 0, 1],
   QUIZ_POS: [1, 3, 0, 2, 1, 0, 3, 2],
   QUIZ_PASS: 6,
   OVERVIEW: {
@@ -205,15 +217,15 @@ window.LR_COURSE = {
     due: 'Fri, Nov 6', dueLabel: 'finish this course by',
     goals: ['<b>Explain</b> Vanderbilt’s vision and its three areas of focus, and connect your own work to them.', '<b>Trace</b> how reputation turns into resources, and name the four growth sites the strategy is building.', '<b>Distinguish</b> brand from reputation, and a spike from a system.', '<b>Build</b> a storyline that moves a named audience from what is to what could be, and plan how you will carry it as the ground game.', '<b>Weigh</b> a decision on mission and margin, and state your capstone’s case in both.', '<b>Draft</b> sections 1 to 3 of your pod’s capstone brief.'],
     lessons: [
-      { title:'Vision and strategy', no:'Module 1', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth'], deep:['valuestick'], recap:'recap1', ideas:[
+      { title:'Vision, Strategy & the Future of Vanderbilt', no:'Module 1', keys:['route', 'mission', 'problems', 'engine', 'numbers', 'growth'], deep:['valuestick'], recap:'recap1', ideas:[
         ['The vision is an instruction.', 'Define the great university of the 21st century, and be it, through uncommon speed, agility, and scale, in three areas of focus.'],
         ['Reputation is an engine.', 'Reputation brings resources, resources produce results, and results build reputation; three flywheels speed it up. Four growth sites show the bold bets it funds.'],
         ['Bold has an address.', 'Four growth sites carry the vision beyond Nashville, and each one runs on core operations.'] ] },
-      { title:'Communication, storytelling and brand', no:'Module 2', keys:['brand', 'fighter', 'ground', 'story'], recap:'recap2', ideas:[
+      { title:'Communication, Storytelling & Brand', no:'Module 2', keys:['brand', 'fighter', 'ground', 'story'], recap:'recap2', ideas:[
         ['Close the gap.', 'Brand is what we say; reputation is what others say. Deliver the claim, then tell true stories about it.'],
         ['A spike needs a system.', 'Attention climbs from relevance to consideration, trust, and commitment only with a steady drumbeat, carried by leaders.'],
         ['Connect people to the why.', 'One real person, the difference your idea makes, and one clear ask, carried by the people who hear it.'] ] },
-      { title:'Mission and margin', no:'Module 3', keys:['margin', 'portfolio', 'statement'], recap:'recap3', ideas:[
+      { title:'Mission and Margin', no:'Module 3', keys:['margin', 'peers', 'portfolio', 'statement'], recap:'recap3', ideas:[
         ['No margin, no mission.', 'Mission is purpose and margin is capacity. A leader stewards both.'],
         ['Count the whole cost.', 'Follow the cash, and count buildings, space, research costs, and debt past year one.'],
         ['Answer both questions.', 'Every proposal names its mission benefit, its cost and source, and its return.'] ] },

@@ -4,13 +4,9 @@ name: Build SCORM package
 # is the package itself: upload it to the LMS as is. Runs after narration is
 # re-recorded, on pushes that change the courses, or by hand from the Actions tab.
 # It also replaces the "scorm-latest" release, whose single zip is the package.
+# On hold while the content is being finalized: runs only when started by hand from
+# the Actions tab (Run workflow). Restore the push and workflow_run triggers to automate it again.
 on:
-  push:
-    branches: ['claude/eloquent-mendel-0qq5xp', 'main']
-    paths: ['index.html', 'course-one/**', 'course-two/**', 'assets/**', 'scripts/build-scorm.mjs', '.github/workflows/build-scorm.yml']
-  workflow_run:
-    workflows: ['Record narration with ElevenLabs']
-    types: [completed]
   workflow_dispatch:
 permissions:
   contents: write

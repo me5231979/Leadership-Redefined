@@ -111,6 +111,14 @@ While `useBrowserVoice: true` is set in each `config.js`, Listen and Auto read e
 
 The workflow records the clips in ElevenLabs voice `v3p1kjzUvro6S76qmYmH` (set in `.github/tts.json`, with the same settings as Voyage Online), writes them to `assets/audio/<course>/`. It then sets `useBrowserVoice: false` so the recordings play, and publishes the site.
 
+## Your capstone brief
+
+`brief/` is one page for the whole brief: all seven sections, filled in automatically from what learners write in Course One (sections 1 to 3) and Course Two (sections 4 to 7). Both courses run from the same site and the same SCORM package, so the brief carries from course to course. Learners can edit any section (their edits are kept), print it or save it as a PDF, download it for Word, or copy it into the pod's shared document. It is linked from the program home, both courses' navigation, the draft pages, and the "This week" pages.
+
+## Carousels
+
+Any element with `data-car` becomes a carousel: one slide at a time, previous and next buttons, numbered dots, arrow keys, and no autoplay. With `data-car-prog="key"` it is also an activity, done when every slide has been seen. Module 1's nine charts, Module 3's eight Mission and Margin slides, and Module 5's five reputation slides each use one, so a run of the Chancellor's graphics takes one page.
+
 ## SCORM package
 
 One SCORM package holds the landing page and both courses. Upload it to the LMS as a single activity.

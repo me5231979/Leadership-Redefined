@@ -518,7 +518,7 @@ var NUMS = D.NUMS || [];
     var build = act.querySelector('.lr-build[data-build]');
     if(build){ var key = build.getAttribute('data-build');
       $$('.lr-draft', build).forEach(function(x){ x.setAttribute('data-for', key); copy.appendChild(x); }); }
-    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > figure.lr-vision, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter', copy);
+    var fl = $$(':scope > .v-video, :scope > figure.lr-fig, :scope > figure.v-quote, :scope > figure.lr-photo, :scope > figure.lr-vision, :scope > .lr-brief, :scope > .lr-kit, :scope > figure.lr-presenter, :scope > figure.lr-slide, :scope > .lr-deckcar', copy);
     fl.forEach(function(x){ x.classList.add('lr-float'); x._home = x.nextSibling; });
     st.classList.add('lr-bal');
     // nothing left to teach beside the activity: one column under the lead
@@ -563,7 +563,7 @@ var NUMS = D.NUMS || [];
    For anyone not listening, and for accessibility. Phonetic spellings in the
    scripts are swapped back to the real names. */
 (function(){
-  var FIX = [[/Deer-myer/g, 'Diermeier'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty eight/g, '2028'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
+  var FIX = [[/Deer-myer/g, 'Diermeier'], [/V-U-M-C/g, 'VUMC'], [/nineteen ninety eight/g, '1998'], [/twenty nineteen/g, '2019'], [/twenty twenty eight/g, '2028'], [/twenty twenty seven/g, '2027'], [/twenty twenty six/g, '2026'], [/twenty twenty five/g, '2025'], [/twenty twenty four/g, '2024'], [/twenty twenty/g, '2020']];
   $$('.page').forEach(function(pg){
     var k = pg.getAttribute('data-sec'), t = NARR[k + '/1']; if(!t || pg.querySelector('.lr-read')) return;
     FIX.forEach(function(f){ t = t.replace(f[0], f[1]); });
@@ -599,8 +599,8 @@ var FB_CHECK = {
   when:   { re:/\b(day|days|week|weeks|month|months|semester|year|years|quarter|spring|summer|fall|winter|by\s|before|after|within|january|february|march|april|may|june|july|august|september|october|november|december|monday|tuesday|wednesday|thursday|friday|today|tomorrow|next)\b|\d{1,2}\/\d{1,2}/i, ok:'has a timeframe', tip:'Add when: a date, a week, or a semester.' },
   money:  { re:/\$|\b(budget|budgets|fund|funds|funded|funding|cost|costs|dollars?|grant|grants|pay|pays|paid|revenue|savings?|save|saves|reallocat\w*|gift|gifts)\b/i, ok:'says where the money comes from', tip:'Say what it costs and where the money comes from.' },
   ask:    { re:/\b(approve|approval|fund|pilot|support|join|sponsor|adopt|commit|decide|agree|launch|endorse|invest|allow|assign|give us)\b/i, ok:'makes a clear ask', tip:'End with one clear ask: approve, fund, pilot, or join.' },
-  area:   { re:/core operations|bold|strategic initiatives|values leadership/i, ok:'names a focus area', tip:'Name one area of focus: Exceptional Core Operations, Bold Strategic Initiatives, or Values Leadership.' },
-  vision: { re:/vision|core operations|bold|values leadership|great university|speed|agility|scale|reputation|prosperity/i, ok:'ties to the vision', tip:'Quote the vision line or the area of focus it serves.' },
+  area:   { re:/core operations|bold|strategic initiatives|industry leadership/i, ok:'names a focus area', tip:'Name one area of focus: Exceptional Core Operations, Bold Strategic Initiatives, or Industry Leadership.' },
+  vision: { re:/vision|core operations|bold|industry leadership|great university|speed|agility|scale|reputation|prosperity/i, ok:'ties to the vision', tip:'Quote the vision line or the area of focus it serves.' },
   stakes: { re:/\b(mission|money|cost|costs|time|weeks|reputation|trust|talent|students?|risk|lose|losing|lost|wait|delay)\b/i, ok:'says what is at stake', tip:'Say what it costs to wait: mission, money, people, or reputation.' },
   own:    { re:/\b(my|our|we|i|me|team)\b/i, ok:'connects to your own work', tip:'Connect it to your own team or work.' },
   whatif: { re:/what if/i, ok:'is framed as a what if', tip:'Start with &ldquo;what if&rdquo; to flip the assumption.' },
@@ -863,6 +863,8 @@ $$('[data-copytext]').forEach(function(b){
 progRender();
 /* for tests */
 window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
+/* for the carousels below: an activity done when every slide has been seen */
+window.LR_PROG = { done: progDone, is: progIs, set: set, get: get, turn: turnDone };
 })();
 
 /* ── hero montage pause / play ── */
@@ -897,7 +899,52 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
   });
 })();
 
-/* ── trend charts: one per guess tile, drawn after the guess (keeps the pretesting effect) ── */
+/* ══════════ carousel: one slide at a time, so a run of graphics takes one page ══════════
+   Any element with data-car becomes one; its children are the slides. Previous and next
+   buttons, a numbered dot per slide, a live "2 of 9" count, arrow keys. Never auto-plays. */
+var lrCarousel = function(el){
+  var all = function(q, c){ return Array.prototype.slice.call((c || document).querySelectorAll(q)); }, enc = function(t){ return String(t).replace(/[&<>"]/g, function(ch){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]; }); };
+  var slides = [].slice.call(el.children); if(slides.length < 2) return null;
+  var label = el.getAttribute('data-car') || 'Slides', n = slides.length, cur = 0;
+  el.classList.add('lr-car'); el.setAttribute('role', 'region'); el.setAttribute('aria-roledescription', 'carousel'); el.setAttribute('aria-label', label);
+  var track = document.createElement('div'); track.className = 'lr-car-track';
+  slides.forEach(function(s, k){ track.appendChild(s); s.setAttribute('role', 'group'); s.setAttribute('aria-roledescription', 'slide'); });
+  function title(s){ var t = s.getAttribute('data-title') || ((s.querySelector('figcaption b, .lr-slide-h') || {}).textContent) || ''; return t.trim(); }
+  var arrow = function(d){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + (d < 0 ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7') + '" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'; };
+  var nav = document.createElement('div'); nav.className = 'lr-car-nav';
+  nav.innerHTML = '<button type="button" class="lr-car-btn" data-d="-1" aria-label="Previous">' + arrow(-1) + '</button>' +
+    '<div class="lr-car-dots">' + slides.map(function(s, k){ return '<button type="button" class="lr-car-dot" data-k="' + k + '" aria-label="' + enc((k + 1) + ': ' + title(s)) + '"><span>' + (k + 1) + '</span></button>'; }).join('') + '</div>' +
+    '<button type="button" class="lr-car-btn" data-d="1" aria-label="Next">' + arrow(1) + '</button>';
+  var count = document.createElement('p'); count.className = 'lr-car-count'; count.setAttribute('aria-live', 'polite');
+  el.appendChild(nav); el.appendChild(count); el.appendChild(track);
+  function go(k, quiet){
+    cur = (k + n) % n;
+    slides.forEach(function(s, j){ s.hidden = j !== cur; s.setAttribute('aria-label', (j + 1) + ' of ' + n + ': ' + title(s)); });
+    all('.lr-car-dot', nav).forEach(function(d, j){ if(j === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+    count.textContent = (cur + 1) + ' of ' + n + ' · ' + title(slides[cur]);
+    if(!quiet) el.dispatchEvent(new CustomEvent('lr:car', { detail:{ k:cur } }));
+  }
+  nav.addEventListener('click', function(e){ var b = e.target.closest('button'); if(!b) return; if(b.hasAttribute('data-k')) go(+b.getAttribute('data-k')); else go(cur + +b.getAttribute('data-d')); });
+  el.addEventListener('keydown', function(e){ if(e.target.closest('input, textarea, select')) return; if(e.key === 'ArrowRight'){ go(cur + 1); e.preventDefault(); } else if(e.key === 'ArrowLeft'){ go(cur - 1); e.preventDefault(); } });
+  /* data-car-prog="key": the activity is done once every slide has been seen */
+  var pk = el.getAttribute('data-car-prog'), P = window.LR_PROG;
+  if(pk && P){
+    var seen = {}; try{ seen = JSON.parse(P.get('car-' + pk) || '{}') || {}; }catch(e){ seen = {}; }
+    var st = document.getElementById(pk + 'Status');
+    var mark = function(k){ seen[k] = 1; P.set('car-' + pk, JSON.stringify(seen)); var c = Object.keys(seen).length;
+      all('.lr-car-dot', nav).forEach(function(d, j){ d.classList.toggle('seen', !!seen[j]); });
+      if(st) st.textContent = c + ' of ' + n + ' slides seen.' + (c === n ? ' Activity complete.' : '');
+      if(c === n){ P.set('r-' + pk, 'All ' + n + ' slides seen'); P.done(pk); } };
+    el.addEventListener('lr:car', function(e){ mark(e.detail.k); });
+    if(P.is(pk)) slides.forEach(function(s, k){ seen[k] = 1; });
+    mark(0);
+  }
+  go(0, true);
+  return { go:go, refresh:function(){ go(cur, true); all('.lr-car-dot', nav).forEach(function(d, j){ d.setAttribute('aria-label', (j + 1) + ': ' + title(slides[j])); }); } };
+};
+Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(function(el){ lrCarousel(el); });
+
+/* ── charts: one per guess tile, drawn after the guess (keeps the pretesting effect) ── */
 (function(){
   var D2 = window.LR_COURSE || {}, CH = D2.CHARTS || [], box = document.querySelector('[data-charts]'); if(!box || !CH.length) return;
   var key = (window.LR_CONFIG || {}).storeKey || 'lr-', prog = D2.NUM_PROG || 'numbers';
@@ -905,7 +952,40 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
   function f(c, v){ return c.fmt === 'm' ? '$' + Math.round(v) + 'M' : Math.round(v).toLocaleString('en-US'); }
   function esc2(t){ return String(t).replace(/[&<>"]/g, function(ch){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]; }); }
   var W = 640, H = 300, L = 58, R = 92, T = 24, B = 34, pw = W - L - R, ph = H - T - B;
+  /* bar charts, drawn like the Chancellor's slides: gold bars, value labels, an optional
+     stacked bar (segments) with a legend, and an axis title */
+  function tick(c, v){ var s = Math.abs(v) >= 1000 ? v.toLocaleString('en-US') : String(v); return c.fmt === 'pct' ? s + '%' : c.fmt === 'usd' ? '$' + s : s; }
+  function bars(c, i){
+    var BW = 640, BH = 330, BL = 76, BR = 24, BT = 30, BB = 40, bw = BW - BL - BR, bh = BH - BT - BB - (c.legend ? 22 : 0);
+    var Yb = function(v){ return BT + bh - v / c.max * bh; }, slot = bw / c.bars.length, wide = Math.min(150, slot * 0.4);
+    var g, out = '<defs><linearGradient id="lrbg' + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9CF8A"/><stop offset="1" stop-color="#CBAA6C"/></linearGradient>' +
+      '<linearGradient id="lrbb' + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A4D9EB"/><stop offset="1" stop-color="#7DA9B9"/></linearGradient></defs>';
+    for(g = c.step; g <= c.max; g += c.step) out += '<line x1="' + BL + '" x2="' + (BL + bw) + '" y1="' + Yb(g) + '" y2="' + Yb(g) + '" class="cg"/><text x="' + (BL - 8) + '" y="' + (Yb(g) + 4) + '" text-anchor="end" class="ct">' + esc2(tick(c, g)) + '</text>';
+    out += '<line x1="' + BL + '" x2="' + (BL + bw) + '" y1="' + Yb(0) + '" y2="' + Yb(0) + '" class="cb"/>';
+    if(c.axis) out += '<text class="ct cax" transform="translate(16 ' + (BT + bh / 2) + ') rotate(-90)" text-anchor="middle">' + esc2(c.axis) + '</text>';
+    c.bars.forEach(function(b, k){
+      var cx = BL + slot * (k + .5), x = cx - wide / 2;
+      if(b.seg){
+        var base = 0;
+        b.seg.forEach(function(sv, si){ var y0 = Yb(base), y1 = Yb(base + sv); out += '<rect x="' + x + '" y="' + y1 + '" width="' + wide + '" height="' + (y0 - y1) + '" fill="url(#' + (si ? 'lrbb' : 'lrbg') + i + ')"/><text x="' + cx + '" y="' + (y1 + 22) + '" text-anchor="middle" class="cvi">' + esc2(b.labs[si]) + '</text>'; base += sv; });
+      } else {
+        var y = Yb(b.v);
+        if(b.v > 0) out += '<rect x="' + x + '" y="' + y + '" width="' + wide + '" height="' + (Yb(0) - y) + '" fill="url(#lrbg' + i + ')" stroke="#D9BC7C"/>';
+        out += '<text x="' + cx + '" y="' + (b.inside ? y + 24 : y - 9) + '" text-anchor="middle" class="' + (b.inside ? 'cvi' : 'cv') + '">' + esc2(b.lab) + '</text>';
+      }
+      out += '<text x="' + cx + '" y="' + (BT + bh + 22) + '" text-anchor="middle" class="ct">' + esc2(b.x) + (b.note ? '<tspan dy="-8" class="cn">' + esc2(b.note) + '</tspan>' : '') + '</text>';
+    });
+    if(c.legend) out += c.legend.map(function(t, li){ var lx = BL + bw / 2 - 52 + li * 64; return '<rect x="' + lx + '" y="' + (BH - 16) + '" width="10" height="10" fill="url(#' + (li ? 'lrbb' : 'lrbg') + i + ')"/><text x="' + (lx + 14) + '" y="' + (BH - 7) + '" class="ct">' + esc2(t) + '</text>'; }).join('');
+    var said = c.bars.map(function(b){ return b.x + ' ' + (b.seg ? b.labs.join(' and ') : b.lab); }).join(', ');
+    var rows = c.bars.map(function(b){ return '<tr><th scope="row">' + esc2(b.x) + '</th><td>' + esc2(b.seg ? c.legend.map(function(t, li){ return t + ' ' + b.labs[li]; }).join(', ') + ' (total ' + b.lab + ')' : b.lab) + '</td></tr>'; }).join('');
+    var el = box.querySelector('[data-chart="' + i + '"]');
+    el.classList.add('on', 'lr-bars');
+    el.innerHTML = '<figcaption><b>' + esc2(c.title) + '</b><span class="lr-csub">' + esc2(c.sub) + '</span></figcaption><div class="lr-cw"><svg viewBox="0 0 ' + BW + ' ' + BH + '" role="img" aria-label="' + esc2(c.title + ', bar chart: ' + said) + '">' + out + '</svg></div>' +
+      (c.foot ? '<p class="lr-cfoot">' + esc2(c.foot) + '</p>' : '') +
+      '<details class="lr-ctable"><summary>See the numbers</summary><table><thead><tr><th scope="col">' + esc2(c.col || 'Year') + '</th><th scope="col">Value</th></tr></thead><tbody>' + rows + '</tbody></table></details>';
+  }
   function draw(c, i){
+    if(c.type === 'bars') return bars(c, i);
     var n = c.y.length, X = function(k){ return L + k * pw / (n - 1); }, Y = function(v){ return T + ph - v / c.max * ph; };
     var grid = '', lab = '', g;
     for(g = 0; g <= c.max; g += c.step){ grid += '<line x1="' + L + '" x2="' + (L + pw) + '" y1="' + Y(g) + '" y2="' + Y(g) + '" class="cg"/>'; lab += '<text x="' + (L - 8) + '" y="' + (Y(g) + 4) + '" text-anchor="end" class="ct">' + f(c, g) + '</text>'; }
@@ -938,7 +1018,10 @@ window.LR_ENGINE = { SCENARIOS: SCENARIOS, QUIZ: QUIZ, DRILLS: DRILLS };
     }
     s.addEventListener('pointermove', at); s.addEventListener('pointerleave', function(){ s.classList.remove('hov'); tip.hidden = true; cx.setAttribute('x1', -10); cx.setAttribute('x2', -10); chd.setAttribute('cx', -10); });
   }
-  box.innerHTML = CH.map(function(c, i){ return '<figure class="lr-chart" data-chart="' + i + '"><p class="lr-clock">Make your guess on the <b>' + esc2((D2.NUMS[c.num] || {}).lab || '') + '</b> tile to unlock this chart.</p></figure>'; }).join('');
+  box.innerHTML = CH.map(function(c, i){ return '<figure class="lr-chart" data-chart="' + i + '" data-title="' + esc2(c.title) + '"><p class="lr-clock">Make your guess on the <b>' + esc2((D2.NUMS[c.num] || {}).lab || '') + '</b> tile to unlock the ' + esc2(c.title) + ' chart.</p></figure>'; }).join('');
   CH.forEach(function(c, i){ if(picked(c.num)) draw(c, i); });
-  document.addEventListener('lr:num', function(e){ CH.forEach(function(c, i){ if(c.num === e.detail.i) draw(c, i); }); });
+  /* all the charts share one carousel; each guess turns it to that tile's first chart */
+  if(box.hasAttribute('data-car')) box.setAttribute('data-car', box.getAttribute('data-car') || 'Charts');
+  var car = box.hasAttribute('data-car') ? lrCarousel(box) : null;
+  document.addEventListener('lr:num', function(e){ var first = -1; CH.forEach(function(c, i){ if(c.num === e.detail.i){ draw(c, i); if(first < 0) first = i; } }); if(car && first >= 0){ car.refresh(); car.go(first); } });
 })();

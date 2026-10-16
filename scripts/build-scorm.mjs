@@ -46,7 +46,7 @@ function copy(rel) {
   if (fs.statSync(src).isDirectory()) { fs.mkdirSync(dst, { recursive: true }); fs.readdirSync(src).forEach((f) => copy(path.join(rel, f))); }
   else fs.copyFileSync(src, dst);
 }
-['index.html', 'assets', ...COURSES.map((c) => c[0])].forEach(copy);
+['index.html', 'assets', 'brief', ...COURSES.map((c) => c[0])].forEach(copy);
 
 // 1b. Full-quality media by default (1080p video, original narration). With --light,
 // 720p video and 96 kbps narration halve the size. The website keeps the originals.
@@ -92,11 +92,11 @@ for (const [dir] of COURSES) {
 }
 
 // 2. Point folder links at index.html; LMS content servers do not serve a folder's index.
-for (const rel of ['index.html', ...COURSES.map((c) => c[0] + '/index.html')]) {
+for (const rel of ['index.html', 'brief/index.html', ...COURSES.map((c) => c[0] + '/index.html')]) {
   const f = path.join(OUT, rel);
   const html = fs.readFileSync(f, 'utf8')
     .replace(/href="\.\/"/g, 'href="index.html"')
-    .replace(/href="((?:\.\.\/)?(?:course-one\/|course-two\/)|\.\.\/)"/g, 'href="$1index.html"');
+    .replace(/href="((?:\.\.\/)?(?:course-one\/|course-two\/|brief\/)|\.\.\/)"/g, 'href="$1index.html"');
   fs.writeFileSync(f, html);
 }
 

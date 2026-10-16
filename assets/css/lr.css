@@ -239,6 +239,11 @@
 .lr-ctable table{ border-collapse:collapse; font-size:.85rem; color:var(--tx2); }
 .lr-ctable th, .lr-ctable td{ text-align:left; padding:2px 14px 2px 0; font-weight:400; }
 .lr-ctable thead th{ color:var(--tx); font-weight:600; }
+.lr-cw .cb{ stroke:rgba(255,255,255,.35); stroke-width:1; }
+.lr-cw .cv{ fill:var(--tx); font-family:var(--sans); font-size:17px; }
+.lr-cw .cvi{ fill:#1C1C1C; font-family:var(--sans); font-size:15px; }
+.lr-cw .cax{ font-size:11px; }
+.lr-chart figcaption .lr-csub{ font-size:.95rem; color:var(--eyebrow); }
 @media print{ .lr-charts{ display:none; } }
 
 /* deck diagrams: the reputation feedback loop and the flywheels */
@@ -302,3 +307,126 @@
 /* "Builds your brief" tag on pages that write part of the capstone brief */
 .lr-feeds{ margin:0 0 12px; padding:8px 12px; border:1px solid var(--vu-gold); border-radius:var(--r); font-size:.9375rem; line-height:1.45; color:var(--tx); }
 .lr-feeds b{ display:inline-block; margin-right:6px; font-family:var(--cond); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+
+/* One question size everywhere: sort cards and the quick check match the other questions */
+html .v-deck .dq-s{ font-family:var(--sans); font-size:1.125rem !important; line-height:1.45; }
+html #quiz .kq-q{ font-family:var(--sans); font-size:1.125rem; line-height:1.45; }
+
+/* Carousel: one graphic at a time, with previous/next and numbered dots */
+.lr-car{ display:block; }
+.lr-charts.lr-car{ display:block; }
+.lr-car-nav{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.lr-car-btn{ display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--bd); border-radius:var(--r); background:var(--card); color:var(--tx); cursor:pointer; }
+.lr-car-btn:hover{ border-color:var(--eyebrow); color:var(--eyebrow); }
+.lr-car-btn svg{ width:18px; height:18px; }
+.lr-car-dots{ display:flex; flex-wrap:wrap; gap:4px; }
+.lr-car-dot{ display:grid; place-items:center; min-width:32px; height:44px; padding:0; border:0; background:none; cursor:pointer; color:var(--tx3); font-family:var(--cond); font-weight:700; font-size:.8rem; }
+.lr-car-dot span{ display:grid; place-items:center; width:28px; height:28px; border:1.5px solid var(--eyebrow); border-radius:50%; }
+.lr-car-dot[aria-current="true"] span{ background:var(--eyebrow); color:#1C1C1C; }
+.lr-car-dot:hover span{ background:rgba(207,174,112,.25); }
+.lr-car-btn:focus-visible, .lr-car-dot:focus-visible{ outline:2px solid var(--vu-highlight, #ECB748); outline-offset:2px; }
+.lr-car-count{ margin:6px 0 10px; font-family:var(--cond); font-weight:700; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--tx3); max-width:none; }
+.lr-car-track > [hidden]{ display:none !important; }
+@media print{ .lr-car-nav, .lr-car-count{ display:none; } .lr-car-track > [hidden]{ display:block !important; } }
+.lr-car-dot[aria-current="true"]:hover span, .lr-car-dot[aria-current="true"] span{ background:var(--eyebrow); color:#1C1C1C; }
+.lr-bars .lr-cw{ max-width:760px; margin:0 auto; }
+
+/* ══ The Chancellor's slides, replicated: charcoal slide, gold top rule, light uppercase title ══ */
+.lr-slide{ margin:0; background:#2F3030; border-top:4px solid #D9BC7C; border-radius:var(--r); padding:clamp(18px,2.6vw,36px); color:#fff; }
+.lr-slide-h{ display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 14px; font-family:var(--sans); font-weight:300; font-size:clamp(1.5rem,2vw + .8rem,2.4rem); letter-spacing:.02em; text-transform:uppercase; color:#fff; margin:0 0 clamp(16px,2vw,28px); max-width:none; }
+.lr-slide-h::after{ content:""; flex:1 1 60px; height:1px; background:rgba(255,255,255,.6); align-self:center; }
+.lr-slide-h small{ order:3; flex-basis:100%; font-size:.9rem; font-weight:400; letter-spacing:.04em; color:#D9BC7C; }
+.lr-slide .hinttxt{ margin-top:16px; color:rgba(255,255,255,.72); max-width:none; }
+.lr-slide-book{ display:grid; grid-template-columns:minmax(140px,260px) 1fr; gap:clamp(18px,4vw,56px); align-items:center; }
+.lr-slide-book img{ width:100%; height:auto; border:10px solid #F2B035; }
+.lr-slide-big{ font-size:clamp(1.15rem,1vw + .8rem,1.6rem); line-height:1.45; color:#fff; max-width:none; }
+.lr-slide-lines{ display:grid; gap:clamp(12px,2vw,26px); padding:clamp(8px,2vw,28px) 0; }
+.lr-slide-lines p{ font-size:clamp(1.1rem,1vw + .7rem,1.55rem); line-height:1.4; color:#fff; max-width:none; margin:0; }
+.lr-slide-lines.lg p{ font-size:clamp(1.25rem,1.4vw + .8rem,1.9rem); }
+.lr-slide-lines .g, .lr-slide-lines b{ color:#D9BC7C; font-weight:700; }
+.lr-slide-lines strong{ color:#fff; font-weight:700; }
+@media (max-width:640px){ .lr-slide-book{ grid-template-columns:1fr; } .lr-slide-book img{ max-width:200px; } }
+
+/* newspaper cards: torn paper with the publication's name as a masthead */
+.lr-newsgrid{ list-style:none; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:clamp(10px,1.4vw,20px); margin:0; padding:0; }
+.lr-news{ background:linear-gradient(#F4F4F4,#DCDCDC); color:#1E1E1E; padding:14px 14px 34px; min-height:190px;
+  clip-path:polygon(0 0,100% 0,100% 86%,95% 92%,90% 84%,84% 95%,78% 86%,71% 93%,64% 83%,57% 94%,50% 85%,43% 92%,36% 82%,29% 95%,22% 86%,15% 93%,8% 84%,3% 91%,0 86%); }
+.lr-mast{ display:block; font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:.95rem; color:#7A1F1F; border-bottom:1px solid #9a9a9a; padding-bottom:6px; margin-bottom:10px; }
+.lr-news-cds .lr-mast{ font-family:'UnifrakturMaguntia','Old English Text MT',Georgia,serif; color:#111; }
+.lr-news-bb .lr-mast{ background:#111; color:#fff; font-family:var(--sans); display:inline-block; padding:2px 8px; border:0; }
+.lr-news-fb .lr-mast{ color:#111; font-size:1.2rem; border:0; }
+.lr-news-hed .lr-mast{ font-family:var(--sans); color:#333; letter-spacing:.02em; }
+.lr-news-dn .lr-mast, .lr-news-cs .lr-mast{ color:#1E2F5C; }
+.lr-news p{ font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:clamp(.95rem,.5vw + .75rem,1.12rem); line-height:1.3; color:#1E1E1E; text-align:center; max-width:none; margin:0; }
+.lr-news p small{ display:block; margin-top:6px; font-weight:400; font-style:italic; font-size:.8rem; }
+@media (max-width:900px){ .lr-newsgrid{ grid-template-columns:repeat(2, minmax(0,1fr)); } }
+
+/* peer responses: the dot chart as a real table */
+.pm-wrap{ overflow-x:auto; padding-bottom:6px; }
+.pm-wrap:focus-visible{ outline:2px solid #ECB748; outline-offset:2px; }
+.pm{ border-collapse:separate; border-spacing:0; min-width:1180px; font-size:.72rem; }
+.pm th, .pm td{ padding:0; text-align:center; vertical-align:middle; }
+.pm thead .pm-names th{ height:120px; vertical-align:bottom; padding:0 2px 6px; }
+.pm thead .pm-names th span{ display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg); font-weight:700; color:#fff; font-size:.78rem; white-space:nowrap; }
+.pm thead .pm-names th.pm-vu span{ color:#D9BC7C; font-size:.9rem; }
+.pm .pm-grp th.pm-tg{ font-style:italic; font-weight:600; color:#fff; font-size:.85rem; border:2px solid #E6E6E6; border-bottom:0; padding:4px; }
+.pm tbody th, .pm thead tr:not(.pm-names) th{ text-align:right; padding-right:12px; white-space:nowrap; color:#fff; font-weight:700; font-size:.8rem; min-width:110px; }
+.pm th small{ display:block; font-weight:400; font-style:italic; font-size:.66rem; color:rgba(255,255,255,.7); }
+.pm-nih td, .pm-end td{ background:#B8955A; color:#fff; font-weight:800; font-size:.8rem; height:30px; border-right:1px solid #9C7B44; }
+.pm-end td{ color:#FFE75A; }
+.pm-nih th, .pm-end th{ background:#B8955A; font-style:italic; }
+.pm-end td, .pm-end th{ border-top:6px solid #2F3030; }
+.pm-note td{ color:#FF7A7A; font-style:italic; font-size:.62rem; line-height:1.2; padding:4px 2px; width:44px; vertical-align:top; }
+.pm tbody td{ height:62px; width:44px; position:relative; }
+.pm tbody td::before{ content:""; position:absolute; left:50%; top:0; bottom:0; border-left:1px solid #9C7B44; z-index:0; }
+.pm-dot{ position:relative; z-index:1; display:inline-grid; place-items:center; width:32px; height:32px; border-radius:50%; border:2px solid #C9A86B; font-weight:800; font-style:italic; font-size:.62rem; color:#fff; }
+.pm-R .pm-dot, .pm-kr{ background:#8B0000; }
+.pm-B .pm-dot, .pm-kb{ background:#E6D3AE; color:#5A4520; }
+.pm-G .pm-dot, .pm-kg{ background:#454745; }
+.pm tbody td small{ position:absolute; z-index:2; left:2px; right:2px; top:calc(50% + 17px); color:#FF7A7A; font-style:italic; font-size:.58rem; line-height:1.1; }
+.pm tbody td:last-child, .pm thead tr td:last-child, .pm-nih td:last-child, .pm-end td:last-child{ outline:2px solid #C9A86B; outline-offset:-2px; }
+.pm-key{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 22px; margin:12px 0 0; padding:0; font-size:.82rem; color:#fff; }
+.pm-key li{ display:flex; align-items:center; gap:8px; }
+.pm-key .pm-dot{ width:18px; height:18px; }
+
+/* core idea: mission = purpose, margin = capacity, in a cycle */
+.lr-core{ display:block; width:100%; max-width:640px; height:auto; margin:0 auto; }
+.lr-cbx{ fill:#2F3030; stroke:#D9BC7C; stroke-width:3; }
+.lr-cbig{ fill:#D9BC7C; font-family:var(--sans); font-weight:300; font-size:30px; letter-spacing:.02em; }
+.lr-cbig.sm{ font-size:22px; }
+.lr-csm{ fill:#fff; font-family:var(--sans); font-size:13px; }
+.pm{ table-layout:fixed; width:max-content; min-width:0; }
+.pm td, .pm thead .pm-names th{ width:50px; min-width:50px; max-width:50px; }
+.pm tbody th, .pm thead tr:not(.pm-names) th, .pm thead .pm-names td:first-child{ width:128px; min-width:128px; }
+.pm tbody td{ height:auto; padding:6px 0 4px; vertical-align:bottom; }
+.pm tbody td small{ position:relative; display:block; left:auto; right:auto; top:auto; padding:0 1px 4px; background:#2F3030; z-index:2; }
+.pm tbody tr{ height:58px; }
+
+/* the brief's seven sections, called out */
+.lr-brief-h{ font-family:var(--serif); font-weight:400; font-size:clamp(1.35rem,1vw + 1rem,1.8rem); color:var(--tx); margin:0 0 4px; }
+.lr-brief-sub{ color:var(--tx2); font-size:.98rem; margin:0 0 6px; max-width:none; }
+.pm tbody .pm-dot{ display:grid; margin:0 auto; line-height:1; }
+.lr-news{ padding-bottom:48px; }
+
+/* Module 5 deck diagrams */
+.lr-dsvg{ display:block; width:100%; max-width:660px; height:auto; margin:0 auto; overflow:visible; }
+.lr-dsvg .dring{ fill:#D3AE6C; font-family:var(--sans); font-weight:700; font-size:22px; letter-spacing:.3em; }
+.lr-dsvg .dbox{ fill:#fff; font-family:var(--sans); font-weight:800; font-size:24px; }
+.lr-dsvg .dbox.sm{ font-size:20px; }
+.lr-dsvg .dbox.dk{ fill:#2B2B2B; }
+.lr-dsvg .daxl{ fill:#fff; font-family:var(--sans); font-size:20px; letter-spacing:.06em; }
+.lr-dsvg .dgo{ fill:#D3AE6C; font-family:var(--sans); font-weight:800; font-size:19px; }
+.lr-dsvg .dw{ fill:#fff; font-family:var(--sans); font-size:18px; }
+.lr-dsvg .dit{ fill:#fff; font-family:var(--sans); font-style:italic; font-size:16px; }
+.lr-dsvg .dsm{ fill:#fff; font-family:var(--sans); font-style:italic; font-size:12px; }
+.lr-dsvg .drad{ fill:#E8E8E8; font-family:var(--sans); font-weight:800; font-size:18px; letter-spacing:.06em; }
+.lr-dsvg .dhd{ fill:#fff; font-family:var(--sans); font-weight:800; font-size:20px; }
+.lr-dsvg .dhd .go{ fill:#D3AE6C; }
+.lr-dsvg .dst{ fill:#8FA391; font-family:var(--sans); font-size:18px; }
+.lr-dsvg .dct{ fill:#E0B23C; font-family:var(--sans); font-size:18px; }
+.v-copy .lr-slide{ padding:clamp(14px,2vw,24px); }
+.v-copy .lr-slide-h{ font-size:clamp(1.2rem,1vw + .8rem,1.7rem); }
+.lr-whole{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:12px; color:var(--tx2); font-size:.92rem; max-width:none; }
+.v-act .lr-slide{ padding:clamp(14px,2vw,24px); margin-top:4px; }
+.v-act .lr-slide-h{ font-size:clamp(1.2rem,1vw + .8rem,1.7rem); }
+.v-act .lr-deckcar{ margin-top:18px; }
