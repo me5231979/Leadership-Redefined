@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>After the Symposium | Leadership Redefined</title>
+<meta name="description" content="Leadership Redefined, after the Symposium: why the program exists, what it is, and how the next four weeks work." />
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="../assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+<style>
+@font-face{ font-family:'Libre Caslon Display'; font-style:normal; font-weight:400; font-display:swap; src:url('../assets/fonts/libre-caslon-display-latin-400-normal.woff2') format('woff2'); }
+@font-face{ font-family:'Libre Caslon Text'; font-style:italic; font-weight:400; font-display:swap; src:url('../assets/fonts/libre-caslon-text-latin-400-italic.woff2') format('woff2'); }
+@font-face{ font-family:'Libre Caslon Text'; font-style:normal; font-weight:400; font-display:swap; src:url('../assets/fonts/libre-caslon-text-latin-400-normal.woff2') format('woff2'); }
+@font-face{ font-family:'Inter'; font-style:normal; font-weight:400; font-display:swap; src:url('../assets/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face{ font-family:'Inter'; font-style:normal; font-weight:500; font-display:swap; src:url('../assets/fonts/inter-latin-500-normal.woff2') format('woff2'); }
+@font-face{ font-family:'Inter'; font-style:normal; font-weight:600; font-display:swap; src:url('../assets/fonts/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face{ font-family:'Antonio'; font-style:normal; font-weight:700; font-display:swap; src:url('../assets/fonts/antonio-latin-700-normal.woff2') format('woff2'); }
+
+:root{
+  --vu-black:#1C1C1C; --vu-gold:#CFAE70; --vu-highlight:#ECB748; --vu-oak:#946E24; --vu-cream:#F5F3EF; --vu-sand:#E0D5C0;
+  --serif:'Libre Caslon Display','Libre Caslon Text','Times New Roman',serif;
+  --serif-i:'Libre Caslon Text','Times New Roman',serif;
+  --sans:'Inter',Arial,system-ui,sans-serif;
+  --cond:'Antonio','Arial Narrow',Impact,sans-serif;
+  --nav-h:72px; --bar-h:64px; --r:4px; --ease:cubic-bezier(.33,1,.68,1);
+}
+/* theme scopes: components read these, never the raw palette */
+.th-dark{ --bg:#1C1C1C; --tx:#FFFFFF; --tx2:rgba(255,255,255,.78); --tx3:rgba(255,255,255,.66); --bd:rgba(255,255,255,.16); --bdg:rgba(207,174,112,.4); --card:#262624; --eyebrow:#CFAE70; --accent:#CFAE70; --strong:#ECB748; --focus:#ECB748; --btn-bg:#CFAE70; --btn-tx:#1C1C1C; --btn-hv:#ECB748; }
+.th-light{ --bg:#F5F3EF; --tx:#1C1C1C; --tx2:#4A4A4A; --tx3:#5E5E5E; --bd:#DDD6C8; --bdg:rgba(148,110,36,.45); --card:#FFFFFF; --eyebrow:#7A5C1E; --accent:#946E24; --strong:#7A5C1E; --focus:#7A5C1E; --btn-bg:#1C1C1C; --btn-tx:#FFFFFF; --btn-hv:#7A5C1E; }
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html, body{ height:100%; }
+body{ overflow:hidden; background:#1C1C1C; color:#fff; font-family:var(--sans); font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+img{ display:block; max-width:100%; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--focus, #ECB748); outline-offset:3px; }
+.slide:focus-visible{ outline-offset:-4px; }
+.skip{ position:absolute; left:-9999px; top:8px; z-index:100; background:#CFAE70; color:#1C1C1C; padding:10px 14px; font-weight:600; }
+.skip:focus{ left:8px; }
+.sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* ── top nav ── */
+.nav{ position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:0 clamp(16px,2.4vw,36px); background:rgba(20,20,20,.97); border-bottom:1px solid rgba(207,174,112,.18); }
+.nav img{ width:150px; height:auto; }
+.nav ul{ list-style:none; display:flex; gap:clamp(14px,2vw,28px); }
+.nav ul a{ display:inline-flex; align-items:center; min-height:44px; text-decoration:none; color:rgba(255,255,255,.86); font-size:.95rem; }
+.nav ul a:hover{ color:#fff; text-decoration:underline; text-underline-offset:6px; text-decoration-color:#CFAE70; }
+.progress{ position:absolute; left:0; bottom:-1px; height:2px; width:0; background:#CFAE70; transition:width .3s var(--ease); }
+
+/* ── the deck: left to right, one slide per screen ── */
+.deck{ display:flex; flex-direction:row; height:100dvh; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scrollbar-width:none; scroll-behavior:smooth; }
+.deck::-webkit-scrollbar{ display:none; }
+.slide{ flex:0 0 100vw; height:100dvh; overflow-y:auto; overflow-x:hidden; scroll-snap-align:start; scroll-snap-stop:always; display:flex; flex-direction:column; background:var(--bg); color:var(--tx); padding:calc(var(--nav-h) + clamp(20px,4vh,48px)) 0 calc(var(--bar-h) + clamp(20px,4vh,48px)); position:relative; }
+.wrap{ width:100%; max-width:1180px; margin:auto; padding:0 clamp(20px,4vw,48px); }
+
+/* ── type ── */
+.eyebrow{ display:flex; align-items:center; gap:12px; font-family:var(--cond); font-weight:700; font-size:.88rem; letter-spacing:.09em; text-transform:uppercase; color:var(--eyebrow); margin-bottom:16px; }
+.eyebrow::before{ content:''; width:40px; height:2px; background:var(--accent); }
+.h{ font-family:var(--serif); font-weight:400; font-size:clamp(2.2rem,3.2vw + 1rem,4rem); line-height:1.06; letter-spacing:-.01em; max-width:20ch; text-wrap:balance; }
+.h em, .quote em{ font-family:var(--serif-i); font-style:italic; color:var(--accent); }
+.lead{ margin-top:16px; font-size:clamp(1.1rem,.5vw + 1rem,1.35rem); color:var(--tx2); max-width:58ch; }
+.lab{ font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); }
+.divider{ width:72px; height:2px; background:var(--accent); margin:22px 0; }
+
+/* ── buttons ── */
+.btns{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.btn{ display:inline-flex; align-items:center; gap:10px; min-height:48px; padding:0 22px; border-radius:var(--r); background:var(--btn-bg); color:var(--btn-tx); font:inherit; font-weight:600; font-size:1rem; text-decoration:none; border:1px solid var(--btn-bg); cursor:pointer; transition:background .2s ease, border-color .2s ease; }
+.btn:hover{ background:var(--btn-hv); border-color:var(--btn-hv); }
+.btn.ghost{ background:transparent; color:var(--tx); border-color:var(--bd); }
+.btn.ghost:hover{ border-color:var(--accent); background:rgba(207,174,112,.12); }
+.btn svg{ width:18px; height:18px; }
+
+/* ── components ── */
+.grid{ display:grid; gap:16px; margin-top:32px; }
+.g2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.g3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.g4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+.card{ border:1px solid var(--bd); border-radius:var(--r); background:var(--card); padding:clamp(18px,2vw,26px); }
+.card.gold{ border-top:3px solid var(--accent); }
+.card h3{ font-family:var(--serif); font-weight:400; font-size:clamp(1.3rem,.6vw + 1.05rem,1.65rem); line-height:1.2; margin:8px 0 8px; }
+.card p, .card li{ color:var(--tx2); font-size:1rem; }
+.card ul, .card ol{ padding-left:0; list-style:none; display:grid; gap:8px; }
+.card li b, .card p b{ color:var(--tx); font-weight:600; }
+.num{ font-family:var(--serif); font-size:clamp(2.6rem,2vw + 1.6rem,3.6rem); line-height:1; color:var(--accent); }
+.list{ list-style:none; display:grid; gap:12px; margin-top:4px; }
+.list li{ display:grid; grid-template-columns:34px 1fr; gap:4px 12px; align-items:baseline; color:var(--tx2); font-size:1.05rem; }
+.list li::before{ content:counter(i); counter-increment:i; font-family:var(--serif); font-size:1.4rem; color:var(--accent); }
+.list{ counter-reset:i; }
+.list b{ color:var(--tx); font-weight:600; }
+
+/* cover */
+.cover{ justify-content:flex-end; }
+.cover .bg{ position:absolute; inset:0; z-index:0; }
+.cover .bg img{ width:100%; height:100%; object-fit:cover; }
+.cover .bg::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,28,28,.55) 0%, rgba(28,28,28,.72) 45%, rgba(28,28,28,.96) 100%); }
+.cover .wrap{ position:relative; z-index:1; margin-top:auto; margin-bottom:0; }
+.cover .h{ font-size:clamp(3rem,5vw + 1rem,6rem); max-width:16ch; }
+.pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.pill{ display:inline-flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border:1px solid var(--bdg); border-radius:999px; font-family:var(--cond); font-weight:700; font-size:.88rem; letter-spacing:.08em; text-transform:uppercase; color:var(--tx); }
+.pill b{ color:var(--accent); }
+
+/* quote */
+.quote{ font-family:var(--serif); font-weight:400; font-size:clamp(2.2rem,3.4vw + 1rem,4.4rem); line-height:1.12; max-width:22ch; text-wrap:balance; }
+.cite{ margin-top:22px; font-family:var(--cond); font-weight:700; font-size:.9rem; letter-spacing:.09em; text-transform:uppercase; color:var(--eyebrow); }
+.sub-quote{ margin-top:40px; padding-top:22px; border-top:1px solid var(--bd); display:grid; grid-template-columns:minmax(0,220px) 1fr; gap:8px 32px; max-width:900px; }
+.sub-quote p{ font-family:var(--serif); font-size:clamp(1.25rem,.8vw + 1rem,1.6rem); line-height:1.35; color:var(--tx); }
+
+/* people */
+.person{ display:flex; gap:16px; align-items:center; margin-top:16px; padding-top:16px; border-top:1px solid var(--bd); }
+.person img{ width:64px; height:64px; border-radius:50%; object-fit:cover; flex:0 0 64px; border:2px solid var(--bdg); }
+.person b{ display:block; color:var(--tx); font-weight:600; }
+.person span{ display:block; color:var(--tx3); font-size:.9rem; line-height:1.4; }
+
+/* split layout */
+.split{ display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:clamp(28px,4vw,64px); align-items:center; }
+.photo{ border-radius:var(--r); overflow:hidden; border:1px solid var(--bdg); }
+.photo img{ width:100%; height:100%; max-height:52vh; object-fit:cover; }
+
+/* timeline */
+.weeks{ list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin-top:40px; position:relative; }
+.weeks li{ position:relative; padding:34px 20px 0 0; }
+.weeks li::before{ content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--bd); }
+.weeks li::after{ content:''; position:absolute; top:-7px; left:0; width:16px; height:16px; border-radius:50%; background:var(--bg); border:2px solid var(--accent); }
+.weeks li.now::after{ background:var(--accent); }
+.weeks .lab{ display:block; }
+.weeks h3{ font-family:var(--serif); font-weight:400; font-size:clamp(1.4rem,.8vw + 1.1rem,1.9rem); margin:6px 0 8px; line-height:1.15; }
+.weeks p{ color:var(--tx2); font-size:1rem; }
+.weeks p b{ color:var(--tx); font-weight:600; }
+
+/* sections of the brief */
+.secs{ list-style:none; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px; margin-top:34px; counter-reset:s; }
+.secs li{ counter-increment:s; border:1px solid var(--bd); border-radius:var(--r); background:var(--card); padding:16px 14px; min-height:170px; display:flex; flex-direction:column; gap:8px; font-size:1rem; color:var(--tx); line-height:1.35; }
+.secs li::before{ content:counter(s); font-family:var(--serif); font-size:2.2rem; line-height:1; color:var(--accent); }
+.secs li small{ margin-top:auto; font-family:var(--cond); font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; color:var(--tx3); }
+.secs li.c2{ border-color:var(--bdg); }
+.secs li.c2 small{ color:var(--eyebrow); }
+.legend{ display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:16px; color:var(--tx2); font-size:.95rem; }
+.legend b{ color:var(--tx); font-weight:600; }
+
+/* steps */
+.steps{ list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:32px; counter-reset:st; }
+.steps li{ counter-increment:st; border-top:2px solid var(--accent); padding-top:16px; }
+.steps li::before{ content:'0' counter(st); display:block; font-family:var(--cond); font-weight:700; font-size:.9rem; letter-spacing:.09em; color:var(--eyebrow); }
+.steps h3{ font-family:var(--serif); font-weight:400; font-size:clamp(1.5rem,.8vw + 1.2rem,2rem); margin:6px 0 6px; }
+.steps p{ color:var(--tx2); font-size:1rem; }
+.note{ margin-top:30px; display:flex; flex-wrap:wrap; gap:10px 28px; padding:16px 20px; border:1px solid var(--bd); border-radius:var(--r); background:var(--card); color:var(--tx2); font-size:1rem; }
+.note b{ color:var(--tx); font-weight:600; }
+
+/* closing */
+.close .h{ font-size:clamp(2.8rem,4vw + 1rem,5rem); }
+.foot{ margin-top:48px; padding-top:18px; border-top:1px solid var(--bd); display:flex; flex-wrap:wrap; align-items:center; gap:14px 28px; color:var(--tx3); font-size:.9rem; }
+.foot img{ width:120px; height:auto; }
+.foot a{ color:var(--eyebrow); }
+
+/* ── bottom bar ── */
+.bar{ position:fixed; inset:auto 0 0 0; height:var(--bar-h); z-index:50; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(16px,2.4vw,36px); background:rgba(20,20,20,.97); border-top:1px solid rgba(207,174,112,.18); color:#fff; }
+.bar-title{ font-family:var(--cond); font-weight:700; font-size:.9rem; letter-spacing:.09em; text-transform:uppercase; color:#CFAE70; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1 1 0; }
+.dots{ display:flex; gap:2px; }
+.dots button{ width:24px; height:44px; display:grid; place-items:center; border:0; background:none; cursor:pointer; padding:0; }
+.dots button::before{ content:''; width:9px; height:9px; border-radius:50%; border:1.5px solid #CFAE70; }
+.dots button[aria-current="true"]::before{ background:#CFAE70; transform:scale(1.25); }
+.ctl{ display:flex; align-items:center; gap:10px; flex:1 1 0; justify-content:flex-end; }
+.count{ font-family:var(--cond); font-weight:700; font-size:.9rem; letter-spacing:.06em; color:rgba(255,255,255,.8); margin-right:6px; }
+.arrow{ width:44px; height:44px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.2); border-radius:var(--r); background:transparent; color:#fff; cursor:pointer; }
+.arrow:hover:not(:disabled){ border-color:#CFAE70; color:#CFAE70; }
+.arrow:disabled{ opacity:.35; cursor:default; }
+.arrow svg{ width:18px; height:18px; }
+.hint{ position:fixed; right:clamp(16px,2.4vw,36px); bottom:calc(var(--bar-h) + 14px); z-index:49; display:none; align-items:center; gap:6px; min-height:36px; padding:0 14px; border:1px solid #CFAE70; border-radius:999px; background:#1C1C1C; color:#CFAE70; font-family:var(--cond); font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.hint.show{ display:inline-flex; }
+
+/* ── reveal ── */
+.slide .rv{ opacity:0; transform:translateY(14px); transition:opacity .4s var(--ease), transform .4s var(--ease); }
+.slide.on .rv{ opacity:1; transform:none; }
+.slide.on .rv:nth-child(2){ transition-delay:.06s; } .slide.on .rv:nth-child(3){ transition-delay:.12s; } .slide.on .rv:nth-child(4){ transition-delay:.18s; } .slide.on .rv:nth-child(5){ transition-delay:.24s; }
+@media (prefers-reduced-motion: reduce){ .deck{ scroll-behavior:auto; } .slide .rv{ opacity:1; transform:none; transition:none; } .progress{ transition:none; } }
+
+/* ── smaller screens ── */
+@media (max-height:860px) and (min-width:1001px){ .slide{ padding-top:calc(var(--nav-h) + 18px); padding-bottom:calc(var(--bar-h) + 18px); } .grid{ margin-top:22px; } .h{ font-size:clamp(2rem,2.6vw + 1rem,3.4rem); } }
+@media (max-width:1000px){
+  .g3, .g4, .steps{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .secs{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .split{ grid-template-columns:1fr; }
+  .photo img{ max-height:32vh; }
+  .weeks{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 0; }
+  .nav ul{ display:none; }
+  .dots{ display:none; }
+}
+@media (max-width:640px){
+  body{ font-size:16px; }
+  .g2, .g3, .g4, .steps, .weeks{ grid-template-columns:1fr; }
+  .secs{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .secs li{ min-height:0; }
+  .sub-quote{ grid-template-columns:1fr; }
+  .bar-title{ display:none; }
+  .ctl{ justify-content:space-between; }
+}
+</style>
+</head>
+<body>
+<a href="#s1" class="skip">Skip to the slides</a>
+<header class="nav">
+  <a href="../" aria-label="Leadership Redefined program home"><img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" /></a>
+  <nav aria-label="Leadership Redefined">
+    <ul>
+      <li><a href="../">Program home</a></li>
+      <li><a href="../course-one/">Course One</a></li>
+      <li><a href="../course-two/">Course Two</a></li>
+      <li><a href="../brief/">Your capstone brief</a></li>
+    </ul>
+  </nav>
+  <span class="progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<main class="deck" id="deck" aria-roledescription="carousel" aria-label="After the Symposium">
+
+<!-- 1 · COVER -->
+<section class="slide cover th-dark" id="s1" aria-roledescription="slide" data-title="After the Symposium">
+  <div class="bg" aria-hidden="true"><img src="../assets/img/course/campus-aerial.jpg" alt="" width="1680" height="507" /></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Leadership Redefined &middot; After the Symposium</p>
+    <h1 class="h rv">Put the ideas to <em>work</em>.</h1>
+    <p class="lead rv">A live Symposium. Two self-paced courses. One capstone brief, built with your pod. Here is why, what, and how.</p>
+    <div class="pills rv" aria-label="In this overview"><span class="pill"><b>01</b> Why</span><span class="pill"><b>02</b> What</span><span class="pill"><b>03</b> How</span></div>
+    <div class="btns rv"><button type="button" class="btn" data-go="1">Begin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+  </div>
+</section>
+
+<!-- 2 · WHY · THE VISION -->
+<section class="slide th-light" id="s2" aria-roledescription="slide" data-title="Why · The vision">
+  <div class="wrap">
+    <p class="eyebrow rv">01 Why &middot; The vision</p>
+    <p class="quote rv">Vanderbilt will define, and be, the great university of the <em>21st century</em>.</p>
+    <p class="cite rv">The Vanderbilt vision &middot; Chancellor Daniel Diermeier</p>
+    <div class="sub-quote rv">
+      <span class="lab">Industry vision</span>
+      <p>Vanderbilt will help reclaim the essential role of leading research universities in driving American prosperity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · WHY · THE STRATEGY -->
+<section class="slide th-dark" id="s3" aria-roledescription="slide" data-title="Why · The strategy">
+  <div class="wrap">
+    <p class="eyebrow rv">01 Why &middot; The strategy</p>
+    <h2 class="h rv">Three areas, four <em>problems</em>.</h2>
+    <p class="lead rv">The vision becomes work through three areas of focus, each answering problems research universities face.</p>
+    <div class="grid g2 rv">
+      <div class="card gold">
+        <span class="lab">Three areas of focus</span>
+        <ol class="list" style="margin-top:14px">
+          <li><span><b>Exceptional Core Operations:</b> speed, agility, and scale, ensuring the talent, resources, and reputation to deliver our vision.</span></li>
+          <li><span><b>Bold Strategic Initiatives:</b> fueled by core operations, enhancing the reach and impact of education and research.</span></li>
+          <li><span><b>Industry Leadership:</b> advocacy and modeling an essential research university, to stimulate industry change and combat existential threats.</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="lab">Four problems to solve</span>
+        <ol class="list" style="margin-top:14px">
+          <li><span><b>Speed and scale:</b> research universities lack the capabilities to innovate at modern speed.</span></li>
+          <li><span><b>Relevance:</b> they are no longer seen as primary drivers of solutions.</span></li>
+          <li><span><b>Trust:</b> elite universities are viewed as politicized bastions of ideology.</span></li>
+          <li><span><b>Value of a degree:</b> no longer seen as essential to the American dream.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · WHY · AFTER THE SYMPOSIUM -->
+<section class="slide th-light" id="s4" aria-roledescription="slide" data-title="Why · After the Symposium">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow rv">01 Why &middot; After the Symposium</p>
+      <h2 class="h rv">From ideas to <em>practice</em>.</h2>
+      <p class="lead rv">At the Symposium you met your pod and heard from Chancellor Diermeier and Vanderbilt&rsquo;s leaders. Over the next three weeks, you put those ideas to work, on a real Vanderbilt challenge, with your pod.</p>
+      <div class="grid g3 rv" style="margin-top:28px">
+        <div><div class="num">6</div><p class="lab" style="margin-top:8px">Leadership topics</p></div>
+        <div><div class="num">2</div><p class="lab" style="margin-top:8px">Self-paced courses</p></div>
+        <div><div class="num">1</div><p class="lab" style="margin-top:8px">Brief per pod</p></div>
+      </div>
+    </div>
+    <figure class="photo rv"><img src="../assets/img/people/chancellor-module1-room.jpg" alt="Chancellor Daniel Diermeier speaking to the room at the Leadership Redefined Symposium." loading="lazy" /></figure>
+  </div>
+</section>
+
+<!-- 5 · WHAT · AT A GLANCE -->
+<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="What · The program">
+  <div class="wrap">
+    <p class="eyebrow rv">02 What &middot; The program</p>
+    <h2 class="h rv">Three parts, one <em>pod</em>.</h2>
+    <div class="grid g3 rv">
+      <div class="card gold"><span class="lab">Week 1 &middot; Thursday, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Hear from the Chancellor and Vanderbilt&rsquo;s leaders, and meet your pod.</p></div>
+      <div class="card gold"><span class="lab">Weeks 2 and 3 &middot; Nov 2 and Nov 9</span><h3>Two self-paced courses</h3><p>About 45 minutes each, online and narrated. Six modules, one for each Symposium topic.</p></div>
+      <div class="card gold"><span class="lab">Due Friday, Nov 20</span><h3>One capstone brief</h3><p>Your pod names a real Vanderbilt challenge and solves it with all six topics, in three pages at most.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · WHAT · COURSE ONE -->
+<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="What · Course One">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow rv">02 What &middot; Course One &middot; Week of Nov 2</p>
+      <h2 class="h rv">The Chancellor&rsquo;s <em>modules</em>.</h2>
+      <ol class="list rv" style="margin-top:24px">
+        <li><span><b>Vision, Strategy &amp; the Future of Vanderbilt.</b> The vision, three areas of focus, and the reputation engine.</span></li>
+        <li><span><b>Mission and Margin.</b> Mission is purpose, margin is capacity, and building financial capacity is everybody&rsquo;s job.</span></li>
+        <li><span><b>Reputational Stewardship.</b> Trust, where reputation is made, and when to act.</span></li>
+      </ol>
+      <p class="lead rv" style="font-size:1.05rem">Your pod drafts brief sections 1 to 3. Teams prompt 1 due Friday, Nov 6.</p>
+    </div>
+    <div class="card rv">
+      <figure class="photo"><img src="../assets/img/people/chancellor-module1-podium.jpg" alt="Chancellor Daniel Diermeier at the podium during the Symposium." loading="lazy" /></figure>
+      <div class="person"><img src="../assets/img/people/diermeier.jpg" alt="" loading="lazy" /><div><b>Chancellor Daniel Diermeier</b><span>Vanderbilt University &middot; Modules 1 to 3</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · WHAT · COURSE TWO -->
+<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="What · Course Two">
+  <div class="wrap">
+    <p class="eyebrow rv">02 What &middot; Course Two &middot; Week of Nov 9</p>
+    <h2 class="h rv">Three leaders, three <em>practices</em>.</h2>
+    <div class="grid g3 rv">
+      <div class="card gold"><span class="lab">Module 4</span><h3>Communication, Storytelling &amp; Brand</h3><div class="person"><img src="../assets/img/people/ertel.jpg" alt="" loading="lazy" /><div><b>Steven K. Ertel</b><span>Vice Chancellor for Communications and Marketing, and Chief Communications Officer</span></div></div></div>
+      <div class="card gold"><span class="lab">Module 5</span><h3>Entrepreneurial Mindset</h3><div class="person"><img src="../assets/img/people/lutz.jpg" alt="" loading="lazy" /><div><b>John M. Lutz</b><span>Vice Chancellor for Development and Alumni Relations</span></div></div></div>
+      <div class="card gold"><span class="lab">Module 6</span><h3>High-Performing Teams</h3><div class="person"><img src="../assets/img/people/lee.jpg" alt="" loading="lazy" /><div><b>Candice S. Lee, Ed.D.</b><span>Vice Chancellor for Athletics and University Affairs and Athletic Director</span></div></div></div>
+    </div>
+    <p class="lead rv" style="font-size:1.05rem">Your pod drafts brief sections 4 to 7. Teams prompt 2 due Friday, Nov 13.</p>
+  </div>
+</section>
+
+<!-- 8 · WHAT · THE CAPSTONE -->
+<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="What · The capstone">
+  <div class="wrap">
+    <p class="eyebrow rv">02 What &middot; Your Capstone Innovation Project</p>
+    <h2 class="h rv">Name a challenge. Solve it with all six <em>topics</em>.</h2>
+    <p class="lead rv">One brief per pod, three pages at most, due Friday, November 20. Pick one focus area and state it at the top. Three winners, one per area.</p>
+    <div class="grid g3 rv">
+      <div class="card gold"><span class="lab">Focus area</span><h3>Exceptional Core Operations</h3></div>
+      <div class="card gold"><span class="lab">Focus area</span><h3>Bold Strategic Initiatives</h3></div>
+      <div class="card gold"><span class="lab">Focus area</span><h3>Industry Leadership</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · WHAT · THE SEVEN SECTIONS -->
+<section class="slide th-dark" id="s9" aria-roledescription="slide" data-title="What · The brief">
+  <div class="wrap">
+    <p class="eyebrow rv">02 What &middot; The brief</p>
+    <h2 class="h rv">Seven sections, built as you <em>learn</em>.</h2>
+    <ol class="secs rv" aria-label="The seven sections of the brief">
+      <li>Your focus area<small>Course One</small></li>
+      <li>The challenge and why it matters<small>Course One</small></li>
+      <li>Connection to Vanderbilt&rsquo;s priorities<small>Course One</small></li>
+      <li class="c2">Integrated solution: people, process, technology<small>Course Two</small></li>
+      <li class="c2">Implementation steps, owners, timeline<small>Course Two</small></li>
+      <li class="c2">Success metrics<small>Course Two</small></li>
+      <li class="c2">Sustainability plan<small>Course Two</small></li>
+    </ol>
+    <p class="legend rv"><span><b>Sections 1 to 3:</b> the case.</span><span><b>Sections 4 to 7:</b> the plan.</span><span>Everything you write collects in one brief you can edit, print, or download for Word.</span></p>
+  </div>
+</section>
+
+<!-- 10 · HOW · FOUR WEEKS -->
+<section class="slide th-light" id="s10" aria-roledescription="slide" data-title="How · Four weeks">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Four weeks</p>
+    <h2 class="h rv">One week at a <em>time</em>.</h2>
+    <ol class="weeks rv">
+      <li data-from="2026-01-01"><span class="lab">Week 1 &middot; Thursday, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Meet your pod.</p></li>
+      <li data-from="2026-11-02"><span class="lab">Week 2 &middot; Nov 2</span><h3>Course One</h3><p>Self-paced online. Your pod drafts sections 1 to 3. <b>Teams prompt 1 due Friday, Nov 6.</b></p></li>
+      <li data-from="2026-11-09"><span class="lab">Week 3 &middot; Nov 9</span><h3>Course Two</h3><p>Self-paced online. Your pod drafts sections 4 to 7. <b>Teams prompt 2 due Friday, Nov 13.</b></p></li>
+      <li data-from="2026-11-16"><span class="lab">Week 4 &middot; Nov 16</span><h3>Finish the brief</h3><p>Your pod finishes the brief together. <b>Turn it in by Friday, Nov 20.</b></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 11 · HOW · INSIDE A MODULE -->
+<section class="slide th-dark" id="s11" aria-roledescription="slide" data-title="How · Inside each module">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Inside each module</p>
+    <h2 class="h rv">Learn it, try it, <em>use</em> it.</h2>
+    <ol class="steps rv">
+      <li><h3>Learn</h3><p>One idea per page, from the speakers&rsquo; own slides and videos.</p></li>
+      <li><h3>Practice</h3><p>Sort, decide, or write, with feedback as you go.</p></li>
+      <li><h3>Use it</h3><p>Write one rule and one move for your team.</p></li>
+      <li><h3>Your brief</h3><p>Draft your pod&rsquo;s sections, saved straight into your brief.</p></li>
+    </ol>
+    <p class="note rv"><span><b>Listen</b> reads any page aloud.</span><span><b>Auto</b> reads every page in turn.</span><span>Each course <b>saves your place</b> in your browser, so you can stop and come back.</span></p>
+  </div>
+</section>
+
+<!-- 12 · HOW · TEAMS -->
+<section class="slide th-light" id="s12" aria-roledescription="slide" data-title="How · Your cohort in Teams">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Your cohort in Teams</p>
+    <h2 class="h rv">Teams is your home <em>base</em>.</h2>
+    <p class="lead rv">In weeks 2 and 3 a discussion prompt is posted in your cohort&rsquo;s Microsoft Teams channel. It is also where to ask any questions along the way.</p>
+    <div class="grid g2 rv">
+      <div class="card gold"><span class="lab">Teams prompt 1 &middot; Course One</span><h3>Post by Friday, Nov 6</h3><p>Post your response under Discussions, then reply to at least one colleague.</p></div>
+      <div class="card gold"><span class="lab">Teams prompt 2 &middot; Course Two</span><h3>Post by Friday, Nov 13</h3><p>Post your response under Discussions, then reply to at least one colleague.</p></div>
+    </div>
+    <div class="btns rv"><a class="btn" href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad">Open the Teams channel<span class="sr"> (opens in a new tab)</span></a></div>
+  </div>
+</section>
+
+<!-- 13 · CLOSE -->
+<section class="slide close th-dark" id="s13" aria-roledescription="slide" data-title="Start">
+  <div class="wrap">
+    <p class="eyebrow rv">Your first step</p>
+    <h2 class="h rv">Start with Course <em>One</em>.</h2>
+    <p class="lead rv">About 45 minutes, any time the week of November 2. Then meet your pod and begin your brief.</p>
+    <div class="btns rv">
+      <a class="btn" href="../course-one/">Start Course One <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn ghost" href="../">Program home</a>
+      <a class="btn ghost" href="../brief/">Your capstone brief</a>
+    </div>
+    <div class="foot rv">
+      <img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" />
+      <span>Leadership Redefined &middot; After the Symposium. Built to WCAG 2.2 AA. Questions or accessibility needs: <a href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad">your cohort&rsquo;s Teams channel<span class="sr"> (opens in a new tab)</span></a>.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<button type="button" class="hint" id="hint">Scroll for more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="bar" role="group" aria-label="Slide controls">
+  <span class="bar-title" id="barTitle" aria-hidden="true"></span>
+  <div class="dots" id="dots"></div>
+  <div class="ctl">
+    <span class="count" id="count" aria-live="polite"></span>
+    <button type="button" class="arrow" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button type="button" class="arrow" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var deck = document.getElementById('deck'), slides = [].slice.call(deck.querySelectorAll('.slide')), N = slides.length;
+  var dots = document.getElementById('dots'), count = document.getElementById('count'), title = document.getElementById('barTitle');
+  var prev = document.getElementById('prev'), next = document.getElementById('next'), prog = document.getElementById('progress'), hint = document.getElementById('hint');
+  var cur = -1, wheelLock = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  slides.forEach(function(s, i){
+    s.setAttribute('aria-label', (i + 1) + ' of ' + N + ': ' + s.getAttribute('data-title'));
+    s.tabIndex = 0; /* keyboard users can scroll a slide that runs long */
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Go to slide ' + (i + 1) + ': ' + s.getAttribute('data-title'));
+    b.addEventListener('click', function(){ go(i, true); }); dots.appendChild(b);
+  });
+  /* links that leave the deck open in a new tab */
+  [].slice.call(document.querySelectorAll('a[href]')).forEach(function(a){ var h = a.getAttribute('href'); if(h.charAt(0) !== '#' && /^https?:/.test(h)){ a.target = '_blank'; a.rel = 'noopener'; } });
+
+  function overflowCheck(){ var s = slides[cur]; if(!s) return; var more = s.scrollHeight - s.clientHeight > 56 && s.scrollTop + s.clientHeight < s.scrollHeight - 8; hint.classList.toggle('show', more); }
+  function setActive(i, focus){
+    if(i === cur) return; cur = i;
+    slides.forEach(function(s, k){ var on = k === i; s.classList.toggle('on', on); if(on){ s.removeAttribute('inert'); s.removeAttribute('aria-hidden'); } else { s.setAttribute('inert', ''); s.setAttribute('aria-hidden', 'true'); } });
+    [].slice.call(dots.children).forEach(function(d, k){ if(k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+    count.textContent = (i + 1) + ' / ' + N; title.textContent = slides[i].getAttribute('data-title');
+    prev.disabled = i === 0; next.disabled = i === N - 1;
+    prog.style.width = ((i + 1) / N * 100) + '%';
+    if(history.replaceState) history.replaceState(null, '', '#' + slides[i].id);
+    if(focus){ var h = slides[i].querySelector('h1, h2, .quote'); if(h){ h.setAttribute('tabindex', '-1'); h.focus({ preventScroll:true }); } }
+    overflowCheck();
+  }
+  function go(i, focus){
+    i = Math.max(0, Math.min(N - 1, i));
+    deck.scrollTo({ left: i * deck.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+    setActive(i, focus);
+  }
+  window.lrDeckGo = go;
+  prev.addEventListener('click', function(){ go(cur - 1, true); });
+  next.addEventListener('click', function(){ go(cur + 1, true); });
+  [].slice.call(document.querySelectorAll('[data-go]')).forEach(function(b){ b.addEventListener('click', function(){ go(+b.getAttribute('data-go'), true); }); });
+  hint.addEventListener('click', function(){ var s = slides[cur]; s.scrollBy({ top: s.clientHeight * .7, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  var t; deck.addEventListener('scroll', function(){ clearTimeout(t); t = setTimeout(function(){ setActive(Math.round(deck.scrollLeft / deck.clientWidth), false); }, 80); }, { passive:true });
+  slides.forEach(function(s){ s.addEventListener('scroll', overflowCheck, { passive:true }); });
+  window.addEventListener('resize', function(){ deck.scrollLeft = cur * deck.clientWidth; overflowCheck(); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.target.closest && e.target.closest('input, textarea, select')) return;
+    if(e.key === 'ArrowRight' || e.key === 'PageDown'){ e.preventDefault(); go(cur + 1, true); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); go(cur - 1, true); }
+    else if(e.key === 'Home'){ e.preventDefault(); go(0, true); }
+    else if(e.key === 'End'){ e.preventDefault(); go(N - 1, true); }
+  });
+  /* a vertical wheel turns the page once the slide has nothing left to scroll */
+  deck.addEventListener('wheel', function(e){
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY) || Math.abs(e.deltaY) < 24 || wheelLock) return;
+    var s = slides[cur], atEnd = s.scrollTop + s.clientHeight >= s.scrollHeight - 2, atTop = s.scrollTop <= 0;
+    if(e.deltaY > 0 && atEnd && cur < N - 1){ e.preventDefault(); wheelLock = true; go(cur + 1, false); setTimeout(function(){ wheelLock = false; }, 900); }
+    else if(e.deltaY < 0 && atTop && cur > 0){ e.preventDefault(); wheelLock = true; go(cur - 1, false); setTimeout(function(){ wheelLock = false; }, 900); }
+  }, { passive:false });
+
+  /* the timeline marks the week we are in */
+  var today = new Date(), wk = [].slice.call(document.querySelectorAll('.weeks li[data-from]')), nowLi = null;
+  wk.forEach(function(li){ if(new Date(li.getAttribute('data-from') + 'T00:00:00') <= today) nowLi = li; });
+  if(nowLi){ nowLi.classList.add('now'); var tag = document.createElement('span'); tag.className = 'sr'; tag.textContent = ' (this week)'; nowLi.querySelector('h3').appendChild(tag); }
+  var start = 0, m = /^#s(\d+)$/.exec(location.hash || ''); if(m) start = Math.max(0, Math.min(N - 1, +m[1] - 1));
+  deck.scrollLeft = start * deck.clientWidth; setActive(start, false);
+})();
+</script>
+</body>
+</html>
