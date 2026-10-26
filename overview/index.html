@@ -43,9 +43,6 @@ a{ color:inherit; }
 /* ── top nav ── */
 .nav{ position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:50; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:0 clamp(16px,2.4vw,36px); background:rgba(20,20,20,.97); border-bottom:1px solid rgba(207,174,112,.18); }
 .nav img{ width:150px; height:auto; }
-.nav ul{ list-style:none; display:flex; gap:clamp(14px,2vw,28px); }
-.nav ul a{ display:inline-flex; align-items:center; min-height:44px; text-decoration:none; color:rgba(255,255,255,.86); font-size:.95rem; }
-.nav ul a:hover{ color:#fff; text-decoration:underline; text-underline-offset:6px; text-decoration-color:#CFAE70; }
 .progress{ position:absolute; left:0; bottom:-1px; height:2px; width:0; background:#CFAE70; transition:width .3s var(--ease); }
 
 /* ── the deck: left to right, one slide per screen ── */
@@ -183,7 +180,7 @@ a{ color:inherit; }
   .split{ grid-template-columns:1fr; }
   .photo img{ max-height:32vh; }
   .weeks{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 0; }
-  .nav ul{ display:none; }
+
   .dots{ display:none; }
 }
 @media (max-width:640px){
@@ -199,8 +196,8 @@ a{ color:inherit; }
 /* closing slide: call to action beside a code the room can scan */
 .closegrid{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px clamp(32px,5vw,80px); align-items:center; }
 .closegrid .foot{ grid-column:1 / -1; }
-.qr{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; max-width:300px; }
-.qr svg{ width:clamp(180px,22vh,280px); height:auto; background:#fff; padding:10px; border-radius:var(--r); }
+.qr{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; max-width:380px; }
+.qr svg{ width:clamp(220px,34vh,360px); height:auto; background:#fff; padding:10px; border-radius:var(--r); }
 .qr figcaption{ color:var(--tx2); font-size:.95rem; line-height:1.45; display:flex; flex-direction:column; gap:6px; }
 .qr figcaption b{ color:var(--tx); font-weight:600; }
 /* presenting: a full-screen button and larger type on big displays */
@@ -229,15 +226,7 @@ a{ color:inherit; }
 <body>
 <a href="#s1" class="skip">Skip to the slides</a>
 <header class="nav">
-  <a href="../" aria-label="Leadership Redefined program home"><img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" /></a>
-  <nav aria-label="Leadership Redefined">
-    <ul>
-      <li><a href="../">Program home</a></li>
-      <li><a href="../course-one/">Course One</a></li>
-      <li><a href="../course-two/">Course Two</a></li>
-      <li><a href="../brief/">Your capstone brief</a></li>
-    </ul>
-  </nav>
+  <img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" />
   <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 
@@ -335,16 +324,11 @@ a{ color:inherit; }
       <p class="eyebrow rv">Before you leave today</p>
       <h2 class="h rv">Scan, then start Course <em>One</em>.</h2>
       <p class="lead rv">Course One opens Monday, November 2: about 45 minutes, any time that week. Questions? Ask now, or anytime in your cohort&rsquo;s Teams channel.</p>
-      <div class="btns rv">
-        <a class="btn" href="../course-one/">Start Course One <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="../">Program home</a>
-        <a class="btn ghost" href="../brief/">Your capstone brief</a>
-      </div>
     </div>
     <figure class="qr rv">
-      <svg role="img" aria-label="QR code that opens the Leadership Redefined program home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h35v35H0z"/><path stroke="#1C1C1C" d="M1 1.5h7m1 0h2m1 0h1m2 0h3m5 0h3m1 0h7M1 2.5h1m5 0h1m1 0h3m3 0h1m1 0h2m2 0h2m1 0h2m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h1m6 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m2 0h5m2 0h1m1 0h1m3 0h3m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h1m1 0h2m1 0h1m3 0h1m3 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h6m2 0h1M1 9.5h1m1 0h2m1 0h3m2 0h6m2 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h2M2 10.5h2m1 0h2m2 0h1m1 0h1m2 0h3m1 0h1m6 0h1m1 0h2m1 0h3M1 11.5h1m2 0h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h5M1 12.5h1m2 0h2m2 0h1m2 0h3m2 0h3m1 0h2m2 0h3m1 0h1m1 0h1m1 0h1M1 13.5h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h3m2 0h5m2 0h1m2 0h1m1 0h2M2 14.5h1m1 0h3m5 0h1m2 0h1m5 0h1m1 0h2m1 0h3m2 0h2M5 15.5h4m1 0h1m3 0h2m4 0h2m2 0h2m1 0h2M4 16.5h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m1 0h6M3 17.5h5m2 0h1m4 0h1m1 0h2m6 0h3m1 0h1M2 18.5h1m2 0h2m1 0h1m1 0h3m7 0h4m2 0h2m1 0h2M2 19.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h2M3 20.5h1m1 0h1m4 0h2m3 0h2m1 0h4m1 0h2m1 0h2m1 0h1m2 0h2M1 21.5h2m2 0h5m5 0h3m5 0h1m1 0h1m3 0h5M1 22.5h1m10 0h1m3 0h3m2 0h1m4 0h1m1 0h1m4 0h1M4 23.5h1m2 0h1m7 0h2m3 0h2m2 0h3m3 0h4M2 24.5h2m1 0h2m1 0h4m3 0h2m1 0h2m1 0h1m1 0h1m4 0h1m3 0h2M1 25.5h1m1 0h1m2 0h3m3 0h1m1 0h2m3 0h4m1 0h8m1 0h1M9 26.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h2m1 0h2M1 27.5h7m1 0h2m2 0h1m2 0h1m1 0h2m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1M1 28.5h1m5 0h1m1 0h1m3 0h1m4 0h2m3 0h1m1 0h1m3 0h4M1 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h7m1 0h7m1 0h1M1 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m1 0h3m3 0h1m2 0h2M1 31.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h4m4 0h2m1 0h2M1 32.5h1m5 0h1m6 0h2m2 0h1m2 0h3m4 0h2m3 0h1M1 33.5h7m1 0h1m4 0h1m4 0h3m1 0h1m5 0h2"/></svg>
+      <!-- QR:start (regenerate for the Oracle course link) --><svg role="img" aria-label="QR code that opens Leadership Redefined" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h35v35H0z"/><path stroke="#1C1C1C" d="M1 1.5h7m1 0h2m1 0h1m2 0h3m5 0h3m1 0h7M1 2.5h1m5 0h1m1 0h3m3 0h1m1 0h2m2 0h2m1 0h2m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h1m6 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m2 0h5m2 0h1m1 0h1m3 0h3m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h1m1 0h2m1 0h1m3 0h1m3 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h6m2 0h1M1 9.5h1m1 0h2m1 0h3m2 0h6m2 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h2M2 10.5h2m1 0h2m2 0h1m1 0h1m2 0h3m1 0h1m6 0h1m1 0h2m1 0h3M1 11.5h1m2 0h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h5M1 12.5h1m2 0h2m2 0h1m2 0h3m2 0h3m1 0h2m2 0h3m1 0h1m1 0h1m1 0h1M1 13.5h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h3m2 0h5m2 0h1m2 0h1m1 0h2M2 14.5h1m1 0h3m5 0h1m2 0h1m5 0h1m1 0h2m1 0h3m2 0h2M5 15.5h4m1 0h1m3 0h2m4 0h2m2 0h2m1 0h2M4 16.5h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m1 0h6M3 17.5h5m2 0h1m4 0h1m1 0h2m6 0h3m1 0h1M2 18.5h1m2 0h2m1 0h1m1 0h3m7 0h4m2 0h2m1 0h2M2 19.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h2M3 20.5h1m1 0h1m4 0h2m3 0h2m1 0h4m1 0h2m1 0h2m1 0h1m2 0h2M1 21.5h2m2 0h5m5 0h3m5 0h1m1 0h1m3 0h5M1 22.5h1m10 0h1m3 0h3m2 0h1m4 0h1m1 0h1m4 0h1M4 23.5h1m2 0h1m7 0h2m3 0h2m2 0h3m3 0h4M2 24.5h2m1 0h2m1 0h4m3 0h2m1 0h2m1 0h1m1 0h1m4 0h1m3 0h2M1 25.5h1m1 0h1m2 0h3m3 0h1m1 0h2m3 0h4m1 0h8m1 0h1M9 26.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h2m1 0h2M1 27.5h7m1 0h2m2 0h1m2 0h1m1 0h2m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1M1 28.5h1m5 0h1m1 0h1m3 0h1m4 0h2m3 0h1m1 0h1m3 0h4M1 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h7m1 0h7m1 0h1M1 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m1 0h3m3 0h1m2 0h2M1 31.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h4m4 0h2m1 0h2M1 32.5h1m5 0h1m6 0h2m2 0h1m2 0h3m4 0h2m3 0h1M1 33.5h7m1 0h1m4 0h1m4 0h3m1 0h1m5 0h2"/></svg><!-- QR:end -->
 
-      <figcaption><span class="lab">Program home</span>Both courses, your capstone brief, and the Teams channel.<b>me5231979.github.io/<wbr>Leadership-Redefined</b></figcaption>
+      <figcaption><span class="lab">Scan to open</span>Leadership Redefined: both courses and your capstone brief.</figcaption>
     </figure>
     <div class="foot rv">
       <img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" />
