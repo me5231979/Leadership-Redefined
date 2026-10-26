@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>After the Symposium | Leadership Redefined</title>
-<meta name="description" content="Leadership Redefined, after the Symposium: why the program exists, what it is, and how the next four weeks work." />
+<meta name="description" content="Presented at the Leadership Redefined Symposium breakouts: why the program exists, what it is, and how the weeks after the Symposium work." />
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preload" href="../assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -195,6 +195,35 @@ a{ color:inherit; }
   .bar-title{ display:none; }
   .ctl{ justify-content:space-between; }
 }
+
+/* closing slide: call to action beside a code the room can scan */
+.closegrid{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px clamp(32px,5vw,80px); align-items:center; }
+.closegrid .foot{ grid-column:1 / -1; }
+.qr{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; max-width:300px; }
+.qr svg{ width:clamp(180px,22vh,280px); height:auto; background:#fff; padding:10px; border-radius:var(--r); }
+.qr figcaption{ color:var(--tx2); font-size:.95rem; line-height:1.45; display:flex; flex-direction:column; gap:6px; }
+.qr figcaption b{ color:var(--tx); font-weight:600; }
+/* presenting: a full-screen button and larger type on big displays */
+.present{ display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 14px; border:1px solid rgba(255,255,255,.2); border-radius:var(--r); background:transparent; color:#fff; font-family:var(--cond); font-weight:700; font-size:.88rem; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; margin-right:6px; }
+.present:hover{ border-color:#CFAE70; color:#CFAE70; }
+.present svg{ width:16px; height:16px; }
+@media (min-width:1700px) and (min-height:1000px){ body{ font-size:19px; } .wrap{ max-width:1400px; } }
+@media (max-width:1000px){ .closegrid{ grid-template-columns:1fr; } .qr{ align-items:flex-start; text-align:left; } }
+@media (max-width:640px){ .present{ display:none; } }
+
+.faces{ display:flex; flex:0 0 auto; }
+.faces img{ width:52px; height:52px; border-radius:50%; object-fit:cover; border:2px solid #1C1C1C; outline:2px solid var(--bdg); margin-left:-12px; }
+.faces img:first-child{ margin-left:0; }
+#s2 .quote{ font-size:clamp(2rem,2.6vw + 1rem,3.6rem); }
+#s2 .lead{ margin-top:26px; }
+#s4 .secs{ margin-top:26px; }
+.lead b{ color:var(--tx); font-weight:600; }
+
+.person .faces{ display:flex; }
+#s3 .list li{ font-size:1.15rem; }
+#s3 .list li b{ font-weight:600; }
+.weeks p, .note{ font-size:1.05rem; }
+.secs li{ font-size:1.05rem; }
 </style>
 </head>
 <body>
@@ -220,136 +249,58 @@ a{ color:inherit; }
   <div class="wrap">
     <p class="eyebrow rv">Leadership Redefined &middot; After the Symposium</p>
     <h1 class="h rv">Put the ideas to <em>work</em>.</h1>
-    <p class="lead rv">A live Symposium. Two self-paced courses. One capstone brief, built with your pod. Here is why, what, and how.</p>
-    <div class="pills rv" aria-label="In this overview"><span class="pill"><b>01</b> Why</span><span class="pill"><b>02</b> What</span><span class="pill"><b>03</b> How</span></div>
-    <div class="btns rv"><button type="button" class="btn" data-go="1">Begin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    <p class="lead rv">A live Symposium. Two self-paced courses. One capstone brief, built with your pod. Here is what happens after today: why, what, and how.</p>
+        <div class="btns rv"><button type="button" class="btn" data-go="1">Begin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
   </div>
 </section>
 
-<!-- 2 · WHY · THE VISION -->
-<section class="slide th-light" id="s2" aria-roledescription="slide" data-title="Why · The vision">
-  <div class="wrap">
-    <p class="eyebrow rv">01 Why &middot; The vision</p>
-    <p class="quote rv">Vanderbilt will define, and be, the great university of the <em>21st century</em>.</p>
-    <p class="cite rv">The Vanderbilt vision &middot; Chancellor Daniel Diermeier</p>
-    <div class="sub-quote rv">
-      <span class="lab">Industry vision</span>
-      <p>Vanderbilt will help reclaim the essential role of leading research universities in driving American prosperity.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 3 · WHY · THE STRATEGY -->
-<section class="slide th-dark" id="s3" aria-roledescription="slide" data-title="Why · The strategy">
-  <div class="wrap">
-    <p class="eyebrow rv">01 Why &middot; The strategy</p>
-    <h2 class="h rv">Three areas, four <em>problems</em>.</h2>
-    <p class="lead rv">The vision becomes work through three areas of focus, each answering problems research universities face.</p>
-    <div class="grid g2 rv">
-      <div class="card gold">
-        <span class="lab">Three areas of focus</span>
-        <ol class="list" style="margin-top:14px">
-          <li><span><b>Exceptional Core Operations:</b> speed, agility, and scale, ensuring the talent, resources, and reputation to deliver our vision.</span></li>
-          <li><span><b>Bold Strategic Initiatives:</b> fueled by core operations, enhancing the reach and impact of education and research.</span></li>
-          <li><span><b>Industry Leadership:</b> advocacy and modeling an essential research university, to stimulate industry change and combat existential threats.</span></li>
-        </ol>
-      </div>
-      <div class="card">
-        <span class="lab">Four problems to solve</span>
-        <ol class="list" style="margin-top:14px">
-          <li><span><b>Speed and scale:</b> research universities lack the capabilities to innovate at modern speed.</span></li>
-          <li><span><b>Relevance:</b> they are no longer seen as primary drivers of solutions.</span></li>
-          <li><span><b>Trust:</b> elite universities are viewed as politicized bastions of ideology.</span></li>
-          <li><span><b>Value of a degree:</b> no longer seen as essential to the American dream.</span></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 · WHY · AFTER THE SYMPOSIUM -->
-<section class="slide th-light" id="s4" aria-roledescription="slide" data-title="Why · After the Symposium">
+<!-- 2 · WHY -->
+<section class="slide th-light" id="s2" aria-roledescription="slide" data-title="Why">
   <div class="wrap split">
     <div>
-      <p class="eyebrow rv">01 Why &middot; After the Symposium</p>
-      <h2 class="h rv">From ideas to <em>practice</em>.</h2>
-      <p class="lead rv">At the Symposium you met your pod and heard from Chancellor Diermeier and Vanderbilt&rsquo;s leaders. Over the next three weeks, you put those ideas to work, on a real Vanderbilt challenge, with your pod.</p>
-      <div class="grid g3 rv" style="margin-top:28px">
-        <div><div class="num">6</div><p class="lab" style="margin-top:8px">Leadership topics</p></div>
-        <div><div class="num">2</div><p class="lab" style="margin-top:8px">Self-paced courses</p></div>
-        <div><div class="num">1</div><p class="lab" style="margin-top:8px">Brief per pod</p></div>
-      </div>
+      <p class="eyebrow rv">01 Why</p>
+      <p class="quote rv">Vanderbilt will define, and be, the great university of the <em>21st century</em>.</p>
+      <p class="cite rv">The Vanderbilt vision &middot; Chancellor Daniel Diermeier</p>
+      <p class="lead rv">Today you meet your pod and hear from Chancellor Diermeier and Vanderbilt&rsquo;s leaders. Over the next three weeks, you put those ideas to work, on a real Vanderbilt challenge, with your pod.</p>
     </div>
     <figure class="photo rv"><img src="../assets/img/people/chancellor-module1-room.jpg" alt="Chancellor Daniel Diermeier speaking to the room at the Leadership Redefined Symposium." loading="lazy" /></figure>
   </div>
 </section>
 
-<!-- 5 · WHAT · AT A GLANCE -->
-<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="What · The program">
+<!-- 3 · WHAT · THE COURSES -->
+<section class="slide th-dark" id="s3" aria-roledescription="slide" data-title="What · Two courses">
   <div class="wrap">
-    <p class="eyebrow rv">02 What &middot; The program</p>
-    <h2 class="h rv">Three parts, one <em>pod</em>.</h2>
-    <div class="grid g3 rv">
-      <div class="card gold"><span class="lab">Week 1 &middot; Thursday, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Hear from the Chancellor and Vanderbilt&rsquo;s leaders, and meet your pod.</p></div>
-      <div class="card gold"><span class="lab">Weeks 2 and 3 &middot; Nov 2 and Nov 9</span><h3>Two self-paced courses</h3><p>About 45 minutes each, online and narrated. Six modules, one for each Symposium topic.</p></div>
-      <div class="card gold"><span class="lab">Due Friday, Nov 20</span><h3>One capstone brief</h3><p>Your pod names a real Vanderbilt challenge and solves it with all six topics, in three pages at most.</p></div>
+    <p class="eyebrow rv">02 What &middot; Two self-paced courses</p>
+    <h2 class="h rv">Six topics, two <em>courses</em>.</h2>
+    <div class="grid g2 rv">
+      <div class="card gold">
+        <span class="lab">Course One &middot; Week of Nov 2 &middot; about 45 minutes</span>
+        <ol class="list" style="margin-top:14px">
+          <li><span><b>Vision, Strategy &amp; the Future of Vanderbilt</b></span></li>
+          <li><span><b>Mission and Margin</b></span></li>
+          <li><span><b>Reputational Stewardship</b></span></li>
+        </ol>
+        <div class="person"><img src="../assets/img/people/diermeier.jpg" alt="" loading="lazy" /><div><b>Chancellor Daniel Diermeier</b><span>Your pod drafts brief sections 1 to 3</span></div></div>
+      </div>
+      <div class="card gold">
+        <span class="lab">Course Two &middot; Week of Nov 9 &middot; about 45 minutes</span>
+        <ol class="list" style="margin-top:14px; counter-reset:i 3">
+          <li><span><b>Communication, Storytelling &amp; Brand</b> &middot; Steven K. Ertel</span></li>
+          <li><span><b>Entrepreneurial Mindset</b> &middot; John M. Lutz</span></li>
+          <li><span><b>High-Performing Teams</b> &middot; Candice S. Lee</span></li>
+        </ol>
+        <div class="person"><span class="faces" aria-hidden="true"><img src="../assets/img/people/ertel.jpg" alt="" loading="lazy" /><img src="../assets/img/people/lutz.jpg" alt="" loading="lazy" /><img src="../assets/img/people/lee.jpg" alt="" loading="lazy" /></span><div><b>Three vice chancellors</b><span>Your pod drafts brief sections 4 to 7</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6 · WHAT · COURSE ONE -->
-<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="What · Course One">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow rv">02 What &middot; Course One &middot; Week of Nov 2</p>
-      <h2 class="h rv">The Chancellor&rsquo;s <em>modules</em>.</h2>
-      <ol class="list rv" style="margin-top:24px">
-        <li><span><b>Vision, Strategy &amp; the Future of Vanderbilt.</b> The vision, three areas of focus, and the reputation engine.</span></li>
-        <li><span><b>Mission and Margin.</b> Mission is purpose, margin is capacity, and building financial capacity is everybody&rsquo;s job.</span></li>
-        <li><span><b>Reputational Stewardship.</b> Trust, where reputation is made, and when to act.</span></li>
-      </ol>
-      <p class="lead rv" style="font-size:1.05rem">Your pod drafts brief sections 1 to 3. Teams prompt 1 due Friday, Nov 6.</p>
-    </div>
-    <div class="card rv">
-      <figure class="photo"><img src="../assets/img/people/chancellor-module1-podium.jpg" alt="Chancellor Daniel Diermeier at the podium during the Symposium." loading="lazy" /></figure>
-      <div class="person"><img src="../assets/img/people/diermeier.jpg" alt="" loading="lazy" /><div><b>Chancellor Daniel Diermeier</b><span>Vanderbilt University &middot; Modules 1 to 3</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7 · WHAT · COURSE TWO -->
-<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="What · Course Two">
-  <div class="wrap">
-    <p class="eyebrow rv">02 What &middot; Course Two &middot; Week of Nov 9</p>
-    <h2 class="h rv">Three leaders, three <em>practices</em>.</h2>
-    <div class="grid g3 rv">
-      <div class="card gold"><span class="lab">Module 4</span><h3>Communication, Storytelling &amp; Brand</h3><div class="person"><img src="../assets/img/people/ertel.jpg" alt="" loading="lazy" /><div><b>Steven K. Ertel</b><span>Vice Chancellor for Communications and Marketing, and Chief Communications Officer</span></div></div></div>
-      <div class="card gold"><span class="lab">Module 5</span><h3>Entrepreneurial Mindset</h3><div class="person"><img src="../assets/img/people/lutz.jpg" alt="" loading="lazy" /><div><b>John M. Lutz</b><span>Vice Chancellor for Development and Alumni Relations</span></div></div></div>
-      <div class="card gold"><span class="lab">Module 6</span><h3>High-Performing Teams</h3><div class="person"><img src="../assets/img/people/lee.jpg" alt="" loading="lazy" /><div><b>Candice S. Lee, Ed.D.</b><span>Vice Chancellor for Athletics and University Affairs and Athletic Director</span></div></div></div>
-    </div>
-    <p class="lead rv" style="font-size:1.05rem">Your pod drafts brief sections 4 to 7. Teams prompt 2 due Friday, Nov 13.</p>
-  </div>
-</section>
-
-<!-- 8 · WHAT · THE CAPSTONE -->
-<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="What · The capstone">
+<!-- 4 · WHAT · THE CAPSTONE -->
+<section class="slide th-light" id="s4" aria-roledescription="slide" data-title="What · The capstone">
   <div class="wrap">
     <p class="eyebrow rv">02 What &middot; Your Capstone Innovation Project</p>
     <h2 class="h rv">Name a challenge. Solve it with all six <em>topics</em>.</h2>
-    <p class="lead rv">One brief per pod, three pages at most, due Friday, November 20. Pick one focus area and state it at the top. Three winners, one per area.</p>
-    <div class="grid g3 rv">
-      <div class="card gold"><span class="lab">Focus area</span><h3>Exceptional Core Operations</h3></div>
-      <div class="card gold"><span class="lab">Focus area</span><h3>Bold Strategic Initiatives</h3></div>
-      <div class="card gold"><span class="lab">Focus area</span><h3>Industry Leadership</h3></div>
-    </div>
-  </div>
-</section>
-
-<!-- 9 · WHAT · THE SEVEN SECTIONS -->
-<section class="slide th-dark" id="s9" aria-roledescription="slide" data-title="What · The brief">
-  <div class="wrap">
-    <p class="eyebrow rv">02 What &middot; The brief</p>
-    <h2 class="h rv">Seven sections, built as you <em>learn</em>.</h2>
+    <p class="lead rv">One brief per pod, three pages at most. State one focus area at the top: <b>Exceptional Core Operations</b>, <b>Bold Strategic Initiatives</b>, or <b>Industry Leadership</b>. Three winners, one per area.</p>
     <ol class="secs rv" aria-label="The seven sections of the brief">
       <li>Your focus area<small>Course One</small></li>
       <li>The challenge and why it matters<small>Course One</small></li>
@@ -359,64 +310,42 @@ a{ color:inherit; }
       <li class="c2">Success metrics<small>Course Two</small></li>
       <li class="c2">Sustainability plan<small>Course Two</small></li>
     </ol>
-    <p class="legend rv"><span><b>Sections 1 to 3:</b> the case.</span><span><b>Sections 4 to 7:</b> the plan.</span><span>Everything you write collects in one brief you can edit, print, or download for Word.</span></p>
   </div>
 </section>
 
-<!-- 10 · HOW · FOUR WEEKS -->
-<section class="slide th-light" id="s10" aria-roledescription="slide" data-title="How · Four weeks">
+<!-- 5 · HOW · FOUR WEEKS -->
+<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="How · Four weeks">
   <div class="wrap">
-    <p class="eyebrow rv">03 How &middot; Four weeks</p>
+    <p class="eyebrow rv">03 How</p>
     <h2 class="h rv">One week at a <em>time</em>.</h2>
     <ol class="weeks rv">
-      <li data-from="2026-01-01"><span class="lab">Week 1 &middot; Thursday, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Meet your pod.</p></li>
-      <li data-from="2026-11-02"><span class="lab">Week 2 &middot; Nov 2</span><h3>Course One</h3><p>Self-paced online. Your pod drafts sections 1 to 3. <b>Teams prompt 1 due Friday, Nov 6.</b></p></li>
-      <li data-from="2026-11-09"><span class="lab">Week 3 &middot; Nov 9</span><h3>Course Two</h3><p>Self-paced online. Your pod drafts sections 4 to 7. <b>Teams prompt 2 due Friday, Nov 13.</b></p></li>
-      <li data-from="2026-11-16"><span class="lab">Week 4 &middot; Nov 16</span><h3>Finish the brief</h3><p>Your pod finishes the brief together. <b>Turn it in by Friday, Nov 20.</b></p></li>
+      <li data-from="2026-01-01"><span class="lab">Week 1 &middot; Today, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Meet your pod.</p></li>
+      <li data-from="2026-11-02"><span class="lab">Week 2 &middot; Nov 2</span><h3>Course One</h3><p>Draft sections 1 to 3. <b>Teams prompt 1 due Friday, Nov 6.</b></p></li>
+      <li data-from="2026-11-09"><span class="lab">Week 3 &middot; Nov 9</span><h3>Course Two</h3><p>Draft sections 4 to 7. <b>Teams prompt 2 due Friday, Nov 13.</b></p></li>
+      <li data-from="2026-11-16"><span class="lab">Week 4 &middot; Nov 16</span><h3>Finish the brief</h3><p>Your pod finishes it together. <b>Due Friday, Nov 20.</b></p></li>
     </ol>
-  </div>
-</section>
-
-<!-- 11 · HOW · INSIDE A MODULE -->
-<section class="slide th-dark" id="s11" aria-roledescription="slide" data-title="How · Inside each module">
-  <div class="wrap">
-    <p class="eyebrow rv">03 How &middot; Inside each module</p>
-    <h2 class="h rv">Learn it, try it, <em>use</em> it.</h2>
-    <ol class="steps rv">
-      <li><h3>Learn</h3><p>One idea per page, from the speakers&rsquo; own slides and videos.</p></li>
-      <li><h3>Practice</h3><p>Sort, decide, or write, with feedback as you go.</p></li>
-      <li><h3>Use it</h3><p>Write one rule and one move for your team.</p></li>
-      <li><h3>Your brief</h3><p>Draft your pod&rsquo;s sections, saved straight into your brief.</p></li>
-    </ol>
-    <p class="note rv"><span><b>Listen</b> reads any page aloud.</span><span><b>Auto</b> reads every page in turn.</span><span>Each course <b>saves your place</b> in your browser, so you can stop and come back.</span></p>
-  </div>
-</section>
-
-<!-- 12 · HOW · TEAMS -->
-<section class="slide th-light" id="s12" aria-roledescription="slide" data-title="How · Your cohort in Teams">
-  <div class="wrap">
-    <p class="eyebrow rv">03 How &middot; Your cohort in Teams</p>
-    <h2 class="h rv">Teams is your home <em>base</em>.</h2>
-    <p class="lead rv">In weeks 2 and 3 a discussion prompt is posted in your cohort&rsquo;s Microsoft Teams channel. It is also where to ask any questions along the way.</p>
-    <div class="grid g2 rv">
-      <div class="card gold"><span class="lab">Teams prompt 1 &middot; Course One</span><h3>Post by Friday, Nov 6</h3><p>Post your response under Discussions, then reply to at least one colleague.</p></div>
-      <div class="card gold"><span class="lab">Teams prompt 2 &middot; Course Two</span><h3>Post by Friday, Nov 13</h3><p>Post your response under Discussions, then reply to at least one colleague.</p></div>
-    </div>
-    <div class="btns rv"><a class="btn" href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad">Open the Teams channel<span class="sr"> (opens in a new tab)</span></a></div>
+    <p class="note rv"><span><b>Teams prompts:</b> post your response under Discussions in your cohort&rsquo;s Teams channel, then reply to at least one colleague.</span></p>
   </div>
 </section>
 
 <!-- 13 · CLOSE -->
-<section class="slide close th-dark" id="s13" aria-roledescription="slide" data-title="Start">
-  <div class="wrap">
-    <p class="eyebrow rv">Your first step</p>
-    <h2 class="h rv">Start with Course <em>One</em>.</h2>
-    <p class="lead rv">About 45 minutes, any time the week of November 2. Then meet your pod and begin your brief.</p>
-    <div class="btns rv">
-      <a class="btn" href="../course-one/">Start Course One <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn ghost" href="../">Program home</a>
-      <a class="btn ghost" href="../brief/">Your capstone brief</a>
+<section class="slide close th-dark" id="s6" aria-roledescription="slide" data-title="Before you leave today">
+  <div class="wrap closegrid">
+    <div>
+      <p class="eyebrow rv">Before you leave today</p>
+      <h2 class="h rv">Scan, then start Course <em>One</em>.</h2>
+      <p class="lead rv">Course One opens Monday, November 2: about 45 minutes, any time that week. Questions? Ask now, or anytime in your cohort&rsquo;s Teams channel.</p>
+      <div class="btns rv">
+        <a class="btn" href="../course-one/">Start Course One <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost" href="../">Program home</a>
+        <a class="btn ghost" href="../brief/">Your capstone brief</a>
+      </div>
     </div>
+    <figure class="qr rv">
+      <svg role="img" aria-label="QR code that opens the Leadership Redefined program home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h35v35H0z"/><path stroke="#1C1C1C" d="M1 1.5h7m1 0h2m1 0h1m2 0h3m5 0h3m1 0h7M1 2.5h1m5 0h1m1 0h3m3 0h1m1 0h2m2 0h2m1 0h2m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h1m6 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m2 0h5m2 0h1m1 0h1m3 0h3m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h1m1 0h2m1 0h1m3 0h1m3 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h6m2 0h1M1 9.5h1m1 0h2m1 0h3m2 0h6m2 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h2M2 10.5h2m1 0h2m2 0h1m1 0h1m2 0h3m1 0h1m6 0h1m1 0h2m1 0h3M1 11.5h1m2 0h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h5M1 12.5h1m2 0h2m2 0h1m2 0h3m2 0h3m1 0h2m2 0h3m1 0h1m1 0h1m1 0h1M1 13.5h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h3m2 0h5m2 0h1m2 0h1m1 0h2M2 14.5h1m1 0h3m5 0h1m2 0h1m5 0h1m1 0h2m1 0h3m2 0h2M5 15.5h4m1 0h1m3 0h2m4 0h2m2 0h2m1 0h2M4 16.5h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m1 0h6M3 17.5h5m2 0h1m4 0h1m1 0h2m6 0h3m1 0h1M2 18.5h1m2 0h2m1 0h1m1 0h3m7 0h4m2 0h2m1 0h2M2 19.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h2M3 20.5h1m1 0h1m4 0h2m3 0h2m1 0h4m1 0h2m1 0h2m1 0h1m2 0h2M1 21.5h2m2 0h5m5 0h3m5 0h1m1 0h1m3 0h5M1 22.5h1m10 0h1m3 0h3m2 0h1m4 0h1m1 0h1m4 0h1M4 23.5h1m2 0h1m7 0h2m3 0h2m2 0h3m3 0h4M2 24.5h2m1 0h2m1 0h4m3 0h2m1 0h2m1 0h1m1 0h1m4 0h1m3 0h2M1 25.5h1m1 0h1m2 0h3m3 0h1m1 0h2m3 0h4m1 0h8m1 0h1M9 26.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h2m1 0h2M1 27.5h7m1 0h2m2 0h1m2 0h1m1 0h2m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1M1 28.5h1m5 0h1m1 0h1m3 0h1m4 0h2m3 0h1m1 0h1m3 0h4M1 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h7m1 0h7m1 0h1M1 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m1 0h3m3 0h1m2 0h2M1 31.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h4m4 0h2m1 0h2M1 32.5h1m5 0h1m6 0h2m2 0h1m2 0h3m4 0h2m3 0h1M1 33.5h7m1 0h1m4 0h1m4 0h3m1 0h1m5 0h2"/></svg>
+
+      <figcaption><span class="lab">Program home</span>Both courses, your capstone brief, and the Teams channel.<b>me5231979.github.io/<wbr>Leadership-Redefined</b></figcaption>
+    </figure>
     <div class="foot rv">
       <img src="../assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="166" height="43" />
       <span>Leadership Redefined &middot; After the Symposium. Built to WCAG 2.2 AA. Questions or accessibility needs: <a href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad">your cohort&rsquo;s Teams channel<span class="sr"> (opens in a new tab)</span></a>.</span>
@@ -431,6 +360,7 @@ a{ color:inherit; }
   <span class="bar-title" id="barTitle" aria-hidden="true"></span>
   <div class="dots" id="dots"></div>
   <div class="ctl">
+    <button type="button" class="present" id="present" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Present</span></button>
     <span class="count" id="count" aria-live="polite"></span>
     <button type="button" class="arrow" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
     <button type="button" class="arrow" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -496,6 +426,13 @@ a{ color:inherit; }
     else if(e.deltaY < 0 && atTop && cur > 0){ e.preventDefault(); wheelLock = true; go(cur - 1, false); setTimeout(function(){ wheelLock = false; }, 900); }
   }, { passive:false });
 
+
+  /* Present: full screen for the breakout room; F toggles it too */
+  var pres = document.getElementById('present');
+  function togglePresent(){ if(!document.fullscreenElement){ (document.documentElement.requestFullscreen || function(){}).call(document.documentElement); } else { document.exitFullscreen(); } }
+  if(pres){ if(!document.documentElement.requestFullscreen) pres.hidden = true; pres.addEventListener('click', togglePresent); }
+  document.addEventListener('fullscreenchange', function(){ var on = !!document.fullscreenElement; if(pres){ pres.setAttribute('aria-pressed', on ? 'true' : 'false'); pres.querySelector('span').textContent = on ? 'Exit' : 'Present'; } setTimeout(function(){ deck.scrollLeft = cur * deck.clientWidth; }, 120); });
+  document.addEventListener('keydown', function(e){ if((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey && !(e.target.closest && e.target.closest('input, textarea, select'))) togglePresent(); });
   /* the timeline marks the week we are in */
   var today = new Date(), wk = [].slice.call(document.querySelectorAll('.weeks li[data-from]')), nowLi = null;
   wk.forEach(function(li){ if(new Date(li.getAttribute('data-from') + 'T00:00:00') <= today) nowLi = li; });
