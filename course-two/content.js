@@ -31,7 +31,7 @@ window.LR_COURSE = {
   ],
   SECTIONS:[
     { k:'route', no:'01', name:'This week', how:'Preview the three modules and your brief' },
-    { k:'brand', no:'02', name:'Brand or reputation', how:'Decide four statements' },
+    { k:'brand', no:'02', name:'Brand or reputation', how:'Sort six of Ertel’s assets' },
     { k:'ground', no:'03', name:'The ground game', how:'Find the strongest call in three moments' },
     { k:'story', no:'04', name:'Your storyline', how:'Fill in three of four lines' },
     { k:'wrap4', no:'05', name:'Module 4 wrap-up', how:'Synthesize, codify, apply' },
@@ -109,22 +109,16 @@ window.LR_COURSE = {
   NUM_PROG:'numbers',
   DRILLS:{
     brand:{
-      opts:['Brand', 'Reputation'],
+      opts:['Brand asset', 'Reputation asset'],
       prog:'brand',
-      verb:'decided',
+      verb:'sorted',
       items:[
-        { s:'Your office’s published statement of its core values.', a:0, x:'What you say about yourself. Necessary, and only half of the picture.' },
-        {
-          s:'A parent telling a neighbor that Vanderbilt really looks after its students.',
-          a:1,
-          x:'What others say about you. Peer to peer is where reputation impact multiplies.'
-        },
-        {
-          s:'A campaign ad on what makes a Vanderbilt education different.',
-          a:0,
-          x:'Paid media is something you say about yourself. It becomes reputation only when others repeat it.'
-        },
-        { s:'A national news story written by an outside reporter.', a:1, x:'Earned media: others telling the story. You shape it by what you do and share.' }
+        { img:'../assets/img/deck/ertel-athletics-brand.jpg', s:'“Some Think,” a Vanderbilt campaign image.', a:0, x:'A brand asset for athletics momentum: Vanderbilt telling its own story, in its own campaign.' },
+        { img:'../assets/img/deck/ertel-execution-reputation.jpg', s:'Bloomberg: “Nvidia CEO Pledges $75 Million for Vanderbilt in San Francisco.”', a:1, x:'A reputation asset for execution with ambition: a national outlet reporting what Vanderbilt did.' },
+        { img:'../assets/img/deck/ertel-values-brand.jpg', s:'Forbes: “The University And Its Purpose: A Declaration of First Principles,” by Daniel Diermeier.', a:0, x:'A brand asset for values-driven leadership: the Chancellor saying, in his own words, what Vanderbilt stands for.' },
+        { img:'../assets/img/deck/ertel-athletics-reputation.jpg', s:'The Tennessean: “Diego Pavia, Candice Lee among Vanderbilt honorees by Tennessee Sports Hall of Fame.”', a:1, x:'A reputation asset for athletics momentum: others honoring Vanderbilt people.' },
+        { img:'../assets/img/deck/ertel-values-reputation.jpg', s:'New York magazine: “How Vandy Bested the Ivies.”', a:1, x:'A reputation asset for values-driven leadership: a national magazine telling Vanderbilt’s story.' },
+        { img:'../assets/img/deck/ertel-execution-brand.jpg', s:'Quantum Potential: “Vanderbilt’s Next Era: Campuses, Partnerships and the Power of Place with Chancellor Daniel Diermeier.”', a:0, x:'A brand asset for execution with ambition: Vanderbilt’s own episode, in the Chancellor’s voice.' }
       ]
     },
     swot:{
@@ -193,18 +187,18 @@ window.LR_COURSE = {
       h:'Moment 2 · The quiet win',
       s:'Your team cut a process from weeks to days. No one outside the office knows yet.',
       opts:[
-        { t:'Wait until it is big enough for the news.', b:'Waiting for a spike', best:false, out:'Relevance comes first. Small true stories, shared steadily, are the drumbeat.' },
+        { t:'Wait until it is big enough for the news.', b:'Waiting for a spike', best:false, out:'A spike without a system is noise. Small true stories, shared steadily, are the drumbeat.' },
         {
           t:'Share the result with the people it helps most, and give your team a two-line version to tell.',
           b:'Share and equip',
           best:true,
-          out:'Ertel’s ask: share reputation assets to engage stakeholders, and equip others to share the story.'
+          out:'What Ertel asks of every leader: share reputation assets to engage stakeholders, and equip others to share Vanderbilt’s story.'
         },
         {
           t:'Mention it in the annual report.',
           b:'Too far away',
           best:false,
-          out:'Trust travels through proximity. Carry it person to person first.'
+          out:'The goal is not simply to be heard; it is for the message to spread. Carry it person to person first.'
         }
       ]
     },
@@ -212,18 +206,18 @@ window.LR_COURSE = {
       h:'Moment 3 · The hard question',
       s:'At a partner event, a guest asks you a pointed question about a controversial topic in higher education.',
       opts:[
-        { t:'Change the subject quickly.', b:'A missed chance', best:false, out:'Ertel: think of difficult or controversial topics as an opportunity to engage.' },
+        { t:'Change the subject quickly.', b:'A missed chance', best:false, out:'Ertel asks leaders to think of difficult or controversial topics as an opportunity to engage.' },
         {
           t:'Listen, engage respectfully, and connect your answer to what Vanderbilt stands for.',
           b:'Engage',
           best:true,
-          out:'“A little controversy is good for us,” in the Chancellor’s words. A hard topic is a chance to engage.'
+          out:'You engaged and tied your answer to what Vanderbilt stands for: values-driven leadership, one of the three reputation flywheels.'
         },
         {
           t:'Say you cannot comment on anything like that.',
           b:'Silence',
           best:false,
-          out:'Going quiet lets the world tell the story. A brand exists by default or by design.'
+          out:'Silence leaves the story to others. Reputation is what others say about you.'
         }
       ]
     },
@@ -464,8 +458,8 @@ window.LR_COURSE = {
         keys:['route', 'brand', 'ground', 'story', 'wrap4'],
         ideas:[
           ['Close the gap.', 'Brand is what you say about yourself; reputation is what others say about you.'],
-          ['A spike needs a system.', 'Relevance, consideration, trust, commitment: climbed with a steady drumbeat.'],
-          ['You are the ground game.', 'Share stories directly, and equip others to tell them. Trust travels through proximity.']
+          ['Make the message spread.', 'Air cover is carried through the ground game: share assets directly, and equip others to pass them on.'],
+          ['A spike needs a system.', 'Spike moments land on a steady drumbeat, and reputation becomes resources.']
         ]
       },
       {

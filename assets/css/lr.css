@@ -803,3 +803,67 @@ html.paged #mission .v-stage.lr-bal > .v-act > .lr-learn, html.paged #mission .v
   html.paged .lr-mom2 .lr-car-nav{ margin-bottom:8px; }
   html.paged .lr-mom2 .lr-ctable summary{ min-height:36px; }
 }
+
+/* ══════════ Module 4 (Ertel, October 2026 deck) ══════════ */
+.lr-gap .gp-b{ fill:rgba(207,174,112,.85); }
+.lr-gap .gp-r{ fill:rgba(79,111,115,.9); }
+.lr-gap .gp-t{ fill:#1C1C1C; font-family:var(--sans); font-weight:700; font-size:26px; }
+.lr-gap .gp-s{ fill:#1C1C1C; font-family:var(--sans); font-size:16px; }
+.lr-gap .gp-w{ fill:#fff; }
+.lr-deck .lpk{ fill:rgba(179,201,205,.14); stroke:#B3C9CD; stroke-width:2; }
+.lr-deck .lpw{ fill:rgba(255,255,255,.04); stroke:#FFFFFF; stroke-width:2; }
+.lr-ring{ max-width:460px; margin-left:auto; margin-right:auto; }
+html.paged .lr-ring svg{ max-height:52vh; }
+/* ground game screen */
+.lr-heard{ margin-top:10px; max-width:none; }
+.lr-pair{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; font-size:.95rem; color:var(--tx2); text-align:center; max-width:none; }
+.lr-pair b{ color:var(--eyebrow); font-weight:600; }
+.lr-flow3{ list-style:none; margin:10px 0 0; padding:0; display:grid; gap:0; counter-reset:f; }
+.lr-flow3 li{ counter-increment:f; position:relative; padding:10px 0 10px 44px; font-size:.95rem; color:var(--tx2); line-height:1.4; }
+.lr-flow3 li b{ display:block; color:var(--tx); font-weight:600; }
+.lr-flow3 li::before{ content:counter(f); position:absolute; left:0; top:10px; width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:var(--vu-gold); color:#1C1C1C; font-family:var(--cond); font-weight:700; font-size:.95rem; }
+.lr-flow3 li + li::after{ content:''; position:absolute; left:14px; top:-6px; width:2px; height:14px; background:var(--vu-gold); }
+.lr-dcard .lr-fig{ margin-top:8px; }
+/* payoff screen */
+.lr-deckgrid.lr-payoff{ grid-template-columns:minmax(0,3fr) minmax(0,2fr); }
+.lr-rrloop{ max-width:420px; margin:8px auto 0; }
+.lr-stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0 0; }
+.lr-stats > div{ border-top:2px solid var(--vu-gold); padding-top:8px; }
+.lr-stats dt{ font-family:var(--cond); font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); }
+.lr-stats dd{ margin:4px 0 0; font-size:.9rem; line-height:1.35; color:var(--tx2); }
+.lr-stats dd b{ display:block; font-family:var(--serif); font-weight:400; font-size:clamp(1.6rem,1vw + 1.1rem,2.2rem); line-height:1.1; color:var(--tx); }
+.lr-checks{ list-style:none; margin:12px 0 0; padding:0; display:grid; gap:14px; }
+.lr-checks li{ position:relative; padding-left:34px; font-size:1.05rem; line-height:1.4; color:var(--tx); }
+.lr-checks li::before{ content:''; position:absolute; left:0; top:2px; width:20px; height:20px; border:2px solid var(--vu-gold); border-radius:3px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CFAE70' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/14px no-repeat; }
+.lr-checks li::after{ display:none; }
+.lr-dcard .lr-checks li{ padding-left:34px; }
+.lr-dcard .lr-checks li::before{ top:2px; width:20px; height:20px; border-radius:3px; background-color:transparent; }
+@media (max-width:1000px){ .lr-deckgrid.lr-payoff{ grid-template-columns:1fr; } .lr-stats{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+/* the sort with pictures: the asset beside the question */
+.v-deck .dq.has-img.cur{ display:grid; grid-template-columns:minmax(0,190px) minmax(0,1fr); column-gap:24px; align-content:start; }
+.v-deck .dq.has-img > .dq-img{ grid-column:1; grid-row:1 / span 4; width:100%; height:auto; max-height:40vh; object-fit:contain; border-radius:var(--r); border:1px solid var(--bdg); background:#fff; }
+.v-deck .dq.has-img > :not(.dq-img){ grid-column:2; }
+html.paged .lr-practice .v-deck .dq.has-img .dq-s{ font-size:1.2rem !important; }
+@media (max-width:640px){ .v-deck .dq.has-img.cur{ grid-template-columns:1fr; } .v-deck .dq.has-img > .dq-img{ grid-row:auto; max-width:200px; margin-bottom:12px; } .v-deck .dq.has-img > :not(.dq-img){ grid-column:1; } }
+/* Module 4 sizing: graphics large enough to read from the back of the room */
+.lr-gap .gp-t{ font-size:34px; }
+.lr-gap .gp-s{ font-size:23px; }
+@media (min-width:1001px){
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-gap{ grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr); }
+  html.paged .lr-teach > .v-act > .v-video ~ figure.lr-gap > svg{ max-height:26vh; }
+  html.paged #ground .lr-deckscreen > .v-act, html.paged #ground .lr-deckscreen > .v-lead{ max-width:none; }
+}
+#ground .lr-dcard{ padding:18px 20px; }
+#ground .lr-dcard .v-label{ font-size:.9rem !important; }
+.lr-pair{ font-size:1.05rem; }
+.lr-flow3 li{ font-size:1.02rem; }
+.lr-flow3 li b{ font-size:1.08rem; }
+.lr-heard svg{ max-height:30vh; }
+#ground .lr-dsrc{ font-size:1rem !important; font-style:normal; color:var(--tx2); }
+#ground .lr-dsrc b{ color:var(--eyebrow); font-weight:600; }
+.lr-stats dd{ font-size:.98rem; }
+.lr-stats dd b{ font-size:clamp(1.9rem,1.2vw + 1.3rem,2.6rem); }
+.lr-checks li{ font-size:1.15rem; }
+.v-deck .dq.has-img.cur{ grid-template-columns:minmax(0,260px) minmax(0,1fr); }
+html.paged #ground .v-stage.lr-deckscreen{ max-width:none; }
+.lr-heard svg{ max-height:none; }

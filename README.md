@@ -38,7 +38,7 @@ Each course takes about 45 minutes: about 17 minutes of narration, short Chancel
 
 | Module | What it covers |
 |---|---|
-| 4. Communication, Storytelling & Brand | The Chancellor's video and brand or reputation; Steven K. Ertel's fighter brand, ladder, spike and drumbeat, and ground game (three calls); the storyline builder (starts brief section 2); a wrap |
+| 4. Communication, Storytelling & Brand | The Chancellor's video; Steven K. Ertel's brand and reputation gap, where Vanderbilt is today, the fighter brand and three reputation flywheels (sort six real brand and reputation assets), air cover and the ground game, the tempo, and the payoff in his numbers ($4.5B, 65.6% yield, Davos, 120+ universities). Source: Ertel's October 29, 2026 deck |
 | 5. Entrepreneurial Mindset | The Chancellor's video and John M. Lutz's diagnosis (sort four weaknesses); the turnaround numbers; the change moves (sort four initiatives); radical collaboration (starts sections 4 and 5); reframe and pilot (starts sections 5 and 6); a wrap |
 | 6. High-Performing Teams | The Chancellor's video and Candice S. Lee's six principles, each cited; three team moments; a wrap |
 | Your brief | Strong metrics practice; sections 4 to 7 written in the live brief; a quick check; the week's moves and Teams prompt 2; carry it forward |

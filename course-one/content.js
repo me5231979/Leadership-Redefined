@@ -79,7 +79,7 @@ window.LR_COURSE = {
       opts:['About 9%', 'About 7%', '4.6%'],
       a:2,
       big:'4.6%',
-      x:'The admission rate fell from 11.6% in 2020-21 to 4.6% in 2026-27, so Vanderbilt grew far more selective, and yield, the share of admitted students who enroll, rose from 39.9% to 65.4%. More of the best students choose Vanderbilt first.'
+      x:'The admission rate fell from 11.6% in 2020-21 to 4.6% in 2026-27, so Vanderbilt grew far more selective, and yield, the share of admitted students who enroll, rose from 39.9% to 65.6%. More of the best students choose Vanderbilt first.'
     },
     {
       lab:'Net new commitments',
@@ -131,12 +131,12 @@ window.LR_COURSE = {
       num:0,
       type:'bars',
       title:'Undergraduate Yield',
-      sub:'Yield increased from 39.9% in 2020-21 to 65.4% in 2026-27.',
+      sub:'Yield increased from 39.9% in 2020-21 to 65.6% in 2026-27.',
       fmt:'pct',
       max:80,
       step:20,
       axis:'Yield (%)',
-      bars:[{ x:'2020-21', v:39.9, lab:'39.9%' }, { x:'2026-27', v:65.4, lab:'65.4%' }]
+      bars:[{ x:'2020-21', v:39.9, lab:'39.9%' }, { x:'2026-27', v:65.6, lab:'65.6%' }]
     },
     {
       num:1,

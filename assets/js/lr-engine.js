@@ -431,7 +431,8 @@ function buildDrill(el){
   var status = $('#' + name + 'Status'), done = {}, cur = 0, right = 0;
   el.innerHTML = d.items.map(function(it, i){
     var opts = it.opts || d.opts;
-    return '<div class="dq' + (i === 0 ? ' cur' : '') + '" data-i="' + i + '"><p class="dq-s"><b>' + (i + 1) + ' of ' + d.items.length + '</b>' + esc(it.s) + subBtn(name + '/q' + (i + 1)) + '</p><div class="dq-opts" role="group" aria-label="Choose one">' +
+    /* an item can carry a picture (a slide asset); the sentence beside it names it, so the image itself is decorative */
+    return '<div class="dq' + (i === 0 ? ' cur' : '') + (it.img ? ' has-img' : '') + '" data-i="' + i + '">' + (it.img ? '<img class="dq-img" src="' + esc(it.img) + '" alt="" loading="lazy" />' : '') + '<p class="dq-s"><b>' + (i + 1) + ' of ' + d.items.length + '</b>' + esc(it.s) + subBtn(name + '/q' + (i + 1)) + '</p><div class="dq-opts" role="group" aria-label="Choose one">' +
       opts.map(function(o, oi){ return '<button type="button" data-o="' + oi + '" aria-pressed="false">' + esc(o) + '</button>'; }).join('') +
       '</div><p class="dq-x" role="status"></p><div class="dq-nav">' + (i < d.items.length - 1 ? '<button type="button" class="btn btn-primary btn-sm" data-next="1">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div></div>';
   }).join('');
