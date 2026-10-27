@@ -247,9 +247,9 @@ window.LR_COURSE = {
         { t:'Let it go. They deliver more than anyone.', b:'A double standard', best:false, out:'The team learns the rules depend on who you are. Values decide every time.' },
         {
           t:'Name it as unacceptable, expect a repair, and keep supporting them.',
-          b:'Own the response',
+          b:'Emotional agility',
           best:true,
-          out:'Lee’s standard: it is okay to feel how you feel, but you are accountable for how you act and respond. Work with HR on anything that rises to a conduct issue.'
+          out:'Emotional agility, in Lee’s words: it is okay to feel how you feel, but you are accountable for how you act and respond. Work with HR on anything that rises to a conduct issue.'
         },
         {
           t:'Pull them off every project right away.',
@@ -266,9 +266,9 @@ window.LR_COURSE = {
         { t:'Spend the team meeting on what the vendor got wrong.', b:'Lamenting', best:false, out:'Lee: it is easy to lament things you cannot control, and we never want to do that.' },
         {
           t:'Acknowledge the frustration, then focus the team on what it controls this week.',
-          b:'Control the controllables',
+          b:'Create the conditions',
           best:true,
-          out:'Leaders create the conditions for success; then each person gives maximum effort on what they control.'
+          out:'Leaders create the conditions for success: an environment that equips and empowers people to contribute at their highest level, even when a delay is out of their hands.'
         },
         { t:'Lower the goal so no one is disappointed.', b:'Standards slip', best:false, out:'The team learns the standard bends when things get hard.' }
       ]
@@ -406,7 +406,7 @@ window.LR_COURSE = {
         'Lower the goal so no one is disappointed'
       ],
       a:1,
-      x:'In her words: it is easy to lament things you cannot control, and we never want to do that. Leaders create the conditions; each person brings maximum effort.'
+      x:'In her words: it is easy to lament things you cannot control, and we never want to do that. Leaders create the conditions for success, so people can contribute at their highest level.'
     },
     {
       seg:'Teams',
@@ -478,8 +478,8 @@ window.LR_COURSE = {
         keys:['principles', 'teamcalls', 'wrap6'],
         ideas:[
           ['Values first, every time.', 'Name the values, then let them decide the hard calls.'],
-          ['Control the controllables.', 'Leaders create the conditions; each person brings maximum effort.'],
-          ['Own your response.', 'It is okay to feel how you feel; what matters is how you act and respond.']
+          ['Create the conditions for success.', 'Build an environment that equips and empowers people to contribute at their highest level.'],
+          ['Emotional agility.', 'It is okay to feel how you feel; what matters is how you act and respond.']
         ]
       },
       {

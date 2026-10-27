@@ -59,7 +59,7 @@ Each module's presenter appears with portrait, name, and title: Chancellor Danie
 
 ### Core content and Go deeper
 
-Each lesson's core pages teach only what the module decks and presenters taught: the Chancellor's University Strategy, Mission and Margin, and Reputation Stewardship presentations; Vice Chancellor Ertel on brand; Vice Chancellor Lutz on the fundraising turnaround; and Candice Storey Lee's own words on teams, cited to Vanderbilt News, the Nashville Scene, Sports Illustrated, and 247Sports.
+Each lesson's core pages teach only what the module decks and presenters taught: the Chancellor's University Strategy, Mission and Margin, and Reputation Stewardship presentations; Vice Chancellor Ertel on brand; Vice Chancellor Lutz on the fundraising turnaround; and Candice Storey Lee's own words on teams: six principles she reviewed for this program, cited to her and to Vanderbilt News.
 
 Outside material (the Mission and Margin and Reputation Rules books, Duarte, Snowden and Boone, O'Reilly and Tushman, Edmondson, Hackman, Project Aristotle, and the value stick) is never taught as core. It sits in collapsed Go deeper blocks and in the links on each course's final page.
 
