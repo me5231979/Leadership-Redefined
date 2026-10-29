@@ -2,8 +2,8 @@
   "_note": "Files the Fetch assets workflow downloads into the site (for hosts this repo's tooling cannot reach). Each entry: url, dest, and optional loudness (integrated LUFS). Edit this file and push to fetch again.",
   "files": [
     {
-      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/76eb5272-c2ef-4806-b852-32e887b20239/Leadership_Redefined_walk_in__upbeat_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZWZjMjcyYjY5MmU2ZGU1NyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzM3Nzk3NH0.Bf6n7fQ_BRDNvWJTqMKhi_Nuablyd3PiuqebSOeBDYs",
-      "dest": "overview/audio/walk-in.mp3",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/e01b9a6e-9457-4ac6-9e25-4c3834436043/Leadership_Redefined_walk_in__strings_anthem_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYTkyN2U0NGU4NTQ1ZTljNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzM4Nzg1NH0.o4lXpUmm9lMhPYkmu7FczMfgGO-qaZdiC5fY7WMfg8w",
+      "dest": "overview/audio/walk-in-strings.mp3",
       "loudness": -18
     }
   ]
