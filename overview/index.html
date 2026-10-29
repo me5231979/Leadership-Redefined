@@ -234,7 +234,7 @@ a{ color:inherit; }
 .shot .hl{ position:absolute; border:2.5px solid #ECB748; border-radius:6px; box-shadow:0 0 0 3px rgba(236,183,72,.25); pointer-events:none; }
 .shot .mk{ position:absolute; transform:translate(-50%,-50%); width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:#ECB748; color:#1C1C1C; font-family:var(--cond); font-weight:700; font-size:1rem; box-shadow:0 2px 8px rgba(0,0,0,.4); }
 .shot figcaption{ margin-top:10px; font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); }
-.shots2{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,36px); margin-top:24px; max-width:min(100%, 112vh); }
+.shots2{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,36px); margin-top:24px; max-width:min(100%, 92vh); }
 .steps3{ list-style:none; counter-reset:t; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:20px; }
 .steps3 li{ counter-increment:t; position:relative; padding-left:40px; font-size:1rem; color:var(--tx2); line-height:1.4; }
 .steps3 li b{ color:var(--tx); font-weight:600; }
@@ -262,6 +262,11 @@ a{ color:inherit; }
 .pv-tile b{ font-family:var(--serif); font-weight:400; font-size:2.2rem; line-height:1; color:#fff; }
 .pv-tile.pv-gold{ border-color:#CFAE70; } .pv-tile.pv-gold b{ color:#CFAE70; }
 @media (max-height:780px) and (min-width:1001px){ .prog-vis{ aspect-ratio:16/6; gap:6px; } .pv-tile b{ font-size:1.6rem; } }
+.card p.sm{ margin-top:10px; font-size:.95rem; }
+#s3 .card .lab + p{ margin-top:10px; font-size:1.08rem; color:var(--tx); }
+.card p + p{ margin-top:8px; }
+@media (max-height:800px) and (min-width:1001px){ #s6 .shots2{ max-width:min(100%, 74vh); margin-top:14px; } #s6 .lead{ margin-top:8px; font-size:1.02rem; } #s6 .steps3{ margin-top:12px; } #s6 .tip{ margin-top:8px; } #s6 .shot figcaption{ margin-top:4px; } }
+#s6 .shot-in{ line-height:0; }
 </style>
 </head>
 <body>
@@ -297,69 +302,36 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 3 · WHAT · THE COURSES -->
-<section class="slide th-dark" id="s3" aria-roledescription="slide" data-title="What · Two courses">
+<!-- 3 · WHAT · IN PLAIN TERMS -->
+<section class="slide th-dark" id="s3" aria-roledescription="slide" data-title="What · The program in plain terms">
   <div class="wrap">
-    <p class="eyebrow rv">02 What &middot; Two self-paced courses</p>
-    <h2 class="h rv">Six topics, two <em>courses</em>.</h2>
-    <div class="grid g2 rv">
-      <div class="card gold">
-        <span class="lab">Course One &middot; Week of Nov 2 &middot; about 45 minutes</span>
-        <ol class="list" style="margin-top:14px">
-          <li><span><b>Vision, Strategy &amp; the Future of Vanderbilt</b></span></li>
-          <li><span><b>Mission and Margin</b></span></li>
-          <li><span><b>Reputational Stewardship</b></span></li>
-        </ol>
-        <div class="person"><img src="../assets/img/people/diermeier.jpg" alt="" loading="lazy" /><div><b>Chancellor Daniel Diermeier</b><span>Your pod drafts brief sections 1 to 3</span></div></div>
-      </div>
-      <div class="card gold">
-        <span class="lab">Course Two &middot; Week of Nov 9 &middot; about 45 minutes</span>
-        <ol class="list" style="margin-top:14px; counter-reset:i 3">
-          <li><span><b>Communication, Storytelling &amp; Brand</b> &middot; Steven K. Ertel</span></li>
-          <li><span><b>Entrepreneurial Mindset</b> &middot; John M. Lutz</span></li>
-          <li><span><b>High-Performing Teams</b> &middot; Candice S. Lee</span></li>
-        </ol>
-        <div class="person"><span class="faces" aria-hidden="true"><img src="../assets/img/people/ertel.jpg" alt="" loading="lazy" /><img src="../assets/img/people/lutz.jpg" alt="" loading="lazy" /><img src="../assets/img/people/lee.jpg" alt="" loading="lazy" /></span><div><b>Three vice chancellors</b><span>Your pod drafts brief sections 4 to 7</span></div></div>
-      </div>
+    <p class="eyebrow rv">02 What</p>
+    <h2 class="h rv">The program in plain <em>terms</em>.</h2>
+    <div class="grid g3 rv">
+      <div class="card gold"><span class="lab">The web-based courses</span><p>Two short online courses, about 45 minutes each, at your own pace. They bring the Symposium&rsquo;s six topics back to your desk and help you put them to work with your team.</p><p class="sm"><b>Course One:</b> vision and strategy, mission and margin, reputation. <b>Course Two:</b> communication and brand, entrepreneurial mindset, high-performing teams.</p></div>
+      <div class="card gold"><span class="lab">The capstone</span><p>Your pod picks one real Vanderbilt challenge and designs a solution that uses all six topics.</p><p class="sm">Choose one focus area: <b>Exceptional Core Operations</b>, <b>Bold Strategic Initiatives</b>, or <b>Industry Leadership</b>. Three winners, one per area.</p></div>
+      <div class="card gold"><span class="lab">The brief</span><p>The brief is how your pod writes down its concept and shares it: seven sections, three pages at most.</p><p class="sm">The courses help you draft it as you go. Due <b>Friday, November 20</b>.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 4 · WHAT · THE CAPSTONE -->
-<section class="slide th-light" id="s4" aria-roledescription="slide" data-title="What · The capstone">
-  <div class="wrap">
-    <p class="eyebrow rv">02 What &middot; Your Capstone Innovation Project</p>
-    <h2 class="h rv">Name a challenge. Solve it with all six <em>topics</em>.</h2>
-    <p class="lead rv">One brief per pod, three pages at most. State one focus area at the top: <b>Exceptional Core Operations</b>, <b>Bold Strategic Initiatives</b>, or <b>Industry Leadership</b>. Three winners, one per area.</p>
-    <ol class="secs rv" aria-label="The seven sections of the brief">
-      <li>Your focus area<small>Course One</small></li>
-      <li>The challenge and why it matters<small>Course One</small></li>
-      <li>Connection to Vanderbilt&rsquo;s priorities<small>Course One</small></li>
-      <li class="c2">Integrated solution: people, process, technology<small>Course Two</small></li>
-      <li class="c2">Implementation steps, owners, timeline<small>Course Two</small></li>
-      <li class="c2">Success metrics<small>Course Two</small></li>
-      <li class="c2">Sustainability plan<small>Course Two</small></li>
-    </ol>
-  </div>
-</section>
-
-<!-- 5 · HOW · FOUR WEEKS -->
-<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="How · Four weeks">
+<!-- 4 · HOW · FOUR WEEKS -->
+<section class="slide th-light" id="s4" aria-roledescription="slide" data-title="How · Four weeks">
   <div class="wrap">
     <p class="eyebrow rv">03 How</p>
     <h2 class="h rv">One week at a <em>time</em>.</h2>
     <ol class="weeks rv">
       <li data-from="2026-01-01"><span class="lab">Week 1 &middot; Today, Oct 29</span><h3>The Symposium</h3><p>Live and in person. Meet your pod.</p></li>
-      <li data-from="2026-11-02"><span class="lab">Week 2 &middot; Nov 2</span><h3>Course One</h3><p>Draft sections 1 to 3. <b>Teams prompt 1 due Friday, Nov 6.</b></p></li>
-      <li data-from="2026-11-09"><span class="lab">Week 3 &middot; Nov 9</span><h3>Course Two</h3><p>Draft sections 4 to 7. <b>Teams prompt 2 due Friday, Nov 13.</b></p></li>
+      <li data-from="2026-11-02"><span class="lab">Week 2 &middot; Nov 2</span><h3>Course One</h3><p>Enrolled through Oracle Learning on Monday. <b>Teams prompt 1 due Friday, Nov 6.</b></p></li>
+      <li data-from="2026-11-09"><span class="lab">Week 3 &middot; Nov 9</span><h3>Course Two</h3><p>Your pod drafts sections 4 to 7. <b>Teams prompt 2 due Friday, Nov 13.</b></p></li>
       <li data-from="2026-11-16"><span class="lab">Week 4 &middot; Nov 16</span><h3>Finish the brief</h3><p>Your pod finishes it together. <b>Due Friday, Nov 20.</b></p></li>
     </ol>
     <p class="note rv"><span><b>Teams prompts:</b> post your response under Discussions in your cohort&rsquo;s Teams channel, then reply to at least one colleague.</span></p>
   </div>
 </section>
 
-<!-- 6 · HOW · FIND YOUR WAY -->
-<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="How · Find your way around">
+<!-- 5 · HOW · FIND YOUR WAY -->
+<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="How · Find your way around">
   <div class="wrap shot-split">
     <div>
       <p class="eyebrow rv">03 How &middot; Inside a course</p>
@@ -386,30 +358,46 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 7 · HOW · YOUR CAPSTONE -->
-<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · Build your capstone">
+<!-- 6 · HOW · YOUR CAPSTONE -->
+<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="How · Your capstone">
   <div class="wrap">
-    <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
-    <h2 class="h rv">Write it where you <em>learn</em>.</h2>
+    <p class="eyebrow rv">03 How &middot; Your capstone</p>
+    <h2 class="h rv">Your capstone <em>brief</em>.</h2>
+    <p class="lead rv">Your pod picks one real Vanderbilt challenge and writes a brief, three pages at most, that lays out the problem and your solution. Here is what you do over the next three weeks.</p>
     <div class="shots2 rv">
       <figure class="shot" aria-label="The Draft page in Course One, with the brief boxes and the Open your whole brief button numbered.">
         <div class="shot-in"><img src="img/capstone-draft.jpg" alt="" width="1440" height="900" loading="lazy" />
         <span class="hl" style="left:9.68%;top:37.88%;width:80.64%;height:32.25%"></span><span class="mk" style="left:6.50%;top:40.00%" aria-hidden="true">1</span>
         <span class="hl" style="left:66.55%;top:69.32%;width:23.77%;height:6.81%"></span><span class="mk" style="left:63.20%;top:71.20%" aria-hidden="true">2</span></div>
-        <figcaption>In the course: Draft sections 1 to 3</figcaption>
+        <figcaption>Where you write: the Draft page in each course</figcaption>
       </figure>
       <figure class="shot" aria-label="The Your capstone brief page, with its print, Word, and copy buttons numbered.">
         <div class="shot-in"><img src="img/capstone-brief.jpg" alt="" width="1440" height="900" loading="lazy" />
         <span class="hl" style="left:11.07%;top:57.65%;width:40.20%;height:7.51%"></span><span class="mk" style="left:53.50%;top:59.60%" aria-hidden="true">3</span></div>
-        <figcaption>Your capstone brief: all seven sections</figcaption>
+        <figcaption>Where it all comes together: your brief</figcaption>
       </figure>
     </div>
     <ol class="steps3 rv">
-      <li><b>Type in the course.</b> Pages marked &ldquo;Builds your brief&rdquo; and each week&rsquo;s Draft page save as you type.</li>
-      <li><b>Open your whole brief.</b> Sections 1 to 3 come from Course One; 4 to 7 from Course Two.</li>
-      <li><b>Print, save as PDF, or download for Word,</b> then merge with your pod. Due Friday, Nov 20.</li>
+      <li><b>Week of Nov 2.</b> In Course One, write sections 1 to 3: your focus area, the challenge, and how it connects to Vanderbilt&rsquo;s priorities.</li>
+      <li><b>Week of Nov 9.</b> In Course Two, write sections 4 to 7: your solution, the steps, how you will measure it, and how it lasts.</li>
+      <li><b>Week of Nov 16.</b> Meet with your pod, combine your drafts, and turn in one brief by Friday, Nov 20.</li>
     </ol>
-    <p class="tip rv"><b>Tip:</b> your writing saves in the browser you use. Stay on the same computer and browser, or download it for Word as you go.</p>
+    <p class="tip rv">What you write in the courses saves to your brief, where you can print it or download it for Word. It saves in the browser you use, so stay on the same computer.</p>
+  </div>
+</section>
+
+<!-- 7 · HOW · ASSESSMENT AND COACH -->
+<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · Your assessment and coach">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Your assessment and coach</p>
+    <h2 class="h rv">Make it personal with your <em>coach</em>.</h2>
+    <p class="lead rv">Your coaching discussion brings the program to life for you, in your role, and turns it into a plan for your growth.</p>
+    <ol class="steps rv">
+      <li><h3>Complete the assessment</h3><p>Your results give you and your coach a shared starting point.</p></li>
+      <li><h3>Meet your coach</h3><p>Talk through your results and what the program means for your work.</p></li>
+      <li><h3>Connect it to the program</h3><p>Bring the ideas from the courses and your capstone into the conversation.</p></li>
+      <li><h3>Build your growth plan</h3><p>Leave with clear next steps for your development.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -450,8 +438,8 @@ a{ color:inherit; }
   <div class="wrap closegrid">
     <div>
       <p class="eyebrow rv">Before you leave today</p>
-      <h2 class="h rv">Scan, then start Course <em>One</em>.</h2>
-      <p class="lead rv">Course One opens Monday, November 2: about 45 minutes, any time that week. Questions? Ask now, or anytime in your cohort&rsquo;s Teams channel.</p>
+      <h2 class="h rv">Watch for Course One in <em>Oracle</em>.</h2>
+      <p class="lead rv">You will be enrolled in Course One through Oracle Learning on Monday, November 2. It takes about 45 minutes, any time that week. Questions? Ask now, or anytime in your cohort&rsquo;s Teams channel.</p>
     </div>
     <figure class="qr rv">
       <!-- QR:start (regenerate for the Oracle course link) --><svg role="img" aria-label="QR code that opens Leadership Redefined" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h35v35H0z"/><path stroke="#1C1C1C" d="M1 1.5h7m1 0h2m1 0h1m2 0h3m5 0h3m1 0h7M1 2.5h1m5 0h1m1 0h3m3 0h1m1 0h2m2 0h2m1 0h2m1 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h2m1 0h1m6 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m2 0h5m2 0h1m1 0h1m3 0h3m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h1m1 0h2m1 0h1m3 0h1m3 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h6m2 0h1M1 9.5h1m1 0h2m1 0h3m2 0h6m2 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h2M2 10.5h2m1 0h2m2 0h1m1 0h1m2 0h3m1 0h1m6 0h1m1 0h2m1 0h3M1 11.5h1m2 0h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h1m4 0h1m1 0h5M1 12.5h1m2 0h2m2 0h1m2 0h3m2 0h3m1 0h2m2 0h3m1 0h1m1 0h1m1 0h1M1 13.5h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h3m2 0h5m2 0h1m2 0h1m1 0h2M2 14.5h1m1 0h3m5 0h1m2 0h1m5 0h1m1 0h2m1 0h3m2 0h2M5 15.5h4m1 0h1m3 0h2m4 0h2m2 0h2m1 0h2M4 16.5h1m3 0h2m1 0h3m2 0h1m1 0h2m2 0h2m1 0h6M3 17.5h5m2 0h1m4 0h1m1 0h2m6 0h3m1 0h1M2 18.5h1m2 0h2m1 0h1m1 0h3m7 0h4m2 0h2m1 0h2M2 19.5h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h2M3 20.5h1m1 0h1m4 0h2m3 0h2m1 0h4m1 0h2m1 0h2m1 0h1m2 0h2M1 21.5h2m2 0h5m5 0h3m5 0h1m1 0h1m3 0h5M1 22.5h1m10 0h1m3 0h3m2 0h1m4 0h1m1 0h1m4 0h1M4 23.5h1m2 0h1m7 0h2m3 0h2m2 0h3m3 0h4M2 24.5h2m1 0h2m1 0h4m3 0h2m1 0h2m1 0h1m1 0h1m4 0h1m3 0h2M1 25.5h1m1 0h1m2 0h3m3 0h1m1 0h2m3 0h4m1 0h8m1 0h1M9 26.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m3 0h2m1 0h2M1 27.5h7m1 0h2m2 0h1m2 0h1m1 0h2m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1M1 28.5h1m5 0h1m1 0h1m3 0h1m4 0h2m3 0h1m1 0h1m3 0h4M1 29.5h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h7m1 0h7m1 0h1M1 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h2m1 0h1m1 0h3m3 0h1m2 0h2M1 31.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h4m4 0h2m1 0h2M1 32.5h1m5 0h1m6 0h2m2 0h1m2 0h3m4 0h2m3 0h1M1 33.5h7m1 0h1m4 0h1m4 0h3m1 0h1m5 0h2"/></svg><!-- QR:end -->
