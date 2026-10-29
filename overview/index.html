@@ -563,7 +563,7 @@ a{ color:inherit; }
   /* walk-in music: plays quietly while the cover is up; starts on the first click or key, fades out on slide 2 */
   var music = document.getElementById('walkIn'), mBtn = document.getElementById('musicBtn'), mWant = true, mFade;
   if(music && mBtn){
-    var VOL = 0.45; music.volume = 0;
+    var VOL = 0.55; music.volume = 0;
     var label = function(){ var on = !music.paused; mBtn.setAttribute('aria-pressed', on ? 'true' : 'false'); mBtn.querySelector('span').textContent = on ? 'Pause music' : 'Play music'; };
     var fadeTo = function(v, done){ clearInterval(mFade); mFade = setInterval(function(){ var d = v - music.volume; if(Math.abs(d) < 0.03){ music.volume = v; clearInterval(mFade); if(done) done(); } else music.volume = Math.max(0, Math.min(1, music.volume + (d > 0 ? 0.03 : -0.03))); }, 60); };
     var mStart = function(){ if(cur !== 0 || !mWant) return; var p = music.play(); if(p && p.then) p.then(function(){ fadeTo(VOL); label(); }).catch(function(){ label(); }); else { fadeTo(VOL); label(); } };
