@@ -273,6 +273,23 @@ a{ color:inherit; }
 .talk li{ position:relative; padding-left:22px; font-size:1.08rem; color:var(--tx); }
 .talk li::before{ content:''; position:absolute; left:0; top:.55em; width:8px; height:8px; border-radius:50%; background:var(--accent); }
 @media (max-width:1000px){ .coach{ grid-template-columns:1fr; } }
+
+/* the seven sections */
+.secs7{ width:100%; border-collapse:collapse; margin-top:22px; font-size:1rem; }
+.secs7 th, .secs7 td{ text-align:left; vertical-align:top; padding:9px 14px 9px 0; border-bottom:1px solid var(--bd); line-height:1.4; }
+.secs7 thead th{ font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); border-bottom:2px solid var(--accent); }
+.secs7 tbody th{ width:27%; font-weight:600; color:var(--tx); }
+.secs7 td{ color:var(--tx2); }
+.secs7 td:last-child{ color:var(--tx); }
+.secs7 .sn{ display:inline-block; width:26px; font-family:var(--serif); font-size:1.2rem; color:var(--accent); }
+/* the example */
+.ex2{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:16px; margin-top:20px; }
+.exl{ display:grid; gap:10px; margin:12px 0 0; }
+.exl dt{ font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+.exl dd{ margin:2px 0 0; font-size:.98rem; line-height:1.45; color:var(--tx); }
+.exl dd b{ font-weight:600; }
+@media (max-height:800px) and (min-width:1001px){ .secs7{ font-size:.92rem; margin-top:12px; } .secs7 th, .secs7 td{ padding:5px 12px 5px 0; line-height:1.32; } #s7 .tip{ margin-top:8px; } .exl{ gap:6px; } .exl dd{ font-size:.92rem; } .ex2{ margin-top:12px; } }
+@media (max-width:1000px){ .ex2{ grid-template-columns:1fr; } .secs7 thead{ display:none; } .secs7, .secs7 tbody, .secs7 tr, .secs7 th, .secs7 td{ display:block; width:auto; } .secs7 tr{ padding:10px 0; border-bottom:1px solid var(--bd); } .secs7 th, .secs7 td{ border:0; padding:2px 0; } }
 </style>
 </head>
 <body>
@@ -393,8 +410,47 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 7 · HOW · ASSESSMENT AND COACH -->
-<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · Your assessment and coach">
+<!-- 7 · HOW · THE SEVEN SECTIONS -->
+<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · The seven sections">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
+    <h2 class="h rv">The seven <em>sections</em>.</h2>
+    <table class="secs7 rv">
+      <thead><tr><th scope="col">Section</th><th scope="col">What you write</th><th scope="col">What good looks like</th></tr></thead>
+      <tbody><tr><th scope="row"><span class="sn">1</span>Focus area</th><td>Pick one: Exceptional Core Operations, Bold Strategic Initiatives, or Industry Leadership.</td><td>It is at the top of page one, and the rest of the brief serves it.</td></tr><tr><th scope="row"><span class="sn">2</span>The challenge and why it matters</th><td>Who is affected, what happens today, and what it costs to wait.</td><td>It starts with a real person and a real moment. Someone outside your office could explain it back.</td></tr><tr><th scope="row"><span class="sn">3</span>Connection to Vanderbilt&rsquo;s priorities</th><td>The part of the vision your idea serves. What it costs, and who pays after year one.</td><td>It names the vision and your focus area, not just &ldquo;strategy.&rdquo;</td></tr><tr><th scope="row"><span class="sn">4</span>Integrated solution</th><td>What changes for people, process, and technology, and who shares the credit.</td><td>All three change together, and all six program topics show up.</td></tr><tr><th scope="row"><span class="sn">5</span>Steps, owners, timeline</th><td>One line per step: what happens, who owns it, and by when.</td><td>It starts with a small pilot, and every step has an owner and a date.</td></tr><tr><th scope="row"><span class="sn">6</span>Success metrics</th><td>Two or three ways you will know it worked.</td><td>Each has a starting number, a target, and a date, and measures what changes for people.</td></tr><tr><th scope="row"><span class="sn">7</span>Sustainability plan</th><td>Who keeps it going after your pod, and how year two is paid for.</td><td>One clear owner, and a plan that makes it normal work.</td></tr></tbody>
+    </table>
+    <p class="tip rv">Sections 1 to 3 are the case, written in Course One. Sections 4 to 7 are the plan, written in Course Two.</p>
+  </div>
+</section>
+
+<!-- 8 · HOW · AN EXAMPLE -->
+<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="How · A strong example">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
+    <h2 class="h rv">A strong <em>example</em>.</h2>
+    <p class="lead rv">An invented example, for practice: getting new staff working on day one.</p>
+    <div class="ex2 rv">
+      <div class="card gold"><span class="lab">The case &middot; Course One</span>
+        <dl class="exl">
+          <div><dt>1 Focus area</dt><dd>Exceptional Core Operations.</dd></div>
+          <div><dt>2 The challenge</dt><dd>New staff wait three to five weeks for system access, so their first month is mostly waiting. Every week lost is research and service time.</dd></div>
+          <div><dt>3 Connection</dt><dd>The vision asks us to operate at uncommon speed. Fast, secure onboarding gives time back to research.</dd></div>
+        </dl>
+      </div>
+      <div class="card gold"><span class="lab">The plan &middot; Course Two</span>
+        <dl class="exl">
+          <div><dt>4 Solution</dt><dd><b>People:</b> each department names an onboarding owner. <b>Process:</b> one checklist starts when the offer is accepted. <b>Technology:</b> access requests start from the HR offer record.</dd></div>
+          <div><dt>5 Steps</dt><dd>Weeks 1 to 4, build the checklist (HR lead). Weeks 5 to 12, pilot in two departments. Week 13, review results with sponsors.</dd></div>
+          <div><dt>6 Metrics</dt><dd>Days from start date to full access drop from 21 to 2 in the pilot by March.</dd></div>
+          <div><dt>7 Sustainability</dt><dd>HR owns the checklist after the pilot. The cost comes from the existing onboarding budget.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · HOW · ASSESSMENT AND COACH -->
+<section class="slide th-dark" id="s9" aria-roledescription="slide" data-title="How · Your assessment and coach">
   <div class="wrap">
     <p class="eyebrow rv">03 How &middot; Your assessment and coach</p>
     <h2 class="h rv">Work with your <em>coach</em>.</h2>
@@ -409,8 +465,8 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 8 · OTHER PROGRAMS TO KNOW -->
-<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="Other programs to know">
+<!-- 10 · OTHER PROGRAMS TO KNOW -->
+<section class="slide th-light" id="s10" aria-roledescription="slide" data-title="Other programs to know">
   <div class="wrap">
     <p class="eyebrow rv">04 Also for managers</p>
     <h2 class="h rv">Other programs to <em>know</em>.</h2>
@@ -441,8 +497,8 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 9 · CLOSE -->
-<section class="slide close th-dark" id="s9" aria-roledescription="slide" data-title="Before you leave today">
+<!-- 11 · CLOSE -->
+<section class="slide close th-dark" id="s11" aria-roledescription="slide" data-title="Before you leave today">
   <div class="wrap">
     <div>
       <p class="eyebrow rv">Before you leave today</p>
