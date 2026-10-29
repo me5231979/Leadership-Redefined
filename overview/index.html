@@ -253,6 +253,15 @@ a{ color:inherit; }
 @media (max-width:1000px){ .shot-split, .shots2{ grid-template-columns:1fr; } .steps3{ grid-template-columns:1fr; } }
 @media (max-width:640px){ .shot .mk{ width:22px; height:22px; font-size:.8rem; } }
 @media (max-height:780px) and (min-width:1001px){ .prog img{ aspect-ratio:16/6; } .prog p{ font-size:.92rem; } .progs{ margin-top:16px; } }
+
+.prog-vis{ aspect-ratio:16/9; background:#1C1C1C; border-bottom:1px solid var(--bd); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; margin:0 !important; padding:12px; }
+.pv-head, .pv-foot{ font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.09em; text-transform:uppercase; color:#CFAE70; }
+.pv-foot{ color:rgba(255,255,255,.8); }
+.pv-row{ display:flex; gap:12px; }
+.pv-tile{ display:flex; flex-direction:column; align-items:center; justify-content:center; width:120px; padding:10px 8px; border:1.5px solid rgba(255,255,255,.4); border-radius:6px; color:#fff; font-size:.95rem; font-weight:600; }
+.pv-tile b{ font-family:var(--serif); font-weight:400; font-size:2.2rem; line-height:1; color:#fff; }
+.pv-tile.pv-gold{ border-color:#CFAE70; } .pv-tile.pv-gold b{ color:#CFAE70; }
+@media (max-height:780px) and (min-width:1001px){ .prog-vis{ aspect-ratio:16/6; gap:6px; } .pv-tile b{ font-size:1.6rem; } }
 </style>
 </head>
 <body>
@@ -423,10 +432,14 @@ a{ color:inherit; }
         <p><b>Why managers need it:</b> Oracle Learning assigns it automatically the day you manage people: compliance courses, a 35-minute Foundations course by Day 7, and the Manager Portal.</p>
       </article>
       <article class="card prog">
-        <img src="img/prog-anchor.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <div class="prog-vis" role="img" aria-label="Two in-person workshops a month: one for all staff and one for managers, with two sessions offered for each topic.">
+          <span class="pv-head">In person &middot; two a month</span>
+          <div class="pv-row"><span class="pv-tile"><b>1</b>All staff</span><span class="pv-tile pv-gold"><b>1</b>Managers</span></div>
+          <span class="pv-foot">Two sessions offered for each topic</span>
+        </div>
         <span class="lab">Anchor&rsquo;s Edge</span>
-        <p><b>What it is:</b> live, 45-minute virtual workshops every week, plus a monthly in-person navigator workshop, each month tied to an enterprise goal.</p>
-        <p><b>Why managers need it:</b> Manager Monday is built for you: the behaviors, reads, and conversations that move each goal on a real team.</p>
+        <p><b>What it is:</b> in-person workshops, two a month: one for all staff and one for managers. Each topic is offered in two sessions.</p>
+        <p><b>Why managers need it:</b> one workshop every month is built for managers. Have a topic you would like to learn about? Let us know in your cohort&rsquo;s Teams channel.</p>
       </article>
     </div>
   </div>
