@@ -290,6 +290,11 @@ a{ color:inherit; }
 @media (max-width:1000px){ .ex2{ grid-template-columns:1fr; } .secs7 thead{ display:none; } .secs7, .secs7 tbody, .secs7 tr, .secs7 th, .secs7 td{ display:block; width:auto; } .secs7 tr{ padding:10px 0; border-bottom:1px solid var(--bd); } .secs7 th, .secs7 td{ border:0; padding:2px 0; } }
 #s5 .steps3{ margin-top:34px; gap:28px; } #s5 .steps3 li{ font-size:1.2rem; padding-left:46px; } #s5 .steps3 li::before{ width:32px; height:32px; font-size:1.05rem; }
 @media (max-height:800px) and (min-width:1001px){ #s7 .exl dd{ font-size:.86rem; line-height:1.35; } #s7 .exl{ gap:4px; } #s7 .lead{ margin-top:6px; font-size:1rem; } #s7 .card{ padding:12px 16px; } }
+
+.music{ position:absolute; right:clamp(16px,2.4vw,36px); bottom:calc(var(--bar-h) + 18px); z-index:2; display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background:rgba(28,28,28,.6); color:#fff; font-family:var(--cond); font-weight:700; font-size:.88rem; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+.music:hover{ border-color:#CFAE70; color:#CFAE70; }
+.music svg{ width:16px; height:16px; }
+.music[aria-pressed="true"]{ border-color:#CFAE70; color:#CFAE70; }
 </style>
 </head>
 <body>
@@ -310,6 +315,8 @@ a{ color:inherit; }
     <p class="lead rv">Here is what happens after today, and what you need to do.</p>
         <div class="btns rv"><button type="button" class="btn" data-go="1">Begin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
   </div>
+  <button type="button" class="music" id="musicBtn" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><span>Play music</span></button>
+  <audio id="walkIn" src="audio/walk-in.mp3" preload="auto" loop></audio>
 </section>
 
 <!-- 2 · WHY -->
@@ -510,6 +517,7 @@ a{ color:inherit; }
     count.textContent = (i + 1) + ' / ' + N; title.textContent = slides[i].getAttribute('data-title');
     prev.disabled = i === 0; next.disabled = i === N - 1;
     prog.style.width = ((i + 1) / N * 100) + '%';
+    document.dispatchEvent(new CustomEvent('lr:slide'));
     if(history.replaceState) history.replaceState(null, '', '#' + slides[i].id);
     if(focus){ var h = slides[i].querySelector('h1, h2, .quote'); if(h){ h.setAttribute('tabindex', '-1'); h.focus({ preventScroll:true }); } }
     overflowCheck();
@@ -551,6 +559,22 @@ a{ color:inherit; }
   if(pres){ if(!document.documentElement.requestFullscreen) pres.hidden = true; pres.addEventListener('click', togglePresent); }
   document.addEventListener('fullscreenchange', function(){ var on = !!document.fullscreenElement; if(pres){ pres.setAttribute('aria-pressed', on ? 'true' : 'false'); pres.querySelector('span').textContent = on ? 'Exit' : 'Present'; } setTimeout(function(){ deck.scrollLeft = cur * deck.clientWidth; }, 120); });
   document.addEventListener('keydown', function(e){ if((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey && !(e.target.closest && e.target.closest('input, textarea, select'))) togglePresent(); });
+
+  /* walk-in music: plays quietly while the cover is up; starts on the first click or key, fades out on slide 2 */
+  var music = document.getElementById('walkIn'), mBtn = document.getElementById('musicBtn'), mWant = true, mFade;
+  if(music && mBtn){
+    var VOL = 0.45; music.volume = 0;
+    var label = function(){ var on = !music.paused; mBtn.setAttribute('aria-pressed', on ? 'true' : 'false'); mBtn.querySelector('span').textContent = on ? 'Pause music' : 'Play music'; };
+    var fadeTo = function(v, done){ clearInterval(mFade); mFade = setInterval(function(){ var d = v - music.volume; if(Math.abs(d) < 0.03){ music.volume = v; clearInterval(mFade); if(done) done(); } else music.volume = Math.max(0, Math.min(1, music.volume + (d > 0 ? 0.03 : -0.03))); }, 60); };
+    var mStart = function(){ if(cur !== 0 || !mWant) return; var p = music.play(); if(p && p.then) p.then(function(){ fadeTo(VOL); label(); }).catch(function(){ label(); }); else { fadeTo(VOL); label(); } };
+    var mStop = function(){ fadeTo(0, function(){ music.pause(); label(); }); };
+    mBtn.addEventListener('click', function(e){ e.stopPropagation(); if(music.paused){ mWant = true; mStart(); } else { mWant = false; mStop(); } });
+    var kick = function(e){ if(e && e.target && e.target.closest && e.target.closest('#musicBtn')) return; if(music.paused) mStart(); };
+    document.addEventListener('pointerdown', kick); document.addEventListener('keydown', kick);
+    music.addEventListener('play', label); music.addEventListener('pause', label);
+    document.addEventListener('lr:slide', function(){ if(cur === 0) mStart(); else if(!music.paused) mStop(); });
+    mStart();
+  }
   /* the timeline marks the week we are in */
   var today = new Date(), wk = [].slice.call(document.querySelectorAll('.weeks li[data-from]')), nowLi = null;
   wk.forEach(function(li){ if(new Date(li.getAttribute('data-from') + 'T00:00:00') <= today) nowLi = li; });

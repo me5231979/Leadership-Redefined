@@ -1,0 +1,10 @@
+{
+  "_note": "Files the Fetch assets workflow downloads into the site (for hosts this repo's tooling cannot reach). Each entry: url, dest, and optional loudness (integrated LUFS). Edit this file and push to fetch again.",
+  "files": [
+    {
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/d4ba560b-c7ff-4d97-949e-70f89739a942/Leadership_Redefined_walk_in_music.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMjc4NTNhYmU5OWQxZjgxYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQxMzk1MH0.5bGlehLFLMJCGR-wgcuM9jLu17i3zy14ckn6c7IAoB0",
+      "dest": "overview/audio/walk-in.mp3",
+      "loudness": -20
+    }
+  ]
+}
