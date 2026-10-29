@@ -265,8 +265,6 @@ a{ color:inherit; }
 .card p.sm{ margin-top:10px; font-size:.95rem; }
 #s3 .card .lab + p{ margin-top:10px; font-size:1.08rem; color:var(--tx); }
 .card p + p{ margin-top:8px; }
-@media (max-height:800px) and (min-width:1001px){ #s6 .shots2{ max-width:min(100%, 74vh); margin-top:14px; } #s6 .lead{ margin-top:8px; font-size:1.02rem; } #s6 .steps3{ margin-top:12px; } #s6 .tip{ margin-top:8px; } #s6 .shot figcaption{ margin-top:4px; } }
-#s6 .shot-in{ line-height:0; }
 .coach{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(20px,3vw,48px); align-items:start; margin-top:32px; }
 .steps.steps2{ grid-template-columns:1fr; margin-top:0; gap:22px; }
 .talk{ list-style:none; display:grid; gap:12px; margin-top:12px; }
@@ -288,8 +286,9 @@ a{ color:inherit; }
 .exl dt{ font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
 .exl dd{ margin:2px 0 0; font-size:.98rem; line-height:1.45; color:var(--tx); }
 .exl dd b{ font-weight:600; }
-@media (max-height:800px) and (min-width:1001px){ .secs7{ font-size:.92rem; margin-top:12px; } .secs7 th, .secs7 td{ padding:5px 12px 5px 0; line-height:1.32; } #s7 .tip{ margin-top:8px; } .exl{ gap:6px; } .exl dd{ font-size:.92rem; } .ex2{ margin-top:12px; } }
+@media (max-height:800px) and (min-width:1001px){ .secs7{ font-size:.92rem; margin-top:12px; } .secs7 th, .secs7 td{ padding:5px 12px 5px 0; line-height:1.32; } #s6 .tip{ margin-top:8px; } .exl{ gap:6px; } .exl dd{ font-size:.92rem; } .ex2{ margin-top:12px; } }
 @media (max-width:1000px){ .ex2{ grid-template-columns:1fr; } .secs7 thead{ display:none; } .secs7, .secs7 tbody, .secs7 tr, .secs7 th, .secs7 td{ display:block; width:auto; } .secs7 tr{ padding:10px 0; border-bottom:1px solid var(--bd); } .secs7 th, .secs7 td{ border:0; padding:2px 0; } }
+#s5 .steps3{ margin-top:34px; gap:28px; } #s5 .steps3 li{ font-size:1.2rem; padding-left:46px; } #s5 .steps3 li::before{ width:32px; height:32px; font-size:1.05rem; }
 </style>
 </head>
 <body>
@@ -333,7 +332,7 @@ a{ color:inherit; }
     <div class="grid g4 rv">
       <div class="card gold"><span class="lab">Two online courses</span><p>Each takes about 45 minutes, at your own pace. They cover the six Symposium topics and show you how to use them with your team.</p><p class="sm"><b>Course One:</b> vision and strategy, mission and margin, and reputation. <b>Course Two:</b> communication and brand, the entrepreneurial mindset, and high-performing teams.</p></div>
       <div class="card gold"><span class="lab">The capstone</span><p>Your pod picks a real problem at Vanderbilt and comes up with a way to fix it, using what you learn.</p><p class="sm">Pick one focus area: <b>Exceptional Core Operations</b>, <b>Bold Strategic Initiatives</b>, or <b>Industry Leadership</b>. There is one winner in each area.</p></div>
-      <div class="card gold"><span class="lab">The brief</span><p>A short paper, three pages at most, where your pod writes up its idea to share it.</p><p class="sm">The courses help you write it as you go. It is due <b>Friday, November 20</b>.</p></div>
+      <div class="card gold"><span class="lab">The brief</span><p>A short paper, three pages at most, where your pod writes up its idea to share it.</p><p class="sm">It is due <b>Friday, November 20</b>.</p></div>
       <div class="card gold"><span class="lab">Coaching</span><p>You take an assessment, then book time with your coach whenever it suits you during the program.</p><p class="sm">You talk about what the program means for your job and where you want to grow.</p></div>
     </div>
   </div>
@@ -354,64 +353,23 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 5 · HOW · FIND YOUR WAY -->
-<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="How · Find your way around">
-  <div class="wrap shot-split">
-    <div>
-      <p class="eyebrow rv">03 How &middot; Inside a course</p>
-      <h2 class="h rv">Find your way <em>around</em>.</h2>
-      <ol class="keys rv">
-        <li><b>Listen and Auto.</b> Listen reads the page out loud. Auto reads each page for you, one after another.</li>
-        <li><b>Mark done.</b> Checks off the activity on that page.</li>
-        <li><b>Dots and arrows.</b> Go to the next page, or tap a dot to jump ahead.</li>
-        <li><b>Progress.</b> Shows what you have done and what is left. The course remembers where you stopped.</li>
-        <li><b>Your brief and Print takeaway.</b> Go to your brief, or print a one-page summary of the week.</li>
-        <li><b>Read along.</b> Shows the narration as text.</li>
-      </ol>
-    </div>
-    <figure class="shot rv" aria-label="A Course One page, with its controls numbered to match the list.">
-      <img src="img/nav-course.jpg" alt="" width="1440" height="900" />
-      <span class="hl" style="left:1.34%;top:93.10%;width:13.15%;height:6.81%"></span><span class="mk" style="left:7.90%;top:91.30%" aria-hidden="true">1</span>
-      <span class="hl" style="left:14.40%;top:93.10%;width:8.72%;height:6.81%"></span><span class="mk" style="left:18.80%;top:91.30%" aria-hidden="true">2</span>
-      <span class="hl" style="left:26.14%;top:93.10%;width:47.73%;height:6.81%"></span><span class="mk" style="left:50.00%;top:91.30%" aria-hidden="true">3</span><span class="mk" style="left:93.10%;top:91.30%" aria-hidden="true">3</span>
-      <span class="hl" style="left:87.50%;top:93.10%;width:11.20%;height:6.81%"></span>
-      <span class="hl" style="left:89.37%;top:0.54%;width:9.01%;height:6.81%"></span><span class="mk" style="left:93.90%;top:12.50%" aria-hidden="true">4</span>
-      <span class="hl" style="left:66.51%;top:1.29%;width:23.22%;height:5.31%"></span><span class="mk" style="left:78.10%;top:12.50%" aria-hidden="true">5</span>
-      <span class="hl" style="left:9.68%;top:84.24%;width:16.20%;height:4.32%"></span><span class="mk" style="left:28.50%;top:86.40%" aria-hidden="true">6</span>
-    </figure>
-  </div>
-</section>
-
-<!-- 6 · HOW · YOUR CAPSTONE -->
-<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="How · Your capstone">
+<!-- 5 · HOW · YOUR CAPSTONE -->
+<section class="slide th-dark" id="s5" aria-roledescription="slide" data-title="How · The capstone">
   <div class="wrap">
-    <p class="eyebrow rv">03 How &middot; Your capstone</p>
-    <h2 class="h rv">Your capstone <em>brief</em>.</h2>
-    <p class="lead rv">Your pod picks a real problem at Vanderbilt and writes a short brief, three pages at most, about the problem and how to fix it. Here is what to do each week.</p>
-    <div class="shots2 rv">
-      <figure class="shot" aria-label="The Draft page in Course One, with the brief boxes and the Open your whole brief button numbered.">
-        <div class="shot-in"><img src="img/capstone-draft.jpg" alt="" width="1440" height="900" loading="lazy" />
-        <span class="hl" style="left:9.68%;top:37.88%;width:80.64%;height:32.25%"></span><span class="mk" style="left:6.50%;top:40.00%" aria-hidden="true">1</span>
-        <span class="hl" style="left:66.55%;top:69.32%;width:23.77%;height:6.81%"></span><span class="mk" style="left:63.20%;top:71.20%" aria-hidden="true">2</span></div>
-        <figcaption>Where you write: the Draft page in each course</figcaption>
-      </figure>
-      <figure class="shot" aria-label="The Your capstone brief page, with its print, Word, and copy buttons numbered.">
-        <div class="shot-in"><img src="img/capstone-brief.jpg" alt="" width="1440" height="900" loading="lazy" />
-        <span class="hl" style="left:11.07%;top:57.65%;width:40.20%;height:7.51%"></span><span class="mk" style="left:53.50%;top:59.60%" aria-hidden="true">3</span></div>
-        <figcaption>Where it comes together: your brief</figcaption>
-      </figure>
-    </div>
+    <p class="eyebrow rv">03 How &middot; The capstone</p>
+    <h2 class="h rv">The <em>capstone</em>.</h2>
+    <p class="lead rv">Your pod picks a real problem at Vanderbilt and comes up with a way to fix it. You write it up as a brief: seven sections, three pages at most. Here is what to do each week.</p>
     <ol class="steps3 rv">
-      <li><b>Week of Nov 2.</b> In Course One, write sections 1 to 3: your focus area, the problem, and why it matters to Vanderbilt.</li>
-      <li><b>Week of Nov 9.</b> In Course Two, write sections 4 to 7: your solution, the steps, how you will measure it, and how it will last.</li>
+      <li><b>Week of Nov 2.</b> Draft sections 1 to 3: your focus area, the problem, and why it matters to Vanderbilt.</li>
+      <li><b>Week of Nov 9.</b> Draft sections 4 to 7: your solution, the steps, how you will measure it, and how it will last.</li>
       <li><b>Week of Nov 16.</b> Meet with your pod, put your drafts together, and turn in one brief by Friday, Nov 20.</li>
     </ol>
-    <p class="tip rv">What you type in the courses goes into your brief. From there you can print it or download it for Word. Use the same computer and browser each time, because your work is saved there.</p>
+    
   </div>
 </section>
 
-<!-- 7 · HOW · THE SEVEN SECTIONS -->
-<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · The seven sections">
+<!-- 6 · HOW · THE SEVEN SECTIONS -->
+<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="How · The seven sections">
   <div class="wrap">
     <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
     <h2 class="h rv">The seven <em>sections</em>.</h2>
@@ -419,25 +377,25 @@ a{ color:inherit; }
       <thead><tr><th scope="col">Section</th><th scope="col">What you write</th><th scope="col">What good looks like</th></tr></thead>
       <tbody><tr><th scope="row"><span class="sn">1</span>Focus area</th><td>Pick one: Exceptional Core Operations, Bold Strategic Initiatives, or Industry Leadership.</td><td>It is at the top of page one, and the rest of the brief serves it.</td></tr><tr><th scope="row"><span class="sn">2</span>The challenge and why it matters</th><td>Who is affected, what happens today, and what it costs to wait.</td><td>It starts with a real person and a real moment. Someone outside your office could explain it back.</td></tr><tr><th scope="row"><span class="sn">3</span>Connection to Vanderbilt&rsquo;s priorities</th><td>The part of the vision your idea serves. What it costs, and who pays after year one.</td><td>It names the vision and your focus area, not just &ldquo;strategy.&rdquo;</td></tr><tr><th scope="row"><span class="sn">4</span>Integrated solution</th><td>What changes for people, process, and technology, and who shares the credit.</td><td>All three change together, and all six program topics show up.</td></tr><tr><th scope="row"><span class="sn">5</span>Steps, owners, timeline</th><td>One line per step: what happens, who owns it, and by when.</td><td>It starts with a small pilot, and every step has an owner and a date.</td></tr><tr><th scope="row"><span class="sn">6</span>Success metrics</th><td>Two or three ways you will know it worked.</td><td>Each has a starting number, a target, and a date, and measures what changes for people.</td></tr><tr><th scope="row"><span class="sn">7</span>Sustainability plan</th><td>Who keeps it going after your pod, and how year two is paid for.</td><td>One clear owner, and a plan that makes it normal work.</td></tr></tbody>
     </table>
-    <p class="tip rv">Sections 1 to 3 are the case, written in Course One. Sections 4 to 7 are the plan, written in Course Two.</p>
+    <p class="tip rv">Sections 1 to 3 make the case. Sections 4 to 7 lay out the plan.</p>
   </div>
 </section>
 
-<!-- 8 · HOW · AN EXAMPLE -->
-<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="How · A strong example">
+<!-- 7 · HOW · AN EXAMPLE -->
+<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · A strong example">
   <div class="wrap">
     <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
     <h2 class="h rv">A strong <em>example</em>.</h2>
     <p class="lead rv">An invented example, for practice: getting new staff working on day one.</p>
     <div class="ex2 rv">
-      <div class="card gold"><span class="lab">The case &middot; Course One</span>
+      <div class="card gold"><span class="lab">The case &middot; Sections 1 to 3</span>
         <dl class="exl">
           <div><dt>1 Focus area</dt><dd>Exceptional Core Operations.</dd></div>
           <div><dt>2 The challenge</dt><dd>New staff wait three to five weeks for system access, so their first month is mostly waiting. Every week lost is research and service time.</dd></div>
           <div><dt>3 Connection</dt><dd>The vision asks us to operate at uncommon speed. Fast, secure onboarding gives time back to research.</dd></div>
         </dl>
       </div>
-      <div class="card gold"><span class="lab">The plan &middot; Course Two</span>
+      <div class="card gold"><span class="lab">The plan &middot; Sections 4 to 7</span>
         <dl class="exl">
           <div><dt>4 Solution</dt><dd><b>People:</b> each department names an onboarding owner. <b>Process:</b> one checklist starts when the offer is accepted. <b>Technology:</b> access requests start from the HR offer record.</dd></div>
           <div><dt>5 Steps</dt><dd>Weeks 1 to 4, build the checklist (HR lead). Weeks 5 to 12, pilot in two departments. Week 13, review results with sponsors.</dd></div>
@@ -449,8 +407,8 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 9 · HOW · ASSESSMENT AND COACH -->
-<section class="slide th-dark" id="s9" aria-roledescription="slide" data-title="How · Your assessment and coach">
+<!-- 8 · HOW · ASSESSMENT AND COACH -->
+<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="How · Your assessment and coach">
   <div class="wrap">
     <p class="eyebrow rv">03 How &middot; Your assessment and coach</p>
     <h2 class="h rv">Work with your <em>coach</em>.</h2>
@@ -465,8 +423,8 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 10 · OTHER PROGRAMS TO KNOW -->
-<section class="slide th-light" id="s10" aria-roledescription="slide" data-title="Other programs to know">
+<!-- 9 · OTHER PROGRAMS TO KNOW -->
+<section class="slide th-dark" id="s9" aria-roledescription="slide" data-title="Other programs to know">
   <div class="wrap">
     <p class="eyebrow rv">04 Also for managers</p>
     <h2 class="h rv">Other programs to <em>know</em>.</h2>
@@ -497,8 +455,8 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 11 · CLOSE -->
-<section class="slide close th-dark" id="s11" aria-roledescription="slide" data-title="Before you leave today">
+<!-- 10 · CLOSE -->
+<section class="slide close th-dark" id="s10" aria-roledescription="slide" data-title="Before you leave today">
   <div class="wrap">
     <div>
       <p class="eyebrow rv">Before you leave today</p>
