@@ -153,9 +153,9 @@ window.LR_COURSE = {
       verb:'sorted',
       items:[
         {
-          s:'Median days from hire to full system access drops from 21 to 2 in the pilot by March.',
+          s:'Spending on outside contractors in the pilot divisions drops 15% from last year by June.',
           a:0,
-          x:'A baseline, a target, a date, and an outcome people feel.'
+          x:'A baseline, a target, a date, and a result you can count.'
         },
         { s:'Increase awareness of the new process.', a:1, x:'No number, no date. Try: 80% of administrators can find it in under a minute by March.' },
         { s:'Number of emails sent promoting the program.', a:1, x:'Activity, not impact. Put it in the timeline and measure what it changes.' },
@@ -426,11 +426,11 @@ window.LR_COURSE = {
       opts:[
         'Launch the new process',
         'Increase awareness',
-        'Median days to full system access drops from 21 to 2 in the pilot by March',
+        'Outside contractor spending in the pilot drops 15% from last year by June',
         'Send weekly updates'
       ],
       a:2,
-      x:'A baseline, a target, a date, and an outcome people feel.'
+      x:'A baseline, a target, a date, and a result you can count.'
     }
   ],
   SCEN_POS:{ g1:2, g2:0, g3:1, t1:0, t2:2, t3:1 },

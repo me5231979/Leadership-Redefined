@@ -290,7 +290,7 @@ window.LR_COURSE = {
       verb:'sorted',
       items:[
         {
-          s:'New staff wait three to five weeks for system access.',
+          s:'Departments pay outside consultants for short projects that staff could do.',
           a:0,
           x:'Running the place well. Fix it and you free time and talent for everything else.'
         },
