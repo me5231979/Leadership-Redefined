@@ -221,6 +221,38 @@ a{ color:inherit; }
 #s3 .list li b{ font-weight:600; }
 .weeks p, .note{ font-size:1.05rem; }
 .secs li{ font-size:1.05rem; }
+
+/* screenshots with numbered callouts */
+.shot-split{ display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:clamp(24px,3vw,48px); align-items:center; }
+.keys{ list-style:none; counter-reset:k; display:grid; gap:10px; margin-top:22px; }
+.keys li{ counter-increment:k; position:relative; padding-left:40px; font-size:1.02rem; color:var(--tx2); line-height:1.4; }
+.keys li b{ color:var(--tx); font-weight:600; }
+.keys li::before{ content:counter(k); position:absolute; left:0; top:-2px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:#ECB748; color:#1C1C1C; font-family:var(--cond); font-weight:700; font-size:.95rem; }
+.shot{ position:relative; border-radius:var(--r); overflow:visible; }
+.shot-in{ position:relative; }
+.shot img{ width:100%; height:auto; display:block; border-radius:var(--r); border:1px solid var(--bdg); box-shadow:0 18px 40px rgba(0,0,0,.28); }
+.shot .hl{ position:absolute; border:2.5px solid #ECB748; border-radius:6px; box-shadow:0 0 0 3px rgba(236,183,72,.25); pointer-events:none; }
+.shot .mk{ position:absolute; transform:translate(-50%,-50%); width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:#ECB748; color:#1C1C1C; font-family:var(--cond); font-weight:700; font-size:1rem; box-shadow:0 2px 8px rgba(0,0,0,.4); }
+.shot figcaption{ margin-top:10px; font-family:var(--cond); font-weight:700; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); }
+.shots2{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,36px); margin-top:24px; max-width:min(100%, 112vh); }
+.steps3{ list-style:none; counter-reset:t; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:20px; }
+.steps3 li{ counter-increment:t; position:relative; padding-left:40px; font-size:1rem; color:var(--tx2); line-height:1.4; }
+.steps3 li b{ color:var(--tx); font-weight:600; }
+.steps3 li::before{ content:counter(t); position:absolute; left:0; top:-2px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:#ECB748; color:#1C1C1C; font-family:var(--cond); font-weight:700; font-size:.95rem; }
+.tip{ margin-top:14px; font-size:.98rem; color:var(--tx2); }
+.tip b{ color:var(--tx); }
+/* other programs */
+.progs{ margin-top:24px; }
+.prog{ display:flex; flex-direction:column; gap:8px; padding:0 0 18px; overflow:hidden; }
+.prog img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:50% 40%; border-bottom:1px solid var(--bd); }
+.prog > :not(img){ margin:0 18px; }
+.prog .lab{ margin-top:6px; font-size:1rem; }
+.prog p{ font-size:.98rem; color:var(--tx2); line-height:1.45; }
+.prog p b{ color:var(--tx); font-weight:600; }
+.prog .when{ display:inline-block; margin-top:6px; padding:3px 10px; border:1px solid var(--bdg); border-radius:999px; font-family:var(--cond); font-weight:700; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+@media (max-width:1000px){ .shot-split, .shots2{ grid-template-columns:1fr; } .steps3{ grid-template-columns:1fr; } }
+@media (max-width:640px){ .shot .mk{ width:22px; height:22px; font-size:.8rem; } }
+@media (max-height:780px) and (min-width:1001px){ .prog img{ aspect-ratio:16/6; } .prog p{ font-size:.92rem; } .progs{ margin-top:16px; } }
 </style>
 </head>
 <body>
@@ -317,8 +349,91 @@ a{ color:inherit; }
   </div>
 </section>
 
-<!-- 13 · CLOSE -->
-<section class="slide close th-dark" id="s6" aria-roledescription="slide" data-title="Before you leave today">
+<!-- 6 · HOW · FIND YOUR WAY -->
+<section class="slide th-light" id="s6" aria-roledescription="slide" data-title="How · Find your way around">
+  <div class="wrap shot-split">
+    <div>
+      <p class="eyebrow rv">03 How &middot; Inside a course</p>
+      <h2 class="h rv">Find your way <em>around</em>.</h2>
+      <ol class="keys rv">
+        <li><b>Listen or Auto.</b> Listen reads the page aloud; Auto reads every page in turn.</li>
+        <li><b>Mark done.</b> Marks the page&rsquo;s activity complete.</li>
+        <li><b>Page dots and arrows.</b> Move page to page, or jump with a dot.</li>
+        <li><b>Progress.</b> Every activity, with a shortcut to each. Your place saves in your browser.</li>
+        <li><b>Your brief and Print takeaway.</b> Jump to your brief, or print the week&rsquo;s takeaway.</li>
+        <li><b>Read along.</b> The full narration, as text.</li>
+      </ol>
+    </div>
+    <figure class="shot rv" aria-label="A Course One page, with its controls numbered to match the list.">
+      <img src="img/nav-course.jpg" alt="" width="1440" height="900" />
+      <span class="hl" style="left:1.34%;top:93.10%;width:13.15%;height:6.81%"></span><span class="mk" style="left:7.90%;top:91.30%" aria-hidden="true">1</span>
+      <span class="hl" style="left:14.40%;top:93.10%;width:8.72%;height:6.81%"></span><span class="mk" style="left:18.80%;top:91.30%" aria-hidden="true">2</span>
+      <span class="hl" style="left:26.14%;top:93.10%;width:47.73%;height:6.81%"></span><span class="mk" style="left:50.00%;top:91.30%" aria-hidden="true">3</span><span class="mk" style="left:93.10%;top:91.30%" aria-hidden="true">3</span>
+      <span class="hl" style="left:87.50%;top:93.10%;width:11.20%;height:6.81%"></span>
+      <span class="hl" style="left:89.37%;top:0.54%;width:9.01%;height:6.81%"></span><span class="mk" style="left:93.90%;top:12.50%" aria-hidden="true">4</span>
+      <span class="hl" style="left:66.51%;top:1.29%;width:23.22%;height:5.31%"></span><span class="mk" style="left:78.10%;top:12.50%" aria-hidden="true">5</span>
+      <span class="hl" style="left:9.68%;top:84.24%;width:16.20%;height:4.32%"></span><span class="mk" style="left:28.50%;top:86.40%" aria-hidden="true">6</span>
+    </figure>
+  </div>
+</section>
+
+<!-- 7 · HOW · YOUR CAPSTONE -->
+<section class="slide th-dark" id="s7" aria-roledescription="slide" data-title="How · Build your capstone">
+  <div class="wrap">
+    <p class="eyebrow rv">03 How &middot; Your capstone brief</p>
+    <h2 class="h rv">Write it where you <em>learn</em>.</h2>
+    <div class="shots2 rv">
+      <figure class="shot" aria-label="The Draft page in Course One, with the brief boxes and the Open your whole brief button numbered.">
+        <div class="shot-in"><img src="img/capstone-draft.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <span class="hl" style="left:9.68%;top:37.88%;width:80.64%;height:32.25%"></span><span class="mk" style="left:6.50%;top:40.00%" aria-hidden="true">1</span>
+        <span class="hl" style="left:66.55%;top:69.32%;width:23.77%;height:6.81%"></span><span class="mk" style="left:63.20%;top:71.20%" aria-hidden="true">2</span></div>
+        <figcaption>In the course: Draft sections 1 to 3</figcaption>
+      </figure>
+      <figure class="shot" aria-label="The Your capstone brief page, with its print, Word, and copy buttons numbered.">
+        <div class="shot-in"><img src="img/capstone-brief.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <span class="hl" style="left:11.07%;top:57.65%;width:40.20%;height:7.51%"></span><span class="mk" style="left:53.50%;top:59.60%" aria-hidden="true">3</span></div>
+        <figcaption>Your capstone brief: all seven sections</figcaption>
+      </figure>
+    </div>
+    <ol class="steps3 rv">
+      <li><b>Type in the course.</b> Pages marked &ldquo;Builds your brief&rdquo; and each week&rsquo;s Draft page save as you type.</li>
+      <li><b>Open your whole brief.</b> Sections 1 to 3 come from Course One; 4 to 7 from Course Two.</li>
+      <li><b>Print, save as PDF, or download for Word,</b> then merge with your pod. Due Friday, Nov 20.</li>
+    </ol>
+    <p class="tip rv"><b>Tip:</b> your writing saves in the browser you use. Stay on the same computer and browser, or download it for Word as you go.</p>
+  </div>
+</section>
+
+<!-- 8 · OTHER PROGRAMS TO KNOW -->
+<section class="slide th-light" id="s8" aria-roledescription="slide" data-title="Other programs to know">
+  <div class="wrap">
+    <p class="eyebrow rv">04 Also for managers</p>
+    <h2 class="h rv">Other programs to <em>know</em>.</h2>
+    <div class="grid g3 progs rv">
+      <article class="card prog">
+        <img src="img/prog-hcm.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <span class="lab">HCM Academy</span>
+        <p><b>What it is:</b> training and a community for HCMs, the people embedded in your area who own its people work: hiring, pay and timecards, positions and transfers, leave, costing, student jobs, and records.</p>
+        <p><b>Why managers need it:</b> your HCM is your partner on every hire, paycheck, and change. Know what they own, and route the people work to them.</p>
+      </article>
+      <article class="card prog">
+        <img src="img/prog-voyage.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <span class="lab">Manager Voyage</span>
+        <p><b>What it is:</b> one standard for every Vanderbilt manager: four things every manager does, one path from Day 1 to Day 60, measured at 90 days.</p>
+        <p><b>Why managers need it:</b> Oracle Learning assigns it automatically the day you manage people: compliance courses, a 35-minute Foundations course by Day 7, and the Manager Portal. <span class="when">Wide launch: Nov 1, 2026</span></p>
+      </article>
+      <article class="card prog">
+        <img src="img/prog-anchor.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <span class="lab">Anchor&rsquo;s Edge</span>
+        <p><b>What it is:</b> live, 45-minute virtual workshops every week, plus a monthly in-person navigator workshop, each month tied to an enterprise goal.</p>
+        <p><b>Why managers need it:</b> Manager Monday is built for you: the behaviors, reads, and conversations that move each goal on a real team. <span class="when">Target start: early 2027</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · CLOSE -->
+<section class="slide close th-dark" id="s9" aria-roledescription="slide" data-title="Before you leave today">
   <div class="wrap closegrid">
     <div>
       <p class="eyebrow rv">Before you leave today</p>
