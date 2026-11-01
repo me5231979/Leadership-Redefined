@@ -17,7 +17,6 @@ window.LR_COURSE = {
     { sel:'#vision', key:'vision', label:'Module 1: The vision', mode:'whole' },
     { sel:'#numbers', key:'numbers', label:'Module 1: The numbers', mode:'whole' },
     { sel:'#charts', key:'charts', label:'Module 1: Six more numbers', mode:'whole' },
-    { sel:'#footprint', key:'footprint', label:'Module 1: Footprint', mode:'whole' },
     { sel:'#growth', key:'growth', label:'Module 1: Growth sites', mode:'whole' },
     { sel:'#flywheels', key:'flywheels', label:'Module 1: Reputation flywheels', mode:'whole' },
     { sel:'#engine', key:'engine', label:'Module 1: Name the flywheel', mode:'whole' },
@@ -54,34 +53,30 @@ window.LR_COURSE = {
   SECTIONS:[
     { k:'vision', no:'01', name:'The vision', how:'Open all four phrases' },
     { k:'numbers', no:'02', name:'The numbers', how:'Predict three numbers' },
-    { k:'footprint', no:'03', name:'Footprint', how:'Compare 2020 and 2026' },
-    { k:'growth', no:'04', name:'Growth sites', how:'Open all four growth sites' },
-    { k:'flywheels', no:'05', name:'Reputation flywheels', how:'Turn all three cards' },
-    { k:'engine', no:'06', name:'Name the flywheel', how:'Sort six moments' },
-    { k:'loop', no:'07', name:'The reputation loop', how:'Open all seven parts of the slide' },
-    { k:'resources', no:'08', name:'Match the resources', how:'Match four moments' },
-    { k:'wrap1', no:'09', name:'Module 1: take it to your team', how:'Build your sentence' },
-    { k:'shapes', no:'10', name:'What shapes reputation', how:'Open all four parts of the slide' },
-    { k:'radar', no:'11', name:'The trust radar', how:'Turn all four drivers' },
-    { k:'teamradar', no:'12', name:'Your team’s radar', how:'Rate your team on all four drivers' },
-    { k:'coverage', no:'13', name:'Reputation terrain', how:'Place four stories on the terrain' },
-    { k:'athletics', no:'14', name:'Example: athletics', how:'Follow the story to the end' },
-    { k:'circle', no:'15', name:'The second circle', how:'Turn all four cards' },
-    { k:'transcare', no:'16', name:'Example: transgender care', how:'Open all four steps' },
-    { k:'dynamics', no:'17', name:'Reputation dynamics', how:'Move through all five stages' },
-    { k:'early', no:'18', name:'Early or late', how:'Reach an outcome' },
-    { k:'wrap2', no:'19', name:'Module 2: take it to your team', how:'Build your sentence' },
-    { k:'achieve', no:'20', name:'Achieving the vision', how:'Open all four phrases' },
-    { k:'areas', no:'21', name:'Areas of focus', how:'Sort four initiatives' },
-    { k:'problems', no:'22', name:'Problems to solve', how:'Open all four problems' },
-    { k:'peers', no:'23', name:'Peer responses vary', how:'Predict three counts' },
-    { k:'core', no:'24', name:'Mission and margin', how:'Sort five moments' },
-    { k:'atvu', no:'25', name:'At Vanderbilt', how:'Reach an outcome' },
-    { k:'mindset', no:'26', name:'Leadership mindset', how:'Match four moves' },
-    { k:'levers', no:'27', name:'Key levers', how:'Rate your team on all four levers' },
-    { k:'wrap3', no:'28', name:'Module 3: take it to your team', how:'Build your sentence' },
-    { k:'quiz', no:'29', name:'Quick check', how:'Score 6 of 8' },
-    { k:'nextstep', no:'30', name:'This week', how:'Commit to all four moves' }
+    { k:'growth', no:'03', name:'Growth sites', how:'Open all four growth sites' },
+    { k:'flywheels', no:'04', name:'Reputation flywheels', how:'Turn all three cards' },
+    { k:'engine', no:'05', name:'Name the flywheel', how:'Sort six moments' },
+    { k:'loop', no:'06', name:'The reputation loop', how:'Open all seven parts of the slide' },
+    { k:'resources', no:'07', name:'Match the resources', how:'Match four moments' },
+    { k:'shapes', no:'08', name:'What shapes reputation', how:'Open all four parts of the slide' },
+    { k:'radar', no:'09', name:'The trust radar', how:'Turn all four drivers' },
+    { k:'teamradar', no:'10', name:'Your team’s radar', how:'Rate your team on all four drivers' },
+    { k:'coverage', no:'11', name:'Reputation terrain', how:'Place four stories on the terrain' },
+    { k:'athletics', no:'12', name:'Example: athletics', how:'Follow the story to the end' },
+    { k:'circle', no:'13', name:'The second circle', how:'Turn all four cards' },
+    { k:'transcare', no:'14', name:'Example: transgender care', how:'Open all four steps' },
+    { k:'dynamics', no:'15', name:'Reputation dynamics', how:'Move through all five stages' },
+    { k:'early', no:'16', name:'Early or late', how:'Reach an outcome' },
+    { k:'achieve', no:'17', name:'Achieving the vision', how:'Open all four phrases' },
+    { k:'areas', no:'18', name:'Areas of focus', how:'Sort four initiatives' },
+    { k:'problems', no:'19', name:'Problems to solve', how:'Open all four problems' },
+    { k:'peers', no:'20', name:'Peer responses vary', how:'Predict three counts' },
+    { k:'core', no:'21', name:'Mission and margin', how:'Sort five moments' },
+    { k:'atvu', no:'22', name:'At Vanderbilt', how:'Reach an outcome' },
+    { k:'mindset', no:'23', name:'Leadership mindset', how:'Match four moves' },
+    { k:'levers', no:'24', name:'Key levers', how:'Rate your team on all four levers' },
+    { k:'quiz', no:'25', name:'Quick check', how:'Score 6 of 8' },
+    { k:'nextstep', no:'26', name:'This week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
@@ -135,15 +130,6 @@ window.LR_COURSE = {
       done:'Three numbers predicted. The next page shows six more of the Chancellor’s charts.'
     },
     charts:{ type:'chartset', charts:[1, 3, 4, 5, 7, 8] },
-    footprint:{
-      type:'compare',
-      a:{ src:'../assets/img/deck/chancellor-footprint-2020.jpg', alt:'Vanderbilt University Footprint in 2020: a map of the United States with one gold marker, at Nashville.', label:'2020', say:'One marker: Nashville.' },
-      b:{ src:'../assets/img/deck/chancellor-footprint-2026.jpg', alt:'Vanderbilt University Footprint in 2026: gold markers at Nashville, Chattanooga, New York, San Francisco, and West Palm Beach, each linked to Nashville by an arc.', label:'2026', say:'Five markers: Nashville, Chattanooga, New York, San Francisco, and West Palm Beach.' },
-      w:1600, h:835,
-      label:'Compare the 2020 and 2026 footprint maps',
-      caption:'Vanderbilt University Footprint in 2020 and in 2026, from Chancellor Daniel Diermeier’s Symposium slides.',
-      done:'You compared the 2020 and 2026 maps.'
-    },
     flywheels:{
       type:'flip',
       figure:'<div class="lr-deck"><svg viewBox="20 20 420 420" aria-hidden="true" focusable="false"><defs><path id="lrFwT0" d="M72.1 281.3 A166 166 0 0 1 201.2 66.5"/><path id="lrFwT1" d="M264.5 67.6 A166 166 0 0 1 386.0 286.8"/><path id="lrFwT2" d="M102.8 336.7 A166 166 0 0 0 353.4 341.1"/><linearGradient id="lrVg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3DFA6"/><stop offset=".5" stop-color="#CFAE70"/><stop offset="1" stop-color="#946E24"/></linearGradient></defs><path d="M48.3 303.4 A196 196 0 0 1 202.7 35.9 L227.1 64.0 L211.1 95.3 A136 136 0 0 0 103.9 280.9 L69.7 273.0 Z" class="fw fw1" data-hi="f1"/><text class="fwt" dy="5"><textPath href="#lrFwT0" startOffset="50%" text-anchor="middle">Execution with Ambition</textPath></text><path d="M257.3 35.9 A196 196 0 0 1 411.7 303.4 L375.2 310.5 L356.1 280.9 A136 136 0 0 0 248.9 95.3 L273.0 69.7 Z" class="fw fw2" data-hi="f2"/><text class="fwt" dy="5"><textPath href="#lrFwT1" startOffset="50%" text-anchor="middle">Values-Driven Leadership</textPath></text><path d="M384.5 350.7 A196 196 0 0 1 75.5 350.7 L87.7 315.5 L122.8 313.7 A136 136 0 0 0 337.2 313.7 L347.4 347.4 Z" class="fw fw3" data-hi="f3"/><text class="fwt" dy="5"><textPath href="#lrFwT2" startOffset="50%" text-anchor="middle">Athletics Momentum</textPath></text><path d="M168 178 H214 L230 232 L246 178 H292 L246 286 H214 Z" fill="url(#lrVg)"/><path d="M214 178 L230 232 L230 286 H214 L190 230 Z" fill="#000" opacity=".12"/><text x="230" y="318" text-anchor="middle" class="fwc">Reputation</text></svg></div>',
@@ -217,17 +203,6 @@ window.LR_COURSE = {
         'Being asked into the room where policy is made is which resource?'
       ],
       done:'All four matched. Each one, put to work, builds reputation again.'
-    },
-    wrap1:{
-      type:'build',
-      tpl:'Our team’s work serves {0}. Our next win could turn {1} and attract {2}. At our next team meeting, I will {3}.',
-      slots:[
-        { label:'Which vision', opts:['the Vanderbilt Vision', 'the Industry Vision'] },
-        { label:'Which flywheel', opts:['Execution with Ambition', 'Values-Driven Leadership', 'Athletics Momentum'] },
-        { label:'Which resource', opts:['talent', 'funding', 'partnerships', 'access and influence'] },
-        { label:'Your move', opts:['share one number from this module', 'show the 2020 and 2026 maps', 'ask which flywheel our work turns'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 2.'
     },
     /* ══════ Module 2: Reputational Stewardship (deck pages 17 to 23), version 3 ══════ */
     shapes:{
@@ -350,17 +325,6 @@ window.LR_COURSE = {
         e3:{ end:true, h:'Recovered, at a cost', t:'You acted where the lines cross: the typical time to act. The stakes were high and control had slipped, so the story was already shaped by others, including activists in the second circle.', debrief:'Same fix, same apology, three days later. The optimal time to act was Monday.' },
         e4:{ end:true, h:'The story is told without you', t:'Silence let others define the issue. The media and the second circle filled the gap, and a billing glitch became a story about whether your office cares.', debrief:'Late and silent misses every driver of trust. On the dynamics slide, control is now low and the stakes are high.' }
       }
-    },
-    wrap2:{
-      type:'build',
-      tpl:'Our team&rsquo;s thinnest driver of trust is {0}. One small issue in our area is {1}, and we will act on it {2}. At our next team meeting, I will {3}.',
-      slots:[
-        { label:'Thinnest driver', opts:['empathy', 'transparency', 'expertise', 'commitment'] },
-        { label:'A small issue', opts:['a confusing form', 'a slow reply', 'a recurring complaint', 'a workaround'] },
-        { label:'When', opts:['this week', 'before it reaches the media', 'before the second circle finds it'] },
-        { label:'Your move', opts:['draw our trust radar', 'place a story on the terrain', 'name who speaks for us'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 3.'
     },
     /* ══════ Module 3: Mission and Margin (deck pages 24 to 34), version 3 ══════ */
     achieve:{
@@ -492,16 +456,6 @@ window.LR_COURSE = {
       low:'Your thinnest lever: {dims}. Start there: it is where the next gain is.',
       high:'Every lever reaches the outer ring. Share how your team does it with a peer unit.'
     },
-    wrap3:{
-      type:'build',
-      tpl:'Our team&rsquo;s work can help answer problem {0}. Before our next spending decision, we will {1}. Our first key lever: {2}.',
-      slots:[
-        { label:'Which problem', opts:['1, core capabilities at speed and scale', '2, primary drivers of solutions', '3, politicized bastions of ideology', '4, no longer viewed as essential'] },
-        { label:'Which mindset', opts:['steward purpose and performance', 'use mission to guide priorities', 'build trust through transparency', 'think long-term about trade-offs'] },
-        { label:'Which lever', opts:['understand where money goes', 'use data and discipline', 'collaborate with finance', 'pilot, learn, scale'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, the quick check.'
-    }
   },
   CHARTS:[
     {
@@ -773,7 +727,7 @@ window.LR_COURSE = {
       {
         title:'Vision, Strategy & the Future of Vanderbilt',
         no:'Module 1',
-        keys:['vision', 'numbers', 'footprint', 'growth', 'flywheels', 'engine', 'loop', 'resources', 'wrap1'],
+        keys:['vision', 'numbers', 'growth', 'flywheels', 'engine', 'loop', 'resources'],
         ideas:[
           [
             'Two visions.',
@@ -792,7 +746,7 @@ window.LR_COURSE = {
       {
         title:'Reputational Stewardship',
         no:'Module 2',
-        keys:['shapes', 'radar', 'teamradar', 'coverage', 'athletics', 'circle', 'transcare', 'dynamics', 'early', 'wrap2'],
+        keys:['shapes', 'radar', 'teamradar', 'coverage', 'athletics', 'circle', 'transcare', 'dynamics', 'early'],
         ideas:[
           ['Reputation is made in public.', 'The university speaks to its audiences. The media surrounds them, and activists form a second circle.'],
           ['Trust has four drivers.', 'Empathy, transparency, expertise, and commitment. A strong response reaches all four.'],
@@ -802,7 +756,7 @@ window.LR_COURSE = {
       {
         title:'Mission and Margin',
         no:'Module 3',
-        keys:['achieve', 'areas', 'problems', 'peers', 'core', 'atvu', 'mindset', 'levers', 'wrap3'],
+        keys:['achieve', 'areas', 'problems', 'peers', 'core', 'atvu', 'mindset', 'levers'],
         ideas:[
           [
             'Uncommon speed, agility and scale.',

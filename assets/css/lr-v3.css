@@ -651,3 +651,28 @@ section.v3 .v-rail::before{ flex-basis:80px; }
 /* once answered, the tiles step back so the reason has room */
 @media (min-width:901px){ #quiz.v3 .kq.right .kq-opts button, #quiz.v3 .kq.wrong .kq-opts button{ min-height:0; padding:10px 16px; } }
 @media (min-width:901px) and (max-height:820px){ #quiz.v3 .kq.right .kq-q, #quiz.v3 .kq.wrong .kq-q{ font-size:1.05em; } #quiz.v3 .kq.right .kq-opts button, #quiz.v3 .kq.wrong .kq-opts button{ padding:6px 12px; font-size:.88rem; } #quiz.v3 .kq-x{ margin-top:8px; padding-top:8px; font-size:.88rem; } #quiz.v3 .kq-nav{ margin-top:8px; } }
+/* wrap-up take-away card: what to leave with, and one thing to do this week (no interaction) */
+section.v3 .v3-take{ border:1px solid var(--bdg); border-left:4px solid var(--vu-gold); border-radius:var(--r); background:var(--card); padding:1.75em 2em; display:grid; gap:.6em; }
+section.v3 .v3-take .v-label{ margin-top:.4em; }
+section.v3 .v3-take .v-label:first-child{ margin-top:0; }
+section.v3 .v3-take p{ margin:0; font-family:var(--serif); font-size:1.45em; line-height:1.4; color:var(--tx); }
+section.v3 .v3-take .v3-take-do{ font-family:var(--sans); font-size:1.2em; font-weight:600; color:var(--strong); }
+/* footprint and growth sites: tappable pins over the Chancellor's 2026 map; they appear as the wipe uncovers 2026 */
+.lr-footmap .cmp-pin{ position:absolute; z-index:4; width:2.6em; height:2.6em; min-width:24px; min-height:24px; margin:0; padding:0; transform:translate(-50%,-50%); border-radius:50%; border:2px solid var(--vu-highlight); background:rgba(236,183,72,.12); cursor:pointer; transition:opacity .25s, transform .25s, background .2s; animation:lrPinPulse 2.2s ease-in-out infinite; }
+.lr-footmap .cmp-pin:hover, .lr-footmap .cmp-pin:focus-visible{ background:rgba(236,183,72,.35); transform:translate(-50%,-50%) scale(1.12); }
+.lr-footmap .cmp-pin:focus-visible{ outline:3px solid #fff; outline-offset:3px; }
+.lr-footmap .cmp-pin.on{ background:rgba(236,183,72,.55); box-shadow:0 0 0 6px rgba(236,183,72,.25); animation:none; }
+.lr-footmap .cmp-pin.off{ opacity:0; pointer-events:none; transform:translate(-50%,-50%) scale(.6); }
+@keyframes lrPinPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(236,183,72,.45); } 50%{ box-shadow:0 0 0 10px rgba(236,183,72,0); } }
+@media (prefers-reduced-motion:reduce){ .lr-footmap .cmp-pin{ animation:none; transition:none; } }
+/* footprint and growth sites page: map and card share the screen */
+#growth .lr-footmap{ max-width:min(100%, calc((100vh - 300px) * 0.46 * 1.916)); margin:0 auto .6em; }
+#growth .lr-footmap figcaption{ font-size:.8em; margin-top:.4em; }
+#growth .lr-footmap .cmp-ctl{ margin-top:.5em; }
+#growth .v-city{ padding:.9em 1.2em; }
+#growth .v-city b{ font-size:1.15em; }
+#growth .v-city p{ font-size:.88em; line-height:1.42; margin:.25em 0; }
+#growth .v-city .lr-meet{ font-size:1em; }
+#growth .v-cities button{ padding:.35em .9em; }
+@media (max-height:820px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 260px) * 0.4 * 1.916)); } #growth .lr-footmap figcaption{ display:none; } }
+@media (min-height:1000px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 300px) * 0.43 * 1.916)); } }

@@ -515,10 +515,12 @@ var NUMS = D.NUMS || [];
    Tap a pin, a label, or a chip; done when all four growth sites (not home) are seen. */
 (function(){
   var CT = D.CITIES, sec = $('#growth'); if(!CT || !sec) return;
-  var map = $('.us-map', sec), chips = $('.v-cities', sec), card = $('#cityCard'), task = $('.v-task', sec), st = $('#growthStatus'), seen = {}, sites = ['nyc', 'wpb', 'sf', 'chattanooga'];
+  var map = $('.us-map', sec) || $('.cmp-frame', sec), chips = $('.v-cities', sec), card = $('#cityCard'), task = $('.v-task', sec), st = $('#growthStatus'), seen = {}, sites = ['nyc', 'wpb', 'sf', 'chattanooga'];
   function paint(){ var n = sites.filter(function(k){ return seen[k]; }).length; if(st) st.textContent = n + ' of 4 growth sites seen.' + (n === 4 ? ' Activity complete.' : ''); if(n === 4){ if(task) task.classList.add('done'); set('r-growth', 'All 4 growth sites seen'); progDone('growth'); } }
   function show(k, quiet){
     var c = CT[k]; if(!c) return;
+    /* on the combined footprint map, opening a site shows the 2026 slide */
+    var rr = $('.cmp-range', sec); if(rr && parseFloat(rr.value) > 0){ rr.value = 0; rr.dispatchEvent(new Event('input')); }
     seen[k] = 1; savePick('growth', k, 1);
     $$('.pin, .lbl', map).forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-city') === k); });
     $$('button[data-city]', chips).forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-city') === k ? 'true' : 'false'); });
@@ -989,18 +991,20 @@ window.setTimeout(pageEnter, 120);
    <input type="range" class="cmp-range" aria-label="..."></figure> */
 $$('.lr-compare').forEach(function(f){
   var fr = $('.cmp-frame', f), r = $('.cmp-range', f); if(!fr || !r) return;
-  function setPos(v){ v = Math.max(0, Math.min(100, v)); fr.style.setProperty('--pos', v + '%'); r.value = v; r.setAttribute('aria-valuetext', v < 15 ? f.getAttribute('data-b') : v > 85 ? f.getAttribute('data-a') : 'Both, divided at ' + Math.round(v) + ' percent'); }
+  function setPos(v){ v = Math.max(0, Math.min(100, v)); fr.style.setProperty('--pos', v + '%'); r.value = v; r.setAttribute('aria-valuetext', v < 15 ? f.getAttribute('data-b') : v > 85 ? f.getAttribute('data-a') : 'Both, divided at ' + Math.round(v) + ' percent');
+    /* site pins on the 2026 side appear as the wipe uncovers them */
+    $$('.cmp-pin', fr).forEach(function(p){ var off = parseFloat(p.getAttribute('data-x')) < v; p.classList.toggle('off', off); p.tabIndex = off ? -1 : 0; p.setAttribute('aria-hidden', off ? 'true' : 'false'); }); }
   r.addEventListener('input', function(){ setPos(parseFloat(r.value)); });
   var drag = false;
   function at(e){ var b = fr.getBoundingClientRect(); setPos((e.clientX - b.left) / b.width * 100); }
-  fr.addEventListener('pointerdown', function(e){ drag = true; try{ fr.setPointerCapture(e.pointerId); }catch(err){} at(e); });
+  fr.addEventListener('pointerdown', function(e){ if(e.target.closest('.cmp-pin')) return; drag = true; try{ fr.setPointerCapture(e.pointerId); }catch(err){} at(e); });
   fr.addEventListener('pointermove', function(e){ if(drag) at(e); });
   fr.addEventListener('pointerup', function(){ drag = false; });
   $$('[data-cmp]', f).forEach(function(b){ b.addEventListener('click', function(){ setPos(parseFloat(b.getAttribute('data-cmp'))); }); });
-  setPos(parseFloat(r.value) || 50);
+  setPos(isNaN(parseFloat(r.value)) ? 50 : parseFloat(r.value));
   /* a short demo sweep the first time the page opens, so people see it moves */
   var shown = false;
-  document.addEventListener('chart:page', function(){ if(shown || reduce || !f.closest('.page.cur')) return; shown = true; var t0 = null; function sw(ts){ if(t0 === null) t0 = ts; var k = (ts - t0) / 1600; if(k >= 1){ setPos(50); return; } setPos(50 + Math.sin(k * Math.PI * 2) * 22); requestAnimationFrame(sw); } window.setTimeout(function(){ requestAnimationFrame(sw); }, 500); });
+  document.addEventListener('chart:page', function(){ if(shown || reduce || f.hasAttribute('data-nosweep') || !f.closest('.page.cur')) return; shown = true; var t0 = null; function sw(ts){ if(t0 === null) t0 = ts; var k = (ts - t0) / 1600; if(k >= 1){ setPos(50); return; } setPos(50 + Math.sin(k * Math.PI * 2) * 22); requestAnimationFrame(sw); } window.setTimeout(function(){ requestAnimationFrame(sw); }, 500); });
 });
 
 /* ══════════ radar check: rate your own team on the four drivers of trust (not yet, partly, strongly);

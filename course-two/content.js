@@ -63,28 +63,25 @@ window.LR_COURSE = {
     { k:'groundgame', no:'09', name:'Unpacking the ground game', how:'Put four steps in order' },
     { k:'tempo', no:'10', name:'The tempo', how:'Sort six moments: spike or drumbeat' },
     { k:'payoff', no:'11', name:'Reputation to resources', how:'Match four numbers to their resource' },
-    { k:'wrap4', no:'12', name:'Module 4: take it to your team', how:'Build your sentence' },
-    { k:'moment', no:'13', name:'Before and today', how:'Answer eight cards' },
-    { k:'swot', no:'14', name:'Root causes', how:'Open all four quadrants' },
-    { k:'first100', no:'15', name:'First 100 days', how:'Reach an outcome in the scenario' },
-    { k:'connect', no:'16', name:'Key constituents', how:'Match five moves' },
-    { k:'radical', no:'17', name:'Radical Collaboration', how:'Turn all three principles' },
-    { k:'categories', no:'18', name:'Four categories', how:'Sort six initiatives' },
-    { k:'acorns', no:'19', name:'ACORNS values', how:'Match six behaviors' },
-    { k:'invest', no:'20', name:'Invest in people', how:'Turn all four cards' },
-    { k:'structures', no:'21', name:'Retaining key talent', how:'Open all five parts of the slide' },
-    { k:'turnover', no:'22', name:'Turnover', how:'Predict DO turnover in FY26' },
-    { k:'landscape', no:'23', name:'The Vanderbilt Way', how:'Turn both cards' },
-    { k:'potential', no:'24', name:'Untapped potential', how:'Open all four parts of the table' },
-    { k:'commitments', no:'25', name:'Fundraising success', how:'Predict new commitments in 2026' },
-    { k:'results', no:'26', name:'Driving value', how:'Answer five true or false cards' },
-    { k:'wrap5', no:'27', name:'Module 5: take it to your team', how:'Build your sentence' },
-    { k:'principles', no:'28', name:'Six principles', how:'Turn all six cards' },
-    { k:'teammoments', no:'29', name:'Team moments', how:'Reach an outcome in the scenario' },
-    { k:'rateteam', no:'30', name:'Rate your team', how:'Rate all six principles' },
-    { k:'wrap6', no:'31', name:'Module 6: take it to your team', how:'Build your sentence' },
-    { k:'quiz', no:'32', name:'Quick check', how:'Score 6 of 8' },
-    { k:'nextstep', no:'33', name:'This week', how:'Commit to all four moves' }
+    { k:'moment', no:'12', name:'Before and today', how:'Answer eight cards' },
+    { k:'swot', no:'13', name:'Root causes', how:'Open all four quadrants' },
+    { k:'first100', no:'14', name:'First 100 days', how:'Reach an outcome in the scenario' },
+    { k:'connect', no:'15', name:'Key constituents', how:'Match five moves' },
+    { k:'radical', no:'16', name:'Radical Collaboration', how:'Turn all three principles' },
+    { k:'categories', no:'17', name:'Four categories', how:'Sort six initiatives' },
+    { k:'acorns', no:'18', name:'ACORNS values', how:'Match six behaviors' },
+    { k:'invest', no:'19', name:'Invest in people', how:'Turn all four cards' },
+    { k:'structures', no:'20', name:'Retaining key talent', how:'Open all five parts of the slide' },
+    { k:'turnover', no:'21', name:'Turnover', how:'Predict DO turnover in FY26' },
+    { k:'landscape', no:'22', name:'The Vanderbilt Way', how:'Turn both cards' },
+    { k:'potential', no:'23', name:'Untapped potential', how:'Open all four parts of the table' },
+    { k:'commitments', no:'24', name:'Fundraising success', how:'Predict new commitments in 2026' },
+    { k:'results', no:'25', name:'Driving value', how:'Answer five true or false cards' },
+    { k:'principles', no:'26', name:'Six principles', how:'Turn all six cards' },
+    { k:'teammoments', no:'27', name:'Team moments', how:'Reach an outcome in the scenario' },
+    { k:'rateteam', no:'28', name:'Rate your team', how:'Rate all six principles' },
+    { k:'quiz', no:'29', name:'Quick check', how:'Score 6 of 8' },
+    { k:'nextstep', no:'30', name:'This week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
@@ -246,18 +243,6 @@ window.LR_COURSE = {
       ],
       done:'All four matched. Reputation creates resources, and resources build reputation.'
     },
-    wrap4:{
-      type:'build',
-      tpl:'This month, I will {0}. I will start with {1}, using {2}. At our next team meeting, I will {3}.',
-      slots:[
-        { label:'What you can do', opts:['understand the university’s strategy and differentiation', 'share a reputation asset to engage stakeholders', 'equip others to share Vanderbilt’s story', 'treat a difficult topic as an opportunity to engage'] },
-        { label:'Which stakeholders', opts:['donors', 'government', 'business', 'prospective parents'] },
-        { label:'Which asset', opts:['a story', 'a speech', 'earned media', 'social media'] },
-        { label:'Your move', opts:['show the heard or spread slide', 'ask which flywheel our work turns', 'plan a drumbeat behind our next spike'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 5.'
-    },
-
     /* ── Module 5 · Vice Chancellor John Lutz ── */
     moment:{
       type:'spot',
@@ -473,18 +458,6 @@ window.LR_COURSE = {
       ],
       done:'All five answered. DAR is now a strategic asset for Vanderbilt.'
     },
-    wrap5:{
-      type:'build',
-      tpl:'On my team, one root cause is {0}. A fix would start in {1}. Our first early win could be {2}. As we change, I will {3}.',
-      slots:[
-        { label:'A root cause', opts:['work in silos', 'out of date systems', 'little shared credit'] },
-        { label:'Which category', opts:['people and culture', 'collaboration', 'motivation and incentives', 'processes and systems'] },
-        { label:'An early win', opts:['one simpler process', 'cleaner data', 'a shared win we celebrate'] },
-        { label:'Hold both at once', opts:['listen while acting', 'assess but move quickly', 'face resistance, give hope'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 6.'
-    },
-
     /* ── Module 6 · Candice Storey Lee (her principles and wording, unchanged) ── */
     principles:{
       type:'flip',
@@ -539,16 +512,6 @@ window.LR_COURSE = {
       high:'Every side reaches the outer ring. Ask your team to rate it too, and compare.',
       done:'Just for you. Nothing is scored.'
     },
-    wrap6:{
-      type:'build',
-      tpl:'Right now, my team needs {0} most. At our next meeting, I will {1}. I will model it by {2}.',
-      slots:[
-        { label:'Which principle', opts:['values-based decisions', 'the conditions for success', 'emotional agility', 'joy in the process', 'developing talent', 'leaders who model it'] },
-        { label:'Your move', opts:['ask what each person needs to do their best work', 'name the value behind a hard call', 'celebrate the process, not only the result', 'give one person a stretch role, with support'] },
-        { label:'How you model it', opts:['being steady when things are hard', 'being discreet with what is entrusted to me', 'showing up the same way for everyone'] }
-      ],
-      doneText:'Your sentence prints on your takeaway. Next, a quick check.'
-    }
   },
   CHARTS:[
     { type:'line', title:'We are making typical DAR job hopping more difficult', sub:'Turnover, FY19 to FY26. DO: development officers.', fmt:'pct', max:30, step:5, w:640, h:380, cats:['FY19', 'FY20', 'FY21', 'FY22', 'FY23', 'FY24', 'FY25', 'FY26'], hide:1,
@@ -647,7 +610,7 @@ window.LR_COURSE = {
       {
         title:'Communication, Storytelling & Brand',
         no:'Module 4',
-        keys:['route', 'brandrep', 'today', 'fighter', 'ring', 'assets', 'aircover', 'spread', 'groundgame', 'tempo', 'payoff', 'wrap4'],
+        keys:['route', 'brandrep', 'today', 'fighter', 'ring', 'assets', 'aircover', 'spread', 'groundgame', 'tempo', 'payoff'],
         ideas:[
           ['Brand and reputation are separate but related.', 'Brand is what you say about yourself; reputation is what others say about you. The goal is to close the gap.'],
           ['The goal is for the message to spread.', 'Reputation creates resources when air cover is carried through ground game.'],
@@ -657,7 +620,7 @@ window.LR_COURSE = {
       {
         title:'Entrepreneurial Mindset',
         no:'Module 5',
-        keys:['moment', 'swot', 'first100', 'connect', 'radical', 'categories', 'acorns', 'invest', 'structures', 'turnover', 'landscape', 'potential', 'commitments', 'results', 'wrap5'],
+        keys:['moment', 'swot', 'first100', 'connect', 'radical', 'categories', 'acorns', 'invest', 'structures', 'turnover', 'landscape', 'potential', 'commitments', 'results'],
         ideas:[
           ['Drill into root causes.', 'Unlocking performance required that we drill into root causes.'],
           ['Change leadership requires ambidexterity.', 'Listen carefully to key constituents while reinforcing necessary actions.'],
@@ -667,7 +630,7 @@ window.LR_COURSE = {
       {
         title:'High-Performing Teams',
         no:'Module 6',
-        keys:['principles', 'teammoments', 'rateteam', 'wrap6'],
+        keys:['principles', 'teammoments', 'rateteam'],
         ideas:[
           ['Every decision, values-based.', 'Name the core values, then act on them consistently.'],
           ['Create the conditions for success.', 'Build an environment that equips and empowers people to contribute at their highest level.'],
