@@ -1,6 +1,8 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE ONE · content ══════════
    The Chancellor's Symposium talk, in the order of his FINAL deck:
-   Module 1: Vision, Strategy & the Future of Vanderbilt (deck pages 2 to 16);
+   Module 1: Vision, Strategy & the Future of Vanderbilt (deck pages 1 to 16), rebuilt to
+   the version 3 standard (docs/design-v3.md) with the activity library (ACTIVITIES below,
+   drawn by ../assets/js/lr-activities.js);
    Module 2: Reputational Stewardship (pages 17 to 23);
    Module 3: Mission and Margin (pages 24 to 35, closing on the Everest quote).
    Then a quick check and the capstone, its own section at the end. Week of November 2.
@@ -12,11 +14,16 @@ window.LR_COURSE = {
   PLAN:[
     { sel:'section.hero', key:'home', label:'Welcome', mode:'whole' },
     { sel:'#week', key:'route', label:'This week', mode:'whole' },
-    { sel:'#vision', key:'vision', label:'Module 1: The vision', mode:'pages' },
-    { sel:'#momentum', key:'numbers', label:'Module 1: Momentum', mode:'whole' },
-    { sel:'#footprint', key:'footprint', label:'Module 1: Footprint', mode:'pages' },
+    { sel:'#m1open', key:'m1', label:'Module 1: Welcome', mode:'whole' },
+    { sel:'#vision', key:'vision', label:'Module 1: The vision', mode:'whole' },
+    { sel:'#numbers', key:'numbers', label:'Module 1: The numbers', mode:'whole' },
+    { sel:'#charts', key:'charts', label:'Module 1: Six more numbers', mode:'whole' },
+    { sel:'#footprint', key:'footprint', label:'Module 1: Footprint', mode:'whole' },
     { sel:'#growth', key:'growth', label:'Module 1: Growth sites', mode:'whole' },
-    { sel:'#engine', key:'engine', label:'Module 1: How reputation enables the mission', mode:'pages' },
+    { sel:'#flywheels', key:'flywheels', label:'Module 1: Reputation flywheels', mode:'whole' },
+    { sel:'#engine', key:'engine', label:'Module 1: Name the flywheel', mode:'whole' },
+    { sel:'#loop', key:'loop', label:'Module 1: How reputation enables the mission', mode:'whole' },
+    { sel:'#resources', key:'resources', label:'Module 1: Match the resources', mode:'whole' },
     { sel:'#wrap1', key:'wrap1', label:'Module 1: Wrap-up', mode:'whole' },
     { sel:'#reputation', key:'trust', label:'Module 2: Reputational stewardship', mode:'pages' },
     { sel:'#terrain', key:'terrain', label:'Module 2: Reputation terrain', mode:'pages' },
@@ -35,26 +42,32 @@ window.LR_COURSE = {
     { sel:'#learn', key:'learn', label:'Keep going', mode:'whole', extras:['footer'] }
   ],
   SECTIONS:[
-    { k:'numbers', no:'01', name:'Momentum', how:'Guess all five numbers' },
-    { k:'growth', no:'02', name:'Growth sites', how:'Open all four growth sites' },
-    { k:'engine', no:'03', name:'Reputation flywheels', how:'Sort four moments by flywheel' },
-    { k:'trust', no:'04', name:'The trust radar', how:'Find the strongest call in two situations' },
-    { k:'terrain', no:'05', name:'Reputation terrain', how:'Place four stories' },
-    { k:'timing', no:'06', name:'Reputation dynamics', how:'Sort five moments' },
-    { k:'mission', no:'07', name:'Problems to solve', how:'Match four moments to the problem they speak to' },
-    { k:'margin', no:'08', name:'Mission and margin', how:'Find the strongest call in two situations' },
-    { k:'quiz', no:'09', name:'Quick check', how:'Score 6 of 8' },
-    { k:'capstone', no:'10', name:'Capstone: your focus area', how:'Sort five challenges' },
-    { k:'brief', no:'11', name:'Capstone: your brief', how:'Download the fillable brief' },
-    { k:'nextstep', no:'12', name:'Capstone: this week', how:'Commit to all four moves' }
+    { k:'vision', no:'01', name:'The vision', how:'Open all four phrases' },
+    { k:'numbers', no:'02', name:'The numbers', how:'Predict three numbers' },
+    { k:'footprint', no:'03', name:'Footprint', how:'Compare 2020 and 2026' },
+    { k:'growth', no:'04', name:'Growth sites', how:'Open all four growth sites' },
+    { k:'flywheels', no:'05', name:'Reputation flywheels', how:'Turn all three cards' },
+    { k:'engine', no:'06', name:'Name the flywheel', how:'Sort six moments' },
+    { k:'loop', no:'07', name:'The reputation loop', how:'Open all seven parts of the slide' },
+    { k:'resources', no:'08', name:'Match the resources', how:'Match four moments' },
+    { k:'wrap1', no:'09', name:'Take it to your team', how:'Build your sentence' },
+    { k:'trust', no:'10', name:'The trust radar', how:'Find the strongest call in two situations' },
+    { k:'terrain', no:'11', name:'Reputation terrain', how:'Place four stories' },
+    { k:'timing', no:'12', name:'Reputation dynamics', how:'Sort five moments' },
+    { k:'mission', no:'13', name:'Problems to solve', how:'Match four moments to the problem they speak to' },
+    { k:'margin', no:'14', name:'Mission and margin', how:'Find the strongest call in two situations' },
+    { k:'quiz', no:'15', name:'Quick check', how:'Score 6 of 8' },
+    { k:'capstone', no:'16', name:'Capstone: your focus area', how:'Sort five challenges' },
+    { k:'brief', no:'17', name:'Capstone: your brief', how:'Download the fillable brief' },
+    { k:'nextstep', no:'18', name:'Capstone: this week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
   STOPS:[
     {
       h:'Module 1: Vision, Strategy &amp; the Future of <em>Vanderbilt</em>',
-      p:'The vision, the numbers since 2020, Vanderbilt’s footprint, and how reputation enables the mission.',
-      tags:['The vision', 'Momentum', 'Footprint', 'Reputation flywheels']
+      p:'Two visions, the numbers since 2020, Vanderbilt’s footprint and growth sites, and how reputation enables the mission.',
+      tags:['The vision', 'The numbers', 'Footprint and growth sites', 'Reputation flywheels and the loop']
     },
     {
       h:'Module 2: Reputational <em>Stewardship</em>',
@@ -74,49 +87,129 @@ window.LR_COURSE = {
   ],
   BEST_LABEL:'The strongest call: ',
   TRY_AGAIN:'Now find the strongest call. ',
-  NUMS:[
-    {
-      lab:'Selectivity',
-      q:'In 2020-21, Vanderbilt admitted 11.6% of undergraduate applicants. In 2026-27?',
-      opts:['About 9%', 'About 7%', '4.6%'],
-      a:2,
-      big:'4.6%',
-      x:'The admission rate fell from 11.6% in 2020-21 to 4.6% in 2026-27, so Vanderbilt grew far more selective, and yield, the share of admitted students who enroll, rose from 39.9% to 65.6%. More of the best students choose Vanderbilt first.'
+  /* ══════ Module 1 activities (version 3). Contracts: the header of ../assets/js/lr-activities.js ══════
+     Every claim follows the FINAL deck wording; every practice moment is labeled hypothetical. */
+  ACTIVITIES:{
+    vision:{
+      type:'explore',
+      slides:[
+        { label:'Vanderbilt Vision', html:'Vanderbilt will [[define|define, and be,]] the [[great|great university of the 21st century]].' },
+        { label:'Industry Vision', html:'Vanderbilt will help [[reclaim|reclaim the essential role of leading research universities]] in [[prosperity|driving American prosperity]].' }
+      ],
+      spots:{
+        define:{ title:'Define, and be', text:'Two jobs in one line. To define is to set the standard that others follow. To be is to meet that standard in the work itself, every day, including your team’s.' },
+        great:{ title:'The great university of the 21st century', text:'The aim is greatness for this century. The next pages show the numbers since 2020, so you can judge the progress for yourself.' },
+        reclaim:{ title:'Reclaim the essential role', text:'To reclaim a role is to win it back. This vision reaches past Vanderbilt, to leading research universities as a group.' },
+        prosperity:{ title:'Driving American prosperity', text:'This is the role: research universities as drivers of the country’s prosperity. Vanderbilt will help lead that work.' }
+      },
+      prompt:'Tap a gold phrase on either slide. Each one opens here.',
+      done:'You opened all four phrases in the two visions.'
     },
-    {
-      lab:'Net new commitments',
-      q:'Net new commitments were $127 million in FY20. In FY26?',
-      opts:['About $300M', 'About $500M', '$757M'],
-      a:2,
-      big:'$757M',
-      x:'Net new commitments rose from $127 million in FY20 to $757 million in FY26, about six times as much.'
+    numbers:{
+      type:'predict',
+      rounds:[
+        { title:'Undergraduate Selectivity', chart:0, q:'In 2020-21, Vanderbilt admitted 11.6% of undergraduate applicants. What share did it admit in 2026-27?', min:0, max:15, step:0.1, start:9, post:'%', dec:1, answer:4.6, close:1.5, x:'Selectivity fell from 11.6% in 2020-21 to 4.6% in 2026-27. Yield, the share of admitted students who enroll, rose from 39.9% to 65.6%.' },
+        { title:'Net New Commitments', chart:2, q:'Net new commitments were $127M in FY20. What were they in FY26?', min:0, max:800, step:5, start:300, pre:'$', post:'M', dec:0, answer:757, close:100, x:'Net new commitments rose to $757M in FY26, about six times the FY20 figure.' },
+        { title:'Football Wins', chart:6, q:'The 2020 football team went 0-9, in a season shortened by the COVID-19 pandemic. How many regular-season games did the 2025 team win?', min:0, max:12, step:1, start:6, dec:0, answer:10, close:1, chartMax:12, x:'The 2025 football team had its first-ever 10-win regular season.' }
+      ],
+      done:'Three numbers predicted. The next page shows six more of the Chancellor’s charts.'
     },
-    {
-      lab:'Research funding',
-      q:'Research funding at VU and VUMC together was about $825 million in FY20. In FY25?',
-      opts:['About $1.0B', 'About $1.2B', 'More than $1.4B'],
-      a:2,
-      big:'$1.4B+',
-      x:'Total research funding passed $1.4 billion in FY25: $520 million at VU and $883 million at VUMC.'
+    charts:{ type:'chartset', charts:[1, 3, 4, 5, 7, 8] },
+    footprint:{
+      type:'compare',
+      a:{ src:'../assets/img/deck/chancellor-footprint-2020.jpg', alt:'Vanderbilt University Footprint in 2020: a map of the United States with one gold marker, at Nashville.', label:'2020', say:'One marker: Nashville.' },
+      b:{ src:'../assets/img/deck/chancellor-footprint-2026.jpg', alt:'Vanderbilt University Footprint in 2026: gold markers at Nashville, Chattanooga, New York, San Francisco, and West Palm Beach, each linked to Nashville by an arc.', label:'2026', say:'Five markers: Nashville, Chattanooga, New York, San Francisco, and West Palm Beach.' },
+      w:1600, h:835,
+      label:'Compare the 2020 and 2026 footprint maps',
+      caption:'Vanderbilt University Footprint in 2020 and in 2026, from Chancellor Daniel Diermeier’s Symposium slides.',
+      done:'You compared the 2020 and 2026 maps.'
     },
-    {
-      lab:'Endowment',
-      q:'The endowment was $6.95 billion on June 30, 2020. On June 30, 2026?',
-      opts:['About $8.5B', 'About $10B', '$12.09B'],
-      a:2,
-      big:'$12.09B',
-      x:'The endowment grew from $6.95 billion to $12.09 billion, and net assets nearly doubled, from $6.6 billion to $13.1 billion.'
+    flywheels:{
+      type:'flip',
+      figure:'<div class="lr-deck"><svg viewBox="20 20 420 420" aria-hidden="true" focusable="false"><defs><path id="lrFwT0" d="M72.1 281.3 A166 166 0 0 1 201.2 66.5"/><path id="lrFwT1" d="M264.5 67.6 A166 166 0 0 1 386.0 286.8"/><path id="lrFwT2" d="M102.8 336.7 A166 166 0 0 0 353.4 341.1"/><linearGradient id="lrVg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3DFA6"/><stop offset=".5" stop-color="#CFAE70"/><stop offset="1" stop-color="#946E24"/></linearGradient></defs><path d="M48.3 303.4 A196 196 0 0 1 202.7 35.9 L227.1 64.0 L211.1 95.3 A136 136 0 0 0 103.9 280.9 L69.7 273.0 Z" class="fw fw1" data-hi="f1"/><text class="fwt" dy="5"><textPath href="#lrFwT0" startOffset="50%" text-anchor="middle">Execution with Ambition</textPath></text><path d="M257.3 35.9 A196 196 0 0 1 411.7 303.4 L375.2 310.5 L356.1 280.9 A136 136 0 0 0 248.9 95.3 L273.0 69.7 Z" class="fw fw2" data-hi="f2"/><text class="fwt" dy="5"><textPath href="#lrFwT1" startOffset="50%" text-anchor="middle">Values-Driven Leadership</textPath></text><path d="M384.5 350.7 A196 196 0 0 1 75.5 350.7 L87.7 315.5 L122.8 313.7 A136 136 0 0 0 337.2 313.7 L347.4 347.4 Z" class="fw fw3" data-hi="f3"/><text class="fwt" dy="5"><textPath href="#lrFwT2" startOffset="50%" text-anchor="middle">Athletics Momentum</textPath></text><path d="M168 178 H214 L230 232 L246 178 H292 L246 286 H214 Z" fill="url(#lrVg)"/><path d="M214 178 L230 232 L230 286 H214 L190 230 Z" fill="#000" opacity=".12"/><text x="230" y="318" text-anchor="middle" class="fwc">Reputation</text></svg></div>',
+      cards:[
+        { front:'Execution with Ambition', hi:'f1', back:'<p>Set big goals, then deliver them. Visible results add to Vanderbilt’s reputation.</p><p class="la-eg"><b>Hypothetical.</b> A new residential college opens the week it was promised.</p>' },
+        { front:'Values-Driven Leadership', hi:'f2', back:'<p>Lead by the values the university says it holds: in public, and most of all under pressure.</p><p class="la-eg"><b>Hypothetical.</b> A dean explains a hard decision plainly, by those values.</p>' },
+        { front:'Athletics Momentum', hi:'f3', back:'<p>Wins put Vanderbilt in front of national audiences.</p><p class="la-eg"><b>From the numbers.</b> A first-ever 10-win football season and a Sweet 16 trip.</p>' }
+      ],
+      done:'All three flywheels turned. Next, sort six moments by the one each turns.'
     },
-    {
-      lab:'Football wins',
-      q:'The 2020 football team went 0-9. How many regular-season games did the 2025 team win?',
-      opts:['7', '8', '10'],
-      a:2,
-      big:'10',
-      x:'The 2025 team had the first 10-win regular season in program history. Men’s basketball went 27-9 in 2025-26, and women’s basketball finished 29-5 and reached the Sweet 16.'
+    engine:{
+      type:'sort',
+      noun:'moment',
+      buckets:['Execution with Ambition', 'Values-Driven Leadership', 'Athletics Momentum'],
+      groupLabel:'The three reputation flywheels',
+      items:[
+        { t:'A new residential college opens on schedule, and students move in the week it was promised.', short:'College opens on schedule', a:0, why:'An ambitious goal, delivered as promised.', hint:'What made it notable: a big goal, met on time.' },
+        { t:'A sold-out home game becomes the first campus visit for hundreds of prospective families.', short:'Sold-out home game', a:2, why:'Success on the field becomes a first impression of the university.', hint:'Where did those families first meet Vanderbilt?' },
+        { t:'A dean faces a hard, public decision and explains it plainly, by the values the university says it holds.', short:'Dean explains a hard call', a:1, why:'Acting on stated values in public, and explaining the call, turns this flywheel.', hint:'Look at how the decision was made and explained.' },
+        { t:'A national broadcast of a basketball win shows the campus to millions of viewers.', short:'National broadcast', a:2, why:'Athletic success brings national attention to the whole university.', hint:'What put Vanderbilt in front of millions?' },
+        { t:'A research team stands up a new institute in one year instead of three, and delivers its first results on time.', short:'Institute in one year', a:0, why:'A bold goal, met with speed and visible results.', hint:'Speed, scale, and delivery point to one flywheel.' },
+        { t:'A campus leader keeps a promise to an open, respectful process, even when a faster, quieter path is available.', short:'Open process kept', a:1, why:'People notice when leaders hold to their values under pressure.', hint:'What did the leader hold to, when it would have been easier not to?' }
+      ],
+      done:'All six moments sorted.'
+    },
+    loop:{
+      type:'explore',
+      figure:'<div class="lr-deck"><svg viewBox="0 0 640 372" aria-hidden="true" focusable="false"> <defs><linearGradient id="lrLg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7C77A"/><stop offset="1" stop-color="#8BA18E"/></linearGradient> <marker id="lrLa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E7C77A"/></marker> <marker id="lrLb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8BA18E"/></marker> <marker id="lrLc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8BA18E"/></marker></defs> <path d="M522 66 H584 V232 H526" fill="none" stroke="url(#lrLg)" stroke-width="4" marker-end="url(#lrLb)"/> <path d="M118 232 H56 V66 H114" fill="none" stroke="url(#lrLg)" stroke-width="4" marker-end="url(#lrLa)"/> <rect x="120" y="28" width="400" height="76" rx="8" class="lpg"/><text x="320" y="78" text-anchor="middle" class="lpt">Reputation</text> <rect x="120" y="194" width="400" height="76" rx="8" class="lps"/><text x="320" y="244" text-anchor="middle" class="lpt">Resources</text> <path d="M166 272 V292" class="lpa" marker-end="url(#lrLc)"/><path d="M268 272 V292" class="lpa" marker-end="url(#lrLc)"/><path d="M371 272 V292" class="lpa" marker-end="url(#lrLc)"/><path d="M474 272 V292" class="lpa" marker-end="url(#lrLc)"/> <rect x="120" y="298" width="92" height="56" rx="6" class="lpb"/><text x="166" y="331" text-anchor="middle" class="lpu">Talent</text> <rect x="222" y="298" width="92" height="56" rx="6" class="lpb"/><text x="268" y="331" text-anchor="middle" class="lpu">Funding</text> <rect x="325" y="298" width="92" height="56" rx="6" class="lpb"/><text x="371" y="331" text-anchor="middle" class="lpu">Partnerships</text> <rect x="428" y="298" width="92" height="56" rx="6" class="lpb"/><text x="474" y="322" text-anchor="middle" class="lpu">Access and</text><text x="474" y="340" text-anchor="middle" class="lpu">Influence</text> </svg></div>',
+      pins:[
+        { id:'rep', x:18.75, y:7.5 },
+        { id:'attracts', x:91.25, y:40 },
+        { id:'builds', x:8.75, y:40 },
+        { id:'talent', x:18.75, y:80 },
+        { id:'funding', x:34.7, y:80 },
+        { id:'partners', x:50.8, y:80 },
+        { id:'access', x:66.9, y:80 }
+      ],
+      spots:{
+        rep:{ title:'Reputation', text:'The top of the Chancellor’s slide. Everything in the loop starts and ends here.' },
+        attracts:{ title:'Reputation attracts resources', text:'The arrow down the right side. A strong reputation draws resources to Vanderbilt. The slide names four of them.' },
+        builds:{ title:'Resources build reputation', text:'The arrow back up the left side. What those resources achieve builds more reputation, and the loop turns again.' },
+        talent:{ title:'Talent', text:'The students, faculty, and staff who choose Vanderbilt. Remember yield: 65.6% of admitted students enrolled in 2026-27.' },
+        funding:{ title:'Funding', text:'Gifts and research support. Net new commitments reached $757M in FY26, and research funding at VU and VUMC passed $1.4B in FY25.' },
+        partners:{ title:'Partnerships', text:'Organizations that choose to work with Vanderbilt, like EPB, its partner in the Institute for Quantum Innovation in Chattanooga.' },
+        access:{ title:'Access and influence', text:'A seat where decisions about research and higher education are made. It is how Vanderbilt can help reclaim the essential role of research universities.' }
+      },
+      prompt:'Tap each numbered spot on the slide, one through seven.',
+      done:'You opened every part of the loop.'
+    },
+    resources:{
+      type:'match',
+      heads:['Hypothetical moment', 'Resource it brings'],
+      left:[
+        { t:'A leading cancer researcher turns down two other offers to join a Vanderbilt lab.' },
+        { t:'A family foundation makes its largest gift ever to a Vanderbilt program.' },
+        { t:'A national laboratory invites Vanderbilt to co-lead a new research center.' },
+        { t:'A congressional committee asks a Vanderbilt expert to testify on research policy.' }
+      ],
+      right:[ { t:'Talent' }, { t:'Funding' }, { t:'Partnerships' }, { t:'Access and influence' } ],
+      show:[2, 0, 3, 1],
+      why:[
+        'Talent. A strong reputation helps a lab win the people it wants most.',
+        'Funding. Donors give where they trust the work will matter.',
+        'Partnerships. Other institutions choose partners whose reputation adds to their own.',
+        'Access and influence. A trusted reputation earns a seat where policy is shaped.'
+      ],
+      hint:[
+        'Who is choosing Vanderbilt here? A person.',
+        'What did the foundation bring? Money for the work.',
+        'An organization asking to work alongside Vanderbilt is which resource?',
+        'Being asked into the room where policy is made is which resource?'
+      ],
+      done:'All four matched. Each one, put to work, builds reputation again.'
+    },
+    wrap1:{
+      type:'build',
+      tpl:'Our team’s work serves {0}. Our next win could turn {1} and attract {2}. At our next team meeting, I will {3}.',
+      slots:[
+        { label:'Which vision', opts:['the Vanderbilt Vision', 'the Industry Vision'] },
+        { label:'Which flywheel', opts:['Execution with Ambition', 'Values-Driven Leadership', 'Athletics Momentum'] },
+        { label:'Which resource', opts:['talent', 'funding', 'partnerships', 'access and influence'] },
+        { label:'Your move', opts:['share one number from this module', 'show the 2020 and 2026 maps', 'ask which flywheel our work turns'] }
+      ],
+      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 2.'
     }
-  ],
-  NUM_PROG:'numbers',
+  },
   CHARTS:[
     {
       num:0,
@@ -215,7 +308,7 @@ window.LR_COURSE = {
       step:10,
       axis:'Regular Season Wins',
       col:'Season',
-      bars:[{ x:'2020-21', v:9, lab:'9' }, { x:'2025-26', v:27, lab:'27' }],
+      bars:[{ x:'2020-21', v:9, lab:'9', note:'1' }, { x:'2025-26', v:27, lab:'27' }],
       foot:'(1) The 2020-21 season was shortened by the COVID-19 pandemic. The team’s final record was 9-16 that year.'
     },
     {
@@ -278,33 +371,6 @@ window.LR_COURSE = {
     }
   },
   DRILLS:{
-    engine:{
-      opts:['Execution with Ambition', 'Values-Driven Leadership', 'Athletics Momentum'],
-      prog:'engine',
-      verb:'sorted',
-      items:[
-        {
-          s:'A new residential college opens on schedule, and students move in the week it was promised.',
-          a:0,
-          x:'Execution with Ambition: an ambitious goal, delivered as promised. That result feeds the reputation loop.'
-        },
-        {
-          s:'A dean faces a hard, public decision and explains it plainly, by the values the university says it holds.',
-          a:1,
-          x:'Values-Driven Leadership: acting on stated values in public, and explaining the call, turns this flywheel.'
-        },
-        {
-          s:'A sold-out home game becomes the first campus visit for hundreds of prospective families.',
-          a:2,
-          x:'Athletics Momentum: success on the field becomes a first impression of the university.'
-        },
-        {
-          s:'A campus leader keeps a promise to an open, respectful process, even when a faster, quieter path is available.',
-          a:1,
-          x:'Values-Driven Leadership again: people notice when leaders hold to their values under pressure.'
-        }
-      ]
-    },
     terrain:{
       opts:['Simple reporting', 'In-depth coverage', 'Extensive reporting', 'Mass-market coverage'],
       layout:'grid',
@@ -624,7 +690,6 @@ window.LR_COURSE = {
     }
   ],
   SCEN_POS:{ m1:0, m2:2, r1:2, r2:0 },
-  NUMS_POS:[1, 0, 2, 0, 1],
   QUIZ_POS:[0, 1, 3, 2, 1, 3, 0, 2],
   QUIZ_PASS:6,
   OVERVIEW:{
@@ -644,19 +709,19 @@ window.LR_COURSE = {
       {
         title:'Vision, Strategy & the Future of Vanderbilt',
         no:'Module 1',
-        keys:['numbers', 'engine'],
+        keys:['vision', 'numbers', 'footprint', 'growth', 'flywheels', 'engine', 'loop', 'resources', 'wrap1'],
         ideas:[
           [
-            'The vision is an instruction.',
-            'Vanderbilt will define, and be, the great university of the 21st century, and help reclaim the essential role of leading research universities.'
+            'Two visions.',
+            'Vanderbilt will define, and be, the great university of the 21st century, and help reclaim the essential role of leading research universities in driving American prosperity.'
           ],
           [
-            'The momentum is real.',
-            'Selectivity, yield, commitments, research funding, the endowment, and wins all moved since 2020, and the footprint grew beyond Nashville.'
+            'The numbers since 2020.',
+            'Selectivity, yield, net new commitments, research funding, the endowment, net assets, and wins, plus a footprint well beyond Nashville.'
           ],
           [
             'Reputation enables the mission.',
-            'Reputation attracts talent, funding, partnerships, and access and influence; three flywheels speed it up.'
+            'Three flywheels turn it: Execution with Ambition, Values-Driven Leadership, and Athletics Momentum. Reputation attracts talent, funding, partnerships, and access and influence; resources build reputation.'
           ]
         ]
       },

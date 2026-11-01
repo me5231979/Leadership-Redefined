@@ -869,6 +869,8 @@ function buildPrint(){
     if(k === (D.NUM_PROG || 'numbers')) NUMS.forEach(function(n, i){ if(pk[i] === undefined) return; rows.push([n.q, n.opts[pk[i]], n.big, pk[i] === n.a]); });
     Object.keys(CALL_PROG).forEach(function(cn){ if(CALL_PROG[cn].prog !== k) return; (CALL_SETS[cn] || []).forEach(function(sk){ var t = pk[sk]; if(!t || !t.length) return; var sc = SCENARIOS[sk], best = sc.opts.filter(function(o){ return o.best; })[0]; rows.push([sc.h + ': ' + sc.s, sc.opts[t[0]].t + (t.length > 1 ? ' (then tried ' + (t.length - 1) + ' more)' : ''), best ? best.t : '', sc.opts[t[0]].best]); }); });
     if(k === 'quiz') QUIZ.forEach(function(q, i){ if(pk[i] === undefined) return; rows.push([q.q, q.opts[pk[i]], q.opts[q.a], pk[i] === q.a]); });
+    /* the v3 activity library (lr-activities.js) adds its own rows: [item, my answer, expert answer, right?] */
+    if(window.LR_ACT_ROWS) rows = rows.concat(window.LR_ACT_ROWS(k) || []);
     if(!rows.length) return '';
     return '<tr class="ps-ans"><td colspan="2"><table class="ps-table ps-sub"><thead><tr><th>Item</th><th>My answer</th><th>Expert answer</th></tr></thead><tbody>' + rows.map(function(r){ return '<tr><td>' + esc(r[0]) + '</td><td>' + (r[3] ? '&#10003; ' : '') + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('') + '</tbody></table></td></tr>';
   }
