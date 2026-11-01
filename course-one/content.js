@@ -658,10 +658,11 @@ window.LR_COURSE = {
       url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/quantum-innovation/'
     },
     nashville:{
-      why:'Home. Every growth site runs on the systems and people built here.',
+      why:'Every growth site runs on the systems and people built here.',
       name:'Nashville',
       focus:'Home',
-      line:'Home since 1873: the residential campus and the heart of the university. Every growth site runs on the systems built here.',
+      narr:'growth/f5',
+      line:'Home since 1873: the residential campus and the heart of the university.',
       meet:'Every day. The back office Nashville already has is what each new site needs on day one.',
       url:'https://www.vanderbilt.edu/'
     }
