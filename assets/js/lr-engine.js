@@ -523,7 +523,7 @@ var NUMS = D.NUMS || [];
     $$('.pin, .lbl', map).forEach(function(p){ p.classList.toggle('on', p.getAttribute('data-city') === k); });
     $$('button[data-city]', chips).forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-city') === k ? 'true' : 'false'); });
     var ic = map.querySelector('.pin[data-city="' + k + '"] .ic');
-    card.innerHTML = '<span class="v-label">' + (ic ? '<svg viewBox="0 0 24 24" aria-hidden="true">' + ic.innerHTML + '</svg>' : '') + esc(c.focus) + '</span><b>' + esc(c.name) + '</b><p>' + esc(c.line) + '</p><p><b class="lr-meet">Where you meet it.</b> ' + esc(c.meet) + '</p><a href="' + esc(c.url) + '" target="_blank" rel="noopener">Read more about ' + esc(c.name) + '</a>';
+    card.innerHTML = '<span class="v-label">' + (ic ? '<svg viewBox="0 0 24 24" aria-hidden="true">' + ic.innerHTML + '</svg>' : '') + esc(c.focus) + '</span><b>' + esc(c.name) + '</b>' + (c.why ? '<p><b class="lr-meet">Why here.</b> ' + esc(c.why) + '</p>' : '') + '<p>' + esc(c.line) + '</p><p><b class="lr-meet">Where you meet it.</b> ' + esc(c.meet) + '</p><a href="' + esc(c.url) + '" target="_blank" rel="noopener">Read more about ' + esc(c.name) + '</a>';
     if(!quiet && c.narr) narrSub(c.narr);
     paint();
   }

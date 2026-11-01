@@ -1083,3 +1083,7 @@ a.bb-dot:hover::after, a.bb-dot:focus-visible::after{ opacity:1; transform:trans
   html.paged .lr-cap7:has(> div.later) > div.now{ grid-column:span 2; }
   html.paged .lr-cap7 > div.later{ grid-column:span 3; }
 }
+/* growth sites: the three reasons sit side by side under the map */
+.lr-why3 ol{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px 22px; }
+.lr-why3 ol li{ margin:0; }
+@media (max-width:900px){ .lr-why3 ol{ grid-template-columns:1fr; } }

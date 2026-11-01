@@ -15,6 +15,7 @@ window.LR_COURSE = {
     { sel:'#vision', key:'vision', label:'Module 1: The vision', mode:'pages' },
     { sel:'#momentum', key:'numbers', label:'Module 1: Momentum', mode:'whole' },
     { sel:'#footprint', key:'footprint', label:'Module 1: Footprint', mode:'pages' },
+    { sel:'#growth', key:'growth', label:'Module 1: Growth sites', mode:'whole' },
     { sel:'#engine', key:'engine', label:'Module 1: How reputation enables the mission', mode:'pages' },
     { sel:'#wrap1', key:'wrap1', label:'Module 1: Wrap-up', mode:'whole' },
     { sel:'#reputation', key:'trust', label:'Module 2: Reputational stewardship', mode:'pages' },
@@ -35,16 +36,17 @@ window.LR_COURSE = {
   ],
   SECTIONS:[
     { k:'numbers', no:'01', name:'Momentum', how:'Guess all five numbers' },
-    { k:'engine', no:'02', name:'Reputation flywheels', how:'Sort four moments by flywheel' },
-    { k:'trust', no:'03', name:'The trust radar', how:'Find the strongest call in two situations' },
-    { k:'terrain', no:'04', name:'Reputation terrain', how:'Place four stories' },
-    { k:'timing', no:'05', name:'Reputation dynamics', how:'Sort five moments' },
-    { k:'mission', no:'06', name:'Problems to solve', how:'Match four moments to the problem they speak to' },
-    { k:'margin', no:'07', name:'Mission and margin', how:'Find the strongest call in two situations' },
-    { k:'quiz', no:'08', name:'Quick check', how:'Score 6 of 8' },
-    { k:'capstone', no:'09', name:'Capstone: your focus area', how:'Sort five challenges' },
-    { k:'brief', no:'10', name:'Capstone: your brief', how:'Download the fillable brief' },
-    { k:'nextstep', no:'11', name:'Capstone: this week', how:'Commit to all four moves' }
+    { k:'growth', no:'02', name:'Growth sites', how:'Open all four growth sites' },
+    { k:'engine', no:'03', name:'Reputation flywheels', how:'Sort four moments by flywheel' },
+    { k:'trust', no:'04', name:'The trust radar', how:'Find the strongest call in two situations' },
+    { k:'terrain', no:'05', name:'Reputation terrain', how:'Place four stories' },
+    { k:'timing', no:'06', name:'Reputation dynamics', how:'Sort five moments' },
+    { k:'mission', no:'07', name:'Problems to solve', how:'Match four moments to the problem they speak to' },
+    { k:'margin', no:'08', name:'Mission and margin', how:'Find the strongest call in two situations' },
+    { k:'quiz', no:'09', name:'Quick check', how:'Score 6 of 8' },
+    { k:'capstone', no:'10', name:'Capstone: your focus area', how:'Sort five challenges' },
+    { k:'brief', no:'11', name:'Capstone: your brief', how:'Download the fillable brief' },
+    { k:'nextstep', no:'12', name:'Capstone: this week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
@@ -229,6 +231,52 @@ window.LR_COURSE = {
       bars:[{ x:'2021-22', v:16, lab:'16' }, { x:'2025-26', v:27, lab:'27' }]
     }
   ],
+  CITIES:{
+    nyc:{
+      why:'It takes Vanderbilt to students and employers in New York, with an undergraduate semester and a master’s in business and technology.',
+      name:'Vanderbilt NYC',
+      focus:'New York City, NY',
+      narr:'growth/f1',
+      line:'Vanderbilt’s first campus beyond Nashville, open since August 2026: 13 buildings on 2.7 acres in Chelsea, with an undergraduate semester program and a Master of Science in Business and Technology.',
+      meet:'Any service a student or colleague in New York needs from Nashville.',
+      url:'https://www.vanderbilt.edu/nyc/'
+    },
+    wpb:{
+      why:'It grows graduate education in business, engineering, data science, and AI, the fields that drive the prosperity the Industry Vision is about.',
+      name:'Vanderbilt WPB',
+      focus:'West Palm Beach, FL',
+      narr:'growth/f2',
+      line:'A graduate campus for business, engineering, data science, and AI, with programs planned in finance and in space and defense technology: about 1,000 graduate students and 100 faculty.',
+      meet:'The programs, hiring, and systems built for a second home.',
+      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/west-palm-beach/'
+    },
+    sf:{
+      why:'It joins art and design with engineering and AI, alongside the technology and creative sectors.',
+      name:'Vanderbilt SF',
+      focus:'San Francisco, CA',
+      narr:'growth/f3',
+      line:'Opens for the 2027 to 2028 school year on the California College of the Arts campus, home to the Huang College of Art, Architecture and Design, which blends art and design with engineering and AI: about 1,000 students.',
+      meet:'Partnerships with the technology and creative sectors.',
+      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/san-francisco/'
+    },
+    chattanooga:{
+      why:'It puts Vanderbilt research at the front of quantum technology, with access no other U.S. site offers.',
+      name:'Quantum Innovation',
+      focus:'Chattanooga, TN',
+      narr:'growth/f4',
+      line:'The Institute for Quantum Innovation, launched with EPB in July 2026: about 250 researchers, faculty, and staff, working with the first U.S. site with commercial access to both a trapped-ion quantum computer and a quantum network.',
+      meet:'Research administration and partnerships across Tennessee.',
+      url:'https://www.vanderbilt.edu/chancellor/initiatives-and-outreach/growth/quantum-innovation/'
+    },
+    nashville:{
+      why:'Home. Every growth site runs on the systems and people built here.',
+      name:'Nashville',
+      focus:'Home',
+      line:'Home since 1873: the residential campus and the heart of the university. Every growth site runs on the systems built here.',
+      meet:'Every day. The back office Nashville already has is what each new site needs on day one.',
+      url:'https://www.vanderbilt.edu/'
+    }
+  },
   DRILLS:{
     engine:{
       opts:['Execution with Ambition', 'Values-Driven Leadership', 'Athletics Momentum'],
