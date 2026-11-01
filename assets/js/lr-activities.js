@@ -42,7 +42,8 @@
    2. sort      Sort into buckets: one card at a time; drag it to a bucket, or tap a bucket.
       { type:'sort', buckets:['Execution with Ambition', ...],
         items:[ { t:'card text', a:0 (right bucket index), why:'reason shown when right', hint:'shown when wrong' } ],
-        noun:'moment' }
+        noun:'moment',
+        subs:['optional: one line of HTML under each bucket label, e.g. the deck definition', ...] }
    3. place     Place it on the chart: same as sort, drawn as a 2 by 2 chart with axes.
       { type:'place', buckets:[4 labels], grid:{ x:'Audience interest', y:'Societal importance', cells:[TL, TR, BL, BR bucket indexes] },
         items:[ { t, a, why, hint } ] }
@@ -75,6 +76,12 @@
         slots:[ { label:'Which vision', opts:['the Vanderbilt Vision', ...] } ] }
   12. spot      Spot it: true or false (or fact or myth) cards, one at a time, each with a reason.
       { type:'spot', labels:['True', 'False'], items:[ { t:'statement', a:0 (index into labels), why:'reason' } ] }
+  13. scrub     Scrub the timeline: move a slider (or Back and Next, or drag the marker on the chart) through the
+      stages of a deck graphic. Parts of the figure appear as you go; done when every stage was seen. (Added for Course One.)
+      { type:'scrub', figure:'<svg viewBox="X Y W H"> ... <g data-from="2">shown from stage 2</g> <g data-until="1">shown up to stage 1</g>
+          <g data-cursor>moved by each stage's cx and cy (viewBox units, from where it is drawn)</g> </svg>',
+        steps:[ { label:'Optimal time to act', t:'what this stage shows', cx:150, cy:0 } ], label:'aria label of the slider' }
+   Charts: a LR_COURSE.CHARTS entry may be type:'line' (cats, series, hide, arrow; see lineSVG). Added for Course Two.
    Display helper (not tracked):
       chartset  A set of the deck's charts that draw in when the page opens.
       { type:'chartset', charts:[1, 3, 4] (LR_COURSE.CHARTS indexes) }
@@ -144,6 +151,7 @@ function draggable(root, sel, dropSel, onDrop){
 function tick(c, v){ var s = Math.abs(v) >= 1000 ? v.toLocaleString('en-US') : String(v); return c.fmt === 'pct' ? s + '%' : c.fmt === 'usd' ? '$' + s : s; }
 function chartSVG(c, o){
   o = o || {};
+  if(c.type === 'line') return lineSVG(c, o); /* added for Course Two: the deck's line charts (lineSVG, below) */
   var W = o.w || 560, H = o.h || 300, L = o.small ? 48 : 60, R = (o.guess !== undefined && o.guess !== null) ? 72 : 12, T = 24, B = 30 + (c.legend ? 18 : 0);
   var max = o.max || c.max, bw = W - L - R, bh = H - T - B, slot = bw / c.bars.length, wide = Math.min(o.small ? 70 : 120, slot * 0.46);
   var Y = function(v){ return T + bh - Math.max(0, Math.min(v, max)) / max * bh; };
@@ -234,7 +242,7 @@ T.sort = T.place = function(api){
   function bucket(b){
     var chips = items.map(function(it, i){ return st.placed[i] === b ? '<li class="' + (st.first[i] === b ? 'ok' : 'retry') + '">' + esc(it.short || strip(it.t)) + '</li>' : ''; }).join('');
     var cnt = items.filter(function(it, i){ return st.placed[i] === b; }).length;
-    return '<div class="la-bk" data-b="' + b + '"><button type="button" class="la-bkb" data-b="' + b + '" data-fk="b-' + b + '"' + (cur() < 0 ? ' disabled' : '') + '><b>' + esc(B[b]) + '</b><span class="la-n">' + cnt + '</span></button>' + (chips ? '<ul class="la-chips">' + chips + '</ul>' : '') + '</div>';
+    return '<div class="la-bk" data-b="' + b + '"><button type="button" class="la-bkb" data-b="' + b + '" data-fk="b-' + b + '"' + (cur() < 0 ? ' disabled' : '') + '>' + (cfg.subs && cfg.subs[b] ? '<span class="la-bkt"><b>' + esc(B[b]) + '</b><small>' + cfg.subs[b] + '</small></span>' : '<b>' + esc(B[b]) + '</b>') + '<span class="la-n">' + cnt + '</span></button>' + (chips ? '<ul class="la-chips">' + chips + '</ul>' : '') + '</div>';
   }
   api.html = function(){
     var c = cur(), h = '<div class="la-sort' + (quad ? ' la-quad' : '') + '">';
@@ -595,6 +603,90 @@ T.chartset = function(api){
   document.addEventListener('chart:page', function(){ setTimeout(grow, 60); });
   api.solve = function(){};
 };
+
+/* 13. scrub (added for Course One): stages of a deck graphic on a slider; the marker can be dragged on the chart */
+T.scrub = function(api){
+  var cfg = api.cfg, st = api.st, S = cfg.steps, n = S.length;
+  st.seen = st.seen || {}; if(st.at === undefined) st.at = 0;
+  api.static = true;
+  var vb = (String(cfg.figure).match(/viewBox="([\d.\-]+) [\d.\-]+ ([\d.]+) ([\d.]+)"/) || [0, 0, 16, 9]).slice(1), pid = 'la-' + api.key + '-sp';
+  api.body.innerHTML = '<div class="la-scrub"><div class="la-fig"><div class="la-figbox" style="--rw:' + vb[1] + ';--rh:' + vb[2] + '">' + cfg.figure + '</div></div>' +
+    '<div class="la-sctl"><button type="button" class="la-btn sm ghost" data-sb="-1" data-fk="sb-prev">Back</button>' +
+    '<input type="range" min="0" max="' + (n - 1) + '" step="1" value="' + st.at + '" aria-label="' + esc(cfg.label || 'Move through the stages') + '" aria-controls="' + pid + '" />' +
+    '<button type="button" class="la-btn sm" data-sb="1" data-fk="sb-next">Next</button></div>' +
+    '<div class="la-panel" id="' + pid + '" tabindex="-1"></div><p class="la-count"></p></div><div class="la-dslot"></div>';
+  var r = api.q('input[type=range]'), panel = api.q('.la-panel'), cnt = api.q('.la-count'), slot = api.q('.la-dslot'), box = api.q('.la-figbox');
+  function seenN(){ return S.filter(function(_, i){ return st.seen[i]; }).length; }
+  function paintDone(){ cnt.textContent = st.done ? '' : seenN() + ' of ' + n + ' stages seen'; cnt.hidden = !!st.done; slot.innerHTML = doneBar(api, 'You moved through all ' + n + ' stages.'); }
+  api.after = paintDone;
+  function show(at, user){
+    at = Math.max(0, Math.min(n - 1, at)); var from = st.at; st.at = at;
+    if(user){ for(var i = Math.min(from, at); i <= Math.max(from, at); i++) st.seen[i] = 1; }
+    $$('[data-from], [data-until]', box).forEach(function(e){ var f = e.getAttribute('data-from'), u = e.getAttribute('data-until'); e.classList.toggle('la-off', (f !== null && at < +f) || (u !== null && at > +u)); });
+    if(S[at].cx !== undefined || S[at].cy !== undefined) $$('[data-cursor]', box).forEach(function(e){ e.style.transform = 'translate(' + (S[at].cx || 0) + 'px, ' + (S[at].cy || 0) + 'px)'; });
+    box.setAttribute('data-at', at);
+    r.value = at; r.setAttribute('aria-valuetext', 'Stage ' + (at + 1) + ' of ' + n + ': ' + strip(S[at].label));
+    api.q('[data-sb="-1"]').disabled = at === 0; api.q('[data-sb="1"]').disabled = at === n - 1;
+    panel.innerHTML = '<span class="la-k">Stage ' + (at + 1) + ' of ' + n + '</span><b class="la-pt">' + S[at].label + '</b><p>' + S[at].t + '</p>';
+    paintDone();
+    if(!user) return;
+    api.save(); api.say(strip(S[at].label) + '. ' + strip(S[at].t));
+    if(seenN() === n && !st.done) api.complete('All ' + n + ' stages seen');
+  }
+  r.addEventListener('input', function(){ show(parseInt(r.value, 10), true); });
+  /* the marker can also be dragged, or tapped into place, right on the chart (stages with cx) */
+  if(S.some(function(s){ return s.cx !== undefined; })){
+    box.classList.add('la-drag');
+    var near = function(e){ var bx = box.getBoundingClientRect(), x = +vb[0] + (e.clientX - bx.left) / bx.width * +vb[1], best = 0, d = Infinity; S.forEach(function(s, i){ if(s.cx !== undefined && Math.abs(s.cx - x) < d){ d = Math.abs(s.cx - x); best = i; } }); return best; };
+    var dragging = false;
+    box.addEventListener('pointerdown', function(e){ dragging = true; try{ box.setPointerCapture(e.pointerId); }catch(err){} var k = near(e); if(k !== st.at) show(k, true); });
+    box.addEventListener('pointermove', function(e){ if(!dragging) return; var k = near(e); if(k !== st.at) show(k, true); });
+    box.addEventListener('pointerup', function(){ dragging = false; }); box.addEventListener('pointercancel', function(){ dragging = false; });
+    ['touchstart', 'touchend'].forEach(function(t){ box.addEventListener(t, function(e){ e.stopPropagation(); }, { passive:true }); });
+  }
+  api.click = function(b){ if(b.hasAttribute('data-sb')){ show(st.at + parseInt(b.getAttribute('data-sb'), 10), true); if(b.disabled) try{ panel.focus({ preventScroll:true }); }catch(e){} } };
+  show(st.at, false);
+  api.rows = function(){ return []; };
+  api.solve = function(){ var g = 0; if(st.at === n - 1) show(0, false); while(st.at < n - 1 && g++ < 50) api.q('[data-sb="1"]').click(); };
+};
+
+/* ── added for Course Two (version 3): the deck's line charts, for predict and chartset ──
+   CHARTS entry: { type:'line', title, sub, fmt, max, step, axis, cats:['FY19', ...], w, h (optional drawing size),
+     series:[ { name:'Overall Turnover', vals:[18.9, ...], labs:['18.9%', ...], color:'#B3C9CD', pos:'below' } ],
+     hide:1 (the series a predict round hides the last point of; default the last series),
+     arrow:{ from:4, to:9, label:'43% CAGR' } (optional, drawn under the line) } */
+function lineSVG(c, o){
+  var W = c.w || o.w || 560, H = c.h || o.h || 300, S = c.series, n = c.cats.length, hs = c.hide === undefined ? S.length - 1 : c.hide;
+  var L = o.small ? 40 : 52, R = (o.guess !== undefined && o.guess !== null) ? 76 : 16, T = 24, B = 30 + (S.length > 1 ? 20 : 0) + (c.arrow ? 26 : 0);
+  var max = o.max || c.max, bw = W - L - R, bh = H - T - B, slot = bw / n;
+  var X = function(k){ return L + slot * (k + .5); }, Y = function(v){ return T + bh - Math.max(0, Math.min(v, max)) / max * bh; };
+  var out = '', g;
+  for(g = c.step; g <= max + 1e-9; g += c.step) out += '<line x1="' + L + '" x2="' + (L + bw) + '" y1="' + Y(g) + '" y2="' + Y(g) + '" class="la-cg"/><text x="' + (L - 6) + '" y="' + (Y(g) + 4) + '" text-anchor="end" class="la-ct">' + esc(tick(c, g)) + '</text>';
+  out += '<line x1="' + L + '" x2="' + (L + bw) + '" y1="' + Y(0) + '" y2="' + Y(0) + '" class="la-cb"/>';
+  if(o.hide) out += '<rect x="' + (X(n - 1) - 16) + '" y="' + (T + 4) + '" width="32" height="' + (Y(0) - T - 4) + '" class="la-q"/><text x="' + X(n - 1) + '" y="' + (T + bh / 2 + 12) + '" text-anchor="middle" class="la-qt">?</text>';
+  S.forEach(function(s, si){
+    var col = s.color || (si === hs ? '#CFAE70' : '#B3C9CD'), last = n - 1, hid = o.hide && si === hs;
+    var pts = s.vals.map(function(v, k){ return [X(k), Y(v)]; }), shown = hid ? pts.slice(0, last) : pts;
+    var d = function(a){ return a.map(function(p, k){ return (k ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' '); };
+    var revealLast = o.reveal && si === hs;
+    out += '<path d="' + d(revealLast ? pts.slice(0, last) : shown) + '" fill="none" stroke="' + col + '" stroke-width="2.5" stroke-linejoin="round"/>';
+    if(revealLast) out += '<path d="' + d(pts.slice(last - 1)) + '" fill="none" stroke="' + col + '" stroke-width="2.5" class="la-newv"/>';
+    shown.forEach(function(p, k){
+      var nv = revealLast && k === last ? ' la-newv' : '';
+      out += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="' + col + '" class="' + nv + '"/>';
+      out += '<text x="' + p[0].toFixed(1) + '" y="' + (s.pos === 'below' ? p[1] + 16 : p[1] - 8).toFixed(1) + '" text-anchor="middle" class="la-ct' + nv + '" style="fill:' + col + ';font-size:11px;font-weight:600">' + esc(s.labs ? s.labs[k] : s.vals[k]) + '</text>';
+    });
+  });
+  c.cats.forEach(function(x, k){ out += '<text x="' + X(k) + '" y="' + (T + bh + 18) + '" text-anchor="middle" class="la-ct">' + esc(x) + '</text>'; });
+  if(c.arrow){ var ay = T + bh + 34, x1 = X(c.arrow.from), x2 = X(c.arrow.to);
+    out += '<path d="M' + x1 + ' ' + ay + ' H' + (x2 - 8) + '" stroke="#CFAE70" stroke-width="10"/><path d="M' + (x2 - 10) + ' ' + (ay - 10) + ' L' + (x2 + 4) + ' ' + ay + ' L' + (x2 - 10) + ' ' + (ay + 10) + ' Z" fill="#CFAE70"/><text x="' + ((x1 + x2) / 2) + '" y="' + (ay + 4) + '" text-anchor="middle" class="la-ct" style="fill:#1C1C1C;font-weight:700;font-size:10px">' + esc(c.arrow.label) + '</text>'; }
+  if(S.length > 1) out += S.map(function(s, si){ var lx = L + bw / 2 - 110 + si * 120, col = s.color || (si === hs ? '#CFAE70' : '#B3C9CD'); return '<line x1="' + lx + '" x2="' + (lx + 14) + '" y1="' + (H - 7) + '" y2="' + (H - 7) + '" stroke="' + col + '" stroke-width="3"/><text x="' + (lx + 18) + '" y="' + (H - 3) + '" class="la-ct">' + esc(s.name) + '</text>'; }).join('');
+  if(o.guess !== undefined && o.guess !== null){ var gy = Y(o.guess), gx = X(n - 1);
+    out += '<g class="la-guess"><line x1="' + (gx - 18) + '" x2="' + (gx + 18) + '" y1="' + gy + '" y2="' + gy + '" class="la-gl" stroke-dasharray="4 3"/><circle cx="' + gx + '" cy="' + gy + '" r="4" fill="#ECB748"/><text x="' + (gx + 22) + '" y="' + (gy + 4) + '" class="la-gt">' + (o.guessLab ? esc(o.guessLab) : 'Your guess') + '</text></g>'; }
+  if(c.axis && !o.small) out += '<text class="la-ct la-cax" transform="translate(12 ' + (T + bh / 2) + ') rotate(-90)" text-anchor="middle">' + esc(c.axis) + '</text>';
+  var said = S.map(function(s, si){ return s.name + ': ' + c.cats.map(function(x, k){ return x + ' ' + (o.hide && si === hs && k === n - 1 ? 'hidden until you guess' : (s.labs ? s.labs[k] : s.vals[k])); }).join(', '); }).join('. ');
+  return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="la-svg" role="img" aria-label="' + esc(c.title + '. Line chart. ' + said + '.') + '">' + out + '</svg>';
+}
 
 /* ══════════ mount ══════════ */
 function mount(root){

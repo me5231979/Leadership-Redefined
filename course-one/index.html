@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Course One · Vision, Reputation and Margin · Leadership Redefined</title>
-<meta name="description" content="Leadership Redefined, Course One, week of November 2: the Chancellor’s Symposium talk, in his order. Module 1: Vision, Strategy and the Future of Vanderbilt; Module 2: Reputational Stewardship; Module 3: Mission and Margin. Self-paced and narrated, then your pod’s capstone." />
+<meta name="description" content="Leadership Redefined, Course One, week of November 2: the Chancellor’s Symposium talk, in his order. Module 1: Vision, Strategy and the Future of Vanderbilt; Module 2: Reputational Stewardship; Module 3: Mission and Margin. Self-paced and narrated, then a quick check and this week’s moves." />
 <meta name="theme-color" content="#1C1C1C" />
 <meta name="robots" content="noindex" />
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
@@ -17,9 +17,9 @@
   in ../assets; this course's words in content.js and narration-scripts.js;
   links, videos, and the contact in config.js.
   The modules follow the Chancellor's FINAL Symposium deck page by page:
-  Module 1 = deck pages 1 to 16 (version 3 layout and the activity library), Module 2 = 17 to 23, Module 3 = 24 to 35.
-  The capstone is its own section at the end; learners fill in the brief
-  in the fillable PDF, never in the course.
+  Module 1 = deck pages 1 to 16 (version 3 layout and the activity library), Module 2 = 17 to 23, Module 3 = 24 to 34 (all version 3).
+  The capstone lives on its own page (../brief/); the course ends with a quick
+  check, this week's moves, and a link to it.
   Progress and answers: localStorage lr1-* in this browser only. Nothing is
   sent anywhere. No em or en dashes anywhere in this file.
 -->
@@ -29,7 +29,111 @@
 <link rel="stylesheet" href="../assets/css/voyage.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/nav.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/lr.css?v=20261102b" />
-<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261103a" />
+<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261104c3" />
+<style>
+/* ══════ Course One only (version 3): deck graphics for Modules 2 and 3, and the course end. Shared styles: ../assets/css/lr-v3.css ══════ */
+.c1g svg{ font-family:var(--sans); }
+.c1g .t-ax{ fill:#fff; font-size:15px; letter-spacing:.08em; }
+.c1g .t-h{ fill:#D3AE6C; font-weight:800; font-size:18px; letter-spacing:.02em; }
+.c1g .t-note{ fill:#fff; font-style:italic; font-size:15px; }
+.c1g .t-box{ fill:#fff; font-weight:800; font-size:20px; }
+.c1g .t-box.sm{ font-size:16px; }
+.c1g .t-box.dk{ fill:#1E1E1E; }
+.c1g .t-ring{ fill:#D3AE6C; font-weight:700; font-size:20px; letter-spacing:.3em; }
+.c1g .t-ring.sm{ font-size:16px; }
+.c1g .t-rad{ fill:#EDEDED; font-weight:800; font-size:20px; letter-spacing:.06em; }
+.c1g .d-int, .c1g .d-time{ fill:#fff; font-size:26px; letter-spacing:.06em; }
+.c1g .d-hd{ fill:#fff; font-weight:800; font-size:30px; }
+.c1g .d-hd .go{ fill:#D3AE6C; }
+.c1g .d-ctl{ fill:#D3AE6C; font-size:27px; }
+.c1g .d-stk{ fill:#98AE9A; font-size:27px; }
+.c1g .c1-dc{ fill:#E8B53A; stroke:#1C1C1C; stroke-width:3; }
+.c1g .c1-ds{ fill:#98AE9A; stroke:#1C1C1C; stroke-width:3; }
+.c1g .c1-dx{ fill:#fff; stroke:#E8B53A; stroke-width:4; }
+.c1g .c1-glow{ fill:rgba(207,174,112,.16); stroke:#CFAE70; stroke-width:2; }
+/* flip figures: the turned card lights its part of the slide */
+.c1g .c1-hi{ transition:opacity .3s ease-out; }
+#radar .c1g .c1-hi circle{ fill:#D3AE6C; }
+.la-ffig:not([data-lit=""]) .c1g .c1-hi{ opacity:.4; }
+.la-ffig[data-lit~="em"] [data-hi="em"], .la-ffig[data-lit~="tr"] [data-hi="tr"], .la-ffig[data-lit~="ex"] [data-hi="ex"], .la-ffig[data-lit~="co"] [data-hi="co"],
+.la-ffig[data-lit~="cu"] [data-hi="cu"], .la-ffig[data-lit~="cc"] [data-hi="cc"], .la-ffig[data-lit~="cm"] [data-hi="cm"], .la-ffig[data-lit~="ca"] [data-hi="ca"]{ opacity:1; }
+.la-ffig[data-lit~="em"] [data-hi="em"] text, .la-ffig[data-lit~="tr"] [data-hi="tr"] text, .la-ffig[data-lit~="ex"] [data-hi="ex"] text, .la-ffig[data-lit~="co"] [data-hi="co"] text{ fill:#F1DCA4; }
+#radar .la-flipset, #circle .la-flipset{ grid-template-columns:minmax(0, 1fr); gap:var(--g2); }
+#radar .la-ffig svg, #circle .la-ffig svg{ max-height:min(420px, 33vh); }
+#radar .la-cards, #circle .la-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+#radar .la-face, #circle .la-face{ min-height:3.4em; padding:12px 2.4em 12px 16px; }
+#radar .la-front b, #circle .la-front b{ font-size:1.25em; }
+#radar .la-back p, #circle .la-back p{ font-size:.85em; }
+@media (max-width:640px){ #radar .la-cards, #circle .la-cards{ grid-template-columns:minmax(0, 1fr); } }
+@media (min-width:901px) and (max-height:960px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:27vh; } .la-scrub .la-fig{ --fh:min(360px, 34vh); } }
+@media (min-width:901px) and (max-height:820px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:24vh; } #nextstep .v-commits small{ display:none; } #nextstep .c1-msg{ margin-top:8px; padding-top:8px; padding-bottom:8px; } #nextstep .lr-steps li{ font-size:.85em; } }
+/* module 1 opener: the Symposium photo, sharp, with a small portrait */
+.c1-speaker{ max-width:min(760px, 100%); }
+.c1-speaker .c1-sp-photo{ aspect-ratio:3 / 2; max-height:min(480px, 46vh); width:100%; object-fit:cover; object-position:68% 55%; }
+.c1-speaker figcaption{ flex-direction:row; align-items:center; gap:var(--g2); }
+.c1-speaker .c1-sp-av{ display:block; width:96px; height:96px; flex:0 0 96px; aspect-ratio:1 / 1; border-radius:50%; object-fit:cover; border:2px solid var(--eyebrow); }
+.c1-sp-t{ display:flex; flex-direction:column; gap:4px; }
+@media (max-width:640px){ .c1-speaker .c1-sp-av{ width:64px; height:64px; flex-basis:64px; } }
+section.v3 .v-video{ max-width:840px; margin:0; }
+/* video openers */
+.c1-meta{ margin-top:var(--g2); color:var(--tx3); font-size:.85em; line-height:1.5; }
+.c1-meta b{ color:var(--tx2); font-weight:600; }
+/* rate: a large radar beside generous controls */
+#teamradar .la-rate, #levers .la-rate{ grid-template-columns:auto minmax(0, 1fr); gap:var(--g3) var(--g5); }
+#teamradar .la-rsvg, #levers .la-rsvg{ width:auto; height:47vh; max-height:600px; margin-inline:64px 88px; }
+#teamradar .la-rlab, #levers .la-rlab{ font-size:12px; }
+#teamradar .la-rqs, #levers .la-rqs{ gap:var(--g2); }
+#teamradar .la-rq, #levers .la-rq{ flex-direction:column; align-items:flex-start; gap:8px; }
+#teamradar .la-rqn, #levers .la-rqn{ font-size:1.1em; }
+#teamradar .la-rq .la-chips2, #levers .la-rq .la-chips2{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); width:100%; }
+#teamradar .la-rq .la-chips2 button, #levers .la-rq .la-chips2 button{ min-height:2.9em; padding:.4em .6em; font-size:1em; text-align:center; }
+@media (max-width:900px){ #teamradar .la-rate, #levers .la-rate{ grid-template-columns:minmax(0, 1fr); } #teamradar .la-rsvg, #levers .la-rsvg{ height:auto; width:56%; max-width:240px; max-height:none; margin-inline:auto; } #levers .la-rsvg{ width:46%; } }
+/* problems: four statements on one slide */
+#problems .la-slide{ padding:var(--g2) var(--g3); text-align:left; }
+#problems .la-stext{ font-size:1.1em; line-height:1.45; }
+#problems .c1-pl{ display:block; padding-left:1.4em; text-indent:-1.4em; }
+#problems .c1-pl + .c1-pl{ margin-top:12px; }
+#problems .c1-pl > b{ font-weight:400; color:var(--eyebrow); display:inline-block; width:1.4em; text-indent:0; }
+#problems .la-slab{ order:0; margin:0 0 4px; font-family:var(--cond); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); font-size:.72em; }
+/* sorts with deck definitions under each bucket */
+#areas .la-sort:not(.la-quad) .la-bkb{ min-height:0; justify-content:flex-start; }
+#areas .la-bkt small{ font-size:.78em; }
+#areas .la-card p{ font-size:1.1em; }
+#core .la-sort:not(.la-quad) .la-bkb{ min-height:6em; }
+#coverage .la-bkb{ min-height:5.4em; align-items:flex-start; }
+/* deck slides shown as they are */
+.c1-slide{ margin:0; padding:var(--g2) var(--g3) var(--g2); border:1px solid var(--bd); border-top:3px solid var(--eyebrow); border-radius:6px; background:#262625; }
+.c1-slide-h{ display:flex; align-items:center; gap:var(--g2); margin:0 0 var(--g2); font-family:var(--sans); font-size:1.15em; letter-spacing:.04em; text-transform:uppercase; color:#fff; }
+.c1-slide-h::after{ content:''; flex:1 1 auto; height:1px; background:rgba(255,255,255,.5); }
+.c1-slide figcaption{ margin-top:var(--g2); color:var(--tx3); font-size:.78em; line-height:1.45; }
+.c1-news .lr-newsgrid{ gap:var(--g2); }
+.c1-news .lr-news{ min-height:0; padding:12px 12px 36px; }
+.c1-news .lr-news p{ font-size:.92em; }
+.c1-news .lr-mast{ font-size:.85em; }
+@media (min-width:901px) and (max-height:820px){ .c1-news .lr-news{ padding:8px 10px 28px; } .c1-news .lr-news p{ font-size:.82em; } .c1-news .lr-news p small{ display:none; } }
+.c1-peermore .pm-wrap{ margin-top:8px; max-height:40vh; }
+.c1-dyn svg{ overflow:visible; }
+#wrap2 .la-slot, #wrap3 .la-slot{ margin-top:12px; }
+#wrap2 .la-sent, #wrap3 .la-sent{ font-size:1.18em; }
+/* this week */
+#nextstep .v-task{ margin-top:var(--g2); }
+#nextstep .v-commits{ margin-top:0; }
+#nextstep .v-commits button{ padding-top:8px; padding-bottom:8px; }
+#nextstep .v-commits small{ font-size:.82em; }
+#nextstep .c1-tools{ margin-top:var(--g2); gap:8px; }
+#nextstep .lr-prompt{ margin:0; max-width:none; }
+#nextstep .lr-prompt-q{ font-size:1.02em !important; }
+#nextstep .lr-steps li{ font-size:.92em; }
+#nextstep .v-tell-text{ font-size:.92em !important; }
+#nextstep .c1-msg{ margin-top:var(--g2); }
+#quiz .kq-q{ font-size:1.1em; }
+/* the end */
+.c1-end .v-hello{ max-width:52ch; margin-inline:auto; }
+.c1-endq{ margin:var(--g4) auto 0; max-width:56ch; text-align:center; }
+.c1-endq p{ font-family:var(--serif); font-size:1.4em; line-height:1.35; color:var(--tx); max-width:none; }
+.c1-endq cite{ display:block; margin-top:8px; font-style:normal; font-family:var(--cond); font-weight:700; font-size:.78em; letter-spacing:.1em; text-transform:uppercase; color:var(--eyebrow); }
+.c1-endread{ max-width:56ch; margin:var(--g2) auto 0; text-align:left; }
+</style>
 </head>
 <body class="lr4">
 <a href="#main" class="skip">Skip to content</a>
@@ -43,8 +147,7 @@
       <a href="../">Program home</a>
       <a href="#p/vision/1" aria-current="page">Course One</a>
       <a href="../course-two/">Course Two</a>
-      <a href="#p/capstone/1">Capstone</a>
-      <a href="../brief/leadership-redefined-capstone-brief.pdf" download data-brief-dl>Brief (PDF)</a>
+      <a href="../brief/">Capstone</a>
       <a href="#" data-print>Print takeaway</a>
     </nav>
     <div class="gnav__extra">
@@ -80,20 +183,19 @@
   <div class="wrap v-hero-in">
     <span class="v-kicker">Leadership Redefined &middot; Course One &middot; Week of November 2</span>
     <h1 class="v-display">Turn the vision into <em>work</em>.</h1>
-    <p class="v-hello">The Chancellor&rsquo;s Symposium talk in three modules, then your pod&rsquo;s capstone.</p>
+    <p class="v-hello">The Chancellor&rsquo;s Symposium talk in three modules, then your moves for the week.</p>
     <div class="v-hero-cta">
       <a class="btn btn-gold" href="#p/route/1">Start Course One<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <ul class="v-meta" aria-label="Course at a glance"><li>3 modules and the capstone</li><li>About 45 minutes</li><li>Narrated</li><li>Finish by Friday, Nov 6</li></ul>
+      <ul class="v-meta" aria-label="Course at a glance"><li>3 modules and a quick check</li><li>About 45 minutes</li><li>Narrated</li><li>Finish by Friday, Nov 6</li></ul>
     </div>
     <details class="v-goals">
       <summary>What you will be able to do</summary>
       <ol>
         <li><b>Explain</b> Vanderbilt&rsquo;s vision and industry vision, and read the numbers behind them.</li>
         <li><b>Trace</b> how reputation enables the mission, and name the three reputation flywheels.</li>
-        <li><b>Judge</b> a response with the trust radar, place a story on the reputation terrain, and spot the optimal time to act.</li>
+        <li><b>Read</b> what shapes reputation and the trust radar, place a story on the reputation terrain, and spot the optimal time to act.</li>
         <li><b>Explain</b> the three areas of focus and the four problems they answer.</li>
-        <li><b>Weigh</b> a decision on mission and margin.</li>
-        <li><b>Start</b> your pod&rsquo;s capstone: choose a focus area and plan sections 1 to 3 of the brief.</li>
+        <li><b>Weigh</b> a decision on mission and margin, and name the leadership mindset and key levers.</li>
       </ol>
     </details>
   </div>
@@ -105,12 +207,12 @@
     <div class="v3-grid">
       <div class="v3-copy">
         <div class="v-rail" data-lesson="0"><span>Course One &middot; This week</span></div>
-        <h2 class="v-h">Three modules, then your <em>capstone</em>.</h2>
+        <h2 class="v-h">Three modules, then your <em>week</em>.</h2>
         <p class="v3-lead">The Chancellor&rsquo;s Symposium talk, in the order he gave it. Self-paced, narrated, about 45 minutes.</p>
         <ul class="v3-bul">
           <li><b>See</b> one idea per page, from his slides.</li>
           <li><b>Do</b> something with it: predict, sort, match, or build.</li>
-          <li><b>Apply</b> it to your team and your pod&rsquo;s capstone brief.</li>
+          <li><b>Apply</b> it to your team and your pod&rsquo;s work.</li>
         </ul>
         <ol class="v3-dates" aria-label="Key dates">
           <li><b>Oct 29</b>Symposium</li>
@@ -127,9 +229,9 @@
           <li><button type="button" aria-expanded="false" data-stop="0"><i>1</i><span>Vision</span></button></li>
           <li><button type="button" aria-expanded="false" data-stop="1"><i>2</i><span>Reputation</span></button></li>
           <li><button type="button" aria-expanded="false" data-stop="2"><i>3</i><span>Margin</span></button></li>
-          <li><button type="button" aria-expanded="false" data-stop="3"><i>4</i><span>Capstone</span></button></li>
+          <li><button type="button" aria-expanded="false" data-stop="3"><i>4</i><span>This week</span></button></li>
         </ol>
-        <div class="v-port" id="port" aria-live="polite"><p class="v-port-empty">Three modules and the capstone. Tap a stop to see what is there.</p></div>
+        <div class="v-port" id="port" aria-live="polite"><p class="v-port-empty">Three modules, then this week. Tap a stop to see what is there.</p></div>
       </div>
     </div>
   </div>
@@ -153,9 +255,9 @@
         <div class="lr-read-host"></div>
       </div>
       <div class="v3-act">
-        <figure class="v3-speaker">
-          <img src="../assets/img/people/diermeier.jpg" alt="Chancellor Daniel Diermeier" width="400" height="400" decoding="async" />
-          <figcaption><span class="v-label">Welcome</span><b>Daniel Diermeier</b><span>Chancellor, Vanderbilt University</span><small>11 pages &middot; about 15 minutes</small></figcaption>
+        <figure class="v3-speaker c1-speaker">
+          <img class="c1-sp-photo" src="../assets/img/people/chancellor-module1-podium.jpg" alt="Chancellor Daniel Diermeier speaking at the Leadership Redefined Symposium" width="1200" height="799" decoding="async" />
+          <figcaption><img class="c1-sp-av" src="../assets/img/people/diermeier.jpg" alt="" width="400" height="400" decoding="async" /><span class="c1-sp-t"><span class="v-label">Welcome</span><b>Daniel Diermeier</b><span>Chancellor, Vanderbilt University</span><small>11 pages &middot; about 15 minutes</small></span></figcaption>
         </figure>
       </div>
     </div>
@@ -299,7 +401,7 @@
   <div class="wrap">
     <div class="v3-grid">
       <div class="v3-copy">
-        <div class="v-rail" data-lesson="1"><span>Module 1 &middot; Page 8 of 11 &middot; Your turn</span></div>
+        <div class="v-rail" data-lesson="1"><span>Module 1 &middot; Page 8 of 11 &middot; Name the flywheel</span></div>
         <h2 class="v-h">Name the <em>flywheel</em>.</h2>
         <p class="v3-lead">Every unit on campus feeds these flywheels. When you can name the one a moment turns, you can tell your team&rsquo;s work in a way that builds Vanderbilt&rsquo;s reputation.</p>
         <p class="v3-note">All six moments are hypothetical.</p>
@@ -338,7 +440,7 @@
   <div class="wrap">
     <div class="v3-grid">
       <div class="v3-copy">
-        <div class="v-rail" data-lesson="1"><span>Module 1 &middot; Page 10 of 11 &middot; Your turn</span></div>
+        <div class="v-rail" data-lesson="1"><span>Module 1 &middot; Page 10 of 11 &middot; Match the resources</span></div>
         <h2 class="v-h">Reputation attracts <em>resources</em>.</h2>
         <p class="v3-lead">The slide names four resources: talent, funding, partnerships, and access and influence. Match each hypothetical moment to the resource it brings Vanderbilt.</p>
         <div class="lr-read-host"></div>
@@ -375,302 +477,364 @@
 </section>
 
 
-<!-- ═══ MODULE 2 · REPUTATIONAL STEWARDSHIP (video; deck p17, p18) ═══ -->
-<section id="reputation" class="th-dark v-sec" aria-label="Module 2: Reputational stewardship">
+<!-- ═══ MODULE 2 · OPENER (video; deck p17 to p23) ═══ -->
+<section id="m2" class="th-dark v-sec v3" aria-label="Module 2: Reputational Stewardship">
   <div class="wrap">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; The Chancellor</span></div>
-    <div class="v-stage lr-teach">
-      <div class="v-copy">
-        <h2 class="v-h">You are a guardian of a <em>legacy</em>.</h2><p class="v-why">From the Chancellor&rsquo;s video on reputational stewardship.</p>
-        <div class="lr-learn"><span class="v-label">The idea</span><ol><li><span><b>Reputation enables the mission:</b> the loop from Module 1 brings Vanderbilt talent, funding, and partners.</span></li><li><span><b>Every leader is a guardian</b> of that legacy, not only the Chancellor&rsquo;s office.</span></li><li><span><b>Next:</b> what shapes reputation, what builds trust, and when to act.</span></li></ol></div>
-        <figure class="lr-presenter" data-photo="../assets/img/people/diermeier.jpg">
-          <span class="lr-pp" aria-hidden="true">DD</span>
-          <figcaption><b>Chancellor Daniel Diermeier</b><span>Vanderbilt University</span><small>Symposium speaker: Reputational Stewardship</small></figcaption>
-        </figure>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 1 of 11 &middot; Welcome</span></div>
+        <h2 class="v-h">You are a guardian of a <em>legacy</em>.</h2>
+        <p class="v3-lead"><b>Why it matters to you.</b> In the Chancellor&rsquo;s words, every decision and interaction can enhance our credibility. Your team&rsquo;s choices build Vanderbilt&rsquo;s reputation, or spend it.</p>
+        <span class="v-label v3-lab">You will be able to</span>
+        <ul class="v3-bul">
+          <li><b>Read</b> what shapes reputation, and the trust radar.</li>
+          <li><b>Place</b> a story on the reputation terrain, and see how stories migrate.</li>
+          <li><b>Spot</b> the optimal time to act.</li>
+        </ul>
         <details class="v-more"><summary>Go deeper</summary><p><b>The book.</b> The Chancellor&rsquo;s <a href="https://www.kellogg.northwestern.edu/faculty/research/detail/2011/reputation-rules-strategies-for-building-your-companys-most-valuable/" target="_blank" rel="noopener"><i>Reputation Rules</i></a> (McGraw-Hill, 2011) develops the trust radar in depth, through real corporate crises. For a manager&rsquo;s view of reputation risk, see Eccles, Newquist, and Schatz, <a href="https://hbr.org/2007/02/reputation-and-its-risks" target="_blank" rel="noopener">Reputation and Its Risks</a>, Harvard Business Review, February 2007.</p></details>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
+      <div class="v3-act">
         <figure class="v-video" data-video="reputation" data-caption="Chancellor Daniel Diermeier on reputational stewardship">
           <img class="v-ph" src="../assets/img/video/chancellor-reputational-stewardship.jpg" alt="" width="1280" height="720" loading="lazy" />
           <span class="v-ph-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
           <span class="v-soon">Video coming soon</span>
           <figcaption>Chancellor Daniel Diermeier on reputational stewardship</figcaption>
         </figure>
+        <p class="c1-meta"><b>Chancellor Daniel Diermeier</b> &middot; Symposium speaker: Reputational Stewardship &middot; 11 pages, about 15 minutes</p>
       </div>
     </div>
-    <div class="lr-pg2" data-pg="What shapes reputation">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; What shapes reputation</span></div>
-    <div class="v-stage lr-teach lr-radarscreen">
-      <div class="v-copy">
-        <h2 class="v-h">What shapes <em>reputation</em>.</h2>
-        <p class="v-why">The Chancellor&rsquo;s map of how Vanderbilt&rsquo;s story reaches people.</p>
-        <div class="lr-learn"><span class="v-label">How to read it</span><ol><li><span><b>The university</b> speaks to its audiences.</span></li><li><span><b>The media</b> surrounds those audiences and reaches them from every side.</span></li><li><span><b>So people hear about Vanderbilt</b> through the media, as well as from Vanderbilt itself.</span></li></ol><p class="lr-eg"><b>Ask yourself.</b> When people outside Vanderbilt hear about your area, who tells them?</p></div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · WHAT SHAPES REPUTATION (deck p17) ═══ -->
+<section id="shapes" class="th-dark v-sec v3" aria-label="Module 2: What shapes reputation">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 2 of 11 &middot; What shapes reputation</span></div>
+        <h2 class="v-h">Reputation is made in <em>public</em>.</h2>
+        <p class="v3-lead">The Chancellor&rsquo;s first slide on reputation maps who reaches the people Vanderbilt serves. The university is one voice among many.</p>
+        <p class="v3-note">Ask yourself: when people outside Vanderbilt hear about your area, who tells them?</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <figure class="lr-slide" data-title="What Shapes Reputation"><p class="lr-slide-h">What shapes reputation</p><svg class="lr-dsvg lr-wsr" viewBox="140 0 460 440" role="img" aria-label="What shapes reputation: a box labeled university points down to a box labeled audiences. A ring labeled media surrounds them, with arrows from the ring into the audiences box from the left, the right, and below."><defs><marker id="wsA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3AE6C"/></marker><marker id="wsG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8a8a"/></marker></defs><circle cx="370" cy="220" r="180" fill="none" stroke="#5E5444" stroke-width="44"/><circle cx="370" cy="220" r="202" fill="none" stroke="#C9A86B" stroke-width="1.5"/><circle cx="370" cy="220" r="158" fill="none" stroke="#C9A86B" stroke-width="1.5"/><path id="wsR" d="M232.1 335.7 A180 180 0 0 0 507.9 335.7" fill="none"/><text class="dring" dy="8"><textPath href="#wsR" startOffset="50%" text-anchor="middle">MEDIA</textPath></text><rect x="280" y="128" width="180" height="48" fill="#2F3030" stroke="#7a7a7a"/><text x="370" y="160" text-anchor="middle" class="dbox sm">UNIVERSITY</text><path d="M370 178 V214" stroke="#8a8a8a" stroke-width="2" marker-end="url(#wsG)"/><rect x="270" y="218" width="200" height="48" fill="#8BA18E"/><text x="370" y="250" text-anchor="middle" class="dbox dk sm">AUDIENCES</text><path d="M212 242 H262" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#wsA)"/><path d="M528 242 H478" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#wsA)"/><path d="M370 378 V274" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#wsA)"/></svg><figcaption class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Reputational Stewardship slides, Leadership Redefined Symposium, 2026.</figcaption></figure>
-      </div>
-    </div>
-    </div>
-    <div class="lr-pg2" data-pg="The trust radar">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; The trust radar</span></div>
-    <div class="v-stage lr-teach lr-radarscreen">
-      <div class="v-copy">
-        <h2 class="v-h">Read trust like a <em>radar</em>.</h2>
-        <p class="v-why">The Chancellor&rsquo;s trust radar, from his Reputational Stewardship slides.</p>
-        <div class="lr-learn"><span class="v-label">How to read it</span><ol><li><span><b>Four drivers of trust:</b> transparency, expertise, commitment, and empathy.</span></li><li><span><b>On the slide,</b> the diamond reaches the outer ring on all four sides.</span></li><li><span><b>Use it as a test:</b> does a response reach all four? A gap on one shows under pressure.</span></li></ol></div>
-      </div>
-      <div class="v-act">
-        <figure class="lr-slide" data-title="The Trust Radar"><svg class="lr-dsvg" viewBox="-50 0 700 430" role="img" aria-label="The trust radar: a target of concentric rings inside a gold ring, with a diamond reaching empathy at the top, transparency on the right, expertise at the bottom, and commitment on the left."><circle cx="300" cy="215" r="146" fill="none" stroke="#D3AE6C" stroke-width="16"/><circle cx="300" cy="215" r="134" fill="#6E7B6B"/><circle cx="300" cy="215" r="118" fill="#A3AB8F"/><circle cx="300" cy="215" r="100" fill="#6E7B6B"/><circle cx="300" cy="215" r="84" fill="#A3AB8F"/><circle cx="300" cy="215" r="66" fill="#6E7B6B"/><circle cx="300" cy="215" r="50" fill="#A3AB8F"/><circle cx="300" cy="215" r="32" fill="#6E7B6B"/><circle cx="300" cy="215" r="18" fill="#A3AB8F"/><circle cx="300" cy="215" r="7" fill="#6E7B6B"/><polygon points="300,52 463,215 300,378 137,215" fill="#8BA18E" fill-opacity=".55"/><path d="M300 52 V378 M137 215 H463" stroke="#6E7B6B" stroke-width="2"/><text x="300" y="38" text-anchor="middle" class="drad">EMPATHY</text><text x="480" y="221" class="drad">TRANSPARENCY</text><text x="300" y="408" text-anchor="middle" class="drad">EXPERTISE</text><text x="120" y="221" text-anchor="end" class="drad">COMMITMENT</text></svg><figcaption class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Reputational Stewardship presentation at the Leadership Redefined Symposium, 2026.</figcaption></figure>
+      <div class="v3-act">
+        <p class="v-task" data-task="shapes">Open each numbered part of the slide</p>
+        <div data-act="shapes"></div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · THE TRUST RADAR (deck p18) ═══ -->
+<section id="radar" class="th-dark v-sec v3" aria-label="Module 2: The trust radar">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 3 of 11 &middot; The trust radar</span></div>
+        <h2 class="v-h">Trust has four <em>drivers</em>.</h2>
+        <p class="v3-lead">The trust radar names them: empathy, transparency, expertise, and commitment. On the slide, the shape reaches the outer ring on all four sides. A strong response does too.</p>
+        <p class="v3-note">What each driver sounds like is a hypothetical example.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="radar">Turn each card to hear what the driver sounds like</p>
+        <div data-act="radar"></div>
+      </div>
     </div>
-    <div class="lr-pg2" data-pg="Your team&rsquo;s radar">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Your team&rsquo;s radar</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · YOUR TEAM'S RADAR (deck p18, applied) ═══ -->
+<section id="teamradar" class="th-dark v-sec v3" aria-label="Module 2: Your team&rsquo;s radar">
+  <div class="wrap">
+    <div class="v3-grid v3-39">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 4 of 11 &middot; Your team&rsquo;s radar</span></div>
         <h2 class="v-h">Draw your team&rsquo;s <em>radar</em>.</h2>
-        <p class="v-why">Put the radar to work on the people you lead. Rate your team on each driver, as the people you serve would see it today. The shape draws as you go.</p>
-        <div class="lr-learn lr-ask"><span class="v-label">Just for you</span><p>Not scored, and it stays in this browser. A short side is where trust is thin, and the place to invest before you need it.</p></div>
+        <p class="v3-lead">Rate your team on each driver, as the people you serve would see it today. A short side is where trust is thin, and the place to invest before you need it.</p>
+        <p class="v3-note">Just for you. Not scored, and it stays in this browser.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <div class="lr-radarcheck" data-drivers="Empathy|Transparency|Expertise|Commitment"></div>
+      <div class="v3-act">
+        <p class="v-task" data-task="teamradar">Rate your team on each driver of trust</p>
+        <div data-act="teamradar"></div>
       </div>
-    </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Your turn</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
-        <h2 class="v-h">Protect the <em>trust</em>.</h2>
-        <p class="v-why">Moments like these reach a manager&rsquo;s desk without warning. Choose the response that keeps all four drivers of trust intact.</p>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="trust">Two hypothetical situations. Which response protects trust?</p>
-        <div class="calls" data-calls="pressure"></div>
-        <p class="drill-status" id="trustStatus" role="status" aria-live="polite"></p>
-      </div>
-    </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ MODULE 2 · REPUTATION TERRAIN, THE SECOND CIRCLE (deck p19 to p22) ═══ -->
-<section id="terrain" class="th-dark v-sec" aria-label="Module 2: Reputation terrain">
+<!-- ═══ MODULE 2 · REPUTATION TERRAIN (deck p19) ═══ -->
+<section id="coverage" class="th-dark v-sec v3" aria-label="Module 2: Reputation terrain">
   <div class="wrap">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Reputation terrain</span></div>
-    <div class="v-stage lr-teach">
-      <div class="v-copy">
-        <h2 class="v-h">Stories <em>migrate</em>.</h2><p class="v-why">The Chancellor&rsquo;s reputation terrain, his two examples, and the second circle. Press play.</p>
-        <div class="lr-learn"><span class="v-label">The idea</span><ol><li><span><b>The terrain:</b> societal importance runs up; audience interest runs across.</span></li><li><span><b>Four kinds of coverage:</b> simple reporting, in-depth (experts, data), extensive reporting (cable news), and mass-market (testimony, drama).</span></li><li><span><b>The second circle:</b> activists surround the media and your constituents.</span></li></ol><p class="lr-eg"><b>The Chancellor&rsquo;s examples.</b> Typical sports coverage became a story about the rise of antisemitism; clinical care guidelines became &ldquo;harming children.&rdquo;</p></div>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 5 of 11 &middot; Reputation terrain</span></div>
+        <h2 class="v-h">Where a story sits shapes its <em>coverage</em>.</h2>
+        <p class="v3-lead">On the reputation terrain, societal importance runs up and audience interest runs across. Each corner gets its own kind of coverage, from wire services to <i>60 Minutes</i>.</p>
+        <p class="v3-note">All four stories are hypothetical.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <figure class="lr-story" data-story="terrain/v" data-scenes="11" data-label="Reputation terrain, an animated story from the Chancellor&rsquo;s slides"><p class="lr-slide-h">Reputation terrain</p><svg class="lr-dsvg" viewBox="0 0 740 460" role="img" aria-label="Reputation terrain, an animated story from the Chancellor&rsquo;s slides."><defs><marker id="stA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3AE6C"/></marker><marker id="stW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker><marker id="stG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8a8a"/></marker></defs><g data-in="1">
-<rect class="st-q" data-hi="3" x="130" y="30" width="275" height="185"/><rect class="st-q" data-hi="5" x="415" y="30" width="275" height="185"/><rect class="st-q" data-hi="2" x="130" y="225" width="275" height="185"/><rect class="st-q" data-hi="4" x="415" y="225" width="275" height="185"/>
-<path d="M112 418 V22" stroke="#fff" stroke-width="1.5" marker-end="url(#stW)"/><path d="M112 418 H712" stroke="#fff" stroke-width="1.5" marker-end="url(#stW)"/>
-<text transform="translate(70 222) rotate(-90)" text-anchor="middle" class="st-ax">SOCIETAL</text><text transform="translate(94 222) rotate(-90)" text-anchor="middle" class="st-ax">IMPORTANCE</text><text x="412" y="448" text-anchor="middle" class="st-ax">AUDIENCE INTEREST</text>
-</g>
-<g data-in="2"><text x="146" y="256" class="st-qh">SIMPLE REPORTING</text><text x="146" y="278" class="st-qi">Wire services</text></g>
-<g data-in="3"><text x="146" y="61" class="st-qh">IN-DEPTH COVERAGE</text><text x="146" y="84" class="st-qb">&#8226; Experts</text><text x="146" y="104" class="st-qb">&#8226; Data</text><text x="146" y="127" class="st-qi">The Economist</text></g>
-<g data-in="4"><text x="431" y="256" class="st-qh">EXTENSIVE REPORTING</text><text x="431" y="278" class="st-qi">Cable news (&#8220;infotainment&#8221;)</text></g>
-<g data-in="5"><text x="431" y="61" class="st-qh">MASS-MARKET COVERAGE</text><text x="431" y="84" class="st-qb">&#8226; Testimony</text><text x="431" y="104" class="st-qb">&#8226; Drama</text><text x="431" y="127" class="st-qi">60 Minutes</text></g>
-<g data-in="6" data-out="8"><text x="648" y="388" text-anchor="end" class="st-lab">TYPICAL SPORTS COVERAGE</text></g>
-<g data-in="7" data-out="8"><path d="M664 356 V200" stroke="#fff" stroke-width="2" stroke-dasharray="2 5"/><text x="652" y="330" text-anchor="end" class="st-note">Post on Kanye West</text><text x="648" y="196" text-anchor="end" class="st-lab">RISE OF ANTISEMITISM</text></g>
-<circle data-in="6" data-out="8" data-at="6:664,370;7:664,186" r="11" fill="#D3AE6C" stroke="#1C1C1C" stroke-width="2"/>
-<g data-in="9"><text x="160" y="388" class="st-lab">CLINICAL CARE GUIDELINES</text></g>
-<g data-in="10"><path d="M160 370 H648" stroke="#D3AE6C" stroke-width="2" stroke-dasharray="2 5"/><text x="420" y="361" text-anchor="middle" class="st-note">Social media campaign</text></g>
-<g data-in="11"><path d="M664 356 V200" stroke="#D3AE6C" stroke-width="2" stroke-dasharray="2 5"/><text x="652" y="314" text-anchor="end" class="st-note">Political controversy</text><text x="652" y="330" text-anchor="end" class="st-note">about transgender issues</text><text x="648" y="196" text-anchor="end" class="st-lab">HARMING CHILDREN</text></g>
-<circle data-in="9" data-at="9:144,370;10:664,370;11:664,186" r="11" fill="#D3AE6C" stroke="#1C1C1C" stroke-width="2"/>
-<g data-in="8" data-out="9"><rect x="-20" y="-10" width="780" height="480" fill="#2F3030"/><text x="0" y="24" class="st-lab">THE SECOND CIRCLE</text><circle cx="370" cy="240" r="200" fill="none" stroke="#4B554E" stroke-width="36"/><circle cx="370" cy="240" r="218" fill="none" stroke="#E0B23C" stroke-width="1.5"/><circle cx="370" cy="240" r="182" fill="none" stroke="#E0B23C" stroke-width="1.5"/><path id="stR2" d="M216.8 368.6 A200 200 0 0 0 523.2 368.6" fill="none"/><text class="dring" dy="7"><textPath href="#stR2" startOffset="50%" text-anchor="middle">ACTIVISTS</textPath></text><path d="M370 40 V74" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#stA)"/><path d="M170 240 H204" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#stA)"/><path d="M570 240 H536" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#stA)"/><circle cx="370" cy="240" r="140" fill="none" stroke="#5E5444" stroke-width="40"/><circle cx="370" cy="240" r="160" fill="none" stroke="#C9A86B" stroke-width="1.5"/><circle cx="370" cy="240" r="120" fill="none" stroke="#C9A86B" stroke-width="1.5"/><path id="stR1" d="M262.8 330.0 A140 140 0 0 0 477.2 330.0" fill="none"/><text class="dring" dy="7"><textPath href="#stR1" startOffset="50%" text-anchor="middle">MEDIA</textPath></text><path d="M232 268 H258" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#stA)"/><path d="M508 268 H482" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#stA)"/><path d="M370 372 V294" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#stA)"/><rect x="290" y="170" width="160" height="44" fill="#2F3030" stroke="#7a7a7a"/><text x="370" y="200" text-anchor="middle" class="dbox sm">UNIVERSITY</text><path d="M370 216 V242" stroke="#8a8a8a" stroke-width="2" marker-end="url(#stG)"/><rect x="262" y="246" width="216" height="44" fill="#8BA18E"/><text x="370" y="276" text-anchor="middle" class="dbox dk sm">CONSTITUENTS</text></g>
-</svg><figcaption class="hinttxt">Built from Chancellor Daniel Diermeier&rsquo;s Reputational Stewardship slides, Leadership Redefined Symposium, 2026.</figcaption></figure>
+      <div class="v3-act">
+        <p class="v-task" data-task="coverage">Drag each story to its corner of the terrain, or tap the corner</p>
+        <div data-act="coverage"></div>
       </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Your turn</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
-        <h2 class="v-h">Place the <em>story</em>.</h2>
-        <p class="v-why">Where a story sits on the terrain tells you what it will run on: experts and data, or testimony and drama. Tap the corner of the chart where each story belongs.</p>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="terrain">Tap the corner where each of four hypothetical stories sits</p>
-        <div class="drill v-deck" data-drill="terrain"></div>
-        <p class="drill-status" id="terrainStatus" role="status" aria-live="polite"></p>
-      </div>
-    </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ MODULE 2 · REPUTATION DYNAMICS (deck p23) ═══ -->
-<section id="timing" class="th-dark v-sec" aria-label="Module 2: Reputation dynamics">
+<!-- ═══ MODULE 2 · EXAMPLE: ATHLETICS (deck p20) ═══ -->
+<section id="athletics" class="th-dark v-sec v3" aria-label="Module 2: Example, athletics">
   <div class="wrap">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Reputation dynamics</span></div>
-    <div class="v-stage lr-teach">
-      <div class="v-copy">
-        <h2 class="v-h">The best time to act is before it feels <em>urgent</em>.</h2><p class="v-why">The Chancellor&rsquo;s reputation dynamics slide: as an issue grows, control falls and the stakes rise.</p>
-        <div class="lr-learn"><span class="v-label">The idea</span><ol><li><span><b>Control</b> starts high and falls away over time.</span></li><li><span><b>Stakes</b> start low and then rise fast.</span></li><li><span><b>The optimal time to act</b> is early, while control is high. <b>The typical time</b> is later, where the lines cross.</span></li></ol><p class="lr-eg"><b>Hypothetical.</b> A complaint about a confusing form draws ten replies on Monday. Fix it Monday, not after a reporter calls Thursday.</p></div>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 6 of 11 &middot; Example: athletics</span></div>
+        <h2 class="v-h">Stories <em>migrate</em>.</h2>
+        <p class="v3-lead">The Chancellor&rsquo;s first example starts as typical sports coverage. One post moves it straight up the terrain, and it becomes a different story.</p>
+        <p class="v3-note">Watch what changes, and what stays the same.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <figure class="lr-story" data-story="timing/v" data-scenes="7" data-label="Reputation dynamics, an animated story from the Chancellor&rsquo;s slide"><p class="lr-slide-h">Reputation dynamics</p><svg class="lr-dsvg" viewBox="-10 0 700 370" role="img" aria-label="Reputation dynamics, an animated story from the Chancellor&rsquo;s slide."><defs><marker id="stA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3AE6C"/></marker><marker id="stW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker><marker id="stG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8a8a8a"/></marker><marker id="stS" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8FA391"/></marker></defs><defs><mask id="stCm" maskUnits="userSpaceOnUse" x="-10" y="0" width="700" height="370"><path class="st-draw" data-in="2" pathLength="1" d="M135 108 C175 96, 225 100, 262 142 C300 186, 312 236, 352 276 C392 306, 450 314, 532 314" fill="none" stroke="#fff" stroke-width="8"/></mask></defs><rect data-in="7" x="112" y="70" width="80" height="280" fill="rgba(211,174,108,.14)"/><g data-in="1"><path d="M110 350 V70" stroke="#fff" stroke-width="1.5" marker-end="url(#stW)"/><path d="M110 350 H580" stroke="#fff" stroke-width="1.5" marker-end="url(#stW)"/><text x="100" y="62" text-anchor="end" class="daxl">INTENSITY</text><text x="596" y="356" class="daxl">TIME</text></g><g data-in="2"><path d="M135 108 C175 96, 225 100, 262 142 C300 186, 312 236, 352 276 C392 306, 450 314, 532 314" fill="none" stroke="#E0B23C" stroke-width="2.4" stroke-dasharray="7 5" mask="url(#stCm)"/><text x="548" y="320" class="dct">CONTROL</text></g><g data-in="3"><path class="st-draw" data-in="3" pathLength="1" d="M136 288 C200 300, 268 300, 298 268 C320 240, 318 170, 362 140 C400 118, 470 112, 532 106" fill="none" stroke="#8FA391" stroke-width="2.4"/><text x="548" y="112" class="dst">STAKES</text></g><g data-in="4"><path d="M150 70 V350" stroke="#cfcfcf" stroke-width="1" stroke-dasharray="1 3"/><text x="142" y="30" class="dhd"><tspan class="go">OPTIMAL</tspan> TIME</text><text x="142" y="56" class="dhd">TO ACT</text><circle class="st-glow" cx="150" cy="101" r="12"/></g><g data-in="5"><path d="M330 70 V350" stroke="#cfcfcf" stroke-width="1" stroke-dasharray="1 3"/><text x="322" y="30" class="dhd"><tspan class="go">TYPICAL</tspan> TIME</text><text x="322" y="56" class="dhd">TO ACT</text><circle class="st-glow" cx="314" cy="216" r="14"/></g><g data-in="6"><text x="160" y="332" class="st-lab">MONDAY: fix the form</text><text x="340" y="96" class="st-lab">THURSDAY: a reporter calls</text></g></svg><figcaption class="hinttxt">Built from Chancellor Daniel Diermeier&rsquo;s Reputational Stewardship slides, Leadership Redefined Symposium, 2026.</figcaption></figure>
-      </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Your turn</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
-        <h2 class="v-h">Find the moment to <em>act</em>.</h2>
-        <p class="v-why">The best time to act comes early, while you still have control. Tap where each moment falls on the time line.</p>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="timing">Optimal or typical? Place five hypothetical moments on the time line</p>
-        <div class="drill v-deck" data-drill="timing"></div>
-        <p class="drill-status" id="timingStatus" role="status" aria-live="polite"></p>
+      <div class="v3-act">
+        <p class="v-task" data-task="athletics">Move the slider, or tap Next, to watch the story move</p>
+        <div data-act="athletics"></div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · THE SECOND CIRCLE (deck p21) ═══ -->
+<section id="circle" class="th-dark v-sec v3" aria-label="Module 2: The second circle">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 7 of 11 &middot; The second circle</span></div>
+        <h2 class="v-h">A second circle surrounds the <em>media</em>.</h2>
+        <p class="v3-lead">The Chancellor&rsquo;s slide adds a ring to the first map. The university speaks to its constituents, the media surrounds them, and activists surround both.</p>
+        <p class="v3-note">Ask yourself: who in the second circle cares about your area?</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="circle">Turn each card to light up its part of the slide</p>
+        <div data-act="circle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · EXAMPLE: TRANSGENDER CARE (deck p22) ═══ -->
+<section id="transcare" class="th-dark v-sec v3" aria-label="Module 2: Example, transgender care">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 8 of 11 &middot; Example: transgender care</span></div>
+        <h2 class="v-h">A story can move two <em>ways</em>.</h2>
+        <p class="v3-lead">The Chancellor&rsquo;s second example moves across the terrain first, then up. Two forces, one after the other, turned clinical care guidelines into a different story.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="transcare">Open each numbered step of the story</p>
+        <div data-act="transcare"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · REPUTATION DYNAMICS (deck p23, rebuilt from the slide) ═══ -->
+<section id="dynamics" class="th-dark v-sec v3" aria-label="Module 2: Reputation dynamics">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 9 of 11 &middot; Reputation dynamics</span></div>
+        <h2 class="v-h">Act before it feels <em>urgent</em>.</h2>
+        <p class="v3-lead">The slide plots intensity over time. Control starts high and falls away. The stakes start low and rise. The optimal time to act comes well before the typical time.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="dynamics">Drag the marker along the time line to find the right time to act</p>
+        <div data-act="dynamics"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 2 · EARLY OR LATE (deck p23, applied; branching) ═══ -->
+<section id="early" class="th-dark v-sec v3" aria-label="Module 2: Early or late">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 10 of 11 &middot; Early or late</span></div>
+        <h2 class="v-h">Early or <em>late</em>?</h2>
+        <p class="v3-lead">One hypothetical issue, unfolding over a week. Your choices decide when you act, and what it costs. Then try another path.</p>
+        <ul class="v3-bul">
+          <li><b>Watch</b> control and the stakes.</li>
+          <li><b>Check</b> your reply against the four drivers of trust.</li>
+        </ul>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="early">Make two decisions, then read the debrief</p>
+        <div data-act="early"></div>
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- ═══ MODULE 2 · WRAP-UP ═══ -->
-<section id="wrap2" class="th-dark v-sec" aria-label="Module 2: Wrap-up">
+<section id="wrap2" class="th-dark v-sec v3" aria-label="Module 2: Wrap-up">
   <div class="wrap">
-    <div class="v-rail" data-lesson="2"><span>Module 2: Reputational Stewardship &middot; Wrap-up</span></div>
-    <div class="v-stage wide-act">
-      <div class="v-copy">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="2"><span>Module 2 &middot; Page 11 of 11 &middot; Wrap-up</span></div>
         <h2 class="v-h">Module 2 in three <em>ideas</em>.</h2>
-        <ol class="lr-keys"><li><b>Reputation is made in public.</b>The university speaks to its audiences, and the media surrounds and reaches them from every side.</li><li><b>Trust has four drivers.</b>Transparency, expertise, empathy, and commitment. A strong response reaches all four.</li><li><b>Act while you have control.</b>The optimal time to act comes early, while control is high and the stakes are still low.</li></ol>
+        <ol class="v3-keys">
+          <li><b>Reputation is made in public.</b> The university speaks to its audiences. The media surrounds them, and activists form a second circle.</li>
+          <li><b>Trust has four drivers.</b> Empathy, transparency, expertise, and commitment. A strong response reaches all four.</li>
+          <li><b>Stories migrate, so act early.</b> A story can move across the reputation terrain. The optimal time to act comes while control is high and the stakes are low.</li>
+        </ol>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <div class="lr-learn lr-use"><span class="v-label">Put it to work with your team</span><ol><li><span><b>Synthesize.</b> Which driver of trust is thinnest for your team today?</span></li><li><span><b>Codify.</b> Agree on one rule for small issues, such as: we fix it, and tell the people affected, the same day.</span></li><li><span><b>Apply.</b> Name one issue in your area that is small today, and act on it this week.</span></li></ol><p class="hinttxt">Talk it through with your team. Nothing to type here.</p></div>
+      <div class="v3-act">
+        <p class="v-task" data-task="wrap2">Take it to your team: build one sentence to bring to your next meeting</p>
+        <div data-act="wrap2"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ MODULE 3 · ACHIEVING THE VISION, AREAS OF FOCUS, PROBLEMS TO SOLVE (deck p24 to p26) ═══ -->
-<section id="mission" class="th-dark v-sec" aria-label="Module 3: Achieving the vision">
-  <div class="wrap">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Achieving the vision</span></div>
-    <div class="v-numhead">
-      <h2 class="v-h">Achieving the <em>vision</em>.</h2>
-      <p class="v-why">How Vanderbilt will get there, and the three areas of focus that carry the work.</p>
-    </div>
-    <figure class="lr-vision lr-achieve" aria-label="Achieving the vision"><span class="v-label">Achieving the Vision</span>
-      <p class="lv-main">To achieve our vision and address the primary challenges we face, Vanderbilt will operate at <em>uncommon speed, agility and scale</em> to address relevant societal challenges through education and research.</p></figure>
-    <span class="v-label lr-areas-h">Areas of Focus</span>
-    <ol class="lr-areas">
-      <li><b>Exceptional Core Operations</b>With speed, agility and scale, Vanderbilt will distinguish itself with innovative and impactful capabilities to ensure that we have the talent, resources and reputation necessary to deliver on our vision.</li>
-      <li><b>Bold Strategic Initiatives</b>With &ldquo;exceptional core operations&rdquo; as our fuel, Vanderbilt will pursue increasingly bold initiatives that enable and enhance the reach and impact of our education and research mission.</li>
-      <li><b>Values Driven Leadership</b>Through strategic advocacy efforts and modeling the role of an essential research university, Vanderbilt will stimulate industry change and combat existential threats to our education and research mission.</li>
-    </ol>
-    <p class="lr-samename"><b>Same name, two ideas.</b> Values Driven Leadership, the area of focus, is work Vanderbilt takes on: advocacy, and modeling an essential research university. The Values-Driven Leadership flywheel from Module 1 is one of the ways reputation grows. <b>Why it matters to you:</b> your pod&rsquo;s capstone brief names one of these three areas.</p>
-    <div class="lr-read-host"></div>
-    <div class="lr-pg2" data-pg="Problems to solve">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Problems to solve</span></div>
-    <div class="v-stage lr-teach">
-      <div class="v-copy">
-        <h2 class="v-h">Four problems to <em>solve</em>.</h2><p class="v-why">The primary challenges the vision answers, in the Chancellor&rsquo;s words. The short names are this course&rsquo;s shorthand.</p>
-        <div class="lr-learn lr-problems"><span class="v-label">Problems to Solve</span><ol><li><span>America&rsquo;s leading research universities lack core capabilities to deliver innovation at the speed and scale necessary for our modern world. <small>Shorthand: speed and scale</small></span></li><li><span>America&rsquo;s leading research universities are no longer viewed as primary drivers of solutions to the important problems facing people and society. <small>Shorthand: relevance</small></span></li><li><span>Elite universities are viewed as politicized bastions of ideology. <small>Shorthand: trust</small></span></li><li><span>A university education is no longer viewed as essential for achieving the American dream. <small>Shorthand: value of a degree</small></span></li></ol></div>
-      </div>
-      <div class="v-act">
-        <div class="lr-learn"><span class="v-label">Ask yourself</span><p>Think of a frustration in your own work. Which of the four problems is it a small version of? Your capstone brief makes that connection in sections 2 and 3.</p></div>
-      </div>
-    </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Your turn</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
-        <h2 class="v-h">Name the <em>problem</em>.</h2>
-        <p class="v-why">Tying your team&rsquo;s daily work to one of the four problems shows how it serves the vision. Section 3 of your brief asks for exactly this.</p>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="mission">Which problem does it speak to? Sort four hypothetical moments</p>
-        <div class="drill v-deck" data-drill="problems"></div>
-        <p class="drill-status" id="problemsStatus" role="status" aria-live="polite"></p>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
 
-
-<!-- ═══ MODULE 3 · MISSION AND MARGIN (video) ═══ -->
-<section id="margin" class="th-dark v-sec" aria-label="Module 3: Mission and margin">
+<!-- ═══ MODULE 3 · OPENER (video; deck p24 to p34) ═══ -->
+<section id="m3" class="th-dark v-sec v3" aria-label="Module 3: Mission and Margin">
   <div class="wrap">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; The Chancellor</span></div>
-    <div class="v-stage lr-teach">
-      <div class="v-copy">
-        <h2 class="v-h">Mission without margin is <em>unsustainable</em>.</h2><p class="v-why">From the Chancellor&rsquo;s video: margin without mission is meaningless. Leaders must be fluent in both.</p>
-        <div class="lr-learn"><span class="v-label">The idea</span><ol><li><span><b>Mission is purpose:</b> research, teaching, and discovery.</span></li><li><span><b>Margin is capacity:</b> the financial strength to pursue the mission.</span></li><li><span><b>Building financial capacity</b> is everybody&rsquo;s job.</span></li></ol><p class="lr-eg"><b>Why now.</b> Rising costs, declining support, and higher expectations. Leaders must connect values and viability.</p></div>
-        <figure class="lr-presenter" data-photo="../assets/img/people/diermeier.jpg">
-          <span class="lr-pp" aria-hidden="true">DD</span>
-          <figcaption><b>Chancellor Daniel Diermeier</b><span>Vanderbilt University</span><small>Symposium speaker: Mission &amp; Margin</small></figcaption>
-        </figure>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 1 of 11 &middot; Welcome</span></div>
+        <h2 class="v-h">Fluent in mission and <em>margin</em>.</h2>
+        <p class="v3-lead"><b>Why it matters to you.</b> In the Chancellor&rsquo;s words, mission without margin is unsustainable, and margin without mission is meaningless. Leaders must be fluent in both.</p>
+        <span class="v-label v3-lab">You will be able to</span>
+        <ul class="v3-bul">
+          <li><b>Explain</b> the three areas of focus and the four problems they answer.</li>
+          <li><b>Weigh</b> a decision on mission and margin, and name the leadership mindset and key levers.</li>
+          <li><b>Name</b> the leadership mindset and key levers your team will use.</li>
+        </ul>
         <details class="v-more"><summary>Go deeper</summary><p><b>The book.</b> Chancellor Daniel Diermeier and Brett C. Sweet wrote <a href="https://press.uchicago.edu/ucp/books/book/chicago/M/bo254659525.html" target="_blank" rel="noopener"><i>Mission and Margin: A Practical Guide to University Finances</i></a> (University of Chicago Press, 2025), an insider&rsquo;s guide for non-insiders. Its chapters go further than this course: following the cash, buildings and depreciation, space, the economics of research, scholarships and fundraising, and debt. The Chancellor also discusses Vanderbilt&rsquo;s approach on <a href="https://freakonomics.com/podcast/why-does-vanderbilt-keep-winning/" target="_blank" rel="noopener">Freakonomics Radio, episode 679</a>.</p></details>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
+      <div class="v3-act">
         <figure class="v-video" data-video="margin" data-caption="Chancellor Daniel Diermeier on mission and margin">
           <img class="v-ph" src="../assets/img/video/chancellor-mission-and-margin.jpg" alt="" width="1280" height="720" loading="lazy" />
           <span class="v-ph-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
           <span class="v-soon">Video coming soon</span>
           <figcaption>Chancellor Daniel Diermeier on mission and margin</figcaption>
         </figure>
+        <p class="c1-meta"><b>Chancellor Daniel Diermeier</b> &middot; Symposium speaker: Mission &amp; Margin &middot; 11 pages, about 14 minutes</p>
       </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Your turn</span></div>
-    <div class="v-stage lr-practice">
-      <div class="v-copy">
-        <h2 class="v-h">Make the <em>call</em>.</h2>
-        <p class="v-why">Mission and margin pull against each other in real budget choices. Choose the response that keeps both in view.</p>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="margin">Two hypothetical situations. What would you do?</p>
-        <div class="calls" data-calls="margin"></div>
-        <p class="drill-status" id="marginStatus" role="status" aria-live="polite"></p>
-      </div>
-    </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══ MODULE 3 · THE CHANCELLOR'S SLIDES (deck p27 to p34) ═══ -->
-<section id="peers" class="th-dark v-sec" aria-label="Module 3: Mission and Margin, the Chancellor&rsquo;s slides">
+<!-- ═══ MODULE 3 · ACHIEVING THE VISION (deck p24) ═══ -->
+<section id="achieve" class="th-dark v-sec v3" aria-label="Module 3: Achieving the vision">
   <div class="wrap">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; The Chancellor&rsquo;s slides</span></div>
-    <div class="v-numhead">
-      <h2 class="v-h">Margin is under pressure <em>everywhere</em>.</h2>
-      <p class="v-why">The Chancellor&rsquo;s Mission and Margin slides, narrated: why it matters, what peers did, and how Vanderbilt leads. Press play.</p>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 2 of 11 &middot; Achieving the vision</span></div>
+        <h2 class="v-h">Uncommon speed, agility and <em>scale</em>.</h2>
+        <p class="v3-lead">How will Vanderbilt achieve the vision? The Chancellor answered in one sentence. Each gold phrase in it does a different job.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="achieve">Open each numbered phrase to see the job it does</p>
+        <div data-act="achieve"></div>
+      </div>
     </div>
-    <figure class="lr-story lr-story-slides" data-story="peers/s" data-scenes="8" data-label="The Chancellor&rsquo;s Mission and Margin slides, narrated"><div class="lr-st-stage">
-      <div class="lr-slide st-scene" data-in="1" data-out="2" data-title="Mission and Margin">
-        <p class="lr-slide-h">Mission and Margin</p>
-        <div class="lr-slide-book"><img src="../assets/img/deck/mission-and-margin-cover.png" alt="Book cover: Mission and Margin, A Practical Guide to University Finances, by Daniel Diermeier and Brett Sweet." width="364" height="549" loading="lazy" /><p class="lr-slide-big">A fundamental understanding of financial management is more essential than ever for university leaders at every level, as is a true partnership between academic leaders and financial leaders.</p></div>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · AREAS OF FOCUS (deck p25) ═══ -->
+<section id="areas" class="th-dark v-sec v3" aria-label="Module 3: Areas of focus">
+  <div class="wrap">
+    <div class="v3-grid v3-48">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 3 of 11 &middot; Areas of focus</span></div>
+        <h2 class="v-h">Three areas of <em>focus</em>.</h2>
+        <p class="v3-lead">Three areas of focus carry the vision. Each does a different job: Exceptional Core Operations is the fuel, Bold Strategic Initiatives extend the reach, and Values Driven Leadership changes the industry.</p>
+        <p class="v3-note"><b>Same name, two ideas.</b> Values Driven Leadership, the area of focus, is work Vanderbilt takes on. The Values-Driven Leadership flywheel in Module 1 is one way reputation grows.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="2" data-out="3" data-title="Why it matters">
-        <p class="lr-slide-h">Why it matters</p>
-        <div class="lr-slide-lines"><p class="g st-b">Universities face pressure:</p><p class="st-b">Rising costs, declining support, higher expectations</p><p class="g st-b">Leaders must connect values and viability.</p></div>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+      <div class="v3-act">
+        <p class="v-task" data-task="areas">Drag each initiative to its area of focus, or tap the area</p>
+        <div data-act="areas"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="3" data-out="4" data-title="Examples of financial distress">
-        <p class="lr-slide-h">Examples of financial distress</p>
-        <ul class="lr-newsgrid"><li class="lr-news lr-news-hc st-b"><span class="lr-mast">The Harvard Crimson</span><p>Hiring freeze continued (faculty + staff)</p></li><li class="lr-news lr-news-cs st-b"><span class="lr-mast">Columbia Daily Spectator</span><p>Columbia to lay off nearly 180 researchers funded by federal grants</p></li><li class="lr-news lr-news-bd st-b"><span class="lr-mast">The Brown Daily Herald</span><p>Brown extends staff hiring freeze, announces plans for more drastic cost-cutting measures</p></li><li class="lr-news lr-news-dn st-b"><span class="lr-mast">The Daily Northwestern</span><p>Northwestern to eliminate more than 400 staff positions amid &lsquo;mounting financial pressures&rsquo;</p></li><li class="lr-news lr-news-cds st-b"><span class="lr-mast">The Cornell Daily Sun</span><p>Staff Cuts, Hiring Restrictions Anticipated as University Faces &lsquo;Profound Financial Challenges&rsquo;</p></li><li class="lr-news lr-news-hed st-b"><span class="lr-mast">Higher Ed Dive</span><p>Penn undergoes another round of budget-tightening measures<small>Senior directed leaders of its schools and centers to reduce &ldquo;certain expenditures&rdquo; by 4% amid federal policy headwinds like higher endowment taxes</small></p></li><li class="lr-news lr-news-bb st-b"><span class="lr-mast">Bloomberg</span><p>Princeton Plans New Budget Cuts as Pressure From Trump Builds</p></li><li class="lr-news lr-news-fb st-b"><span class="lr-mast">Forbes</span><p>Federal Cuts Force Hiring and Raise Pauses At Johns Hopkins University</p></li></ul>
-        <p class="hinttxt">Headlines as shown on the slide, credited to the publication named on each card: The Harvard Crimson, Columbia Daily Spectator, The Brown Daily Herald, The Daily Northwestern, The Cornell Daily Sun, Higher Ed Dive, Bloomberg, and Forbes. From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · PROBLEMS TO SOLVE (deck p26) ═══ -->
+<section id="problems" class="th-dark v-sec v3" aria-label="Module 3: Problems to solve">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 4 of 11 &middot; Problems to solve</span></div>
+        <h2 class="v-h">Four problems to <em>solve</em>.</h2>
+        <p class="v3-lead">The areas of focus answer four problems, named on the Chancellor&rsquo;s slide. Each has a small, everyday version that may already be on your desk.</p>
+        <p class="v3-note">The everyday versions are hypothetical.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="lr-slide lr-slide-img st-scene" data-in="4" data-out="5" data-title="Peer responses vary">
-        <div class="lr-peerimg">
-          <a href="../assets/img/deck/peer-responses-vary.jpg" target="_blank" rel="noopener"><img src="../assets/img/deck/peer-responses-vary.jpg" width="2400" height="1320" loading="lazy" alt="The Chancellor&rsquo;s slide, Peer responses vary: 25 universities, each with its 2024 NIH funding and its endowment, and dots for six measures from layoffs to graduate program impacts. Nearly every peer column is filled with red and beige dots. Vanderbilt&rsquo;s column, at the far right, is empty. The full data is in the table below the slide." /><span class="sr"> (opens the slide full size in a new tab)</span></a>
-          <span class="lr-vu-ring st-late" aria-hidden="true"></span>
-        </div>
-        <p class="hinttxt">Select the slide to see it full size. Vanderbilt&rsquo;s column, far right, is empty. From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
-        <details class="v-more"><summary>See the numbers as a table</summary>
-        <div class="pm-wrap" tabindex="0" role="region" aria-label="Peer responses vary, as a table: scroll sideways for all universities"><table class="pm">
+      <div class="v3-act">
+        <p class="v-task" data-task="problems">Open each gold phrase to see the problem up close</p>
+        <div data-act="problems"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · WHY IT MATTERS, EXAMPLES OF FINANCIAL DISTRESS (deck p28, p29) ═══ -->
+<section id="pressure" class="th-dark v-sec v3" aria-label="Module 3: Why it matters">
+  <div class="wrap">
+    <div class="v3-grid v3-39">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 5 of 11 &middot; Why it matters</span></div>
+        <h2 class="v-h">Universities face <em>pressure</em>.</h2>
+        <p class="v3-lead">Rising costs, declining support, higher expectations. <b>Leaders must connect values and viability.</b> The Chancellor showed what the pressure looks like at peer universities.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <figure class="c1-slide c1-news">
+          <p class="c1-slide-h">Examples of financial distress</p>
+          <ul class="lr-newsgrid"><li class="lr-news lr-news-hc"><span class="lr-mast">The Harvard Crimson</span><p>Hiring freeze continued (faculty + staff)</p></li><li class="lr-news lr-news-cs"><span class="lr-mast">Columbia Daily Spectator</span><p>Columbia to lay off nearly 180 researchers funded by federal grants</p></li><li class="lr-news lr-news-bd"><span class="lr-mast">The Brown Daily Herald</span><p>Brown extends staff hiring freeze, announces plans for more drastic cost-cutting measures</p></li><li class="lr-news lr-news-dn"><span class="lr-mast">The Daily Northwestern</span><p>Northwestern to eliminate more than 400 staff positions amid &lsquo;mounting financial pressures&rsquo;</p></li><li class="lr-news lr-news-cds"><span class="lr-mast">The Cornell Daily Sun</span><p>Staff Cuts, Hiring Restrictions Anticipated as University Faces &lsquo;Profound Financial Challenges&rsquo;</p></li><li class="lr-news lr-news-hed"><span class="lr-mast">Higher Ed Dive</span><p>Penn undergoes another round of budget-tightening measures<small>Senior directed leaders of its schools and centers to reduce &ldquo;certain expenditures&rdquo; by 4% amid federal policy headwinds like higher endowment taxes</small></p></li><li class="lr-news lr-news-bb"><span class="lr-mast">Bloomberg</span><p>Princeton Plans New Budget Cuts as Pressure From Trump Builds</p></li><li class="lr-news lr-news-fb"><span class="lr-mast">Forbes</span><p>Federal Cuts Force Hiring and Raise Pauses At Johns Hopkins University</p></li></ul>
+          <figcaption>Headlines as shown on the slide, each credited to the publication named on its card. From Chancellor Daniel Diermeier&rsquo;s Mission and Margin slides, Leadership Redefined Symposium, 2026.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · PEER RESPONSES VARY (deck p30) ═══ -->
+<section id="peers" class="th-dark v-sec v3" aria-label="Module 3: Peer responses vary">
+  <div class="wrap">
+    <div class="v3-grid v3-39">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 6 of 11 &middot; Peer responses vary</span></div>
+        <h2 class="v-h">Peer responses <em>vary</em>.</h2>
+        <p class="v3-lead">The Chancellor&rsquo;s slide tracks 24 peer universities on six responses to financial pressure. Guess three of the counts, then see Vanderbilt&rsquo;s column.</p>
+        <details class="v-more c1-peermore"><summary>See the slide and the full table</summary>
+          <p><a href="../assets/img/deck/peer-responses-vary.jpg" target="_blank" rel="noopener">Open the Chancellor&rsquo;s slide, Peer responses vary, full size<span class="sr"> (opens in a new tab)</span></a>. Red: hiring freeze, layoffs or expense reductions communicated or confirmed. Beige: under review. Gray: none reported.</p>
+<div class="pm-wrap" tabindex="0" role="region" aria-label="Peer responses vary, as a table: scroll sideways for all universities"><table class="pm">
 <caption class="sr">How 25 universities responded to financial pressure, as shown on the Chancellor&rsquo;s slide. Red: hiring freeze, layoffs or expense reductions communicated or confirmed. Beige: hiring frost, layoffs expected, or expense reductions under review. Gray: none reported. S: staff. F&amp;S: faculty and staff. The first eight were targeted by the federal administration.</caption>
 <thead><tr class="pm-grp"><th scope="col"><span class="sr">Measure</span></th><th colspan="8" scope="colgroup" class="pm-tg">Universities targeted by POTUS</th><th colspan="16"></th><th></th></tr>
 <tr class="pm-names"><td></td><th scope="col" class="pm-t "><span>Harvard</span></th><th scope="col" class="pm-t "><span>Columbia</span></th><th scope="col" class="pm-t "><span>Brown</span></th><th scope="col" class="pm-t "><span>Northwestern</span></th><th scope="col" class="pm-t "><span>Cornell</span></th><th scope="col" class="pm-t "><span>Penn</span></th><th scope="col" class="pm-t "><span>Princeton</span></th><th scope="col" class="pm-t "><span>Johns Hopkins</span></th><th scope="col" class=""><span>Duke</span></th><th scope="col" class=""><span>Emory</span></th><th scope="col" class=""><span>USC</span></th><th scope="col" class=""><span>Notre Dame</span></th><th scope="col" class=""><span>Yale</span></th><th scope="col" class=""><span>NYU</span></th><th scope="col" class=""><span>Stanford</span></th><th scope="col" class=""><span>MIT</span></th><th scope="col" class=""><span>Peer university A</span></th><th scope="col" class=""><span>WashU</span></th><th scope="col" class=""><span>Rice</span></th><th scope="col" class=""><span>UChicago</span></th><th scope="col" class=""><span>Dartmouth</span></th><th scope="col" class=""><span>Peer university B</span></th><th scope="col" class=""><span>Boston College</span></th><th scope="col" class=""><span>Caltech</span></th><th scope="col" class="pm-vu"><span>Vanderbilt</span></th></tr>
@@ -686,163 +850,159 @@
 </tbody></table></div>
 <ul class="pm-key"><li><span class="pm-dot pm-kb" aria-hidden="true"></span>Hiring “frost” / staff, layoffs expected, and/or expense reductions under review</li><li><span class="pm-dot pm-kr" aria-hidden="true"></span>Hiring “freeze”, layoffs and/or expense reductions communicated/confirmed</li><li><span class="pm-dot pm-kg" aria-hidden="true"></span>None reported</li><li><b>S</b> staff &middot; <b>F&amp;S</b> faculty and staff</li></ul>
         </details>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="5" data-out="6" data-title="Core idea: mission and margin">
-        <p class="lr-slide-h">Core idea<small>Mission and margin</small></p>
-        <svg class="lr-core" viewBox="0 0 640 380" role="img" aria-label="Core idea: Mission equals purpose: research, teaching, discovery. Margin equals capacity: financial strength to pursue mission. Two arrows run between them in a continuous cycle.">
-<defs><linearGradient id="lrCg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9BC7C"/><stop offset="1" stop-color="#C7A66A"/></linearGradient></defs>
-<path d="M178 300 A118 118 0 0 1 168 82" fill="none" stroke="url(#lrCg)" stroke-width="40"/><path d="M146 52 L204 84 L150 122 Z" fill="#D9BC7C"/>
-<path d="M462 80 A118 118 0 0 1 472 298" fill="none" stroke="url(#lrCg)" stroke-width="40"/><path d="M494 328 L436 296 L490 258 Z" fill="#C7A66A"/>
-<rect x="186" y="20" width="268" height="132" rx="18" class="lr-cbx"/>
-<text x="320" y="62" text-anchor="middle" class="lr-cbig">MISSION</text><text x="320" y="84" text-anchor="middle" class="lr-cbig sm">=</text><text x="320" y="114" text-anchor="middle" class="lr-cbig">PURPOSE</text><text x="320" y="138" text-anchor="middle" class="lr-csm">Research, teaching, discovery</text>
-<rect x="186" y="226" width="268" height="132" rx="18" class="lr-cbx"/>
-<text x="320" y="268" text-anchor="middle" class="lr-cbig">MARGIN</text><text x="320" y="290" text-anchor="middle" class="lr-cbig sm">=</text><text x="320" y="320" text-anchor="middle" class="lr-cbig">CAPACITY</text><text x="320" y="344" text-anchor="middle" class="lr-csm">Financial strength to pursue mission</text>
-</svg>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+      <div class="v3-act">
+        <p class="v-task" data-task="peers">Slide to your guess, lock it in, then see the chart</p>
+        <div data-act="peers"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="6" data-out="7" data-title="At Vanderbilt">
-        <p class="lr-slide-h">At Vanderbilt<small>Mission and margin</small></p>
-        <div class="lr-slide-lines lg"><p class="st-b"><b>Financial discipline</b> enables strategic investments.</p><p class="st-b">Building financial capacity <b>is everybody&rsquo;s job.</b></p></div>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · CORE IDEA (deck p31) ═══ -->
+<section id="core" class="th-dark v-sec v3" aria-label="Module 3: The core idea">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 7 of 11 &middot; The core idea</span></div>
+        <h2 class="v-h">Mission is purpose. Margin is <em>capacity</em>.</h2>
+        <p class="v3-lead">On the Chancellor&rsquo;s slide, two arrows join mission and margin in one cycle. Every unit does both kinds of work. Sort five hypothetical moments to see which is which.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="7" data-out="8" data-title="Leadership mindset">
-        <p class="lr-slide-h">Leadership mindset<small>Mission and margin</small></p>
-        <div class="lr-slide-lines"><p class="st-b"><b>Steward</b> purpose <strong>and</strong> performance</p><p class="st-b"><b>Use mission</b> to guide priorities</p><p class="st-b"><b>Build trust</b> through transparency and consistency</p><p class="st-b"><b>Think long-term</b>: manage trade-offs</p></div>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+      <div class="v3-act">
+        <p class="v-task" data-task="core">Drag each moment to mission or margin, or tap one</p>
+        <div data-act="core"></div>
       </div>
-      <div class="lr-slide st-scene" data-in="8" data-out="9" data-title="Key levers">
-        <p class="lr-slide-h">Key levers<small>Mission and margin</small></p>
-        <div class="lr-slide-lines"><p class="st-b"><b>Understand</b> where money comes from and where it goes</p><p class="st-b"><b>Use data</b> and discipline to inform choices</p><p class="st-b"><b>Collaborate:</b> Academic + Finance partnership</p><p class="st-b"><b>Pilot, learn, scale</b></p></div>
-        <p class="hinttxt">From Chancellor Daniel Diermeier&rsquo;s Mission and Margin presentation at the Leadership Redefined Symposium, 2026.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · AT VANDERBILT (deck p32; branching) ═══ -->
+<section id="atvu" class="th-dark v-sec v3" aria-label="Module 3: At Vanderbilt">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 8 of 11 &middot; At Vanderbilt</span></div>
+        <h2 class="v-h">Capacity is everybody&rsquo;s <em>job</em>.</h2>
+        <p class="v3-lead">Two lines on the Chancellor&rsquo;s slide: <b>financial discipline enables strategic investments</b>, and <b>building financial capacity is everybody&rsquo;s job</b>. Try them on one hypothetical decision.</p>
+        <div class="lr-read-host"></div>
       </div>
-    </div></figure>
+      <div class="v3-act">
+        <p class="v-task" data-task="atvu">Make two decisions, then read the debrief</p>
+        <div data-act="atvu"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · LEADERSHIP MINDSET (deck p33) ═══ -->
+<section id="mindset" class="th-dark v-sec v3" aria-label="Module 3: Leadership mindset">
+  <div class="wrap">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 9 of 11 &middot; Leadership mindset</span></div>
+        <h2 class="v-h">The leadership <em>mindset</em>.</h2>
+        <p class="v3-lead">Four lines on the slide: steward purpose and performance; use mission to guide priorities; build trust through transparency and consistency; think long-term and manage trade-offs.</p>
+        <p class="v3-note">All four moves are hypothetical.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="mindset">Tap a move, then the mindset it shows</p>
+        <div data-act="mindset"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ MODULE 3 · KEY LEVERS (deck p34) ═══ -->
+<section id="levers" class="th-dark v-sec v3" aria-label="Module 3: Key levers">
+  <div class="wrap">
+    <div class="v3-grid v3-39">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 10 of 11 &middot; Key levers</span></div>
+        <h2 class="v-h">Four levers your team can <em>pull</em>.</h2>
+        <p class="v3-lead">The key levers: <b>understand</b> where money comes from and where it goes; <b>use data</b> and discipline to inform choices; <b>collaborate</b> in an academic and finance partnership; and <b>pilot, learn, scale</b>.</p>
+        <p class="v3-note">Just for you. Not scored, and it stays in this browser.</p>
+        <div class="lr-read-host"></div>
+      </div>
+      <div class="v3-act">
+        <p class="v-task" data-task="levers">Rate your team on each lever</p>
+        <div data-act="levers"></div>
+      </div>
+    </div>
   </div>
 </section>
 
 
 <!-- ═══ MODULE 3 · WRAP-UP ═══ -->
-<section id="wrap3" class="th-dark v-sec" aria-label="Module 3: Wrap-up">
+<section id="wrap3" class="th-dark v-sec v3" aria-label="Module 3: Wrap-up">
   <div class="wrap">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Wrap-up</span></div>
-    <div class="v-stage wide-act">
-      <div class="v-copy">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="3"><span>Module 3 &middot; Page 11 of 11 &middot; Wrap-up</span></div>
         <h2 class="v-h">Module 3 in three <em>ideas</em>.</h2>
-        <ol class="lr-keys"><li><b>Achieving the vision takes uncommon speed, agility and scale.</b>Three areas of focus carry the work, aimed at four primary problems.</li><li><b>Mission and margin go together.</b>Mission is purpose: research, teaching, discovery. Margin is the financial strength to pursue it.</li><li><b>Building financial capacity is everybody&rsquo;s job.</b>Financial discipline enables strategic investments: understand where money comes from and where it goes, then pilot, learn, scale.</li></ol>
+        <ol class="v3-keys">
+          <li><b>Uncommon speed, agility and scale.</b> Three areas of focus carry the vision: Exceptional Core Operations, Bold Strategic Initiatives, and Values Driven Leadership, aimed at four problems to solve.</li>
+          <li><b>Mission is purpose; margin is capacity.</b> Research, teaching, discovery, and the financial strength to pursue them. Leaders must connect values and viability.</li>
+          <li><b>Building financial capacity is everybody&rsquo;s job.</b> Financial discipline enables strategic investments. Understand where money comes from and where it goes, then pilot, learn, scale.</li>
+        </ol>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <div class="lr-learn lr-use"><span class="v-label">Put it to work with your team</span><ol><li><span><b>Synthesize.</b> Which of the four problems does your team&rsquo;s work help solve?</span></li><li><span><b>Codify.</b> Pick one key lever your team will use: know where money comes from and goes, use data and discipline, partner across academic and finance, or pilot, learn, scale.</span></li><li><span><b>Apply.</b> Before your next spending decision, ask together: what does it do for the mission, and what does it do for the margin?</span></li></ol><p class="hinttxt">Talk it through with your team. Nothing to type here.</p></div>
+      <div class="v3-act">
+        <p class="v-task" data-task="wrap3">Take it to your team: build one sentence to bring to your next meeting</p>
+        <div data-act="wrap3"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ MODULE 3 · THE CHANCELLOR'S CLOSE (deck p35) ═══ -->
-<section id="everest" class="th-dark v-sec" aria-label="Module 3: The Chancellor&rsquo;s closing words">
-  <div class="wrap narrow">
-    <div class="v-rail" data-lesson="3"><span>Module 3: Mission and Margin &middot; Closing words</span></div>
-    <h2 class="v-h center">We are scaling Mount <em>Everest</em>.</h2>
-    <blockquote class="lr-everest lr-close"><p>&ldquo;Our mission is not small. We are scaling Mount Everest. We&rsquo;ve set our sights on the world&rsquo;s highest pinnacle, and we&rsquo;ve shown that we&rsquo;re ready. Climbing Everest requires courage and commitment. But it promises the professional experience of a lifetime to all who sign on. And we will support one another at every step of the way, as we always do in every challenge we encounter.&rdquo;</p><cite>Chancellor Daniel Diermeier, closing slide of his Symposium talk</cite></blockquote>
-    <p class="v-why center lr-close-ask">Ask yourself: what is your team&rsquo;s part of the climb this year? Next, a quick check, then your capstone.</p>
-  </div>
-</section>
 
 <!-- ═══ QUICK CHECK ═══ -->
-<section id="quiz" class="th-dark v-sec" aria-label="Knowledge check">
-  <div class="wrap narrow">
-    <div class="v-rail" data-lesson="4"><span>Quick check</span></div>
-    <h2 class="v-h center">Eight <em>situations</em>.</h2>
-    <p class="v-task center" data-task="quiz">Apply what you learned. Six of eight to pass</p>
-    <div id="quizBox"></div>
-    <p class="drill-status" id="quizStatus" role="status" aria-live="polite">0 of 8 answered.</p>
-    <div class="kq-done" id="quizDone" role="status" aria-live="polite"></div>
-  </div>
-</section>
-
-
-<!-- ═══ CAPSTONE · THE CAPSTONE ═══ -->
-<section id="capstone" class="th-dark v-sec" aria-label="Capstone: The capstone">
+<section id="quiz" class="th-dark v-sec v3" aria-label="Knowledge check">
   <div class="wrap">
-    <div class="v-rail" data-lesson="4"><span>Capstone &middot; The capstone</span></div>
-    <div class="v-stage">
-      <div class="v-copy">
-        <h2 class="v-h">Your pod&rsquo;s <em>capstone</em>.</h2>
-        <p class="v-why">Your pod picks a real problem at Vanderbilt and comes up with a way to fix it.</p>
-        <div class="lr-learn"><span class="v-label">How it works</span><ol><li><span><b>One brief per pod:</b> seven sections, three pages at most.</span></li><li><span><b>Due Friday, November 20.</b></span></li><li><span><b>Sections 1 to 3 this week.</b> Sections 4 to 7 in Course Two.</span></li><li><span><b>One winner in each focus area.</b> Your brief is judged against others in the same area.</span></li></ol></div>
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="4"><span>Quick check &middot; All three modules</span></div>
+        <h2 class="v-h">Eight <em>situations</em>.</h2>
+        <p class="v3-lead">Apply the Chancellor&rsquo;s ideas to situations you have not seen: one from Module 1, four from Module 2, and three from Module 3.</p>
+        <ul class="v3-bul">
+          <li><b>Choose,</b> then read why.</li>
+          <li><b>Six of eight</b> completes the check. Retake it anytime.</li>
+        </ul>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
-        <span class="v-label">The seven sections, and what good looks like</span>
-        <ol class="lr-brief lr-brief-good" aria-label="Sections 1 to 3, this week">
-          <li class="now">Focus area<small>This week</small><span class="lr-good"><b>What good looks like:</b> It is at the top of page one, and the rest of the brief serves it.</span></li>
-          <li class="now">The challenge and why it matters<small>This week</small><span class="lr-good"><b>What good looks like:</b> It starts with a real person and a real moment. Someone outside your office could explain it back.</span></li>
-          <li class="now">Connection to Vanderbilt&rsquo;s priorities<small>This week</small><span class="lr-good"><b>What good looks like:</b> It names the vision and your focus area, not just &lsquo;strategy.&rsquo;</span></li>
-        </ol>
-        <ol class="lr-brief lr-later" start="4" aria-label="Sections 4 to 7, in Course Two">
-          <li>Integrated solution<small>Course Two</small></li>
-          <li>Steps, owners, timeline<small>Course Two</small></li>
-          <li>Success metrics<small>Course Two</small></li>
-          <li>Sustainability plan<small>Course Two</small></li>
-        </ol>
-      </div>
-    </div>
-    <div class="lr-pg2" data-pg="Your turn">
-    <div class="v-rail" data-lesson="4"><span>Capstone &middot; Your turn</span></div>
-    <div class="v-stage">
-      <div class="v-copy">
-        <h2 class="v-h">Pick your focus <em>area</em>.</h2>
-        <p class="v-why">Section 1 of your brief. Practice the call on five hypothetical challenges first.</p>
-        <div class="lr-learn"><span class="v-label">How to choose</span><p><b>Exceptional Core Operations</b> makes existing work faster, cheaper, or better. <b>Bold Strategic Initiatives</b> create something new that extends education and research. <b>Values Driven Leadership</b> uses advocacy and modeling to change how universities everywhere work.</p></div>
-      </div>
-      <div class="v-act">
-        <p class="v-task" data-task="capstone">Practice the call: five challenges</p>
-        <div class="drill v-deck" data-drill="focus"></div>
-        <p class="drill-status" id="focusStatus" role="status" aria-live="polite"></p>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CAPSTONE · YOUR BRIEF ═══ -->
-<section id="brief" class="th-dark v-sec" aria-label="Capstone: Your brief">
-  <div class="wrap">
-    <div class="v-rail" data-lesson="4"><span>Capstone &middot; Your brief</span></div>
-    <div class="v-stage">
-      <div class="v-copy">
-        <h2 class="v-h">Download your <em>brief</em>.</h2>
-        <p class="v-why">One fillable PDF for your whole pod. This week, fill in sections 1 to 3.</p>
-        <p class="v-task" data-task="brief">Download the fillable brief</p>
-        <p class="lr-dl"><a class="btn btn-gold" href="../brief/leadership-redefined-capstone-brief.pdf" download data-brief-dl>Download the fillable brief (PDF)</a></p>
-        <p class="drill-status" id="briefStatus" role="status" aria-live="polite"></p>
-        <div class="lr-learn"><span class="v-label">How to use it</span><ol><li><span><b>Save it</b> to your computer.</span></li><li><span><b>Open it</b> in Adobe Acrobat Reader, or another PDF app that fills forms, so your entries are kept.</span></li><li><span><b>Fill in sections 1 to 3</b> with your pod this week. Sections 4 to 7 come in Course Two.</span></li><li><span><b>Your pod turns in one brief</b> by Friday, November 20.</span></li></ol></div>
-      </div>
-      <div class="v-act">
-        <details class="lr-example" open><summary>See a strong example</summary><p class="lr-sample">1. FOCUS AREA: Exceptional Core Operations
-
-2. THE CHALLENGE: Departments pay contractors and consultants for short projects, like data analysis and web updates, that our own staff could do. The money leaves, and staff who want to grow go elsewhere.
-
-3. CONNECTION: The vision asks us to operate with speed, agility and scale. Using skills we already have keeps fees inside Vanderbilt.
-
-(An invented example for practice.)</p></details>
+      <div class="v3-act">
+        <p class="v-task" data-task="quiz">Answer all eight. Six of eight to pass</p>
+        <div id="quizBox" class="c1-quiz"></div>
+        <p class="drill-status" id="quizStatus" role="status" aria-live="polite">0 of 8 answered.</p>
+        <div class="kq-done" id="quizDone" role="status" aria-live="polite"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CAPSTONE · THIS WEEK ═══ -->
-<section id="nextstep" class="th-dark v-sec" aria-label="Capstone: This week">
+
+<!-- ═══ THIS WEEK ═══ -->
+<section id="nextstep" class="th-dark v-sec v3" aria-label="This week">
   <div class="wrap">
-    <div class="v-rail" data-lesson="4"><span>Capstone &middot; This week</span></div>
-    <div class="v-stage">
-      <div class="v-copy">
+    <div class="v3-grid">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="4"><span>This week &middot; Your moves</span></div>
         <h2 class="v-h">Your four moves this <em>week</em>.</h2>
         <p class="v-task" data-task="nextstep">Tap each one to commit</p>
-        <div class="v-commits" id="commitList" role="group" aria-label="Your four commitments"></div>
+        <div class="v-commits c1-commits" id="commitList" role="group" aria-label="Your four commitments"></div>
         <p class="drill-status" id="commitStatus" role="status" aria-live="polite"></p>
-        <div class="lr-tools"><button type="button" class="btn btn-ghost btn-sm v-print" data-copytext="Pod meeting, Course One (about 45 minutes)\n1. Check in: one idea each from vision, reputation, and mission and margin.\n2. Each member names one real problem at Vanderbilt they would fix.\n3. Pick the challenge with the clearest stakes and the strongest case.\n4. Agree on the focus area.\n5. Fill in sections 1 to 3 of the fillable brief together. Name one person to keep the file.\nTeams post due Friday, November 6. Brief due Friday, November 20.">Copy a pod meeting agenda</button><button type="button" class="btn btn-ghost btn-sm v-print" data-print>Print this week&rsquo;s takeaway</button><a class="btn btn-ghost btn-sm v-print" href="../brief/leadership-redefined-capstone-brief.pdf" download data-brief-dl>Download the brief (PDF)</a></div>
+        <div class="lr-tools c1-tools"><button type="button" class="btn btn-ghost btn-sm v-print" data-copytext="Pod meeting, Course One (about 45 minutes)\n1. Check in: one idea each from vision, reputation, and mission and margin.\n2. Each member names one real problem at Vanderbilt they would fix.\n3. Pick the challenge with the clearest stakes and the strongest case.\n4. Agree on the focus area.\n5. Work on sections 1 to 3 of your pod&rsquo;s brief together (the capstone page). Name one person to keep the file.\nTeams post due Friday, November 6. Brief due Friday, November 20.">Copy a pod meeting agenda</button><button type="button" class="btn btn-ghost btn-sm v-print" data-print>Print this week&rsquo;s takeaway</button><a class="btn btn-gold btn-sm" href="../brief/">Go to the capstone page</a></div>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
+      <div class="v3-act">
         <div class="lr-learn lr-prompt"><div class="lr-prompt-h"><span class="v-label">Teams Discussion prompt 1 &middot; due Friday, November 6</span><button type="button" class="sub-listen" data-narr="nextstep/teams" aria-pressed="false" aria-label="Listen to the prompt and how to post" title="Listen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a9 9 0 0 1 0 14"/></svg></button></div><p class="lr-prompt-q">How does Vanderbilt&rsquo;s vision for the future resonate with you personally? In what ways can you align your leadership approach or daily work to help bring that vision to life?</p><details class="v-more"><summary>Read the full prompt</summary><p>Vanderbilt&rsquo;s ambition is to be the great university of the 21st century by defining and executing a bold, future-focused vision that inspires innovation and impact. Leaders play a key role in connecting their daily work to this broader strategy: stewarding both mission and margin, so the university has the capacity to act on its vision, and protecting the trust and reputation that bring Vanderbilt the talent, funding, and partnerships it needs.</p></details><ol class="lr-steps"><li><span><b>Open your cohort&rsquo;s Teams channel.</b><br><a class="btn btn-gold btn-sm" href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad" target="_blank" rel="noopener">Open the Teams channel<span class="sr"> (opens in a new tab)</span></a></span></li><li><span><b>Post your response under Discussions.</b> Start a new post and answer the question above in a short paragraph. The starter below can help.</span></li><li><span><b>Reply to one colleague by Friday, November 6.</b> Reply to at least one colleague&rsquo;s reflection by highlighting a connection or perspective that strengthens their idea.</span></li></ol></div>
-        <div class="v-msg" data-tell="teams">
+        <div class="v-msg c1-msg" data-tell="teams">
           <span class="v-label">A start for your Teams response</span>
           <p class="v-tell-text"></p>
           <button type="button" class="btn btn-gold btn-sm" data-copytext="">Copy the post</button>
@@ -852,45 +1012,39 @@
   </div>
 </section>
 
-<!-- ═══ THE END ═══ -->
-<section id="deeper" class="th-dark v-sec" aria-label="Go deeper">
+<!-- ═══ GO DEEPER ═══ -->
+<section id="deeper" class="th-dark v-sec v3" aria-label="Go deeper">
   <div class="wrap">
-    <div class="v-rail" data-lesson="4"><span>Go deeper &middot; Optional</span></div>
-    <div class="v-stage lr-deckscreen">
-      <div class="v-copy">
+    <div class="v3-grid v3-39">
+      <div class="v3-copy">
+        <div class="v-rail" data-lesson="4"><span>Go deeper &middot; Optional</span></div>
         <h2 class="v-h">Go <em>deeper</em>.</h2>
-        <p class="v-why">Optional reading and listening for each module, from the Chancellor&rsquo;s own books and the research behind them.</p>
+        <p class="v3-lead">Optional reading and listening for each module, from the Chancellor&rsquo;s own books and the research behind them.</p>
+        <p class="v3-note">These go beyond the Symposium. The course itself teaches only what the Chancellor presented.</p>
+        <div class="lr-read-host"></div>
       </div>
-      <div class="v-act">
+      <div class="v3-act">
         <div class="lr-deckgrid lr-deeper3"><div class="lr-dcard lr-gcard"><span class="v-label">Module 1: Vision, Strategy &amp; the Future of Vanderbilt</span><ul class="lr-glist"><li><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=60201" target="_blank" rel="noopener">Eliminate Strategic Overload<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Felix Oberholzer-Gee, Harvard Business Review, 2021</span><span class="lr-gwhy">The value stick: a fast test for which work is truly strategic.</span></li><li><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=59546" target="_blank" rel="noopener">Better, Simpler Strategy<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Felix Oberholzer-Gee, Harvard Business Review Press, 2021</span><span class="lr-gwhy">The full book behind the value stick.</span></li></ul></div><div class="lr-dcard lr-gcard"><span class="v-label">Module 2: Reputational Stewardship</span><ul class="lr-glist"><li><a href="https://www.kellogg.northwestern.edu/faculty/research/detail/2011/reputation-rules-strategies-for-building-your-companys-most-valuable/" target="_blank" rel="noopener">Reputation Rules<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Daniel Diermeier, McGraw-Hill, 2011</span><span class="lr-gwhy">The Chancellor&rsquo;s book: the trust radar and more, through real corporate crises.</span></li><li><a href="https://hbr.org/2007/02/reputation-and-its-risks" target="_blank" rel="noopener">Reputation and Its Risks<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Eccles, Newquist, and Schatz, Harvard Business Review, 2007</span><span class="lr-gwhy">Why reputation risk deserves the same discipline as financial risk.</span></li></ul></div><div class="lr-dcard lr-gcard"><span class="v-label">Module 3: Mission and Margin</span><ul class="lr-glist"><li><a href="https://press.uchicago.edu/ucp/books/book/chicago/M/bo254659525.html" target="_blank" rel="noopener">Mission and Margin: A Practical Guide to University Finances<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Daniel Diermeier and Brett C. Sweet, University of Chicago Press, 2025</span><span class="lr-gwhy">The Chancellor&rsquo;s insider guide to how a university pays for its mission, in the language finance partners use.</span></li><li><a href="https://freakonomics.com/podcast/why-does-vanderbilt-keep-winning/" target="_blank" rel="noopener">Why Does Vanderbilt Keep Winning?<span class="sr"> (opens in a new tab)</span></a><span class="lr-gsrc">Freakonomics Radio</span><span class="lr-gwhy">The Chancellor on the strategy behind Vanderbilt&rsquo;s momentum.</span></li></ul></div></div>
-        <p class="hinttxt">Optional. These go beyond the Symposium sessions; the course itself teaches only what the presenters taught.</p>
       </div>
     </div>
   </div>
 </section>
-<section id="learn" class="th-dark v-sec v-end" aria-label="The end of the course">
-  <div class="v-end-bg" aria-hidden="true"><img src="../assets/img/course/campus-aerial.jpg" alt="" width="1680" height="507" loading="lazy" /></div>
+
+<!-- ═══ THE END ═══ -->
+<section id="learn" class="th-dark v-sec v-end v3 c1-end" aria-label="The end of the course">
   <div class="wrap">
     <p class="v-latin">Course One complete</p>
     <h2 class="v-display sm">Take it to your <em>pod</em>.</h2>
-    <p class="v-hello">Course Two opens the week of November 9.</p>
+    <p class="v-hello">Next: work on sections 1 to 3 of your pod&rsquo;s brief on the capstone page. Course Two opens the week of November 9.</p>
     <div class="v-hero-cta center">
-      <a class="btn btn-gold" href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad" target="_blank" rel="noopener">Open your pod&rsquo;s Teams channel<span class="sr"> (opens in a new tab)</span></a>
-      <a class="btn btn-ghost" href="../course-two/">Preview Course Two</a>
+      <a class="btn btn-gold" href="../brief/">Go to the capstone<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad" target="_blank" rel="noopener">Open your pod&rsquo;s Teams channel<span class="sr"> (opens in a new tab)</span></a>
       <button type="button" class="btn btn-ghost" data-print>Print this week&rsquo;s takeaway</button>
+      <a class="btn btn-ghost" href="../course-two/">Preview Course Two</a>
       <button type="button" class="btn btn-ghost" id="exitBtn">Exit the course</button>
     </div>
-    <blockquote class="lr-everest"><p>&ldquo;Vanderbilt will define, and be, the great university of the 21st century.&rdquo;</p><cite>The Vanderbilt vision</cite></blockquote>
-    <p class="v-hello" style="margin-top:18px">Go deeper: the Chancellor&rsquo;s books, the Module 1 pre-work, and more.</p>
-    <nav class="v-links" aria-label="Go deeper">
-      <a href="https://news.vanderbilt.edu/2022/07/01/daring-to-grow-together-we-are-building-the-great-university-of-the-21st-century/" target="_blank" rel="noopener">Daring to Grow</a>
-      <a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=59546" target="_blank" rel="noopener">Better, Simpler Strategy</a>
-      <a href="https://www.kellogg.northwestern.edu/faculty/research/detail/2011/reputation-rules-strategies-for-building-your-companys-most-valuable/" target="_blank" rel="noopener">Reputation Rules</a>
-      <a href="https://hbr.org/2007/02/reputation-and-its-risks" target="_blank" rel="noopener">Reputation and Its Risks</a>
-      <a href="https://press.uchicago.edu/ucp/books/book/chicago/M/bo254659525.html" target="_blank" rel="noopener">Mission and Margin</a>
-      <a href="https://freakonomics.com/podcast/why-does-vanderbilt-keep-winning/" target="_blank" rel="noopener">Freakonomics: Why Does Vanderbilt Keep Winning?</a>
-      <a href="../">Program home</a>
-    </nav>
+    <blockquote class="c1-endq"><p>&ldquo;Vanderbilt will define, and be, the great university of the 21st century.&rdquo;</p><cite>The Vanderbilt Vision</cite></blockquote>
+    <div class="lr-read-host c1-endread"></div>
   </div>
 </section>
 </main>
@@ -924,7 +1078,7 @@
   <div class="oracle-modal">
     <span class="mono">Course One complete</span>
     <h2 id="oracleTitle">You have finished Course One.</h2>
-    <p id="oracleBody">Every activity is done. Meet your pod, fill in sections 1 to 3 of the fillable brief, and post in your Teams channel by Friday, November 6.</p>
+    <p id="oracleBody">Every activity is done. Meet your pod, work on sections 1 to 3 of your brief on the capstone page, and post in your Teams channel by Friday, November 6.</p>
     <div class="oracle-actions">
       <button type="button" class="btn btn-gold btn-sm" data-print>Print this week&rsquo;s takeaway</button>
       <button type="button" class="btn btn-ghost btn-sm" id="oracleGo">Done</button>
@@ -932,26 +1086,13 @@
     <p class="oracle-fine">Your progress stays in this browser.</p>
   </div>
 </div>
-<script src="config.js?v=20261101v2"></script>
-<script src="content.js?v=20261103a"></script>
-<script src="narration-scripts.js?v=20261103a"></script>
+<script src="config.js?v=20261104c3"></script>
+<script src="content.js?v=20261104c3"></script>
+<script src="narration-scripts.js?v=20261104c3"></script>
 <script src="../assets/js/nav.js?v=20261002a"></script>
 <script src="../assets/js/pager.js?v=20261002a"></script>
 <script src="../assets/js/lr-engine.js?v=20261103a"></script>
-<script src="../assets/js/lr-activities.js?v=20261103a"></script>
-<script>
-/* the fillable brief: downloading it (from any data-brief-dl link) completes the Your brief page, through the engine's LR_PROG hook; Mark done works too. Mirrors Course Two. */
-(function(){
-  var P = window.LR_PROG; if(!P) return;
-  var st = document.getElementById('briefStatus');
-  function paint(){ if(st) st.textContent = P.is('brief') ? 'Downloaded. Activity complete.' : 'Not downloaded yet.'; }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest ? e.target.closest('a[data-brief-dl]') : null; if(!a) return;
-    P.set('r-brief', 'Brief downloaded'); P.done('brief'); paint();
-  });
-  document.addEventListener('chart:page', paint); paint();
-})();
-</script>
+<script src="../assets/js/lr-activities.js?v=20261104c3"></script>
 </body>
 </html>
 

@@ -1,15 +1,14 @@
 /* ══════════ LEADERSHIP REDEFINED · COURSE ONE · content ══════════
-   The Chancellor's Symposium talk, in the order of his FINAL deck:
-   Module 1: Vision, Strategy & the Future of Vanderbilt (deck pages 1 to 16), rebuilt to
+   The Chancellor's Symposium talk, in the order of his FINAL deck, every page rebuilt to
    the version 3 standard (docs/design-v3.md) with the activity library (ACTIVITIES below,
-   drawn by ../assets/js/lr-activities.js);
-   Module 2: Reputational Stewardship (pages 17 to 23);
-   Module 3: Mission and Margin (pages 24 to 35, closing on the Everest quote).
-   Then a quick check and the capstone, its own section at the end. Week of November 2.
+   drawn by ../assets/js/lr-activities.js):
+   Module 1: Vision, Strategy & the Future of Vanderbilt (deck pages 1 to 16);
+   Module 2: Reputational Stewardship (his video, then pages 17 to 23);
+   Module 3: Mission and Margin (his video, then pages 24 to 34).
+   Then a quick check and this week's moves. The capstone lives on its own page (../brief/).
    Every teaching claim traces to the FINAL deck or to the Chancellor's two videos.
-   Practice items are hypothetical. Learners never type in the course: the brief is
-   the fillable PDF. Read by ../assets/js/pager.js and ../assets/js/lr-engine.js.
-   No em or en dashes. */
+   Practice items are hypothetical. Learners never type in the course.
+   Read by ../assets/js/pager.js and ../assets/js/lr-engine.js. No em or en dashes. */
 window.LR_COURSE = {
   PLAN:[
     { sel:'section.hero', key:'home', label:'Welcome', mode:'whole' },
@@ -25,19 +24,30 @@ window.LR_COURSE = {
     { sel:'#loop', key:'loop', label:'Module 1: How reputation enables the mission', mode:'whole' },
     { sel:'#resources', key:'resources', label:'Module 1: Match the resources', mode:'whole' },
     { sel:'#wrap1', key:'wrap1', label:'Module 1: Wrap-up', mode:'whole' },
-    { sel:'#reputation', key:'trust', label:'Module 2: Reputational stewardship', mode:'pages' },
-    { sel:'#terrain', key:'terrain', label:'Module 2: Reputation terrain', mode:'pages' },
-    { sel:'#timing', key:'timing', label:'Module 2: Reputation dynamics', mode:'pages' },
+    { sel:'#m2', key:'m2', label:'Module 2: The Chancellor on reputation', mode:'whole' },
+    { sel:'#shapes', key:'shapes', label:'Module 2: What shapes reputation', mode:'whole' },
+    { sel:'#radar', key:'radar', label:'Module 2: The trust radar', mode:'whole' },
+    { sel:'#teamradar', key:'teamradar', label:'Module 2: Your team’s radar', mode:'whole' },
+    { sel:'#coverage', key:'coverage', label:'Module 2: Reputation terrain', mode:'whole' },
+    { sel:'#athletics', key:'athletics', label:'Module 2: Example, athletics', mode:'whole' },
+    { sel:'#circle', key:'circle', label:'Module 2: The second circle', mode:'whole' },
+    { sel:'#transcare', key:'transcare', label:'Module 2: Example, transgender care', mode:'whole' },
+    { sel:'#dynamics', key:'dynamics', label:'Module 2: Reputation dynamics', mode:'whole' },
+    { sel:'#early', key:'early', label:'Module 2: Early or late', mode:'whole' },
     { sel:'#wrap2', key:'wrap2', label:'Module 2: Wrap-up', mode:'whole' },
-    { sel:'#mission', key:'mission', label:'Module 3: Achieving the vision', mode:'pages' },
-    { sel:'#margin', key:'margin', label:'Module 3: Mission and margin', mode:'pages' },
-    { sel:'#peers', key:'peers', label:'Module 3: The Chancellor’s slides', mode:'whole' },
+    { sel:'#m3', key:'m3', label:'Module 3: The Chancellor on mission and margin', mode:'whole' },
+    { sel:'#achieve', key:'achieve', label:'Module 3: Achieving the vision', mode:'whole' },
+    { sel:'#areas', key:'areas', label:'Module 3: Areas of focus', mode:'whole' },
+    { sel:'#problems', key:'problems', label:'Module 3: Problems to solve', mode:'whole' },
+    { sel:'#pressure', key:'pressure', label:'Module 3: Why it matters', mode:'whole' },
+    { sel:'#peers', key:'peers', label:'Module 3: Peer responses vary', mode:'whole' },
+    { sel:'#core', key:'core', label:'Module 3: The core idea', mode:'whole' },
+    { sel:'#atvu', key:'atvu', label:'Module 3: At Vanderbilt', mode:'whole' },
+    { sel:'#mindset', key:'mindset', label:'Module 3: Leadership mindset', mode:'whole' },
+    { sel:'#levers', key:'levers', label:'Module 3: Key levers', mode:'whole' },
     { sel:'#wrap3', key:'wrap3', label:'Module 3: Wrap-up', mode:'whole' },
-    { sel:'#everest', key:'everest', label:'Module 3: Closing words', mode:'whole' },
     { sel:'#quiz', key:'quiz', label:'Quick check', mode:'whole' },
-    { sel:'#capstone', key:'capstone', label:'Capstone: The capstone', mode:'pages' },
-    { sel:'#brief', key:'brief', label:'Capstone: Your brief', mode:'whole' },
-    { sel:'#nextstep', key:'nextstep', label:'Capstone: This week', mode:'whole' },
+    { sel:'#nextstep', key:'nextstep', label:'This week', mode:'whole' },
     { sel:'#deeper', key:'deeper', label:'Go deeper', mode:'whole' },
     { sel:'#learn', key:'learn', label:'Keep going', mode:'whole', extras:['footer'] }
   ],
@@ -50,16 +60,28 @@ window.LR_COURSE = {
     { k:'engine', no:'06', name:'Name the flywheel', how:'Sort six moments' },
     { k:'loop', no:'07', name:'The reputation loop', how:'Open all seven parts of the slide' },
     { k:'resources', no:'08', name:'Match the resources', how:'Match four moments' },
-    { k:'wrap1', no:'09', name:'Take it to your team', how:'Build your sentence' },
-    { k:'trust', no:'10', name:'The trust radar', how:'Find the strongest call in two situations' },
-    { k:'terrain', no:'11', name:'Reputation terrain', how:'Place four stories' },
-    { k:'timing', no:'12', name:'Reputation dynamics', how:'Sort five moments' },
-    { k:'mission', no:'13', name:'Problems to solve', how:'Match four moments to the problem they speak to' },
-    { k:'margin', no:'14', name:'Mission and margin', how:'Find the strongest call in two situations' },
-    { k:'quiz', no:'15', name:'Quick check', how:'Score 6 of 8' },
-    { k:'capstone', no:'16', name:'Capstone: your focus area', how:'Sort five challenges' },
-    { k:'brief', no:'17', name:'Capstone: your brief', how:'Download the fillable brief' },
-    { k:'nextstep', no:'18', name:'Capstone: this week', how:'Commit to all four moves' }
+    { k:'wrap1', no:'09', name:'Module 1: take it to your team', how:'Build your sentence' },
+    { k:'shapes', no:'10', name:'What shapes reputation', how:'Open all four parts of the slide' },
+    { k:'radar', no:'11', name:'The trust radar', how:'Turn all four drivers' },
+    { k:'teamradar', no:'12', name:'Your team’s radar', how:'Rate your team on all four drivers' },
+    { k:'coverage', no:'13', name:'Reputation terrain', how:'Place four stories on the terrain' },
+    { k:'athletics', no:'14', name:'Example: athletics', how:'Follow the story to the end' },
+    { k:'circle', no:'15', name:'The second circle', how:'Turn all four cards' },
+    { k:'transcare', no:'16', name:'Example: transgender care', how:'Open all four steps' },
+    { k:'dynamics', no:'17', name:'Reputation dynamics', how:'Move through all five stages' },
+    { k:'early', no:'18', name:'Early or late', how:'Reach an outcome' },
+    { k:'wrap2', no:'19', name:'Module 2: take it to your team', how:'Build your sentence' },
+    { k:'achieve', no:'20', name:'Achieving the vision', how:'Open all four phrases' },
+    { k:'areas', no:'21', name:'Areas of focus', how:'Sort four initiatives' },
+    { k:'problems', no:'22', name:'Problems to solve', how:'Open all four problems' },
+    { k:'peers', no:'23', name:'Peer responses vary', how:'Predict three counts' },
+    { k:'core', no:'24', name:'Mission and margin', how:'Sort five moments' },
+    { k:'atvu', no:'25', name:'At Vanderbilt', how:'Reach an outcome' },
+    { k:'mindset', no:'26', name:'Leadership mindset', how:'Match four moves' },
+    { k:'levers', no:'27', name:'Key levers', how:'Rate your team on all four levers' },
+    { k:'wrap3', no:'28', name:'Module 3: take it to your team', how:'Build your sentence' },
+    { k:'quiz', no:'29', name:'Quick check', how:'Score 6 of 8' },
+    { k:'nextstep', no:'30', name:'This week', how:'Commit to all four moves' }
   ],
   ROUTE_PROG:'route',
   ROUTE_NARR:'route/g',
@@ -71,22 +93,20 @@ window.LR_COURSE = {
     },
     {
       h:'Module 2: Reputational <em>Stewardship</em>',
-      p:'The Chancellor on video, what shapes reputation, the trust radar, the reputation terrain, and when to act.',
-      tags:['A video and two situations', 'What shapes reputation', 'The terrain', 'Reputation dynamics']
+      p:'The Chancellor on video, then what shapes reputation, the trust radar, the reputation terrain and two stories that moved across it, and when to act.',
+      tags:['The Chancellor’s video', 'The trust radar', 'The terrain and the second circle', 'When to act']
     },
     {
       h:'Module 3: Mission and <em>Margin</em>',
-      p:'Achieving the vision, the areas of focus, the four problems, then mission and margin, closing on the Chancellor’s own words.',
-      tags:['Areas of focus', 'Problems to solve', 'A video and two situations', 'The Chancellor’s slides']
+      p:'The Chancellor on video, then achieving the vision, the areas of focus and four problems, peers under pressure, mission and margin, and the leadership mindset.',
+      tags:['The Chancellor’s video', 'Areas of focus and problems', 'Peer responses vary', 'Mindset and key levers']
     },
     {
-      h:'The <em>capstone</em>',
-      p:'A quick check, then your pod’s capstone: what it is, your focus area, the fillable brief, and this week’s moves.',
-      tags:['Quick check', 'Focus area', 'Your brief', 'This week']
+      h:'Quick check and this <em>week</em>',
+      p:'Eight situations to test what you learned, then your moves for the week: your pod, the Teams prompt, and the capstone page.',
+      tags:['Quick check', 'Teams prompt 1', 'Your four moves', 'The capstone page']
     }
   ],
-  BEST_LABEL:'The strongest call: ',
-  TRY_AGAIN:'Now find the strongest call. ',
   /* ══════ Module 1 activities (version 3). Contracts: the header of ../assets/js/lr-activities.js ══════
      Every claim follows the FINAL deck wording; every practice moment is labeled hypothetical. */
   ACTIVITIES:{
@@ -208,6 +228,279 @@ window.LR_COURSE = {
         { label:'Your move', opts:['share one number from this module', 'show the 2020 and 2026 maps', 'ask which flywheel our work turns'] }
       ],
       doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 2.'
+    },
+    /* ══════ Module 2: Reputational Stewardship (deck pages 17 to 23), version 3 ══════ */
+    shapes:{
+      type:'explore',
+      figure:'<div class="c1g"><svg viewBox="0 0 440 440" aria-hidden="true" focusable="false"><defs><marker id="c1wsA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3AE6C"/></marker><marker id="c1wsG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#A0A0A0"/></marker></defs><circle cx="220" cy="220" r="180" fill="none" stroke="#5E5444" stroke-width="44"/><circle cx="220" cy="220" r="202" fill="none" stroke="#C9A86B" stroke-width="1.5"/><circle cx="220" cy="220" r="158" fill="none" stroke="#C9A86B" stroke-width="1.5"/><path id="c1wsR" d="M82.1 335.7 A180 180 0 0 0 357.9 335.7" fill="none"/><text class="t-ring" dy="8"><textPath href="#c1wsR" startOffset="50%" text-anchor="middle">MEDIA</textPath></text><rect x="130" y="128" width="180" height="48" fill="#2F3030" stroke="#8A8A8A"/><text x="220" y="159" text-anchor="middle" class="t-box">UNIVERSITY</text><path d="M220 178 V212" stroke="#A0A0A0" stroke-width="2" marker-end="url(#c1wsG)"/><rect x="120" y="218" width="200" height="48" fill="#8BA18E"/><text x="220" y="249" text-anchor="middle" class="t-box dk">AUDIENCES</text><path d="M62 242 H112" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#c1wsA)"/><path d="M378 242 H328" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#c1wsA)"/><path d="M220 378 V274" stroke="#D3AE6C" stroke-width="2.5" marker-end="url(#c1wsA)"/></svg></div>',
+      pins:[ { id:'uni', x:76, y:34.5 }, { id:'aud', x:80, y:66 }, { id:'media', x:50, y:9 }, { id:'arrows', x:50, y:76 } ],
+      spots:{
+        uni:{ title:'University', text:'The top box. The university speaks to its audiences: one arrow, from above. What Vanderbilt says and does, including what your team says and does, travels down this arrow.' },
+        aud:{ title:'Audiences', text:'Everyone whose view of Vanderbilt matters, including the people your team serves. Their view of Vanderbilt is its reputation.' },
+        media:{ title:'Media', text:'The ring around everything. The media surrounds the audiences, so people hear about Vanderbilt through the media, as well as from Vanderbilt itself.' },
+        arrows:{ title:'Arrows from every side', text:'Count the arrows into the audiences: one from the university, three from the media, from the left, the right, and below. More voices reach your audiences than yours.' }
+      },
+      prompt:'Tap each numbered spot on the slide, one through four.',
+      done:'You opened every part of the slide. Next, the trust radar.'
+    },
+    radar:{
+      type:'flip',
+      figure:'<div class="c1g"><svg viewBox="-70 0 740 430" role="img" aria-label="The trust radar: a target of rings inside a gold ring, with a diamond reaching empathy at the top, transparency on the right, expertise at the bottom, and commitment on the left."><circle cx="300" cy="215" r="146" fill="none" stroke="#D3AE6C" stroke-width="16"/><circle cx="300" cy="215" r="134" fill="#6E7B6B"/><circle cx="300" cy="215" r="118" fill="#A3AB8F"/><circle cx="300" cy="215" r="100" fill="#6E7B6B"/><circle cx="300" cy="215" r="84" fill="#A3AB8F"/><circle cx="300" cy="215" r="66" fill="#6E7B6B"/><circle cx="300" cy="215" r="50" fill="#A3AB8F"/><circle cx="300" cy="215" r="32" fill="#6E7B6B"/><circle cx="300" cy="215" r="18" fill="#A3AB8F"/><circle cx="300" cy="215" r="7" fill="#6E7B6B"/><polygon points="300,52 463,215 300,378 137,215" fill="#8BA18E" fill-opacity=".55"/><path d="M300 52 V378 M137 215 H463" stroke="#6E7B6B" stroke-width="2"/><g class="c1-hi" data-hi="em"><circle cx="300" cy="52" r="11"/><text x="300" y="30" text-anchor="middle" class="t-rad">EMPATHY</text></g><g class="c1-hi" data-hi="tr"><circle cx="463" cy="215" r="11"/><text x="484" y="222" class="t-rad">TRANSPARENCY</text></g><g class="c1-hi" data-hi="ex"><circle cx="300" cy="378" r="11"/><text x="300" y="414" text-anchor="middle" class="t-rad">EXPERTISE</text></g><g class="c1-hi" data-hi="co"><circle cx="137" cy="215" r="11"/><text x="116" y="222" text-anchor="end" class="t-rad">COMMITMENT</text></g></svg></div>',
+      cards:[
+        { front:'Empathy', hi:'em', back:'<p>Show that you understand how the people affected feel.</p><p class="la-eg"><b>Sounds like.</b> &ldquo;We know this caused real stress for your family.&rdquo;</p>' },
+        { front:'Transparency', hi:'tr', back:'<p>Say what you know, what you do not know yet, and what you are doing.</p><p class="la-eg"><b>Sounds like.</b> &ldquo;Here is what happened, and here is what we are still checking.&rdquo;</p>' },
+        { front:'Expertise', hi:'ex', back:'<p>Show that the right people, with the right knowledge, are on it.</p><p class="la-eg"><b>Sounds like.</b> &ldquo;Our registrar team found the cause and tested the fix.&rdquo;</p>' },
+        { front:'Commitment', hi:'co', back:'<p>Show that you will see it through, and own the result.</p><p class="la-eg"><b>Sounds like.</b> &ldquo;I own this. You will hear from me by Friday.&rdquo;</p>' }
+      ],
+      done:'All four drivers turned. Next, draw your own team&rsquo;s radar.'
+    },
+    teamradar:{
+      type:'rate',
+      title:'Your team&rsquo;s trust radar',
+      dims:['Empathy', 'Transparency', 'Expertise', 'Commitment'],
+      levels:['Not yet', 'Partly', 'Strongly'],
+      low:'Your thinnest side: {dims}. That is where trust is thin. Invest there before you need it.',
+      high:'Every side reaches the outer ring, like the Chancellor&rsquo;s slide. Keep it there under pressure.'
+    },
+    coverage:{
+      type:'place',
+      noun:'story',
+      buckets:['In-depth coverage', 'Mass-market coverage', 'Simple reporting', 'Extensive reporting'],
+      subs:['Experts, data. <i>The Economist</i>', 'Testimony, drama. <i>60 Minutes</i>', 'Wire services', 'Cable news (&ldquo;infotainment&rdquo;)'],
+      grid:{ y:'Societal importance', x:'Audience interest', cells:[0, 1, 2, 3] },
+      items:[
+        { t:'A wire service runs three paragraphs on a new dean&rsquo;s appointment.', short:'Wire item on a new dean', a:2, why:'Low on both axes: simple reporting, the wire services corner.', hint:'Few people outside campus will follow this, and little is at stake for society. Which corner is low on both?' },
+        { t:'A national magazine analyzes research funding, with data and interviews with experts.', short:'Magazine on research funding', a:0, why:'High importance, a narrower audience: in-depth coverage, which runs on experts and data.', hint:'It matters a lot to society, but a smaller audience reads it. Look at the top left.' },
+        { t:'Cable panels replay a viral clip from a campus event for two days.', short:'Viral clip on cable', a:3, why:'High audience interest, little societal importance: extensive reporting, cable news &ldquo;infotainment.&rdquo;', hint:'Lots of viewers, not much at stake. Which corner is high interest, low importance?' },
+        { t:'A TV newsmagazine tells one family&rsquo;s emotional story about a university decision.', short:'Family story on TV', a:1, why:'High on both: mass-market coverage. On the slide it runs on testimony and drama, the <i>60 Minutes</i> corner.', hint:'A big audience and real stakes. Which corner is high on both?' }
+      ],
+      done:'All four stories placed. Next, watch a real story move across the terrain.'
+    },
+    athletics:{
+      type:'scrub',
+      label:'Example, athletics: move through the story',
+      figure:'<div class="c1g"><svg viewBox="0 0 640 420" aria-hidden="true" focusable="false"><defs><marker id="c1axW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker></defs><path d="M84 382 V20" stroke="#fff" stroke-width="1.5" marker-end="url(#c1axW)"/><path d="M84 382 H624" stroke="#fff" stroke-width="1.5" marker-end="url(#c1axW)"/><text transform="translate(40 200) rotate(-90)" text-anchor="middle" class="t-ax">SOCIETAL</text><text transform="translate(62 200) rotate(-90)" text-anchor="middle" class="t-ax">IMPORTANCE</text><text x="354" y="412" text-anchor="middle" class="t-ax">AUDIENCE INTEREST</text><text x="430" y="336" class="t-h">TYPICAL SPORTS</text><text x="430" y="358" class="t-h">COVERAGE</text><g data-from="1"><path d="M452 296 V120" stroke="#fff" stroke-width="2" stroke-dasharray="2 6"/><path d="M444 132 L452 116 L460 132" fill="none" stroke="#fff" stroke-width="2"/><text x="470" y="214" class="t-note">Post on Kanye West</text></g><g data-from="2"><text x="400" y="92" class="t-h">RISE OF ANTISEMITISM</text></g><circle data-cursor cx="452" cy="308" r="12" fill="#D3AE6C" stroke="#1C1C1C" stroke-width="2.5"/></svg></div>',
+      steps:[
+        { label:'Typical sports coverage', t:'Where the story starts on the Chancellor&rsquo;s slide: high on audience interest, low on societal importance.', cy:0 },
+        { label:'Post on Kanye West', t:'On the slide, a post on Kanye West is what moves the story. It climbs straight up the terrain.', cy:-96 },
+        { label:'Rise of antisemitism', t:'Where it lands: a story about the rise of antisemitism. Audience interest is about the same. Societal importance is far higher, and the coverage changes with it.', cy:-190 }
+      ],
+      done:'You followed the story from start to finish. Next, why stories move: the second circle.'
+    },
+    circle:{
+      type:'flip',
+      figure:'<div class="c1g"><svg viewBox="0 0 480 480" role="img" aria-label="The second circle: a box labeled university points down to a box labeled constituents. A ring labeled media surrounds them. A second, outer ring labeled activists surrounds the media, with arrows pointing inward from every side."><defs><marker id="c1scA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E0B23C"/></marker><marker id="c1scG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#A0A0A0"/></marker></defs><g class="c1-hi" data-hi="ca"><circle cx="240" cy="240" r="205" fill="none" stroke="#4B554E" stroke-width="38"/><circle cx="240" cy="240" r="224" fill="none" stroke="#E0B23C" stroke-width="1.5"/><circle cx="240" cy="240" r="186" fill="none" stroke="#E0B23C" stroke-width="1.5"/><path id="c1scR2" d="M83 372 A205 205 0 0 0 397 372" fill="none"/><text class="t-ring" dy="7"><textPath href="#c1scR2" startOffset="50%" text-anchor="middle">ACTIVISTS</textPath></text></g><g class="c1-hi" data-hi="cm"><circle cx="240" cy="240" r="140" fill="none" stroke="#5E5444" stroke-width="34"/><circle cx="240" cy="240" r="157" fill="none" stroke="#E0B23C" stroke-width="1.5"/><circle cx="240" cy="240" r="123" fill="none" stroke="#E0B23C" stroke-width="1.5"/><path id="c1scR1" d="M133 330 A140 140 0 0 0 347 330" fill="none"/><text class="t-ring sm" dy="6"><textPath href="#c1scR1" startOffset="50%" text-anchor="middle">MEDIA</textPath></text></g><path d="M240 18 V96" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><path d="M18 240 H96" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><path d="M462 240 H384" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><path d="M118 250 H150" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><path d="M362 250 H330" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><path d="M240 462 V276" stroke="#E0B23C" stroke-width="2.5" marker-end="url(#c1scA)"/><g class="c1-hi" data-hi="cu"><rect x="172" y="160" width="136" height="40" fill="#2F3030" stroke="#8A8A8A"/><text x="240" y="186" text-anchor="middle" class="t-box sm">UNIVERSITY</text></g><path d="M240 202 V224" stroke="#A0A0A0" stroke-width="2" marker-end="url(#c1scG)"/><g class="c1-hi" data-hi="cc"><rect x="154" y="230" width="172" height="40" fill="#8BA18E"/><text x="240" y="256" text-anchor="middle" class="t-box sm dk">CONSTITUENTS</text></g></svg></div>',
+      cards:[
+        { front:'University', hi:'cu', back:'<p>The top box, as on the first map. The university speaks to its constituents.</p>' },
+        { front:'Constituents', hi:'cc', back:'<p>The inner box: the people the university serves. The first map called them audiences.</p>' },
+        { front:'Media', hi:'cm', back:'<p>The first ring. It surrounds the constituents and reaches them from the sides.</p>' },
+        { front:'Activists', hi:'ca', back:'<p>The second circle, around the media. Its arrows press in on the media from every side, and one reaches the constituents directly.</p>' }
+      ],
+      done:'All four parts lit. Notice: in both of the Chancellor&rsquo;s examples, the push came from outside the university and the media. Next, his second example.'
+    },
+    transcare:{
+      type:'explore',
+      figure:'<div class="c1g"><svg viewBox="0 0 700 420" aria-hidden="true" focusable="false"><defs><marker id="c1axW2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker><marker id="c1tgA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3AE6C"/></marker></defs><path d="M84 382 V20" stroke="#fff" stroke-width="1.5" marker-end="url(#c1axW2)"/><path d="M84 382 H684" stroke="#fff" stroke-width="1.5" marker-end="url(#c1axW2)"/><text transform="translate(40 200) rotate(-90)" text-anchor="middle" class="t-ax">SOCIETAL</text><text transform="translate(62 200) rotate(-90)" text-anchor="middle" class="t-ax">IMPORTANCE</text><text x="384" y="412" text-anchor="middle" class="t-ax">AUDIENCE INTEREST</text><text x="104" y="318" class="t-h">CLINICAL CARE</text><text x="104" y="340" class="t-h">GUIDELINES</text><path d="M252 300 H514" stroke="#D3AE6C" stroke-width="2" stroke-dasharray="2 6" marker-end="url(#c1tgA)"/><text x="384" y="282" text-anchor="middle" class="t-note">Social Media Campaign</text><path d="M530 290 V118" stroke="#D3AE6C" stroke-width="2" stroke-dasharray="2 6" marker-end="url(#c1tgA)"/><text x="548" y="196" class="t-note">Political Controversy</text><text x="548" y="216" class="t-note">About Transgender</text><text x="548" y="236" class="t-note">Issues</text><path d="M252 290 L516 112" stroke="#D3AE6C" stroke-width="1.5" stroke-dasharray="2 6" marker-end="url(#c1tgA)"/><text x="548" y="86" class="t-h">HARMING</text><text x="548" y="108" class="t-h">CHILDREN</text></svg></div>',
+      pins:[ { id:'start', x:34, y:71.4 }, { id:'campaign', x:56, y:71.4 }, { id:'controversy', x:75.7, y:46 }, { id:'end', x:75.7, y:20 } ],
+      spots:{
+        start:{ title:'Clinical care guidelines', text:'Where the story starts on the slide: low on audience interest, and low on societal importance. Few people outside medicine would read it.' },
+        campaign:{ title:'Social media campaign', text:'The first move is across. A social media campaign raises audience interest: many more people are now paying attention.' },
+        controversy:{ title:'Political controversy about transgender issues', text:'The second move is up. Political controversy raises the societal importance of the same story.' },
+        end:{ title:'Harming children', text:'Where it lands: high on both axes, framed as &ldquo;harming children.&rdquo; The dotted diagonal on the slide shows the whole journey, from one corner of the terrain to the other.' }
+      },
+      prompt:'Tap each numbered spot on the slide, one through four.',
+      done:'You traced the whole story. Next, when to act.'
+    },
+    dynamics:{
+      type:'scrub',
+      label:'Reputation dynamics: move the marker through time',
+      figure:'<div class="c1g c1dyn"><svg viewBox="30 228 1200 600" aria-hidden="true" focusable="false"><defs><marker id="c1dyW" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fff"/></marker><marker id="c1dyC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#E8B53A"/></marker><marker id="c1dyS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#98AE9A"/></marker></defs><rect data-from="1" data-until="1" x="280" y="240" width="262" height="84" rx="6" class="c1-glow"/><rect data-from="3" data-until="3" x="638" y="240" width="250" height="84" rx="6" class="c1-glow"/><text x="227" y="342" text-anchor="end" class="d-int">INTENSITY</text><path d="M252 764 V326" stroke="#fff" stroke-width="1.6" marker-end="url(#c1dyW)"/><path d="M252 764 H1186" stroke="#fff" stroke-width="1.6" marker-end="url(#c1dyW)"/><text x="1092" y="810" class="d-time">TIME</text><path d="M301 323 V764" stroke="#fff" stroke-width="1.2" stroke-dasharray="1.5 3"/><path d="M658 323 V764" stroke="#fff" stroke-width="1.2" stroke-dasharray="1.5 3"/><text x="291" y="270" class="d-hd"><tspan class="go">OPTIMAL</tspan> TIME</text><text x="291" y="310" class="d-hd">TO ACT</text><text x="650" y="270" class="d-hd"><tspan class="go">TYPICAL</tspan> TIME</text><text x="650" y="310" class="d-hd">TO ACT</text><path d="M280 370 C320 362, 370 352, 420 362 C480 374, 530 410, 570 450 C610 492, 630 525, 658 557 C690 595, 730 640, 790 675 C850 705, 920 715, 1052 713" fill="none" stroke="#E8B53A" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#c1dyC)"/><text x="1080" y="723" class="d-ctl">CONTROL</text><path d="M290 693 C360 700, 440 706, 520 695 C580 685, 615 660, 635 610 C648 585, 652 570, 658 557 C672 520, 690 450, 720 420 C770 375, 900 352, 1052 345" fill="none" stroke="#98AE9A" stroke-width="2.6" marker-end="url(#c1dyS)"/><text x="1080" y="355" class="d-stk">STAKES</text><g data-from="0" data-until="0"><circle cx="282" cy="370" r="10" class="c1-dc"/><circle cx="292" cy="694" r="10" class="c1-ds"/></g><g data-from="1" data-until="1"><circle cx="301" cy="366" r="10" class="c1-dc"/><circle cx="301" cy="695" r="10" class="c1-ds"/></g><g data-from="2" data-until="2"><circle cx="480" cy="383" r="10" class="c1-dc"/><circle cx="480" cy="701" r="10" class="c1-ds"/></g><g data-from="3" data-until="3"><circle cx="658" cy="557" r="13" class="c1-dx"/></g><g data-from="4" data-until="4"><circle cx="950" cy="712" r="10" class="c1-dc"/><circle cx="950" cy="350" r="10" class="c1-ds"/></g><g data-cursor class="c1-cur"><path d="M0 330 V764" stroke="#fff" stroke-width="3" opacity=".85"/><circle cx="0" cy="764" r="16" fill="#CFAE70" stroke="#1C1C1C" stroke-width="3"/><path d="M-6 758 L-10 764 L-6 770 M6 758 L10 764 L6 770" fill="none" stroke="#1C1C1C" stroke-width="2.5" stroke-linecap="round"/></g></svg></div>',
+      steps:[
+        { label:'The first sign', t:'Control (dashed gold) starts high. The stakes (green) start low. Nothing feels urgent yet.', cx:282 },
+        { label:'Optimal time to act', t:'Control is near its highest and the stakes are near their lowest. Acting here can feel early, and it is the best moment you will get.', cx:301 },
+        { label:'Control slips', t:'Control starts to fall away. The stakes still look low, so it is easy to wait.', cx:480 },
+        { label:'Typical time to act', t:'The lines cross: the stakes shoot up just as control falls. On the slide, this is when leaders typically act.', cx:658 },
+        { label:'Too late to shape it', t:'The stakes are high and control is low. Acting now means acting with little say in what happens next.', cx:950 }
+      ],
+      done:'You found both times on the chart. Next, try it on one unfolding issue.'
+    },
+    early:{
+      type:'branch',
+      start:'n1',
+      label:'Hypothetical',
+      nodes:{
+        n1:{ t:'<b>Monday morning.</b> A parent posts that your office&rsquo;s online form charged her twice. Ten replies, mostly &ldquo;me too.&rdquo; Your team confirms a glitch. What do you do first?',
+          opts:[
+            { t:'Fix it today, post a plain correction, and contact every family who was affected.', out:'By evening the glitch is fixed, refunds are under way, and your correction sits under the original post. A few families reply with thanks.', next:'n2a' },
+            { t:'Fix the glitch quietly, and wait to see whether the post grows.', out:'The glitch is fixed, but nobody hears from you. The post keeps collecting replies from families who were charged twice.', next:'n2b' },
+            { t:'Say nothing until you have every fact confirmed.', out:'Your team spends two days on a full review. Meanwhile, the post is shared far beyond the families involved.', next:'n2b' }
+          ] },
+        n2a:{ t:'<b>Tuesday.</b> One parent asks whether it will happen again. What do you say?',
+          opts:[
+            { t:'Explain what failed, what you changed, and who owns the fix, and promise an update by Friday.', out:'Families hear transparency, expertise, and commitment in one reply. The thread goes quiet.', next:'e1' },
+            { t:'Nothing more. It is fixed.', out:'Most families move on. A few are left wondering, and the question is still open on the thread.', next:'e2' }
+          ] },
+        n2b:{ t:'<b>Thursday.</b> The post has been shared thousands of times. A reporter asks for comment, and a student group is organizing online. What now?',
+          opts:[
+            { t:'Respond now: apologize, explain the fix and the refunds, and bring in Communications.', out:'Your reply runs in the story, next to the families&rsquo; posts. It helps, and it arrives after the story has already been told without you.', next:'e3' },
+            { t:'Decline to comment until it blows over.', out:'The story runs with &ldquo;the office declined to comment.&rdquo; The student group&rsquo;s posts now frame what happened.', next:'e4' }
+          ] },
+        e1:{ end:true, h:'Small, and it stayed small', t:'You acted Monday, while control was high and the stakes were low, and your reply reached all four drivers of trust.', debrief:'This is the optimal time to act on the Chancellor&rsquo;s reputation dynamics slide: early, before it feels urgent.' },
+        e2:{ end:true, h:'Fixed, with one loose end', t:'You acted early, which kept control. Leaving the open question unanswered left a small gap in transparency and commitment.', debrief:'Acting early is most of the win. A full answer, on all four drivers of trust, finishes it.' },
+        e3:{ end:true, h:'Recovered, at a cost', t:'You acted where the lines cross: the typical time to act. The stakes were high and control had slipped, so the story was already shaped by others, including activists in the second circle.', debrief:'Same fix, same apology, three days later. The optimal time to act was Monday.' },
+        e4:{ end:true, h:'The story is told without you', t:'Silence let others define the issue. The media and the second circle filled the gap, and a billing glitch became a story about whether your office cares.', debrief:'Late and silent misses every driver of trust. On the dynamics slide, control is now low and the stakes are high.' }
+      }
+    },
+    wrap2:{
+      type:'build',
+      tpl:'Our team&rsquo;s thinnest driver of trust is {0}. One small issue in our area is {1}, and we will act on it {2}. At our next team meeting, I will {3}.',
+      slots:[
+        { label:'Thinnest driver', opts:['empathy', 'transparency', 'expertise', 'commitment'] },
+        { label:'A small issue', opts:['a confusing form', 'a slow reply', 'a recurring complaint', 'a workaround'] },
+        { label:'When', opts:['this week', 'before it reaches the media', 'before the second circle finds it'] },
+        { label:'Your move', opts:['draw our trust radar', 'place a story on the terrain', 'name who speaks for us'] }
+      ],
+      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, Module 3.'
+    },
+    /* ══════ Module 3: Mission and Margin (deck pages 24 to 34), version 3 ══════ */
+    achieve:{
+      type:'explore',
+      slides:[
+        { label:'Achieving the Vision', html:'To achieve our vision and address the [[challenges|primary challenges we face]], Vanderbilt will operate at [[speed|uncommon speed, agility and scale]] to address [[societal|relevant societal challenges]] [[means|through education and research]].' }
+      ],
+      spots:{
+        challenges:{ title:'The primary challenges we face', text:'The problems the vision has to overcome. Two pages from now, the Chancellor names four of them: the problems to solve.' },
+        speed:{ title:'Uncommon speed, agility and scale', text:'The how. Good work is not enough; the aim is to do it faster, more flexibly, and at a larger scale than universities usually do. The phrase runs through the areas of focus, next.' },
+        societal:{ title:'Relevant societal challenges', text:'The what: problems that matter to people and society, beyond the campus.' },
+        means:{ title:'Through education and research', text:'The means: Vanderbilt&rsquo;s mission. Every area of focus serves education and research.' }
+      },
+      prompt:'Tap a gold phrase. Each one opens here.',
+      done:'You opened all four phrases. Next, the three areas of focus.'
+    },
+    areas:{
+      type:'sort',
+      noun:'initiative',
+      buckets:['1. Exceptional Core Operations', '2. Bold Strategic Initiatives', '3. Values Driven Leadership'],
+      subs:[
+        'With speed, agility and scale, Vanderbilt will distinguish itself with <b>innovative and impactful capabilities</b> to ensure that we have the talent, resources and reputation necessary to deliver on our vision.',
+        'With &ldquo;exceptional core operations&rdquo; as our fuel, Vanderbilt will pursue <b>increasingly bold initiatives</b> that enable and enhance the reach and impact of our education and research mission.',
+        'Through <b>strategic advocacy efforts and modeling the role of an essential research university</b>, Vanderbilt will stimulate industry change and combat existential threats to our education and research mission.'
+      ],
+      groupLabel:'The three areas of focus',
+      items:[
+        { t:'Approvals for research contracts drop from four months to three weeks, with the same care.', short:'Faster contract approvals', a:0, why:'Core work done with speed, agility and scale: the fuel for everything else.', hint:'Is this something new, or work Vanderbilt already does, done better?' },
+        { t:'A new program carries Vanderbilt&rsquo;s education and research to learners in a new city.', short:'A program in a new city', a:1, why:'A bold initiative that enhances the reach and impact of the education and research mission.', hint:'It extends the mission to new places. Which area is about reach?' },
+        { t:'Vanderbilt shows lawmakers and peer universities how its research helped people across the state.', short:'Showing lawmakers and peers', a:2, why:'Strategic advocacy, and modeling the role of an essential research university.', hint:'Who is it trying to persuade? Look past the campus.' },
+        { t:'Three offices that collect the same vendor data in three forms move to one shared form.', short:'One shared vendor form', a:0, why:'Existing work, run better: an innovative and impactful capability.', hint:'Nothing new is created; existing work runs better.' }
+      ],
+      done:'All four sorted. Next, the problems these areas answer.'
+    },
+    problems:{
+      type:'explore',
+      slides:[
+        { label:'Problems to Solve', html:'<span class="c1-pl"><b>1.</b> America&rsquo;s leading research universities [[p1|lack core capabilities to deliver innovation at the speed and scale]] necessary for our modern world.</span><span class="c1-pl"><b>2.</b> America&rsquo;s leading research universities are [[p2|no longer viewed as primary drivers of solutions]] to the important problems facing people and society.</span><span class="c1-pl"><b>3.</b> Elite universities are viewed as [[p3|politicized bastions of ideology]].</span><span class="c1-pl"><b>4.</b> A university education is [[p4|no longer viewed as essential]] for achieving the American dream.</span>' }
+      ],
+      spots:{
+        p1:{ title:'Speed and scale', text:'The capabilities gap. <b>Hypothetical, at your desk:</b> a research partner walks away after a contract sits in approvals for four months.' },
+        p2:{ title:'Drivers of solutions', text:'A question of relevance. <b>Hypothetical:</b> a state legislator has never heard how campus research helped people in her district.' },
+        p3:{ title:'Politicized bastions', text:'A question of trust. <b>Hypothetical:</b> a campus event is reported as proof that the university welcomes only one side of a debate.' },
+        p4:{ title:'No longer essential', text:'A question of value. <b>Hypothetical:</b> a family asks an admissions counselor whether a degree is still worth the cost.' }
+      },
+      prompt:'Tap a gold phrase. Each opens a small, everyday version of the problem.',
+      done:'You opened all four problems. Next, why margin matters now.'
+    },
+    peers:{
+      type:'predict',
+      rounds:[
+        { title:'Hiring Freeze', chart:9, q:'Of the 24 peer universities on the slide, how many communicated or confirmed a hiring freeze?', min:0, max:24, step:1, start:8, dec:0, answer:19, close:2, x:'19 of the 24 peers communicated or confirmed a hiring freeze, and 3 more had one under review. Vanderbilt&rsquo;s column on the slide is empty: none reported.' },
+        { title:'Layoffs', chart:10, q:'How many of the 24 communicated or confirmed layoffs?', min:0, max:24, step:1, start:6, dec:0, answer:13, close:2, x:'13 of the 24 peers communicated or confirmed layoffs, and 4 more expected them. Vanderbilt: none reported.' },
+        { title:'Budget Reductions', chart:11, q:'How many of the 24 communicated or confirmed budget reductions?', min:0, max:24, step:1, start:10, dec:0, answer:19, close:2, x:'19 of the 24 peers communicated or confirmed budget reductions, some of 5% to 10%. Vanderbilt: none reported.' }
+      ],
+      done:'Three counts predicted. Next, the core idea behind the Chancellor&rsquo;s approach.'
+    },
+    core:{
+      type:'sort',
+      noun:'moment',
+      buckets:['Mission = Purpose', 'Margin = Capacity'],
+      subs:['Research, teaching, discovery', 'Financial strength to pursue mission'],
+      groupLabel:'Mission and margin',
+      items:[
+        { t:'A lab publishes a discovery about early cancer detection.', short:'A discovery', a:0, why:'Discovery is mission: purpose, the reason the work exists.', hint:'Is this the work itself, or the strength to do it?' },
+        { t:'A department renegotiates a software contract and saves $200,000 a year.', short:'A cheaper contract', a:1, why:'Margin: financial strength. The savings become capacity to pursue the mission.', hint:'Nothing was taught or discovered. What did it build?' },
+        { t:'A new course teaches first-year students to work with data.', short:'A new course', a:0, why:'Teaching is mission.', hint:'Teaching, research, discovery: which side?' },
+        { t:'A school builds a reserve, so a gap between grants does not stop a study.', short:'A reserve', a:1, why:'Margin: capacity that protects the mission when funding wobbles.', hint:'The reserve protects the study. Is it the study, or the strength behind it?' },
+        { t:'Two offices share one scheduling system instead of paying for two.', short:'One shared system', a:1, why:'Margin: the same work for less, which frees money for mission work.', hint:'Same work, lower cost. Which side grows?' }
+      ],
+      done:'All five sorted. Margin is never the goal by itself: it is the capacity that keeps the mission going.'
+    },
+    atvu:{
+      type:'branch',
+      start:'n1',
+      label:'Hypothetical',
+      nodes:{
+        n1:{ t:'<b>Spring.</b> A process change in your unit has saved hours of staff time and about $40,000 this year. What do you do with the savings?',
+          opts:[
+            { t:'Spend it before the year ends, so next year&rsquo;s budget is not cut.', out:'The money goes to items nobody had planned for. The process change that saved it is soon forgotten.', next:'n2a' },
+            { t:'Report it, and propose investing it in a small pilot that serves students or research.', out:'Your leader and your finance partner like that the savings are visible, and ask how you would know the pilot works.', next:'n2b' }
+          ] },
+        n2a:{ t:'<b>Next fall.</b> A vendor raises prices, and your unit is short. What now?',
+          opts:[
+            { t:'Cut the program that is easiest to cut.', out:'You close the gap. The cut lands on a program students valued, and there was no plan behind it.', next:'e1' },
+            { t:'Sit down with your finance partner and look at where the money comes from and where it goes.', out:'Together you find two costs to trim and protect the program. You wish you had started this conversation in the spring.', next:'e2' }
+          ] },
+        n2b:{ t:'<b>Summer.</b> The pilot is approved. How do you run it?',
+          opts:[
+            { t:'Run it for one term with two clear measures, then decide whether to scale it or stop.', out:'The measures show it works for most students. You scale what worked and drop what did not.', next:'e3' },
+            { t:'Launch it everywhere at once, to make the biggest impact.', out:'It costs more than planned, and when parts struggle you cannot tell which ones.', next:'e4' }
+          ] },
+        e1:{ end:true, h:'Margin spent, mission cut', t:'The savings disappeared at year end, and the mission paid for it later.', debrief:'The Chancellor&rsquo;s slide: financial discipline enables strategic investments. Spending to protect a budget is the opposite of discipline.' },
+        e2:{ end:true, h:'Recovered, with a partner', t:'Working with finance saved the program. Starting in the spring would have saved it sooner.', debrief:'Two key levers at work: understand where money comes from and where it goes, and collaborate in an academic and finance partnership. Building financial capacity is everybody&rsquo;s job.' },
+        e3:{ end:true, h:'Discipline became investment', t:'Savings turned into a tested investment in the mission.', debrief:'Financial discipline enables strategic investments, and one key lever is to pilot, learn, scale. That is building financial capacity, done by a unit, not only by the finance office.' },
+        e4:{ end:true, h:'Bold, but blind', t:'A good idea, at a scale nobody had tested.', debrief:'The key lever is pilot, learn, scale, in that order. Use data and discipline to inform choices before you scale.' }
+      }
+    },
+    mindset:{
+      type:'match',
+      heads:['Hypothetical move', 'Leadership mindset'],
+      left:[
+        { t:'A director keeps a high-impact program, and sets a cost target for it too.' },
+        { t:'With five requests and money for two, a team funds the two that serve students and research most.' },
+        { t:'A manager shares the unit&rsquo;s budget with her team every quarter, in the same format each time.' },
+        { t:'A unit pays more this year for a system that will save staff time for the next five.' }
+      ],
+      right:[ { t:'Steward purpose and performance' }, { t:'Use mission to guide priorities' }, { t:'Build trust through transparency and consistency' }, { t:'Think long-term: manage trade-offs' } ],
+      show:[3, 1, 0, 2],
+      why:[
+        'Purpose and performance: keep what the program does for people, and hold it to a cost.',
+        'Mission guides the priorities: what serves students and research comes first.',
+        'Transparency, and consistency: the same open view, every quarter.',
+        'Long-term thinking: a trade-off accepted now, for a return over years.'
+      ],
+      hint:[
+        'The director holds on to two things at once. Which line names two things?',
+        'What decided which two requests won?',
+        'Two words matter here: shares, and every quarter in the same format.',
+        'Look at the time frame: one year against five.'
+      ],
+      done:'All four matched. Next, the key levers.'
+    },
+    levers:{
+      type:'rate',
+      title:'Your team on the key levers',
+      dims:['Understand', 'Use data', 'Collaborate', 'Pilot, learn, scale'],
+      levels:['Not yet', 'Partly', 'Strongly'],
+      low:'Your thinnest lever: {dims}. Start there: it is where the next gain is.',
+      high:'Every lever reaches the outer ring. Share how your team does it with a peer unit.'
+    },
+    wrap3:{
+      type:'build',
+      tpl:'Our team&rsquo;s work can help answer problem {0}. Before our next spending decision, we will {1}. Our first key lever: {2}.',
+      slots:[
+        { label:'Which problem', opts:['1, core capabilities at speed and scale', '2, primary drivers of solutions', '3, politicized bastions of ideology', '4, no longer viewed as essential'] },
+        { label:'Which mindset', opts:['steward purpose and performance', 'use mission to guide priorities', 'build trust through transparency', 'think long-term about trade-offs'] },
+        { label:'Which lever', opts:['understand where money goes', 'use data and discipline', 'collaborate with finance', 'pilot, learn, scale'] }
+      ],
+      doneText:'Your sentence prints on your takeaway. Bring it to your team. Next, the quick check.'
     }
   },
   CHARTS:[
@@ -322,7 +615,10 @@ window.LR_COURSE = {
       axis:'Regular Season Wins',
       col:'Season',
       bars:[{ x:'2021-22', v:16, lab:'16' }, { x:'2025-26', v:27, lab:'27' }]
-    }
+    },
+    { num:5, type:'bars', title:'Hiring Freeze', sub:'Communicated or confirmed, out of 24 peer universities on the slide.', fmt:'n', max:24, step:8, axis:'Universities', bars:[{ x:'Vanderbilt', v:0, lab:'0' }, { x:'24 peers', v:19, lab:'19' }] },
+    { num:5, type:'bars', title:'Layoffs', sub:'Communicated or confirmed, out of 24 peer universities on the slide.', fmt:'n', max:24, step:8, axis:'Universities', bars:[{ x:'Vanderbilt', v:0, lab:'0' }, { x:'24 peers', v:13, lab:'13' }] },
+    { num:5, type:'bars', title:'Budget Reductions', sub:'Communicated or confirmed, out of 24 peer universities on the slide.', fmt:'n', max:24, step:8, axis:'Universities', bars:[{ x:'Vanderbilt', v:0, lab:'0' }, { x:'24 peers', v:19, lab:'19' }] }
   ],
   CITIES:{
     nyc:{
@@ -370,230 +666,9 @@ window.LR_COURSE = {
       url:'https://www.vanderbilt.edu/'
     }
   },
-  DRILLS:{
-    terrain:{
-      opts:['Simple reporting', 'In-depth coverage', 'Extensive reporting', 'Mass-market coverage'],
-      layout:'grid',
-      grid:{ y:'Societal importance', x:'Audience interest', cells:[1, 3, 0, 2] },
-      prog:'terrain',
-      verb:'placed',
-      items:[
-        {
-          s:'A wire service runs three paragraphs on a new dean’s appointment.',
-          a:0,
-          x:'Low importance, low interest: simple reporting, the wire services corner.'
-        },
-        {
-          s:'A national magazine analyzes research funding with data and interviews with experts.',
-          a:1,
-          x:'Important, with a narrower audience: in-depth coverage, which runs on experts and data.'
-        },
-        {
-          s:'Cable panels replay a viral clip from a campus event for two days.',
-          a:2,
-          x:'High interest, light substance: extensive reporting, the cable news infotainment corner.'
-        },
-        {
-          s:'A TV newsmagazine tells one family’s emotional story about a university decision.',
-          a:3,
-          x:'High on both: mass-market coverage. On the Chancellor’s slide, it runs on testimony and drama.'
-        }
-      ]
-    },
-    timing:{
-      opts:['Optimal time to act', 'Typical time to act'],
-      layout:'track',
-      prog:'timing',
-      verb:'sorted',
-      items:[
-        {
-          s:'A few families ask about a confusing line on a form, and the team rewrites it that afternoon.',
-          a:0,
-          x:'Optimal: control is high and the stakes are still low.'
-        },
-        {
-          s:'A complaint has been shared thousands of times, and a reporter asks for comment before your office has said anything.',
-          a:1,
-          x:'Typical: the stakes are high now, and control has slipped away.'
-        },
-        {
-          s:'Before a high-profile campus event, your unit agrees who will speak for it and what it will say.',
-          a:0,
-          x:'Optimal: you act before there is an issue at all, while you have the most control.'
-        },
-        {
-          s:'Your office first discusses a recurring problem after it appears in the student newspaper.',
-          a:1,
-          x:'Typical: the lines have crossed. The story is already public.'
-        },
-        {
-          s:'A post about a mistake in your area gets a handful of replies, and you correct it and tell the people affected that morning.',
-          a:0,
-          x:'Optimal: early, while the issue is small and you still shape what happens next.'
-        }
-      ]
-    },
-    problems:{
-      opts:['Problem 1: speed and scale', 'Problem 2: relevance', 'Problem 3: trust', 'Problem 4: value of a degree'],
-      prog:'mission',
-      verb:'sorted',
-      items:[
-        {
-          s:'A research partner walks away after a contract sits in approvals for four months.',
-          a:0,
-          x:'Problem 1: America’s leading research universities lack core capabilities to deliver innovation at the speed and scale necessary for our modern world.'
-        },
-        {
-          s:'A family asks an admissions counselor whether a degree is still worth the cost.',
-          a:3,
-          x:'Problem 4: a university education is no longer viewed as essential for achieving the American dream.'
-        },
-        {
-          s:'A campus event is reported as proof that the university welcomes only one side of a debate.',
-          a:2,
-          x:'Problem 3: elite universities are viewed as politicized bastions of ideology.'
-        },
-        {
-          s:'A state legislator has never heard how a campus research result helped people in her district.',
-          a:1,
-          x:'Problem 2: America’s leading research universities are no longer viewed as primary drivers of solutions to the important problems facing people and society.'
-        }
-      ]
-    },
-    focus:{
-      opts:['Exceptional Core Operations', 'Bold Strategic Initiatives', 'Values Driven Leadership'],
-      prog:'capstone',
-      verb:'sorted',
-      items:[
-        {
-          s:'Departments pay outside consultants for short projects that staff could do.',
-          a:0,
-          x:'Running the place well. Fix it and you free time and talent for everything else.'
-        },
-        {
-          s:'A cross-school program pairing Nashville employers with student researchers on regional health problems.',
-          a:1,
-          x:'A new bet that extends the reach of education and research.'
-        },
-        {
-          s:'A public report on how Vanderbilt research improved health across Tennessee, shared with lawmakers and peer universities.',
-          a:2,
-          x:'Advocacy, and modeling the role of an essential research university: it changes how others see, and support, research universities.'
-        },
-        {
-          s:'Three offices collect the same vendor data in three different forms.',
-          a:0,
-          x:'Duplicated process. Solve it and you return money and hours to the mission.'
-        },
-        {
-          s:'Scaling one school’s successful pilot into a university-wide offering for working adults.',
-          a:1,
-          x:'A strategic bet on new learners. A pod could argue Exceptional Core Operations if the brief were about delivery; make the call on purpose.'
-        }
-      ]
-    }
-  },
-  SCENARIOS:{
-    m1:{
-      h:'Situation 1 · The beloved program',
-      s:'A small program serves 40 students a year with real impact. It costs three times what similar programs cost per student, and your budget is flat next year.',
-      opts:[
-        {
-          t:'Protect it as is. Impact matters more than cost.',
-          b:'Mission without margin',
-          best:false,
-          out:'It survives this year, and quietly eats the margin that funds next year. Heart programs are worth keeping when you are honest about what pays for them.'
-        },
-        {
-          t:'Keep the outcome, redesign the delivery, and set a cost target.',
-          b:'Values and viability, together',
-          best:true,
-          out:'You protect what students get and change how you deliver it. That is the leadership mindset: steward both purpose and performance.'
-        },
-        {
-          t:'Close it. The numbers do not work.',
-          b:'Margin without mission',
-          best:false,
-          out:'The budget balances, and a real mission result disappears that you could have kept with a redesign.'
-        }
-      ]
-    },
-    m2:{
-      h:'Situation 2 · The revenue offer',
-      s:'An outside partner offers to pay well to use your unit’s space and staff time. It would fund two positions, but it has nothing to do with your mission.',
-      opts:[
-        { t:'Take it. Money is money.', b:'Drift', best:false, out:'Margin with no mission tie can pull a team off its purpose a few hours at a time.' },
-        {
-          t:'Take it with limits, and name the mission work the margin will fund.',
-          b:'Margin, on purpose',
-          best:true,
-          out:'Cap the staff time, decide in advance where the money goes, and write it down before you sign.'
-        },
-        {
-          t:'Decline. It is off-mission.',
-          b:'Principled, and costly',
-          best:false,
-          out:'You may be turning down the very capacity that would fund mission work you care about.'
-        }
-      ]
-    },
-    r1:{
-      h:'Situation 1 · The mistake that went public',
-      s:'Your office emailed admitted students the wrong deadline. A parent’s post about it is spreading. Your team found the error an hour ago.',
-      opts:[
-        {
-          t:'Fix it quietly and hope the post fades.',
-          b:'Silence reads as hiding',
-          best:false,
-          out:'The story keeps growing without you, and people fill the silence with the worst version.'
-        },
-        {
-          t:'Correct it fast, apologize plainly, bring in Communications, and confirm the fix.',
-          b:'Transparency, commitment, and empathy',
-          best:true,
-          out:'Speed and honesty shrink a mistake. Communications helps the university speak with one voice.'
-        },
-        {
-          t:'Reply to the parent that it was a system error.',
-          b:'Accurate, and defensive',
-          best:false,
-          out:'True, and it sounds like an excuse to the families who were confused.'
-        }
-      ]
-    },
-    r2:{
-      h:'Situation 2 · The controversial speaker',
-      s:'A group your unit supports invited a speaker whose views upset many on campus. You are getting calls to cancel.',
-      opts:[
-        {
-          t:'Cancel it to keep the peace.',
-          b:'Quiet today, costly later',
-          best:false,
-          out:'The calls stop, and everyone learns which views are welcome. That feeds the perception that universities are politicized.'
-        },
-        {
-          t:'Keep it within policy, plan for safety and a respectful format, and listen to the people who are upset.',
-          b:'Principle and empathy, together',
-          best:true,
-          out:'It reaches all four drivers: transparency about the policy, expertise from the offices that run events, commitment to a safe format, and empathy for the people who are upset.'
-        },
-        {
-          t:'Stay out of it. It is not your event.',
-          b:'Absent, not neutral',
-          best:false,
-          out:'People needed to hear from someone. Neutral is not the same as silent.'
-        }
-      ]
-    }
-  },
-  CALL_SETS:{ margin:['m1', 'm2'], pressure:['r1', 'r2'] },
-  CALL_PROG:{
-    margin:{ prog:'margin', noun:'situations', status:'#marginStatus', narr:'margin/s' },
-    pressure:{ prog:'trust', noun:'situations', status:'#trustStatus', narr:'trust/s' }
-  },
   COMMITS:[
     ['Meet your pod', 'About 45 minutes. Agree on one challenge and one focus area.'],
-    ['Draft sections 1 to 3 in the fillable brief', 'One brief per pod. Name one person to keep the file.'],
+    ['Work on sections 1 to 3 of your pod’s brief', 'On the capstone page: the focus area, the challenge, and the connection to Vanderbilt’s priorities.'],
     ['Respond to Teams prompt 1', 'Post your response under Discussions in the Teams channel by Friday, November 6.'],
     ['Reply to a colleague', 'Highlight a connection or perspective that strengthens a colleague’s idea.']
   ],
@@ -611,27 +686,29 @@ window.LR_COURSE = {
     },
     {
       seg:'Reputation',
-      q:'A data error from your office reached students this morning. Which response protects trust best?',
+      q:'A data error from your office reached students this morning. Which response reaches all four drivers on the trust radar?',
       opts:[
         'Wait until every fact is confirmed',
-        'Correct it fast, say what you know and do not, name the owner of the fix, and bring in Communications',
+        'Acknowledge how it affected students, say what you know and do not, show who is fixing it, and commit to an update',
         'Explain that it was a vendor’s fault',
         'Fix it quietly'
       ],
       a:1,
-      x:'It reaches all four drivers on the trust radar: transparency, expertise, commitment, and empathy.'
+      x:'Empathy, transparency, expertise, and commitment: a strong response reaches all four sides of the radar.'
     },
     {
       seg:'Reputation',
-      q:'A story about a campus decision moves from a short wire item to a national TV segment built around one family’s experience. What should your response lead with?',
-      opts:[
-        'More data tables',
-        'No comment until it fades',
-        'A longer press release',
-        'Testimony from the people affected, backed by the facts'
-      ],
+      q:'A story about a campus decision moves from a short wire item to a national TV segment built around one family’s experience. Where on the reputation terrain has it landed?',
+      opts:['Simple reporting', 'In-depth coverage', 'Extensive reporting', 'Mass-market coverage'],
       a:3,
-      x:'The story has migrated to mass-market coverage, which the Chancellor’s slide says runs on testimony and drama. A response needs voices from the people affected, with the facts behind them.'
+      x:'High on societal importance and audience interest: mass-market coverage, which runs on testimony and drama. The story has migrated across the terrain.'
+    },
+    {
+      seg:'Reputation',
+      q:'A quiet story about your unit gets picked up by an advocacy group that campaigns about it online. Which part of the Chancellor’s slides describes this?',
+      opts:['The second circle: activists outside the media, pressing in', 'Simple reporting', 'The key levers', 'The reputation flywheels'],
+      a:0,
+      x:'On the second circle slide, activists surround the media and the constituents, and press in from every side. In both of his examples, a push from outside moved the story.'
     },
     {
       seg:'Reputation',
@@ -643,11 +720,11 @@ window.LR_COURSE = {
         'Only if senior leadership asks you to'
       ],
       a:0,
-      x:'Reputation dynamics: as an issue grows, control falls and the stakes rise. The optimal time to act is early, before it feels urgent.'
+      x:'Reputation dynamics: as an issue grows, control falls and the stakes rise. The optimal time to act comes early, well before the typical time.'
     },
     {
       seg:'Mission and margin',
-      q:'Your pod’s challenge: a research partner walked away after a contract sat in approvals for four months. Which of the Chancellor’s four problems does it speak to most directly?',
+      q:'A research partner walked away after a contract sat in approvals for four months. Which of the four problems to solve does it speak to most directly?',
       opts:[
         'Research universities lack core capabilities to deliver innovation at the speed and scale necessary for our modern world',
         'Elite universities are viewed as politicized bastions of ideology',
@@ -655,18 +732,18 @@ window.LR_COURSE = {
         'None; it is only an internal process issue'
       ],
       a:0,
-      x:'Problem 1: speed and scale. Naming the problem gives your brief its why it matters.'
+      x:'Problem 1: core capabilities to deliver innovation at speed and scale. Small delays are small versions of it.'
     },
     {
       seg:'Mission and margin',
-      q:'Your pod proposes a toolkit that lets other universities adopt a faster research-contracting process Vanderbilt built, presented at a national meeting. Which area of focus fits best?',
+      q:'A team builds a faster research-contracting process and presents it at a national meeting so other universities can adopt it. Which area of focus fits best?',
       opts:['Exceptional Core Operations', 'Bold Strategic Initiatives', 'Values Driven Leadership', 'It does not fit any'],
       a:2,
-      x:'It models the role of an essential research university and stimulates industry change. That is Values Driven Leadership, the area of focus.'
+      x:'Sharing it to change how other universities work models the role of an essential research university and stimulates industry change: Values Driven Leadership.'
     },
     {
       seg:'Mission and margin',
-      q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. What is the strongest move?',
+      q:'A high-impact mentoring program costs more than it brings in, and budgets are flat. Which move reflects the leadership mindset?',
       opts:[
         'Close it',
         'Protect it and change nothing',
@@ -674,22 +751,9 @@ window.LR_COURSE = {
         'Move it to another unit'
       ],
       a:2,
-      x:'Mission and margin together: keep what students get, change how it is delivered, and name the money that pays for it.'
-    },
-    {
-      seg:'Mission and margin',
-      q:'Which case for a new project would a judge find strongest on mission and margin?',
-      opts:[
-        'It will be great for everyone.',
-        'It saves weeks of research time per hire, costs one checklist tool funded by two departments, and names who pays after the pilot year.',
-        'It needs new funding, details to come.',
-        'It is important to the mission.'
-      ],
-      a:1,
-      x:'Specific mission benefit, cost and source, return, and the long-term trade-off after year one. The Chancellor’s leadership mindset: think long term and manage trade-offs.'
+      x:'Steward purpose and performance: keep what students get, change how it is delivered, and think long-term about what pays for it.'
     }
   ],
-  SCEN_POS:{ m1:0, m2:2, r1:2, r2:0 },
   QUIZ_POS:[0, 1, 3, 2, 1, 3, 0, 2],
   QUIZ_PASS:6,
   OVERVIEW:{
@@ -700,10 +764,9 @@ window.LR_COURSE = {
     goals:[
       '<b>Explain</b> Vanderbilt’s vision and industry vision, and read the numbers behind them.',
       '<b>Trace</b> how reputation enables the mission, and name the three reputation flywheels.',
-      '<b>Judge</b> a response with the trust radar, place a story on the reputation terrain, and spot the optimal time to act.',
+      '<b>Read</b> what shapes reputation and the trust radar, place a story on the reputation terrain, and spot the optimal time to act.',
       '<b>Explain</b> the three areas of focus and the four problems they answer.',
-      '<b>Weigh</b> a decision on mission and margin.',
-      '<b>Start</b> your pod’s capstone: choose a focus area and plan sections 1 to 3 of the brief.'
+      '<b>Weigh</b> a decision on mission and margin, and name the leadership mindset and key levers.'
     ],
     lessons:[
       {
@@ -728,41 +791,38 @@ window.LR_COURSE = {
       {
         title:'Reputational Stewardship',
         no:'Module 2',
-        keys:['trust', 'terrain', 'timing'],
+        keys:['shapes', 'radar', 'teamradar', 'coverage', 'athletics', 'circle', 'transcare', 'dynamics', 'early', 'wrap2'],
         ideas:[
-          ['Most people hear about Vanderbilt through others.', 'The media surrounds your audiences, and activists form a second circle around both.'],
-          ['Trust has four drivers.', 'Transparency, expertise, commitment, and empathy. A strong response reaches all four.'],
-          ['Stories migrate, so act early.', 'A story can move across the reputation terrain. The optimal time to act is while control is high and the stakes are low.']
+          ['Reputation is made in public.', 'The university speaks to its audiences. The media surrounds them, and activists form a second circle.'],
+          ['Trust has four drivers.', 'Empathy, transparency, expertise, and commitment. A strong response reaches all four.'],
+          ['Stories migrate, so act early.', 'A story can move across the reputation terrain. The optimal time to act comes while control is high and the stakes are low.']
         ]
       },
       {
         title:'Mission and Margin',
         no:'Module 3',
-        keys:['mission', 'margin'],
+        keys:['achieve', 'areas', 'problems', 'peers', 'core', 'atvu', 'mindset', 'levers', 'wrap3'],
         ideas:[
           [
             'Uncommon speed, agility and scale.',
-            'Three areas of focus: Exceptional Core Operations, Bold Strategic Initiatives, and Values Driven Leadership, answering four problems.'
+            'Three areas of focus carry the vision: Exceptional Core Operations, Bold Strategic Initiatives, and Values Driven Leadership, aimed at four problems to solve.'
           ],
-          ['Mission is purpose; margin is capacity.', 'Mission without margin is unsustainable, and margin without mission is meaningless.'],
-          ['Building financial capacity is everybody’s job.', 'Financial discipline enables strategic investments.']
+          ['Mission is purpose; margin is capacity.', 'Research, teaching, discovery, and the financial strength to pursue them. Leaders must connect values and viability.'],
+          ['Building financial capacity is everybody’s job.', 'Financial discipline enables strategic investments. Understand where money comes from and where it goes, then pilot, learn, scale.']
         ]
       },
       {
-        title:'Quick check and capstone',
-        no:'Capstone',
-        keys:['quiz', 'capstone', 'brief', 'nextstep'],
+        title:'Quick check and this week',
+        no:'This week',
+        keys:['quiz', 'nextstep'],
         ideas:[
-          ['Choose your focus area on purpose.', 'Your brief is judged only against others in the same area.'],
-          [
-            'Make the case on page one.',
-            'Focus area, the challenge and why it matters, and the connection to Vanderbilt’s priorities.'
-          ],
-          ['Use the fillable brief.', 'One brief per pod, seven sections, three pages at most, due Friday, November 20.']
+          ['Apply it.', 'Eight new situations, one idea each from the Chancellor’s talk.'],
+          ['Take it to your pod.', 'Meet your pod, and work on sections 1 to 3 of your brief on the capstone page.'],
+          ['Post in Teams.', 'Respond to prompt 1 and reply to a colleague by Friday, November 6.']
         ]
       }
     ],
-    footer:'Your pod’s brief is due Friday, November 20, three pages at most.'
+    footer:'Your pod’s brief is due Friday, November 20. Everything you need is on the capstone page.'
   },
   PRINT_TITLE:'Course One, my weekly <em>takeaway</em>.',
   EXIT_TOAST:'You can close this tab. See you in Course Two.'

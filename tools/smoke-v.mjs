@@ -14,6 +14,26 @@ async function clickEach(sel){ let c = 0; for(const e of await p.$$(sel)){ if(!(
 console.log('stops', await clickEach('#route button[data-stop]'));
 console.log('taps', await clickEach('[data-taps] button'));
 console.log('map', await clickEach('.v-cities button[data-city]'));
+// v3 activity library (assets/js/lr-activities.js): for each activity, a keyboard step first (focus its first
+// control, press Enter or an arrow, and check the activity reacted), then the activity's own test hook completes it
+const acts = [];
+for(const el of await p.$$('[data-act]')){
+  await go(el); await p.waitForTimeout(350);
+  const info = await el.evaluate(e => ({ key:e.getAttribute('data-act'), type:e.lrAct ? e.lrAct.type : 'unmounted', tracked:e.lrAct ? e.lrAct.tracked : false }));
+  let kb = 'n/a';
+  if(info.tracked){
+    const before = await el.evaluate(e => e.innerHTML.length + '|' + (e.querySelector('input[type=range]') || {}).value);
+    const ctl = await el.$('button:not([disabled]), input[type=range]');
+    if(ctl){ await ctl.focus(); await p.keyboard.press((await ctl.evaluate(c => c.tagName)) === 'INPUT' ? 'ArrowRight' : 'Enter'); await p.waitForTimeout(200); }
+    const after = await el.evaluate(e => e.innerHTML.length + '|' + (e.querySelector('input[type=range]') || {}).value);
+    kb = before !== after ? 'ok' : 'NO RESPONSE';
+    await el.evaluate(e => e.lrAct.solve()); await p.waitForTimeout(250);
+  }
+  const done = await el.evaluate(e => e.lrAct ? e.lrAct.done() : false);
+  acts.push(info.key + ':' + info.type + (info.tracked ? (done ? ' done' : ' NOT DONE') + ' kb ' + kb : ' (display)'));
+  if(info.tracked && (!done || kb !== 'ok')) errs.push('activity ' + info.key + ' done=' + done + ' keyboard=' + kb);
+}
+console.log('activities', acts.length ? acts : 'none');
 // number tiles
 for(const t of await p.$$('#nums .v-tile')){ await go(t); await p.waitForTimeout(400); await (await t.$('.v-tile-face')).click(); await (await t.$('button[data-o]')).click(); }
 // drills: answer each, then next

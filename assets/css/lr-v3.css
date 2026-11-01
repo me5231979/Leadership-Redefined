@@ -463,3 +463,20 @@ section.v3 .v-rail::before{ flex-basis:80px; }
   .la-pin .la-spot .la-num{ width:20px; height:20px; font-size:.7rem; }
   .la-fig{ padding:8px; }
 }
+
+/* ── added for Course One (version 3): bucket sub-lines (sort and place, cfg.subs) and 13. scrub ── */
+.la-bkt{ display:flex; flex-direction:column; gap:4px; min-width:0; }
+.la-bkt small{ color:var(--tx2); font-size:.82em; font-weight:400; line-height:1.4; }
+.la-bkt small b, .la-bkt small em{ color:var(--tx); }
+.la-scrub .la-fig{ --fh:min(440px, 38vh); }
+.la-sctl{ display:flex; align-items:center; gap:var(--g2); margin-top:var(--g2); }
+.la-sctl input{ flex:1 1 auto; min-height:32px; accent-color:var(--vu-gold); cursor:pointer; }
+.la-sctl .la-btn{ flex:0 0 auto; min-width:5.5em; }
+.la-sctl .la-btn[disabled]{ opacity:.4; cursor:default; }
+.la-scrub [data-from], .la-scrub [data-until]{ transition:opacity .3s ease-out; }
+.la-scrub .la-off{ opacity:0; }
+.la-scrub [data-cursor]{ transition:transform .35s cubic-bezier(.33,1,.68,1); }
+.la-scrub .la-panel{ min-height:6.5em; }
+.la-scrub .la-figbox.la-drag{ cursor:ew-resize; touch-action:pan-y; user-select:none; -webkit-user-select:none; }
+@media (min-width:901px) and (max-height:820px){ .la-scrub .la-fig{ --fh:min(300px, 32vh); } .la-sctl{ margin-top:8px; } }
+@media (max-width:480px){ .la-sctl{ gap:8px; } .la-sctl .la-btn{ min-width:0; padding:.25em .8em; } }
