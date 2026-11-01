@@ -6,10 +6,10 @@ window.LR_CONFIG = {
   /* narration clips: ../assets/audio/course-two/<key>.mp3 (home/1 -> home-1.mp3).
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-two/',
-  mediaVersion: '20261101v2',
+  mediaVersion: '20261105a',
   /* true until the ElevenLabs narration is recorded: Listen reads each script in the browser's own voice.
      The Record narration workflow sets this to false so the recorded clips play instead. */
-  useBrowserVoice: false,
+  useBrowserVoice: true,
   /* Chancellor intros. Add a WebVTT captions file beside each video and set captions. */
   videos: {
     communication: { src: '../assets/video/chancellor-communication.mp4', captions: '../assets/video/chancellor-communication.vtt', title: 'Chancellor Daniel Diermeier on effective communication' },
