@@ -631,3 +631,23 @@ section.v3 .v-rail::before{ flex-basis:80px; }
   .la-build .la-slot{ margin-top:12px; }
 }
 @media (min-width:901px) and (max-height:740px){ .la-pchart .la-chart .la-svg{ max-height:40vh; } }
+/* quick check (both courses): a larger question card, the answers as roomy tiles */
+@media (min-width:901px){
+  #quiz.v3 .kq{ padding:var(--g3) var(--g4); border-top:3px solid var(--eyebrow); }
+  #quiz.v3 .kq .kq-q{ font-size:1.4em; line-height:1.35; }
+  #quiz.v3 .kq-opts{ margin-top:var(--g3); gap:var(--g2); }
+  #quiz.v3 .kq-opts button{ min-height:5.2em; padding:var(--g2) var(--g3); font-size:1.02rem; line-height:1.45; }
+  #quiz.v3 .kq-x{ font-size:1rem; line-height:1.5; }
+}
+@media (min-width:901px) and (max-height:820px){
+  #quiz.v3 .kq{ padding:var(--g2) var(--g3); }
+  #quiz.v3 .kq .kq-q{ font-size:1.2em; }
+  #quiz.v3 .kq-opts{ margin-top:var(--g2); gap:8px; }
+  #quiz.v3 .kq-opts button{ min-height:3.6em; padding:12px 16px; font-size:.95rem; }
+  #quiz.v3 .kq-x{ font-size:.92rem; }
+}
+/* place: the four corners of the terrain as taller boxes */
+@media (min-width:901px){ .la-sort.la-quad .la-bkb{ min-height:max(4.5em, calc(var(--stage) * .16)); align-items:flex-start; } }
+/* once answered, the tiles step back so the reason has room */
+@media (min-width:901px){ #quiz.v3 .kq.right .kq-opts button, #quiz.v3 .kq.wrong .kq-opts button{ min-height:0; padding:10px 16px; } }
+@media (min-width:901px) and (max-height:820px){ #quiz.v3 .kq.right .kq-q, #quiz.v3 .kq.wrong .kq-q{ font-size:1.05em; } #quiz.v3 .kq.right .kq-opts button, #quiz.v3 .kq.wrong .kq-opts button{ padding:6px 12px; font-size:.88rem; } #quiz.v3 .kq-x{ margin-top:8px; padding-top:8px; font-size:.88rem; } #quiz.v3 .kq-nav{ margin-top:8px; } }
