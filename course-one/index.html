@@ -100,7 +100,8 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 #areas .la-bkt small{ font-size:.78em; }
 #areas .la-card p{ font-size:1.1em; }
 #core .la-sort:not(.la-quad) .la-bkb{ min-height:6em; }
-#coverage .la-bkb{ min-height:5.4em; align-items:flex-start; }
+#coverage .la-bkb{ min-height:max(5.4em, calc((100svh - 136px) * .17)); align-items:flex-start; }
+@media (max-width:900px){ #coverage .la-bkb{ min-height:5.4em; } }
 /* deck slides shown as they are */
 .c1-slide{ margin:0; padding:var(--g2) var(--g3) var(--g2); border:1px solid var(--bd); border-top:3px solid var(--eyebrow); border-radius:6px; background:#262625; }
 .c1-slide-h{ display:flex; align-items:center; gap:var(--g2); margin:0 0 var(--g2); font-family:var(--sans); font-size:1.15em; letter-spacing:.04em; text-transform:uppercase; color:#fff; }
