@@ -676,3 +676,7 @@ section.v3 .v3-take .v3-take-do{ font-family:var(--sans); font-size:1.2em; font-
 #growth .v-cities button{ padding:.35em .9em; }
 @media (max-height:820px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 260px) * 0.4 * 1.916)); } #growth .lr-footmap figcaption{ display:none; } }
 @media (min-height:1000px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 300px) * 0.43 * 1.916)); } }
+/* rate: a plain example of what each driver looks like, under its name */
+.la-rq .la-rqn{ display:flex; flex-direction:column; gap:.15em; }
+.la-rq .la-rqe{ font-weight:400; font-size:.72em; line-height:1.35; color:var(--muted); max-width:34em; }
+.la-rq .la-rqe b{ font-weight:600; color:var(--eyebrow); }

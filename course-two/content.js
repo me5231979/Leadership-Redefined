@@ -506,6 +506,7 @@ window.LR_COURSE = {
     rateteam:{
       type:'rate',
       title:'Your team on Lee’s six principles',
+      eg:['Hard calls are explained by the values behind them.', 'People have the tools, clarity, and support to do their best work.', 'Under pressure, the team pauses and chooses its response.', 'The team notices and celebrates progress, not only the finish line.', 'Each person has a growth goal, and leaders make time to develop it.', 'Leaders show the behavior they ask for, especially when things are hard.'],
       dims:['Values first', 'Conditions', 'Emotional agility', 'Joy in the process', 'Talent', 'Modeling'],
       levels:['Not yet', 'Partly', 'Strongly'],
       low:'Your thinnest side: {dims}. Pick one move there for your next team meeting. The wrap-up helps you plan it.',

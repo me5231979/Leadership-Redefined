@@ -232,6 +232,7 @@ window.LR_COURSE = {
     teamradar:{
       type:'rate',
       title:'Your team&rsquo;s trust radar',
+      eg:['We acknowledge how a decision lands on the people it affects before we explain it.', 'We share what happened and why, mistakes included, without waiting to be asked.', 'We answer with facts and the right experts, and say plainly when we do not know yet.', 'We do what we said we would do, by when we said, and follow up to confirm.'],
       dims:['Empathy', 'Transparency', 'Expertise', 'Commitment'],
       levels:['Not yet', 'Partly', 'Strongly'],
       low:'Your thinnest side: {dims}. That is where trust is thin. Invest there before you need it.',
@@ -451,6 +452,7 @@ window.LR_COURSE = {
     levers:{
       type:'rate',
       title:'Your team on the key levers',
+      eg:['Your team can say where its budget comes from and where most of it goes.', 'Choices cite a number, like cost per person served, not just a hunch.', 'Finance partners join early, not only at the approval step.', 'New ideas start small, with a date to check results before going bigger.'],
       dims:['Understand', 'Use data', 'Collaborate', 'Pilot, learn, scale'],
       levels:['Not yet', 'Partly', 'Strongly'],
       low:'Your thinnest lever: {dims}. Start there: it is where the next gain is.',
