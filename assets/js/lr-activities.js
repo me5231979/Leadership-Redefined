@@ -93,7 +93,7 @@
         caption:'source line under the figure (optional)', label:'aria label for the graphic', fh:'figure height (optional CSS length)',
         prompt:'shown while the figure is still blank (optional)' }
       Reveal on an activity's own figure: mark parts of an explore, flip, or scrub figure with data-rv="1", "2", ...
-      (data-rv-draw on a path with pathLength="1" draws it). The library adds a small Play bar with step dots under the
+      (data-rv-draw on a path with pathLength="1" draws it; data-rv-until="k" hides a part again after step k). The library adds a small Play bar with step dots under the
       figure and builds the figure the first time the page opens, before the learner does anything; the first tap on
       the activity shows it whole. A flip without a figure takes cfg.reveal:true and deals its cards in, one by one.
    Added with 14 (owner feedback, November 2026):
@@ -755,7 +755,8 @@ function rvPlayer(o){
     '<span class="la-rvdots" role="group" aria-label="' + esc(o.name || 'Steps') + '">' + Array.apply(null, { length:o.n }).map(function(_, k){ return '<button type="button" class="la-rvdot" data-rvk="' + (k + 1) + '" aria-label="Step ' + (k + 1) + ' of ' + o.n + '"></button>'; }).join('') + '</span>' +
     (o.small ? '' : '<button type="button" class="la-btn sm ghost" data-rvb="next">Next</button>');
   var btn = o.bar.querySelector('.la-rvplay'), lab = btn.querySelector('span');
-  function apply(){ $$('[data-rv]', o.box).forEach(function(e){ e.classList.toggle('la-rv-on', +e.getAttribute('data-rv') <= at); }); o.box.setAttribute('data-rvat', at); }
+  /* data-rv-until="k" hides a part again after step k (a line that a later step redraws) */
+  function apply(){ $$('[data-rv]', o.box).forEach(function(e){ var u = e.getAttribute('data-rv-until'); e.classList.toggle('la-rv-on', +e.getAttribute('data-rv') <= at && (u === null || at <= +u)); }); o.box.setAttribute('data-rvat', at); }
   function ui(){
     btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); btn.classList.toggle('on', playing);
     lab.textContent = playing ? 'Pause' : at >= o.n ? 'Replay' : 'Play';
