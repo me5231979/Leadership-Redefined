@@ -1,5 +1,5 @@
 /* ══════════ LEADERSHIP REDEFINED · activity library (version 3) ══════════
-   Twelve activity types, declared in markup and data, built on the shared engine
+   Fourteen activity types, declared in markup and data, built on the shared engine
    (lr-engine.js) so progress, the takeaway print, SCORM tracking and narration keep working.
    Load after lr-engine.js. Styles: assets/css/lr-v3.css. Design rules: docs/design-v3.md.
    No em or en dashes anywhere.
@@ -81,6 +81,28 @@
       { type:'scrub', figure:'<svg viewBox="X Y W H"> ... <g data-from="2">shown from stage 2</g> <g data-until="1">shown up to stage 1</g>
           <g data-cursor>moved by each stage's cx and cy (viewBox units, from where it is drawn)</g> </svg>',
         steps:[ { label:'Optimal time to act', t:'what this stage shows', cx:150, cy:0 } ], label:'aria label of the slider' }
+  14. reveal    See it first (display, not tracked). The owner's rule: learners SEE a deck graphic, built up part by part
+      with a plain line for each part, BEFORE any question that uses it. The figure plays by itself the first time its
+      page opens (each part fades or draws in, 300ms; about 2.5 seconds per step, longer for a longer line), with Play
+      (Pause, Replay), Back, Next, and one dot per step. Tapping Listen on the page replays it from the start beside the
+      narration. Under prefers-reduced-motion nothing moves: it opens finished, on its last step, and the controls still step.
+      { type:'reveal', figure:'<svg viewBox="X Y W H"> <g data-rv="1">part 1</g> <path data-rv="2" data-rv-draw pathLength="1" .../> </svg>',
+          // or plain HTML (a text slide): '<div class="..."><p data-rv="1">...</p></div>'
+        steps:[ { label:'Simple reporting', t:'what just appeared, in plain words' } ],  // steps[k-1] goes with data-rv="k";
+          // make the last step the whole picture: it is what reduced motion, and a return visit, open on
+        caption:'source line under the figure (optional)', label:'aria label for the graphic', fh:'figure height (optional CSS length)',
+        prompt:'shown while the figure is still blank (optional)' }
+      Reveal on an activity's own figure: mark parts of an explore, flip, or scrub figure with data-rv="1", "2", ...
+      (data-rv-draw on a path with pathLength="1" draws it). The library adds a small Play bar with step dots under the
+      figure and builds the figure the first time the page opens, before the learner does anything; the first tap on
+      the activity shows it whole. A flip without a figure takes cfg.reveal:true and deals its cards in, one by one.
+   Added with 14 (owner feedback, November 2026):
+      sort and place: an item may carry img:{ src, w, h }. Once sorted, every item sits INSIDE its bucket as a small card
+        (the thumbnail, never above its native width / 1.5, and its short label); screen readers hear the same list as before.
+      rate: cfg.levelHints (one line per level, shown once above the rows; the default explains Not yet, Partly, Strongly),
+        cfg.act[i] (one practical move per dimension: when every row is rated, the read-out names the thinnest side(s)
+        and gives "Try this with your team" for up to two of them) and cfg.keep (one way to sustain an all-Strongly shape).
+      predict: the chart's known bars or points draw in one by one when the page opens; Play the chart replays it.
    Charts: a LR_COURSE.CHARTS entry may be type:'line' (cats, series, hide, arrow; see lineSVG). Added for Course Two.
    Chart option tall (a multiplier on the drawn height, same data and scale) lets predict draw its chart
    taller so it fills the stage (predict uses 1.25). The rate radar breaks a long side label onto two lines.
@@ -167,11 +189,11 @@ function chartSVG(c, o){
       out += '<rect x="' + x + '" y="' + (T + 4) + '" width="' + wide + '" height="' + (Y(0) - T - 4) + '" class="la-q"/><text x="' + cx + '" y="' + (T + bh / 2 + 10) + '" text-anchor="middle" class="la-qt">?</text>';
     } else if(b.seg){
       var base = 0;
-      b.seg.forEach(function(sv, si){ var y0 = Y(base), y1 = Y(base + sv); out += '<rect x="' + x + '" y="' + y1 + '" width="' + wide + '" height="' + (y0 - y1) + '" class="' + cls + (si ? ' la-b2' : '') + '"/><text x="' + cx + '" y="' + (y1 + 16) + '" text-anchor="middle" class="la-cvi">' + esc(b.labs[si]) + '</text>'; base += sv; });
+      b.seg.forEach(function(sv, si){ var y0 = Y(base), y1 = Y(base + sv); out += '<rect x="' + x + '" y="' + y1 + '" width="' + wide + '" height="' + (y0 - y1) + '" class="' + cls + (si ? ' la-b2' : '') + ' la-di" style="--i:' + k + '"/><text x="' + cx + '" y="' + (y1 + 16) + '" text-anchor="middle" class="la-cvi la-di" style="--i:' + k + '">' + esc(b.labs[si]) + '</text>'; base += sv; });
     } else {
       var y = Y(b.v);
-      if(b.v > 0) out += '<rect x="' + x + '" y="' + y + '" width="' + wide + '" height="' + (Y(0) - y) + '" class="' + cls + '"/>';
-      out += '<text x="' + cx + '" y="' + (b.inside ? y + 20 : y - 7) + '" text-anchor="middle" class="' + (b.inside ? 'la-cvi' : 'la-cv') + (last && o.reveal ? ' la-newv' : '') + '">' + esc(b.lab) + '</text>';
+      if(b.v > 0) out += '<rect x="' + x + '" y="' + y + '" width="' + wide + '" height="' + (Y(0) - y) + '" class="' + cls + ' la-di" style="--i:' + k + '"/>';
+      out += '<text x="' + cx + '" y="' + (b.inside ? y + 20 : y - 7) + '" text-anchor="middle" class="' + (b.inside ? 'la-cvi' : 'la-cv') + (last && o.reveal ? ' la-newv' : '') + ' la-di" style="--i:' + k + '">' + esc(b.lab) + '</text>';
     }
     out += '<text x="' + cx + '" y="' + (T + bh + 18) + '" text-anchor="middle" class="la-ct">' + esc(b.x) + (b.note ? '<tspan dy="-6" class="la-cn">' + esc(b.note) + '</tspan>' : '') + '</text>';
     if(last && o.guess !== undefined && o.guess !== null){
@@ -241,10 +263,13 @@ T.sort = T.place = function(api){
   var cfg = api.cfg, st = api.st, items = cfg.items, B = cfg.buckets, quad = cfg.type === 'place' || !!cfg.grid;
   st.placed = st.placed || {}; st.first = st.first || {};
   function cur(){ for(var i = 0; i < items.length; i++) if(st.placed[i] === undefined) return i; return -1; }
+  /* a sorted item sits inside its bucket as a small card (a thumbnail when it has img); the same list is
+     kept for screen readers below the button, so what they hear does not change */
   function bucket(b){
     var chips = items.map(function(it, i){ return st.placed[i] === b ? '<li class="' + (st.first[i] === b ? 'ok' : 'retry') + '">' + esc(it.short || strip(it.t)) + '</li>' : ''; }).join('');
+    var cards = items.map(function(it, i){ return st.placed[i] === b ? '<span class="la-bkc' + (it.img ? ' img' : '') + (st.first[i] === b ? '' : ' retry') + '">' + (it.img ? '<img src="' + esc(it.img.src) + '" alt="" width="' + it.img.w + '" height="' + it.img.h + '" loading="lazy" decoding="async" />' : '') + '<span>' + esc(it.short || strip(it.t)) + '</span></span>' : ''; }).join('');
     var cnt = items.filter(function(it, i){ return st.placed[i] === b; }).length;
-    return '<div class="la-bk" data-b="' + b + '"><button type="button" class="la-bkb" data-b="' + b + '" data-fk="b-' + b + '"' + (cur() < 0 ? ' disabled' : '') + '>' + (cfg.subs && cfg.subs[b] ? '<span class="la-bkt"><b>' + esc(B[b]) + '</b><small>' + cfg.subs[b] + '</small></span>' : '<b>' + esc(B[b]) + '</b>') + '<span class="la-n">' + cnt + '</span></button>' + (chips ? '<ul class="la-chips">' + chips + '</ul>' : '') + '</div>';
+    return '<div class="la-bk" data-b="' + b + '"><button type="button" class="la-bkb" data-b="' + b + '" data-fk="b-' + b + '"' + (cur() < 0 ? ' disabled' : '') + '>' + (cfg.subs && cfg.subs[b] ? '<span class="la-bkt"><b>' + esc(B[b]) + '</b><small>' + cfg.subs[b] + '</small></span>' : '<b>' + esc(B[b]) + '</b>') + (cards ? '<span class="la-bkcards" aria-hidden="true">' + cards + '</span>' : '') + '<span class="la-n">' + cnt + '</span></button>' + (chips ? '<ul class="la-chips sr">' + chips + '</ul>' : '') + '</div>';
   }
   api.html = function(){
     var c = cur(), h = '<div class="la-sort' + (quad ? ' la-quad' : '') + '">';
@@ -448,7 +473,8 @@ T.predict = function(api){
         '<p class="la-you">' + (close(rd, i) ? CHECK + '<b>Close.</b> ' : '') + 'You guessed ' + fmt(rd, gg) + '.</p><p class="la-x">' + rd.x + '</p></div>';
       h += i < R.length - 1 ? '<button type="button" class="la-btn" data-next data-fk="next-' + i + '">Next number</button>' : '';
     }
-    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, tall:1.25, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown }) + '</div>';
+    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, tall:1.25, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown }) +
+      (shown ? '' : '<button type="button" class="la-btn sm ghost la-replay" data-replay data-fk="replay-' + i + '"><svg viewBox="0 0 24 24" aria-hidden="true" class="la-ic"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Play the chart</button>') + '</div>';
     h += '<ol class="la-pdots" aria-hidden="true">' + R.map(function(_, k){ return '<li class="' + (st.shown[k] ? 'seen' : '') + (k === i ? ' cur' : '') + '"></li>'; }).join('') + '</ol></div>';
     var n = Object.keys(st.shown).length, cl = R.filter(function(rr, k){ return st.shown[k] && close(rr, k); }).length;
     return h + doneBar(api, 'You predicted all ' + R.length + '; ' + cl + ' ' + (cl === 1 ? 'was' : 'were') + ' close.');
@@ -464,8 +490,12 @@ T.predict = function(api){
     });
     r.addEventListener('change', function(){ api.save(); });
   };
+  /* the known bars or points draw in one by one: when the page opens, and on Play the chart */
+  function drawIn(){ var c = api.q('.la-pchart'); if(!c || reduce) return; c.classList.remove('la-drawin'); void c.offsetWidth; c.classList.add('la-drawin'); }
+  api.drawIn = drawIn;
   api.click = function(b){
     var i = st.r, rd = R[i];
+    if(b.hasAttribute('data-replay')){ drawIn(); api.say('The chart draws in again: ' + strip((CH[rd.chart] || {}).title || '') + '.'); return; }
     if(b.hasAttribute('data-lock')){
       if(st.g[i] === undefined){ var r = api.q('input[type=range]'); st.g[i] = parseFloat(r.value); }
       st.shown[i] = 1; just = true; justRun = true;
@@ -475,7 +505,7 @@ T.predict = function(api){
       api.say('You guessed ' + fmt(rd, st.g[i]) + '. The real figure: ' + fmt(rd, rd.answer) + '. ' + strip(rd.x));
       return;
     }
-    if(b.hasAttribute('data-next')){ st.r = Math.min(R.length - 1, i + 1); api.save(); api.paint('range-' + st.r); api.say('Number ' + (st.r + 1) + ' of ' + R.length + '. ' + strip(R[st.r].q)); }
+    if(b.hasAttribute('data-next')){ st.r = Math.min(R.length - 1, i + 1); api.save(); api.paint('range-' + st.r); drawIn(); api.say('Number ' + (st.r + 1) + ' of ' + R.length + '. ' + strip(R[st.r].q)); }
   };
   api.rows = function(){ return R.map(function(rd, k){ return st.shown[k] ? [strip(rd.q), fmt(rd, st.g[k]), fmt(rd, rd.answer), close(rd, k)] : null; }).filter(Boolean); };
   api.solve = function(){ R.forEach(function(_, k){ if(!st.shown[st.r]) api.q('button[data-lock]').click(); var nx = api.q('button[data-next]'); if(nx) nx.click(); }); if(!st.shown[st.r]) api.q('button[data-lock]').click(); };
@@ -529,27 +559,42 @@ T.rate = function(api){
     var w = String(Dm[i]).split(' '), t = esc(Dm[i]);
     if(side && w.length > 1 && Dm[i].length > 10){ var m = Math.ceil(w.length / 2); t = '<tspan x="' + x.toFixed(1) + '" dy="-.5em">' + esc(w.slice(0, m).join(' ')) + '</tspan><tspan x="' + x.toFixed(1) + '" dy="1.15em">' + esc(w.slice(m).join(' ')) + '</tspan>'; }
     return '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" text-anchor="' + (!side ? 'middle' : Math.cos(a) > 0 ? 'start' : 'end') + '" class="la-rlab">' + t + '</text>'; }
+  /* one line per level, shown once above the rows (the owner: explain the choices) */
+  var hints = cfg.levelHints || (Lv.join('|') === 'Not yet|Partly|Strongly' ? ['we rarely do this.', 'sometimes, or only some of us.', 'it is how we work, even under pressure.'] : null);
   api.html = function(){
     var rings = [1, 2, 3].map(function(k){ return '<polygon class="la-ring" points="' + Dm.map(function(_, i){ return pt(i, k / 3); }).join(' ') + '"/>'; }).join('');
     var axes = Dm.map(function(_, i){ return '<line class="la-rax" x1="' + cx + '" y1="' + cy + '" x2="' + pt(i, 1).split(',')[0] + '" y2="' + pt(i, 1).split(',')[1] + '"/>'; }).join('');
     var shape = '<polygon class="la-shape" points="' + Dm.map(function(_, i){ var v = st.v[i]; return pt(i, v === undefined ? 0.05 : (v + 1) / Lv.length); }).join(' ') + '"/>';
-    var h = '<div class="la-rate"><svg viewBox="0 0 260 240" class="la-rsvg" role="img" aria-label="' + esc((cfg.title || 'Your team') + ': ' + Dm.map(function(d, i){ return d + ' ' + (st.v[i] === undefined ? 'not rated' : Lv[st.v[i]]); }).join(', ')) + '">' + rings + axes + shape + Dm.map(function(_, i){ return lab(i); }).join('') + '</svg>';
-    h += '<div class="la-rqs">' + Dm.map(function(d, i){ return '<div class="la-rq" role="group" aria-label="' + esc(d) + '"><span class="la-rqn">' + esc(d) + (cfg.eg && cfg.eg[i] ? '<span class="la-rqe"><b>Looks like:</b> ' + cfg.eg[i] + '</span>' : '') + '</span><div class="la-chips2">' + Lv.map(function(l, li){ return '<button type="button" data-d="' + i + '" data-l="' + li + '" data-fk="r-' + i + '-' + li + '" aria-pressed="' + (st.v[i] === li) + '">' + esc(l) + '</button>'; }).join('') + '</div></div>'; }).join('');
-    /* the read-out and the completion bar sit inside the grid, under the radar on wide screens */
-    h += '</div><p class="la-fb hint"><span>' + read() + '</span></p>' + doneBar(api, 'Just for you. Nothing is scored.') + '</div>';
+    var h = '<div class="la-rate' + (n > 4 ? ' many' : '') + '"><svg viewBox="0 0 260 240" class="la-rsvg" role="img" aria-label="' + esc((cfg.title || 'Your team') + ': ' + Dm.map(function(d, i){ return d + ' ' + (st.v[i] === undefined ? 'not rated' : Lv[st.v[i]]); }).join(', ')) + '">' + rings + axes + shape + Dm.map(function(_, i){ return lab(i); }).join('') + '</svg>';
+    /* the legend sits at the top of the rows; with more than four rows it moves under the radar, so every row still fits */
+    var legend = hints ? '<p class="la-rlegend">' + Lv.map(function(l, li){ return '<span><b>' + esc(l) + ':</b> ' + esc(hints[li] || '') + '</span>'; }).join(' ') + '</p>' : '';
+    if(n > 4) h += legend;
+    h += '<div class="la-rqs">' + (n > 4 ? '' : legend) +
+      Dm.map(function(d, i){ return '<div class="la-rq" role="group" aria-label="' + esc(d) + '"><span class="la-rqn">' + esc(d) + '</span><div class="la-chips2">' + Lv.map(function(l, li){ return '<button type="button" data-d="' + i + '" data-l="' + li + '" data-fk="r-' + i + '-' + li + '" aria-pressed="' + (st.v[i] === li) + '">' + esc(l) + '</button>'; }).join('') + '</div>' + (cfg.eg && cfg.eg[i] ? '<span class="la-rqe"><b>Looks like:</b> ' + cfg.eg[i] + '</span>' : '') + '</div>'; }).join('');
+    /* the read-out sits inside the grid, under the radar on wide screens; once every row is rated it is also the completion bar */
+    var full = Object.keys(st.v).length === n;
+    h += '</div>' + (full && st.done ? '<div class="la-donebar la-rread">' + CHECK + '<span><b>Complete.</b> ' + read(true) + '</span></div>' : '<p class="la-fb hint"><span>' + read(true) + '</span></p>') + '</div>';
     return h;
   };
-  function read(){
+  function weakest(){ var low = Math.min.apply(null, Dm.map(function(_, i){ return st.v[i]; })); return { low:low, idx:Dm.map(function(_, i){ return i; }).filter(function(i){ return st.v[i] === low; }) }; }
+  function read(html){
     var k = Object.keys(st.v).length; if(k < n) return k ? (n - k) + ' to go. Watch the shape fill in.' : 'Rate your team on each one. The shape draws as you go.';
-    var low = Math.min.apply(null, Dm.map(function(_, i){ return st.v[i]; })), weak = Dm.filter(function(_, i){ return st.v[i] === low; });
-    return low === Lv.length - 1 ? (cfg.high || 'Every side reaches the outer ring.') : (cfg.low || 'Your thinnest side: {dims}.').replace('{dims}', weak.join(' and '));
+    var w = weakest(), names = w.idx.map(function(i){ return Dm[i]; }), t;
+    if(w.low === Lv.length - 1) return (cfg.high || 'Every side reaches the outer ring.') + (cfg.keep ? (html ? ' <b class="la-rtry">To keep it there:</b> ' : ' To keep it there: ') + cfg.keep : '');
+    t = (cfg.low || 'Your thinnest side: {dims}.').replace('{dims}', names.length > 2 ? names.slice(0, -1).join(', ') + ', and ' + names[names.length - 1] : names.join(' and '));
+    if(!cfg.act) return t;
+    /* one practical move for each thin side, two at most so the read-out fits beside the rows */
+    var acts = w.idx.slice(0, 2).filter(function(i){ return cfg.act[i]; });
+    if(!acts.length) return t;
+    if(!html) return t + ' Try this with your team. ' + acts.map(function(i){ return Dm[i] + ': ' + strip(cfg.act[i]); }).join(' ') + (w.idx.length > 2 ? ' Start with these two.' : '');
+    return t + '<b class="la-rtry">Try this with your team' + (w.idx.length > 2 ? ', starting with two' : '') + ':</b><ul class="la-racts">' + acts.map(function(i){ return '<li><b>' + esc(Dm[i]) + '.</b> ' + cfg.act[i] + '</li>'; }).join('') + '</ul>';
   }
   api.click = function(b){
     if(!b.hasAttribute('data-d')) return;
-    st.v[b.getAttribute('data-d')] = +b.getAttribute('data-l'); api.save(); api.paint();
-    var k = Object.keys(st.v).length; api.say(Dm[+b.getAttribute('data-d')] + ': ' + Lv[+b.getAttribute('data-l')] + '. ' + read());
-    var sum = Dm.map(function(d, i){ return d + ' ' + Lv[st.v[i]]; }).join(', ');
-    if(k === n){ if(!st.done) api.complete(sum); else P.set('r-' + api.prog, sum); }
+    st.v[b.getAttribute('data-d')] = +b.getAttribute('data-l');
+    var k = Object.keys(st.v).length, sum = Dm.map(function(d, i){ return d + ' ' + Lv[st.v[i]]; }).join(', ');
+    if(k === n){ if(!st.done) api.complete(sum); else { P.set('r-' + api.prog, sum); api.save(); api.paint(); } } else { api.save(); api.paint(); }
+    api.say(Dm[+b.getAttribute('data-d')] + ': ' + Lv[+b.getAttribute('data-l')] + '. ' + read(false));
   };
   api.rows = function(){ return Dm.map(function(d, i){ return st.v[i] === undefined ? null : [d, Lv[st.v[i]], '', false]; }).filter(Boolean); };
   api.solve = function(){ Dm.forEach(function(_, i){ api.q('button[data-d="' + i + '"][data-l="' + (i % Lv.length) + '"]').click(); }); };
@@ -676,12 +721,12 @@ function lineSVG(c, o){
     var pts = s.vals.map(function(v, k){ return [X(k), Y(v)]; }), shown = hid ? pts.slice(0, last) : pts;
     var d = function(a){ return a.map(function(p, k){ return (k ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' '); };
     var revealLast = o.reveal && si === hs;
-    out += '<path d="' + d(revealLast ? pts.slice(0, last) : shown) + '" fill="none" stroke="' + col + '" stroke-width="2.5" stroke-linejoin="round"/>';
+    out += '<path d="' + d(revealLast ? pts.slice(0, last) : shown) + '" fill="none" stroke="' + col + '" stroke-width="2.5" stroke-linejoin="round" pathLength="1" class="la-dline" style="--n:' + shown.length + '"/>';
     if(revealLast) out += '<path d="' + d(pts.slice(last - 1)) + '" fill="none" stroke="' + col + '" stroke-width="2.5" class="la-newv"/>';
     shown.forEach(function(p, k){
-      var nv = revealLast && k === last ? ' la-newv' : '';
-      out += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="' + col + '" class="' + nv + '"/>';
-      out += '<text x="' + p[0].toFixed(1) + '" y="' + (s.pos === 'below' ? p[1] + 16 : p[1] - 8).toFixed(1) + '" text-anchor="middle" class="la-ct' + nv + '" style="fill:' + col + ';font-size:11px;font-weight:600">' + esc(s.labs ? s.labs[k] : s.vals[k]) + '</text>';
+      var nv = (revealLast && k === last ? ' la-newv' : '') + ' la-di';
+      out += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="' + col + '" class="' + nv + '" style="--i:' + k + '"/>';
+      out += '<text x="' + p[0].toFixed(1) + '" y="' + (s.pos === 'below' ? p[1] + 16 : p[1] - 8).toFixed(1) + '" text-anchor="middle" class="la-ct' + nv + '" style="--i:' + k + ';fill:' + col + ';font-size:11px;font-weight:600">' + esc(s.labs ? s.labs[k] : s.vals[k]) + '</text>';
     });
   });
   c.cats.forEach(function(x, k){ out += '<text x="' + X(k) + '" y="' + (T + bh + 18) + '" text-anchor="middle" class="la-ct">' + esc(x) + '</text>'; });
@@ -694,6 +739,71 @@ function lineSVG(c, o){
   var said = S.map(function(s, si){ return s.name + ': ' + c.cats.map(function(x, k){ return x + ' ' + (o.hide && si === hs && k === n - 1 ? 'hidden until you guess' : (s.labs ? s.labs[k] : s.vals[k])); }).join(', '); }).join('. ');
   return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="la-svg" role="img" aria-label="' + esc(c.title + '. Line chart. ' + said + '.') + '">' + out + '</svg>';
 }
+
+/* ══════════ 14. reveal (owner feedback, November 2026): see the graphic first ══════════
+   rvPlayer builds a figure part by part: parts carry data-rv="k" and show from step k. It drives the reveal type
+   (a whole page that teaches one deck graphic) and the small Play bar on an activity's own figure. */
+var PLAY_IC = '<svg viewBox="0 0 24 24" aria-hidden="true" class="la-ic"><path class="pl" d="M7 4.5v15l12-7.5z" fill="currentColor"/><path class="pa" d="M7 4h4v16H7zM13 4h4v16h-4z" fill="currentColor"/></svg>';
+function rvPlayer(o){
+  /* o: { box: element holding the parts, n: steps, bar: element for the controls, small: true for an activity's figure,
+          pace: function(k) ms to hold step k, onStep: function(at, user), name: what the controls build } */
+  var at = o.n, timer = null, playing = false, seen = false;
+  o.box.classList.add('la-rvready');
+  o.bar.className = 'la-rvbar' + (o.small ? ' sm' : '');
+  o.bar.innerHTML = '<button type="button" class="la-btn sm' + (o.small ? ' ghost' : '') + ' la-rvplay" data-rvb="play" aria-pressed="false">' + PLAY_IC + '<span>Replay</span></button>' +
+    (o.small ? '' : '<button type="button" class="la-btn sm ghost" data-rvb="back">Back</button>') +
+    '<span class="la-rvdots" role="group" aria-label="' + esc(o.name || 'Steps') + '">' + Array.apply(null, { length:o.n }).map(function(_, k){ return '<button type="button" class="la-rvdot" data-rvk="' + (k + 1) + '" aria-label="Step ' + (k + 1) + ' of ' + o.n + '"></button>'; }).join('') + '</span>' +
+    (o.small ? '' : '<button type="button" class="la-btn sm ghost" data-rvb="next">Next</button>');
+  var btn = o.bar.querySelector('.la-rvplay'), lab = btn.querySelector('span');
+  function apply(){ $$('[data-rv]', o.box).forEach(function(e){ e.classList.toggle('la-rv-on', +e.getAttribute('data-rv') <= at); }); o.box.setAttribute('data-rvat', at); }
+  function ui(){
+    btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); btn.classList.toggle('on', playing);
+    lab.textContent = playing ? 'Pause' : at >= o.n ? 'Replay' : 'Play';
+    btn.setAttribute('aria-label', (playing ? 'Pause' : at >= o.n ? 'Replay' : 'Play') + ': ' + (o.name || 'the graphic') + ', part by part');
+    $$('.la-rvdot', o.bar).forEach(function(d, j){ d.classList.toggle('seen', j < at); if(j + 1 === at) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
+    var bk = o.bar.querySelector('[data-rvb="back"]'), nx = o.bar.querySelector('[data-rvb="next"]');
+    if(bk) bk.disabled = at <= 1; if(nx) nx.disabled = at >= o.n;
+  }
+  function set(k, user){ at = Math.max(0, Math.min(o.n, k)); apply(); ui(); if(o.onStep) o.onStep(at, user); }
+  function stop(){ playing = false; if(timer){ clearTimeout(timer); timer = null; } ui(); }
+  function step(){ if(!playing) return; set(at + 1); if(at >= o.n){ stop(); return; } timer = setTimeout(step, o.pace(at)); }
+  function play(){ if(timer) clearTimeout(timer); if(at >= o.n) set(0); playing = true; ui(); timer = setTimeout(step, at === 0 ? 350 : 60); }
+  function auto(){ if(seen || reduce) return; seen = true; set(0); play(); }
+  o.bar.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b || b.disabled) return; e.stopPropagation();
+    var k = b.getAttribute('data-rvk'), w = b.getAttribute('data-rvb');
+    if(w === 'play'){ if(playing) stop(); else play(); return; }
+    stop();
+    if(k) set(+k, true); else if(w === 'back') set(Math.max(1, at - 1), true); else if(w === 'next') set(at + 1, true);
+  });
+  /* the first time its page opens, it builds; leaving the page shows it whole */
+  function onPage(){ if(o.box.closest('.page.cur')) setTimeout(auto, 250); else if(playing || at < o.n){ stop(); set(o.n); } }
+  document.addEventListener('chart:page', onPage);
+  if(o.box.closest('.page.cur')) setTimeout(auto, 500);
+  /* Listen on the page replays it from the start, beside the narration */
+  if(!o.small) document.addEventListener('click', function(e){ var l = e.target.closest && e.target.closest('#bbListen'); if(!l || l.classList.contains('playing') || reduce || !o.box.closest('.page.cur')) return; set(0); play(); }, true);
+  set(o.n);
+  return { finish:function(){ if(playing || at < o.n){ stop(); set(o.n); } }, apply:apply, set:set, play:play, at:function(){ return at; }, bar:o.bar };
+}
+
+T.reveal = function(api){
+  var cfg = api.cfg, S = cfg.steps, n = S.length, fig = String(cfg.figure), pid = 'la-' + api.key + '-rp';
+  api.static = true; api.untracked = true;
+  var vb = fig.match(/<svg[^>]*viewBox="[\d.\-]+ [\d.\-]+ ([\d.]+) ([\d.]+)"/);
+  api.body.innerHTML = '<div class="la-reveal"><figure class="la-fig"' + (cfg.fh ? ' style="--fh:' + esc(cfg.fh) + '"' : '') + '>' +
+    (vb ? '<div class="la-figbox" role="img" aria-label="' + esc(cfg.label || '') + '" style="--rw:' + vb[1] + ';--rh:' + vb[2] + '">' + fig + '</div>' : '<div class="la-rvhtml" role="img" aria-label="' + esc(cfg.label || '') + '">' + fig + '</div>') +
+    (cfg.caption ? '<figcaption class="la-rvcap">' + cfg.caption + '</figcaption>' : '') + '</figure>' +
+    '<div class="la-rvslot"></div><div class="la-panel" id="' + pid + '" tabindex="-1"></div></div>';
+  var panel = api.q('.la-panel'), box = api.q('.la-figbox, .la-rvhtml');
+  function words(t){ return (strip(t).match(/\S+/g) || []).length; }
+  api.rv = rvPlayer({ box:box, n:n, bar:api.q('.la-rvslot'), name:cfg.label || 'the graphic',
+    pace:function(k){ return Math.max(2400, words(S[k - 1] ? S[k - 1].t : '') * 290 + 900); },
+    onStep:function(at, user){
+      panel.innerHTML = at ? '<span class="la-k">Step ' + at + ' of ' + n + '</span><b class="la-pt">' + S[at - 1].label + '</b><p>' + S[at - 1].t + '</p>' : '<p class="la-empty">' + (cfg.prompt || 'Watch the slide build, one part at a time.') + '</p>';
+      if(user && at) api.say(strip(S[at - 1].label) + '. ' + strip(S[at - 1].t));
+    } });
+  api.solve = function(){};
+};
 
 /* ══════════ mount ══════════ */
 function mount(root){
@@ -724,15 +834,30 @@ function mount(root){
   };
   T[cfg.type](api);
   if(!api.static) api.paint();
+  /* reveal on an activity's own figure (parts marked data-rv), or cfg.reveal on a flip without one: a small Play bar */
+  if(cfg.type !== 'reveal'){
+    if(cfg.reveal && cfg.type === 'flip') $$('.la-flip', root).forEach(function(c, i){ c.setAttribute('data-rv', i + 1); });
+    var rvN = 0; $$('[data-rv]', root).forEach(function(e){ rvN = Math.max(rvN, +e.getAttribute('data-rv') || 0); });
+    if(rvN){
+      var rvHost = function(){ return root.querySelector('.la-fig, .la-ffig') || root.querySelector('.la-flipset'); };
+      var rvBar = document.createElement('div');
+      api.rv = rvPlayer({ box:root, n:rvN, bar:rvBar, small:true, name:cfg.rvName || 'the slide', pace:function(){ return cfg.type === 'flip' && !cfg.figure ? 420 : 650; } });
+      var rvPut = function(){ var h = rvHost(); if(!h) return; if(cfg.reveal && cfg.type === 'flip') $$('.la-flip', root).forEach(function(c, i){ c.setAttribute('data-rv', i + 1); }); var before = h.querySelector(':scope > .la-count, :scope > .la-donebar'); if(before) h.insertBefore(rvBar, before); else h.appendChild(rvBar); api.rv.apply(); };
+      if(!api.static){ var paint0 = api.paint; api.paint = function(nx){ paint0(nx); rvPut(); }; }
+      rvPut();
+    }
+  }
   if(api.drag) api.drag();
   root.addEventListener('click', function(e){
     var b = e.target.closest('button'); if(!b || !root.contains(b) || b.disabled) return;
     if(root._noclick && Date.now() - root._noclick < 300) return;
+    if(api.rv && !b.closest('.la-rvbar')) api.rv.finish();
     /* a decision stops the narration, so the audio never talks over the learner */
-    if(/^(sort|place|order|match|predict|branch|spot)$/.test(cfg.type) && window.LR_NARRSTOP) window.LR_NARRSTOP();
+    if(/^(sort|place|order|match|predict|branch|spot)$/.test(cfg.type) && !b.hasAttribute('data-replay') && !b.closest('.la-rvbar') && window.LR_NARRSTOP) window.LR_NARRSTOP();
     if(api.click) api.click(b);
   });
   if(st.done && !api.untracked && P.is(prog)) P.turn(prog);
+  if(api.drawIn){ document.addEventListener('chart:page', function(){ if(root.closest('.page.cur')) setTimeout(api.drawIn, 200); }); if(root.closest('.page.cur')) setTimeout(api.drawIn, 500); }
   root.lrAct = { type:cfg.type, key:key, prog:prog, tracked:!api.untracked, solve:function(){ api.solve(); }, done:function(){ return !!st.done; }, rows:function(){ return api.rows ? api.rows() : []; } };
   REG[key] = root;
 }
