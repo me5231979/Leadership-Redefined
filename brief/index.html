@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Your Capstone Brief · Leadership Redefined</title>
-<meta name="description" content="Your pod's capstone brief in one place: all seven sections, filled in from Course One and Course Two, ready to edit, print, or download for Word." />
+<title>Capstone Brief · Leadership Redefined</title>
+<meta name="description" content="Your pod's capstone brief: the seven sections, what good looks like, an example, and a fillable PDF to download." />
 <meta name="theme-color" content="#1C1C1C" />
 <meta name="robots" content="noindex" />
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
@@ -13,7 +13,25 @@
 <link rel="stylesheet" href="../assets/css/voyage.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/nav.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/lr.css?v=20261027a" />
-<link rel="stylesheet" href="../assets/css/brief.css?v=20261018a" />
+<style>
+.cb-sec{padding:clamp(28px,5vw,56px) 0}
+.cb-actions{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;margin:22px 0 8px}
+.cb-steps{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;max-width:760px;counter-reset:cb}
+.cb-steps li{counter-increment:cb;display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;font-size:1.0625rem;line-height:1.5}
+.cb-steps li::before{content:counter(cb);font-family:'Antonio',sans-serif;font-weight:700;color:var(--vu-gold,#CFAE70);font-size:1.25rem;line-height:1.3}
+.cb-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:1rem;line-height:1.5}
+.cb-table th,.cb-table td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid rgba(207,174,112,.35)}
+.cb-table thead th{font-family:'Antonio',sans-serif;font-weight:700;letter-spacing:.03em;text-transform:uppercase;font-size:.875rem;color:var(--vu-gold,#CFAE70)}
+.cb-table tbody th{font-weight:600;width:26%}
+.cb-table .n{font-family:'Antonio',sans-serif;color:var(--vu-gold,#CFAE70);margin-right:10px}
+.cb-table td.good{color:rgba(255,255,255,.82)}
+.cb-ex{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}
+.cb-ex dl{margin:0}.cb-card{border:1px solid rgba(207,174,112,.4);border-radius:10px;padding:18px 20px}
+.cb-ex dt{font-weight:600;margin-top:12px}.cb-ex dt:first-child{margin-top:0}
+.cb-ex dd{margin:4px 0 0;line-height:1.5}
+.cb-ex h3{font-family:'Antonio',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:.9375rem;color:var(--vu-gold,#CFAE70);margin:0 0 10px}
+@media (max-width:760px){.cb-ex{grid-template-columns:1fr}.cb-table thead{display:none}.cb-table tr{display:block;padding:12px 0;border-bottom:1px solid rgba(207,174,112,.35)}.cb-table th,.cb-table td{display:block;border:0;padding:4px 0;width:auto}}
+</style>
 </head>
 <body class="bf-page">
 <a href="#main" class="skip">Skip to content</a>
@@ -24,41 +42,63 @@
       <a href="../">Program home</a>
       <a href="../course-one/">Course One</a>
       <a href="../course-two/">Course Two</a>
-      <a href="./" aria-current="page">Your capstone brief</a>
+      <a href="./" aria-current="page">Capstone brief</a>
     </nav>
     <button type="button" class="gnav__burger" aria-label="Menu" aria-expanded="false" aria-controls="gnavLinks"><span></span><span></span><span></span></button>
   </div>
   <span class="gnav__line" aria-hidden="true"></span>
 </header>
 <main id="main">
-<section class="th-dark bf-top">
+<section class="th-dark cb-sec" style="padding-top:clamp(110px,14vw,150px)">
   <div class="wrap">
     <span class="v-kicker">Leadership Redefined &middot; Capstone Innovation Project</span>
     <h1 class="v-h">Your capstone <em>brief</em>.</h1>
-    <p class="v-why">All seven sections in one place. What you wrote in Course One and Course Two fills in here by itself; edit anything, then print it, save it as a PDF, or download it for Word. Three pages at most, due Friday, November 20.</p>
-    <ol class="bf-how">
-      <li><span><b>It fills itself.</b> Sections 1 to 3 come from Course One; sections 4 to 7 come from Course Two. Come back after each course and it is up to date.</span></li>
-      <li><span><b>Make it yours.</b> Edit any section here. Your edits are kept; a course draft never overwrites them unless you choose &ldquo;Use my course draft again.&rdquo;</span></li>
-      <li><span><b>Merge as a pod.</b> Download it for Word or copy it, then combine everyone&rsquo;s drafts in your pod&rsquo;s shared document.</span></li>
-    </ol>
-    <div class="bf-actions">
-      <button type="button" class="btn btn-gold" data-bf="print">Print or save as PDF</button>
-      <button type="button" class="btn btn-ghost" data-bf="word">Download for Word</button>
-      <button type="button" class="btn btn-ghost" data-bf="copy">Copy all text</button>
+    <p class="v-why">Your pod picks a real problem at Vanderbilt and comes up with a way to fix it. The brief is how you write it up: seven sections, three pages at most, one per pod, due Friday, November 20.</p>
+    <div class="cb-actions">
+      <a class="btn btn-gold" href="leadership-redefined-capstone-brief.pdf" download>Download the fillable brief (PDF)</a>
+      <a class="btn btn-ghost" href="leadership-redefined-capstone-brief.pdf" target="_blank" rel="noopener">Open it in a new tab</a>
     </div>
-    <p class="bf-status" id="bfStatus" role="status" aria-live="polite"></p>
+    <ol class="cb-steps">
+      <li><span>Save the PDF to your computer, then open it in Adobe Acrobat Reader (free) or another PDF app that fills forms. Type in each box and save.</span></li>
+      <li><span>Week of November 2: draft sections 1 to 3 with Course One. Week of November 9: draft sections 4 to 7 with Course Two.</span></li>
+      <li><span>Week of November 16: meet with your pod, put your drafts together, and turn in one brief by Friday, November 20.</span></li>
+    </ol>
   </div>
 </section>
-<section class="th-dark bf-doc" aria-label="The brief">
+<section class="th-dark cb-sec" aria-labelledby="cbSecH" style="padding-top:0">
   <div class="wrap">
-    <div class="bf-sheet" id="bfSheet">
-      <div class="bf-meta">
-        <div class="field"><label for="bfTitle">Project title</label><input id="bfTitle" data-meta="title" type="text" placeholder="A short, plain name for your idea" /></div>
-        <div class="field"><label for="bfPod">Pod</label><input id="bfPod" data-meta="pod" type="text" placeholder="Your pod's name or number" /></div>
-        <div class="field"><label for="bfMembers">Pod members</label><input id="bfMembers" data-meta="members" type="text" placeholder="Names and roles" /></div>
-      </div>
-      <div id="bfSections"></div>
-      <p class="bf-count" id="bfCount" aria-live="polite"></p>
+    <h2 class="v-h sm" id="cbSecH">The seven <em>sections</em>.</h2>
+    <p class="v-why">Sections 1 to 3 make the case. Sections 4 to 7 lay out the plan.</p>
+    <table class="cb-table">
+      <thead><tr><th scope="col">Section</th><th scope="col">What you write</th><th scope="col">What good looks like</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><span class="n">1</span>Focus area</th><td>Pick one: Exceptional Core Operations, Bold Strategic Initiatives, or Values Driven Leadership. There is one winner in each area.</td><td class="good">It is at the top of page one, and the rest of the brief serves it.</td></tr>
+        <tr><th scope="row"><span class="n">2</span>The challenge and why it matters</th><td>Who is affected, what happens today, and what it costs to wait.</td><td class="good">It starts with a real person and a real moment. Someone outside your office could explain it back.</td></tr>
+        <tr><th scope="row"><span class="n">3</span>Connection to Vanderbilt&rsquo;s priorities</th><td>The part of the vision your idea serves. What it costs, and who pays after year one.</td><td class="good">It names the vision and your focus area, not just &ldquo;strategy.&rdquo;</td></tr>
+        <tr><th scope="row"><span class="n">4</span>Integrated solution</th><td>What changes for people, process, and technology, and who shares the credit.</td><td class="good">All three change together, and all six program topics show up.</td></tr>
+        <tr><th scope="row"><span class="n">5</span>Steps, owners, timeline</th><td>One line per step: what happens, who owns it, and by when.</td><td class="good">It starts with a small pilot, and every step has an owner and a date.</td></tr>
+        <tr><th scope="row"><span class="n">6</span>Success metrics</th><td>Two or three ways you will know it worked.</td><td class="good">Each has a starting number, a target, and a date, and measures results, not activity.</td></tr>
+        <tr><th scope="row"><span class="n">7</span>Sustainability plan</th><td>Who keeps it going after your pod, and how year two is paid for.</td><td class="good">One clear owner, and a plan that makes it normal work.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="th-dark cb-sec" aria-labelledby="cbExH" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="v-h sm" id="cbExH">A strong <em>example</em>.</h2>
+    <p class="v-why">An invented example, for practice: using gigs to cut what we spend on outside contractors.</p>
+    <div class="cb-ex">
+      <div class="cb-card"><h3>The case &middot; Sections 1 to 3</h3><dl>
+        <dt>1 Focus area</dt><dd>Exceptional Core Operations.</dd>
+        <dt>2 The challenge</dt><dd>Departments pay contractors and consultants for short projects, like data analysis and web updates, that our own staff could do. The money leaves, and staff who want to grow go elsewhere.</dd>
+        <dt>3 Connection</dt><dd>The vision asks us to operate with speed, agility and scale. Using skills we already have keeps fees inside Vanderbilt.</dd>
+      </dl></div>
+      <div class="cb-card"><h3>The plan &middot; Sections 4 to 7</h3><dl>
+        <dt>4 Solution</dt><dd>People: managers share up to 10% of a staff member&rsquo;s time for a gig. Process: before hiring outside help for a short project, post it as a gig for two weeks. Technology: gigs are posted and matched in the Talent Marketplace.</dd>
+        <dt>5 Steps</dt><dd>Weeks 1 to 4, set the gig rules with Procurement (HR lead). Weeks 5 to 16, pilot in two divisions. Week 17, review results with sponsors.</dd>
+        <dt>6 Metrics</dt><dd>Contractor and consulting spend in the pilot divisions drops 15% from last year by June. Staff fill 25 gigs.</dd>
+        <dt>7 Sustainability</dt><dd>HR&rsquo;s Talent Marketplace team owns it after the pilot. The gig check becomes a standard step before hiring a contractor.</dd>
+      </dl></div>
     </div>
   </div>
 </section>
@@ -67,10 +107,9 @@
   <div class="wrap"><div class="fcenter">
     <img src="../assets/img/vu-centered-white.png" alt="Vanderbilt University" width="100" height="105" loading="lazy" />
     <p class="fprogram">Leadership Redefined &middot; Building leaders for Vanderbilt&rsquo;s future</p>
-    <p class="flegal">Saved in this browser only. Built to WCAG 2.2 AA. Questions or accessibility needs: ask in <a href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad" target="_blank" rel="noopener">your cohort&rsquo;s Teams channel<span class="sr"> (opens in a new tab)</span></a>.</p>
+    <p class="flegal">Built to WCAG 2.2 AA. Questions or accessibility needs: ask in <a href="https://teams.microsoft.com/l/channel/19%3AKq-Bk3AJFCl3GSN1rvJiT3pP2IJpARPBNfLnns6QwWY1%40thread.tacv2/General?groupId=e8c6249a-bd4c-42c4-9261-33acde6b0c81&amp;tenantId=ba5a7f39-e3be-4ab3-b450-67fa80faecad" target="_blank" rel="noopener">your cohort&rsquo;s Teams channel</a>.</p>
   </div></div>
 </footer>
 <script src="../assets/js/nav.js?v=20261002a"></script>
-<script src="../assets/js/brief.js?v=20261016l"></script>
 </body>
 </html>
