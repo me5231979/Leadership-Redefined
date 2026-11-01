@@ -6,7 +6,7 @@ window.LR_CONFIG = {
   /* narration clips: ../assets/audio/course-one/<key>.mp3 (home/1 -> home-1.mp3).
      Until a clip exists, Listen reads the same words with the browser's voice. */
   audioBase: '../assets/audio/course-one/',
-  mediaVersion: '20261003a',
+  mediaVersion: '20261101v2',
   /* true until the ElevenLabs narration is recorded: Listen reads each script in the browser's own voice.
      The Record narration workflow sets this to false so the recorded clips play instead. */
   useBrowserVoice: false,
