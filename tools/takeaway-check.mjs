@@ -20,6 +20,14 @@ for(const a of await p.$$('[data-alloc], [data-assess]')){ await go(a); await p.
 const cm = await p.$('#commitList button'); await go(cm); await p.waitForTimeout(250); await cm.click();
 const allocLab = await p.evaluate(() => { const A = window.LR_COURSE.ALLOC; return A ? Object.values(A)[0].items[0].lab : null; }); if(allocLab) expect.push(allocLab + ': 50');
 const assessDim = await p.evaluate(() => { const A = window.LR_COURSE.ASSESS; return A ? Object.values(A)[0].items[0].d : null; }); if(assessDim) expect.push(assessDim);
+// v3 activities (assets/js/lr-activities.js): complete each tracked one; its saved result, and its first answer row, must print
+for(const el of await p.$$('[data-act]')){
+  const tracked = await el.evaluate(e => !!(e.lrAct && e.lrAct.tracked)); if(!tracked) continue;
+  await go(el); await p.waitForTimeout(200);
+  const got = await el.evaluate(e => { e.lrAct.solve(); const rows = e.lrAct.rows(); return { r:window.LR_PROG.get('r-' + e.lrAct.prog), row:rows.length ? rows[0][0] : null }; });
+  if(got.r) expect.push(got.r); else expect.push('(no result saved for ' + await el.getAttribute('data-act') + ')');
+  if(got.row) expect.push(got.row.slice(0, 40));
+}
 async function printed(){ return p.evaluate(() => { window.print = () => {}; document.querySelector('[data-print]').click(); return document.getElementById('printSheet').textContent.replace(/\s+/g, ' '); }); }
 const norm = t => t.replace(/\s+/g, ' ').trim();
 for(const when of ['live', 'after reload']){
