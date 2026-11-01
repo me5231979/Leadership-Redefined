@@ -426,15 +426,36 @@ $$('[data-calls]').forEach(buildCalls);
 
 /* ══════════ drills: fact or fiction ══════════ */
 var DRILLS = D.DRILLS || {};
+/* the answer buttons, in one of three shapes:
+   default: a row of buttons. layout 'grid': the buttons sit in a 2x2 field with the slide's two axes,
+   so the learner places the story on the chart itself (grid.cells lists the option in each corner:
+   top left, top right, bottom left, bottom right). layout 'track': two stops on a time line, early and late,
+   over the control and stakes curves. Buttons keep DOM order = reading order, so keyboard order matches the picture. */
+function optsHtml(d, opts){
+  function btn(oi, extra){ return '<button type="button" data-o="' + oi + '" aria-pressed="false"' + (extra || '') + '>' + esc(opts[oi]) + '</button>'; }
+  if(d.layout === 'grid' && d.grid){
+    var g = d.grid;
+    return '<div class="dq-opts dq-grid" role="group" aria-label="Place it on the chart: ' + esc(g.y) + ' up, ' + esc(g.x) + ' across">' +
+      '<span class="dg-y" aria-hidden="true">' + esc(g.y) + '</span>' +
+      g.cells.map(function(oi, ci){ return btn(oi, ' class="dg-c dg-c' + ci + '"'); }).join('') +
+      '<span class="dg-x" aria-hidden="true">' + esc(g.x) + '</span></div>';
+  }
+  if(d.layout === 'track'){
+    return '<div class="dq-opts dq-track" role="group" aria-label="When is it? Earlier or later on the time line">' +
+      '<svg class="dt-art" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true"><path class="dt-ctl" d="M0 12 C150 14 230 40 400 82"/><path class="dt-stk" d="M0 82 C170 80 250 50 400 10"/><line x1="0" y1="88" x2="400" y2="88"/></svg>' +
+      '<span class="dt-lab dt-l1" aria-hidden="true">Control</span><span class="dt-lab dt-l2" aria-hidden="true">Stakes</span>' +
+      opts.map(function(o, oi){ return btn(oi, ' class="dt-stop dt-s' + oi + '"'); }).join('') +
+      '<span class="dt-time" aria-hidden="true">Time</span></div>';
+  }
+  return '<div class="dq-opts" role="group" aria-label="Choose one">' + opts.map(function(o, oi){ return btn(oi); }).join('') + '</div>';
+}
 function buildDrill(el){
   var name = el.getAttribute('data-drill'), d = DRILLS[name]; if(!d) return;
   var status = $('#' + name + 'Status'), done = {}, cur = 0, right = 0;
   el.innerHTML = d.items.map(function(it, i){
     var opts = it.opts || d.opts;
     /* an item can carry a picture (a slide asset); the sentence beside it names it, so the image itself is decorative */
-    return '<div class="dq' + (i === 0 ? ' cur' : '') + (it.img ? ' has-img' : '') + '" data-i="' + i + '">' + (it.img ? '<img class="dq-img" src="' + esc(it.img) + '" alt="" loading="lazy" />' : '') + '<p class="dq-s"><b>' + (i + 1) + ' of ' + d.items.length + '</b>' + esc(it.s) + subBtn(name + '/q' + (i + 1)) + '</p><div class="dq-opts" role="group" aria-label="Choose one">' +
-      opts.map(function(o, oi){ return '<button type="button" data-o="' + oi + '" aria-pressed="false">' + esc(o) + '</button>'; }).join('') +
-      '</div><p class="dq-x" role="status"></p><div class="dq-nav">' + (i < d.items.length - 1 ? '<button type="button" class="btn btn-primary btn-sm" data-next="1">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div></div>';
+    return '<div class="dq' + (i === 0 ? ' cur' : '') + (it.img ? ' has-img' : '') + '" data-i="' + i + '">' + (it.img ? '<img class="dq-img" src="' + esc(it.img) + '" alt="" loading="lazy" />' : '') + '<p class="dq-s"><b>' + (i + 1) + ' of ' + d.items.length + '</b>' + esc(it.s) + subBtn(name + '/q' + (i + 1)) + '</p>' + optsHtml(d, opts) + '<p class="dq-x" role="status"></p><div class="dq-nav">' + (i < d.items.length - 1 ? '<button type="button" class="btn btn-primary btn-sm" data-next="1">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div></div>';
   }).join('');
   function pips(){ return '<span class="pips" aria-hidden="true">' + d.items.map(function(it, i){ return '<i class="' + (done[i] === 1 ? 'ok' : done[i] === 2 ? 'no' : '') + '"></i>'; }).join('') + '</span>'; }
   function show(i){ $$('.dq', el).forEach(function(q, qi){ q.classList.toggle('cur', qi === i); }); cur = i; var f = $$('.dq', el)[i].querySelector('button:not([disabled])'); if(f) f.focus({ preventScroll:true }); }
@@ -936,6 +957,79 @@ window.LR_NARRSTOP = narrStop;
     });
   });
 })();
+/* ══════════ motion: each page opens with its headline rising out of a soft blur, the copy and the
+   activity following in a quick sequence (after the Motion Sites "hero reveal" pattern, kept under
+   400ms per step). Numbers marked data-count count up when their page opens. Reduced motion: none. ══════════ */
+function pageEl(){ var c = $('.page.cur'); return c || document; }
+function countUp(el){
+  var fin = el.getAttribute('data-final') || el.textContent; el.setAttribute('data-final', fin);
+  var m = fin.match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/); if(!m || reduce){ el.textContent = fin; return; }
+  var pre = m[1], num = parseFloat(m[2].replace(/,/g, '')), post = m[3], dec = (m[2].split('.')[1] || '').length, comma = m[2].indexOf(',') > -1;
+  if(!el.style.minWidth){ el.style.display = 'inline-block'; el.style.minWidth = fin.length + 'ch'; }
+  var t0 = null, dur = 1100, delay = 380;
+  function fmt(v){ var t = v.toFixed(dec); if(comma){ var p = t.split('.'); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); t = p.join('.'); } return pre + t + post; }
+  el.textContent = fmt(0);
+  function step(ts){ if(t0 === null) t0 = ts; var k = Math.min(1, Math.max(0, (ts - t0 - delay) / dur)), e = 1 - Math.pow(1 - k, 3); el.textContent = k >= 1 ? fin : fmt(num * e); if(k < 1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+function pageEnter(){
+  var pg = pageEl(); if(pg === document) return;
+  if(!reduce){ pg.classList.remove('pg-enter'); void pg.offsetWidth; pg.classList.add('pg-enter'); window.setTimeout(function(){ pg.classList.remove('pg-enter'); }, 1400); }
+  $$('[data-count]', pg).forEach(countUp);
+  $$('.lr-drawin', pg).forEach(function(f){ f.classList.remove('on'); void f.getBoundingClientRect(); requestAnimationFrame(function(){ f.classList.add('on'); }); });
+}
+document.addEventListener('chart:page', pageEnter);
+window.setTimeout(pageEnter, 120);
+
+/* ══════════ compare: two images of the same frame (a 2020 map and a 2026 map); drag the handle,
+   or use the slider with arrow keys, to wipe from one to the other ══════════
+   <figure class="lr-compare"><div class="cmp-frame"><img class="cmp-a"><div class="cmp-b"><img></div></div>
+   <input type="range" class="cmp-range" aria-label="..."></figure> */
+$$('.lr-compare').forEach(function(f){
+  var fr = $('.cmp-frame', f), r = $('.cmp-range', f); if(!fr || !r) return;
+  function setPos(v){ v = Math.max(0, Math.min(100, v)); fr.style.setProperty('--pos', v + '%'); r.value = v; r.setAttribute('aria-valuetext', v < 15 ? f.getAttribute('data-b') : v > 85 ? f.getAttribute('data-a') : 'Both, divided at ' + Math.round(v) + ' percent'); }
+  r.addEventListener('input', function(){ setPos(parseFloat(r.value)); });
+  var drag = false;
+  function at(e){ var b = fr.getBoundingClientRect(); setPos((e.clientX - b.left) / b.width * 100); }
+  fr.addEventListener('pointerdown', function(e){ drag = true; try{ fr.setPointerCapture(e.pointerId); }catch(err){} at(e); });
+  fr.addEventListener('pointermove', function(e){ if(drag) at(e); });
+  fr.addEventListener('pointerup', function(){ drag = false; });
+  $$('[data-cmp]', f).forEach(function(b){ b.addEventListener('click', function(){ setPos(parseFloat(b.getAttribute('data-cmp'))); }); });
+  setPos(parseFloat(r.value) || 50);
+  /* a short demo sweep the first time the page opens, so people see it moves */
+  var shown = false;
+  document.addEventListener('chart:page', function(){ if(shown || reduce || !f.closest('.page.cur')) return; shown = true; var t0 = null; function sw(ts){ if(t0 === null) t0 = ts; var k = (ts - t0) / 1600; if(k >= 1){ setPos(50); return; } setPos(50 + Math.sin(k * Math.PI * 2) * 22); requestAnimationFrame(sw); } window.setTimeout(function(){ requestAnimationFrame(sw); }, 500); });
+});
+
+/* ══════════ radar check: rate your own team on the four drivers of trust (not yet, partly, strongly);
+   the shape draws on the radar as you answer, and the read names the side to shore up. Just for you, not scored. ══════════
+   <div class="lr-radarcheck" data-drivers="Empathy|Transparency|Expertise|Commitment"></div> (top, right, bottom, left, as on the slide) */
+$$('.lr-radarcheck').forEach(function(el){
+  var dr = (el.getAttribute('data-drivers') || '').split('|'), lv = ['Not yet', 'Partly', 'Strongly'], val = {};
+  try{ val = JSON.parse(get('radar') || '{}') || {}; }catch(e){ val = {}; }
+  var cx = 120, cy = 120, R = 92, dir = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+  function pt(i, f){ return (cx + dir[i][0] * R * f).toFixed(1) + ',' + (cy + dir[i][1] * R * f).toFixed(1); }
+  var rings = [1 / 3, 2 / 3, 1].map(function(f){ return '<polygon class="rc-ring" points="' + [0, 1, 2, 3].map(function(i){ return pt(i, f); }).join(' ') + '"/>'; }).join('');
+  el.innerHTML = '<div class="rc-wrap"><svg class="rc-svg" viewBox="0 0 240 240" role="img" aria-label="Your team on the trust radar"><g>' + rings +
+    '<line class="rc-ax" x1="' + cx + '" y1="' + (cy - R) + '" x2="' + cx + '" y2="' + (cy + R) + '"/><line class="rc-ax" x1="' + (cx - R) + '" y1="' + cy + '" x2="' + (cx + R) + '" y2="' + cy + '"/>' +
+    '<polygon class="rc-shape" points="' + [0, 1, 2, 3].map(function(i){ return pt(i, 0.06); }).join(' ') + '"/></g></svg>' +
+    dr.map(function(d, i){ return '<span class="rc-lab rc-l' + i + '" aria-hidden="true">' + esc(d) + '</span>'; }).join('') + '</div>' +
+    '<div class="rc-qs">' + dr.map(function(d, i){ return '<div class="rc-q" role="group" aria-label="' + esc(d) + '"><span class="rc-qn">' + esc(d) + '</span><div class="rc-opts">' +
+      lv.map(function(l, li){ return '<button type="button" data-d="' + i + '" data-l="' + li + '" aria-pressed="false">' + l + '</button>'; }).join('') + '</div></div>'; }).join('') +
+    '<p class="rc-read" role="status" aria-live="polite"></p></div>';
+  var shape = $('.rc-shape', el), read = $('.rc-read', el);
+  function paint(){
+    shape.setAttribute('points', [0, 1, 2, 3].map(function(i){ var v = val[i]; return pt(i, v === undefined ? 0.06 : (v + 1) / 3); }).join(' '));
+    $$('button[data-d]', el).forEach(function(b){ var on = String(val[b.getAttribute('data-d')]) === b.getAttribute('data-l'); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    var n = Object.keys(val).length;
+    if(n < dr.length){ read.textContent = n ? (dr.length - n) + ' to go. Watch the shape fill in.' : 'Rate your team on each driver. The shape draws as you go.'; return; }
+    var low = Math.min.apply(null, dr.map(function(d, i){ return val[i]; })), weak = dr.filter(function(d, i){ return val[i] === low; });
+    read.textContent = low === 2 ? 'The shape reaches the outer ring on all four sides. Keep it there: trust is built before you need it.' :
+      'Your thinnest side: ' + weak.join(' and ') + '. Pick one thing your team could do this month to strengthen it, before you need that trust.';
+  }
+  el.addEventListener('click', function(e){ var b = e.target.closest('button[data-d]'); if(!b) return; val[b.getAttribute('data-d')] = parseInt(b.getAttribute('data-l'), 10); set('radar', JSON.stringify(val)); paint(); });
+  paint();
+});
 })();
 
 /* ── hero montage pause / play ── */
@@ -1145,4 +1239,5 @@ Array.prototype.slice.call(document.querySelectorAll('[data-car]')).forEach(func
   if(box.hasAttribute('data-car')) box.setAttribute('data-car', box.getAttribute('data-car') || 'Charts');
   var car = box.hasAttribute('data-car') ? lrCarousel(box) : null;
   document.addEventListener('lr:num', function(e){ var first = -1; CH.forEach(function(c, i){ if(c.num === e.detail.i && first < 0) first = i; }); if(car && first >= 0){ car.refresh(); car.go(first); } });
+
 })();

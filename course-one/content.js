@@ -16,12 +16,15 @@ window.LR_COURSE = {
     { sel:'#momentum', key:'numbers', label:'Module 1: Momentum', mode:'whole' },
     { sel:'#footprint', key:'footprint', label:'Module 1: Footprint', mode:'pages' },
     { sel:'#engine', key:'engine', label:'Module 1: How reputation enables the mission', mode:'pages' },
+    { sel:'#wrap1', key:'wrap1', label:'Module 1: Wrap-up', mode:'whole' },
     { sel:'#reputation', key:'trust', label:'Module 2: Reputational stewardship', mode:'pages' },
     { sel:'#terrain', key:'terrain', label:'Module 2: Reputation terrain', mode:'pages' },
     { sel:'#timing', key:'timing', label:'Module 2: Reputation dynamics', mode:'pages' },
+    { sel:'#wrap2', key:'wrap2', label:'Module 2: Wrap-up', mode:'whole' },
     { sel:'#mission', key:'mission', label:'Module 3: Achieving the vision', mode:'pages' },
     { sel:'#margin', key:'margin', label:'Module 3: Mission and margin', mode:'pages' },
     { sel:'#peers', key:'peers', label:'Module 3: The Chancellor’s slides', mode:'whole' },
+    { sel:'#wrap3', key:'wrap3', label:'Module 3: Wrap-up', mode:'whole' },
     { sel:'#everest', key:'everest', label:'Module 3: Closing words', mode:'whole' },
     { sel:'#quiz', key:'quiz', label:'Quick check', mode:'whole' },
     { sel:'#capstone', key:'capstone', label:'Capstone: The capstone', mode:'pages' },
@@ -256,6 +259,8 @@ window.LR_COURSE = {
     },
     terrain:{
       opts:['Simple reporting', 'In-depth coverage', 'Extensive reporting', 'Mass-market coverage'],
+      layout:'grid',
+      grid:{ y:'Societal importance', x:'Audience interest', cells:[1, 3, 0, 2] },
       prog:'terrain',
       verb:'placed',
       items:[
@@ -283,6 +288,7 @@ window.LR_COURSE = {
     },
     timing:{
       opts:['Optimal time to act', 'Typical time to act'],
+      layout:'track',
       prog:'timing',
       verb:'sorted',
       items:[

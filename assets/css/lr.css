@@ -969,3 +969,117 @@ html.paged .lr-wideph img{ max-height:26vh; object-fit:cover; }
 .lr-samename{ margin-top:14px; max-width:none; padding-left:12px; border-left:2px solid var(--vu-gold); font-size:.95rem; line-height:1.5; color:var(--tx2); }
 .lr-samename b{ color:var(--tx); font-weight:600; }
 @media (min-width:1001px){ html.paged .lr-radarscreen > .v-act figure.lr-slide svg.lr-wsr{ max-height:min(44vh,400px); } }
+
+/* ══════════ interaction and motion pass (engine: optsHtml, pageEnter, compare, radar check) ══════════ */
+/* page entrance: headline rises out of a soft blur, then copy, then the activity (each step under 400ms) */
+@keyframes lrBlurUp{ from{ opacity:0; transform:translateY(18px); filter:blur(10px); } to{ opacity:1; transform:none; filter:blur(0); } }
+@keyframes lrFadeUp{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+.pg-enter .v-h{ animation:lrBlurUp .38s cubic-bezier(.16,1,.3,1) both; }
+.pg-enter .v-why{ animation:lrFadeUp .36s .09s cubic-bezier(.16,1,.3,1) both; }
+.pg-enter .v-copy > :not(.v-h):not(.v-why):not(.v-rail){ animation:lrFadeUp .36s .16s cubic-bezier(.16,1,.3,1) both; }
+.pg-enter .v-act{ animation:lrFadeUp .38s .22s cubic-bezier(.16,1,.3,1) both; }
+[data-count]{ font-variant-numeric:tabular-nums; }
+/* charts that draw in when their page opens: add .lr-drawin to a figure; paths marked .dw stroke on, bars marked .gw grow */
+.lr-drawin .dw{ stroke-dasharray:1200; stroke-dashoffset:1200; }
+.lr-drawin.on .dw{ stroke-dashoffset:0; transition:stroke-dashoffset 1.2s .35s cubic-bezier(.33,1,.68,1); }
+.lr-drawin .gw{ transform:scaleY(0); transform-box:fill-box; transform-origin:bottom; }
+.lr-drawin.on .gw{ transform:none; transition:transform .7s cubic-bezier(.16,1,.3,1); }
+.lr-drawin.on .gw:nth-of-type(2){ transition-delay:.05s } .lr-drawin.on .gw:nth-of-type(3){ transition-delay:.1s } .lr-drawin.on .gw:nth-of-type(4){ transition-delay:.15s } .lr-drawin.on .gw:nth-of-type(5){ transition-delay:.2s } .lr-drawin.on .gw:nth-of-type(6){ transition-delay:.25s } .lr-drawin.on .gw:nth-of-type(7){ transition-delay:.3s } .lr-drawin.on .gw:nth-of-type(8){ transition-delay:.35s } .lr-drawin.on .gw:nth-of-type(9){ transition-delay:.4s } .lr-drawin.on .gw:nth-of-type(10){ transition-delay:.45s }
+/* progress dots: the page name shows on hover or focus; the current dot grows */
+a.bb-dot{ position:relative; }
+a.bb-dot .dot{ transition:transform .25s var(--ease), background .2s; }
+a.bb-dot.cur .dot{ transform:scale(1.6); }
+a.bb-dot::after{ content:attr(data-name); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translate(-50%,4px); white-space:nowrap; max-width:300px; overflow:hidden; text-overflow:ellipsis; background:#0F0F0F; color:#fff; border:1px solid var(--bdg); border-radius:4px; padding:6px 10px; font:500 .8125rem/1.2 var(--sans); opacity:0; pointer-events:none; transition:opacity .15s, transform .2s var(--ease); z-index:5; }
+a.bb-dot:hover::after, a.bb-dot:focus-visible::after{ opacity:1; transform:translate(-50%,0); }
+@media (hover:none){ a.bb-dot::after{ display:none; } }
+/* answers placed on the chart itself: a 2x2 with the slide's axes */
+.v-deck .dq-opts.dq-grid{ grid-template-columns:28px 1fr 1fr; grid-template-rows:auto auto 26px; gap:8px; position:relative; }
+.dq-grid .dg-y{ grid-column:1; grid-row:1 / span 2; writing-mode:vertical-rl; transform:rotate(180deg); justify-self:center; align-self:center; font:700 .75rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+.dq-grid .dg-y::after, .dq-grid .dg-x::after, .dq-track .dt-time::after{ content:''; display:inline-block; width:0; height:0; border-top:4px solid transparent; border-bottom:4px solid transparent; border-left:7px solid currentColor; margin-left:6px; vertical-align:1px; }
+.dq-grid .dg-x{ grid-column:2 / span 2; grid-row:3; justify-self:center; align-self:center; font:700 .75rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+.dq-grid .dg-c0{ grid-column:2; grid-row:1; } .dq-grid .dg-c1{ grid-column:3; grid-row:1; } .dq-grid .dg-c2{ grid-column:2; grid-row:2; } .dq-grid .dg-c3{ grid-column:3; grid-row:2; }
+.v-deck .dq-grid button{ min-height:84px !important; border-style:dashed; }
+.v-deck .dq-grid button.is-answer{ border-style:solid; }
+/* answers on a time line: early and late stops over the control and stakes curves */
+.v-deck .dq-opts.dq-track{ display:block; position:relative; height:190px; margin-top:18px; border:1px solid var(--bd); border-radius:var(--r); background:rgba(255,255,255,.02); }
+.dq-track .dt-art{ position:absolute; left:16px; right:16px; top:14px; height:96px; width:calc(100% - 32px); }
+.dq-track .dt-art path{ fill:none; stroke-width:2.5; vector-effect:non-scaling-stroke; }
+.dq-track .dt-ctl{ stroke:var(--vu-sage); } .dq-track .dt-stk{ stroke:var(--gold); }
+.dq-track .dt-art line{ stroke:var(--bd); stroke-width:1; vector-effect:non-scaling-stroke; }
+.dq-track .dt-lab{ position:absolute; font:700 .6875rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; }
+.dq-track .dt-l1{ left:18px; top:6px; color:var(--vu-sage); } .dq-track .dt-l2{ right:18px; top:6px; color:var(--gold); }
+.dq-track .dt-time{ position:absolute; right:16px; bottom:8px; font:700 .6875rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; color:var(--faint); }
+.v-deck .dq-track button.dt-stop{ position:absolute; bottom:26px; width:calc(50% - 30px); min-height:52px !important; }
+.dq-track .dt-s0{ left:16px; } .dq-track .dt-s1{ right:16px; }
+/* compare: wipe between two images of the same frame */
+.lr-compare{ margin:0; }
+.lr-compare .cmp-frame{ --pos:50%; position:relative; overflow:hidden; border-radius:var(--r); border:1px solid var(--bdg); cursor:ew-resize; touch-action:pan-y; user-select:none; }
+.lr-compare .cmp-frame img{ display:block; width:100%; height:auto; pointer-events:none; }
+.lr-compare .cmp-b{ position:absolute; inset:0; clip-path:inset(0 0 0 var(--pos)); }
+.lr-compare .cmp-b img{ width:100%; height:100%; object-fit:cover; }
+.lr-compare .cmp-line{ position:absolute; top:0; bottom:0; left:var(--pos); width:2px; margin-left:-1px; background:var(--vu-highlight); box-shadow:0 0 0 1px rgba(0,0,0,.4); pointer-events:none; }
+.lr-compare .cmp-line::after{ content:''; position:absolute; top:50%; left:50%; width:34px; height:34px; margin:-17px 0 0 -17px; border-radius:50%; background:var(--vu-highlight); box-shadow:0 2px 10px rgba(0,0,0,.5); }
+.lr-compare .cmp-tag{ position:absolute; top:10px; padding:4px 8px; border-radius:3px; background:rgba(15,15,15,.85); color:#fff; font:700 .75rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; pointer-events:none; }
+.lr-compare .cmp-tag.a{ left:10px; } .lr-compare .cmp-tag.b{ right:10px; color:var(--vu-highlight); }
+.lr-compare .cmp-ctl{ display:flex; align-items:center; gap:12px; margin-top:12px; }
+.lr-compare .cmp-ctl button{ flex:0 0 auto; min-height:36px; padding:6px 12px; border:1px solid var(--bdg); border-radius:var(--r); background:transparent; color:var(--tx); font:600 .875rem/1 var(--sans); cursor:pointer; }
+.lr-compare .cmp-ctl button:hover{ border-color:var(--gold); }
+.lr-compare .cmp-range{ flex:1; accent-color:var(--vu-highlight); min-height:24px; }
+.lr-compare figcaption{ margin-top:10px; font-size:.875rem; color:var(--muted); }
+/* radar check */
+.lr-radarcheck{ display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:24px; align-items:center; }
+.rc-wrap{ position:relative; padding:24px 26px; }
+.rc-svg{ width:100%; height:auto; display:block; }
+.rc-ring{ fill:none; stroke:rgba(207,174,112,.3); stroke-width:1; }
+.rc-ax{ stroke:rgba(207,174,112,.25); stroke-width:1; }
+.rc-shape{ fill:rgba(236,183,72,.28); stroke:var(--vu-highlight); stroke-width:2.5; stroke-linejoin:round; transition:all .45s cubic-bezier(.16,1,.3,1); }
+.rc-lab{ position:absolute; font:700 .75rem/1 var(--cond); letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow); }
+.rc-l0{ top:0; left:50%; transform:translateX(-50%); } .rc-l2{ bottom:0; left:50%; transform:translateX(-50%); }
+.rc-l1{ right:-10px; top:50%; transform:translateY(-50%) rotate(90deg); transform-origin:center; } .rc-l3{ left:-10px; top:50%; transform:translateY(-50%) rotate(-90deg); }
+.rc-q{ display:grid; grid-template-columns:110px 1fr; align-items:center; gap:10px; margin-bottom:10px; }
+.rc-qn{ font-weight:600; }
+.rc-opts{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.rc-opts button{ min-height:40px; border:1px solid var(--bd); border-radius:var(--r); background:var(--card); color:var(--tx); font:600 .875rem/1.1 var(--sans); cursor:pointer; transition:border-color .15s, background .15s; }
+.rc-opts button:hover{ border-color:var(--gold); }
+.rc-opts button[aria-pressed="true"]{ background:var(--gold); color:var(--ink); border-color:var(--gold); }
+.rc-read{ margin:14px 0 0; min-height:2.6em; color:var(--strong); font-weight:500; }
+@media (max-width:760px){ .lr-radarcheck{ grid-template-columns:1fr; } .rc-wrap{ max-width:240px; margin:0 auto; } .rc-q{ grid-template-columns:1fr; gap:6px; } .v-deck .dq-track button.dt-stop{ width:calc(50% - 22px); font-size:.9375rem; } }
+@media (max-height:820px){ .v-deck .dq-opts.dq-track{ height:150px; } .dq-track .dt-art{ height:70px; } .v-deck .dq-track button.dt-stop{ bottom:22px; min-height:44px !important; } .v-deck .dq-grid button{ min-height:58px !important; } .v-deck .dq-opts.dq-grid{ gap:6px; } }
+@media (prefers-reduced-motion:reduce){
+  .pg-enter .v-h, .pg-enter .v-why, .pg-enter .v-copy > *, .pg-enter .v-act{ animation:none !important; }
+  .lr-drawin .dw{ stroke-dashoffset:0; } .lr-drawin .gw{ transform:none; }
+  .lr-drawin.on .dw, .lr-drawin.on .gw, .rc-shape, a.bb-dot .dot, a.bb-dot::after{ transition:none !important; }
+}
+/* practice pages on wide screens: the why sits beside the activity, so the activity starts at the top of the page */
+@media (min-width:1100px){
+  html.paged .lr-pg2:has(> .v-stage.lr-practice) > .v-rail, html.paged .lr-pg2 > .v-stage.lr-practice{ max-width:1200px; }
+  html.paged .v-stage.lr-practice{ display:grid; grid-template-columns:minmax(0,330px) minmax(0,1fr); column-gap:44px; align-items:start; }
+  html.paged .v-stage.lr-practice > .v-lead{ grid-column:1; grid-row:1; }
+  html.paged .v-stage.lr-practice > .v-copy{ display:block; grid-column:1; grid-row:2; margin:0; }
+  html.paged .v-stage.lr-practice > .v-act{ grid-column:2; grid-row:1 / span 3; }
+  html.paged .lr-practice .v-task{ margin-top:4px; }
+}
+@media (max-height:820px) and (min-width:900px){
+  .lr-compare{ max-width:calc((100vh - 330px) * 1.92); margin-left:auto; margin-right:auto; }
+  html.paged .lr-turn-chart .lr-cw svg, html.paged .lr-commit-chart .lr-cw svg{ max-height:25vh; }
+}
+/* shorter laptop screens (768px and under): tighten the busiest pages so the activity stays on one screen */
+@media (max-height:800px) and (min-width:1000px){
+  html.paged .v-h{ font-size:clamp(1.6rem,1.6vw + .9rem,2.2rem); }
+  html.paged .v-why{ font-size:1rem; line-height:1.45; }
+  html.paged .lr-cap7 .now span{ font-size:.875rem; }
+  html.paged .lr-cap7 > div{ padding-top:6px; padding-bottom:6px; }
+  html.paged .v-commits small, html.paged .v-commit small{ font-size:.8125rem; }
+  html.paged .lr-prompt .lr-steps li{ font-size:.875rem; margin-bottom:4px; }
+  html.paged .lr-learn.lr-prompt{ padding:12px 16px; }
+  html.paged .v-msg{ padding:12px 16px; }
+  html.paged #brand .v-act > .v-video{ max-width:min(100%, calc((100vh - 520px) * 1.78)); margin-left:auto; margin-right:auto; }
+  html.paged #brand .lr-gap svg, html.paged #brand .lr-rrloop svg{ max-height:calc(100vh - 600px); width:auto; max-width:100%; display:block; margin:0 auto; }
+  html.paged #engine .v-act svg{ max-height:calc((100vh - 330px) / 2); width:auto; max-width:100%; display:block; margin:0 auto; }
+  html.paged .v-msg .v-tell-text{ font-size:.9375rem; }
+  html.paged .lr-cap7{ grid-template-columns:repeat(6,minmax(0,1fr)) !important; }
+  html.paged .lr-cap7 > div{ grid-column:span 3; }
+  html.paged .lr-cap7 > div.past{ grid-column:span 2; }
+  html.paged .lr-cap7:has(> div.later) > div.now{ grid-column:span 2; }
+  html.paged .lr-cap7 > div.later{ grid-column:span 3; }
+}
