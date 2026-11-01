@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="../assets/css/voyage.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/nav.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/lr.css?v=20261102b" />
-<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261105a" />
+<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261106f1" />
 <style>
 /* Course Two, version 3: page details for this course only (the shared grid and activities are in lr-v3.css). No dashes. */
 section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - var(--nav-h, 96px) - var(--bar-h, 64px) - 250px) * 1.778)); margin-inline:auto; }
@@ -50,15 +50,19 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 .c2-wide{ margin:16px 0 0; max-width:46ch; }
 .c2-wide img{ display:block; width:100%; height:auto; border-radius:4px; }
 .c2-wide figcaption{ margin-top:8px; color:var(--tx3); font-size:.85em; line-height:1.45; }
-.c2-quote{ margin:0; max-width:960px; display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr); grid-template-rows:1fr auto; column-gap:32px; border:1px solid var(--bdg); border-radius:6px; overflow:hidden; background:var(--card2); }
-.c2-quote img{ grid-row:1 / 3; width:100%; max-width:420px; height:100%; max-height:min(560px, 58vh); object-fit:cover; object-position:center 20%; display:block; }
+.c2-quote{ margin:0; max-width:960px; min-height:min(calc(100svh - 136px) * .68, 620px); display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr); grid-template-rows:1fr auto; column-gap:32px; border:1px solid var(--bdg); border-radius:6px; overflow:hidden; background:var(--card2); }
+.c2-quote img{ grid-row:1 / 3; width:100%; max-width:420px; height:100%; max-height:620px; object-fit:cover; object-position:center 20%; display:block; }
 .c2-quote blockquote{ margin:0; padding:32px 32px 0 0; align-self:end; }
-.c2-quote blockquote p{ font-family:var(--serif); font-size:1.75em; line-height:1.3; color:var(--tx); margin:0; }
+.c2-quote blockquote p{ font-family:var(--serif); font-size:2.05em; line-height:1.3; color:var(--tx); margin:0; }
 .c2-quote figcaption{ padding:16px 32px 32px 0; color:var(--eyebrow); font-family:var(--cond); font-weight:700; letter-spacing:.07em; text-transform:uppercase; font-size:.8em; }
 .c2-tempo{ margin:16px 0 0; max-width:420px; padding:16px; border:1px solid var(--bd); border-radius:6px; background:#212120; }
 .c2-tempo svg{ display:block; width:100%; height:auto; max-height:24vh; }
 .c2-tempo figcaption{ margin-top:8px; text-align:center; color:var(--tx2); font-size:.9em; }
 .c2-tempo figcaption b{ color:var(--eyebrow); font-weight:600; }
+#aircover .la-flipset{ grid-template-columns:minmax(0, 1fr); gap:var(--g3); }
+#aircover .la-ffig svg{ max-height:min(440px, 36vh); }
+#aircover .la-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:var(--g2); }
+#aircover .la-face{ min-height:max(5em, calc((100svh - 136px) * .2)); }
 #principles .la-cards, #invest .la-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 #principles .la-face{ min-height:6.2em; padding:12px 2.4em 12px 16px; }
 #principles .la-front b{ font-size:1.2em; }
@@ -68,26 +72,15 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 #invest .la-back p{ font-size:.84em !important; }
 #today .la-back p, #radical .la-back p, #landscape .la-back p{ font-size:.92em; }
 @media (min-width:761px){ #turnover .la-pred, #commitments .la-pred{ grid-template-columns:minmax(0, 1fr) minmax(0, 2.1fr); } }
-#turnover .la-pchart .la-chart .la-svg, #commitments .la-pchart .la-chart .la-svg{ max-height:min(560px, 50vh); }
 #potential .la-fig{ --fh:min(600px, 44vh); }
 #brandrep .la-fig{ --fh:min(560px, 38vh); }
 /* fit: activities keep one screen before and after they are done */
 .lr-act.is-done.la-t-match .la-fb, .lr-act.is-done.la-t-sort .la-stage .la-fb{ display:none; }
-.la-t-match .la-ml, .la-t-match .la-mr{ min-height:3em; padding:.45em .9em; }
-.la-t-match .la-mcol{ gap:8px; }
 .la-t-build .la-slot{ margin-top:12px; }
 .la-t-build .la-slot .la-k{ margin-bottom:6px; }
 .la-t-build .la-chips2 button{ min-height:2.2em; padding:.2em .9em; font-size:.92em; }
 .la-t-build .la-sent{ padding:12px 24px; font-size:1.15em; }
 /* the self-check: a large radar (at least 45vh) and generous controls */
-#rateteam .la-rate{ grid-template-columns:minmax(0, 1fr) minmax(0, 1.15fr); gap:16px 48px; }
-#rateteam .la-rlab{ font-size:10px; }
-#rateteam .la-rqs{ gap:12px; }
-#rateteam .la-rq{ flex-wrap:nowrap; padding:0; }
-#rateteam .la-rqn{ font-size:1.02em; }
-#rateteam .la-rq .la-chips2{ flex-wrap:nowrap; gap:6px; }
-#rateteam .la-chips2 button{ min-height:2.5em; padding:.25em .8em; font-size:.9em; }
-#rateteam .la-rsvg{ width:100%; height:min(50vh, 540px); min-height:45vh; }
 #nextstep .v3-act > *{ max-width:none !important; width:100%; box-sizing:border-box; }
 #nextstep .v3-act > .v-msg{ margin-top:16px; }
 #learn .c2-deep-h{ margin-top:32px; color:var(--tx3); font-size:.9em; text-align:center; }
@@ -98,9 +91,6 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
   #principles .la-back p{ font-size:.74em; }
   .c2-pres{ margin-top:8px; padding:8px 12px; }
   #potential .la-fig{ --fh:min(400px, 36vh); }
-  .la-t-build .la-slot{ margin-top:8px; }
-  .la-t-build .la-chips2 button{ min-height:2em; }
-  #rateteam .la-rsvg{ min-height:45vh; height:45vh; }
   #nextstep .v-commits button{ padding-top:6px; padding-bottom:6px; }
   #nextstep .v-commits{ gap:4px; }
   #nextstep .lr-prompt .lr-steps li{ font-size:.88rem; }
@@ -110,6 +100,8 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
   #nextstep .v-msg p.v-tell-text{ font-size:.9rem !important; margin:4px 0 8px !important; }
   #learn .v-hero-cta{ margin-top:16px; }
   #learn .c2-deep-h{ margin-top:16px; }
+  .la-t-build .la-slot{ margin-top:8px; }
+  .la-t-build .la-chips2 button{ min-height:2em; }
 }
 @media (min-width:901px) and (max-height:740px){
   #learn .v-hello{ margin-top:8px; }
@@ -118,14 +110,14 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
   #nextstep .v-commits small{ display:none; }
 }
 @media (max-width:900px){
+  .c2-quote{ min-height:0; }
+  #aircover .la-cards{ grid-template-columns:minmax(0, 1fr); }
+  #aircover .la-face{ min-height:0; }
   .c2-quote{ grid-template-columns:minmax(0, 1fr); grid-template-rows:auto; }
   .c2-quote img{ grid-row:auto; max-height:240px; max-width:none; }
   .c2-quote blockquote{ padding:16px 16px 0; }
   .c2-quote blockquote p{ font-size:1.35em; }
   .c2-quote figcaption{ padding:8px 16px 16px; }
-  #rateteam .la-rate{ grid-template-columns:minmax(0, 1fr); }
-  #rateteam .la-rsvg{ height:auto; min-height:0; max-width:360px; margin-inline:auto; }
-  #rateteam .la-rq{ flex-wrap:wrap; }
   #principles .la-cards, #invest .la-cards{ grid-template-columns:minmax(0, 1fr); }
   .c2-ast{ gap:16px; }
   .c2-ast img{ height:120px; }
@@ -170,13 +162,13 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 <!-- ═══ WELCOME ═══ -->
 <section class="hero v-hero th-dark v3" aria-label="Welcome">
   <div class="v-hero-bg lr-montage" data-n="7" aria-hidden="true">
-    <img src="../assets/img/montage/c2-1.jpg" alt="" width="1920" height="1279" decoding="async" fetchpriority="high" style="--pos:center 50%" />
-    <img src="../assets/img/montage/c2-2.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 55%" />
-    <img src="../assets/img/montage/c2-3.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 55%" />
-    <img src="../assets/img/montage/c2-4.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 50%" />
-    <img src="../assets/img/montage/c2-5.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 55%" />
-    <img src="../assets/img/montage/c2-6.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 60%" />
-    <img src="../assets/img/montage/c2-7.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 50%" />
+    <img src="../assets/img/montage/c2-2.jpg" alt="" width="1920" height="1279" decoding="async" fetchpriority="high" style="--pos:center 55%; --nw:1811px; --nh:1206px" />
+    <img src="../assets/img/montage/c2-3.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 55%; --nw:1811px; --nh:1206px" />
+    <img src="../assets/img/montage/c2-4.jpg" alt="" width="1920" height="1280" decoding="async" style="--pos:center 50%; --nw:1811px; --nh:1207px" />
+    <img src="../assets/img/montage/c2-5.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 55%; --nw:1811px; --nh:1206px" />
+    <img src="../assets/img/montage/c2-6.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 60%; --nw:1811px; --nh:1206px" />
+    <img src="../assets/img/montage/c2-7.jpg" alt="" width="1920" height="1279" decoding="async" style="--pos:center 50%; --nw:1811px; --nh:1206px" />
+    <img src="../assets/img/montage/c2-1.jpg" alt="" width="800" height="571" decoding="async" style="--pos:center 50%; --nw:754px; --nh:538px" />
   </div>
   <button type="button" class="lr-mont-btn" aria-pressed="false" aria-label="Pause the photo montage"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Pause</span></button>
   <div class="wrap v-hero-in">
@@ -365,7 +357,7 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 <!-- ═══ Module 4: Heard or spread ═══ -->
 <section id="spread" class="th-dark v-sec v3" aria-label="Module 4: Heard or spread">
   <div class="wrap">
-    <div class="v3-grid">
+    <div class="v3-grid v3-39">
       <div class="v3-copy">
         <div class="v-rail" data-lesson="1"><span>Module 4 &middot; Page 8 of 12 &middot; Heard or spread</span></div>
         <h2 class="v-h">Make the message <em>spread</em>.</h2>
@@ -844,7 +836,7 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 <!-- ═══ Module 6: Rate your team ═══ -->
 <section id="rateteam" class="th-dark v-sec v3" aria-label="Module 6: Rate your team">
   <div class="wrap">
-    <div class="v3-grid">
+    <div class="v3-grid v3-39">
       <div class="v3-copy">
         <div class="v-rail" data-lesson="3"><span>Module 6 &middot; Page 4 of 5 &middot; Rate your team</span></div>
         <h2 class="v-h">Rate your own <em>team</em>.</h2>
@@ -988,11 +980,11 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
   </div>
 </div>
 <script src="config.js?v=20261105a"></script>
-<script src="content.js?v=20261105a"></script>
+<script src="content.js?v=20261106f1"></script>
 <script src="narration-scripts.js?v=20261105a"></script>
 <script src="../assets/js/nav.js?v=20261002a"></script>
 <script src="../assets/js/pager.js?v=20261002a"></script>
 <script src="../assets/js/lr-engine.js?v=20261102b"></script>
-<script src="../assets/js/lr-activities.js?v=20261105a"></script>
+<script src="../assets/js/lr-activities.js?v=20261106f1"></script>
 </body>
 </html>

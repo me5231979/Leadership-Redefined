@@ -82,6 +82,8 @@
           <g data-cursor>moved by each stage's cx and cy (viewBox units, from where it is drawn)</g> </svg>',
         steps:[ { label:'Optimal time to act', t:'what this stage shows', cx:150, cy:0 } ], label:'aria label of the slider' }
    Charts: a LR_COURSE.CHARTS entry may be type:'line' (cats, series, hide, arrow; see lineSVG). Added for Course Two.
+   Chart option tall (a multiplier on the drawn height, same data and scale) lets predict draw its chart
+   taller so it fills the stage (predict uses 1.25). The rate radar breaks a long side label onto two lines.
    Display helper (not tracked):
       chartset  A set of the deck's charts that draw in when the page opens.
       { type:'chartset', charts:[1, 3, 4] (LR_COURSE.CHARTS indexes) }
@@ -152,7 +154,7 @@ function tick(c, v){ var s = Math.abs(v) >= 1000 ? v.toLocaleString('en-US') : S
 function chartSVG(c, o){
   o = o || {};
   if(c.type === 'line') return lineSVG(c, o); /* added for Course Two: the deck's line charts (lineSVG, below) */
-  var W = o.w || 560, H = o.h || 300, L = o.small ? 48 : 60, R = (o.guess !== undefined && o.guess !== null) ? 72 : 12, T = 24, B = 30 + (c.legend ? 18 : 0);
+  var W = o.w || 560, H = Math.round((o.h || 300) * (o.tall || 1)), L = o.small ? 48 : 60, R = (o.guess !== undefined && o.guess !== null) ? 72 : 12, T = 24, B = 30 + (c.legend ? 18 : 0);
   var max = o.max || c.max, bw = W - L - R, bh = H - T - B, slot = bw / c.bars.length, wide = Math.min(o.small ? 70 : 120, slot * 0.46);
   var Y = function(v){ return T + bh - Math.max(0, Math.min(v, max)) / max * bh; };
   var out = '', g, n = c.bars.length;
@@ -446,7 +448,7 @@ T.predict = function(api){
         '<p class="la-you">' + (close(rd, i) ? CHECK + '<b>Close.</b> ' : '') + 'You guessed ' + fmt(rd, gg) + '.</p><p class="la-x">' + rd.x + '</p></div>';
       h += i < R.length - 1 ? '<button type="button" class="la-btn" data-next data-fk="next-' + i + '">Next number</button>' : '';
     }
-    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown }) + '</div>';
+    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, tall:1.25, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown }) + '</div>';
     h += '<ol class="la-pdots" aria-hidden="true">' + R.map(function(_, k){ return '<li class="' + (st.shown[k] ? 'seen' : '') + (k === i ? ' cur' : '') + '"></li>'; }).join('') + '</ol></div>';
     var n = Object.keys(st.shown).length, cl = R.filter(function(rr, k){ return st.shown[k] && close(rr, k); }).length;
     return h + doneBar(api, 'You predicted all ' + R.length + '; ' + cl + ' ' + (cl === 1 ? 'was' : 'were') + ' close.');
@@ -457,7 +459,7 @@ T.predict = function(api){
     r.addEventListener('input', function(){
       var v = parseFloat(r.value); st.g[i] = v; out.textContent = fmt(rd, v); r.setAttribute('aria-valuetext', fmt(rd, v));
       /* move the dashed guess bar live */
-      var svg = api.q('.la-pchart svg'); if(!svg || !c) return; var tmp = document.createElement('div'); tmp.innerHTML = chartSVG(c, { w:420, h:300, guess:v, hide:true, max:Math.max(c.max, rd.chartMax || 0) });
+      var svg = api.q('.la-pchart svg'); if(!svg || !c) return; var tmp = document.createElement('div'); tmp.innerHTML = chartSVG(c, { w:420, h:300, tall:1.25, guess:v, hide:true, max:Math.max(c.max, rd.chartMax || 0) });
       var ng = tmp.querySelector('.la-guess'), og = svg.querySelector('.la-guess'); if(ng && og) og.parentNode.replaceChild(ng, og);
     });
     r.addEventListener('change', function(){ api.save(); });
@@ -522,15 +524,20 @@ T.rate = function(api){
   st.v = st.v || {};
   var cx = 130, cy = 120, Rr = 86;
   function pt(i, f){ var a = -Math.PI / 2 + i * 2 * Math.PI / n; return (cx + Math.cos(a) * Rr * f).toFixed(1) + ',' + (cy + Math.sin(a) * Rr * f).toFixed(1); }
-  function lab(i){ var a = -Math.PI / 2 + i * 2 * Math.PI / n, x = cx + Math.cos(a) * (Rr + 14), y = cy + Math.sin(a) * (Rr + 14) + 4; return '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" text-anchor="' + (Math.abs(Math.cos(a)) < .2 ? 'middle' : Math.cos(a) > 0 ? 'start' : 'end') + '" class="la-rlab">' + esc(Dm[i]) + '</text>'; }
+  function lab(i){ var a = -Math.PI / 2 + i * 2 * Math.PI / n, x = cx + Math.cos(a) * (Rr + 14), y = cy + Math.sin(a) * (Rr + 14) + 4, side = Math.abs(Math.cos(a)) >= .2;
+    /* a long label on a side axis breaks onto two lines, so the radar keeps its size in a narrow column */
+    var w = String(Dm[i]).split(' '), t = esc(Dm[i]);
+    if(side && w.length > 1 && Dm[i].length > 10){ var m = Math.ceil(w.length / 2); t = '<tspan x="' + x.toFixed(1) + '" dy="-.5em">' + esc(w.slice(0, m).join(' ')) + '</tspan><tspan x="' + x.toFixed(1) + '" dy="1.15em">' + esc(w.slice(m).join(' ')) + '</tspan>'; }
+    return '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" text-anchor="' + (!side ? 'middle' : Math.cos(a) > 0 ? 'start' : 'end') + '" class="la-rlab">' + t + '</text>'; }
   api.html = function(){
     var rings = [1, 2, 3].map(function(k){ return '<polygon class="la-ring" points="' + Dm.map(function(_, i){ return pt(i, k / 3); }).join(' ') + '"/>'; }).join('');
     var axes = Dm.map(function(_, i){ return '<line class="la-rax" x1="' + cx + '" y1="' + cy + '" x2="' + pt(i, 1).split(',')[0] + '" y2="' + pt(i, 1).split(',')[1] + '"/>'; }).join('');
     var shape = '<polygon class="la-shape" points="' + Dm.map(function(_, i){ var v = st.v[i]; return pt(i, v === undefined ? 0.05 : (v + 1) / Lv.length); }).join(' ') + '"/>';
     var h = '<div class="la-rate"><svg viewBox="0 0 260 240" class="la-rsvg" role="img" aria-label="' + esc((cfg.title || 'Your team') + ': ' + Dm.map(function(d, i){ return d + ' ' + (st.v[i] === undefined ? 'not rated' : Lv[st.v[i]]); }).join(', ')) + '">' + rings + axes + shape + Dm.map(function(_, i){ return lab(i); }).join('') + '</svg>';
     h += '<div class="la-rqs">' + Dm.map(function(d, i){ return '<div class="la-rq" role="group" aria-label="' + esc(d) + '"><span class="la-rqn">' + esc(d) + '</span><div class="la-chips2">' + Lv.map(function(l, li){ return '<button type="button" data-d="' + i + '" data-l="' + li + '" data-fk="r-' + i + '-' + li + '" aria-pressed="' + (st.v[i] === li) + '">' + esc(l) + '</button>'; }).join('') + '</div></div>'; }).join('');
-    h += '<p class="la-fb hint"><span>' + read() + '</span></p></div></div>';
-    return h + doneBar(api, 'Just for you. Nothing is scored.');
+    /* the read-out and the completion bar sit inside the grid, under the radar on wide screens */
+    h += '</div><p class="la-fb hint"><span>' + read() + '</span></p>' + doneBar(api, 'Just for you. Nothing is scored.') + '</div>';
+    return h;
   };
   function read(){
     var k = Object.keys(st.v).length; if(k < n) return k ? (n - k) + ' to go. Watch the shape fill in.' : 'Rate your team on each one. The shape draws as you go.';
@@ -656,7 +663,7 @@ T.scrub = function(api){
      hide:1 (the series a predict round hides the last point of; default the last series),
      arrow:{ from:4, to:9, label:'43% CAGR' } (optional, drawn under the line) } */
 function lineSVG(c, o){
-  var W = c.w || o.w || 560, H = c.h || o.h || 300, S = c.series, n = c.cats.length, hs = c.hide === undefined ? S.length - 1 : c.hide;
+  var W = c.w || o.w || 560, H = Math.round((c.h || o.h || 300) * (o.tall || 1)), S = c.series, n = c.cats.length, hs = c.hide === undefined ? S.length - 1 : c.hide;
   var L = o.small ? 40 : 52, R = (o.guess !== undefined && o.guess !== null) ? 76 : 16, T = 24, B = 30 + (S.length > 1 ? 20 : 0) + (c.arrow ? 26 : 0);
   var max = o.max || c.max, bw = W - L - R, bh = H - T - B, slot = bw / n;
   var X = function(k){ return L + slot * (k + .5); }, Y = function(v){ return T + bh - Math.max(0, Math.min(v, max)) / max * bh; };
