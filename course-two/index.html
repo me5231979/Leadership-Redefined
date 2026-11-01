@@ -67,7 +67,7 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
 #invest .la-face{ min-height:5em; }
 #invest .la-back p{ font-size:.84em !important; }
 #today .la-back p, #radical .la-back p, #landscape .la-back p{ font-size:.92em; }
-#turnover .la-pred, #commitments .la-pred{ grid-template-columns:minmax(0, 1fr) minmax(0, 2.1fr); }
+@media (min-width:761px){ #turnover .la-pred, #commitments .la-pred{ grid-template-columns:minmax(0, 1fr) minmax(0, 2.1fr); } }
 #turnover .la-pchart .la-chart .la-svg, #commitments .la-pchart .la-chart .la-svg{ max-height:min(560px, 50vh); }
 #potential .la-fig{ --fh:min(600px, 44vh); }
 #brandrep .la-fig{ --fh:min(560px, 38vh); }
