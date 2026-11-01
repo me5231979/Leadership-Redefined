@@ -27,6 +27,7 @@ console.log('alloc', await p.$$eval('.mx-read', a => a.map(x => x.textContent.sl
 for(const f of await p.$$('[data-build] textarea')){ await go(f); await p.waitForTimeout(300); await f.fill('Test entry for the brief'); }
 for(const s of await p.$$('[data-build] select')){ await go(s); await p.waitForTimeout(300); await s.selectOption({ index:1 }); }
 // the live brief, embedded on the draft page: write every section in the frame
+for(const dl of await p.$$('a[data-brief-dl]')){ await go(dl); await p.waitForTimeout(300); const [d] = await Promise.all([p.waitForEvent('download', { timeout:5000 }).catch(() => null), dl.click()]); console.log('brief download', d ? d.suggestedFilename() : 'none'); }
 for(const fr of await p.$$('iframe.lr-brief-embed')){ await go(fr); await p.waitForTimeout(800); const f = await fr.contentFrame(); for(const t of await f.$$('textarea')) await t.fill('Test entry for the brief'); for(const s of await f.$$('select')) await s.selectOption({ index:1 }); await p.waitForTimeout(600); }
 console.log('drafts', await p.$$eval('.lr-out', a => a.map(x => x.textContent.slice(0,70).replace(/\n/g,' | '))));
 // quiz
@@ -40,7 +41,7 @@ console.log('progress', await p.textContent('#progCount'));
 console.log('tell', await p.$$eval('[data-tell] .v-tell-text', a => a.map(x => x.textContent.slice(0,90))));
 console.log('videos', await p.$$eval('.v-video video', a => a.map(v => v.getAttribute('src'))));
 // reload keeps answers
-await p.reload({ waitUntil:'load' }); console.log('after reload', await p.textContent('#progCount'), await p.$eval('[data-build] textarea', e => e.value));
+await p.reload({ waitUntil:'load' }); console.log('after reload', await p.textContent('#progCount'), await p.$$eval('[data-build] textarea', es => es.length ? es[0].value : '(no builders)'));
 // 320 overflow + shots
 const m = await b.newPage({ viewport:{ width:320, height:700 } }); m.on('pageerror', e => errs.push('PAGEERROR320 ' + e.message));
 await m.goto(`http://localhost:8765/${course}/`, { waitUntil:'load' });
