@@ -258,10 +258,10 @@ window.LR_COURSE = {
       type:'order',
       ends:['First', 'Last'],
       items:[
-        { t:'<b>Facilities</b> films a one-minute video of the new heating upgrade in a residence hall.', why:'Assets are created or emerge: here, a short video, one of the stories, earned or social media on Ertel’s list.' },
-        { t:'The video goes straight to residence hall directors and student government leaders.', why:'Assets shared directly with priority stakeholders and influencers: the people students listen to.' },
-        { t:'Hall directors and student leaders pass it on to the residents they know.', why:'Impact is multiplied through peer-to-peer engagement.' },
-        { t:'Next winter, residents trust Facilities&rsquo; updates and report problems early.', why:'From his air cover slide: the ground game then compounds reputation.' }
+        { t:'<b>Facilities</b> films a one-minute video of a residence hall&rsquo;s new heating.', why:'Assets are created or emerge: a story, on video.' },
+        { t:'The video goes straight to hall directors and student government leaders.', why:'Shared directly with priority stakeholders and influencers.' },
+        { t:'They pass it on to the residents they know.', why:'Impact is multiplied through peer-to-peer engagement.' },
+        { t:'Next winter, residents trust Facilities&rsquo; updates and report problems early.', why:'The ground game then compounds reputation.' }
       ],
       start:[2, 0, 3, 1],
       why:'Created, shared directly with influencers, multiplied peer to peer, and reputation compounds.',
@@ -394,11 +394,11 @@ window.LR_COURSE = {
       type:'match',
       heads:['Hypothetical move by a new leader', 'What it does, from his slide'],
       left:[
-        { t:'<b>Facilities:</b> a skeptical building committee gets a 30-day check-in, and your promise to report back on results.' },
-        { t:'<b>IT:</b> in week one, you replace a broken request process and say plainly that more changes are coming.' },
-        { t:'<b>DAR:</b> you ask a dean what DAR has gotten wrong, then deliver the one fix the dean asked for.' },
-        { t:'<b>Dining:</b> you meet one on one with your best chefs and managers, and ask what gets in their way.' },
-        { t:'<b>Operations:</b> you bring an idea from hotel hospitality to HR onboarding, and fix a problem new hires have lived with for years.' }
+        { t:'<b>Facilities:</b> a skeptical committee gets a 30-day check-in and your promise to report back.' },
+        { t:'<b>IT:</b> in week one, you fix a broken request process and say more changes are coming.' },
+        { t:'<b>DAR:</b> you ask a dean what DAR has gotten wrong, then deliver that one fix.' },
+        { t:'<b>Dining:</b> you meet one on one with your best chefs and ask what gets in their way.' },
+        { t:'<b>Operations:</b> you bring a hotel hospitality idea to HR onboarding and fix an old problem.' }
       ],
       right:[ { t:'Buy time with potential critics' }, { t:'Send serious signals that I mean business' }, { t:'Reverse DAR’s image as a poor partner' }, { t:'Build trust and loyalty with top producers' }, { t:'Deliver distinctive value and outside perspective' } ],
       show:[3, 0, 4, 1, 2],
@@ -413,7 +413,7 @@ window.LR_COURSE = {
         'Who is the audience here, and what does the check-in buy you?',
         'What does a fast, visible action tell everyone watching?',
         'This is about a campus partner who has doubted DAR.',
-        'Who are the top producers in a dining team?',
+        'Who are the top producers on a dining team?',
         'The idea comes from outside higher education.'
       ],
       done:'All five matched. Leadership demands connectivity and communications to all key constituents.'
@@ -431,15 +431,15 @@ window.LR_COURSE = {
       type:'reveal',
       label:'Four categories of change initiatives: 1, People and Culture; 2, Collaboration and Engagement; 3, Motivation and Incentives; 4, Processes and Systems',
       caption:'From John Lutz’s Symposium slides (p15).',
-      figure:'<div class="c2g"><svg viewBox="0 0 760 228" aria-hidden="true" focusable="false">' +
+      figure:'<div class="c2g"><svg viewBox="0 0 800 228" aria-hidden="true" focusable="false">' +
         '<g data-rv="1"><circle cx="72" cy="58" r="14" fill="#B3C9CD" stroke="#1C1C1C" stroke-width="3"/><circle cx="128" cy="58" r="14" fill="#B3C9CD" stroke="#1C1C1C" stroke-width="3"/><path d="M48 112 a24 22 0 0 1 48 0 z M104 112 a24 22 0 0 1 48 0 z" fill="#B3C9CD" stroke="#1C1C1C" stroke-width="3"/><circle cx="100" cy="76" r="15" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3"/><path d="M72 128 a28 26 0 0 1 56 0 z" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3"/>' +
           '<text x="34" y="200" class="t-num">1.</text><text x="80" y="184" class="t-cat">People</text><text x="80" y="206" class="t-cat">and Culture</text></g>' +
         '<g data-rv="2"><rect x="250" y="56" width="36" height="36" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3"/><rect x="250" y="92" width="36" height="36" fill="#C9D4CC" stroke="#1C1C1C" stroke-width="3"/><rect x="286" y="92" width="36" height="36" fill="#C9D4CC" stroke="#1C1C1C" stroke-width="3"/><rect x="296" y="40" width="34" height="34" fill="#E9D5B0" stroke="#1C1C1C" stroke-width="3" transform="rotate(18 313 57)"/><circle cx="286" cy="74" r="7" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3"/><circle cx="268" cy="92" r="7" fill="#C9D4CC" stroke="#1C1C1C" stroke-width="3"/>' +
-          '<text x="222" y="200" class="t-num">2.</text><text x="268" y="184" class="t-cat">Collaboration</text><text x="268" y="206" class="t-cat">and Engagement</text></g>' +
-        '<g data-rv="3"><path d="M452 128 l-22 -34 a8 8 0 0 1 13 -9 l12 16 l-6 -34 a8 8 0 0 1 15 -3 l8 30 l2 -36 a8 8 0 0 1 16 1 l-1 38 l9 -28 a8 8 0 0 1 15 5 l-10 40 c-4 18 -18 26 -36 22 z" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3" stroke-linejoin="round"/><path d="M470 34 v-14 M450 40 l-8 -10 M490 40 l8 -10" stroke="#1C1C1C" stroke-width="3" stroke-linecap="round"/><path d="M470 34 v-14 M450 40 l-8 -10 M490 40 l8 -10" stroke="#D3AE6C" stroke-width="2" stroke-linecap="round"/>' +
-          '<text x="410" y="200" class="t-num">3.</text><text x="456" y="184" class="t-cat">Motivation</text><text x="456" y="206" class="t-cat">and Incentives</text></g>' +
-        '<g data-rv="4"><circle cx="680" cy="60" r="21" fill="none" stroke="#C9D4CC" stroke-width="9" stroke-dasharray="6.6 4.4"/><circle cx="680" cy="60" r="18" fill="#C9D4CC"/><circle cx="680" cy="60" r="7" fill="#262625"/><circle cx="642" cy="106" r="21" fill="none" stroke="#F1D9A6" stroke-width="9" stroke-dasharray="6.6 4.4"/><circle cx="642" cy="106" r="18" fill="#F1D9A6"/><circle cx="642" cy="106" r="7" fill="#262625"/>' +
-          '<text x="598" y="200" class="t-num">4.</text><text x="644" y="184" class="t-cat">Processes</text><text x="644" y="206" class="t-cat">and Systems</text></g></svg></div>',
+          '<text x="226" y="200" class="t-num">2.</text><text x="272" y="184" class="t-cat">Collaboration</text><text x="272" y="206" class="t-cat">and Engagement</text></g>' +
+        '<g data-rv="3"><g transform="translate(16 0)"><path d="M452 128 l-22 -34 a8 8 0 0 1 13 -9 l12 16 l-6 -34 a8 8 0 0 1 15 -3 l8 30 l2 -36 a8 8 0 0 1 16 1 l-1 38 l9 -28 a8 8 0 0 1 15 5 l-10 40 c-4 18 -18 26 -36 22 z" fill="#F1D9A6" stroke="#1C1C1C" stroke-width="3" stroke-linejoin="round"/><path d="M470 34 v-14 M450 40 l-8 -10 M490 40 l8 -10" stroke="#1C1C1C" stroke-width="3" stroke-linecap="round"/><path d="M470 34 v-14 M450 40 l-8 -10 M490 40 l8 -10" stroke="#D3AE6C" stroke-width="2" stroke-linecap="round"/></g>' +
+          '<text x="428" y="200" class="t-num">3.</text><text x="474" y="184" class="t-cat">Motivation</text><text x="474" y="206" class="t-cat">and Incentives</text></g>' +
+        '<g data-rv="4"><g transform="translate(24 0)"><circle cx="680" cy="60" r="21" fill="none" stroke="#C9D4CC" stroke-width="9" stroke-dasharray="6.6 4.4"/><circle cx="680" cy="60" r="18" fill="#C9D4CC"/><circle cx="680" cy="60" r="7" fill="#262625"/><circle cx="642" cy="106" r="21" fill="none" stroke="#F1D9A6" stroke-width="9" stroke-dasharray="6.6 4.4"/><circle cx="642" cy="106" r="18" fill="#F1D9A6"/><circle cx="642" cy="106" r="7" fill="#262625"/></g>' +
+          '<text x="624" y="200" class="t-num">4.</text><text x="670" y="184" class="t-cat">Processes</text><text x="670" y="206" class="t-cat">and Systems</text></g></svg></div>',
       steps:[
         { label:'1. People and Culture', t:'In Lutz&rsquo;s words: we started our transformation through a focus on people and culture.' },
         { label:'2. Collaboration and Engagement', t:'Enhancing partnerships through collaboration was crucial to success, both intramurally and extramurally: inside Vanderbilt and beyond it.' },
@@ -488,12 +488,12 @@ window.LR_COURSE = {
       type:'match',
       heads:['Hypothetical behavior', 'ACORNS value'],
       left:[
-        { t:'<b>Dining:</b> a storm closes one dining hall, and the team moves dinner to another hall within an hour.' },
-        { t:'<b>IT and Facilities</b> plan a building&rsquo;s network and power upgrade together, and share the credit.' },
-        { t:'<b>HR:</b> a payroll specialist spots a data error, fixes it, and shows the team how to prevent it.' },
-        { t:'<b>DAR:</b> a staff member answers an alum&rsquo;s question fully and quickly, though it is not their area.' },
-        { t:'<b>Student Relations</b> borrows an idea from hotel check-in to welcome students on move-in day.' },
-        { t:'<b>Facilities:</b> in a tense planning meeting, a manager listens fully to a view she disagrees with.' }
+        { t:'<b>Dining:</b> a storm closes a dining hall, and dinner moves to another hall within the hour.' },
+        { t:'<b>IT and Facilities</b> plan a building upgrade together, and share the credit.' },
+        { t:'<b>HR:</b> a payroll specialist fixes a data error and shows the team how to prevent it.' },
+        { t:'<b>DAR:</b> a staffer fully answers an alum&rsquo;s question, though it is not their area.' },
+        { t:'<b>Student Relations</b> borrows an idea from hotel check-in for move-in day.' },
+        { t:'<b>Facilities:</b> in a tense meeting, a manager listens fully to a view she disagrees with.' }
       ],
       right:[ { t:'Agility' }, { t:'Collaboration' }, { t:'Ownership' }, { t:'Service' }, { t:'New Ideas' }, { t:'Respect' } ],
       show:[2, 5, 0, 4, 1, 3],

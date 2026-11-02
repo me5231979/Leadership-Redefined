@@ -518,7 +518,7 @@ T.branch = function(api){
   function depth(){ return st.path.length + 1; }
   api.html = function(){
     var nd = N[st.cur], h = '<div class="la-branch">';
-    h += '<ol class="la-trail" aria-label="Your path">' + st.path.map(function(p, k){ return '<li><span class="la-k">Decision ' + (k + 1) + '</span>' + esc(strip(N[p.n].opts[p.o].t)) + '</li>'; }).join('') + '</ol>';
+    h += '<ol class="la-trail" aria-label="Your path">' + st.path.map(function(p, k){ return '<li><span class="la-k">Decision ' + (k + 1) + '</span>' + strip(N[p.n].opts[p.o].t) + '</li>'; }).join('') + '</ol>';
     if(nd.end){
       h += '<div class="la-end-card" tabindex="-1" data-fk="end"><span class="la-k">' + esc(cfg.label || 'Outcome') + '</span><b class="la-pt">' + nd.h + '</b><p>' + nd.t + '</p>' + (nd.debrief ? '<p class="la-debrief"><b>Debrief.</b> ' + nd.debrief + '</p>' : '') +
         '<button type="button" class="la-btn ghost" data-restart data-fk="restart">Try another path</button></div>';
@@ -798,7 +798,7 @@ T.reveal = function(api){
   var panel = api.q('.la-panel'), box = api.q('.la-figbox, .la-rvhtml');
   function words(t){ return (strip(t).match(/\S+/g) || []).length; }
   api.rv = rvPlayer({ box:box, n:n, bar:api.q('.la-rvslot'), name:cfg.label || 'the graphic',
-    pace:function(k){ return Math.max(2400, words(S[k - 1] ? S[k - 1].t : '') * 290 + 900); },
+    pace:function(k){ return Math.max(2400, words(S[k - 1] ? S[k - 1].t : '') * 250 + 700); },
     onStep:function(at, user){
       panel.innerHTML = at ? '<span class="la-k">Step ' + at + ' of ' + n + '</span><b class="la-pt">' + S[at - 1].label + '</b><p>' + S[at - 1].t + '</p>' : '<p class="la-empty">' + (cfg.prompt || 'Watch the slide build, one part at a time.') + '</p>';
       if(user && at) api.say(strip(S[at - 1].label) + '. ' + strip(S[at - 1].t));
@@ -840,10 +840,11 @@ function mount(root){
     if(cfg.reveal && cfg.type === 'flip') $$('.la-flip', root).forEach(function(c, i){ c.setAttribute('data-rv', i + 1); });
     var rvN = 0; $$('[data-rv]', root).forEach(function(e){ rvN = Math.max(rvN, +e.getAttribute('data-rv') || 0); });
     if(rvN){
-      var rvHost = function(){ return root.querySelector('.la-fig, .la-ffig') || root.querySelector('.la-flipset'); };
+      var rvHost = function(){ return root.querySelector('.la-fig, .la-ffig') || root.querySelector('.la-slides, .la-flipset'); };
       var rvBar = document.createElement('div');
       api.rv = rvPlayer({ box:root, n:rvN, bar:rvBar, small:true, name:cfg.rvName || 'the slide', pace:function(){ return cfg.type === 'flip' && !cfg.figure ? 420 : 650; } });
-      var rvPut = function(){ var h = rvHost(); if(!h) return; if(cfg.reveal && cfg.type === 'flip') $$('.la-flip', root).forEach(function(c, i){ c.setAttribute('data-rv', i + 1); }); var before = h.querySelector(':scope > .la-count, :scope > .la-donebar'); if(before) h.insertBefore(rvBar, before); else h.appendChild(rvBar); api.rv.apply(); };
+      /* after every repaint: the new parts take the current step, and the bar goes back under the figure */
+      var rvPut = function(){ if(cfg.reveal && cfg.type === 'flip') $$('.la-flip', root).forEach(function(c, i){ c.setAttribute('data-rv', i + 1); }); var h = rvHost(); if(h){ var before = h.querySelector(':scope > .la-count, :scope > .la-donebar'); if(before) h.insertBefore(rvBar, before); else h.appendChild(rvBar); } api.rv.apply(); };
       if(!api.static){ var paint0 = api.paint; api.paint = function(nx){ paint0(nx); rvPut(); }; }
       rvPut();
     }

@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="../assets/css/voyage.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/nav.css?v=20261002a" />
 <link rel="stylesheet" href="../assets/css/lr.css?v=20261102b" />
-<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261107r2" />
+<link rel="stylesheet" href="../assets/css/lr-v3.css?v=20261107r3" />
 <style>
 /* ══════ Course One only (version 3): deck graphics for Modules 2 and 3, and the course end. Shared styles: ../assets/css/lr-v3.css ══════ */
 .c1g svg{ font-family:var(--sans); }
@@ -58,18 +58,19 @@
 .c1g .c1-hi{ transition:opacity .3s ease-out; }
 #radar .c1g .c1-hi circle{ fill:#D3AE6C; }
 .la-ffig:not([data-lit=""]) .c1g .c1-hi{ opacity:.4; }
-.la-ffig[data-lit~="em"] [data-hi="em"], .la-ffig[data-lit~="tr"] [data-hi="tr"], .la-ffig[data-lit~="ex"] [data-hi="ex"], .la-ffig[data-lit~="co"] [data-hi="co"],
-.la-ffig[data-lit~="cu"] [data-hi="cu"], .la-ffig[data-lit~="cc"] [data-hi="cc"], .la-ffig[data-lit~="cm"] [data-hi="cm"], .la-ffig[data-lit~="ca"] [data-hi="ca"]{ opacity:1; }
+/* (a lit part needs at least the dimming rule's weight to win back full opacity) */
+.la-ffig[data-lit~="em"] .c1g .c1-hi[data-hi="em"], .la-ffig[data-lit~="tr"] .c1g .c1-hi[data-hi="tr"], .la-ffig[data-lit~="ex"] .c1g .c1-hi[data-hi="ex"], .la-ffig[data-lit~="co"] .c1g .c1-hi[data-hi="co"],
+.la-ffig[data-lit~="cu"] .c1g .c1-hi[data-hi="cu"], .la-ffig[data-lit~="cc"] .c1g .c1-hi[data-hi="cc"], .la-ffig[data-lit~="cm"] .c1g .c1-hi[data-hi="cm"], .la-ffig[data-lit~="ca"] .c1g .c1-hi[data-hi="ca"]{ opacity:1; }
 .la-ffig[data-lit~="em"] [data-hi="em"] text, .la-ffig[data-lit~="tr"] [data-hi="tr"] text, .la-ffig[data-lit~="ex"] [data-hi="ex"] text, .la-ffig[data-lit~="co"] [data-hi="co"] text{ fill:#F1DCA4; }
 #radar .la-flipset, #circle .la-flipset{ grid-template-columns:minmax(0, 1fr); gap:var(--g2); }
-#radar .la-ffig svg, #circle .la-ffig svg{ max-height:min(420px, 33vh); }
+#radar .la-ffig svg, #circle .la-ffig svg{ max-height:min(380px, 29vh); }
 #radar .la-cards, #circle .la-cards{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 #radar .la-face, #circle .la-face{ min-height:3.4em; padding:12px 2.4em 12px 16px; }
 #radar .la-front b, #circle .la-front b{ font-size:1.25em; }
 #radar .la-back p, #circle .la-back p{ font-size:.85em; }
 @media (max-width:640px){ #radar .la-cards, #circle .la-cards{ grid-template-columns:minmax(0, 1fr); } }
-@media (min-width:901px) and (max-height:960px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:27vh; } .la-scrub .la-fig{ --fh:min(360px, 34vh); } }
-@media (min-width:901px) and (max-height:820px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:24vh; } #nextstep .v-commits small{ display:none; } #nextstep .c1-msg{ margin-top:8px; padding-top:8px; padding-bottom:8px; } #nextstep .lr-steps li{ font-size:.85em; } }
+@media (min-width:901px) and (max-height:960px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:25vh; } .la-scrub .la-fig{ --fh:min(360px, 34vh); } }
+@media (min-width:901px) and (max-height:820px){ #radar .la-ffig svg, #circle .la-ffig svg{ max-height:21vh; } #nextstep .v-commits small{ display:none; } #nextstep .c1-msg{ margin-top:8px; padding-top:8px; padding-bottom:8px; } #nextstep .lr-steps li{ font-size:.85em; } }
 /* module 1 opener: the Symposium photo, sharp, with a small portrait */
 .c1-speaker{ max-width:min(760px, 100%); }
 .c1-speaker .c1-sp-photo{ aspect-ratio:3 / 2; max-height:min(480px, 46vh); width:100%; object-fit:cover; object-position:68% 55%; }
@@ -1179,12 +1180,12 @@ section.v3 .v3-act > .v-video{ max-width:853px; width:min(100%, calc((100svh - v
   </div>
 </div>
 <script src="config.js?v=20261106v3"></script>
-<script src="content.js?v=20261107r2"></script>
-<script src="narration-scripts.js?v=20261107r2"></script>
+<script src="content.js?v=20261107r3"></script>
+<script src="narration-scripts.js?v=20261107r4"></script>
 <script src="../assets/js/nav.js?v=20261002a"></script>
 <script src="../assets/js/pager.js?v=20261002a"></script>
 <script src="../assets/js/lr-engine.js?v=20261106w2"></script>
-<script src="../assets/js/lr-activities.js?v=20261107r2"></script>
+<script src="../assets/js/lr-activities.js?v=20261107r3"></script>
 </body>
 </html>
 
