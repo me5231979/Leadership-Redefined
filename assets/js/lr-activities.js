@@ -769,20 +769,42 @@ function rvPlayer(o){
   function stop(){ playing = false; if(timer){ clearTimeout(timer); timer = null; } ui(); }
   function step(){ if(!playing) return; set(at + 1); if(at >= o.n){ stop(); return; } timer = setTimeout(step, o.pace(at)); }
   function play(){ if(timer) clearTimeout(timer); if(at >= o.n) set(0); playing = true; ui(); timer = setTimeout(step, at === 0 ? 350 : 60); }
-  function auto(){ if(seen || reduce) return; seen = true; set(0); play(); }
+  function auto(){ if(seen || reduce || sync) return; seen = true; set(0); play(); }
+  /* in step with the narration: each part appears as the voice reaches it (o.cues: one phrase per step, o.sec: the page key) */
+  var sync = null;
+  function syncEnd(){ if(!sync) return; var s = sync; sync = null; s.a.removeEventListener('timeupdate', s.tick); s.a.removeEventListener('pause', s.end); s.a.removeEventListener('ended', s.done); }
+  function cueFracs(text){
+    var t = String(text).toLowerCase().replace(/[\u2018\u2019]/g, "'"), w = [0], i, c;
+    for(i = 0; i < t.length; i++){ c = t.charAt(i); w.push(w[i] + 1 + (/[,;:]/.test(c) ? 5 : /[.?!]/.test(c) ? 10 : 0)); }
+    var from = 0, out = o.cues.map(function(q){ q = strip(q).toLowerCase().replace(/[\u2018\u2019]/g, "'").replace(/^\d+\.\s*/, ''); var j = t.indexOf(q, from); if(j < 0) return null; from = j + 1; return w[j] / w[t.length]; });
+    /* a phrase the script never says lands halfway between its neighbours */
+    for(i = 0; i < out.length; i++) if(out[i] === null){ var a0 = i ? out[i - 1] : 0, b = 1, m; for(m = i + 1; m < out.length; m++) if(out[m] !== null){ b = out[m]; break; } out[i] = a0 + (b - a0) / (m - i + 1); }
+    return out;
+  }
+  function syncStart(a, text){
+    if(reduce || !o.cues) return;
+    syncEnd(); if(timer){ clearTimeout(timer); timer = null; } playing = false; seen = true;
+    var fr = cueFracs(text), s = { a:a };
+    s.tick = function(){ if(sync !== s) return; var d = a.duration; if(!d || !isFinite(d)) return; var k = 0; for(var j = 0; j < fr.length; j++) if(a.currentTime + 0.15 >= fr[j] * d) k = j + 1; if(k !== at) set(k); };
+    s.end = function(){ if(sync === s && !a.ended) syncEnd(); };
+    s.done = function(){ if(sync !== s) return; syncEnd(); if(at < o.n) set(o.n); };
+    sync = s; a.addEventListener('timeupdate', s.tick); a.addEventListener('pause', s.end); a.addEventListener('ended', s.done); s.tick(); ui();
+  }
+  if(o.cues) document.addEventListener('lr:narr', function(e){ var d = e.detail || {}; if(!d.audio || !o.box.closest('.page.cur') || String(d.key).split('/')[0] !== o.sec) return; syncStart(d.audio, d.text || ''); });
   o.bar.addEventListener('click', function(e){
     var b = e.target.closest('button'); if(!b || b.disabled) return; e.stopPropagation();
     var k = b.getAttribute('data-rvk'), w = b.getAttribute('data-rvb');
+    syncEnd();
     if(w === 'play'){ if(playing) stop(); else play(); return; }
     stop();
     if(k) set(+k, true); else if(w === 'back') set(Math.max(1, at - 1), true); else if(w === 'next') set(at + 1, true);
   });
   /* the first time its page opens, it builds; leaving the page shows it whole */
-  function onPage(){ if(o.box.closest('.page.cur')) setTimeout(auto, 250); else if(playing || at < o.n){ stop(); set(o.n); } }
+  function onPage(){ if(o.box.closest('.page.cur')) setTimeout(auto, o.cues ? 1200 : 250); else { syncEnd(); if(playing || at < o.n){ stop(); set(o.n); } } }
   document.addEventListener('chart:page', onPage);
-  if(o.box.closest('.page.cur')) setTimeout(auto, 500);
+  if(o.box.closest('.page.cur')) setTimeout(auto, o.cues ? 1400 : 500);
   /* Listen on the page replays it from the start, beside the narration */
-  if(!o.small) document.addEventListener('click', function(e){ var l = e.target.closest && e.target.closest('#bbListen'); if(!l || l.classList.contains('playing') || reduce || !o.box.closest('.page.cur')) return; set(0); play(); }, true);
+  if(!o.small) document.addEventListener('click', function(e){ var l = e.target.closest && e.target.closest('#bbListen'); if(!l || l.classList.contains('playing') || reduce || !o.box.closest('.page.cur')) return; syncEnd(); set(0); if(o.cues) setTimeout(function(){ if(!sync) play(); }, 1500); else play(); }, true);
   set(o.n);
   return { finish:function(){ if(playing || at < o.n){ stop(); set(o.n); } }, apply:apply, set:set, play:play, at:function(){ return at; }, bar:o.bar };
 }
@@ -797,8 +819,10 @@ T.reveal = function(api){
     '<div class="la-rvslot"></div><div class="la-panel" id="' + pid + '" tabindex="-1"></div></div>';
   var panel = api.q('.la-panel'), box = api.q('.la-figbox, .la-rvhtml');
   function words(t){ return (strip(t).match(/\S+/g) || []).length; }
-  api.rv = rvPlayer({ box:box, n:n, bar:api.q('.la-rvslot'), name:cfg.label || 'the graphic',
-    pace:function(k){ return Math.max(2400, words(S[k - 1] ? S[k - 1].t : '') * 250 + 700); },
+  var sec = box.closest('section');
+  api.rv = rvPlayer({ box:box, n:n, bar:api.q('.la-rvslot'), name:cfg.label || 'the graphic', sec:sec ? sec.id : '',
+    cues:S.map(function(s){ return s.cue || s.label; }),
+    pace:function(k){ return Math.max(1800, Math.min(3400, words(S[k - 1] ? S[k - 1].t : '') * 100 + 800)); },
     onStep:function(at, user){
       panel.innerHTML = at ? '<span class="la-k">Step ' + at + ' of ' + n + '</span><b class="la-pt">' + S[at - 1].label + '</b><p>' + S[at - 1].t + '</p>' : '<p class="la-empty">' + (cfg.prompt || 'Watch the slide build, one part at a time.') + '</p>';
       if(user && at) api.say(strip(S[at - 1].label) + '. ' + strip(S[at - 1].t));

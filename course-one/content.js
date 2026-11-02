@@ -258,11 +258,11 @@ window.LR_COURSE = {
         '<g data-rv="1"><text x="124" y="270" class="t-h">SIMPLE REPORTING</text><text x="124" y="300" class="t-note">Wire services</text></g>' +
         '<g data-rv="3"><text x="384" y="270" class="t-h">EXTENSIVE REPORTING</text><text x="384" y="300" class="t-note">Cable news (“infotainment”)</text></g></svg></div>',
       steps:[
-        { label:'Simple reporting', t:'Bottom left. Few people follow the story, and little is at stake for society. Wire services cover it in a few lines.' },
-        { label:'In-depth coverage', t:'Top left. The story matters to society, but a smaller audience follows it. Coverage runs on experts and data, like <i>The Economist</i>.' },
-        { label:'Extensive reporting', t:'Bottom right. Many people are interested, but little is at stake. Cable news covers it as &ldquo;infotainment.&rdquo;' },
-        { label:'Mass-market coverage', t:'Top right. High interest and high stakes. Coverage runs on testimony and drama, like <i>60 Minutes</i>.' },
-        { label:'The two axes', t:'Societal importance runs up; audience interest runs across. Where a story sits on both decides the coverage it gets, and a story can move.' }
+        { label:'Simple reporting', cue:'bottom left', t:'Bottom left. Few people follow the story, and little is at stake for society. Wire services cover it in a few lines.' },
+        { label:'In-depth coverage', cue:'top left', t:'Top left. The story matters to society, but a smaller audience follows it. Coverage runs on experts and data, like <i>The Economist</i>.' },
+        { label:'Extensive reporting', cue:'bottom right', t:'Bottom right. Many people are interested, but little is at stake. Cable news covers it as &ldquo;infotainment.&rdquo;' },
+        { label:'Mass-market coverage', cue:'top right', t:'Top right. High interest and high stakes. Coverage runs on testimony and drama, like <i>60 Minutes</i>.' },
+        { label:'The two axes', cue:'last come the axes', t:'Societal importance runs up; audience interest runs across. Where a story sits on both decides the coverage it gets, and a story can move.' }
       ]
     },
     coverage:{
@@ -437,10 +437,10 @@ window.LR_COURSE = {
         '<path data-rv="3" data-rv-draw pathLength="1" d="M492 72 A 112 112 0 0 1 504 300" fill="none" stroke="#CFAE70" stroke-width="34"/><polygon data-rv="3" points="516,262 462,304 516,346" fill="#CFAE70"/>' +
         '<path data-rv="4" data-rv-draw pathLength="1" d="M148 328 A 112 112 0 0 1 136 100" fill="none" stroke="#CFAE70" stroke-width="34"/><polygon data-rv="4" points="124,56 178,98 124,140" fill="#CFAE70"/></svg></div>',
       steps:[
-        { label:'Mission = Purpose', t:'Research, teaching, discovery: the reason Vanderbilt exists, and the work every unit ultimately serves.' },
-        { label:'Margin = Capacity', t:'Financial strength to pursue mission. Margin is not the goal by itself; it is the capacity that keeps the mission going.' },
-        { label:'Mission builds margin', t:'The arrow on the right runs from mission down to margin: purpose gives every dollar its reason.' },
-        { label:'Margin builds mission', t:'The arrow on the left runs back up: capacity funds the next mission work. In the Chancellor&rsquo;s words, mission without margin is unsustainable, and margin without mission is meaningless.' }
+        { label:'Mission = Purpose', cue:'mission equals purpose', t:'Research, teaching, discovery: the reason Vanderbilt exists, and the work every unit ultimately serves.' },
+        { label:'Margin = Capacity', cue:'margin equals capacity', t:'Financial strength to pursue mission. Margin is not the goal by itself; it is the capacity that keeps the mission going.' },
+        { label:'Mission builds margin', cue:'on the right, mission runs down', t:'The arrow on the right runs from mission down to margin: purpose gives every dollar its reason.' },
+        { label:'Margin builds mission', cue:'on the left, margin runs back', t:'The arrow on the left runs back up: capacity funds the next mission work. In the Chancellor&rsquo;s words, mission without margin is unsustainable, and margin without mission is meaningless.' }
       ]
     },
     core:{
@@ -494,7 +494,7 @@ window.LR_COURSE = {
         { label:'Steward purpose and performance', t:'Hold on to both at once: what the work does for people, and how well and how efficiently it runs.' },
         { label:'Use mission to guide priorities', t:'When there is more to do than time or money allows, what serves students and research comes first.' },
         { label:'Build trust through transparency and consistency', t:'Share the numbers openly, and the same way every time, so people can trust the choices made with them.' },
-        { label:'Think long-term: manage trade-offs', t:'Weigh what a choice costs now against what it returns over years, and say the trade-off out loud.' }
+        { label:'Think long-term: manage trade-offs', cue:'think long term', t:'Weigh what a choice costs now against what it returns over years, and say the trade-off out loud.' }
       ]
     },
     mindset:{

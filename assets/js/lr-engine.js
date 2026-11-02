@@ -144,6 +144,8 @@ function narrPlay(k, done, stopped){
   a.preload = 'auto';
   a.addEventListener('ended', function(){ if(narr.audio === a){ narr.audio = null; narr.playing = false; delete narrPos[k]; narrPosSave(); narrUI(); narrFinish(); } });
   a.addEventListener('error', function(){ if(narr.audio === a){ narr.audio = null; narrFail(text); } });
+  /* a slide that builds part by part follows the voice (lr-activities.js listens) */
+  a.addEventListener('playing', function(){ if(narr.audio === a){ try{ document.dispatchEvent(new CustomEvent('lr:narr', { detail:{ key:k, audio:a, text:text } })); }catch(e){} } });
   narr.audio = a;
   var backTo = narrPos[k] || 0;
   if(backTo > 0){
@@ -295,6 +297,23 @@ function bbDoneSync(){
 }
 if(bbDoneBtn) bbDoneBtn.addEventListener('click', function(){ var k = bbDoneBtn.getAttribute('data-prog'); if(k) progToggle(k); });
 document.addEventListener('chart:page', bbDoneSync);
+/* a page with nothing to do (an opener, a video, a slide to watch) counts as done once the learner presses Next past it */
+var viewed = (function(){ try{ var v = JSON.parse(get('viewed') || '{}'); return v && typeof v === 'object' ? v : {}; }catch(e){ return {}; } })();
+function viewTracked(k){ return SECTIONS.some(function(s){ return s.k === k; }); }
+function viewPaint(){
+  $$('.bb-dot').forEach(function(a){
+    if(a.hasAttribute('data-rail')) return;
+    var id = (a.getAttribute('href') || '').replace(/^#p\//, ''); if(!viewed[id]) return;
+    a.classList.add('done'); var base = a.getAttribute('data-name') || ''; a.setAttribute('aria-label', base + ', done'); a.setAttribute('title', base + ' · done');
+  });
+}
+var viewLast = window.chartPager ? window.chartPager.current() : null;
+document.addEventListener('chart:page', function(e){
+  var d = e.detail || {};
+  if(viewLast && viewLast.key && d.index === viewLast.index + 1 && !viewTracked(viewLast.key)){ viewed[viewLast.key + '/' + (viewLast.n || 1)] = 1; set('viewed', JSON.stringify(viewed)); viewPaint(); }
+  viewLast = { key:d.key, index:d.index, n:d.n };
+});
+viewPaint();
 function progDone(k){ if(progIs(k)) return; progWrite(k, true); progRender(k, true); turnDone(k); }
 function progToggle(k){ var v = !progIs(k); progWrite(k, v); progRender(k, v); if(v) turnDone(k); }
 function progOpen(open){ if(!progPanel || !progBtn) return; progPanel.hidden = !open; progBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
