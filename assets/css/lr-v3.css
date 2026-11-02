@@ -227,6 +227,7 @@ html.paged .hero.v3{ justify-content:center !important; padding:var(--g5) 0; }
 .la-back{ transform:rotateY(180deg); background:var(--card2); border-color:var(--eyebrow); }
 .la-back p{ color:var(--tx2); font-size:.9em; line-height:1.45; margin:0; }
 .la-back .la-eg{ margin-top:4px; }
+.la-back .la-bsub{ display:block; color:var(--eyebrow); font-weight:600; font-size:.86em; line-height:1.35; margin:0 0 6px; }
 .la-bt{ font-family:var(--cond); font-weight:700; font-size:.75em; letter-spacing:.08em; text-transform:uppercase; color:var(--eyebrow); }
 .la-flip.open .la-in{ transform:rotateY(180deg); }
 .la-flip.just.open .la-in{ animation:laFlipO .4s cubic-bezier(.33,1,.68,1) both; }

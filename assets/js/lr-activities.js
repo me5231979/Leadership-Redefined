@@ -394,7 +394,7 @@ T.flip = function(api){
     h += '<div class="la-cards n' + C.length + '">' + C.map(function(c, i){ var o = !!st.open[i];
       return '<button type="button" class="la-flip' + (o ? ' open' : '') + (just === i ? ' just' : '') + (st.seen[i] ? ' seen' : '') + '" data-c="' + i + '" data-fk="c-' + i + '" aria-pressed="' + o + '"' + (c.hi ? ' data-hi="' + c.hi + '"' : '') + '>' +
         '<span class="la-in"><span class="la-face la-front"' + (o ? ' aria-hidden="true"' : '') + '>' + (c.icon || '') + '<b>' + c.front + '</b>' + (c.sub ? '<small>' + c.sub + '</small>' : '') + '<span class="la-turn" aria-hidden="true">Tap to turn</span></span>' +
-        '<span class="la-face la-back"' + (o ? '' : ' aria-hidden="true"') + '><b class="la-bt">' + c.front + '</b>' + c.back + '</span></span>' +
+        '<span class="la-face la-back"' + (o ? '' : ' aria-hidden="true"') + '><b class="la-bt">' + c.front + '</b>' + (cfg.keepSub && c.sub ? '<small class="la-bsub">' + c.sub + '</small>' : '') + c.back + '</span></span>' +
         (st.seen[i] ? '<span class="la-seen" aria-hidden="true">' + CHECK + '</span>' : '') + '</button>'; }).join('') + '</div>';
     var n = Object.keys(st.seen).length;
     return h + (st.done ? doneBar(api, 'You turned all ' + C.length + '.') : '<p class="la-count">' + n + ' of ' + C.length + ' turned</p>') + '</div>';

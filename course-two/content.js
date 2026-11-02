@@ -158,7 +158,7 @@ window.LR_COURSE = {
       type:'spot',
       labels:['True', 'False'],
       items:[
-        { t:'Ertel calls Vanderbilt a fighter brand: not the loudest.', a:0, why:'His slide: the fighter brand. Not the loudest. Deeply valued once discovered.' },
+        { t:'A fighter brand is the best-known name in its field, like Harvard.', a:1, why:'The opposite. A fighter brand is not the household name, so it works hard to earn its market position. His slide: not the loudest, deeply valued once discovered.' },
         { t:'People who discover Vanderbilt tend to value it only a little.', a:1, why:'Deeply valued once discovered. High affinity: people who know Vanderbilt, value it.' },
         { t:'Vanderbilt’s main brand challenge is saliency: too few people know it.', a:0, why:'High affinity, low saliency. That matches the first challenge on his previous slide: limited brand saliency.' },
         { t:'Vanderbilt is equally well known in every region of the country.', a:1, why:'Vanderbilt has strong brand awareness in the Southern region but struggles to gain the same level of recognition nationally.' }
@@ -553,6 +553,7 @@ window.LR_COURSE = {
     },
     landscape:{
       type:'flip',
+      keepSub:true,
       cards:[
         { front:'Traditional Model', sub:'Traditional alumni giving alone is not enough', back:'<p>Alumni giving focus.</p><p>Transactional fundraising.</p><p>Siloed relationships.</p>' },
         { front:'The Vanderbilt Way', sub:'Growth requires a stronger donor-centric engagement model', back:'<p>Reaching families and new donors.</p><p>Increased affinity.</p><p>Accelerated gift conversations.</p><p>Deepened stewardship.</p>' }
