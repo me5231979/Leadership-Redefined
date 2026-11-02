@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Symposium Post-Survey</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'VU Caslon Display';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/libre-caslon-display-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'VU Caslon Text';font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/libre-caslon-text-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'VU Inter';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/inter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'VU Inter';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'VU Inter';font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/inter-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'VU Antonio';font-style:normal;font-weight:700;font-display:swap;src:url(../assets/fonts/antonio-latin-700-normal.woff2) format('woff2')}
+html{background:#1C1C1C}
+body{margin:0;background:#1C1C1C}
+
+/* Vanderbilt FLH identity: black ground, Flat Gold accent, Oak/Sky/Sage/Highlight for series. One committed dark look in every theme. */
+.lx{
+  --vu-black:#1C1C1C;--vu-panel:#141414;--vu-white:#FFFFFF;--vu-gold:#CFAE70;--vu-oak:#946E24;--vu-highlight:#ECB748;
+  --vu-sky:#B3C9CD;--vu-sage:#8BA18E;--vu-sand:#E0D5C0;--vu-gray:#777777;
+  --lx-fg:#FFFFFF;--lx-muted:rgba(255,255,255,.68);--lx-line:rgba(255,255,255,.14);--lx-grid:rgba(255,255,255,.09);--lx-axis:rgba(255,255,255,.32);
+  --f-display:'VU Caslon Display','Libre Caslon Display',Georgia,'Times New Roman',serif;
+  --f-italic:'VU Caslon Text','Libre Caslon Text',Georgia,serif;
+  --f-body:'VU Inter',Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-label:'VU Antonio',Antonio,'Arial Narrow',sans-serif;
+  color-scheme:dark;background:var(--vu-black);color:var(--lx-fg);font-family:var(--f-body);
+  display:flex;flex-direction:column;gap:40px;
+  padding-block:28px 48px;padding-left:max(16px,4vw);padding-right:max(16px,4vw)
+}
+.lx-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid rgba(207,174,112,.45)}
+.lx-top img{height:34px;width:auto;display:block}
+.lx-eyebrow{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.74rem;color:var(--vu-gold);margin:0}
+.lx h1,.lx h2{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;color:var(--lx-fg);line-height:1.08}
+.lx h1{font-size:clamp(2rem,4.2vw,3.1rem)}
+.lx h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+.lx h1 em,.lx h2 em{font-family:var(--f-italic);font-style:italic;color:var(--vu-gold)}
+.lx-head{display:flex;flex-direction:column;gap:10px}
+.lx-take{color:var(--lx-muted);max-width:72ch;margin:4px 0 0;font-size:1rem;line-height:1.6}
+.lx .lx-take b{color:var(--lx-fg);font-weight:600}
+.lx-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:12px}
+.lx-kpi{background:var(--vu-panel);border:1px solid var(--lx-line);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.lx-kpi:first-child{border-color:rgba(207,174,112,.55)}
+.lx-kpi-l{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;color:var(--vu-gold)}
+.lx .lx-big{font-family:var(--f-display);font-weight:400;font-size:clamp(2rem,3.4vw,2.6rem);line-height:1.05;font-variant-numeric:tabular-nums;color:var(--lx-fg)}
+.lx-kpi-n{font-size:.78rem;color:var(--lx-muted)}
+.lx-sec{display:flex;flex-direction:column;gap:14px}
+.lx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:12px}
+.lx-card{background:var(--vu-panel);border:1px solid var(--lx-line);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.lx-card h3{font-family:var(--f-body);font-size:1.02rem;font-weight:600;margin:0;color:var(--lx-fg)}
+.lx-note{font-size:.82rem;color:var(--lx-muted);margin:0;line-height:1.5}
+.lx-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--lx-muted)}
+.lx-legend span{display:inline-flex;align-items:center;gap:6px}
+.lx-sw{width:10px;height:10px;border-radius:2px;display:inline-block;background:var(--vu-gray)}
+.lx-chart{min-height:240px}.lx-sent{min-height:150px}.lx-bars{min-height:200px}.lx-mx{min-height:250px}.lx-day{min-height:170px}
+.lx-tbl-wrap{max-height:34rem;overflow:auto;border-top:1px solid var(--lx-line)}
+.lx table{width:100%;border-collapse:collapse;font-size:.84rem}
+.lx th{position:sticky;top:0;background:var(--vu-panel);text-align:left;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;color:var(--vu-gold);padding:8px 10px;border-bottom:1px solid rgba(207,174,112,.35);white-space:nowrap}
+.lx td{padding:10px;border-bottom:1px solid var(--lx-line);vertical-align:top;line-height:1.55;color:var(--lx-fg)}
+.lx td.n{font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap}
+.lx td.c{white-space:pre-line;min-width:16rem;color:rgba(255,255,255,.86)}
+.lx-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--lx-line);border-radius:999px;padding:2px 9px;font-size:.76rem;white-space:nowrap;color:var(--lx-fg)}
+.lx-chip i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.lx-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lx-tools input{flex:1 1 14rem;min-width:0;font:inherit;font-size:.92rem;padding:8px 12px;border:1px solid var(--lx-line);border-radius:4px;background:var(--vu-black);color:var(--lx-fg)}
+.lx-tools input::placeholder{color:rgba(255,255,255,.5)}
+.lx-f{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;padding:6px 14px;min-height:32px;border:1px solid var(--lx-line);border-radius:999px;background:transparent;color:var(--lx-muted);cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.lx-f:hover{border-color:var(--vu-gold);color:var(--lx-fg)}
+.lx-f[aria-pressed="true"]{border-color:var(--vu-gold);background:rgba(207,174,112,.12);color:var(--vu-gold)}
+.lx-f:focus-visible,.lx-tools input:focus-visible{outline:2px solid var(--vu-gold);outline-offset:2px}
+.lx-foot{font-size:.76rem;color:rgba(255,255,255,.55);margin:0;padding-top:16px;border-top:1px solid var(--lx-line)}
+.lx [data-dash-source-state=refreshing]{opacity:.5;transition:opacity var(--cds-dur-slow)}
+.lx [data-dash-source-state=empty]{color:transparent}
+
+</style>
+</head>
+<body>
+<main>
+<div class="lx">
+  <div class="lx-top">
+    <img alt="Vanderbilt University" src="../assets/img/vu-lockup-white.png" width="130" height="34">
+    <p class="lx-eyebrow">Leadership Redefined · Symposium post-survey</p>
+  </div>
+
+  <header class="lx-head" id="title">
+    <p class="lx-eyebrow">October 30 symposium · Responses through November 2</p>
+    <h1>What attendees <em>told</em> us.</h1>
+    <p class="lx-take"><b data-draw="t-n" data-source="summary" data-field="responses">—</b> attendees answered. <b data-draw="t-sat" data-source="summary" data-field="satisfied_pct">—</b> rated their satisfaction 4 or 5 and <b data-draw="t-rec" data-source="summary" data-field="recommend_pct">—</b> would recommend it. The most praised part of the day: <b data-draw="t-praise" data-source="praise_counts" data-field="theme" data-row="0">—</b>. The idea raised most often: <b data-draw="t-concern" data-source="concern_counts" data-field="theme" data-row="0">—</b>.</p>
+  </header>
+
+  <div class="lx-kpis" id="headline">
+    <div class="lx-kpi"><span class="lx-kpi-l">Responses</span><span class="lx-big" data-draw="k-n" data-source="summary" data-field="responses">—</span><span class="lx-kpi-n">Oct 30 to Nov 2, anonymous</span></div>
+    <div class="lx-kpi"><span class="lx-kpi-l">Average satisfaction</span><span class="lx-big" data-draw="k-sat" data-source="summary" data-field="avg_satisfaction">—</span><span class="lx-kpi-n">out of 5</span></div>
+    <div class="lx-kpi"><span class="lx-kpi-l">Satisfied, 4 or 5</span><span class="lx-big" data-draw="k-satp" data-source="summary" data-field="satisfied_pct">—</span><span class="lx-kpi-n">share of responses</span></div>
+    <div class="lx-kpi"><span class="lx-kpi-l">Average recommend</span><span class="lx-big" data-draw="k-rec" data-source="summary" data-field="avg_recommend">—</span><span class="lx-kpi-n">out of 5</span></div>
+    <div class="lx-kpi"><span class="lx-kpi-l">Would recommend, 4 or 5</span><span class="lx-big" data-draw="k-recp" data-source="summary" data-field="recommend_pct">—</span><span class="lx-kpi-n">share of responses</span></div>
+    <div class="lx-kpi"><span class="lx-kpi-l">Shared ideas to improve</span><span class="lx-big" data-draw="k-imp" data-source="improve_summary" data-field="improvers">—</span><span class="lx-kpi-n">of <span data-draw="k-wr" data-source="improve_summary" data-field="writers">—</span> people who wrote a comment</span></div>
+  </div>
+
+  <section class="lx-sec" id="ratings">
+    <p class="lx-eyebrow">01 · Ratings</p>
+    <h2>How the day <em>scored</em>.</h2>
+    <div class="lx-grid">
+      <div class="lx-card">
+        <h3>Scores on each question</h3>
+        <p class="lx-note">Number of responses at each score, 1 lowest to 5 highest. No one gave a 1.</p>
+        <div class="lx-legend"><span><i class="lx-sw" data-key="0"></i>Satisfaction with the symposium</span><span><i class="lx-sw" data-key="1"></i>Likely to recommend</span></div>
+        <div class="lx-chart" data-draw="ratings" data-source="score_dist"></div>
+      </div>
+      <div class="lx-card">
+        <h3>Satisfaction against recommendation</h3>
+        <p class="lx-note">Each cell counts the people who gave that pair of scores. Most sit on or right of the outlined diagonal: they would recommend it at least as strongly as they rated it.</p>
+        <div class="lx-mx" data-draw="matrix" data-source="matrix"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lx-sec" id="sentiment">
+    <p class="lx-eyebrow">02 · Comments</p>
+    <h2>What people <em>said</em>.</h2>
+    <div class="lx-grid">
+      <div class="lx-card">
+        <h3>Tone of comments</h3>
+        <p class="lx-note">Overall tone of everything each person wrote, read and coded by Claude. Mixed means praise and suggestions in the same response. Critical comments are not a bad result: they show what to change for the next cohort.</p>
+        <div class="lx-sent" data-draw="sentiment" data-source="sentiment_counts"></div>
+      </div>
+      <div class="lx-card">
+        <h3>When responses came in</h3>
+        <p class="lx-note">Responses by day, with that day's average satisfaction score.</p>
+        <div class="lx-day" data-draw="days" data-source="by_day"></div>
+      </div>
+    </div>
+    <div class="lx-grid">
+      <div class="lx-card">
+        <h3>What worked</h3>
+        <p class="lx-note">Number of people who praised each part of the day. One person can raise several themes.</p>
+        <div class="lx-bars" data-draw="praise" data-source="praise_counts"></div>
+      </div>
+      <div class="lx-card">
+        <h3>Ideas to improve</h3>
+        <p class="lx-note">Number of people who raised each idea or concern, on the same scale as What worked. Each one is something the next cohort can do better.</p>
+        <div class="lx-bars" data-draw="concern" data-source="concern_counts"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lx-sec" id="next">
+    <p class="lx-eyebrow">03 · Next steps</p>
+    <h2>What they want to <em>build</em>.</h2>
+    <div class="lx-grid">
+      <div class="lx-card">
+        <h3>Answers to "How would you like to build on what you've learned?"</h3>
+        <p class="lx-note">Number of people asking for each. Applying the ideas with their own team leads, ahead of new leadership skills.</p>
+        <div class="lx-bars" data-draw="wishes" data-source="wish_counts"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lx-sec" id="comments">
+    <p class="lx-eyebrow">04 · In their words</p>
+    <h2>Every <em>comment</em>.</h2>
+    <div class="lx-card">
+      <p class="lx-note">Everything each person wrote, with their two scores and the coded tone. Search or filter by tone.</p>
+      <div class="lx-tools">
+        <input id="lx-q" type="search" placeholder="Search comments" aria-label="Search comments">
+        <button type="button" class="lx-f" data-tone="" aria-pressed="true">All</button>
+        <button type="button" class="lx-f" data-tone="Positive" aria-pressed="false">Positive</button>
+        <button type="button" class="lx-f" data-tone="Mixed" aria-pressed="false">Mixed</button>
+        <button type="button" class="lx-f" data-tone="Neutral" aria-pressed="false">Neutral</button>
+        <button type="button" class="lx-f" data-tone="Critical" aria-pressed="false">Critical</button>
+      </div>
+      <div class="lx-tbl-wrap">
+        <table data-source="comment_table" data-row-key="id">
+          <thead><tr>
+            <th data-source="comment_table" data-field="sentiment">Tone</th>
+            <th data-source="comment_table" data-field="satisfaction">Satisfaction</th>
+            <th data-source="comment_table" data-field="recommend">Recommend</th>
+            <th data-source="comment_table" data-field="comment">What they wrote</th>
+          </tr></thead>
+          <tbody data-draw="comments" data-source="comment_table"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <p class="lx-foot">Source: Leadership Redefined Symposium post-survey (Microsoft Forms), anonymous. Tone and themes are a reading of each comment by Claude, kept as their own data file.</p>
+</div>
+</main>
+<script type="application/json" id="lx-data">{"responses": [{"id": "1", "started": "2026-10-30T13:44", "completed": "2026-10-30T13:46", "satisfaction": "3", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "Dr. Lee and Dr. Savion's session was by far the most important conversation to be part of. The trust we give our teams is crucial, as well as how we present ourselves as leaders. I hope to build on what the chancellor said about reputation, too.", "comments": "I was really hoping for tables where we could sit with our pods. Further, check in was a bit of a disaster. Thank you for providing parking validation and I really enjoyed each session."}, {"id": "2", "started": "2026-10-30T13:55", "completed": "2026-10-30T13:55", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "", "comments": ""}, {"id": "3", "started": "2026-10-30T13:55", "completed": "2026-10-30T13:56", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "", "comments": "I believe it would be helpful to have a section where the pods are formally introduced and allowed to brainstorm."}, {"id": "4", "started": "2026-10-30T13:56", "completed": "2026-10-30T13:59", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "To continue to incorporate a broader range of ideology into my leadership role.", "comments": "The opening comedy session was amazing! A really good start to the day!"}, {"id": "5", "started": "2026-10-30T13:56", "completed": "2026-10-30T14:01", "satisfaction": "3", "satisfaction_reason": "", "recommend": "2", "recommend_reason": "When the invitation and information for the symposium were sent, it was advertised as a one-day experience. It was only later that additional information was provided on the 4-week program details. Not all leaders at VU are at the same level or on the same track. The program should be tailored versus a \"catch all\". It is also not respectful of peoples' time and other commitments to sign them up for a lengthy program without their prior awareness and agreement. Some of the speakers' presentations are also duplicative for participants who have seen or heard similar talks in other formats.", "build_on": "", "comments": ""}, {"id": "6", "started": "2026-10-30T14:01", "completed": "2026-10-30T14:08", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "To be honest I didn't learn anything new.  I'm not sure what my takeaway is.", "comments": "I thought the session was too much sitting and listening to someone talk.  The audio was not great so I struggled to hear everyone fully. Skip the comedy part and do a half day with 2-3 speakers.  Then add a half day session at the end of the program with another maybe 2 speakers wrapping everything up and asking for lessons learned/takeaways from the attendees.  I think we need more than 1 coaching session, at least 2, one at the end to talk about progress on the goals/intentions that were set at the first meeting.  Share the project information to everyone early, not just allowing 1 person per pod to go to the room and hear details."}, {"id": "7", "started": "2026-10-30T14:06", "completed": "2026-10-30T14:11", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I valued having the opportunity to meet other middle level managers and would like more opportunities. I understand how perhaps the decision was made to group pods within the same departments, but I would have liked to work with others as well. I work with the people in my pod on a daily basis and getting a fresh perspective on things would be nice.", "comments": "I plan to use this opportunity to become more engage across campus. Even though I manage a team of relationship managers, I find it hard to break out of the norm and develop new relationships."}, {"id": "8", "started": "2026-10-30T14:09", "completed": "2026-10-30T14:11", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "Taking things I heard and building more basis to the foundation I have already been establishing for my new team", "comments": "The last session was AMAZING!  Common sense, heart-felt, and usable techniques for dealing with the every day problems. Thank you ladies!"}, {"id": "9", "started": "2026-10-30T13:45", "completed": "2026-10-30T14:12", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "", "comments": ""}, {"id": "10", "started": "2026-10-30T14:07", "completed": "2026-10-30T14:14", "satisfaction": "3", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "How I can continue pushing this message out to my team and colleagues. Effective tools to use other than trying to reexplain it. Maybe a short video to show them.", "comments": "Overall Experience\nI was really thankful for the opportunity to be in the room with people I had never met or engaged with before. Bringing together colleagues from across the university created opportunities for connection that we don’t always get in our day-to-day work. I was also grateful for the intentional time from university leadership to share the broader vision, priorities, and messages for where we are headed. That context and connection were valuable.\n\nAgenda and Pacing\nI wish the comedy piece had been scheduled in the middle of the day. It would have been a great way to break up the presentations, change the energy, and give everyone a reset. I also would have appreciated more opportunities to stand, walk around, or participate in something interactive. Sitting for the majority of the day was difficult.\n\nPresentations and Content\nI felt like Steve’s presentation covered a lot of the same ground as the Chancellor’s presentation, just in a shortened format. Steve’s portion could potentially be adjusted to reduce that overlap and make room in the agenda for something different or more interactive. I loved Candice Lee’s portion! She was incredibly engaging and brought great energy to the day. I could have listened to her on stage all day.\n\nSpace and Breaks\nMore room to move around during breaks would have been helpful. The hallways became very cramped when everyone left the main room at the same time. There also weren’t many good places to sit and eat lunch. Having tables and designated spaces for eating, gathering, and taking a break would make the experience much more comfortable.\n\nRoom Setup and Audio\nIt was difficult to hear at times from the opposite side of the room, particularly when speakers were facing the other direction. The room setup and/or audio could be adjusted so speakers can be heard clearly throughout the entire space."}, {"id": "11", "started": "2026-10-30T14:06", "completed": "2026-10-30T14:14", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I'd like to build on what I learned - especially about reputation, resources, brand identity.  I think my work and team can help build these areas for our school.", "comments": "I enjoyed every speaker session and left energized with ideas.  I look forward to the online sessions and working with my pod."}, {"id": "12", "started": "2026-10-30T14:31", "completed": "2026-10-30T14:45", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "I hope to use some of the ideas about managing reputation and begin to apply them to the brand, reputation and actions of my own unit within the overall framework of the University", "comments": "It would have been good to know and have visibility of the previous three cohorts and understand how our cohort fitted into the overall picture of the Leadership Redefined program. This would allow us to engage more transparently with our senior managers who (I assume) have already gone through the program. I only learned of the scope of the whole program when I asked a question about previous cohorts, pods and capstone projects. It would be great to see any capstone projects that come to (or have already come to) fruition celebrated as such."}, {"id": "13", "started": "2026-10-30T15:19", "completed": "2026-10-30T15:20", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I look forward to using the information in my department to help grow", "comments": ""}, {"id": "14", "started": "2026-10-30T15:10", "completed": "2026-10-30T15:21", "satisfaction": "3", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "I think a greater focus should go into taking the messaging we heard in the first session and diffusing it out through our teams. It is implied that this information is so we as managers can steer our folks in this clear and bold direction, but maybe spending some time on skills development for leading change, persuasive conversations, and distilling mission/vision information down in usable ways for all levels of staff could be good.", "comments": "I think a crucial opportunity was lost by not having more networking incorporated. We never have this many leaders in one room and there wasn't really any time to network and get to know peer leaders. I would propose cutting the improv if the spirit is to wake people up, and replace it with facilitated networking, small groups, random circles on specific topics to get folks knowing each other. It will still wake people up but also capitalize on these folks being together in one room.\n\nI think some of the overlap in the presentations moved from feeling like a through-line and interconnected to being duplicative. I think if Chancellor can spend time on strategy/vision/updates/leadership, then Steve could move to how to communicate/operationalize/distill for the masses, then the presentations would be stacking versus overlapping.\n\nI think maybe less of the DAR fundraising presentation may help when staff already have a tough relationship with fundraising and feeling like there is money abounding but it doesn't go to them or their teams. It's important but maybe should be shorter. I would say it could be replaced with more of Sydney on PCB, leadership, supervising through culture change, on the bus v. off the bus and coaching out, etc. \n\nClosing with Candice was great. She can do no wrong and was obviously an important leadership less for managers that should always be included.\n\nFinally, I think the initial outreach and communications about Leadership Redefined should be more up-front about the multiple sessions and the project. I heard from multiple people they felt unclear that was the ask and felt tricked. I knew from the prior cohorts but clearly for folks to feel like they signed up for something with limited information is not good. \n\nThere is a lot of good so I would still recommend to every leader, but I know this will improve with some key tweaks so want to raise them."}, {"id": "15", "started": "2026-10-30T16:01", "completed": "2026-10-30T16:04", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "", "comments": "Parking was difficult, causing a number of people to pay for parking along West End Avenue instead of waiting in line and being late.  Is a self-parking code possible in the future?  Lunch without tables and enough chairs was a source of dissatisfaction for a number of people, as we were encouraged to dress up and then had nowhere to sit, so people were on the floor or ground outside."}, {"id": "16", "started": "2026-10-30T16:01", "completed": "2026-10-30T16:04", "satisfaction": "4", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "It was nice to hear perspectives from leaders all over campus. It would be better if the Pods weren’t people we already work with - there should be a greater effort made to get people working together from various areas on campus.", "comments": "The talks were great. 7 hours sitting in a room, not the best. Lecture format that long, even with a break, is too much."}, {"id": "17", "started": "2026-10-30T16:02", "completed": "2026-10-30T16:06", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "Effectively managing multigenerational teams", "comments": "I wish there was space in the day dedicated to meet with your Pod and clarity around expectations for the capstone project."}, {"id": "18", "started": "2026-10-30T16:11", "completed": "2026-10-30T16:12", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "I'm excited to work on becoming a better manager for my team.", "comments": ""}, {"id": "19", "started": "2026-10-30T16:11", "completed": "2026-10-30T16:18", "satisfaction": "2", "satisfaction_reason": "Only one of the presentations the last one with Candice Storey Lee provided any kind of leadership advice.", "recommend": "2", "recommend_reason": "A very long day with nothing really to take away to improve the leadership skills of those who attended.", "build_on": "I haven't learned anything that I haven't already heard in other Vanderbilt presentations (non leadership themed) that I am able to build upon yet.", "comments": "Would have been easier to attend if had been on main campus and didn't have to worry about trying to park at the hotel. Also that room was not large enough for the number of people. Having smaller group tables with opportunities to interact with other teams would have been more beneficial than just listening to lectures that didn't truly offer any new information."}, {"id": "20", "started": "2026-10-30T16:18", "completed": "2026-10-30T16:20", "satisfaction": "4", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "it might be helpful to have periodic seminars throughout the year that talk about leadership challenges and strategies", "comments": ""}, {"id": "21", "started": "2026-10-30T15:12", "completed": "2026-10-30T16:22", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "How can I work with peers across campus to take what these leaders shared and try to identify small ways to change my approach as a result to benefit the greater Vanderbilt.", "comments": "I enjoyed the speakers as it's rare to get to hear from so many at that level of leadership in one day. Yet, the format of speaker, break, speaker, break, speaker break, etc. was challenging as it was a lot of sitting and listening. Two half days or two full days where there's opportunity to work with your pod in between sessions would have made it more engaging."}, {"id": "22", "started": "2026-10-30T16:21", "completed": "2026-10-30T16:22", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "Complete the work, talk with the executive coach, and connect with my pod.", "comments": "AD Storey-Lee’s talk with VC Savion was excellent!"}, {"id": "23", "started": "2026-10-30T16:20", "completed": "2026-10-30T16:24", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I'm looking forward to using the Leadership Redefined focus areas on our capstone challenge!", "comments": ""}, {"id": "24", "started": "2026-10-30T16:06", "completed": "2026-10-30T16:27", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I’d like to build on the opening session by continuing to refine my leadership from both an administrative and middle-management perspective. As an Assistant Dean, I constantly move between institutional strategy and the operational realities of leading teams and getting the work done. I’d like to become more intentional about navigating those competing demands, prioritizing where my time and energy can have the greatest impact, and continuing to grow in my leadership presence and perspective. I also recognize that my drive and tendency to overcommit can contribute to burnout. I want to continue growing as a leader while becoming better at protecting my capacity, setting boundaries, and giving myself the same grace I readily extend to others.", "comments": "I valued the opportunity to hear directly from the Chancellor and Vice Chancellors.  I appreciated their candid perspectives on leading within a complex institution—balancing strategic priorities, resources, operational realities, and stakeholder needs."}, {"id": "25", "started": "2026-10-30T16:52", "completed": "2026-10-30T16:55", "satisfaction": "4", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "It would be great to gain more practical experience to apply the leadership principles that were discussed at the symposium.", "comments": "A activity or allocated time with our pods would have been great. Though it was encouraged for us to meet with our pods, I often found myself networking with other colleagues I don’t regularly get to see. Also, have additional scanners when exiting the event so there isn’t a bottleneck effect."}, {"id": "26", "started": "2026-10-30T17:01", "completed": "2026-10-30T17:03", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "Use the assessment information and coaching session", "comments": "It would have been helpful to know beforehand that the symposium would also have a time consuming component after the date itself. That was not initially clear that there would be ongoing group work."}, {"id": "27", "started": "2026-10-30T17:14", "completed": "2026-10-30T17:17", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "I look forward to the coaching session. I look forward to watching the videos.", "comments": "As a fairly new leader at VU, I really enjoyed hearing from each speaker. I didn't love the comedy personally, but I understand the purpose/ what the goal was, so not complaining! Unfortunately, I was not able to be assigned a POD on the first day, so I am a little concerned about my momentum on the capstone piece and feeling involved in whatever project I end up in."}, {"id": "28", "started": "2026-10-30T16:57", "completed": "2026-10-30T17:19", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I look forward to the online workshops and hope there will be additional opportunities beyond this one. Perhaps Leadership Redefined II.", "comments": "All the speakers were great - the conversation with Candice and Sydney was particularly engaging. \n\nRoom for improvement:\nSitting for such long periods was difficult/uncomfortable for many of us. Adding in a few short (10-min) stand breaks would be really helpful."}, {"id": "29", "started": "2026-10-30T17:24", "completed": "2026-10-30T17:28", "satisfaction": "4", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I'm not sure how to answer this question yet, since we're not finished with the program.", "comments": "When I originally signed up for the program I did not know or understand there were multiple parts to it. That would have been useful information as these next several weeks are particularly busy. Others I spoke with also didn't know until the week of the program and some I spoke with at the event did not catch that fact. The speakers were all great! And the morning beginning session was the perfect way to ease us into the experience."}, {"id": "30", "started": "2026-10-30T17:26", "completed": "2026-10-30T17:32", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I'm asking myself how do we/I disseminate what was shared to everyone with the kind of delivery that was presented to our Cohort.", "comments": "All the speakers did an incredible job and we(Vanderbilt) are very lucky to have this kind of leadership running the University."}, {"id": "31", "started": "2026-10-30T18:09", "completed": "2026-10-30T18:13", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I'm not sure yet. I think I need to see what I learn from the post-class assignments (e.g., the learning modules and the assignment with the pods).", "comments": "Would have been great to use the 30-min breakfast to \"find your pod.\" My pod is not comprised of folks in my org, so I have no idea who these individuals are. I know that space for 30 or so pods is a lot, and marking out that many sections is not easy, but perhaps you could have numbered rows. Not that pods would have to sit together, but it would give folks an opportunity to meet one other for the work that is to come."}, {"id": "32", "started": "2026-10-30T21:07", "completed": "2026-10-30T21:10", "satisfaction": "4", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "", "comments": "It was a little unclear until I sat in the session during the event what the whole thing was really all about.  Maybe more upfront info like an email outlining exactly what this program is would be helpful.  \n\nI thought you all did an incredible job with the content though. If one of the goals was to make people feel really great about working at Vanderbilt at this point in time then mission accomplished! Hearing from Daniel was definitely the highlight and so impactful. \n\nThere’s probably never a good time, but the last two months of the calendar year are super busy for a lot of people with work so doing this in September or October or in the spring might be better so that people can really focus on it and do the capstone well."}, {"id": "33", "started": "2026-10-31T05:07", "completed": "2026-10-31T05:15", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "This was a great symposium, and covered a lot of topics.  Reputation is very important, and it reinforces how I present myself to the public outside my workplace.  When someone needs assistance, I am quick to offer a hand.", "comments": "Parking... always a headache.  The majority of people that talked about it at the symposium all had different solutions to parking.  I personally paid over 40 dollars to valet the parking, because we could not park anywhere nearby without a threat of being towed.  Maybe vouchers / permits sent in advance for attendees?"}, {"id": "34", "started": "2026-10-31T10:02", "completed": "2026-10-31T10:04", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "I would like to hear from more in leadership at VU.", "comments": ""}, {"id": "35", "started": "2026-10-31T10:19", "completed": "2026-10-31T10:20", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "I look forward to receiving the online content to better contextualize the themes of the presentations.", "comments": ""}, {"id": "36", "started": "2026-10-31T13:28", "completed": "2026-10-31T13:34", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "I would like to learn more strategies in conflict resolution.", "comments": "I was taken aback by the off-color expression vice chancellor Candice Storey Lee employed near the conclusion of her presentation; as a twice-alumnus and as a donor to the University, I expect more professional conduct from someone who holds such an important role in University leadership."}, {"id": "37", "started": "2026-10-31T16:15", "completed": "2026-10-31T16:16", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "", "comments": ""}, {"id": "38", "started": "2026-11-01T16:35", "completed": "2026-11-01T18:25", "satisfaction": "3", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "I would like to focus on how to make this information translatable to my team so that our work, daily practices and the way that we spend our time match our divisional priorities and the larger VU priorities.", "comments": "It would have been beneficial to understand all of the expectations for this program when we signed up.  It was surprising to receive an email with the additional expectations the week before that will require an additional time commitment beyond the day long symposium.  I would have preferred to spend the beginning of the day in a more strategic networking session meeting colleagues from across the university than the comedy troupe at 8:00am. The space was not adequate for the number of people present - round tables would have been better so that everyone had somewhere to sit for lunch."}, {"id": "39", "started": "2026-11-01T20:41", "completed": "2026-11-01T20:44", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "Making sure that my team's work is more closely aligned to the vision of leadership.", "comments": "It was so valuable to hear from Vanderbilt's leadership in person. I particularly enjoyed Candice's session."}, {"id": "40", "started": "2026-11-02T05:52", "completed": "2026-11-02T05:53", "satisfaction": "3", "satisfaction_reason": "", "recommend": "3", "recommend_reason": "", "build_on": "I feel like I’ve really got a grip on the current flywheels!", "comments": "The room set up was not optimal- tables and chairs would have been\nPreferred- chairs were extremely uncomfortable."}, {"id": "41", "started": "2026-11-02T08:17", "completed": "2026-11-02T08:17", "satisfaction": "5", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "", "comments": ""}, {"id": "42", "started": "2026-11-02T08:16", "completed": "2026-11-02T08:18", "satisfaction": "4", "satisfaction_reason": "", "recommend": "4", "recommend_reason": "", "build_on": "The direction on Vanderbilt and how I can make a contribution to making it happen", "comments": "NA"}, {"id": "43", "started": "2026-11-02T08:41", "completed": "2026-11-02T08:45", "satisfaction": "4", "satisfaction_reason": "", "recommend": "5", "recommend_reason": "", "build_on": "Mostly more clarity on what comes next with regards to upcoming virtual sessions and the capstone project.\nI would like to hear more from those who have gone through previous cohorts of Leadership Redefined and how they implemented what they learned from the symposium.", "comments": "Wish there had been some more time to interact both with our pod and with other pods during the symposium in a more structured way."}], "coding": [{"id": "4", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "7", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "8", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "11", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "13", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "18", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "22", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "23", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "24", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "30", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "34", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "39", "kind": "sentiment", "code": "Positive", "tone": ""}, {"id": "1", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "10", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "14", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "16", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "21", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "27", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "28", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "29", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "32", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "33", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "40", "kind": "sentiment", "code": "Mixed", "tone": ""}, {"id": "3", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "12", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "17", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "20", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "25", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "26", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "31", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "35", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "42", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "43", "kind": "sentiment", "code": "Neutral", "tone": ""}, {"id": "5", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "6", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "15", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "19", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "36", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "38", "kind": "sentiment", "code": "Critical", "tone": ""}, {"id": "2", "kind": "sentiment", "code": "No comment", "tone": ""}, {"id": "9", "kind": "sentiment", "code": "No comment", "tone": ""}, {"id": "37", "kind": "sentiment", "code": "No comment", "tone": ""}, {"id": "41", "kind": "sentiment", "code": "No comment", "tone": ""}, {"id": "1", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "10", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "11", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "16", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "21", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "24", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "27", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "28", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "29", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "30", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "32", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "33", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "39", "kind": "feedback", "code": "Speakers and access to leaders", "tone": "praise"}, {"id": "1", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "8", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "10", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "14", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "19", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "22", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "28", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "39", "kind": "feedback", "code": "Candice Storey Lee session", "tone": "praise"}, {"id": "4", "kind": "feedback", "code": "Comedy opener", "tone": "praise"}, {"id": "29", "kind": "feedback", "code": "Comedy opener", "tone": "praise"}, {"id": "1", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "3", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "7", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "14", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "17", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "19", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "25", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "31", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "38", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "43", "kind": "feedback", "code": "More pod and networking time", "tone": "concern"}, {"id": "5", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "12", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "14", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "26", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "29", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "32", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "38", "kind": "feedback", "code": "Full program not explained upfront", "tone": "concern"}, {"id": "6", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "10", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "16", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "19", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "21", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "28", "kind": "feedback", "code": "Too much sitting and lecture", "tone": "concern"}, {"id": "1", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "10", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "15", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "19", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "38", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "40", "kind": "feedback", "code": "Room, seating and lunch space", "tone": "concern"}, {"id": "1", "kind": "feedback", "code": "Parking and check-in", "tone": "concern"}, {"id": "15", "kind": "feedback", "code": "Parking and check-in", "tone": "concern"}, {"id": "19", "kind": "feedback", "code": "Parking and check-in", "tone": "concern"}, {"id": "25", "kind": "feedback", "code": "Parking and check-in", "tone": "concern"}, {"id": "33", "kind": "feedback", "code": "Parking and check-in", "tone": "concern"}, {"id": "5", "kind": "feedback", "code": "Content repeated or nothing new", "tone": "concern"}, {"id": "6", "kind": "feedback", "code": "Content repeated or nothing new", "tone": "concern"}, {"id": "10", "kind": "feedback", "code": "Content repeated or nothing new", "tone": "concern"}, {"id": "14", "kind": "feedback", "code": "Content repeated or nothing new", "tone": "concern"}, {"id": "19", "kind": "feedback", "code": "Content repeated or nothing new", "tone": "concern"}, {"id": "6", "kind": "feedback", "code": "Comedy opener", "tone": "concern"}, {"id": "10", "kind": "feedback", "code": "Comedy opener", "tone": "concern"}, {"id": "14", "kind": "feedback", "code": "Comedy opener", "tone": "concern"}, {"id": "27", "kind": "feedback", "code": "Comedy opener", "tone": "concern"}, {"id": "38", "kind": "feedback", "code": "Comedy opener", "tone": "concern"}, {"id": "6", "kind": "feedback", "code": "Capstone and pod clarity", "tone": "concern"}, {"id": "17", "kind": "feedback", "code": "Capstone and pod clarity", "tone": "concern"}, {"id": "27", "kind": "feedback", "code": "Capstone and pod clarity", "tone": "concern"}, {"id": "43", "kind": "feedback", "code": "Capstone and pod clarity", "tone": "concern"}, {"id": "6", "kind": "feedback", "code": "Audio hard to hear", "tone": "concern"}, {"id": "10", "kind": "feedback", "code": "Audio hard to hear", "tone": "concern"}, {"id": "7", "kind": "feedback", "code": "Pods drawn from own department", "tone": "concern"}, {"id": "16", "kind": "feedback", "code": "Pods drawn from own department", "tone": "concern"}, {"id": "32", "kind": "feedback", "code": "Busy time of year", "tone": "concern"}, {"id": "36", "kind": "feedback", "code": "Professionalism of a remark", "tone": "concern"}, {"id": "8", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "10", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "13", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "14", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "30", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "38", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "39", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "42", "kind": "wish", "code": "Apply it with my team", "tone": ""}, {"id": "4", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "14", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "17", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "18", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "24", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "25", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "36", "kind": "wish", "code": "Leadership skills", "tone": ""}, {"id": "22", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "23", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "26", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "27", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "31", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "35", "kind": "wish", "code": "Coaching, modules and capstone", "tone": ""}, {"id": "1", "kind": "wish", "code": "Reputation and brand", "tone": ""}, {"id": "11", "kind": "wish", "code": "Reputation and brand", "tone": ""}, {"id": "12", "kind": "wish", "code": "Reputation and brand", "tone": ""}, {"id": "33", "kind": "wish", "code": "Reputation and brand", "tone": ""}, {"id": "7", "kind": "wish", "code": "Connect across campus", "tone": ""}, {"id": "16", "kind": "wish", "code": "Connect across campus", "tone": ""}, {"id": "21", "kind": "wish", "code": "Connect across campus", "tone": ""}, {"id": "20", "kind": "wish", "code": "More sessions with leaders", "tone": ""}, {"id": "28", "kind": "wish", "code": "More sessions with leaders", "tone": ""}, {"id": "34", "kind": "wish", "code": "More sessions with leaders", "tone": ""}, {"id": "43", "kind": "wish", "code": "Clarity on next steps", "tone": ""}]}</script>
+<script src="d3.min.js"></script>
+<script>
+/* Stand-in for the dashboard runtime: the same calculations and drawings, from the data embedded below. */
+window.dash = (function(){
+  const RAW = JSON.parse(document.getElementById('lx-data').textContent);
+  const calcs = {}, draws = {};
+  const api = {
+    colors: ['#CFAE70', '#B3C9CD', '#8BA18E', '#946E24', '#ECB748', '#E0D5C0', '#777777', '#F5F3EF'],
+    calc(id, o){ calcs[id] = o; },
+    data(id){
+      if (RAW[id]) return { status: 'ok', data: RAW[id] };
+      const c = calcs[id]; if (!c) return { status: 'missing', data: [] };
+      if (!c.cache) c.cache = c.fn(...c.inputs.map((i) => api.data(i).data));
+      return { status: 'ok', data: c.cache };
+    },
+    draw(name, fn){ if (fn) draws[name] = fn; run(name); }
+  };
+  function run(name){ const fn = draws[name]; if (!fn) return; document.querySelectorAll('[data-draw="' + name + '"]').forEach((el) => fn(el)); }
+  let t = null, lastW = window.innerWidth;
+  window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(t); t = setTimeout(() => Object.keys(draws).forEach(run), 150); });
+  return api;
+})();
+</script>
+<script>
+(function(){
+  /* Vanderbilt series colors */
+  const GOLD = '#CFAE70', OAK = '#946E24', SKY = '#B3C9CD', SAGE = '#8BA18E', HIGHLIGHT = '#ECB748', GRAY = '#777777';
+  const SERIES = [GOLD, SKY];
+  const TONE = { Positive: SAGE, Mixed: HIGHLIGHT, Neutral: SKY, Critical: OAK, 'No comment': 'rgba(255,255,255,.14)' };
+
+  dash.calc('summary', { inputs: ['responses'], title: 'Headline figures',
+    description: 'Response count, average of each 1 to 5 rating (one decimal), and the percent of responses that gave a 4 or 5.',
+    fn: (responses) => {
+      const n = responses.length, sat = responses.map((r) => Number(r.satisfaction)), rec = responses.map((r) => Number(r.recommend));
+      const avg = (a) => Math.round(a.reduce((x, y) => x + y, 0) / a.length * 10) / 10;
+      const pct = (a) => Math.round(a.filter((x) => x >= 4).length / a.length * 100);
+      return [{ responses: n, avg_satisfaction: avg(sat), satisfied_pct: pct(sat), avg_recommend: avg(rec), recommend_pct: pct(rec) }];
+    } });
+
+  dash.calc('score_dist', { inputs: ['responses'], title: 'Responses at each score',
+    description: 'How many responses gave each score from 1 to 5, for each question.',
+    fn: (responses) => [1, 2, 3, 4, 5].map((s) => ({ score: s,
+      satisfaction: responses.filter((r) => Number(r.satisfaction) === s).length,
+      recommend: responses.filter((r) => Number(r.recommend) === s).length })) });
+
+  dash.calc('matrix', { inputs: ['responses'], title: 'Satisfaction by recommendation',
+    description: 'Count of responses for each pair of satisfaction and recommendation scores.',
+    fn: (responses) => {
+      const out = [];
+      for (let s = 5; s >= 1; s--) for (let r = 1; r <= 5; r++) out.push({ satisfaction: s, recommend: r,
+        count: responses.filter((x) => Number(x.satisfaction) === s && Number(x.recommend) === r).length });
+      return out;
+    } });
+
+  dash.calc('sentiment_counts', { inputs: ['coding'], title: 'Comment sentiment',
+    description: 'People per coded tone; the percent is of everyone who wrote something.',
+    fn: (coding) => {
+      const order = ['Positive', 'Mixed', 'Neutral', 'Critical', 'No comment'];
+      const s = coding.filter((r) => r.kind === 'sentiment');
+      const wrote = s.filter((r) => r.code !== 'No comment').length;
+      return order.map((k) => { const c = s.filter((r) => r.code === k).length;
+        return { sentiment: k, people: c, pct_of_writers: k === 'No comment' ? null : Math.round(c / wrote * 100) }; });
+    } });
+
+  dash.calc('improve_summary', { inputs: ['coding'], title: 'People who shared ideas to improve',
+    description: 'People who raised at least one concern or suggestion, out of everyone who wrote a comment.',
+    fn: (coding) => {
+      const writers = new Set(coding.filter((r) => r.kind === 'sentiment' && r.code !== 'No comment').map((r) => String(r.id)));
+      const improvers = new Set(coding.filter((r) => r.kind === 'feedback' && r.tone === 'concern').map((r) => String(r.id)));
+      return [{ improvers: [...improvers].filter((id) => writers.has(id)).length, writers: writers.size }];
+    } });
+
+  const themeCalc = (id, tone, title, description) => dash.calc(id, { inputs: ['coding'], title, description,
+    fn: (coding) => {
+      const m = new Map();
+      coding.filter((r) => r.kind === 'feedback' && r.tone === tone).forEach((r) => m.set(r.code, (m.get(r.code) || 0) + 1));
+      return [...m].map(([theme, people]) => ({ theme, people })).sort((a, b) => b.people - a.people || a.theme.localeCompare(b.theme));
+    } });
+  themeCalc('praise_counts', 'praise', 'Themes praised', 'People who praised each part of the day, from the coded comments.');
+  themeCalc('concern_counts', 'concern', 'Concerns raised', 'People who raised each concern, from the coded comments.');
+
+  dash.calc('wish_counts', { inputs: ['coding'], title: 'What people want to build on',
+    description: 'People asking for each kind of next step, from the coded answers to the build-on question.',
+    fn: (coding) => {
+      const m = new Map();
+      coding.filter((r) => r.kind === 'wish').forEach((r) => m.set(r.code, (m.get(r.code) || 0) + 1));
+      return [...m].map(([wish, people]) => ({ wish, people })).sort((a, b) => b.people - a.people || a.wish.localeCompare(b.wish));
+    } });
+
+  dash.calc('by_day', { inputs: ['responses'], title: 'Responses by day',
+    description: 'Responses per day of completion, with that day’s average satisfaction (one decimal).',
+    fn: (responses) => {
+      const m = new Map();
+      responses.forEach((r) => { const d = String(r.completed).slice(0, 10); const a = m.get(d) || []; a.push(Number(r.satisfaction)); m.set(d, a); });
+      return [...m].sort((a, b) => a[0] < b[0] ? -1 : 1).map(([day, a]) => ({ day, responses: a.length,
+        avg_satisfaction: Math.round(a.reduce((x, y) => x + y, 0) / a.length * 10) / 10 }));
+    } });
+
+  dash.calc('comment_table', { inputs: ['responses', 'coding'], title: 'Comments with tone',
+    description: 'Each response that has any written text, with its scores, coded tone and all of its text in one column.',
+    fn: (responses, coding) => {
+      const tone = new Map(coding.filter((r) => r.kind === 'sentiment').map((r) => [String(r.id), r.code]));
+      const parts = [['satisfaction_reason', 'Why this satisfaction score'], ['recommend_reason', 'Why this recommend score'], ['build_on', 'Build on'], ['comments', 'Comments']];
+      return responses.map((r) => ({ id: String(r.id), sentiment: tone.get(String(r.id)) || 'No comment',
+        satisfaction: Number(r.satisfaction), recommend: Number(r.recommend),
+        comment: parts.filter(([k]) => r[k] && String(r[k]).trim() && String(r[k]).trim() !== 'NA').map(([k, l]) => l + ': ' + String(r[k]).trim()).join('\n\n') }))
+        .filter((r) => r.comment);
+    } });
+
+  document.querySelectorAll('.lx-sw[data-key]').forEach((s) => { s.style.background = SERIES[Number(s.getAttribute('data-key'))] || GRAY; });
+
+  const one = (id) => { const d = dash.data(id); return d.status === 'ok' && d.data.length ? d.data[0] : null; };
+  const fill = (name, id, field, fmt) => dash.draw(name, (el) => { const r = one(id); el.textContent = r && r[field] != null ? fmt(r[field]) : '—'; });
+  const pct = (v) => v + '%', dec = (v) => Number(v).toFixed(1), int = (v) => d3.format(',')(v), same = (v) => v;
+  fill('t-n', 'summary', 'responses', int); fill('t-sat', 'summary', 'satisfied_pct', pct); fill('t-rec', 'summary', 'recommend_pct', pct);
+  fill('k-n', 'summary', 'responses', int); fill('k-sat', 'summary', 'avg_satisfaction', dec); fill('k-satp', 'summary', 'satisfied_pct', pct);
+  fill('k-rec', 'summary', 'avg_recommend', dec); fill('k-recp', 'summary', 'recommend_pct', pct);
+  fill('k-imp', 'improve_summary', 'improvers', int); fill('k-wr', 'improve_summary', 'writers', int);
+  fill('t-praise', 'praise_counts', 'theme', same);
+  fill('t-concern', 'concern_counts', 'theme', same);
+
+  const ready = (el, id) => { const d = dash.data(id); el.replaceChildren(); if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return d.data; }
+    if (d.status === 'error' || d.status === 'missing') { el.classList.remove('dash-skeleton'); const p = document.createElement('div');
+      p.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:8px;min-height:inherit;color:var(--lx-muted);font-size:.8rem';
+      const dot = document.createElement('span'); dot.style.cssText = 'width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)';
+      const t = document.createElement('span'); t.textContent = 'Failed to load'; p.append(dot, t); el.append(p); }
+    return null; };
+  const h = (tag, css, text) => { const e = document.createElement(tag); if (css) e.style.cssText = css; if (text != null) e.textContent = text; return e; };
+
+  dash.draw('ratings', (el) => {
+    const rows = ready(el, 'score_dist'); if (!rows) return;
+    const W = Math.max(280, el.clientWidth || 560), H = 240, m = { t: 22, r: 8, b: 30, l: 30 };
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+      .attr('aria-label', 'Responses at each score for satisfaction and for likely to recommend');
+    const keys = ['satisfaction', 'recommend'];
+    const x0 = d3.scaleBand(rows.map((r) => String(r.score)), [m.l, W - m.r]).paddingInner(0.3).paddingOuter(0.1);
+    const x1 = d3.scaleBand(keys, [0, x0.bandwidth()]).padding(0.12);
+    const max = d3.max(rows, (r) => Math.max(r.satisfaction, r.recommend)) || 1;
+    const y = d3.scaleLinear([0, max], [H - m.b, m.t]).nice();
+    svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v))
+      .style('stroke', 'var(--lx-grid)');
+    svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => y(v)).attr('dy', '0.32em').attr('text-anchor', 'end')
+      .style('fill', 'var(--lx-muted)').style('font-size', '11px').style('font-family', 'var(--f-body)').text((v) => v);
+    const bw = Math.min(32, x1.bandwidth());
+    const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (r) => `translate(${x0(String(r.score))},0)`);
+    keys.forEach((k, i) => {
+      const bx = () => x1(k) + (x1.bandwidth() - bw) / 2;
+      g.append('rect').attr('x', bx).attr('width', bw).attr('y', (r) => y(r[k])).attr('height', (r) => y(0) - y(r[k])).attr('rx', 2)
+        .style('fill', SERIES[i]);
+      g.append('text').attr('x', () => bx() + bw / 2).attr('y', (r) => y(r[k]) - 6).attr('text-anchor', 'middle')
+        .style('fill', 'var(--lx-fg)').style('font-size', '12px').style('font-family', 'var(--f-body)').style('font-variant-numeric', 'tabular-nums')
+        .text((r) => r[k] ? r[k] : '');
+    });
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).style('stroke', 'var(--lx-axis)');
+    svg.append('g').selectAll('text').data(rows).join('text').attr('x', (r) => x0(String(r.score)) + x0.bandwidth() / 2).attr('y', H - 9)
+      .attr('text-anchor', 'middle').style('fill', 'var(--vu-gold)').style('font-size', '11px').style('font-family', 'var(--f-label)')
+      .style('font-weight', '700').style('letter-spacing', '.08em').text((r) => 'SCORE ' + r.score);
+  });
+
+  dash.draw('matrix', (el) => {
+    const rows = ready(el, 'matrix'); if (!rows) return;
+    const max = d3.max(rows, (r) => r.count) || 1;
+    const lab = 'color:var(--vu-gold);font-family:var(--f-label);font-weight:700;letter-spacing:.08em;font-size:.7rem;text-transform:uppercase';
+    const grid = h('div', 'display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:4px;align-items:stretch');
+    grid.append(h('div', '', ''));
+    [1, 2, 3, 4, 5].forEach((r) => grid.append(h('div', lab + ';text-align:center;padding-bottom:2px', 'Rec ' + r)));
+    [5, 4, 3, 2, 1].forEach((s) => {
+      grid.append(h('div', lab + ';display:flex;align-items:center;padding-right:8px;white-space:nowrap', 'Sat ' + s));
+      [1, 2, 3, 4, 5].forEach((r) => {
+        const c = (rows.find((x) => x.satisfaction === s && x.recommend === r) || { count: 0 }).count;
+        const cell = h('div', 'position:relative;height:36px;border-radius:3px;border:1px solid var(--lx-line);overflow:hidden');
+        if (r === s) cell.style.borderColor = 'rgba(207,174,112,.6)';
+        const fillEl = h('div', `position:absolute;inset:0;background:${GOLD};opacity:${c ? 0.14 + 0.66 * c / max : 0}`);
+        const t = h('div', 'position:relative;height:100%;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;color:var(--lx-fg);font-weight:600;font-size:.88rem', c ? String(c) : '');
+        cell.append(fillEl, t); cell.setAttribute('aria-label', `Satisfaction ${s}, recommend ${r}: ${c}`);
+        grid.append(cell);
+      });
+    });
+    el.append(grid);
+    el.append(h('p', 'margin:8px 0 0;font-size:.78rem;color:var(--lx-muted)', 'Sat = satisfaction score, Rec = likely to recommend. Gold outlines mark the same score on both.'));
+  });
+
+  dash.draw('sentiment', (el) => {
+    const rows = ready(el, 'sentiment_counts'); if (!rows) return;
+    const bar = h('div', 'display:flex;height:26px;border-radius:3px;overflow:hidden;gap:2px');
+    rows.forEach((r) => { if (!r.people) return; const s = h('div', `flex:${r.people} 0 0;background:${TONE[r.sentiment]}`); s.setAttribute('aria-hidden', 'true'); bar.append(s); });
+    const list = h('div', 'display:grid;grid-template-columns:auto 1fr auto auto;gap:8px 12px;align-items:center;margin-top:14px;font-size:.92rem');
+    rows.forEach((r) => {
+      list.append(h('span', `width:10px;height:10px;border-radius:2px;background:${TONE[r.sentiment]}`, ''));
+      list.append(h('span', '', r.sentiment));
+      list.append(h('span', 'font-variant-numeric:tabular-nums;text-align:right;font-weight:600', String(r.people)));
+      list.append(h('span', 'font-variant-numeric:tabular-nums;text-align:right;color:var(--lx-muted);min-width:3.5em', r.pct_of_writers == null ? 'no text' : r.pct_of_writers + '%'));
+    });
+    el.append(bar, list);
+  });
+
+  const barList = (el, rows, label, max, color) => {
+    const wrap = h('div', 'display:flex;flex-direction:column;gap:12px');
+    rows.forEach((r) => {
+      const row = h('div', 'display:flex;flex-direction:column;gap:5px');
+      const top = h('div', 'display:flex;justify-content:space-between;gap:12px;font-size:.92rem');
+      top.append(h('span', 'min-width:0', r[label]), h('span', 'font-variant-numeric:tabular-nums;font-weight:600', String(r.people)));
+      const track = h('div', 'height:8px;border-radius:2px;background:var(--lx-grid);overflow:hidden');
+      track.append(h('div', `height:100%;width:${(r.people / max * 100).toFixed(1)}%;background:${color};border-radius:2px`));
+      row.append(top, track); wrap.append(row);
+    });
+    el.append(wrap);
+  };
+  const sharedMax = () => { const a = dash.data('praise_counts'), b = dash.data('concern_counts');
+    return Math.max(1, ...(a.status === 'ok' ? a.data : []).map((r) => r.people), ...(b.status === 'ok' ? b.data : []).map((r) => r.people)); };
+  dash.draw('praise', (el) => { const rows = ready(el, 'praise_counts'); if (rows) barList(el, rows, 'theme', sharedMax(), GOLD); });
+  dash.draw('concern', (el) => { const rows = ready(el, 'concern_counts'); if (rows) barList(el, rows, 'theme', sharedMax(), OAK); });
+  dash.draw('wishes', (el) => { const rows = ready(el, 'wish_counts'); if (rows) barList(el, rows, 'wish', Math.max(1, ...rows.map((r) => r.people)), SKY); });
+
+  dash.draw('days', (el) => {
+    const rows = ready(el, 'by_day'); if (!rows) return;
+    const max = Math.max(1, ...rows.map((r) => r.responses)), fmt = d3.utcFormat('%b %-d');
+    const g = h('div', `display:grid;grid-template-columns:repeat(${rows.length},minmax(0,1fr));gap:12px;align-items:end`);
+    rows.forEach((r) => {
+      const col = h('div', 'display:flex;flex-direction:column;align-items:center;gap:5px');
+      col.append(h('span', 'font-variant-numeric:tabular-nums;font-weight:600', String(r.responses)));
+      col.append(h('div', `width:min(32px,100%);height:${Math.max(3, r.responses / max * 100)}px;background:${GOLD};border-radius:2px 2px 0 0`));
+      col.append(h('span', 'font-family:var(--f-label);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;color:var(--vu-gold);border-top:1px solid var(--lx-axis);width:100%;text-align:center;padding-top:5px', fmt(new Date(r.day + 'T00:00:00Z'))));
+      col.append(h('span', 'font-size:.76rem;color:var(--lx-muted);font-variant-numeric:tabular-nums', 'avg ' + Number(r.avg_satisfaction).toFixed(1)));
+      g.append(col);
+    });
+    el.append(g);
+  });
+
+  let q = '', tone = '';
+  document.querySelectorAll('#lx-q').forEach((i) => i.addEventListener('input', () => { q = i.value.trim().toLowerCase(); dash.draw('comments'); }));
+  document.querySelectorAll('.lx-f').forEach((b) => b.addEventListener('click', () => {
+    tone = b.getAttribute('data-tone') || '';
+    document.querySelectorAll('.lx-f').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    dash.draw('comments');
+  }));
+  dash.draw('comments', (tb) => {
+    const d = dash.data('comment_table'); tb.replaceChildren(); if (d.status !== 'ok') return;
+    d.data.filter((r) => (!tone || r.sentiment === tone) && (!q || r.comment.toLowerCase().includes(q))).forEach((r) => {
+      const tr = document.createElement('tr'); tr.setAttribute('data-key', r.id);
+      const t1 = document.createElement('td'); const chip = document.createElement('span'); chip.className = 'lx-chip';
+      chip.append(h('i', `background:${TONE[r.sentiment]}`, ''), document.createTextNode(r.sentiment)); t1.append(chip);
+      const t2 = h('td', '', String(r.satisfaction)); t2.className = 'n';
+      const t3 = h('td', '', String(r.recommend)); t3.className = 'n';
+      const t4 = h('td', '', r.comment); t4.className = 'c';
+      tr.append(t1, t2, t3, t4); tb.append(tr);
+    });
+  });
+})();
+</script>
+</body>
+</html>
