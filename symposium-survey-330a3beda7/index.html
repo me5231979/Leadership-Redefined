@@ -30,6 +30,15 @@ body{margin:0;background:#1C1C1C}
   padding-block:28px 48px;padding-left:max(16px,4vw);padding-right:max(16px,4vw)
 }
 .lx-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid rgba(207,174,112,.45)}
+.lx-top-r{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.lx-fs{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;padding:7px 14px;min-height:34px;border:1px solid rgba(207,174,112,.55);border-radius:4px;background:transparent;color:var(--vu-gold);cursor:pointer;transition:background .2s,border-color .2s}
+.lx-fs:hover{background:rgba(207,174,112,.12);border-color:var(--vu-gold)}
+.lx-fs:focus-visible{outline:2px solid var(--vu-gold);outline-offset:2px}
+.lx-fs .lx-fs-out{display:none}
+.lx-fs[aria-pressed="true"] .lx-fs-in{display:none}
+.lx-fs[aria-pressed="true"] .lx-fs-out{display:inline}
+.lx:fullscreen{overflow-y:auto;height:100vh;box-sizing:border-box}
+.lx:-webkit-full-screen{overflow-y:auto;height:100vh;box-sizing:border-box}
 .lx-top img{height:34px;width:auto;display:block}
 .lx-eyebrow{font-family:var(--f-label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.74rem;color:var(--vu-gold);margin:0}
 .lx h1,.lx h2{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;color:var(--lx-fg);line-height:1.08}
@@ -85,7 +94,10 @@ body{margin:0;background:#1C1C1C}
 <div class="lx">
   <div class="lx-top">
     <img alt="Vanderbilt University" src="../assets/img/vu-lockup-white.png" width="130" height="34">
-    <p class="lx-eyebrow">Leadership Redefined · Symposium post-survey</p>
+    <div class="lx-top-r">
+      <p class="lx-eyebrow">Leadership Redefined · Symposium post-survey</p>
+      <button type="button" class="lx-fs" aria-pressed="false"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="lx-fs-in" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="lx-fs-out" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg><span class="lx-fs-on">Full screen</span><span class="lx-fs-off" hidden>Exit full screen</span></button>
+    </div>
   </div>
 
   <header class="lx-head" id="title">
@@ -443,6 +455,25 @@ window.dash = (function(){
     });
     el.append(g);
   });
+
+  /* full screen: the whole dashboard, Esc or the button to leave */
+  const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
+  const fsOk = document.fullscreenEnabled || document.webkitFullscreenEnabled;
+  const fsSync = () => document.querySelectorAll('.lx-fs').forEach((b) => {
+    const on = !!fsEl(); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.querySelectorAll('.lx-fs-on').forEach((x) => { x.hidden = on; });
+    b.querySelectorAll('.lx-fs-off').forEach((x) => { x.hidden = !on; });
+  });
+  document.querySelectorAll('.lx-fs').forEach((b) => {
+    if (!fsOk) { b.hidden = true; return; }
+    b.addEventListener('click', () => {
+      if (fsEl()) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+      const el = b.closest('.lx') || document.documentElement;
+      const req = el.requestFullscreen || el.webkitRequestFullscreen;
+      try { const r = req.call(el); if (r && r.catch) r.catch(() => {}); } catch (e) {}
+    });
+  });
+  document.addEventListener('fullscreenchange', fsSync); document.addEventListener('webkitfullscreenchange', fsSync);
 
   let q = '', tone = '';
   document.querySelectorAll('#lx-q').forEach((i) => i.addEventListener('input', () => { q = i.value.trim().toLowerCase(); dash.draw('comments'); }));
