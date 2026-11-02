@@ -210,7 +210,7 @@ function chartSVG(c, o){
   return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="la-svg" role="img" aria-label="' + esc(c.title + '. Bar chart: ' + said + '.') + '">' + out + '</svg>';
 }
 function chartFig(c, o){
-  return '<figure class="la-chart' + (o && o.small ? ' sm' : '') + '"><figcaption><b>' + esc(c.title) + '</b><span>' + esc(c.sub) + '</span></figcaption>' + chartSVG(c, o) + (c.foot && !(o && o.nofoot) ? '<p class="la-cfoot">' + esc(c.foot) + '</p>' : '') + '</figure>';
+  return '<figure class="la-chart' + (o && o.small ? ' sm' : '') + '"><figcaption><b>' + esc(c.title) + '</b>' + (o && o.nosub ? '' : '<span>' + esc(c.sub) + '</span>') + '</figcaption>' + chartSVG(c, o) + (c.foot && !(o && o.nofoot) ? '<p class="la-cfoot">' + esc(c.foot) + '</p>' : '') + '</figure>';
 }
 function countUp(el, fin){
   var m = String(fin).match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/); if(!m || reduce){ el.textContent = fin; return; }
@@ -473,7 +473,7 @@ T.predict = function(api){
         '<p class="la-you">' + (close(rd, i) ? CHECK + '<b>Close.</b> ' : '') + 'You guessed ' + fmt(rd, gg) + '.</p><p class="la-x">' + rd.x + '</p></div>';
       h += i < R.length - 1 ? '<button type="button" class="la-btn" data-next data-fk="next-' + i + '">Next number</button>' : '';
     }
-    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, tall:1.25, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown }) +
+    h += '</div><div class="la-pchart' + (shown && just ? ' grow' : '') + '">' + chartFig(c, { w:420, h:300, tall:1.25, guess:g, hide:!shown, reveal:shown, max:Math.max(c.max, rd.chartMax || 0), guessLab:'Your guess', nofoot:!shown, nosub:!shown }) +
       (shown ? '' : '<button type="button" class="la-btn sm ghost la-replay" data-replay data-fk="replay-' + i + '"><svg viewBox="0 0 24 24" aria-hidden="true" class="la-ic"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Play the chart</button>') + '</div>';
     h += '<ol class="la-pdots" aria-hidden="true">' + R.map(function(_, k){ return '<li class="' + (st.shown[k] ? 'seen' : '') + (k === i ? ' cur' : '') + '"></li>'; }).join('') + '</ol></div>';
     var n = Object.keys(st.shown).length, cl = R.filter(function(rr, k){ return st.shown[k] && close(rr, k); }).length;

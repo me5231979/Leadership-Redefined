@@ -358,6 +358,13 @@ html.paged .hero.v3{ justify-content:center !important; padding:var(--g5) 0; }
 
 /* the book bar: a long course still fits its dots between the controls (shared, course-wide) */
 @media (min-width:1001px) and (max-width:1600px){ a.bb-dot{ width:18px; } }
+/* the controls keep their natural width; the dot rail takes what is left and its dots narrow (never under 12px) instead of sliding under the buttons */
+@media (min-width:761px){
+  html.paged .book-bar .bb-left, html.paged .book-bar .bb-ctl{ flex:1 0 auto; }
+  html.paged .book-bar .bb-dots{ flex:0 1 auto; min-width:0; }
+  html.paged .book-bar a.bb-dot{ flex:0 1 auto; min-width:12px; }
+}
+@media (min-width:761px) and (max-width:1100px){ html.paged .book-bar .bb-dots{ gap:0; } html.paged .book-bar a.bb-dot{ min-width:9px; } }
 
 /* ══════════ SCALE: fill the stage ══════════
    One fluid base size per rebuilt section (clamp on vw and vh): every v3 and activity size above is
