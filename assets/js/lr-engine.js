@@ -261,12 +261,16 @@ if(progList) progList.innerHTML = SECTIONS.map(function(s){
     '<span class="p-name">' + s.name + '<span class="p-how">' + s.how + '</span></span></a>' +
     '<button type="button" class="p-state" data-prog="' + s.k + '" aria-pressed="false" aria-label="Mark ' + s.name + ' done">Mark done</button></li>';
 }).join('');
+var viewed = (function(){ try{ var v = JSON.parse(get('viewed') || '{}'); return v && typeof v === 'object' ? v : {}; }catch(e){ return {}; } })();
+function viewIds(){ return $$('.bb-dot').filter(function(a){ return !a.hasAttribute('data-rail'); }).map(function(a){ return (a.getAttribute('href') || '').replace(/^#p\//, ''); }); }
 function progRender(changedKey, nowDone){
   var total = SECTIONS.length, doneN = 0;
   SECTIONS.forEach(function(s){ if(progIs(s.k)) doneN++; });
   var left = total - doneN;
-  if(progCount) progCount.textContent = doneN + '/' + total;
-  if(progSum) progSum.textContent = doneN === total ? 'All ' + total + ' activities complete.' : doneN + ' of ' + total + ' activities complete. ' + left + ' left; each row is a shortcut.';
+  /* the readout counts every page: activities when finished, and pages with nothing to do once passed */
+  var vIds = viewIds(), vDone = vIds.filter(function(id){ return viewed[id]; }).length;
+  if(progCount) progCount.textContent = (doneN + vDone) + '/' + (total + vIds.length);
+  if(progSum) progSum.textContent = doneN === total ? 'All ' + total + ' activities complete.' : doneN + ' of ' + total + ' activities complete. ' + left + ' left; each row is a shortcut.' + (vIds.length ? ' Pages read: ' + vDone + ' of ' + vIds.length + '.' : '');
   SECTIONS.forEach(function(s){
     var done = progIs(s.k);
     var row = progList ? progList.querySelector('[data-prog-row="' + s.k + '"]') : null;
@@ -298,7 +302,6 @@ function bbDoneSync(){
 if(bbDoneBtn) bbDoneBtn.addEventListener('click', function(){ var k = bbDoneBtn.getAttribute('data-prog'); if(k) progToggle(k); });
 document.addEventListener('chart:page', bbDoneSync);
 /* a page with nothing to do (an opener, a video, a slide to watch) counts as done once the learner presses Next past it */
-var viewed = (function(){ try{ var v = JSON.parse(get('viewed') || '{}'); return v && typeof v === 'object' ? v : {}; }catch(e){ return {}; } })();
 function viewTracked(k){ return SECTIONS.some(function(s){ return s.k === k; }); }
 function viewPaint(){
   $$('.bb-dot').forEach(function(a){
@@ -310,7 +313,8 @@ function viewPaint(){
 var viewLast = window.chartPager ? window.chartPager.current() : null;
 document.addEventListener('chart:page', function(e){
   var d = e.detail || {};
-  if(viewLast && viewLast.key && d.index === viewLast.index + 1 && !viewTracked(viewLast.key)){ viewed[viewLast.key + '/' + (viewLast.n || 1)] = 1; set('viewed', JSON.stringify(viewed)); viewPaint(); }
+  if(viewLast && viewLast.key && d.index === viewLast.index + 1 && !viewTracked(viewLast.key)){ viewed[viewLast.key + '/' + (viewLast.n || 1)] = 1; set('viewed', JSON.stringify(viewed)); viewPaint(); progRender(); }
+  if(window.chartPager && d.index === window.chartPager.count - 1 && !viewTracked(d.key) && !viewed[d.key + '/' + (d.n || 1)]){ viewed[d.key + '/' + (d.n || 1)] = 1; set('viewed', JSON.stringify(viewed)); viewPaint(); progRender(); }
   viewLast = { key:d.key, index:d.index, n:d.n };
 });
 viewPaint();
