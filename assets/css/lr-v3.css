@@ -679,7 +679,7 @@ section.v3 .v3-take .v3-take-do{ font-family:var(--sans); font-size:1.2em; font-
 #growth .v-city{ padding:.9em 1.2em; }
 #growth .v-city b{ font-size:1.15em; }
 #growth .v-city p{ font-size:.88em; line-height:1.42; margin:.25em 0; }
-#growth .v-city .lr-meet{ font-size:1em; }
+#growth.v3 .v-city .lr-meet{ font-size:1em; }
 #growth .v-cities button{ padding:.35em .9em; }
 @media (max-height:820px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 260px) * 0.4 * 1.916)); } #growth .lr-footmap figcaption{ display:none; } }
 @media (min-height:1000px){ #growth .lr-footmap{ max-width:min(100%, calc((100vh - 300px) * 0.43 * 1.916)); } }

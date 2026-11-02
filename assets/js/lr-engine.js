@@ -993,7 +993,9 @@ $$('.lr-compare').forEach(function(f){
   var fr = $('.cmp-frame', f), r = $('.cmp-range', f); if(!fr || !r) return;
   function setPos(v){ v = Math.max(0, Math.min(100, v)); fr.style.setProperty('--pos', v + '%'); r.value = v; r.setAttribute('aria-valuetext', v < 15 ? f.getAttribute('data-b') : v > 85 ? f.getAttribute('data-a') : 'Both, divided at ' + Math.round(v) + ' percent');
     /* site pins on the 2026 side appear as the wipe uncovers them */
-    $$('.cmp-pin', fr).forEach(function(p){ var off = parseFloat(p.getAttribute('data-x')) < v; p.classList.toggle('off', off); p.tabIndex = off ? -1 : 0; p.setAttribute('aria-hidden', off ? 'true' : 'false'); }); }
+    $$('.cmp-pin', fr).forEach(function(p){ var off = parseFloat(p.getAttribute('data-x')) < v; p.classList.toggle('off', off); p.tabIndex = off ? -1 : 0; p.setAttribute('aria-hidden', off ? 'true' : 'false'); });
+    /* each year tag shows only while some of its map is in view */
+    var ta = $('.cmp-tag.a', fr), tb = $('.cmp-tag.b', fr); if(ta) ta.style.opacity = v < 8 ? 0 : ''; if(tb) tb.style.opacity = v > 92 ? 0 : ''; }
   r.addEventListener('input', function(){ setPos(parseFloat(r.value)); });
   var drag = false;
   function at(e){ var b = fr.getBoundingClientRect(); setPos((e.clientX - b.left) / b.width * 100); }
