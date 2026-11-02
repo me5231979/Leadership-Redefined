@@ -32,6 +32,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # a re-recorded clip (a new voice or pronunciation keeps the same script text) gets a fresh address, so browsers never replay the old one
+          if [ -n "$(git status --porcelain assets/audio)" ]; then sed -i "s/mediaVersion: '[^']*'/mediaVersion: '$(date -u +%Y%m%d%H%M)'/" course-one/config.js course-two/config.js; fi
           git add assets/audio .github/tts-cache.json course-one/config.js course-two/config.js 2>/dev/null || true
           if git diff --cached --quiet; then echo "No changes"; else git commit -m "Record narration with ElevenLabs"; git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"; git push origin HEAD:"${GITHUB_REF_NAME}"; fi
       - name: Publish to the live site
