@@ -246,10 +246,10 @@ window.dash = (function(){
   const TONE = { Positive: SAGE, Mixed: HIGHLIGHT, Neutral: SKY, Critical: OAK, 'No comment': 'rgba(255,255,255,.14)' };
 
   dash.calc('summary', { inputs: ['responses'], title: 'Headline figures',
-    description: 'Response count, average of each 1 to 5 rating (one decimal), and the percent of responses that gave a 4 or 5.',
+    description: 'Response count, average of each 1 to 5 rating (two decimals), and the percent of responses that gave a 4 or 5.',
     fn: (responses) => {
       const n = responses.length, sat = responses.map((r) => Number(r.satisfaction)), rec = responses.map((r) => Number(r.recommend));
-      const avg = (a) => Math.round(a.reduce((x, y) => x + y, 0) / a.length * 10) / 10;
+      const avg = (a) => Math.round(a.reduce((x, y) => x + y, 0) / a.length * 100) / 100;
       const pct = (a) => Math.round(a.filter((x) => x >= 4).length / a.length * 100);
       return [{ responses: n, avg_satisfaction: avg(sat), satisfied_pct: pct(sat), avg_recommend: avg(rec), recommend_pct: pct(rec) }];
     } });
@@ -338,7 +338,7 @@ window.dash = (function(){
 
   const one = (id) => { const d = dash.data(id); return d.status === 'ok' && d.data.length ? d.data[0] : null; };
   const fill = (name, id, field, fmt) => dash.draw(name, (el) => { const r = one(id); el.textContent = r && r[field] != null ? fmt(r[field]) : '—'; });
-  const pct = (v) => v + '%', dec = (v) => Number(v).toFixed(1), int = (v) => d3.format(',')(v), same = (v) => v;
+  const pct = (v) => v + '%', dec = (v) => Number(v).toFixed(2), int = (v) => d3.format(',')(v), same = (v) => v;
   fill('t-n', 'summary', 'responses', int); fill('t-sat', 'summary', 'satisfied_pct', pct); fill('t-rec', 'summary', 'recommend_pct', pct);
   fill('k-n', 'summary', 'responses', int); fill('k-sat', 'summary', 'avg_satisfaction', dec); fill('k-satp', 'summary', 'satisfied_pct', pct);
   fill('k-rec', 'summary', 'avg_recommend', dec); fill('k-recp', 'summary', 'recommend_pct', pct);
